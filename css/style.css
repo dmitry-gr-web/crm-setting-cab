@@ -358,6 +358,9 @@ html {
   align-items: center;
   z-index: 1;
 }
+.header-crm .block-btn {
+  cursor: pointer;
+}
 .header-crm .block-btn .btn-header:last-child {
   margin-left: 100px;
   margin-right: 50px;
@@ -387,6 +390,21 @@ html {
   outline: none;
   border: none;
   cursor: pointer;
+  position: relative;
+}
+.btn-header span {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  font-size: 8px;
+  position: absolute;
+  background-color: white;
+  right: 7px;
+  top: -4px;
+  border: 1px solid #515151;
+}
+.btn-header .bell-circle-pos {
+  right: 2px;
 }
 
 .aside-crm {
@@ -535,17 +553,38 @@ html {
   opacity: 1;
 }
 
+.hover-list:hover {
+  background: rgba(81, 81, 81, 0.7);
+  color: white;
+}
+.hover-list:hover:before {
+  content: "";
+  width: 8px;
+  height: 26px;
+  background-color: #515151;
+  position: absolute;
+  top: 0;
+  left: -8px;
+  border-radius: 3px 0 0 3px;
+}
+
+.block-nav {
+  width: 15%;
+  min-width: 158px;
+}
 .block-nav .block-contacts {
   list-style: none;
   padding-left: 0;
   margin: 0;
   margin-bottom: 24px;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 .block-nav .block-contacts .list-contacts {
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
+  padding: 5px;
+  position: relative;
 }
 .block-nav .block-contacts .list-contacts:first-child {
   font-size: 16px;
@@ -562,7 +601,9 @@ html {
 .block-nav .block-order .list-order {
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
+  padding: 5px;
+  position: relative;
 }
 .block-nav .block-order .list-order:first-child {
   font-size: 16px;
@@ -580,7 +621,9 @@ html {
   font-size: 14px;
   font-weight: 500;
   opacity: 0.9;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
+  padding: 5px;
+  position: relative;
 }
 .block-nav .block-catalog .list-catalog:first-child {
   font-size: 16px;
@@ -590,9 +633,8 @@ html {
 }
 
 .block-nav2 {
-  margin-left: 20px;
   position: relative;
-  left: 20px;
+  width: 15%;
 }
 
 .wrap-container {
@@ -605,13 +647,15 @@ html {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 .block-warehouse .list-warehouse {
   font-size: 14px;
   font-weight: 500;
   opacity: 0.9;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
+  padding: 5px;
+  position: relative;
 }
 .block-warehouse .list-warehouse:first-child {
   font-size: 16px;
