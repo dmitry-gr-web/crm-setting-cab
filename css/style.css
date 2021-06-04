@@ -498,17 +498,17 @@ html {
 }
 .nav-crm .nav-list-crm {
   text-align: center;
-  margin-bottom: 2.5vh;
+  margin-bottom: 2vh;
   transition: 0.3s;
   -o-transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
 }
 .nav-crm .nav-list-crm:first-child {
-  margin-top: 4.5vh;
+  margin-top: 4vh;
 }
 .nav-crm .nav-list-crm:last-child {
-  margin-bottom: 3.5vh;
+  margin-bottom: 3vh;
 }
 .nav-crm .nav-list-crm:hover {
   background-color: #FFE600;
@@ -517,22 +517,99 @@ html {
   -webkit-transform: translateX(10px);
   -moz-transform: translateX(10px);
 }
-.nav-crm .nav-list-crm:hover .nav-btn-crm span {
-  background-image: url("../img/inbox.svg");
-}
-.nav-crm .nav-list-crm .nav-btn-crm {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  position: relative;
-}
-.nav-crm .nav-list-crm .nav-btn-crm span {
-  background-image: url("../img/inbox-white.svg");
-  position: absolute;
+.nav-crm .nav-list-crm .btn-crm {
+  display: block;
   width: 17px;
   height: 17px;
-  top: -13px;
-  left: -3px;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.nav-crm .nav-list-crm .airplay {
+  background-image: url("../img/airplay.svg");
+}
+.nav-crm .nav-list-crm .sidebar {
+  background-image: url("../img/Sidebar 24px.svg");
+}
+.nav-crm .nav-list-crm .user {
+  background-image: url("../img/Add Users 24px.svg");
+}
+.nav-crm .nav-list-crm .inbox {
+  background-image: url("../img/inbox-white.svg");
+}
+.nav-crm .nav-list-crm .frame {
+  background-image: url("../img/Frame 25.svg");
+}
+.nav-crm .nav-list-crm .squares {
+  background-image: url("../img/Squares.svg");
+}
+.nav-crm .nav-list-crm .list {
+  background-image: url("../img/list.svg");
+}
+.nav-crm .nav-list-crm .link {
+  background-image: url("../img/Link 16px.svg");
+}
+.nav-crm .nav-list-crm .diag {
+  background-image: url("../img/diag.svg");
+}
+.nav-crm .nav-list-crm .rupor {
+  background-image: url("../img/rupor.svg");
+}
+.nav-crm .nav-list-crm .setting {
+  background-image: url("../img/settings.svg");
+}
+.nav-crm .nav-list-crm .trash {
+  background-image: url("../img/korzina.svg");
+}
+.nav-crm .nav-list-crm .info {
+  background-image: url("../img/Info 24px.svg");
+}
+.nav-crm .nav-list-crm .video {
+  background-image: url("../img/video.svg");
+}
+.nav-crm .nav-list-crm:hover .inbox {
+  background-image: url("../img/inbox.svg");
+}
+.nav-crm .nav-list-crm:hover .airplay {
+  background-image: url("../img/airplay-black.svg");
+}
+.nav-crm .nav-list-crm:hover .user {
+  background-image: url("../img/Add-us-black.svg");
+}
+.nav-crm .nav-list-crm:hover .sidebar {
+  background-image: url("../img/Sidebar 24pxblack.svg");
+}
+.nav-crm .nav-list-crm:hover .frame {
+  background-image: url("../img/Frame 25black.svg");
+}
+.nav-crm .nav-list-crm:hover .squares {
+  background-image: url("../img/Squares-black.svg");
+}
+.nav-crm .nav-list-crm:hover .list {
+  background-image: url("../img/Groupblack.svg");
+}
+.nav-crm .nav-list-crm:hover .link {
+  background-image: url("../img/Link 16pxblack.svg");
+}
+.nav-crm .nav-list-crm:hover .diag {
+  background-image: url("../img/diag-black.svg");
+}
+.nav-crm .nav-list-crm:hover .rupor {
+  background-image: url("../img/rupor-black.svg");
+}
+.nav-crm .nav-list-crm:hover .setting {
+  background-image: url("../img/settingblakc.svg");
+}
+.nav-crm .nav-list-crm:hover .trash {
+  background-image: url("../img/trashblack.svg");
+}
+.nav-crm .nav-list-crm:hover .info {
+  background-image: url("../img/Info 24pxblack.svg");
+}
+.nav-crm .nav-list-crm:hover .video {
+  background-image: url("../img/Camera 24pxblack.svg");
 }
 
 .wrap {
@@ -548,6 +625,7 @@ html {
   width: 100%;
   height: 100%;
   justify-content: space-between;
+  position: relative;
 }
 .container-info .main-setting {
   margin-right: 20px;

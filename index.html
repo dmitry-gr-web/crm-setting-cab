@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-scroll.css">
     <title>Document</title>
 </head>
 
@@ -41,119 +43,127 @@
         </aside>
         <nav>
             <ul class="nav-crm">
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/airplay.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/Add Users 24px.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/Sidebar 24px.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><span></span></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/Frame 25.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/Squares.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/list.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/Link 16px.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/diag.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/rupor.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/settings.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/korzina.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/Info 24px.svg" alt=""></button></li>
-                <li class="nav-list-crm"><button class="nav-btn-crm"><img src="img/video.svg" alt=""></button></li>
+                <li class="nav-list-crm"><span class="btn-crm airplay"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm user"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm sidebar"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm inbox"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm frame"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm squares"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm list"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm link"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm diag"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm rupor"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm setting"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm trash"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm info"></span></li>
+                <li class="nav-list-crm"><span class="btn-crm video"></span></li>
             </ul>
         </nav>
-        <div class="container-info">
-            <div class="block-header"> <span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
-            <div class="wrap-container">
-                <div class="block-nav">
-                    <ul class="block-contacts">
-                        <li class="list-contacts">Контакты</li>
-                        <li class="list-contacts hover-list">Отделы</li>
-                        <li class="list-contacts hover-list">Группы клиентов</li>
-                    </ul>
-                    <ul class="block-order">
-                        <li class="list-order">Заказы</li>
-                        <li class="list-order hover-list">Статусы заказов</li>
-                        <li class="list-order hover-list">Способы оплаты</li>
-                        <li class="list-order hover-list">Способы доставки</li>
-                        <li class="list-order hover-list">Аутсорсинг</li>
-                    </ul>
-                    <ul class="block-catalog">
-                        <li class="list-catalog">Каталог</li>
-                        <li class="list-catalog hover-list">Категории товаров</li>
-                        <li class="list-catalog hover-list">Товары</li>
-                        <li class="list-catalog hover-list">Производители</li>
-                        <li class="list-catalog hover-list">Валюта</li>
-                        <li class="list-catalog hover-list">Сайты</li>
-                        <li class="list-catalog hover-list">Категории атрибутов</li>
-                        <li class="list-catalog hover-list">Атрибуты</li>
-                        <li class="list-catalog hover-list">Цвета товаров</li>
-                        <li class="list-catalog hover-list">Страны</li>
-                    </ul>
-                </div>
-                <div class="block-nav2">
-                    <ul class="block-warehouse">
-                        <li class="list-warehouse">Склады</li>
-                        <li class="list-warehouse hover-list">Поставщики</li>
-                    </ul>
-                </div>
-                <div class="block-department">
-                    <div class="department-header">Отделы<span class="btnplus"></span></div>
-                    <div class="wrap-container">
-                        <ul class="department-id">
-                            <li class="list-id">Id</li>
-                            <li class="list-id">1</li>
-                            <li class="list-id">2</li>
-                            <li class="list-id">3</li>
-                            <li class="list-id">4</li>
-                            <li class="list-id">11</li>
+        <div class="container-info custom-scroll_container">
+            <div class="custom-scroll_inner">
+                <div class="block-header"> <span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
+                <div class="wrap-container">
+                    <div class="block-nav">
+                        <ul class="block-contacts">
+                            <li class="list-contacts">Контакты</li>
+                            <li class="list-contacts hover-list">Отделы</li>
+                            <li class="list-contacts hover-list">Группы клиентов</li>
                         </ul>
-                        <ul class="department-name">
-                            <li class="list-name">Название</li>
-                            <li class="list-name">Розничный магазин</li>
-                            <li class="list-name">Оптовый магазин</li>
-                            <li class="list-name">Отдел АОЭ</li>
-                            <li class="list-name">Black slave</li>
-                            <li class="list-name">Test</li>
+                        <ul class="block-order">
+                            <li class="list-order">Заказы</li>
+                            <li class="list-order hover-list">Статусы заказов</li>
+                            <li class="list-order hover-list">Способы оплаты</li>
+                            <li class="list-order hover-list">Способы доставки</li>
+                            <li class="list-order hover-list">Аутсорсинг</li>
                         </ul>
-                        <ul class="department-description">
-                            <li class="list-description">Описание</li>
-                            <li class="list-description">г. Киев</li>
-                            <li class="list-description">г. Днепропетровск, ул. Димитр...</li>
-                            <li class="list-description">2</li>
-                            <li class="list-description">Часів Яр, вул Дніпровська, 30</li>
-                            <li class="list-description">2</li>
-                        </ul>
-                        <ul class="department-email">
-                            <li class="list-email">E-mail</li>
-                            <li class="list-email">office1@gmail.com</li>
-                            <li class="list-email">office2@gmail.com</li>
-                            <li class="list-email">2</li>
-                            <li class="list-email">black-office slave@gmail.com</li>
-                            <li class="list-email">2</li>
-                        </ul>
-                        <ul class="department-sort">
-                            <li class="list-sort">Sort</li>
-                            <li class="list-sort">1</li>
-                            <li class="list-sort">2</li>
-                            <li class="list-sort">3</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">5</li>
+                        <ul class="block-catalog">
+                            <li class="list-catalog">Каталог</li>
+                            <li class="list-catalog hover-list">Категории товаров</li>
+                            <li class="list-catalog hover-list">Товары</li>
+                            <li class="list-catalog hover-list">Производители</li>
+                            <li class="list-catalog hover-list">Валюта</li>
+                            <li class="list-catalog hover-list">Сайты</li>
+                            <li class="list-catalog hover-list">Категории атрибутов</li>
+                            <li class="list-catalog hover-list">Атрибуты</li>
+                            <li class="list-catalog hover-list">Цвета товаров</li>
+                            <li class="list-catalog hover-list">Страны</li>
                         </ul>
                     </div>
-                    <div class="department-header">Изменить</div>
-                    <div class="wrap-container-change">
-                        <ul class="department-change">
-                            <li class="department-change-name">Название отдела</li>
-                            <li class="dt-name-input"><input type="text" placeholder="Ввод"></li>
-                            <li class="department-change-addres">Адрес</li>
-                            <li class="dt-addres-input"><input type="text" placeholder="Ввод"></li>
-                        </ul>
-                        <ul class="department-change-email">
-                            <li class="dt-email">E-mail</li>
-                            <li class="dt-email-input"><input type="text" placeholder="Ввод"></li>
+                    <div class="block-nav2">
+                        <ul class="block-warehouse">
+                            <li class="list-warehouse">Склады</li>
+                            <li class="list-warehouse hover-list">Поставщики</li>
                         </ul>
                     </div>
-                    <div class="btn-save-close">Сохранить</div>
+                    <div class="block-department">
+                        <div class="department-header">Отделы<span class="btnplus"></span></div>
+                        <div class="wrap-container">
+                            <ul class="department-id">
+                                <li class="list-id">Id</li>
+                                <li class="list-id">1</li>
+                                <li class="list-id">2</li>
+                                <li class="list-id">3</li>
+                                <li class="list-id">4</li>
+                                <li class="list-id">11</li>
+                            </ul>
+                            <ul class="department-name">
+                                <li class="list-name">Название</li>
+                                <li class="list-name">Розничный магазин</li>
+                                <li class="list-name">Оптовый магазин</li>
+                                <li class="list-name">Отдел АОЭ</li>
+                                <li class="list-name">Black slave</li>
+                                <li class="list-name">Test</li>
+                            </ul>
+                            <ul class="department-description">
+                                <li class="list-description">Описание</li>
+                                <li class="list-description">г. Киев</li>
+                                <li class="list-description">г. Днепропетровск, ул. Димитр...</li>
+                                <li class="list-description">2</li>
+                                <li class="list-description">Часів Яр, вул Дніпровська, 30</li>
+                                <li class="list-description">2</li>
+                            </ul>
+                            <ul class="department-email">
+                                <li class="list-email">E-mail</li>
+                                <li class="list-email">office1@gmail.com</li>
+                                <li class="list-email">office2@gmail.com</li>
+                                <li class="list-email">2</li>
+                                <li class="list-email">black-office slave@gmail.com</li>
+                                <li class="list-email">2</li>
+                            </ul>
+                            <ul class="department-sort">
+                                <li class="list-sort">Sort</li>
+                                <li class="list-sort">1</li>
+                                <li class="list-sort">2</li>
+                                <li class="list-sort">3</li>
+                                <li class="list-sort">4</li>
+                                <li class="list-sort">5</li>
+                            </ul>
+                        </div>
+                        <div class="department-header">Изменить</div>
+                        <div class="wrap-container-change">
+                            <ul class="department-change">
+                                <li class="department-change-name">Название отдела</li>
+                                <li class="dt-name-input"><input type="text" placeholder="Ввод"></li>
+                                <li class="department-change-addres">Адрес</li>
+                                <li class="dt-addres-input"><input type="text" placeholder="Ввод"></li>
+                            </ul>
+                            <ul class="department-change-email">
+                                <li class="dt-email">E-mail</li>
+                                <li class="dt-email-input"><input type="text" placeholder="Ввод"></li>
+                            </ul>
+                        </div>
+                        <div class="btn-save-close">Сохранить</div>
+                    </div>
                 </div>
             </div>
+            <div class="custom-scroll_bar"></div>
+            <div class="custom-scroll_bar-x"></div>
         </div>
     </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.custom.scroll.js"></script>
+    <script src="js/custom.scroll.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
