@@ -25,6 +25,13 @@ html {
                 margin-left: 100px;
                 margin-right: 50px;
             }
+            &:hover {
+                opacity: 0.4;
+                transition: 0.3s;
+                -o-transition: 0.3s;
+                -webkit-transition: 0.3s;
+                -moz-transition: 0.3s;
+            }
         }
     }
     .logo-position {
@@ -98,13 +105,13 @@ html {
 .nav-crm {
     position: absolute;
     width: 49px;
-    height: 521px;
+    height: 80%;
     background: rgba(81, 81, 81, 0.7);
     box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
     padding-left: 0;
     margin: 0;
     list-style: none;
-    top: 120px;
+    top: 10%;
     left: 40px;
     z-index: 99999;
     align-items: center;
@@ -112,13 +119,13 @@ html {
     backdrop-filter: blur(4px);
     .nav-list-crm {
         text-align: center;
-        margin-bottom: 12px;
+        margin-bottom: 2.5vh;
         transition: 0.3s;
         -o-transition: 0.3s;
         -webkit-transition: 0.3s;
         -moz-transition: 0.3s;
         &:first-child {
-            margin-top: 22px;
+            margin-top: 5vh;
         }
         &:hover {
             background-color: #FFE600;
@@ -145,6 +152,7 @@ html {
 .container-info {
     margin-left: 72px;
     margin-top: 20px;
+    width: 100%;
     .main-setting {
         margin-right: 20px;
         cursor: pointer;
@@ -249,15 +257,22 @@ html {
     }
 }
 
+.block-nav2 {
+    margin-left: 20px;
+    position: relative;
+    left: 20px;
+}
+
 .wrap-container {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .block-warehouse {
     list-style: none;
     padding-left: 0;
     margin: 0;
-    margin-left: 70px;
     margin-top: 40px;
     .list-warehouse {
         font-size: 14px;
@@ -269,6 +284,112 @@ html {
             font-weight: 600;
             margin-bottom: 15px;
             opacity: 1;
+        }
+    }
+}
+
+.block-department {
+    margin-top: 40px;
+    margin-right: 10%;
+    .department-header {
+        text-align: center;
+        position: relative;
+        .btnplus {
+            background-image: url('../img/btnplus-black.svg');
+            width: 16px;
+            height: 15px;
+            position: absolute;
+            right: -30px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        &:after {
+            content: '';
+            width: 238px;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            right: 0;
+            top: 8px;
+        }
+        &:before {
+            content: '';
+            width: 238px;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+    }
+    ul {
+        margin-right: 15px;
+        list-style: none;
+        padding-left: 0;
+        li {
+            margin-bottom: 8px;
+            &:first-child {
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+            font-weight: 300;
+        }
+    }
+    .list-id {
+        text-align: center;
+    }
+    .list-sort {
+        text-align: center;
+    }
+    .department-change-addres {
+        font-weight: 500;
+        margin-top: -5px;
+        position: relative;
+        top: 16px;
+        left: 6px;
+    }
+    .department-change-name {
+        position: relative;
+        top: 23px;
+        left: 6px;
+    }
+    .dt-email {
+        position: relative;
+        top: 23px;
+        left: 6px;
+    }
+    input {
+        z-index: 1;
+        height: 26px;
+        width: 321px;
+        background-color: #F1F1F1;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        &::placeholder {
+            font-size: 12px;
+            text-align: right;
+            margin-right: 5px;
+        }
+    }
+    .btn-save-close {
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        cursor: pointer;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        text-align: right;
+        margin-right: 20px;
+        &:before {
+            background-image: url('../img/accept-black.svg');
+            width: 12px;
+            height: 9px;
+            position: absolute;
+            content: '';
+            top: 4px;
+            right: 80px;
         }
     }
 }
