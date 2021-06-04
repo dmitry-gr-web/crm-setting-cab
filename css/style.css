@@ -615,7 +615,7 @@ html {
 .wrap {
   position: relative;
   display: flex;
-  height: 94%;
+  height: 95%;
   z-index: 1;
 }
 
@@ -837,13 +837,22 @@ html {
   font-weight: 500;
 }
 .block-department .list-email {
-  display: block;
+  width: 216px;
+  height: 18px;
 }
 .block-department .list-id {
   text-align: center;
+  height: 18px;
+  width: 20px;
 }
 .block-department .list-sort {
   text-align: center;
+  width: 31px;
+  height: 18px;
+}
+.block-department .list-description {
+  width: 243px;
+  height: 18px;
 }
 .block-department .department-change-addres {
   font-weight: 500;

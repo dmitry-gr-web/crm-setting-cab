@@ -279,7 +279,7 @@ html {
 .wrap {
     position: relative;
     display: flex;
-    height: 94%;
+    height: 95%;
     z-index: 1;
 }
 
@@ -502,13 +502,22 @@ html {
         }
     }
     .list-email {
-        display: block;
+        width: 216px;
+        height: 18px;
     }
     .list-id {
         text-align: center;
+        height: 18px;
+        width: 20px;
     }
     .list-sort {
         text-align: center;
+        width: 31px;
+        height: 18px;
+    }
+    .list-description {
+        width: 243px;
+        height: 18px;
     }
     .department-change-addres {
         font-weight: 500;
