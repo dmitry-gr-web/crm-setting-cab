@@ -1266,6 +1266,7 @@ html {
   left: -100px;
   top: 0;
   color: white;
+  display: none;
 }
 .block-status-order .block-pick-color .header-pick-color {
   font-size: 18px;
@@ -1280,15 +1281,19 @@ html {
   margin: 0;
   margin-left: 25px;
 }
-.block-status-order .block-pick-color .wrap-container .selected-color:first-child {
-  font-weight: 600;
-}
 .block-status-order .block-pick-color .wrap-container .selected-color li {
   font-size: 14px;
+}
+.block-status-order .block-pick-color .wrap-container .selected-color li:first-child {
+  font-weight: 600;
+  font-size: 16px;
 }
 .block-status-order .block-pick-color .wrap-container .free-color {
   margin: 0;
   margin-left: 40px;
+}
+.block-status-order .block-pick-color .wrap-container .free-color li:first-child {
+  font-weight: 600;
 }
 .block-status-order .block-pick-color .footer-pick-color {
   font-size: 14px;

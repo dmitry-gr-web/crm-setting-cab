@@ -7,6 +7,9 @@ $(".btnplus2").click(function() {
 $(".btnplus3").click(function() {
     $('.status-change-toggle').toggle(200);
 });
+$(".status-color").click(function() {
+    $('.block-pick-color').toggle(200);
+});
 $("#otdel-link").click(function() {
     let arr = $('.add');
     arr.map(x => $(".add").removeClass('block-hide-show'));

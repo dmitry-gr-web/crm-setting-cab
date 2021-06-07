@@ -916,6 +916,7 @@ html {
         left: -100px;
         top: 0;
         color: white;
+        display: none;
         .header-pick-color {
             font-size: 18px;
             margin-left: 25px;
@@ -927,16 +928,22 @@ html {
             .selected-color {
                 margin: 0;
                 margin-left: 25px;
-                &:first-child {
-                    font-weight: 600;
-                }
                 li {
                     font-size: 14px;
+                    &:first-child {
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
                 }
             }
             .free-color {
                 margin: 0;
                 margin-left: 40px;
+                li {
+                    &:first-child {
+                        font-weight: 600;
+                    }
+                }
             }
         }
         .footer-pick-color {
