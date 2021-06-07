@@ -1,0 +1,37 @@
+@mixin breakpoint($point) {
+    @if $point==lg {
+        @media (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if $point==md {
+        @media (max-width: 800px) {
+            @content;
+        }
+    }
+    @else if $point==sm {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+    @else if $point==lgh {
+        @media (max-height: 860px) {
+            @content;
+        }
+    }
+    @else if $point==lghs {
+        @media (max-height: 800px) {
+            @content;
+        }
+    }
+    @else if $point==mdh {
+        @media (max-height: 750px) {
+            @content;
+        }
+    }
+}
+
+// @include breakpoint (sm) {
+//     display: flex;
+//     height: 62.5px;
+// }

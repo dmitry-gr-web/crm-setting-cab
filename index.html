@@ -59,22 +59,22 @@
                 <li class="nav-list-crm"><span class="btn-crm video"></span></li>
             </ul>
         </nav>
-        <div class="container-info custom-scroll_container">
+        <div class="container-info custom-scroll_container" id="container-scroll">
             <div class="custom-scroll_inner">
                 <div class="block-header"> <span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
                 <div class="wrap-container">
                     <div class="block-nav">
                         <ul class="block-contacts">
                             <li class="list-contacts">Контакты</li>
-                            <li class="list-contacts hover-list">Отделы</li>
-                            <li class="list-contacts hover-list">Группы клиентов</li>
+                            <li class="selected list-contacts" id="otdel-link">Отделы</li>
+                            <li class="selected list-contacts" id="group-client-link">Группы клиентов</li>
                         </ul>
                         <ul class="block-order">
                             <li class="list-order">Заказы</li>
-                            <li class="list-order hover-list">Статусы заказов</li>
-                            <li class="list-order hover-list">Способы оплаты</li>
-                            <li class="list-order hover-list">Способы доставки</li>
-                            <li class="list-order hover-list">Аутсорсинг</li>
+                            <li class="selected list-order" id="status-order-link">Статусы заказов</li>
+                            <li class="selected list-order">Способы оплаты</li>
+                            <li class="selected list-order">Способы доставки</li>
+                            <li class="selected list-order">Аутсорсинг</li>
                         </ul>
                         <ul class="block-catalog">
                             <li class="list-catalog">Каталог</li>
@@ -88,14 +88,12 @@
                             <li class="list-catalog hover-list">Цвета товаров</li>
                             <li class="list-catalog hover-list">Страны</li>
                         </ul>
-                    </div>
-                    <div class="block-nav2">
                         <ul class="block-warehouse">
                             <li class="list-warehouse">Склады</li>
                             <li class="list-warehouse hover-list">Поставщики</li>
                         </ul>
                     </div>
-                    <div class="block-department">
+                    <div class="add block-department">
                         <div class="department-header">Отделы<span class="btnplus"></span></div>
                         <div class="wrap-container">
                             <ul class="department-id">
@@ -139,24 +137,229 @@
                                 <li class="list-sort">5</li>
                             </ul>
                         </div>
-                        <div class="department-header">Изменить</div>
-                        <div class="wrap-container-change">
-                            <ul class="department-change">
-                                <li class="department-change-name">Название отдела</li>
-                                <li class="dt-name-input"><input type="text" placeholder="Ввод"></li>
-                                <li class="department-change-addres">Адрес</li>
-                                <li class="dt-addres-input"><input type="text" placeholder="Ввод"></li>
+                        <div class="department-change-toggle">
+                            <div class="department-header">Изменить</div>
+                            <div class="wrap-container-change">
+                                <ul class="department-change">
+                                    <li class="department-change-name">Название отдела</li>
+                                    <li class="dt-name-input"><input type="text" placeholder="Ввод"></li>
+                                    <li class="department-change-addres">Адрес</li>
+                                    <li class="dt-addres-input"><input type="text" placeholder="Ввод"></li>
+                                </ul>
+                                <ul class="department-change-email">
+                                    <li class="dt-email">E-mail</li>
+                                    <li class="dt-email-input"><input type="text" placeholder="Ввод"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-save-close">Сохранить</div>
+                    </div>
+                    <div class="add block-clients">
+                        <div class="clients-header">Групы клиентов<span class="btnplus2"></span></div>
+                        <div class="wrap-container">
+                            <ul class="clients-id">
+                                <li class="list-id">Id</li>
+                                <li class="list-id">1</li>
+                                <li class="list-id">2</li>
+                                <li class="list-id">3</li>
+                                <li class="list-id">4</li>
                             </ul>
-                            <ul class="department-change-email">
-                                <li class="dt-email">E-mail</li>
-                                <li class="dt-email-input"><input type="text" placeholder="Ввод"></li>
+                            <ul class="clients-name">
+                                <li class="list-name">Название</li>
+                                <li class="list-name">Покупатель</li>
+                                <li class="list-name">Оптовик</li>
+                                <li class="list-name">Поставщики</li>
+                                <li class="list-name">База</li>
                             </ul>
+                            <ul class="clients-description">
+                                <li class="list-description">Описание</li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                            </ul>
+                            <ul class="clients-sort">
+                                <li class="list-sort">Sort</li>
+                                <li class="list-sort">1</li>
+                                <li class="list-sort">2</li>
+                                <li class="list-sort">3</li>
+                                <li class="list-sort">4</li>
+
+                            </ul>
+                        </div>
+                        <div class="clients-change-toggle">
+                            <div class="clients-header">Изменить</div>
+                            <div class="wrap-container-change">
+                                <ul class="clients-change">
+                                    <li class="department-change-name">Название группы</li>
+                                    <li class="dt-name-input"><input type="text" placeholder="Ввод"></li>
+
+                                </ul>
+                                <ul class="clients-change-email">
+                                    <li class="dt-email">Описание</li>
+                                    <li class="dt-email-input"><input type="text" placeholder="Ввод"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-save-close">Сохранить</div>
+                    </div>
+                    <div class="add block-status-order">
+                        <div class="status-header">Групы клиентов<span class="btnplus3"></span></div>
+                        <div class="wrap-container">
+                            <ul class="status-id">
+                                <li class="list-id">Id</li>
+                                <li class="list-id">1</li>
+                                <li class="list-id">2</li>
+                                <li class="list-id">3</li>
+                                <li class="list-id">44</li>
+                                <li class="list-id">11</li>
+                                <li class="list-id">22</li>
+                                <li class="list-id">4</li>
+                                <li class="list-id">14</li>
+                                <li class="list-id">24</li>
+                                <li class="list-id">63</li>
+                                <li class="list-id">17</li>
+                                <li class="list-id">59</li>
+                            </ul>
+                            <ul class="status-name">
+                                <li class="list-name">Цвет и название</li>
+                                <li class="list-name">Утилизация</li>
+                                <li class="list-name">Успешно не выполнил</li>
+                                <li class="list-name">Успешно выполнен</li>
+                                <li class="list-name">Сдано</li>
+                                <li class="list-name">Принято</li>
+                                <li class="list-name">Отправлено</li>
+                                <li class="list-name">Отказ</li>
+                                <li class="list-name">Новый</li>
+                                <li class="list-name">Завершенно</li>
+                                <li class="list-name">Возврат товара (склад)</li>
+                                <li class="list-name">Деньги в пути</li>
+                                <li class="list-name">На контроле</li>
+                            </ul>
+                            <ul class="status-description">
+                                <li class="list-description">Атрибуция</li>
+                                <li class="list-description"><span><img src="img/Badge BG.svg" alt=""></span><span><img src="img/User 12px.svg" alt=""></span></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"><span><img src="img/User 12px.svg" alt=""></span></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"><span><img src="img/Badge BGplus.svg" alt=""></span></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                                <li class="list-description"></li>
+                            </ul>
+                            <ul class="status-nap">
+                                <li class="list-nap">Направление</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/russia.svg" alt=""> ru</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/kazakhstan.svg" alt=""> kz</li>
+                                <li class="list-nap"><img src="img/albania.svg" alt=""> alb</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                                <li class="list-nap"><img src="img/ukraine.svg" alt=""> ua</li>
+                            </ul>
+                            <ul class="status-sort">
+                                <li class="list-sort">Sort</li>
+                                <li class="list-sort">1</li>
+                                <li class="list-sort">2</li>
+                                <li class="list-sort">3</li>
+                                <li class="list-sort">44</li>
+                                <li class="list-sort">11</li>
+                                <li class="list-sort">22</li>
+                                <li class="list-sort">4</li>
+                                <li class="list-sort">14</li>
+                                <li class="list-sort">24</li>
+                                <li class="list-sort">63</li>
+                                <li class="list-sort">17</li>
+                                <li class="list-sort">59</li>
+                            </ul>
+                        </div>
+                        <div class="status-change-toggle">
+                            <div class="status-header">Изменить</div>
+                            <div class="wrap-container-change">
+                                <ul class="status-change">
+                                    <li class="status-local status-local-btn">Локализация:
+                                        <div class="dropdown-block">
+                                            <div class="btn"><span class="btn-span"><img src="img/ukraine.svg" alt="ua" class="list-img">ua</span></div>
+                                            <div class="scroll-position">
+                                                <div class="custom-scroll-pretty_container custom-scroll-pretty_hidden-x" id="local-btn-scroll">
+                                                    <div class="custom-scroll-pretty_inner">
+                                                        <ul class="ul-block">
+                                                            <li class="list list-hover"><img src="img/ukraine.svg" alt="ua" class="list-img">ua</li>
+                                                            <li class="list list-hover"><img src="img/russia.svg" alt="ru" class="list-img">ru</li>
+                                                            <li class="list list-hover"><img src="img/kazakhstan.svg" alt="kz" class="list-img">kz</li>
+                                                            <li class="list list-hover"><img src="img/albania.svg" alt="alb" class="list-img">alb</li>
+                                                            <li class="list list-hover"><img src="img/ukraine.svg" alt="ua" class="list-img">ua</li>
+                                                            <li class="list list-hover"><img src="img/albania.svg" alt="alb" class="list-img">alb</li>
+                                                            <li class="list list-hover"><img src="img/russia.svg" alt="ru" class="list-img">ru</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="custom-scroll-pretty_track-y">
+                                                    </div>
+                                                    <div class="custom-scroll-pretty_bar-y">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="status-color">Выбрать цвет: </li>
+                                </ul>
+                                <ul class="clients-change-email">
+                                    <li class="dt-email">Название</li>
+                                    <li class="dt-email-input"><input type="text" placeholder="Ввод"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block-pick-color">
+                            <div class="header-pick-color">Выбрать цвет<span>X</span></div>
+                            <div class="wrap-container">
+                                <ul class="selected-color">
+                                    <li>Выбран цвет</li>
+                                    <li class="">Утилизация</li>
+                                    <li class="">Успешно не выполнил</li>
+                                    <li class="">Успешно выполнен</li>
+                                    <li>Сдано</li>
+                                    <li>Принято</li>
+                                    <li>Отправлено</li>
+                                    <li>Отказ</li>
+                                    <li>Новый</li>
+                                    <li>Завершенно</li>
+                                    <li>Возврат товара (склад)</li>
+                                    <li>Деньги в пути</li>
+                                    <li>На контроле</li>
+                                </ul>
+                                <ul class="free-color">
+                                    <li>Свободный цвет</li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="footer-pick-color">Выберете цвет для “Название статуса”</div>
                         </div>
                         <div class="btn-save-close">Сохранить</div>
                     </div>
                 </div>
             </div>
-            <div class="custom-scroll_bar"></div>
+            <div class="custom-scroll_bar-y"></div>
             <div class="custom-scroll_bar-x"></div>
         </div>
     </div>
