@@ -50,23 +50,23 @@ html {
         .block-pages {
             margin-left: 90px;
             color: white;
-            opacity: 0.7;
+            // opacity: 0.7;
             font-size: 12px;
             @include breakpoint (sm) {
                 margin-left: 25px;
             }
             .pages-dropdown {
                 position: relative;
-                &:after {
-                    background-image: url('../img/arrow-white-down.svg');
-                    content: '';
-                    position: absolute;
-                    background-size: 100%;
-                    width: 6px;
-                    height: 3px;
-                    top: 5px;
-                    right: -10px;
-                }
+                // &:after {
+                //     background-image: url('../img/arrow-white-down.svg');
+                //     content: '';
+                //     position: absolute;
+                //     background-size: 100%;
+                //     width: 6px;
+                //     height: 3px;
+                //     top: 5px;
+                //     right: -10px;
+                // }
             }
             .pages-total {
                 margin-left: 15px;

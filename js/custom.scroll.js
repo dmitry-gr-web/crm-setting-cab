@@ -70,3 +70,27 @@ $('#status-scroll').customScroll({
     vertical: true,
     horizontal: true
 });
+$('#pages-dropdown-scroll').customScroll({
+    prefix: 'custom-scroll-pretty_',
+
+    /* vertical */
+    barMinHeight: 5,
+    offsetTop: 5,
+    offsetBottom: 5,
+    /* will be added to offsetBottom in case of horizontal scroll */
+    trackWidth: 10,
+
+    /* horizontal */
+    barMinWidth: 0,
+    offsetLeft: 0,
+    offsetRight: 0,
+    /* will be added to offsetRight in case of vertical scroll */
+    trackHeight: 0,
+
+    /* each bar will have custom-scroll_bar-x or y class */
+    barHtml: '<div />',
+
+    /* both vertical or horizontal bar can be disabled */
+    vertical: true,
+    horizontal: false
+});

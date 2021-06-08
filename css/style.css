@@ -389,7 +389,6 @@ html {
 .header-crm .logo-pages-wrap .block-pages {
   margin-left: 90px;
   color: white;
-  opacity: 0.7;
   font-size: 12px;
 }
 @media (max-width: 600px) {
@@ -399,16 +398,6 @@ html {
 }
 .header-crm .logo-pages-wrap .block-pages .pages-dropdown {
   position: relative;
-}
-.header-crm .logo-pages-wrap .block-pages .pages-dropdown:after {
-  background-image: url("../img/arrow-white-down.svg");
-  content: "";
-  position: absolute;
-  background-size: 100%;
-  width: 6px;
-  height: 3px;
-  top: 5px;
-  right: -10px;
 }
 .header-crm .logo-pages-wrap .block-pages .pages-total {
   margin-left: 15px;
