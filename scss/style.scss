@@ -1310,11 +1310,18 @@ html {
         position: relative;
         top: 23px;
         left: 6px;
+        font-size: 12px;
+        font-weight: 500;
     }
     .dt-email {
         position: relative;
-        top: 23px;
+        top: 16px;
         left: 6px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .delivery-change {
+        margin: 0;
     }
     input {
         z-index: 1;

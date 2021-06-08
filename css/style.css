@@ -1649,11 +1649,18 @@ html {
   position: relative;
   top: 23px;
   left: 6px;
+  font-size: 12px;
+  font-weight: 500;
 }
 .block-delivery-method .dt-email {
   position: relative;
-  top: 23px;
+  top: 16px;
   left: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.block-delivery-method .delivery-change {
+  margin: 0;
 }
 .block-delivery-method input {
   z-index: 1;
