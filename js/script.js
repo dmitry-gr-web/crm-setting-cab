@@ -8,8 +8,15 @@ $(".btnplus3").click(function() {
     $('.status-change-toggle').toggle(200);
 });
 $(".status-color").click(function() {
-    $('.block-pick-color').toggle(200);
+    $('.block-pick-color').toggle();
+
 });
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("block-status-order"))
+//         $(".block-pick-color").css('display', 'none');
+// });
+
 $("#otdel-link").click(function() {
     let arr = $('.add');
     arr.map(x => $(".add").removeClass('block-hide-show'));
@@ -35,6 +42,15 @@ $("#status-order-link").click(function() {
     let arry = $('.selected');
     arry.map(x => $('.selected').removeClass('hover-list-permanent'));
     $('.block-status-order').toggleClass('block-hide-show');
+    $(this).addClass('hover-list-permanent');
+});
+$("#block-payment-method").click(function() {
+    let arr = $('.add');
+    arr.map(x => $(".add").removeClass('block-hide-show'));
+
+    let arry = $('.selected');
+    arry.map(x => $('.selected').removeClass('hover-list-permanent'));
+    $('.block-payment-method').toggleClass('block-hide-show');
     $(this).addClass('hover-list-permanent');
 });
 //btn

@@ -1,75 +1,66 @@
 @import '_adaptive';
-.custom-scroll_container {
-    @include breakpoint (lg) {
+.container-info {
+    .custom-scroll_container {
         overflow: hidden !important;
-        position: relative;
+        position: absolute;
+        height: 100%;
+        width: 100%;
     }
-}
-
-.custom-scroll_inner {
-    @include breakpoint (lg) {
+    .custom-scroll_inner {
         overflow: scroll;
-        *position: relative;
+        *position: absolute;
         /* ie7 fix */
         *left: 0;
         *right: 0;
-        height: 92%;
+        height: 93%;
         width: 97%;
     }
-}
-
-.custom-scroll_inner::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.custom-scroll_inner {
-    -ms-overflow-style: none;
-}
-
-.custom-scroll_bar-y,
-.custom-scroll_bar-x {
-    cursor: default;
-    position: absolute;
-    border-radius: 10px;
-    z-index: 1;
-    background: #888;
-    opacity: .4;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    transition: opacity .2s;
-}
-
-.custom-scroll_bar-y {
-    top: 0px;
-    right: 1px;
-    width: 10px;
-}
-
-.custom-scroll_bar-x {
-    left: 0px;
-    bottom: 40px;
-    height: 10px;
-}
-
-.custom-scroll_bar-y:hover,
-.custom-scroll_bar-x:hover {
-    opacity: .7;
-}
-
-.custom-scroll_bar-y:active,
-.custom-scroll_bar-x:active {
-    opacity: 1;
-}
-
-.custom-scroll_hidden-y>.custom-scroll_bar-y,
-.custom-scroll_hidden-x>.custom-scroll_bar-x {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .2s, visibility step-end .3s;
+    .custom-scroll_inner::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .custom-scroll_inner {
+        -ms-overflow-style: none;
+    }
+    .custom-scroll_bar-y,
+    .custom-scroll_bar-x {
+        cursor: default;
+        position: absolute;
+        border-radius: 10px;
+        z-index: 1;
+        background: #888;
+        opacity: .4;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        transition: opacity .2s;
+    }
+    .custom-scroll_bar-y {
+        top: 0px;
+        right: 1px;
+        width: 10px;
+    }
+    .custom-scroll_bar-x {
+        left: 0px;
+        bottom: 40px;
+        height: 10px;
+    }
+    .custom-scroll_bar-y:hover,
+    .custom-scroll_bar-x:hover {
+        opacity: .7;
+    }
+    .custom-scroll_bar-y:active,
+    .custom-scroll_bar-x:active {
+        opacity: 1;
+    }
+    .custom-scroll_hidden-y>.custom-scroll_bar-y,
+    .custom-scroll_hidden-x>.custom-scroll_bar-x {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s, visibility step-end .3s;
+    }
 }
 
 .status-local-btn {
@@ -380,5 +371,70 @@
         left: 0;
         visibility: hidden;
         transition: opacity .3s, height .3s, top .1s, visibility step-end .3s;
+    }
+}
+
+.block-status-order {
+    position: relative;
+    .custom-scroll_container {
+        overflow: hidden !important;
+        position: relative;
+        height: 377px;
+        width: 718px;
+    }
+    .custom-scroll_inner {
+        overflow: scroll;
+        *position: absolute;
+        /* ie7 fix */
+        *left: 0;
+        *right: 0;
+        height: 90%;
+        width: 97%;
+    }
+    .custom-scroll_inner::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .custom-scroll_inner {
+        -ms-overflow-style: none;
+    }
+    .custom-scroll_bar-y,
+    .custom-scroll_bar-x {
+        cursor: default;
+        position: absolute;
+        border-radius: 10px;
+        z-index: 1;
+        background: #888;
+        opacity: .4;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        transition: opacity .2s;
+    }
+    .custom-scroll_bar-y {
+        top: 0px;
+        right: 1px;
+        width: 10px;
+    }
+    .custom-scroll_bar-x {
+        left: 0px;
+        bottom: 40px;
+        height: 10px;
+    }
+    .custom-scroll_bar-y:hover,
+    .custom-scroll_bar-x:hover {
+        opacity: .7;
+    }
+    .custom-scroll_bar-y:active,
+    .custom-scroll_bar-x:active {
+        opacity: 1;
+    }
+    .custom-scroll_hidden-y>.custom-scroll_bar-y,
+    .custom-scroll_hidden-x>.custom-scroll_bar-x {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s, visibility step-end .3s;
     }
 }
