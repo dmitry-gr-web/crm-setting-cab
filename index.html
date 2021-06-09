@@ -224,7 +224,7 @@
                     <div class="btn-save-close">Сохранить</div>
                 </div>
                 <div class="add block-status-order">
-                    <div class="status-header">Групы клиентов<span class="btnplus3"></span></div>
+                    <div class="status-header">Статусы заказов<span class="btnplus3"></span></div>
                     <div class="custom-scroll-pretty_container custom-scroll-pretty_hidden-x" id="status-scroll">
                         <div class="custom-scroll-pretty_inner">
                             <div class="wrap-container">
@@ -368,7 +368,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="status-color">Выбрать цвет: </li>
+                                <li class="status-color">Выбрать цвет: <span class="current-color"></span></li>
                             </ul>
                             <ul class="status-change-email">
                                 <li class="dt-email">Название</li>
@@ -481,7 +481,7 @@
                             <li class="list-description"><span><img src="img/ukraine.svg" alt="">ua</span></li>
                             <li class="list-description"><span><img src="img/russia.svg" alt="">ru</span></li>
                             <li class="list-description"><span><img src="img/ukraine.svg" alt="">ua</span></li>
-                            <li class="list-description"><span><img src="img/kazakhstan.svg" alt="">kz</span</li>
+                            <li class="list-description"><span><img src="img/kazakhstan.svg" alt="">kz</span></li>
                             <li class="list-description"><span><img src="img/albania.svg" alt="">alb</span></li>
                             <li class="list-description"><span><img src="img/ukraine.svg" alt="">ua</span></li>
                             <li class="list-description"><span><img src="img/ukraine.svg" alt="">ua</span></li>
@@ -538,6 +538,179 @@
                                     </div>
                                 </li>
                                 <li class="delivery-download-icon">Загрузить иконку <img src="img/icon-download.svg" alt="icon-dw"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn-save-close">Сохранить</div>
+                </div>
+                <div class="add block-product-category">
+                    <div class="product-header">Категории товаров<span class="btnplus5"></span></div>
+                    <div class="wrap-container" style="display: block;">
+                        <ul class="product-ul">
+                            <li class="product-list-header">
+                                <div class="product-name">Название</div>
+                                <div class="product-status">Статус</div>
+                                <div class="product-sort">Sort</div>
+                            </li>
+                        </ul>
+                        <ul class="product-ul">
+                            <li class="product-list">
+                                <div class="product-tv-shop"><img src="img/Marine.svg" alt="logo-shop"> Тв шоп</div>
+                                <div class="product-checkbox"><span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="product-sort-id">1</div>
+                            </li>
+                        </ul>
+
+                        <!-- <ul class="product-name">
+                            <li class="list-name">Название</li>
+                            <li class="list-name">
+                                <span><img src="img/Marine.svg" alt="logo-shop">ТВ Шоп</span>
+                            </li>
+                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
+                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
+                            <li class="list-name"><span><img src="img/folder.svg" alt="folder-logo">Оптовый магазин</span></li>
+                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Огород и сад</span></li>
+                            <li class="list-name"><span><img src="img/folder.svg" alt="folder-logo">Оптовый магазин</span></li>
+                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">ТВ Шоп</span></li>
+                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
+                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
+                            <li class="list-name"><span><img src="img/folder.svg" alt="folder-logo">Оптовый магазин</span></li>
+                        </ul>
+                        <ul class="product-description">
+                            <li class="list-description">Статус</li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                            <li class="list-description">
+                                <span class="switch-btn">
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="product-sort">
+                            <li class="list-sort">Sort</li>
+                            <li class="list-sort">1</li>
+                            <li class="list-sort">2</li>
+                            <li class="list-sort">3</li>
+                            <li class="list-sort">4</li>
+                            <li class="list-sort">4</li>
+                            <li class="list-sort">4</li>
+                            <li class="list-sort">4</li>
+                            <li class="list-sort">4</li>
+                            <li class="list-sort">4</li>
+                            <li class="list-sort">4</li>
+                        </ul> -->
+                    </div>
+                    <div class="product-change-toggle">
+                        <div class="product-header">Изменить</div>
+                        <div class="wrap-container-change">
+                            <ul class="product-change">
+                                <li class="product-change-name">Название</li>
+                                <li class="product-input"><input type="text" placeholder="Ввод"></li>
+                                <li class="product-local type-chose-btn">Тип:
+                                    <div class="dropdown-block">
+                                        <div class="btn"><span class="btn-span">Родительская</span></div>
+                                        <div class="scroll-position">
+                                            <div class="custom-scroll-pretty_container custom-scroll-pretty_hidden-x" id="type-chose-btn">
+                                                <div class="custom-scroll-pretty_inner">
+                                                    <ul class="ul-block">
+                                                        <li class="list list-hover">Родительская</li>
+                                                        <li class="list list-hover">Родительская</li>
+                                                        <li class="list list-hover">Подчиняемая</li>
+                                                        <li class="list list-hover">Не указано</li>
+                                                        <li class="list list-hover">Подчиняемая</li>
+                                                        <li class="list list-hover">Не указано</li>
+                                                        <li class="list list-hover">Подчиняемая</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="custom-scroll-pretty_track-y">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="product-change-local">
+                                <li class="product-sort-name">Подчиняется</li>
+                                <li class="product-sort-input"><input type="text" placeholder="Введите название категории"></li>
                             </ul>
                         </div>
                     </div>
