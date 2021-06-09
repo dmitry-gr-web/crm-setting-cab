@@ -1,27 +1,27 @@
-$('#container-scroll').customScroll({
-    prefix: 'custom-scroll_',
+// $('#container-scroll').customScroll({
+//     prefix: 'custom-scroll_',
 
-    /* vertical */
-    barMinHeight: 5,
-    offsetTop: 0,
-    offsetBottom: 30,
-    /* will be added to offsetBottom in case of horizontal scroll */
-    trackWidth: 10,
+//     /* vertical */
+//     barMinHeight: 5,
+//     offsetTop: 0,
+//     offsetBottom: 30,
+//     /* will be added to offsetBottom in case of horizontal scroll */
+//     trackWidth: 10,
 
-    /* horizontal */
-    barMinWidth: 5,
-    offsetLeft: 5,
-    offsetRight: 5,
-    /* will be added to offsetRight in case of vertical scroll */
-    trackHeight: 10,
+//     /* horizontal */
+//     barMinWidth: 5,
+//     offsetLeft: 5,
+//     offsetRight: 5,
+//     /* will be added to offsetRight in case of vertical scroll */
+//     trackHeight: 10,
 
-    /* each bar will have custom-scroll_bar-x or y class */
-    barHtml: '<div />',
+//     /* each bar will have custom-scroll_bar-x or y class */
+//     barHtml: '<div />',
 
-    /* both vertical or horizontal bar can be disabled */
-    vertical: true,
-    horizontal: true
-});
+//     /* both vertical or horizontal bar can be disabled */
+//     vertical: true,
+//     horizontal: true
+// });
 $('#local-btn-scroll').customScroll({
     prefix: 'custom-scroll-pretty_',
 
@@ -46,13 +46,37 @@ $('#local-btn-scroll').customScroll({
     vertical: true,
     horizontal: false
 });
-$('#status-scroll').customScroll({
-    prefix: 'custom-scroll_',
+$('#local-btn-scroll-2').customScroll({
+    prefix: 'custom-scroll-pretty_',
 
     /* vertical */
     barMinHeight: 5,
-    offsetTop: 0,
-    offsetBottom: 20,
+    offsetTop: 5,
+    offsetBottom: 5,
+    /* will be added to offsetBottom in case of horizontal scroll */
+    trackWidth: 10,
+
+    /* horizontal */
+    barMinWidth: 0,
+    offsetLeft: 0,
+    offsetRight: 0,
+    /* will be added to offsetRight in case of vertical scroll */
+    trackHeight: 0,
+
+    /* each bar will have custom-scroll_bar-x or y class */
+    barHtml: '<div />',
+
+    /* both vertical or horizontal bar can be disabled */
+    vertical: true,
+    horizontal: false
+});
+$('#status-scroll').customScroll({
+    prefix: 'custom-scroll-pretty_',
+
+    /* vertical */
+    barMinHeight: 5,
+    offsetTop: 50,
+    offsetBottom: 30,
     /* will be added to offsetBottom in case of horizontal scroll */
     trackWidth: 10,
 
@@ -68,7 +92,7 @@ $('#status-scroll').customScroll({
 
     /* both vertical or horizontal bar can be disabled */
     vertical: true,
-    horizontal: true
+    horizontal: false
 });
 $('#pages-dropdown-scroll').customScroll({
     prefix: 'custom-scroll-pretty_',

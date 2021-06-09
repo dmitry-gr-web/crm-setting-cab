@@ -312,9 +312,10 @@ html {
     z-index: 1;
 }
 
-.container-info {
+.container-info-settings {
     margin-left: 62px;
     margin-top: 20px;
+    margin-right: 10px;
     width: 100%;
     height: 100%;
     justify-content: space-between;
@@ -807,11 +808,11 @@ html {
         }
         li {
             margin-bottom: 8px;
+            font-weight: 300;
             &:first-child {
                 margin-bottom: 15px;
                 font-weight: 500;
             }
-            font-weight: 300;
         }
     }
     .status-change {
@@ -1215,14 +1216,17 @@ html {
     margin-right: 7%;
     margin-left: 20px;
     min-width: 718px;
-    display: block;
+    display: none;
     .wrap-container {
+        justify-content: flex-start;
+    }
+    .wrap-container-change {
         justify-content: flex-start;
     }
     .delivery-header {
         text-align: center;
         position: relative;
-        .btnplus2 {
+        .btnplus4 {
             background-image: url('../img/btnplus-black.svg');
             width: 16px;
             height: 15px;
@@ -1259,21 +1263,30 @@ html {
         }
         li {
             margin-bottom: 8px;
-            &:first-child {
-                margin-bottom: 15px;
-                font-weight: 500;
-            }
-            font-weight: 300;
         }
     }
     .list-name {
         position: relative;
         margin-left: 30px;
+        font-weight: 300;
+        font-size: 14px;
+        height: 18px;
+        width: 96px;
         span {
             position: relative;
             img {
                 position: absolute;
                 left: -20px;
+            }
+            .avtoluks-img {
+                height: 20px;
+                width: 30px;
+                left: -30px;
+            }
+            .sdek-img {
+                width: 20px;
+                height: 20px;
+                left: -25px;
             }
         }
     }
@@ -1281,47 +1294,60 @@ html {
         text-align: center;
         height: 18px;
         width: 20px;
+        font-weight: 300;
+        font-size: 14px;
     }
     .list-sort {
         text-align: center;
         width: 31px;
         height: 18px;
+        font-weight: 300;
+        font-size: 14px;
     }
     .list-description {
         max-width: 153px;
+        font-size: 14px;
         height: 18px;
+        width: 92px;
         span {
             position: relative;
             img {
                 position: relative;
-                top: 2px;
+                top: 3px;
                 margin-right: 7px;
             }
         }
     }
-    .department-change-addres {
-        font-weight: 500;
-        margin-top: -5px;
-        position: relative;
-        top: 16px;
-        left: 6px;
-    }
-    .department-change-name {
-        position: relative;
-        top: 23px;
-        left: 6px;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    .dt-email {
-        position: relative;
-        top: 16px;
-        left: 6px;
-        font-size: 12px;
-        font-weight: 500;
-    }
     .delivery-change {
         margin: 0;
+    }
+    .delivery-change-name {
+        margin-bottom: 15px;
+        font-weight: 500;
+        font-size: 12px;
+        position: relative;
+        top: 22px;
+    }
+    .delivery-sort-name {
+        font-size: 12px;
+        font-weight: 500;
+        position: relative;
+        top: 15px;
+    }
+    .delivery-local {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 27px;
+        height: 20px;
+    }
+    .delivery-download-icon {
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .delivery-change-local {
+        margin-top: 40px;
+        margin-left: 50px;
     }
     input {
         z-index: 1;
@@ -1346,7 +1372,7 @@ html {
         margin-bottom: 20px;
         text-align: right;
         margin-right: 20px;
-        bottom: -180px;
+        bottom: -170px;
         &:before {
             background-image: url('../img/accept-black.svg');
             width: 12px;
@@ -1357,7 +1383,7 @@ html {
             right: 80px;
         }
     }
-    .clients-change-toggle {
+    .delivery-change-toggle {
         display: none;
     }
 }

@@ -1,63 +1,41 @@
-.container-info .custom-scroll_container {
-  overflow: hidden !important;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+@media (max-width: 1300px) {
+  .container-info-settings {
+    overflow-x: scroll;
+  }
 }
-.container-info .custom-scroll_inner {
-  overflow: scroll;
-  *position: absolute;
-  /* ie7 fix */
-  *left: 0;
-  *right: 0;
-  height: 93%;
-  width: 97%;
+@media (max-height: 800px) {
+  .container-info-settings {
+    overflow-y: scroll;
+  }
 }
-.container-info .custom-scroll_inner::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+.container-info-settings::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-.container-info .custom-scroll_inner {
-  -ms-overflow-style: none;
+.container-info-settings::-webkit-scrollbar-button {
+  background-color: #666;
+  display: none;
 }
-.container-info .custom-scroll_bar-y,
-.container-info .custom-scroll_bar-x {
-  cursor: default;
-  position: absolute;
-  border-radius: 10px;
-  z-index: 1;
-  background: #888;
-  opacity: 0.4;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  transition: opacity 0.2s;
-}
-.container-info .custom-scroll_bar-y {
-  top: 0px;
-  right: 1px;
+.container-info-settings::-webkit-scrollbar-track {
+  background-color: #999;
   width: 10px;
-}
-.container-info .custom-scroll_bar-x {
-  left: 0px;
-  bottom: 40px;
   height: 10px;
 }
-.container-info .custom-scroll_bar-y:hover,
-.container-info .custom-scroll_bar-x:hover {
-  opacity: 0.7;
+.container-info-settings::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
 }
-.container-info .custom-scroll_bar-y:active,
-.container-info .custom-scroll_bar-x:active {
-  opacity: 1;
+.container-info-settings::-webkit-scrollbar-thumb {
+  height: 0px;
+  top: 0;
+  bottom: 20px;
+  background-color: grey;
+  border-radius: 10px;
 }
-.container-info .custom-scroll_hidden-y > .custom-scroll_bar-y,
-.container-info .custom-scroll_hidden-x > .custom-scroll_bar-x {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility step-end 0.3s;
+.container-info-settings::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+.container-info-settings::-webkit-resizer {
+  background-color: #666;
 }
 
 .pages-dropdown {
@@ -232,11 +210,11 @@
   transition: opacity 0.3s, height 0.3s, top 0.1s, visibility step-end 0.3s;
 }
 
-.status-local-btn {
+.status-change .status-local-btn {
   position: relative;
   /* changes */
 }
-.status-local-btn .custom-scroll-pretty_container {
+.status-change .status-local-btn .custom-scroll-pretty_container {
   overflow: hidden !important;
   position: absolute;
   height: 103px;
@@ -246,39 +224,43 @@
   backdrop-filter: blur(4px);
   z-index: 2;
 }
-.status-local-btn .dropdown-block {
+.status-change .status-local-btn .dropdown-block {
   cursor: pointer;
   display: inline-block;
   margin-left: 10px;
+  font-weight: 300;
+  font-size: 14px;
 }
-.status-local-btn .scroll-position {
+.status-change .status-local-btn .scroll-position {
   position: absolute;
-  top: -2px;
-  left: 103px;
+  top: -4px;
+  left: 114px;
   opacity: 0;
   visibility: hidden;
   z-index: 2;
 }
-.status-local-btn .ul-block {
+.status-change .status-local-btn .ul-block {
   list-style: none;
   padding-left: 14px;
   margin: 0;
 }
-.status-local-btn .btn-span {
+.status-change .status-local-btn .btn-span {
   position: relative;
 }
-.status-local-btn .list {
+.status-change .status-local-btn .list {
   padding: 3.5px;
   cursor: pointer;
   position: relative;
+  margin-bottom: 0;
 }
-.status-local-btn .list:first-child {
+.status-change .status-local-btn .list:first-child {
   position: relative;
   left: -15px;
   padding-bottom: 8px;
   padding-left: 5px;
+  margin-bottom: 0;
 }
-.status-local-btn .list:first-child::after {
+.status-change .status-local-btn .list:first-child::after {
   display: inline-block;
   content: "";
   width: 10px;
@@ -288,105 +270,22 @@
   position: relative;
   top: -2px;
 }
-.status-local-btn .list-hover:hover::before {
+.status-change .status-local-btn .list-hover:hover::before {
   content: "";
   width: 3px;
   height: 3px;
   border-radius: 3px;
   position: absolute;
-  top: 13px;
+  top: 11px;
   left: -5px;
   background-color: black;
 }
-.status-local-btn .user-decline .list-hover:hover::before {
-  top: 7px;
-}
-.status-local-btn .otdel .list:first-child {
-  font-weight: 300;
-}
-.status-local-btn .otdel .list {
-  font-weight: 400;
-}
-.status-local-btn .otdel .list:hover::before {
-  top: 7px;
-}
-.status-local-btn .list-img {
+.status-change .status-local-btn .list-img {
   margin-right: 5px;
   position: relative;
   top: 2px;
 }
-.status-local-btn .status-color {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 21%;
-  background-color: #FFCF00;
-  top: 18px;
-}
-.status-local-btn .status .list:first-child::before {
-  content: "";
-  width: 37px;
-  height: 2px;
-  position: absolute;
-  background-color: #FFCF00;
-  top: 17px;
-  left: 5px;
-}
-.status-local-btn .status .list:nth-child(2)::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: absolute;
-  background-color: #FFCF00;
-  left: -10px;
-}
-.status-local-btn .status .list:nth-child(3)::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: absolute;
-  background-color: #00CC00;
-  left: -10px;
-}
-.status-local-btn .status .list:nth-child(4)::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: absolute;
-  background-color: #FF0000;
-  left: -10px;
-}
-.status-local-btn .status .list:nth-child(5)::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: absolute;
-  background-color: #00B9FF;
-  left: -10px;
-}
-.status-local-btn .status .list:nth-child(6)::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: absolute;
-  background-color: #00CC00;
-  left: -10px;
-}
-.status-local-btn .status .list:nth-child(7)::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  position: absolute;
-  background-color: #00B9FF;
-  left: -10px;
-}
-.status-local-btn .btn-span:after {
+.status-change .status-local-btn .btn-span:after {
   display: inline-block;
   content: "";
   width: 10px;
@@ -396,50 +295,11 @@
   position: relative;
   top: -2px;
 }
-.status-local-btn .pay .btn-span:after {
-  left: 3px;
-}
-.status-local-btn .pay .coin-position {
-  width: 13px;
-  height: 13px;
-  top: 2px;
-}
-.status-local-btn .pay .list:nth-child(2) {
-  left: -2px;
-}
-.status-local-btn .pay .list:nth-child(5) {
-  left: -2px;
-}
-.status-local-btn .pay .list-hover:hover::before {
-  top: 10px;
-}
-.status-local-btn .mail .scroll-position {
-  left: -15px;
-}
-.status-local-btn .mail .list:nth-child(2) {
-  left: -5px;
-}
-.status-local-btn .mail .list:nth-child(4) {
-  left: -3px;
-}
-.status-local-btn .mail .list:nth-child(5) {
-  left: -5px;
-}
-.status-local-btn .mail .list:nth-child(7) {
-  left: -3px;
-}
-.status-local-btn .mail .rus-icon {
-  width: 16px;
-  height: 16px;
-}
-.status-local-btn .user-select .list-hover:hover::before {
-  top: 7px;
-}
-.status-local-btn .toggle {
+.status-change .status-local-btn .toggle {
   visibility: visible;
   opacity: 1;
 }
-.status-local-btn .custom-scroll-pretty_inner {
+.status-change .status-local-btn .custom-scroll-pretty_inner {
   overflow: scroll;
   height: 100%;
   *position: absolute;
@@ -447,15 +307,15 @@
   *left: 0;
   *right: 0;
 }
-.status-local-btn .custom-scroll-pretty_inner::-webkit-scrollbar {
+.status-change .status-local-btn .custom-scroll-pretty_inner::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-.status-local-btn .custom-scroll-pretty_inner {
+.status-change .status-local-btn .custom-scroll-pretty_inner {
   -ms-overflow-style: none;
 }
-.status-local-btn .custom-scroll-pretty_bar-y,
-.status-local-btn .custom-scroll-pretty_bar-x {
+.status-change .status-local-btn .custom-scroll-pretty_bar-y,
+.status-change .status-local-btn .custom-scroll-pretty_bar-x {
   cursor: default;
   position: absolute;
   border-radius: 1px;
@@ -469,27 +329,27 @@
   user-select: none;
   transition: opacity 0.2s;
 }
-.status-local-btn .custom-scroll-pretty_bar-y:hover,
-.status-local-btn .custom-scroll-pretty_bar-x:hover {
+.status-change .status-local-btn .custom-scroll-pretty_bar-y:hover,
+.status-change .status-local-btn .custom-scroll-pretty_bar-x:hover {
   opacity: 0.7;
 }
-.status-local-btn .custom-scroll-pretty_bar-y:active,
-.status-local-btn .custom-scroll-pretty_bar-x:active {
+.status-change .status-local-btn .custom-scroll-pretty_bar-y:active,
+.status-change .status-local-btn .custom-scroll-pretty_bar-x:active {
   opacity: 1;
 }
-.status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y,
-.status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
+.status-change .status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y,
+.status-change .status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s, visibility step-end 0.3s;
 }
-.status-local-btn .custom-scroll-pretty_bar-y {
+.status-change .status-local-btn .custom-scroll-pretty_bar-y {
   right: 6px;
   border-radius: 5px;
   width: 3px;
 }
-.status-local-btn .custom-scroll-pretty_track-y,
-.status-local-btn .custom-scroll-pretty_track-x {
+.status-change .status-local-btn .custom-scroll-pretty_track-y,
+.status-change .status-local-btn .custom-scroll-pretty_track-x {
   position: absolute;
   background: #eee;
   border-radius: 5px;
@@ -497,31 +357,210 @@
   transition: box-shadow 0.3s;
   height: 90.5%;
 }
-.status-local-btn .custom-scroll-pretty_track-y {
+.status-change .status-local-btn .custom-scroll-pretty_track-y {
   right: 6px;
   width: 3px;
   top: 5px;
 }
-.status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-y {
+.status-change .status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-y {
   bottom: 0;
 }
-.status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-x {
+.status-change .status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-x {
   right: 0;
 }
-.status-local-btn .custom-scroll-pretty_track-y:hover,
-.status-local-btn .custom-scroll-pretty_track-x:hover {
+.status-change .status-local-btn .custom-scroll-pretty_track-y:hover,
+.status-change .status-local-btn .custom-scroll-pretty_track-x:hover {
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
 }
-.status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-y,
-.status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y {
+.status-change .status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-y,
+.status-change .status-local-btn .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y {
   opacity: 0;
   height: 100%;
   top: 0;
   visibility: hidden;
   transition: opacity 0.3s, height 0.3s, top 0.1s, visibility step-end 0.3s;
 }
-.status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-x,
-.status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
+.status-change .status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-x,
+.status-change .status-local-btn .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
+  opacity: 0;
+  width: 100%;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, height 0.3s, top 0.1s, visibility step-end 0.3s;
+}
+
+.status-local-btn2 {
+  position: relative;
+  /* changes */
+}
+.status-local-btn2 .custom-scroll-pretty_container {
+  overflow: hidden !important;
+  position: absolute;
+  height: 103px;
+  width: 176px;
+  background: #F1F1F1;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+.status-local-btn2 .dropdown-block {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 14px;
+}
+.status-local-btn2 .scroll-position {
+  position: absolute;
+  top: -4px;
+  left: 114px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+}
+.status-local-btn2 .ul-block {
+  list-style: none;
+  padding-left: 14px;
+  margin: 0;
+}
+.status-local-btn2 .btn-span {
+  position: relative;
+}
+.status-local-btn2 .list {
+  padding: 3.5px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0;
+}
+.status-local-btn2 .list:first-child {
+  position: relative;
+  left: -15px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  margin-bottom: 0;
+}
+.status-local-btn2 .list:first-child::after {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 5px;
+  background-image: url("../img/arrow-up.svg");
+  left: 7px;
+  position: relative;
+  top: -2px;
+}
+.status-local-btn2 .list-hover:hover::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 3px;
+  position: absolute;
+  top: 11px;
+  left: -5px;
+  background-color: black;
+}
+.status-local-btn2 .list-img {
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
+.status-local-btn2 .btn-span:after {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 5px;
+  background-image: url("../img/arrow-down.svg");
+  left: 7px;
+  position: relative;
+  top: -2px;
+}
+.status-local-btn2 .toggle {
+  visibility: visible;
+  opacity: 1;
+}
+.status-local-btn2 .custom-scroll-pretty_inner {
+  overflow: scroll;
+  height: 100%;
+  *position: absolute;
+  /* ie7 fix */
+  *left: 0;
+  *right: 0;
+}
+.status-local-btn2 .custom-scroll-pretty_inner::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.status-local-btn2 .custom-scroll-pretty_inner {
+  -ms-overflow-style: none;
+}
+.status-local-btn2 .custom-scroll-pretty_bar-y,
+.status-local-btn2 .custom-scroll-pretty_bar-x {
+  cursor: default;
+  position: absolute;
+  border-radius: 1px;
+  z-index: 1;
+  background: #5a5959;
+  opacity: 0.4;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+.status-local-btn2 .custom-scroll-pretty_bar-y:hover,
+.status-local-btn2 .custom-scroll-pretty_bar-x:hover {
+  opacity: 0.7;
+}
+.status-local-btn2 .custom-scroll-pretty_bar-y:active,
+.status-local-btn2 .custom-scroll-pretty_bar-x:active {
+  opacity: 1;
+}
+.status-local-btn2 .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y,
+.status-local-btn2 .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility step-end 0.3s;
+}
+.status-local-btn2 .custom-scroll-pretty_bar-y {
+  right: 6px;
+  border-radius: 5px;
+  width: 3px;
+}
+.status-local-btn2 .custom-scroll-pretty_track-y,
+.status-local-btn2 .custom-scroll-pretty_track-x {
+  position: absolute;
+  background: #eee;
+  border-radius: 5px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  height: 90.5%;
+}
+.status-local-btn2 .custom-scroll-pretty_track-y {
+  right: 6px;
+  width: 3px;
+  top: 5px;
+}
+.status-local-btn2 .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-y {
+  bottom: 0;
+}
+.status-local-btn2 .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-x {
+  right: 0;
+}
+.status-local-btn2 .custom-scroll-pretty_track-y:hover,
+.status-local-btn2 .custom-scroll-pretty_track-x:hover {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.status-local-btn2 .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-y,
+.status-local-btn2 .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y {
+  opacity: 0;
+  height: 100%;
+  top: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, height 0.3s, top 0.1s, visibility step-end 0.3s;
+}
+.status-local-btn2 .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-x,
+.status-local-btn2 .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
   opacity: 0;
   width: 100%;
   left: 0;
@@ -531,36 +570,38 @@
 
 .block-status-order {
   position: relative;
+  /* changes */
 }
-.block-status-order .custom-scroll_container {
+.block-status-order .custom-scroll-pretty_container {
   overflow: hidden !important;
   position: relative;
   height: 377px;
   width: 718px;
 }
-.block-status-order .custom-scroll_inner {
+.block-status-order .custom-scroll-pretty_inner {
   overflow: scroll;
+  height: 100%;
   *position: absolute;
   /* ie7 fix */
   *left: 0;
   *right: 0;
-  height: 90%;
+  height: 94%;
   width: 97%;
 }
-.block-status-order .custom-scroll_inner::-webkit-scrollbar {
+.block-status-order .custom-scroll-pretty_inner::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-.block-status-order .custom-scroll_inner {
+.block-status-order .custom-scroll-pretty_inner {
   -ms-overflow-style: none;
 }
-.block-status-order .custom-scroll_bar-y,
-.block-status-order .custom-scroll_bar-x {
+.block-status-order .custom-scroll-pretty_bar-y,
+.block-status-order .custom-scroll-pretty_bar-x {
   cursor: default;
   position: absolute;
-  border-radius: 10px;
+  border-radius: 5px;
   z-index: 1;
-  background: #888;
+  background: #5a5959;
   opacity: 0.4;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -569,27 +610,63 @@
   user-select: none;
   transition: opacity 0.2s;
 }
-.block-status-order .custom-scroll_bar-y {
-  top: 0px;
-  right: 1px;
-  width: 10px;
-}
-.block-status-order .custom-scroll_bar-x {
-  left: 0px;
-  bottom: 40px;
-  height: 10px;
-}
-.block-status-order .custom-scroll_bar-y:hover,
-.block-status-order .custom-scroll_bar-x:hover {
+.block-status-order .custom-scroll-pretty_bar-y:hover,
+.block-status-order .custom-scroll-pretty_bar-x:hover {
   opacity: 0.7;
 }
-.block-status-order .custom-scroll_bar-y:active,
-.block-status-order .custom-scroll_bar-x:active {
+.block-status-order .custom-scroll-pretty_bar-y:active,
+.block-status-order .custom-scroll-pretty_bar-x:active {
   opacity: 1;
 }
-.block-status-order .custom-scroll_hidden-y > .custom-scroll_bar-y,
-.block-status-order .custom-scroll_hidden-x > .custom-scroll_bar-x {
+.block-status-order .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y,
+.block-status-order .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s, visibility step-end 0.3s;
+}
+.block-status-order .custom-scroll-pretty_bar-y {
+  right: 0px;
+  border-radius: 5px;
+  width: 5px;
+  top: 10px;
+}
+.block-status-order .custom-scroll-pretty_track-y,
+.block-status-order .custom-scroll-pretty_track-x {
+  position: absolute;
+  background: #eee;
+  border-radius: 5px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  height: 79%;
+}
+.block-status-order .custom-scroll-pretty_track-y {
+  right: 0px;
+  width: 5px;
+  top: 50px;
+}
+.block-status-order .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-y {
+  bottom: 0;
+}
+.block-status-order .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-x {
+  right: 0;
+}
+.block-status-order .custom-scroll-pretty_track-y:hover,
+.block-status-order .custom-scroll-pretty_track-x:hover {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.block-status-order .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_track-y,
+.block-status-order .custom-scroll-pretty_hidden-y > .custom-scroll-pretty_bar-y {
+  opacity: 0;
+  height: 100%;
+  top: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, height 0.3s, top 0.1s, visibility step-end 0.3s;
+}
+.block-status-order .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_track-x,
+.block-status-order .custom-scroll-pretty_hidden-x > .custom-scroll-pretty_bar-x {
+  opacity: 0;
+  width: 100%;
+  left: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, height 0.3s, top 0.1s, visibility step-end 0.3s;
 }

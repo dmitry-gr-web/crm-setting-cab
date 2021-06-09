@@ -654,26 +654,27 @@ html {
   z-index: 1;
 }
 
-.container-info {
+.container-info-settings {
   margin-left: 62px;
   margin-top: 20px;
+  margin-right: 10px;
   width: 100%;
   height: 100%;
   justify-content: space-between;
   position: relative;
 }
 @media (max-width: 800px) {
-  .container-info {
+  .container-info-settings {
     margin-left: 30px;
   }
 }
-.container-info .main-setting {
+.container-info-settings .main-setting {
   margin-right: 20px;
   cursor: pointer;
   position: relative;
   margin-left: 10px;
 }
-.container-info .main-setting:after {
+.container-info-settings .main-setting:after {
   width: 100%;
   position: absolute;
   content: "";
@@ -688,7 +689,7 @@ html {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
 }
-.container-info .user-setting {
+.container-info-settings .user-setting {
   cursor: pointer;
   position: relative;
   transition: 0.3s;
@@ -1553,16 +1554,19 @@ html {
   margin-right: 7%;
   margin-left: 20px;
   min-width: 718px;
-  display: block;
+  display: none;
 }
 .block-delivery-method .wrap-container {
+  justify-content: flex-start;
+}
+.block-delivery-method .wrap-container-change {
   justify-content: flex-start;
 }
 .block-delivery-method .delivery-header {
   text-align: center;
   position: relative;
 }
-.block-delivery-method .delivery-header .btnplus2 {
+.block-delivery-method .delivery-header .btnplus4 {
   background-image: url("../img/btnplus-black.svg");
   width: 16px;
   height: 15px;
@@ -1599,15 +1603,14 @@ html {
 }
 .block-delivery-method ul li {
   margin-bottom: 8px;
-  font-weight: 300;
-}
-.block-delivery-method ul li:first-child {
-  margin-bottom: 15px;
-  font-weight: 500;
 }
 .block-delivery-method .list-name {
   position: relative;
   margin-left: 30px;
+  font-weight: 300;
+  font-size: 14px;
+  height: 18px;
+  width: 96px;
 }
 .block-delivery-method .list-name span {
   position: relative;
@@ -1616,51 +1619,74 @@ html {
   position: absolute;
   left: -20px;
 }
+.block-delivery-method .list-name span .avtoluks-img {
+  height: 20px;
+  width: 30px;
+  left: -30px;
+}
+.block-delivery-method .list-name span .sdek-img {
+  width: 20px;
+  height: 20px;
+  left: -25px;
+}
 .block-delivery-method .list-id {
   text-align: center;
   height: 18px;
   width: 20px;
+  font-weight: 300;
+  font-size: 14px;
 }
 .block-delivery-method .list-sort {
   text-align: center;
   width: 31px;
   height: 18px;
+  font-weight: 300;
+  font-size: 14px;
 }
 .block-delivery-method .list-description {
   max-width: 153px;
+  font-size: 14px;
   height: 18px;
+  width: 92px;
 }
 .block-delivery-method .list-description span {
   position: relative;
 }
 .block-delivery-method .list-description span img {
   position: relative;
-  top: 2px;
+  top: 3px;
   margin-right: 7px;
-}
-.block-delivery-method .department-change-addres {
-  font-weight: 500;
-  margin-top: -5px;
-  position: relative;
-  top: 16px;
-  left: 6px;
-}
-.block-delivery-method .department-change-name {
-  position: relative;
-  top: 23px;
-  left: 6px;
-  font-size: 12px;
-  font-weight: 500;
-}
-.block-delivery-method .dt-email {
-  position: relative;
-  top: 16px;
-  left: 6px;
-  font-size: 12px;
-  font-weight: 500;
 }
 .block-delivery-method .delivery-change {
   margin: 0;
+}
+.block-delivery-method .delivery-change-name {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  position: relative;
+  top: 22px;
+}
+.block-delivery-method .delivery-sort-name {
+  font-size: 12px;
+  font-weight: 500;
+  position: relative;
+  top: 15px;
+}
+.block-delivery-method .delivery-local {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 27px;
+  height: 20px;
+}
+.block-delivery-method .delivery-download-icon {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.block-delivery-method .delivery-change-local {
+  margin-top: 40px;
+  margin-left: 50px;
 }
 .block-delivery-method input {
   z-index: 1;
@@ -1685,7 +1711,7 @@ html {
   margin-bottom: 20px;
   text-align: right;
   margin-right: 20px;
-  bottom: -180px;
+  bottom: -170px;
 }
 .block-delivery-method .btn-save-close:before {
   background-image: url("../img/accept-black.svg");
@@ -1696,7 +1722,7 @@ html {
   top: 4px;
   right: 80px;
 }
-.block-delivery-method .clients-change-toggle {
+.block-delivery-method .delivery-change-toggle {
   display: none;
 }
 
