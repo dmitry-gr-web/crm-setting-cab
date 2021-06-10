@@ -823,11 +823,16 @@
 
 .block-status-order {
     position: relative;
+    // -ms-overflow-style: none;
+    // /* IE 11 */
+    // scrollbar-width: none;
     .custom-scroll-pretty_container {
         overflow: hidden !important;
         position: relative;
         height: 377px;
         width: 718px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
     .custom-scroll-pretty_inner {
         overflow: scroll;
@@ -838,6 +843,8 @@
         *right: 0;
         height: 94%;
         width: 97%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
     .custom-scroll-pretty_inner::-webkit-scrollbar {
         width: 0;
@@ -880,7 +887,7 @@
         right: 0px;
         border-radius: 5px;
         width: 5px;
-        top: 10px
+        top: 15px
     }
     .custom-scroll-pretty_track-y,
     .custom-scroll-pretty_track-x {
@@ -889,12 +896,12 @@
         border-radius: 5px;
         box-shadow: inset 0 0 4px rgba(0, 0, 0, .1);
         transition: box-shadow .3s;
-        height: 79%;
+        height: 90%;
     }
     .custom-scroll-pretty_track-y {
         right: 0px;
         width: 5px;
-        top: 50px;
+        top: 15px;
     }
     .custom-scroll-pretty_hidden-x>.custom-scroll-pretty_track-y {
         bottom: 0;

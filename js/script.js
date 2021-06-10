@@ -1,3 +1,4 @@
+//btn change menu
 $(".btnplus").click(function() {
     $('.department-change-toggle').toggle(200);
 });
@@ -6,10 +7,16 @@ $(".btnplus2").click(function() {
 });
 $(".btnplus3").click(function() {
     $('.status-change-toggle').toggle(200);
+    $('.block-for-user').toggleClass('info');
 });
 $(".btnplus4").click(function() {
     $('.delivery-change-toggle').toggle(200);
 });
+$(".btnplus5").click(function() {
+    $('.product-change-toggle').toggle(200);
+});
+//btn change menu
+
 //block pick color
 $(".status-color").click(function() {
     $('.block-pick-color').toggle(200);
@@ -22,6 +29,101 @@ $(document).mouseup(function(e) {
         $('.block-pick-color').hide(200);
     }
 });
+//block pick color end
+//chekbox
+$(".product-tv-shop").click(function() {
+    $('.tv-shop-dropdown').toggle(200);
+    $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
+});
+$(".tv-item-1").click(function() {
+    $('.item-1-drop').toggle(200);
+    $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
+});
+
+$(".tv-item-2").click(function() {
+    $('.item-2-drop').toggle(200);
+    $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
+});
+$(".product-garden").click(function() {
+    $('.garden-drop').toggle(200);
+    $(".product-garden .arrow-animation").toggleClass('aa-toggle');
+});
+$("#switch-item1-drop").click(function() {
+    $('.tv-item-1-drop').toggleClass('opacity-toggle');
+});
+$("#switch-item2-drop").click(function() {
+    $('.tv-item-2-drop').toggleClass('opacity-toggle');
+});
+$("#switch-garden-drop").click(function() {
+    $('.garden-item-3').toggleClass('opacity-toggle');
+});
+
+
+//chekbox end
+//switch
+// $("#switch-for-tvshop").click(function() {
+//     $('.product-tv-shop').off().toggleClass('opacity-toggle');
+// });
+// $("#switch-for-tvshop").click(function() {
+//     $('.product-tv-shop').toggleClass('opacity-toggle');
+//     $(".product-tv-shop").click(function() {
+//         $('.tv-shop-dropdown').toggle(200);
+//         $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
+//     });
+// });
+$('#switch-for-tvshop').on('click', function() {
+    if (!$('.product-tv-shop').hasClass('opacity-toggle')) { // если класса нет
+        $('.product-tv-shop').addClass('opacity-toggle').off(); // добавляем класс
+        $(".product-tv-shop .arrow-animation").removeClass('aa-toggle');
+        $('.tv-shop-dropdown').hide(200);
+    } else { // если есть
+        $('.product-tv-shop').removeClass('opacity-toggle'); // убираем класс
+        $(".product-tv-shop").click(function() {
+            $('.tv-shop-dropdown').toggle(200);
+            $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
+        });
+    }
+});
+$('#switch-for-opt1').on('click', function() {
+    if (!$('.tv-item-1').hasClass('opacity-toggle')) { // если класса нет
+        $('.tv-item-1').addClass('opacity-toggle').off(); // добавляем класс
+        $(".tv-item-1 .arrow-animation").removeClass('aa-toggle');
+        $('.item-1-drop').hide(200);
+    } else { // если есть
+        $('.tv-item-1').removeClass('opacity-toggle'); // убираем класс
+        $(".tv-item-1").click(function() {
+            $('.item-1-drop').toggle(200);
+            $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
+        });
+    }
+});
+$('#switch-for-opt2').on('click', function() {
+    if (!$('.tv-item-2').hasClass('opacity-toggle')) { // если класса нет
+        $('.tv-item-2').addClass('opacity-toggle').off(); // добавляем класс
+        $(".tv-item-2 .arrow-animation").removeClass('aa-toggle');
+        $('.item-2-drop').hide(200);
+    } else { // если есть
+        $('.tv-item-2').removeClass('opacity-toggle'); // убираем класс
+        $(".tv-item-2").click(function() {
+            $('.item-2-drop').toggle(200);
+            $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
+        });
+    }
+});
+$('#switch-for-garden').on('click', function() {
+    if (!$('.product-garden').hasClass('opacity-toggle')) { // если класса нет
+        $('.product-garden').addClass('opacity-toggle').off(); // добавляем класс
+        $(".product-garden .arrow-animation").removeClass('aa-toggle');
+        $('.garden-drop').hide(200);
+    } else { // если есть
+        $('.product-garden').removeClass('opacity-toggle'); // убираем класс
+        $(".product-garden").click(function() {
+            $('.garden-drop').toggle(200);
+            $(".product-garden .arrow-animation").toggleClass('aa-toggle');
+        });
+    }
+});
+
 // let popup = document.querySelector('.block-pick-color');
 // document.addEventListener('mousedown', function(e) {
 //     if (e.target.closest('.block-pick-color') === null) {
@@ -112,9 +214,9 @@ $(".color-C6693B").click(function() {
     $(this).toggleClass('color-select');
     $('.block-pick-color').toggle(200);
 });
-//block pick color
+//block pick color 
 
-
+//link blocks
 $("#otdel-link").click(function() {
     let arr = $('.add');
     arr.map(x => $(".add").removeClass('block-hide-show'));
@@ -160,6 +262,33 @@ $("#block-delivery-link").click(function() {
     $('.block-delivery-method').toggleClass('block-hide-show');
     $(this).addClass('hover-list-permanent');
 });
+$("#block-product-category").click(function() {
+    let arr = $('.add');
+    arr.map(x => $(".add").removeClass('block-hide-show'));
+
+    let arry = $('.selected');
+    arry.map(x => $('.selected').removeClass('hover-list-permanent'));
+    $('.block-product-category').toggleClass('block-hide-show');
+    $(this).addClass('hover-list-permanent');
+});
+// $(".main-setting").click(function() {
+//     let arr = $('.add');
+//     arr.map(x => $(".add").removeClass('block-hide-show'));
+
+
+//     $('.block-nav').toggleClass('block-hide-show');
+
+// });
+// $(".user-setting").click(function() {
+//     let arr = $('.add');
+//     arr.map(x => $(".add").removeClass('block-hide-show'));
+
+
+//     $('.block-user-setting').toggleClass('block-hide-show');
+
+// });
+
+//link blocks end
 //btn country-local
 $(".status-local-btn .dropdown-block .btn").click(function() {
     let arrbtn = $('.status-local-btn .dropdown-block .scroll-position');

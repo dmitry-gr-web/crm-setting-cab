@@ -75,8 +75,8 @@ $('#status-scroll').customScroll({
 
     /* vertical */
     barMinHeight: 5,
-    offsetTop: 50,
-    offsetBottom: 30,
+    offsetTop: 15,
+    offsetBottom: 24,
     /* will be added to offsetBottom in case of horizontal scroll */
     trackWidth: 10,
 

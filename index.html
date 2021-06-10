@@ -97,20 +97,32 @@
                     </ul>
                     <ul class="block-catalog">
                         <li class="list-catalog">Каталог</li>
-                        <li class="list-catalog hover-list">Категории товаров</li>
-                        <li class="list-catalog hover-list">Товары</li>
-                        <li class="list-catalog hover-list">Производители</li>
-                        <li class="list-catalog hover-list">Валюта</li>
-                        <li class="list-catalog hover-list">Сайты</li>
-                        <li class="list-catalog hover-list">Категории атрибутов</li>
-                        <li class="list-catalog hover-list">Атрибуты</li>
-                        <li class="list-catalog hover-list">Цвета товаров</li>
-                        <li class="list-catalog hover-list">Страны</li>
+                        <li class="selected list-catalog" id="block-product-category">Категории товаров</li>
+                        <li class="list-catalog">Товары</li>
+                        <li class="list-catalog">Производители</li>
+                        <li class="list-catalog">Валюта</li>
+                        <li class="list-catalog">Сайты</li>
+                        <li class="list-catalog">Категории атрибутов</li>
+                        <li class="list-catalog">Атрибуты</li>
+                        <li class="list-catalog">Цвета товаров</li>
+                        <li class="list-catalog">Страны</li>
                     </ul>
                     <ul class="block-warehouse">
                         <li class="list-warehouse">Склады</li>
                         <li class="list-warehouse hover-list">Поставщики</li>
                     </ul>
+                </div>
+                <div class="block-user-setting">
+                    <div class="wrap-container">
+                        <div>
+                            <ul class="nav-setting-block">
+                                <li class="nav-setting">Система</li>
+                                <li class="nav-setting">История</li>
+                                <li class="nav-setting">Блокировка IP</li>
+                            </ul>
+                        </div>
+                        <div class="seetings-header">Система<span class="btnplus6"></span></div>
+                    </div>
                 </div>
                 <div class="add block-department">
                     <div class="department-header">Отделы<span class="btnplus"></span></div>
@@ -553,135 +565,96 @@
                                 <div class="product-sort">Sort</div>
                             </li>
                         </ul>
-                        <ul class="product-ul">
+                        <ul class="product-ul-tv-shop">
                             <li class="product-list">
-                                <div class="product-tv-shop"><img src="img/Marine.svg" alt="logo-shop"> Тв шоп</div>
-                                <div class="product-checkbox"><span class="switch-btn">
+                                <div class="product-tv-shop"><span class="arrow-animation"></span><img src="img/Marine.svg" alt="logo-shop"> Тв шоп</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
                                     <label class="switch">
                                         <input type="checkbox">
-                                        <span class="slider round"></span>
+                                        <span class="slider round" id="switch-for-tvshop"></span>
                                     </label>
                                     </span>
                                 </div>
                                 <div class="product-sort-id">1</div>
-                                <div class="tv-shop-dropdown">
-                                    <div>Оптовый магазин</div>
-                                    <div>Оптовый магазин</div>
+                            </li>
+                        </ul>
+                        <ul class="tv-shop-dropdown">
+                            <li class="tv-item-list">
+                                <div class="tv-item-1"><span class="arrow-animation"></span><img src="img/Marine.svg" alt="logo-shop"> Оптовый магазин1</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"id="switch-for-opt1"></span>
+                                    </label>
+                                    </span>
                                 </div>
+                                <div class="product-sort-id">2</div>
+                            </li>
+                            <li class="tv-item-list item-1-drop">
+                                <div class="tv-item-1-drop"><img style="margin-left: 45px;" src="img/folder.svg" alt="logo-folder"> Опт магаз 2-1</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="slider round" id="switch-item1-drop"></span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="product-sort-id">3</div>
+                            </li>
+                            <li class="tv-item-list">
+                                <div class="tv-item-2"><span class="arrow-animation"></span><img src="img/Marine.svg" alt="logo-shop"> Оптовый магазин2</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round" id="switch-for-opt2"></span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="product-sort-id">3</div>
+                            </li>
+                            <li class="tv-item-list item-2-drop">
+                                <div class="tv-item-2-drop"><img style="margin-left: 45px;" src="img/folder.svg" alt="logo-folder"> Опт магаз 2-1</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round" id="switch-item2-drop"></span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="product-sort-id">3</div>
                             </li>
                         </ul>
-
-                        <!-- <ul class="product-name">
-                            <li class="list-name">Название</li>
-                            <li class="list-name">
-                                <span><img src="img/Marine.svg" alt="logo-shop">ТВ Шоп</span>
-                            </li>
-                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
-                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
-                            <li class="list-name"><span><img src="img/folder.svg" alt="folder-logo">Оптовый магазин</span></li>
-                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Огород и сад</span></li>
-                            <li class="list-name"><span><img src="img/folder.svg" alt="folder-logo">Оптовый магазин</span></li>
-                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">ТВ Шоп</span></li>
-                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
-                            <li class="list-name"><span><img src="img/Marine.svg" alt="logo-shop">Оптовый магазин</span></li>
-                            <li class="list-name"><span><img src="img/folder.svg" alt="folder-logo">Оптовый магазин</span></li>
-                        </ul>
-                        <ul class="product-description">
-                            <li class="list-description">Статус</li>
-                            <li class="list-description">
-                                <span class="switch-btn">
+                        <ul class="product-ul-tv-shop">
+                            <li class="product-list">
+                                <div class="product-garden"><span class="arrow-animation"></span><img src="img/Marine.svg" alt="logo-shop"> Огород и сад</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
                                     <label class="switch">
                                         <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
+                                        <span class="slider round" id="switch-for-garden"></span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="product-sort-id">4</div>
                             </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
-                            </li>
-                            <li class="list-description">
-                                <span class="switch-btn">
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                </label>
-                                </span>
+                            <li class="tv-item-list garden-drop">
+                                <div class="garden-item-3"><img style="margin-left: 45px;" src="img/folder.svg" alt="logo-folder"> Опт магаз 2-1</div>
+                                <div class="product-checkbox">
+                                    <span class="switch-btn">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round" id="switch-garden-drop"></span>
+                                    </label>
+                                    </span>
+                                </div>
+                                <div class="product-sort-id">3</div>
                             </li>
                         </ul>
-                        <ul class="product-sort">
-                            <li class="list-sort">Sort</li>
-                            <li class="list-sort">1</li>
-                            <li class="list-sort">2</li>
-                            <li class="list-sort">3</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
-                        </ul> -->
                     </div>
                     <div class="product-change-toggle">
                         <div class="product-header">Изменить</div>
