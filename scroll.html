@@ -23,6 +23,14 @@
         margin-bottom: 5px;
     }
     
+    .simplebar-track.simplebar-horizontal {
+        background-color: red;
+        height: 5px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+    
     .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
         background-color: blue;
         width: 5px;
@@ -33,33 +41,14 @@
         top: 0;
     }
     
-    .simplebar-track.simplebar-horizontal {
-        background-color: red;
-        height: 5px;
-        margin-right: 10px;
-        margin-bottom: 5px;
-        margin-left: 5px;
-    }
-    
     .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
         background-color: blue;
         border-radius: 5px;
-        bottom: 15px;
         height: 5px;
-    }
-    
-    .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
-        bottom: 0;
-        top: 0;
         left: 0;
         right: 0;
-    }
-    
-    .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
         bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: -2px;
     }
     
     .simplebar-scrollbar.simplebar-visible:before {
@@ -83,11 +72,24 @@
             corrupti cum dolores, quisquam tempore laboriosam maxime sit possimus. Sequi iure alias corporis quas nulla molestiae earum dolores, hic tempora molestias saepe illum est accusantium facere dolore iste neque rem recusandae suscipit corrupti.
             Molestias nostrum quo voluptas?</p>
     </div>
+    <div class="block">
+        <p style="width:400px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam doloremque possimus, dolore, reiciendis corporis sapiente ullam voluptatibus, voluptas dicta quos quaerat voluptatem. Rem reiciendis blanditiis ipsum, cupiditate explicabo ipsa
+            ea aliquam, vero error saepe in officiis incidunt, eveniet corrupti impedit! Aut quaerat quos dolore autem laudantium, quae illo similique. Omnis quisquam repudiandae cumque reiciendis, quo vel repellat voluptate molestiae nemo! Neque mollitia,
+            error consequatur veniam magni possimus a ab voluptates officia eum cumque modi doloribus dolores nobis eaque consequuntur deleniti sit, maxime pariatur dolorum explicabo accusamus? Quae nulla animi officiis rem, modi ea ratione fugit velit
+            aliquid aspernatur. Tempora! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque placeat fuga cumque et aliquam a iusto impedit nam dolor, culpa minus eius reprehenderit illo accusamus. Architecto, nesciunt modi nostrum maxime
+            quam veniam praesentium, officiis rerum odio provident omnis porro facilis quisquam nam. In quas numquam ipsam eligendi, dolorum distinctio nisi perferendis modi non. Earum totam dolor reprehenderit sunt excepturi sint, amet quasi voluptatum
+            corrupti cum dolores, quisquam tempore laboriosam maxime sit possimus. Sequi iure alias corporis quas nulla molestiae earum dolores, hic tempora molestias saepe illum est accusantium facere dolore iste neque rem recusandae suscipit corrupti.
+            Molestias nostrum quo voluptas?</p>
+    </div>
     <script src="simplebar.js"></script>
     <script>
-        new SimpleBar(document.querySelector('.block'), {
-            autoHide: false,
-            forceVisible: true | 'x' | 'y'
+        // new SimpleBar(document.querySelector('.block'), {
+        //     autoHide: false,
+        //     forceVisible: true | 'x' | 'y'
+        // });
+        document.querySelectorAll('.block').forEach(el => {
+            new SimpleBar(el)
         });
     </script>
 </body>
