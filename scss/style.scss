@@ -338,7 +338,7 @@ html {
         margin-left: 30px;
     }
     .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
-        background: linear-gradient(0deg, rgba(46, 45, 56, 1) 0%, rgba(204, 204, 235, 1) 67%, rgba(120, 138, 142, 1) 100%);
+        background: rgba(0, 0, 0, 0.3);
         width: 6px;
         border-radius: 5px;
         left: 0;
@@ -347,7 +347,7 @@ html {
         top: 0;
     }
     .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-        background: linear-gradient(90deg, rgba(46, 45, 56, 1) 0%, rgba(204, 204, 235, 1) 67%, rgba(120, 138, 142, 1) 100%);
+        background: rgba(0, 0, 0, 0.3);
         border-radius: 5px;
         height: 6px;
         left: 0;
@@ -566,7 +566,7 @@ html {
     margin-top: 35px;
     min-width: 95px;
     position: absolute;
-    left: 200px;
+    left: 250px;
     top: 16px;
     @include breakpoint (lg) {
         position: relative;
@@ -605,6 +605,9 @@ html {
     margin-left: 20px;
     min-width: 718px;
     display: none;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .department-change-toggle {
         display: none;
     }
@@ -658,6 +661,10 @@ html {
             font-weight: 300;
         }
     }
+    .wrap-container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
     .list-email {
         width: 216px;
         height: 16px;
@@ -680,18 +687,18 @@ html {
         font-weight: 500;
         margin-top: -5px;
         position: relative;
-        top: 16px;
-        left: 6px;
+        top: 7px;
+        font-size: 12px;
     }
     .department-change-name {
         position: relative;
-        top: 23px;
-        left: 6px;
+        top: 13px;
+        font-size: 12px;
     }
     .dt-email {
         position: relative;
-        top: 23px;
-        left: 6px;
+        top: 13px;
+        font-size: 12px;
     }
     input {
         z-index: 1;
@@ -742,6 +749,8 @@ html {
     display: none;
     .wrap-container {
         justify-content: flex-start;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .clients-header {
         text-align: center;
@@ -808,22 +817,15 @@ html {
     .list-description {
         max-width: 153px;
     }
-    .department-change-addres {
-        font-weight: 500;
-        margin-top: -5px;
-        position: relative;
-        top: 16px;
-        left: 6px;
-    }
     .department-change-name {
         position: relative;
-        top: 23px;
-        left: 6px;
+        top: 13px;
+        font-size: 12px;
     }
     .dt-email {
         position: relative;
-        top: 23px;
-        left: 6px;
+        top: 13px;
+        font-size: 12px;
     }
     input {
         z-index: 1;
@@ -921,7 +923,7 @@ html {
     .status-header-ul {
         display: flex;
         margin-bottom: 0;
-        margin-top: 38px;
+        margin-top: 30px;
         .header-list {
             font-size: 14px;
             font-weight: 500;
@@ -1020,17 +1022,9 @@ html {
             top: 3px;
         }
     }
-    .department-change-addres {
-        font-weight: 500;
-        margin-top: -5px;
-        position: relative;
-        top: 16px;
-        left: 6px;
-    }
     .dt-email {
         position: relative;
-        top: 23px;
-        left: 6px;
+        top: 13px;
         font-size: 12px;
         font-weight: 500;
     }
@@ -1283,6 +1277,7 @@ html {
     display: none;
     .wrap-container {
         justify-content: flex-start;
+        margin-top: 38px;
     }
     .payment-header {
         text-align: center;
@@ -1359,6 +1354,8 @@ html {
     display: none;
     .wrap-container {
         justify-content: flex-start;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .wrap-container-change {
         justify-content: flex-start;
@@ -1406,6 +1403,9 @@ html {
         }
         li {
             margin-bottom: 8px;
+            &:first-child {
+                font-weight: 500;
+            }
         }
     }
     .list-name {
@@ -1420,6 +1420,8 @@ html {
             img {
                 position: absolute;
                 left: -20px;
+                width: 16px;
+                height: 16px;
             }
             .avtoluks-img {
                 height: 20px;
@@ -1469,13 +1471,13 @@ html {
         font-weight: 500;
         font-size: 12px;
         position: relative;
-        top: 22px;
+        top: 13px;
     }
     .delivery-sort-name {
         font-size: 12px;
         font-weight: 500;
         position: relative;
-        top: 15px;
+        top: 8px;
     }
     .delivery-local {
         font-size: 16px;
@@ -1489,7 +1491,7 @@ html {
         cursor: pointer;
     }
     .delivery-change-local {
-        margin-top: 40px;
+        margin-top: 35px;
         margin-left: 50px;
         width: 180px;
     }
@@ -1540,7 +1542,8 @@ html {
     display: none;
     .wrap-container {
         justify-content: flex-start;
-        margin-bottom: 17px;
+        margin-bottom: 30px;
+        margin-top: 30px;
     }
     .wrap-container-change {
         justify-content: flex-start;
@@ -1869,13 +1872,13 @@ html {
             font-weight: 500;
             font-size: 12px;
             position: relative;
-            top: 22px;
+            top: 13px;
         }
         .product-sort-name {
             font-size: 12px;
             font-weight: 500;
             position: relative;
-            top: 6px;
+            top: -2px;
             margin-bottom: 0;
             z-index: 2;
         }

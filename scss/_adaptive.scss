@@ -29,6 +29,11 @@
             @content;
         }
     }
+    @else if $point==fullhd {
+        @media (min-width: 1500px) {
+            @content;
+        }
+    }
 }
 
 // @include breakpoint (sm) {

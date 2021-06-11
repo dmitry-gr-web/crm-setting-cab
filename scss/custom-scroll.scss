@@ -156,6 +156,111 @@
     }
 }
 
+.status-local-btn {
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 10px;
+        .ul-block {
+            background: #F1F1F1;
+            border: none;
+            color: black;
+            display: none;
+            padding: 5px 0px;
+            position: absolute;
+            height: 103px;
+            width: 176px;
+            top: -5px;
+            left: 0px;
+            list-style: none;
+            font-size: 14px;
+            font-weight: 300;
+            box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(4px);
+            z-index: 2;
+            .list {
+                cursor: pointer;
+                position: relative;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                margin-top: 5px;
+            }
+            .list:hover:before {
+                content: '';
+                width: 3px;
+                height: 3px;
+                border-radius: 100%;
+                position: absolute;
+                background-color: black;
+                top: 7px;
+                left: -5px;
+            }
+            .list:first-child:after {
+                content: '';
+                width: 10px;
+                height: 5px;
+                position: absolute;
+                background-image: url('../img/arrow-up.svg');
+                top: 6px;
+                left: 47px;
+            }
+            .list:first-child {
+                margin-bottom: 20px;
+                margin-left: 0;
+                margin-top: 0;
+            }
+        }
+        .list-img {
+            border: none;
+            vertical-align: middle;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-bottom: 3px;
+        }
+        .btn {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 300;
+            .btn-span {
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 10px;
+                    height: 5px;
+                    position: absolute;
+                    background-image: url('../img/arrow-down.svg');
+                    top: 6px;
+                    right: -15px;
+                }
+            }
+        }
+        .simplebar-track.simplebar-vertical {
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            bottom: 0;
+            border-radius: 5px;
+        }
+        .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+            background: rgba(0, 0, 0, 0.3);
+            width: 3px;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            bottom: -9px;
+            top: 0;
+        }
+        .simplebar-scrollbar.simplebar-visible:before {
+            opacity: 1;
+        }
+        .simplebar-content-wrapper {
+            padding: 0;
+        }
+    }
+}
+
 .status-local-btn2 {
     .dropdown {
         position: relative;
@@ -366,6 +471,7 @@
     justify-content: space-between;
     position: relative;
     left: -35px;
+    margin-bottom: 30px;
     .simplebar-track.simplebar-vertical {
         background-color: rgba(0, 0, 0, 0.1);
         width: 5px;

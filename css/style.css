@@ -683,7 +683,7 @@ html {
   margin-left: 30px;
 }
 .container-info-settings .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
-  background: linear-gradient(0deg, #2e2d38 0%, #cccceb 67%, #788a8e 100%);
+  background: rgba(0, 0, 0, 0.3);
   width: 6px;
   border-radius: 5px;
   left: 0;
@@ -692,7 +692,7 @@ html {
   top: 0;
 }
 .container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-  background: linear-gradient(90deg, #2e2d38 0%, #cccceb 67%, #788a8e 100%);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   height: 6px;
   left: 0;
@@ -900,7 +900,7 @@ html {
   margin-top: 35px;
   min-width: 95px;
   position: absolute;
-  left: 200px;
+  left: 250px;
   top: 16px;
 }
 @media (max-width: 1300px) {
@@ -947,6 +947,11 @@ html {
   margin-left: 20px;
   min-width: 718px;
   display: none;
+}
+@media (min-width: 1500px) {
+  .block-department {
+    margin-right: 20%;
+  }
 }
 .block-department .department-change-toggle {
   display: none;
@@ -1001,6 +1006,10 @@ html {
   margin-bottom: 15px;
   font-weight: 500;
 }
+.block-department .wrap-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 .block-department .list-email {
   width: 216px;
   height: 16px;
@@ -1023,18 +1032,18 @@ html {
   font-weight: 500;
   margin-top: -5px;
   position: relative;
-  top: 16px;
-  left: 6px;
+  top: 7px;
+  font-size: 12px;
 }
 .block-department .department-change-name {
   position: relative;
-  top: 23px;
-  left: 6px;
+  top: 13px;
+  font-size: 12px;
 }
 .block-department .dt-email {
   position: relative;
-  top: 23px;
-  left: 6px;
+  top: 13px;
+  font-size: 12px;
 }
 .block-department input {
   z-index: 1;
@@ -1085,6 +1094,8 @@ html {
 }
 .block-clients .wrap-container {
   justify-content: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .block-clients .clients-header {
   text-align: center;
@@ -1151,22 +1162,15 @@ html {
 .block-clients .list-description {
   max-width: 153px;
 }
-.block-clients .department-change-addres {
-  font-weight: 500;
-  margin-top: -5px;
-  position: relative;
-  top: 16px;
-  left: 6px;
-}
 .block-clients .department-change-name {
   position: relative;
-  top: 23px;
-  left: 6px;
+  top: 13px;
+  font-size: 12px;
 }
 .block-clients .dt-email {
   position: relative;
-  top: 23px;
-  left: 6px;
+  top: 13px;
+  font-size: 12px;
 }
 .block-clients input {
   z-index: 1;
@@ -1264,7 +1268,7 @@ html {
 .block-status-order .status-header-ul {
   display: flex;
   margin-bottom: 0;
-  margin-top: 38px;
+  margin-top: 30px;
 }
 .block-status-order .status-header-ul .header-list {
   font-size: 14px;
@@ -1363,17 +1367,9 @@ html {
   position: relative;
   top: 3px;
 }
-.block-status-order .department-change-addres {
-  font-weight: 500;
-  margin-top: -5px;
-  position: relative;
-  top: 16px;
-  left: 6px;
-}
 .block-status-order .dt-email {
   position: relative;
-  top: 23px;
-  left: 6px;
+  top: 13px;
   font-size: 12px;
   font-weight: 500;
 }
@@ -1626,6 +1622,7 @@ html {
 }
 .block-payment-method .wrap-container {
   justify-content: flex-start;
+  margin-top: 38px;
 }
 .block-payment-method .payment-header {
   text-align: center;
@@ -1702,6 +1699,8 @@ html {
 }
 .block-delivery-method .wrap-container {
   justify-content: flex-start;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .block-delivery-method .wrap-container-change {
   justify-content: flex-start;
@@ -1751,6 +1750,9 @@ html {
 .block-delivery-method ul li {
   margin-bottom: 8px;
 }
+.block-delivery-method ul li:first-child {
+  font-weight: 500;
+}
 .block-delivery-method .list-name {
   position: relative;
   margin-left: 30px;
@@ -1765,6 +1767,8 @@ html {
 .block-delivery-method .list-name span img {
   position: absolute;
   left: -20px;
+  width: 16px;
+  height: 16px;
 }
 .block-delivery-method .list-name span .avtoluks-img {
   height: 20px;
@@ -1812,13 +1816,13 @@ html {
   font-weight: 500;
   font-size: 12px;
   position: relative;
-  top: 22px;
+  top: 13px;
 }
 .block-delivery-method .delivery-sort-name {
   font-size: 12px;
   font-weight: 500;
   position: relative;
-  top: 15px;
+  top: 8px;
 }
 .block-delivery-method .delivery-local {
   font-size: 16px;
@@ -1832,7 +1836,7 @@ html {
   cursor: pointer;
 }
 .block-delivery-method .delivery-change-local {
-  margin-top: 40px;
+  margin-top: 35px;
   margin-left: 50px;
   width: 180px;
 }
@@ -1883,7 +1887,8 @@ html {
 }
 .block-product-category .wrap-container {
   justify-content: flex-start;
-  margin-bottom: 17px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .block-product-category .wrap-container-change {
   justify-content: flex-start;
@@ -2209,13 +2214,13 @@ html {
   font-weight: 500;
   font-size: 12px;
   position: relative;
-  top: 22px;
+  top: 13px;
 }
 .block-product-category .product-change-toggle .product-sort-name {
   font-size: 12px;
   font-weight: 500;
   position: relative;
-  top: 6px;
+  top: -2px;
   margin-bottom: 0;
   z-index: 2;
 }
