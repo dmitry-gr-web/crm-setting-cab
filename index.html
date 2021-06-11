@@ -8,6 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
     <title>Document</title>
@@ -706,7 +707,14 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.custom.scroll.js"></script>
     <script src="js/custom.scroll.js"></script>
+    <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        new SimpleBar(document.querySelector('.container-info-settings'), {
+            autoHide: true,
+            forceVisible: true | 'x' | 'y'
+        });
+    </script>
 </body>
 
 </html>

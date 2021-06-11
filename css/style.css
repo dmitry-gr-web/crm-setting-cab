@@ -668,6 +668,46 @@ html {
     margin-left: 30px;
   }
 }
+.container-info-settings .simplebar-track.simplebar-vertical {
+  background-color: transparent;
+  width: 6px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+.container-info-settings .simplebar-track.simplebar-horizontal {
+  background-color: transparent;
+  height: 6px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+.container-info-settings .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: linear-gradient(0deg, #2e2d38 0%, #cccceb 67%, #788a8e 100%);
+  width: 6px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+  background: linear-gradient(90deg, #2e2d38 0%, #cccceb 67%, #788a8e 100%);
+  border-radius: 5px;
+  height: 6px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: -2px;
+}
+.container-info-settings .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.container-info-settings .simplebar-content-wrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 30px;
+}
 .container-info-settings .main-setting {
   margin-right: 20px;
   cursor: pointer;
@@ -736,9 +776,11 @@ html {
   width: 16px;
   height: 15px;
   position: absolute;
-  right: -30px;
+  right: -50px;
   cursor: pointer;
   display: inline-block;
+  padding-right: 10px;
+  background-repeat: no-repeat;
 }
 .block-user-setting .seetings-header:after {
   content: "";
@@ -918,9 +960,11 @@ html {
   width: 16px;
   height: 15px;
   position: absolute;
-  right: -30px;
+  right: -50px;
   cursor: pointer;
   display: inline-block;
+  padding-right: 10px;
+  background-repeat: no-repeat;
 }
 .block-department .department-header:after {
   content: "";
@@ -1050,9 +1094,11 @@ html {
   width: 16px;
   height: 15px;
   position: absolute;
-  right: -30px;
+  right: -50px;
   cursor: pointer;
   display: inline-block;
+  padding-right: 10px;
+  background-repeat: no-repeat;
 }
 .block-clients .clients-header:after {
   content: "";
@@ -1178,9 +1224,11 @@ html {
   width: 16px;
   height: 15px;
   position: absolute;
-  right: -30px;
+  right: -50px;
   cursor: pointer;
   display: inline-block;
+  padding-right: 10px;
+  background-repeat: no-repeat;
 }
 .block-status-order .status-header:after {
   content: "";
@@ -1648,9 +1696,11 @@ html {
   width: 16px;
   height: 15px;
   position: absolute;
-  right: -30px;
+  right: -50px;
   cursor: pointer;
   display: inline-block;
+  padding-right: 10px;
+  background-repeat: no-repeat;
 }
 .block-delivery-method .delivery-header:after {
   content: "";
@@ -1825,9 +1875,11 @@ html {
   width: 16px;
   height: 15px;
   position: absolute;
-  right: -30px;
+  right: -50px;
   cursor: pointer;
   display: inline-block;
+  padding-right: 10px;
+  background-repeat: no-repeat;
 }
 .block-product-category .product-header:after {
   content: "";
