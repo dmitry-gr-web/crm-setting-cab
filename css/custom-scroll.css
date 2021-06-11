@@ -385,7 +385,7 @@
 .type-chose-btn .dropdown .ul-block .list {
   cursor: pointer;
   position: relative;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-bottom: 5px;
   margin-top: 5px;
 }
@@ -397,7 +397,7 @@
   position: absolute;
   background-color: black;
   top: 7px;
-  left: -7px;
+  left: -10px;
 }
 .type-chose-btn .dropdown .ul-block .list:first-child:after {
   content: "";
@@ -410,7 +410,7 @@
 }
 .type-chose-btn .dropdown .ul-block .list:first-child {
   margin-bottom: 15px;
-  margin-left: 0;
+  margin-left: 5px;
   margin-top: 0;
 }
 .type-chose-btn .dropdown .btn {

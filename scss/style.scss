@@ -481,6 +481,9 @@ html {
     display: flex;
     flex-direction: column;
     display: block;
+    @include breakpoint (fullhd) {
+        margin-left: 5%;
+    }
     .block-contacts {
         list-style: none;
         padding-left: 0;
@@ -572,6 +575,9 @@ html {
         position: relative;
         left: 0;
         top: -25px;
+    }
+    @include breakpoint (fullhd) {
+        left: 300px;
     }
     .list-warehouse {
         font-size: 14px;
@@ -1518,7 +1524,7 @@ html {
         margin-bottom: 20px;
         text-align: right;
         margin-right: 20px;
-        bottom: -170px;
+        bottom: -100px;
         &:before {
             background-image: url('../img/accept-black.svg');
             width: 12px;
@@ -1890,6 +1896,7 @@ html {
         }
         .product-change-local {
             margin-left: 68px;
+            margin-top: 15px;
         }
         .product-sort-input {
             position: relative;

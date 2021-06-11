@@ -391,7 +391,7 @@
             .list {
                 cursor: pointer;
                 position: relative;
-                margin-left: 10px;
+                margin-left: 15px;
                 margin-bottom: 5px;
                 margin-top: 5px;
             }
@@ -403,7 +403,7 @@
                 position: absolute;
                 background-color: black;
                 top: 7px;
-                left: -7px;
+                left: -10px;
             }
             .list:first-child:after {
                 content: '';
@@ -416,7 +416,7 @@
             }
             .list:first-child {
                 margin-bottom: 15px;
-                margin-left: 0;
+                margin-left: 5px;
                 margin-top: 0;
             }
         }
