@@ -448,7 +448,7 @@ html {
     .seetings-header {
         text-align: center;
         position: relative;
-        min-width: 718px;
+        width: 718px;
         margin-right: 7%;
         .btnplus6 {
             background-image: url('../img/btnplus-black.svg');
@@ -618,7 +618,7 @@ html {
     margin-top: 40px;
     margin-right: 7%;
     margin-left: 20px;
-    max-width: 718px;
+    width: 718px;
     display: none;
     @include breakpoint (fullhd) {
         margin-right: 20%;
@@ -790,7 +790,7 @@ html {
     margin-top: 40px;
     margin-right: 7%;
     margin-left: 20px;
-    min-width: 718px;
+    width: 718px;
     display: none;
     @include breakpoint (fullhd) {
         margin-right: 20%;
@@ -850,20 +850,53 @@ html {
             font-weight: 300;
         }
     }
-    .list-id {
-        text-align: center;
-        width: 20px;
-    }
-    .list-name {
-        max-width: 120px;
-    }
-    .list-sort {
-        text-align: center;
-        width: 31px;
-        height: 18px;
-    }
-    .list-description {
-        max-width: 153px;
+    .clients-group {
+        width: 100%;
+        .id-block {
+            width: 20px;
+            height: 16px;
+            text-align: center;
+        }
+        .name-block {
+            width: 129px;
+            height: 16px;
+            text-align: left;
+        }
+        .desc-block {
+            min-width: 68px;
+            height: 16px;
+            text-align: left;
+        }
+        .email-block {
+            width: 189px;
+            height: 16px;
+            text-align: left;
+        }
+        .sort-block {
+            width: 27px;
+            height: 16px;
+            text-align: center;
+            margin-left: 20px;
+        }
+        .list-header {
+            display: flex;
+            font-size: 14px;
+            font-weight: 500;
+            div {
+                margin-right: 16px;
+                white-space: nowrap;
+            }
+        }
+        .list-item {
+            display: flex;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 300;
+            div {
+                margin-right: 16px;
+                white-space: nowrap;
+            }
+        }
     }
     .department-change-name {
         position: relative;
@@ -1351,7 +1384,7 @@ html {
     margin-top: 40px;
     margin-right: 7%;
     margin-left: 20px;
-    min-width: 718px;
+    width: 718px;
     display: none;
     @include breakpoint (fullhd) {
         margin-right: 20%;
@@ -1431,7 +1464,7 @@ html {
     margin-top: 40px;
     margin-right: 7%;
     margin-left: 20px;
-    min-width: 718px;
+    width: 718px;
     display: none;
     @include breakpoint (fullhd) {
         margin-right: 20%;
@@ -1622,7 +1655,7 @@ html {
     margin-top: 40px;
     margin-right: 7%;
     margin-left: 20px;
-    min-width: 718px;
+    width: 718px;
     display: none;
     @include breakpoint (fullhd) {
         margin-right: 20%;

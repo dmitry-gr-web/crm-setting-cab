@@ -773,7 +773,7 @@ html {
 .block-user-setting .seetings-header {
   text-align: center;
   position: relative;
-  min-width: 718px;
+  width: 718px;
   margin-right: 7%;
 }
 .block-user-setting .seetings-header .btnplus6 {
@@ -960,7 +960,7 @@ html {
   margin-top: 40px;
   margin-right: 7%;
   margin-left: 20px;
-  max-width: 718px;
+  width: 718px;
   display: none;
 }
 @media (min-width: 1580px) {
@@ -1134,7 +1134,7 @@ html {
   margin-top: 40px;
   margin-right: 7%;
   margin-left: 20px;
-  min-width: 718px;
+  width: 718px;
   display: none;
 }
 @media (min-width: 1580px) {
@@ -1197,20 +1197,53 @@ html {
   margin-bottom: 15px;
   font-weight: 500;
 }
-.block-clients .list-id {
-  text-align: center;
+.block-clients .clients-group {
+  width: 100%;
+}
+.block-clients .clients-group .id-block {
   width: 20px;
-}
-.block-clients .list-name {
-  max-width: 120px;
-}
-.block-clients .list-sort {
+  height: 16px;
   text-align: center;
-  width: 31px;
-  height: 18px;
 }
-.block-clients .list-description {
-  max-width: 153px;
+.block-clients .clients-group .name-block {
+  width: 129px;
+  height: 16px;
+  text-align: left;
+}
+.block-clients .clients-group .desc-block {
+  min-width: 68px;
+  height: 16px;
+  text-align: left;
+}
+.block-clients .clients-group .email-block {
+  width: 189px;
+  height: 16px;
+  text-align: left;
+}
+.block-clients .clients-group .sort-block {
+  width: 27px;
+  height: 16px;
+  text-align: center;
+  margin-left: 20px;
+}
+.block-clients .clients-group .list-header {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+}
+.block-clients .clients-group .list-header div {
+  margin-right: 16px;
+  white-space: nowrap;
+}
+.block-clients .clients-group .list-item {
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+}
+.block-clients .clients-group .list-item div {
+  margin-right: 16px;
+  white-space: nowrap;
 }
 .block-clients .department-change-name {
   position: relative;
@@ -1699,7 +1732,7 @@ html {
   margin-top: 40px;
   margin-right: 7%;
   margin-left: 20px;
-  min-width: 718px;
+  width: 718px;
   display: none;
 }
 @media (min-width: 1580px) {
@@ -1781,7 +1814,7 @@ html {
   margin-top: 40px;
   margin-right: 7%;
   margin-left: 20px;
-  min-width: 718px;
+  width: 718px;
   display: none;
 }
 @media (min-width: 1580px) {
@@ -1974,7 +2007,7 @@ html {
   margin-top: 40px;
   margin-right: 7%;
   margin-left: 20px;
-  min-width: 718px;
+  width: 718px;
   display: none;
 }
 @media (min-width: 1580px) {
