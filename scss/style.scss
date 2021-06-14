@@ -176,6 +176,9 @@ html {
     @include breakpoint (mdh) {
         height: 400px;
     }
+    @include breakpoint (fullhdheight) {
+        height: 703px;
+    }
     .nav-list-crm {
         text-align: center;
         margin-bottom: 2vh;
@@ -191,6 +194,9 @@ html {
         }
         @include breakpoint (mdh) {
             margin-bottom: 0;
+        }
+        @include breakpoint (fullhdheight) {
+            margin-bottom: 20px;
         }
         &:first-child {
             margin-top: 4vh;
@@ -426,6 +432,9 @@ html {
     width: 100%;
     margin-top: 40px;
     display: none;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .nav-setting-block {
         padding-left: 0;
         margin: 0;
@@ -753,6 +762,9 @@ html {
     margin-left: 20px;
     min-width: 718px;
     display: none;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .wrap-container {
         justify-content: flex-start;
         margin-top: 30px;
@@ -879,6 +891,9 @@ html {
     width: 718px;
     display: none;
     position: relative;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .status-header {
         text-align: center;
         position: relative;
@@ -913,17 +928,12 @@ html {
         }
     }
     ul {
-        margin-right: 15px;
         list-style: none;
         padding-left: 0;
-        font-size: 14px;
-        &:last-child {
-            margin-right: 0;
-        }
         li {
             margin-bottom: 8px;
             font-weight: 300;
-            height: 16px;
+            font-size: 14px;
         }
     }
     .status-header-ul {
@@ -950,25 +960,64 @@ html {
             }
         }
     }
+    .status-order {
+        cursor: move;
+        .status-list {
+            width: 720px;
+            display: flex;
+            height: 16px;
+            span {
+                display: block;
+            }
+        }
+        .list-name {
+            width: 160px;
+            margin-left: 60px;
+        }
+        .country {
+            font-size: 14px;
+            width: 40px;
+            margin-left: 70px;
+            img {
+                position: relative;
+                top: 3px;
+            }
+        }
+        .atr {
+            width: 72px;
+            margin-left: 90px;
+            img:first-child {
+                margin-right: 20px;
+                margin-left: 10px;
+            }
+        }
+        .sort {
+            margin-left: 85px;
+            text-align: center;
+            width: 31px;
+        }
+        .id {
+            text-align: center;
+            width: 20px;
+            margin-left: 10px;
+        }
+        .ui-sortable-helper {
+            opacity: 0.5;
+            background-color: rgba(128, 128, 128, 0.3);
+            border-radius: 3px;
+        }
+    }
     .status-change {
         margin-top: 25px;
     }
     .status-local {
         font-weight: 500;
     }
-    .list-id {
-        text-align: center;
-        width: 20px;
-    }
-    .list-sort {
-        text-align: center;
-        width: 31px;
-        position: relative;
-        top: 2px;
-    }
     .list-name {
         position: relative;
-        height: 16px;
+        .color100width {
+            position: absolute;
+        }
         .color-form {
             height: 2px;
             width: 100%;
@@ -1019,13 +1068,6 @@ html {
         text-align: center;
         span {
             margin: 0 10px;
-        }
-    }
-    .list-nap {
-        font-size: 14px;
-        img {
-            position: relative;
-            top: 3px;
         }
     }
     .dt-email {
@@ -1281,6 +1323,9 @@ html {
     margin-left: 20px;
     min-width: 718px;
     display: none;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .wrap-container {
         justify-content: flex-start;
         margin-top: 38px;
@@ -1358,6 +1403,9 @@ html {
     margin-left: 20px;
     min-width: 718px;
     display: none;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .wrap-container {
         justify-content: flex-start;
         margin-top: 30px;
@@ -1546,6 +1594,9 @@ html {
     margin-left: 20px;
     min-width: 718px;
     display: none;
+    @include breakpoint (fullhd) {
+        margin-right: 20%;
+    }
     .wrap-container {
         justify-content: flex-start;
         margin-bottom: 30px;

@@ -9,8 +9,8 @@
             @content;
         }
     }
-    @else if $point==sm {
-        @media (max-width: 600px) {
+    @else if $point==fullhdheight {
+        @media (min-height: 950px) {
             @content;
         }
     }
@@ -34,6 +34,11 @@
             @content;
         }
     }
+    // @else if $point==fullhd {
+    //     @media (min-width: 1580px) {
+    //         @content;
+    //     }
+    // }
 }
 
 // @include breakpoint (sm) {

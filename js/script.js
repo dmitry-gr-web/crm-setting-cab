@@ -294,63 +294,63 @@ $("#block-product-category").click(function() {
 $(".pages-dropdown .dropdown .btn .btn-span").click(function() {
     let arrbtn = $('.dropdown .ul-block');
     arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
-    $(".pages-dropdown .dropdown .ul-block").toggle(100);
+    $(".pages-dropdown .dropdown .ul-block").toggle();
 });
 $(".pages-dropdown .dropdown .ul-block .list").click(function() {
     var text = $(this).html();
     $(".pages-dropdown .dropdown .btn .btn-span").html(text);
-    $(".pages-dropdown .dropdown .ul-block").hide(100);
+    $(".pages-dropdown .dropdown .ul-block").hide();
 });
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown"))
-        $(".pages-dropdown .dropdown .ul-block").hide(100);
+        $(".pages-dropdown .dropdown .ul-block").hide();
 });
 //status local btn
 $(".status-local-btn .dropdown .btn .btn-span").click(function() {
     let arrbtn = $('.dropdown .ul-block');
     arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
-    $(".status-local-btn .dropdown .ul-block").toggle(100);
+    $(".status-local-btn .dropdown .ul-block").toggle();
 });
 $(".status-local-btn .dropdown .ul-block .list").click(function() {
     var text = $(this).html();
     $(".status-local-btn .dropdown .btn .btn-span").html(text);
-    $(".status-local-btn .dropdown .ul-block").hide(100);
+    $(".status-local-btn .dropdown .ul-block").hide();
 });
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown"))
-        $(".status-local-btn .dropdown .ul-block").hide(100);
+        $(".status-local-btn .dropdown .ul-block").hide();
 });
 //status local btn 2
 $(".status-local-btn2 .dropdown .btn .btn-span").click(function() {
     let arrbtn = $('.dropdown .ul-block');
     arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
-    $(".status-local-btn2 .dropdown .ul-block").toggle(100);
+    $(".status-local-btn2 .dropdown .ul-block").toggle();
 });
 $(".status-local-btn2 .dropdown .ul-block .list").click(function() {
     var text = $(this).html();
     $(".status-local-btn2 .dropdown .btn .btn-span").html(text);
-    $(".status-local-btn2 .dropdown .ul-block").hide(100);
+    $(".status-local-btn2 .dropdown .ul-block").hide();
 });
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown"))
-        $(".status-local-btn2 .dropdown .ul-block").hide(100);
+        $(".status-local-btn2 .dropdown .ul-block").hide();
 });
 //type-chose-btn
 $(".type-chose-btn .dropdown .btn .btn-span").click(function() {
     let arrbtn = $('.dropdown .ul-block');
     arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
-    $(".type-chose-btn .dropdown .ul-block").toggle(100);
+    $(".type-chose-btn .dropdown .ul-block").toggle();
 });
 $(".type-chose-btn .dropdown .ul-block .list").click(function() {
     var text = $(this).html();
     $(".type-chose-btn .dropdown .btn .btn-span").html(text);
-    $(".type-chose-btn .dropdown .ul-block").hide(100);
+    $(".type-chose-btn .dropdown .ul-block").hide();
 });
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown"))
-        $(".type-chose-btn .dropdown .ul-block").hide(100);
+        $(".type-chose-btn .dropdown .ul-block").hide();
 });

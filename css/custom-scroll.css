@@ -456,12 +456,11 @@
 }
 
 .status-order {
-  width: 790px;
+  width: 757px;
   height: 350px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  left: -35px;
   margin-bottom: 30px;
 }
 .status-order .simplebar-track.simplebar-vertical {
