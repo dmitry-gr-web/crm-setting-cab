@@ -1,0 +1,170 @@
+.crm-order {
+  width: 1300px;
+}
+
+.crm-header {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+}
+.crm-header .crm-header-link {
+  padding-left: 10px;
+  padding-right: 10px;
+  white-space: nowrap;
+  position: relative;
+  text-align: center;
+  margin: 1px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.crm-header .crm-header-link .count-link {
+  font-size: 10px;
+  opacity: 0.5;
+}
+.crm-header .crm-header-link .color-form {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 13px;
+  border-radius: 2px;
+  left: 0;
+}
+.crm-header .crm-header-link .color-C4C4C4 {
+  background-color: #C4C4C4;
+}
+.crm-header .crm-header-link .color-83004F {
+  background-color: #83004F;
+}
+.crm-header .crm-header-link .color-C94F62 {
+  background-color: #C94F62;
+}
+.crm-header .crm-header-link .color-9C02A7 {
+  background-color: #9C02A7;
+}
+.crm-header .crm-header-link .color-1DD787 {
+  background-color: #1DD787;
+}
+.crm-header .crm-header-link .color-00CC00 {
+  background-color: #00CC00;
+}
+.crm-header .crm-header-link .color-00B9FF {
+  background-color: #00B9FF;
+}
+.crm-header .crm-header-link .color-FF0000 {
+  background-color: #FF0000;
+}
+.crm-header .crm-header-link .color-FFCF00 {
+  background-color: #FFCF00;
+}
+.crm-header .crm-header-link .color-91D100 {
+  background-color: #91D100;
+}
+.crm-header .crm-header-link .color-F50296 {
+  background-color: #F50296;
+}
+.crm-header .crm-header-link .color-6996D3 {
+  background-color: #6996D3;
+}
+.crm-header .crm-header-link .color-3415B0 {
+  background-color: #3415B0;
+}
+.crm-header .crm-header-link .color-B0FF00 {
+  background-color: #B0FF00;
+}
+.crm-header .crm-header-link .color-470010 {
+  background-color: #470010;
+}
+
+.crm-name {
+  margin-top: 15px;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+.crm-name .crm-name-list {
+  font-size: 12px;
+  display: flex;
+  width: 100%;
+}
+
+.colum-id {
+  height: 17px;
+  width: 49px;
+}
+
+.colum-order-id {
+  height: 17px;
+  width: 58px;
+}
+
+.colum-user {
+  height: 17px;
+  width: 135px;
+}
+
+.colum-country {
+  height: 17px;
+  width: 57px;
+}
+
+.colum-tel {
+  height: 17px;
+  width: 130px;
+}
+
+.colum-tel-info {
+  height: 17px;
+  width: 26px;
+}
+
+.colum-comm {
+  height: 17px;
+  width: 148px;
+}
+
+.colum-sum {
+  height: 17px;
+  width: 53px;
+}
+
+.colum-product {
+  height: 17px;
+  width: 282px;
+}
+
+.colum-pay {
+  width: 57px;
+  height: 17px;
+}
+
+.colum-delivery {
+  height: 17px;
+  width: 97px;
+}
+
+.colum-employe {
+  height: 17px;
+  width: 81px;
+}
+
+.colum-send {
+  height: 17px;
+  width: 82px;
+}
+
+.crm-input {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.crm-input .crm-input-list {
+  margin: 0.5px;
+  box-sizing: border-box;
+}
+.crm-input .crm-input-list input {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background: rgba(156, 155, 158, 0.4);
+}

@@ -618,7 +618,7 @@ html {
     margin-top: 40px;
     margin-right: 7%;
     margin-left: 20px;
-    min-width: 718px;
+    max-width: 718px;
     display: none;
     @include breakpoint (fullhd) {
         margin-right: 20%;
@@ -679,24 +679,54 @@ html {
     .wrap-container {
         margin-top: 30px;
         margin-bottom: 30px;
+        justify-content: space-between;
+        width: 100%;
     }
-    .list-email {
-        width: 216px;
-        height: 16px;
-    }
-    .list-id {
-        text-align: center;
-        height: 16px;
-        width: 20px;
-    }
-    .list-sort {
-        text-align: center;
-        width: 31px;
-        height: 16px;
-    }
-    .list-description {
-        width: 243px;
-        height: 16px;
+    .department-id {
+        width: 100%;
+        .id-block {
+            width: 20px;
+            height: 16px;
+            text-align: center;
+        }
+        .name-block {
+            width: 129px;
+            height: 16px;
+            text-align: left;
+        }
+        .desc-block {
+            width: 220px;
+            height: 16px;
+            text-align: left;
+        }
+        .email-block {
+            width: 189px;
+            height: 16px;
+            text-align: left;
+        }
+        .sort-block {
+            width: 27px;
+            height: 16px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .list-header {
+            display: flex;
+            font-size: 14px;
+            font-weight: 500;
+            div {
+                margin-right: 16px;
+                white-space: nowrap;
+            }
+        }
+        .list-item {
+            display: flex;
+            text-align: center;
+            div {
+                margin-right: 16px;
+                white-space: nowrap;
+            }
+        }
     }
     .department-change-addres {
         font-weight: 500;
@@ -1037,7 +1067,7 @@ html {
         .color-1DD787 {
             background-color: #1DD787;
         }
-        .color-00CC00 {
+        .color-B0CC00 {
             background-color: #00CC00;
         }
         .color-00B9FF {

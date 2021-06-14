@@ -913,7 +913,7 @@ html {
   left: 250px;
   top: 16px;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1330px) {
   .block-warehouse {
     position: relative;
     left: 0;
@@ -939,7 +939,7 @@ html {
     margin-bottom: 0.5vh;
   }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1330px) {
   .block-warehouse .list-warehouse {
     margin-bottom: 5px;
   }
@@ -950,7 +950,7 @@ html {
   margin-bottom: 15px;
   opacity: 1;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1330px) {
   .block-warehouse .list-warehouse:first-child {
     margin-bottom: 5px;
   }
@@ -960,7 +960,7 @@ html {
   margin-top: 40px;
   margin-right: 7%;
   margin-left: 20px;
-  min-width: 718px;
+  max-width: 718px;
   display: none;
 }
 @media (min-width: 1580px) {
@@ -1024,24 +1024,54 @@ html {
 .block-department .wrap-container {
   margin-top: 30px;
   margin-bottom: 30px;
+  justify-content: space-between;
+  width: 100%;
 }
-.block-department .list-email {
-  width: 216px;
-  height: 16px;
+.block-department .department-id {
+  width: 100%;
 }
-.block-department .list-id {
-  text-align: center;
-  height: 16px;
+.block-department .department-id .id-block {
   width: 20px;
-}
-.block-department .list-sort {
+  height: 16px;
   text-align: center;
-  width: 31px;
-  height: 16px;
 }
-.block-department .list-description {
-  width: 243px;
+.block-department .department-id .name-block {
+  width: 129px;
   height: 16px;
+  text-align: left;
+}
+.block-department .department-id .desc-block {
+  width: 220px;
+  height: 16px;
+  text-align: left;
+}
+.block-department .department-id .email-block {
+  width: 189px;
+  height: 16px;
+  text-align: left;
+}
+.block-department .department-id .sort-block {
+  width: 27px;
+  height: 16px;
+  text-align: center;
+  margin-left: 50px;
+}
+.block-department .department-id .list-header {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+}
+.block-department .department-id .list-header div {
+  margin-right: 16px;
+  white-space: nowrap;
+}
+.block-department .department-id .list-item {
+  display: flex;
+  text-align: center;
+}
+.block-department .department-id .list-item div {
+  margin-right: 16px;
+  white-space: nowrap;
 }
 .block-department .department-change-addres {
   font-weight: 500;
@@ -1387,7 +1417,7 @@ html {
 .block-status-order .list-name .color-1DD787 {
   background-color: #1DD787;
 }
-.block-status-order .list-name .color-00CC00 {
+.block-status-order .list-name .color-B0CC00 {
   background-color: #00CC00;
 }
 .block-status-order .list-name .color-00B9FF {

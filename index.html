@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
+    <link rel="stylesheet" href="css/crm-order.css">
     <title>Document</title>
 </head>
 
@@ -74,7 +75,7 @@
             </ul>
         </nav>
         <div class="container-info-settings">
-            <div class="block-header"> <span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
+            <div class="block-header"><span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
             <div class="wrap-container">
                 <div class="block-nav">
                     <ul class="block-contacts">
@@ -122,44 +123,48 @@
                     <div class="department-header">Отделы<span class="btnplus"></span></div>
                     <div class="wrap-container">
                         <ul class="department-id">
-                            <li class="list-id">Id</li>
-                            <li class="list-id">1</li>
-                            <li class="list-id">2</li>
-                            <li class="list-id">3</li>
-                            <li class="list-id">4</li>
-                            <li class="list-id">11</li>
-                        </ul>
-                        <ul class="department-name">
-                            <li class="list-name">Название</li>
-                            <li class="list-name">Розничный магазин</li>
-                            <li class="list-name">Оптовый магазин</li>
-                            <li class="list-name">Отдел АОЭ</li>
-                            <li class="list-name">Black slave</li>
-                            <li class="list-name">Test</li>
-                        </ul>
-                        <ul class="department-description">
-                            <li class="list-description">Описание</li>
-                            <li class="list-description">г. Киев</li>
-                            <li class="list-description">г. Днепропетровск, ул. Димитр...</li>
-                            <li class="list-description"></li>
-                            <li class="list-description">Часів Яр, вул Дніпровська, 30</li>
-                            <li class="list-description"></li>
-                        </ul>
-                        <ul class="department-email">
-                            <li class="list-email">E-mail</li>
-                            <li class="list-email">office1@gmail.com</li>
-                            <li class="list-email">office2@gmail.com</li>
-                            <li class="list-email"></li>
-                            <li class="list-email">black-office slave@gmail.com</li>
-                            <li class="list-email"></li>
-                        </ul>
-                        <ul class="department-sort">
-                            <li class="list-sort">Sort</li>
-                            <li class="list-sort">1</li>
-                            <li class="list-sort">2</li>
-                            <li class="list-sort">3</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">5</li>
+                            <li class="list-header">
+                                <div class="id-block">Id</div>
+                                <div class="name-block">Название</div>
+                                <div class="desc-block">Описание</div>
+                                <div class="email-block">E-mail</div>
+                                <div class="sort-block">Sort</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">1</div>
+                                <div class="name-block">Розничный магазин</div>
+                                <div class="desc-block">г. Киев</div>
+                                <div class="email-block">office1@gmail.com</div>
+                                <div class="sort-block">1</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">2</div>
+                                <div class="name-block">Оптовый магазин</div>
+                                <div class="desc-block">г. Днепропетровск, ул. Димитр...</div>
+                                <div class="email-block">office1@gmail.com</div>
+                                <div class="sort-block">2</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">3</div>
+                                <div class="name-block">Отдел АОЭ</div>
+                                <div class="desc-block"></div>
+                                <div class="email-block"></div>
+                                <div class="sort-block">3</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">4</div>
+                                <div class="name-block">Black slave</div>
+                                <div class="desc-block">Часів Яр, вул Дніпровська, 30</div>
+                                <div class="email-block">black-office slave@gmail.com</div>
+                                <div class="sort-block">4</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">11</div>
+                                <div class="name-block">Test</div>
+                                <div class="desc-block"></div>
+                                <div class="email-block"></div>
+                                <div class="sort-block">11</div>
+                            </li>
                         </ul>
                     </div>
                     <div class="department-change-toggle">
@@ -679,7 +684,79 @@
                     <div class="btn-save-close">Сохранить</div>
                 </div>
             </div>
+            <div class="crm-order" style="display: none;">
+                <ul class="crm-header">
+                    <li class="crm-header-link"><span class="color-C4C4C4 color-form"></span>Все <span class="count-link">755</span></li>
+                    <li class="crm-header-link"><span class="color-FFCF00 color-form"></span>Новый <span class="count-link">181</span></li>
+                    <li class="crm-header-link"><span class="color-00CC00 color-form"></span>Принято <span class="count-link">299</span></li>
+                    <li class="crm-header-link"><span class="color-FF0000 color-form"></span>Отказ <span class="count-link">6</span></li>
+                    <li class="crm-header-link"><span class="color-00B9FF color-form"></span>Отправлено <span class="count-link">30</span></li>
+                    <li class="crm-header-link"><span class="color-B0FF00 color-form"></span>Завершено <span class="count-link">43</span></li>
+                    <li class="crm-header-link"><span class="color-F50296 color-form"></span>Возврат товара (склад) <span class="count-link">42</span></li>
+                    <li class="crm-header-link"><span class="color-83004F color-form"></span>Утилизация <span class="count-link">42</span></li>
+                    <li class="crm-header-link"><span class="color-3415B0 color-form"></span>На контроле <span class="count-link">20</span></li>
+                    <li class="crm-header-link"><span class="color-6996D3 color-form"></span>Деньги в пути <span class="count-link">3</span></li>
+                    <li class="crm-header-link"><span class="color-470010 color-form"></span>Возврат товара (в пути) <span class="count-link">5</span></li>
+                </ul>
+                <div class="crm-body">
+                    <div class="crm-name">
+                        <div class="crm-name-list">
+                            <div class="colum-id">Id</div>
+                            <div class="colum-order-id">order id</div>
+                            <div class="colum-user">Покупатель</div>
+                            <div class="colum-country">Страна</div>
+                            <div class="colum-tel">Телефон</div>
+                            <div class="colum-tel-info"></div>
+                            <div class="colum-comm">Комментарий</div>
+                            <div class="colum-sum">Сумма</div>
+                            <div class="colum-product">Товар</div>
+                            <div class="colum-pay">Оплата</div>
+                            <div class="colum-delivery">Тип доставки</div>
+                            <div class="colum-employe">Сотрудники</div>
+                            <div class="colum-send">Отправлено</div>
+                        </div>
+                        <div class="crm-input">
+                            <input class="colum-id" type="text">
+                            <input class="colum-order-id" type="text">
+                            <input class="colum-user" type="text">
+                            <input class="colum-country" type="text">
+                            <input class="colum-tel" type="text">
+                            <input class="colum-tel-info" type="text">
+                            <input class="colum-comm" type="text">
+                        </div>
+                        <!-- <li class="crm-name-list">Id</li>
+                        <li class="crm-name-list">order id</li>
+                        <li class="crm-name-list">Покупатель</li>
+                        <li class="crm-name-list">Страна</li>
+                        <li class="crm-name-list">Телефон</li>
+                        <li class="crm-name-list"></li>
+                        <li class="crm-name-list">Комментарий</li>
+                        <li class="crm-name-list">Сумма</li>
+                        <li class="crm-name-list">Товар</li>
+                        <li class="crm-name-list">Оплата</li>
+                        <li class="crm-name-list">Тип доставки</li>
+                        <li class="crm-name-list">Сотрудник</li>
+                        <li class="crm-name-list">Отправлено</li> -->
+                    </div>
+                    <ul class="crm-input">
+                        <li class="crm-input-list"><input class="colum-id" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-order-id" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-user" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-country" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-tel" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-tel-info" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-comm" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-sum" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-product" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-pay" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-delivery" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-employe" type="text"></li>
+                        <li class="crm-input-list"><input class="colum-send" type="text"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/simplebar.js"></script>
