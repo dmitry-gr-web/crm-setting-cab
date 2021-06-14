@@ -248,7 +248,6 @@
                         </ul>
                     </div>
                     <div class="status-order" data-simplebar data-simplebar-auto-hide="false">
-
                         <ul class="status-ul" id="sortable">
                             <li class="status-list">
                                 <span class="id">1</span>
@@ -442,30 +441,37 @@
                 <div class="add block-payment-method">
                     <div class="payment-header">Способ оплаты</div>
                     <div class="wrap-container">
-                        <ul class="payment-id">
-                            <li class="list-id">Id</li>
-                            <li class="list-id">1</li>
-                            <li class="list-id">2</li>
-                            <li class="list-id">3</li>
-                            <li class="list-id">4</li>
-                            <li class="list-id">4</li>
-                        </ul>
-                        <ul class="payment-name">
-                            <li class="list-name">Название</li>
-                            <li class="list-name"><span><img src="img/otkaz.svg" alt=""> Отказ</span>
+                        <ul class="payment-method">
+                            <li class="list-header">
+                                <div class="id-block">Id</div>
+                                <div class="name-block">Название</div>
+                                <div class="sort-block">Sort</div>
                             </li>
-                            <li class="list-name"><img src="img/card.svg" alt=""> Предоплата</li>
-                            <li class="list-name"><img src="img/Coin.svg" alt=""> Оплачено</li>
-                            <li class="list-name"><img src="img/pay.svg" alt=""> Наложенный платеж</li>
-                            <li class="list-name"><img src="img/Convert 24px.svg" alt=""> Обмен</li>
-                        </ul>
-                        <ul class="payment-sort">
-                            <li class="list-sort">Sort</li>
-                            <li class="list-sort">1</li>
-                            <li class="list-sort">2</li>
-                            <li class="list-sort">3</li>
-                            <li class="list-sort">4</li>
-                            <li class="list-sort">4</li>
+                            <li class="list-item">
+                                <div class="id-block">1</div>
+                                <div class="name-block"><img src="img/otkaz.svg" alt=""> Отказ</div>
+                                <div class="sort-block">1</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">2</div>
+                                <div class="name-block"><img src="img/card.svg" alt=""> Предоплата</div>
+                                <div class="sort-block">2</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">3</div>
+                                <div class="name-block"><img src="img/Coin.svg" alt=""> Оплачено</div>
+                                <div class="sort-block">3</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">4</div>
+                                <div class="name-block"><img src="img/pay.svg" alt=""> Наложенный платеж</div>
+                                <div class="sort-block">4</div>
+                            </li>
+                            <li class="list-item">
+                                <div class="id-block">4</div>
+                                <div class="name-block"><img src="img/Convert 24px.svg" alt=""> Обмен</div>
+                                <div class="sort-block">4</div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -557,7 +563,7 @@
                 </div>
                 <div class="add block-product-category">
                     <div class="product-header">Категории товаров<span class="btnplus5"></span></div>
-                    <div class="wrap-container" style="display: block;">
+                    <div class="wrap-container" style="display: block;" id="sort-2">
                         <ul class="product-ul">
                             <li class="product-list-header">
                                 <div class="product-name">Название</div>
@@ -776,6 +782,12 @@
                 revert: 200
             });
             $("#sortable").disableSelection();
+        });
+        $(function() {
+            $("#sort-2").sortable({
+                revert: 200
+            });
+            $("#sort-2").disableSelection();
         });
     </script>
 </body>

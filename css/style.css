@@ -1351,7 +1351,7 @@ html {
 .block-status-order .status-header-ul {
   display: flex;
   margin-bottom: 0;
-  margin-top: 30px;
+  margin-top: 44px;
 }
 .block-status-order .status-header-ul .header-list {
   font-size: 14px;
@@ -1742,7 +1742,7 @@ html {
 }
 .block-payment-method .wrap-container {
   justify-content: flex-start;
-  margin-top: 38px;
+  margin-top: 30px;
 }
 .block-payment-method .payment-header {
   text-align: center;
@@ -1782,32 +1782,52 @@ html {
   margin-bottom: 15px;
   font-weight: 500;
 }
-.block-payment-method .list-id {
-  text-align: center;
-  height: 18px;
+.block-payment-method .payment-method {
+  width: 100%;
+  margin-top: 14px;
+}
+.block-payment-method .payment-method .id-block {
   width: 20px;
-  font-size: 14px;
-}
-.block-payment-method .list-sort {
+  height: 16px;
   text-align: center;
-  width: 31px;
-  height: 18px;
-  font-size: 14px;
 }
-.block-payment-method .list-name {
-  font-size: 14px;
-  width: 180px;
-  height: 18px;
+.block-payment-method .payment-method .name-block {
+  width: 129px;
+  height: 16px;
+  text-align: left;
   position: relative;
-  margin-left: 30px;
 }
-.block-payment-method .list-name img {
-  box-sizing: border-box;
+.block-payment-method .payment-method .name-block img {
   position: absolute;
-  left: -30px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  left: -25px;
 }
-.block-payment-method .list-name:nth-child(4) img {
-  top: -2px;
+.block-payment-method .payment-method .sort-block {
+  width: 27px;
+  height: 16px;
+  text-align: center;
+  margin-left: 20px;
+}
+.block-payment-method .payment-method .list-header {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+}
+.block-payment-method .payment-method .list-header div {
+  margin-right: 35px;
+  white-space: nowrap;
+}
+.block-payment-method .payment-method .list-item {
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+}
+.block-payment-method .payment-method .list-item div {
+  margin-right: 35px;
+  white-space: nowrap;
 }
 
 .block-delivery-method {
