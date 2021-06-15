@@ -1003,6 +1003,8 @@ html {
         display: flex;
         margin-bottom: 0;
         margin-top: 44px;
+        position: relative;
+        left: -9px;
         .header-list {
             font-size: 14px;
             font-weight: 500;
@@ -1010,16 +1012,16 @@ html {
                 margin-left: 13px;
             }
             &:nth-child(2) {
-                margin-left: 64px;
+                margin-left: 24px;
             }
             &:nth-child(3) {
-                margin-left: 140px;
+                margin-left: 80px;
             }
             &:nth-child(4) {
-                margin-left: 64px;
+                margin-left: 30px;
             }
             &:nth-child(5) {
-                margin-left: 38px;
+                margin-left: 30px;
             }
         }
     }
@@ -1035,12 +1037,12 @@ html {
         }
         .list-name {
             width: 160px;
-            margin-left: 60px;
+            margin-left: 20px;
         }
         .country {
             font-size: 14px;
             width: 40px;
-            margin-left: 70px;
+            margin-left: 30px;
             img {
                 position: relative;
                 top: 3px;
@@ -1048,14 +1050,14 @@ html {
         }
         .atr {
             width: 72px;
-            margin-left: 90px;
+            margin-left: 35px;
             img:first-child {
                 margin-right: 20px;
                 margin-left: 10px;
             }
         }
         .sort {
-            margin-left: 85px;
+            margin-left: 75px;
             text-align: center;
             width: 31px;
         }
@@ -1100,7 +1102,7 @@ html {
         .color-1DD787 {
             background-color: #1DD787;
         }
-        .color-B0CC00 {
+        .color-00CC00 {
             background-color: #00CC00;
         }
         .color-00B9FF {
@@ -1463,7 +1465,7 @@ html {
             font-size: 14px;
             font-weight: 500;
             div {
-                margin-right: 35px;
+                margin-right: 46px;
                 white-space: nowrap;
             }
         }
@@ -1473,7 +1475,7 @@ html {
             font-size: 14px;
             font-weight: 300;
             div {
-                margin-right: 35px;
+                margin-right: 46px;
                 white-space: nowrap;
             }
         }
@@ -1545,58 +1547,72 @@ html {
             }
         }
     }
-    .list-name {
-        position: relative;
-        margin-left: 30px;
-        font-weight: 300;
-        font-size: 14px;
-        height: 18px;
-        width: 96px;
-        span {
+    .delivery-method {
+        width: 100%;
+        .id-block {
+            width: 20px;
+            height: 16px;
+            text-align: center;
+        }
+        .name-block {
+            width: 129px;
+            height: 16px;
+            text-align: left;
             position: relative;
             img {
+                width: 15px;
+                height: 15px;
                 position: absolute;
-                left: -20px;
-                width: 16px;
-                height: 16px;
-            }
-            .avtoluks-img {
-                height: 20px;
-                width: 30px;
-                left: -30px;
-            }
-            .sdek-img {
-                width: 20px;
-                height: 20px;
-                left: -25px;
+                left: -28px;
             }
         }
-    }
-    .list-id {
-        text-align: center;
-        height: 18px;
-        width: 20px;
-        font-weight: 300;
-        font-size: 14px;
-    }
-    .list-sort {
-        text-align: center;
-        width: 31px;
-        height: 18px;
-        font-weight: 300;
-        font-size: 14px;
-    }
-    .list-description {
-        max-width: 153px;
-        font-size: 14px;
-        height: 18px;
-        width: 92px;
-        span {
-            position: relative;
+        .desc-block {
+            width: 92px;
+            height: 16px;
+            text-align: left;
             img {
                 position: relative;
                 top: 3px;
-                margin-right: 7px;
+            }
+        }
+        .email-block {
+            width: 189px;
+            height: 16px;
+            text-align: left;
+        }
+        .sort-block {
+            width: 27px;
+            height: 16px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .list-header {
+            display: flex;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            div {
+                margin-right: 16px;
+                white-space: nowrap;
+            }
+            div:nth-child(2) {
+                margin-left: 30px;
+            }
+        }
+        .list-item {
+            display: flex;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 300;
+            div {
+                margin-right: 16px;
+                white-space: nowrap;
+            }
+            div:nth-child(2) {
+                margin-left: 30px;
+            }
+            .desc-block {
+                font-weight: 400;
             }
         }
     }
@@ -1684,6 +1700,7 @@ html {
         justify-content: flex-start;
         margin-bottom: 30px;
         margin-top: 30px;
+        display: block;
     }
     .wrap-container-change {
         justify-content: flex-start;
@@ -1728,35 +1745,30 @@ html {
     .product-list-header {
         font-size: 14px;
         font-weight: 500;
+        display: flex;
         .product-name {
             width: 180px;
-            display: inline-block;
         }
         .product-status {
             width: 46px;
-            display: inline-block;
         }
         .product-sort {
             width: 27px;
-            display: inline-block;
             margin-left: 22px;
         }
     }
     .product-ul-tv-shop {
         margin: 0;
-    }
-    .tv-shop-dropdown {
-        margin: 0;
-        display: none;
         li {
             margin-top: 4px;
             margin-bottom: 4px;
         }
-        .item-1-drop {
-            display: none;
-        }
-        .item-2-drop {
-            display: none;
+    }
+    .tv-shop-dropdown {
+        margin: 0;
+        li {
+            margin-top: 4px;
+            margin-bottom: 4px;
         }
     }
     .product-list {
@@ -1779,17 +1791,17 @@ html {
                 position: absolute;
                 top: 6px;
                 left: 0px;
-                transform: rotate(-90deg);
+                // transform: rotate(-90deg);
                 transition: 0.2s;
                 -webkit-transition: 0.2s;
                 -moz-transition: 0.2s;
-                -webkit-transform: rotate(-90deg);
-                -moz-transform: rotate(-90deg);
+                // -webkit-transform: rotate(-90deg);
+                // -moz-transform: rotate(-90deg);
             }
             .aa-toggle {
-                transform: rotate(0deg);
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
+                transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
             }
         }
     }
@@ -1812,21 +1824,18 @@ html {
             position: absolute;
             top: 6px;
             left: 0px;
-            transform: rotate(-90deg);
+            // transform: rotate(-90deg);
             transition: 0.2s;
             -webkit-transition: 0.2s;
             -moz-transition: 0.2s;
+            // -webkit-transform: rotate(-90deg);
+            // -moz-transform: rotate(-90deg);
+        }
+        .aa-toggle {
+            transform: rotate(-90deg);
             -webkit-transform: rotate(-90deg);
             -moz-transform: rotate(-90deg);
         }
-        .aa-toggle {
-            transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-        }
-    }
-    .garden-drop {
-        display: none;
     }
     .tv-item-list {
         .tv-item-1 {
@@ -1848,17 +1857,17 @@ html {
                 position: absolute;
                 top: 6px;
                 left: 15px;
-                transform: rotate(-90deg);
+                // transform: rotate(-90deg);
                 transition: 0.2s;
                 -webkit-transition: 0.2s;
                 -moz-transition: 0.2s;
-                -webkit-transform: rotate(-90deg);
-                -moz-transform: rotate(-90deg);
+                // -webkit-transform: rotate(-90deg);
+                // -moz-transform: rotate(-90deg);
             }
             .aa-toggle {
-                transform: rotate(0deg);
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
+                transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
             }
         }
         .tv-item-2 {
@@ -1880,17 +1889,17 @@ html {
                 position: absolute;
                 top: 6px;
                 left: 15px;
-                transform: rotate(-90deg);
+                // transform: rotate(-90deg);
                 transition: 0.2s;
                 -webkit-transition: 0.2s;
                 -moz-transition: 0.2s;
-                -webkit-transform: rotate(-90deg);
-                -moz-transform: rotate(-90deg);
+                // -webkit-transform: rotate(-90deg);
+                // -moz-transform: rotate(-90deg);
             }
             .aa-toggle {
-                transform: rotate(0deg);
-                -webkit-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
+                transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
             }
         }
     }
@@ -1937,17 +1946,17 @@ html {
             position: absolute;
             top: 6px;
             left: 15px;
-            transform: rotate(-90deg);
+            // transform: rotate(-90deg);
             transition: 0.2s;
             -webkit-transition: 0.2s;
             -moz-transition: 0.2s;
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
+            // -webkit-transform: rotate(-90deg);
+            // -moz-transform: rotate(-90deg);
         }
         .aa-toggle {
-            transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
         }
     }
     .product-checkbox {

@@ -31,23 +31,23 @@ $(document).mouseup(function(e) {
 });
 //block pick color end
 //chekbox
-$(".product-tv-shop").click(function() {
-    $('.tv-shop-dropdown').toggle(200);
-    $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
-});
-$(".tv-item-1").click(function() {
-    $('.item-1-drop').toggle(200);
-    $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
-});
+// $(".product-tv-shop").click(function() {
+//     $('.tv-shop-dropdown').toggle(200);
+//     $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
+// });
+// $(".tv-item-1").click(function() {
+//     $('.item-1-drop').toggle(200);
+//     $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
+// });
 
-$(".tv-item-2").click(function() {
-    $('.item-2-drop').toggle(200);
-    $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
-});
-$(".product-garden").click(function() {
-    $('.garden-drop').toggle(200);
-    $(".product-garden .arrow-animation").toggleClass('aa-toggle');
-});
+// $(".tv-item-2").click(function() {
+//     $('.item-2-drop').toggle(200);
+//     $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
+// });
+// $(".product-garden").click(function() {
+//     $('.garden-drop').toggle(200);
+//     $(".product-garden .arrow-animation").toggleClass('aa-toggle');
+// });
 $("#switch-item1-drop").click(function() {
     $('.tv-item-1-drop').toggleClass('opacity-toggle');
 });
@@ -57,7 +57,22 @@ $("#switch-item2-drop").click(function() {
 $("#switch-garden-drop").click(function() {
     $('.garden-item-3').toggleClass('opacity-toggle');
 });
-
+$("#switch-for-tvshop").click(function() {
+    $('.product-tv-shop').toggleClass('opacity-toggle');
+    $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
+});
+$("#switch-for-garden").click(function() {
+    $('.product-garden').toggleClass('opacity-toggle');
+    $(".product-garden .arrow-animation").toggleClass('aa-toggle');
+});
+$("#switch-for-opt2").click(function() {
+    $('.tv-item-2').toggleClass('opacity-toggle');
+    $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
+});
+$("#switch-for-opt1").click(function() {
+    $('.tv-item-1').toggleClass('opacity-toggle');
+    $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
+});
 
 //chekbox end
 //switch
@@ -71,58 +86,58 @@ $("#switch-garden-drop").click(function() {
 //         $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
 //     });
 // });
-$('#switch-for-tvshop').on('click', function() {
-    if (!$('.product-tv-shop').hasClass('opacity-toggle')) { // если класса нет
-        $('.product-tv-shop').addClass('opacity-toggle').off(); // добавляем класс
-        $(".product-tv-shop .arrow-animation").removeClass('aa-toggle');
-        $('.tv-shop-dropdown').hide(200);
-    } else { // если есть
-        $('.product-tv-shop').removeClass('opacity-toggle'); // убираем класс
-        $(".product-tv-shop").click(function() {
-            $('.tv-shop-dropdown').toggle(200);
-            $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
-        });
-    }
-});
-$('#switch-for-opt1').on('click', function() {
-    if (!$('.tv-item-1').hasClass('opacity-toggle')) { // если класса нет
-        $('.tv-item-1').addClass('opacity-toggle').off(); // добавляем класс
-        $(".tv-item-1 .arrow-animation").removeClass('aa-toggle');
-        $('.item-1-drop').hide(200);
-    } else { // если есть
-        $('.tv-item-1').removeClass('opacity-toggle'); // убираем класс
-        $(".tv-item-1").click(function() {
-            $('.item-1-drop').toggle(200);
-            $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
-        });
-    }
-});
-$('#switch-for-opt2').on('click', function() {
-    if (!$('.tv-item-2').hasClass('opacity-toggle')) { // если класса нет
-        $('.tv-item-2').addClass('opacity-toggle').off(); // добавляем класс
-        $(".tv-item-2 .arrow-animation").removeClass('aa-toggle');
-        $('.item-2-drop').hide(200);
-    } else { // если есть
-        $('.tv-item-2').removeClass('opacity-toggle'); // убираем класс
-        $(".tv-item-2").click(function() {
-            $('.item-2-drop').toggle(200);
-            $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
-        });
-    }
-});
-$('#switch-for-garden').on('click', function() {
-    if (!$('.product-garden').hasClass('opacity-toggle')) { // если класса нет
-        $('.product-garden').addClass('opacity-toggle').off(); // добавляем класс
-        $(".product-garden .arrow-animation").removeClass('aa-toggle');
-        $('.garden-drop').hide(200);
-    } else { // если есть
-        $('.product-garden').removeClass('opacity-toggle'); // убираем класс
-        $(".product-garden").click(function() {
-            $('.garden-drop').toggle(200);
-            $(".product-garden .arrow-animation").toggleClass('aa-toggle');
-        });
-    }
-});
+// $('#switch-for-tvshop').on('click', function() {
+//     if (!$('.product-tv-shop').hasClass('opacity-toggle')) { // если класса нет
+//         $('.product-tv-shop').addClass('opacity-toggle').off(); // добавляем класс
+//         $(".product-tv-shop .arrow-animation").removeClass('aa-toggle');
+//         $('.tv-shop-dropdown').hide(200);
+//     } else { // если есть
+//         $('.product-tv-shop').removeClass('opacity-toggle'); // убираем класс
+//         $(".product-tv-shop").click(function() {
+//             $('.tv-shop-dropdown').toggle(200);
+//             $(".product-tv-shop .arrow-animation").toggleClass('aa-toggle');
+//         });
+//     }
+// });
+// $('#switch-for-opt1').on('click', function() {
+//     if (!$('.tv-item-1').hasClass('opacity-toggle')) { // если класса нет
+//         $('.tv-item-1').addClass('opacity-toggle').off(); // добавляем класс
+//         $(".tv-item-1 .arrow-animation").removeClass('aa-toggle');
+//         $('.item-1-drop').hide(200);
+//     } else { // если есть
+//         $('.tv-item-1').removeClass('opacity-toggle'); // убираем класс
+//         $(".tv-item-1").click(function() {
+//             $('.item-1-drop').toggle(200);
+//             $(".tv-item-1 .arrow-animation").toggleClass('aa-toggle');
+//         });
+//     }
+// });
+// $('#switch-for-opt2').on('click', function() {
+//     if (!$('.tv-item-2').hasClass('opacity-toggle')) { // если класса нет
+//         $('.tv-item-2').addClass('opacity-toggle').off(); // добавляем класс
+//         $(".tv-item-2 .arrow-animation").removeClass('aa-toggle');
+//         $('.item-2-drop').hide(200);
+//     } else { // если есть
+//         $('.tv-item-2').removeClass('opacity-toggle'); // убираем класс
+//         $(".tv-item-2").click(function() {
+//             $('.item-2-drop').toggle(200);
+//             $(".tv-item-2 .arrow-animation").toggleClass('aa-toggle');
+//         });
+//     }
+// });
+// $('#switch-for-garden').on('click', function() {
+//     if (!$('.product-garden').hasClass('opacity-toggle')) { // если класса нет
+//         $('.product-garden').addClass('opacity-toggle').off(); // добавляем класс
+//         $(".product-garden .arrow-animation").removeClass('aa-toggle');
+//         $('.garden-drop').hide(200);
+//     } else { // если есть
+//         $('.product-garden').removeClass('opacity-toggle'); // убираем класс
+//         $(".product-garden").click(function() {
+//             $('.garden-drop').toggle(200);
+//             $(".product-garden .arrow-animation").toggleClass('aa-toggle');
+//         });
+//     }
+// });
 
 // let popup = document.querySelector('.block-pick-color');
 // document.addEventListener('mousedown', function(e) {
