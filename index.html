@@ -75,8 +75,8 @@
             </ul>
         </nav>
         <div class="container-info-settings">
-            <div class="block-header"><span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
-            <div class="wrap-container">
+            <div class="block-header" style="display: none;"><span class="main-setting">Основные настройки</span><span class="user-setting">Настройки пользователей</span> </div>
+            <div class="wrap-container" style="display: none;">
                 <div class="block-nav">
                     <ul class="block-contacts">
                         <li class="list-contacts">Контакты</li>
@@ -639,7 +639,7 @@
                                 <div class="product-sort">Sort</div>
                             </li>
                         </ul>
-                        <div id="sort-2">
+                        <div id="sortable-2">
                             <ul class="product-ul-tv-shop">
                                 <li class="product-list">
                                     <div class="product-tv-shop"><span class="arrow-animation"></span><img src="img/Marine.svg" alt="logo-shop"> Тв шоп</div>
@@ -762,22 +762,24 @@
                     <div class="btn-save-close">Сохранить</div>
                 </div>
             </div>
-            <div class="crm-order" style="display: none;">
+            <div class="crm-order">
                 <ul class="crm-header">
-                    <li class="crm-header-link"><span class="color-C4C4C4 color-form"></span>Все <span class="count-link">755</span></li>
-                    <li class="crm-header-link"><span class="color-FFCF00 color-form"></span>Новый <span class="count-link">181</span></li>
-                    <li class="crm-header-link"><span class="color-00CC00 color-form"></span>Принято <span class="count-link">299</span></li>
-                    <li class="crm-header-link"><span class="color-FF0000 color-form"></span>Отказ <span class="count-link">6</span></li>
-                    <li class="crm-header-link"><span class="color-00B9FF color-form"></span>Отправлено <span class="count-link">30</span></li>
-                    <li class="crm-header-link"><span class="color-B0FF00 color-form"></span>Завершено <span class="count-link">43</span></li>
-                    <li class="crm-header-link"><span class="color-F50296 color-form"></span>Возврат товара (склад) <span class="count-link">42</span></li>
-                    <li class="crm-header-link"><span class="color-83004F color-form"></span>Утилизация <span class="count-link">42</span></li>
-                    <li class="crm-header-link"><span class="color-3415B0 color-form"></span>На контроле <span class="count-link">20</span></li>
-                    <li class="crm-header-link"><span class="color-6996D3 color-form"></span>Деньги в пути <span class="count-link">3</span></li>
-                    <li class="crm-header-link"><span class="color-470010 color-form"></span>Возврат товара (в пути) <span class="count-link">5</span></li>
+                    <li class="crm-header-link"><span class="color-C4C4C4 color-form"></span><span class="btn-link">Все </span><span class="count-link">755</span></li>
+                    <li class="crm-header-link"><span class="color-FFCF00 color-form"></span><span class="btn-link">Новый </span><span class="count-link">181</span></li>
+                    <li class="crm-header-link"><span class="color-00CC00 color-form"></span><span class="btn-link">Принято </span><span class="count-link">299</span></li>
+                    <li class="crm-header-link"><span class="color-FF0000 color-form"></span><span class="btn-link">Отказ </span><span class="count-link">6</span></li>
+                    <li class="crm-header-link"><span class="color-00B9FF color-form"></span><span class="btn-link">Отправлено </span><span class="count-link">30</span></li>
+                    <li class="crm-header-link"><span class="color-B0FF00 color-form"></span><span class="btn-link">Завершено </span><span class="count-link">43</span></li>
+                    <li class="crm-header-link"><span class="color-F50296 color-form"></span><span class="btn-link">Возврат товара (склад) </span><span class="count-link">42</span></li>
+                    <li class="crm-header-link"><span class="color-83004F color-form"></span><span class="btn-link">Утилизация </span><span class="count-link">42</span></li>
+                    <li class="crm-header-link"><span class="color-3415B0 color-form"></span><span class="btn-link">На контроле </span><span class="count-link">20</span></li>
+                    <li class="crm-header-link"><span class="color-6996D3 color-form"></span><span class="btn-link">Деньги в пути </span><span class="count-link">3</span></li>
+                    <li class="crm-header-link"><span class="color-470010 color-form"></span><span class="btn-link">Возврат товара (в пути) </span><span class="count-link">5</span></li>
+                    <li class="crm-header-link"><span class="color-9C02A7 color-form"></span><span class="btn-link">Успешно выполнено </span><span class="count-link">5</span></li>
+                    <li class="crm-header-link"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></li>
                 </ul>
                 <div class="crm-body">
-                    <div class="crm-name">
+                    <div class="crm-body-header">
                         <div class="crm-name-list">
                             <div class="colum-id">Id</div>
                             <div class="colum-order-id">order id</div>
@@ -790,8 +792,27 @@
                             <div class="colum-product">Товар</div>
                             <div class="colum-pay">Оплата</div>
                             <div class="colum-delivery">Тип доставки</div>
+                            <div class="colum-delivery-adress">Адрес доставки</div>
+                            <div class="colum-TTN">ТТН</div>
+                            <div class="colum-TTN-status">ТТН статус</div>
+                            <div class="colum-add">Добавлено</div>
                             <div class="colum-employe">Сотрудники</div>
+                            <div class="colum-depart">Отдел</div>
+                            <div class="colum-update">Обновлено</div>
+                            <div class="colum-finish">Сдано</div>
                             <div class="colum-send">Отправлено</div>
+                            <div class="colum-site">Сайт</div>
+                            <div class="colum-status">Статус</div>
+                            <div class="colum-utm_source">utm_source</div>
+                            <div class="colum-utm_medium">utm_medium</div>
+                            <div class="colum-utm_term">utm_term</div>
+                            <div class="colum-utm_content">utm_content</div>
+                            <div class="colum-utm_campaign">utm_campaign</div>
+                            <div class="colum-ip">IP</div>
+                            <div class="colum-field-1">Доп. поле 1</div>
+                            <div class="colum-field-2">Доп. поле 2</div>
+                            <div class="colum-field-3">Доп. поле 3</div>
+                            <div class="colum-field-4">Доп. поле 4</div>
                         </div>
                         <div class="crm-input">
                             <input class="colum-id" type="text">
@@ -801,36 +822,203 @@
                             <input class="colum-tel" type="text">
                             <input class="colum-tel-info" type="text">
                             <input class="colum-comm" type="text">
+                            <input class="colum-sum" type="text">
+                            <input class="colum-product" type="text">
+                            <input class="colum-pay" type="text">
+                            <input class="colum-delivery" type="text">
+                            <input class="colum-delivery-adress" type="text">
+                            <input class="colum-TTN" type="text">
+                            <input class="colum-TTN-status" type="text">
+                            <input class="colum-add" type="text">
+                            <input class="colum-employe" type="text">
+                            <input class="colum-depart" type="text">
+                            <input class="colum-update" type="text">
+                            <input class="colum-finish" type="text">
+                            <input class="colum-send" type="text">
+                            <input class="colum-site" type="text">
+                            <input class="colum-status" type="text">
+                            <input class="colum-utm_source" type="text">
+                            <input class="colum-utm_medium" type="text">
+                            <input class="colum-utm_term" type="text">
+                            <input class="colum-utm_content" type="text">
+                            <input class="colum-utm_campaign" type="text">
+                            <input class="colum-ip" type="text">
+                            <input class="colum-field-1" type="text">
+                            <input class="colum-field-2" type="text">
+                            <input class="colum-field-3" type="text">
+                            <input class="colum-field-4" type="text">
                         </div>
-                        <!-- <li class="crm-name-list">Id</li>
-                        <li class="crm-name-list">order id</li>
-                        <li class="crm-name-list">Покупатель</li>
-                        <li class="crm-name-list">Страна</li>
-                        <li class="crm-name-list">Телефон</li>
-                        <li class="crm-name-list"></li>
-                        <li class="crm-name-list">Комментарий</li>
-                        <li class="crm-name-list">Сумма</li>
-                        <li class="crm-name-list">Товар</li>
-                        <li class="crm-name-list">Оплата</li>
-                        <li class="crm-name-list">Тип доставки</li>
-                        <li class="crm-name-list">Сотрудник</li>
-                        <li class="crm-name-list">Отправлено</li> -->
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-FF0000 order-id-style">новый</span></div>
+                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-country"><img src="img/ukraine.svg" alt=""> ua</div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"></div>
+                            <div class="colum-comm">Третий комплект (0_З_л)</div>
+                            <div class="colum-sum">9555.40</div>
+                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
+                            <div class="colum-pay"><img src="img/redpay.svg" alt=""></div>
+                            <div class="colum-delivery">СДЭК</div>
+                            <div class="colum-delivery-adress">adress</div>
+                            <div class="colum-TTN">ttn</div>
+                            <div class="colum-TTN-status">ttn-status</div>
+                            <div class="colum-add">добавлено</div>
+                            <div class="colum-employe">Иванов А.С.</div>
+                            <div class="colum-depart">департамент</div>
+                            <div class="colum-update">обновлено</div>
+                            <div class="colum-finish">сдан</div>
+                            <div class="colum-send">что-то</div>
+                            <div class="colum-site">www.abrakadabra</div>
+                            <div class="colum-status">в процесе</div>
+                            <div class="colum-utm_source">source</div>
+                            <div class="colum-utm_medium">mid</div>
+                            <div class="colum-utm_term">term</div>
+                            <div class="colum-utm_content">content</div>
+                            <div class="colum-utm_campaign">campaign</div>
+                            <div class="colum-ip">192.168.1.1</div>
+                            <div class="colum-field-1"></div>
+                            <div class="colum-field-2"></div>
+                            <div class="colum-field-3"></div>
+                            <div class="colum-field-4"></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-FFCF00 order-id-style">новый</span></div>
+                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-country"><img src="img/russia.svg" alt=""> ru</div>
+                            <div class="colum-tel"><img src="img/kyivstar.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><img src="img/message2.svg" alt=""></div>
+                            <div class="colum-comm">Третий комплект (0_З_л)</div>
+                            <div class="colum-sum">9555.40</div>
+                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
+                            <div class="colum-pay"><img src="img/coin2.svg" alt=""></div>
+                            <div class="colum-delivery">Новая почта</div>
+                            <div class="colum-delivery-adress">adress</div>
+                            <div class="colum-TTN">ttn</div>
+                            <div class="colum-TTN-status">ttn-status</div>
+                            <div class="colum-add">добавлено</div>
+                            <div class="colum-employe">Иванов А.С.</div>
+                            <div class="colum-depart">департамент</div>
+                            <div class="colum-update">обновлено</div>
+                            <div class="colum-finish">сдан</div>
+                            <div class="colum-send">что-то</div>
+                            <div class="colum-site">www.abrakadabra</div>
+                            <div class="colum-status">в процесе</div>
+                            <div class="colum-utm_source">source</div>
+                            <div class="colum-utm_medium">mid</div>
+                            <div class="colum-utm_term">term</div>
+                            <div class="colum-utm_content">content</div>
+                            <div class="colum-utm_campaign">campaign</div>
+                            <div class="colum-ip">192.168.1.1</div>
+                            <div class="colum-field-1"></div>
+                            <div class="colum-field-2"></div>
+                            <div class="colum-field-3"></div>
+                            <div class="colum-field-4"></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-00CC00 order-id-style">новый</span></div>
+                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-country"><img src="img/ukraine.svg" alt=""> ua</div>
+                            <div class="colum-tel"><img src="img/vodafone.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"></div>
+                            <div class="colum-comm">Третий комплект (0_З_л)</div>
+                            <div class="colum-sum">9555.40</div>
+                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
+                            <div class="colum-pay"></div>
+                            <div class="colum-delivery">Новая почта</div>
+                            <div class="colum-delivery-adress">adress</div>
+                            <div class="colum-TTN">ttn</div>
+                            <div class="colum-TTN-status">ttn-status</div>
+                            <div class="colum-add">добавлено</div>
+                            <div class="colum-employe">Иванов А.С.</div>
+                            <div class="colum-depart">департамент</div>
+                            <div class="colum-update">обновлено</div>
+                            <div class="colum-finish">сдан</div>
+                            <div class="colum-send">что-то</div>
+                            <div class="colum-site">www.abrakadabra</div>
+                            <div class="colum-status">в процесе</div>
+                            <div class="colum-utm_source">source</div>
+                            <div class="colum-utm_medium">mid</div>
+                            <div class="colum-utm_term">term</div>
+                            <div class="colum-utm_content">content</div>
+                            <div class="colum-utm_campaign">campaign</div>
+                            <div class="colum-ip">192.168.1.1</div>
+                            <div class="colum-field-1"></div>
+                            <div class="colum-field-2"></div>
+                            <div class="colum-field-3"></div>
+                            <div class="colum-field-4"></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-FFCF00 order-id-style">новый</span></div>
+                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-country"><img src="img/kazakhstan.svg " alt=""> kz</div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><img src="img/message2.svg" alt=""></div>
+                            <div class="colum-comm">Третий комплект (0_З_л)</div>
+                            <div class="colum-sum">9555.40</div>
+                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
+                            <div class="colum-pay"></div>
+                            <div class="colum-delivery">СДЭК</div>
+                            <div class="colum-delivery-adress">adress</div>
+                            <div class="colum-TTN">ttn</div>
+                            <div class="colum-TTN-status">ttn-status</div>
+                            <div class="colum-add">добавлено</div>
+                            <div class="colum-employe">Иванов А.С.</div>
+                            <div class="colum-depart">департамент</div>
+                            <div class="colum-update">обновлено</div>
+                            <div class="colum-finish">сдан</div>
+                            <div class="colum-send">что-то</div>
+                            <div class="colum-site">www.abrakadabra</div>
+                            <div class="colum-status">в процесе</div>
+                            <div class="colum-utm_source">source</div>
+                            <div class="colum-utm_medium">mid</div>
+                            <div class="colum-utm_term">term</div>
+                            <div class="colum-utm_content">content</div>
+                            <div class="colum-utm_campaign">campaign</div>
+                            <div class="colum-ip">192.168.1.1</div>
+                            <div class="colum-field-1"></div>
+                            <div class="colum-field-2"></div>
+                            <div class="colum-field-3"></div>
+                            <div class="colum-field-4"></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-FF0000 order-id-style">новый</span></div>
+                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-country"><img src="img/albania.svg" alt=""> alb</div>
+                            <div class="colum-tel"><img src="img/kyivstar.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><img src="img/message2.svg" alt=""></div>
+                            <div class="colum-comm">Третий комплект (0_З_л)</div>
+                            <div class="colum-sum">9555.40</div>
+                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
+                            <div class="colum-pay"></div>
+                            <div class="colum-delivery">СДЭК</div>
+                            <div class="colum-delivery-adress">adress</div>
+                            <div class="colum-TTN">ttn</div>
+                            <div class="colum-TTN-status">ttn-status</div>
+                            <div class="colum-add">добавлено</div>
+                            <div class="colum-employe">Иванов А.С.</div>
+                            <div class="colum-depart">департамент</div>
+                            <div class="colum-update">обновлено</div>
+                            <div class="colum-finish">сдан</div>
+                            <div class="colum-send">что-то</div>
+                            <div class="colum-site">www.abrakadabra</div>
+                            <div class="colum-status">в процесе</div>
+                            <div class="colum-utm_source">source</div>
+                            <div class="colum-utm_medium">mid</div>
+                            <div class="colum-utm_term">term</div>
+                            <div class="colum-utm_content">content</div>
+                            <div class="colum-utm_campaign">campaign</div>
+                            <div class="colum-ip">192.168.1.1</div>
+                            <div class="colum-field-1"></div>
+                            <div class="colum-field-2"></div>
+                            <div class="colum-field-3"></div>
+                            <div class="colum-field-4"></div>
+                        </div>
                     </div>
-                    <ul class="crm-input">
-                        <li class="crm-input-list"><input class="colum-id" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-order-id" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-user" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-country" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-tel" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-tel-info" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-comm" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-sum" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-product" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-pay" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-delivery" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-employe" type="text"></li>
-                        <li class="crm-input-list"><input class="colum-send" type="text"></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -839,6 +1027,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/script.crm-table.js"></script>
     <script>
         new SimpleBar(document.querySelector('.container-info-settings'), {
             autoHide: true,
@@ -854,16 +1043,10 @@
             $("#sortable").disableSelection();
         });
         $(function() {
-            $("#sort-2").sortable({
+            $("#sortable-2").sortable({
                 revert: 200
             });
-            $("#sort-2").disableSelection();
-        });
-        $(function() {
-            $("#sort-3").sortable({
-                revert: 200
-            });
-            $("#sort-3").disableSelection();
+            $("#sortable-2").disableSelection();
         });
     </script>
 </body>

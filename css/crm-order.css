@@ -1,5 +1,5 @@
 .crm-order {
-  width: 1300px;
+  width: 3500px;
 }
 
 .crm-header {
@@ -17,6 +17,7 @@
   margin: 1px;
   cursor: pointer;
   font-size: 12px;
+  user-select: none;
 }
 .crm-header .crm-header-link .count-link {
   font-size: 10px;
@@ -75,82 +76,236 @@
 .crm-header .crm-header-link .color-470010 {
   background-color: #470010;
 }
+.crm-header .crm-header-link .color-9C02A7 {
+  background-color: #9C02A7;
+}
 
-.crm-name {
+.crm-body-header {
   margin-top: 15px;
-  list-style: none;
-  padding-left: 0;
   text-align: center;
 }
-.crm-name .crm-name-list {
-  font-size: 12px;
+.crm-body-header .crm-name-list {
+  font-size: 14px;
   display: flex;
-  width: 100%;
+}
+.crm-body-header .crm-name-list div {
+  height: 23px;
+  line-height: 23px;
+  border-radius: 3px 3px 0 0;
+  margin-right: 1px;
+}
+.crm-body-header .crm-name-list div:nth-child(5) {
+  border-radius: 3px 0 0 0;
+  margin-right: 0;
+}
+.crm-body-header .crm-name-list div:nth-child(6) {
+  border-radius: 0 3px 0 0;
+}
+.crm-body-header div {
+  margin-right: 1px;
+  line-height: 18px;
+}
+.crm-body-header div:nth-child(5) {
+  margin-right: 0;
 }
 
 .colum-id {
-  height: 17px;
+  height: 18px;
   width: 49px;
+  background-color: #F1F1F1;
 }
 
 .colum-order-id {
-  height: 17px;
+  height: 18px;
   width: 58px;
 }
 
 .colum-user {
-  height: 17px;
+  height: 18px;
   width: 135px;
+  background-color: #F1F1F1;
 }
 
 .colum-country {
-  height: 17px;
+  height: 18px;
   width: 57px;
+  position: relative;
+}
+.colum-country img {
+  position: absolute;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  top: 1px;
 }
 
 .colum-tel {
-  height: 17px;
+  height: 18px;
   width: 130px;
+  position: relative;
+  background-color: #F1F1F1;
+}
+.colum-tel img {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
 }
 
 .colum-tel-info {
-  height: 17px;
+  height: 18px;
   width: 26px;
+  background-color: #F1F1F1;
 }
 
 .colum-comm {
-  height: 17px;
+  height: 18px;
   width: 148px;
 }
 
 .colum-sum {
-  height: 17px;
+  height: 18px;
   width: 53px;
+  background-color: #F1F1F1;
 }
 
 .colum-product {
-  height: 17px;
+  height: 18px;
   width: 282px;
 }
 
 .colum-pay {
   width: 57px;
-  height: 17px;
+  height: 18px;
+  background-color: #F1F1F1;
+}
+.colum-pay img {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  top: 2px;
 }
 
 .colum-delivery {
-  height: 17px;
+  height: 18px;
   width: 97px;
 }
 
+.colum-delivery-adress {
+  width: 120px;
+  height: 18px;
+  background-color: #F1F1F1;
+}
+
+.colum-TTN {
+  width: 100px;
+  height: 18px;
+}
+
+.colum-TTN-status {
+  width: 120px;
+  height: 18px;
+  background-color: #F1F1F1;
+}
+
+.colum-add {
+  height: 18px;
+  width: 82px;
+}
+
 .colum-employe {
-  height: 17px;
+  height: 18px;
+  width: 81px;
+  background-color: #F1F1F1;
+}
+
+.colum-depart {
+  height: 18px;
+  width: 81px;
+}
+
+.colum-update {
+  height: 18px;
+  width: 81px;
+  background-color: #F1F1F1;
+}
+
+.colum-finish {
+  height: 18px;
   width: 81px;
 }
 
 .colum-send {
-  height: 17px;
+  height: 18px;
   width: 82px;
+  background-color: #F1F1F1;
+}
+
+.colum-site {
+  height: 18px;
+  width: 120px;
+}
+
+.colum-status {
+  height: 18px;
+  width: 70px;
+  background-color: #F1F1F1;
+}
+
+.colum-utm_source {
+  width: 90px;
+  height: 18px;
+}
+
+.colum-utm_medium {
+  height: 18px;
+  width: 90px;
+  background-color: #F1F1F1;
+}
+
+.colum-utm_term {
+  height: 18px;
+  width: 90px;
+}
+
+.colum-utm_content {
+  height: 18px;
+  width: 90px;
+  background-color: #F1F1F1;
+}
+
+.colum-utm_campaign {
+  height: 18px;
+  width: 130px;
+}
+
+.colum-ip {
+  height: 18px;
+  width: 100px;
+  background-color: #F1F1F1;
+}
+
+.colum-field-1 {
+  height: 18px;
+  width: 110px;
+}
+
+.colum-field-2 {
+  height: 18px;
+  width: 110px;
+  background-color: #F1F1F1;
+}
+
+.colum-field-3 {
+  height: 18px;
+  width: 110px;
+}
+
+.colum-field-4 {
+  height: 18px;
+  width: 110px;
+  background-color: #F1F1F1;
 }
 
 .crm-input {
@@ -158,13 +313,83 @@
   list-style: none;
   padding-left: 0;
 }
-.crm-input .crm-input-list {
-  margin: 0.5px;
-  box-sizing: border-box;
-}
-.crm-input .crm-input-list input {
+.crm-input input {
   box-sizing: border-box;
   outline: none;
   border: none;
+  margin-right: 1px;
   background: rgba(156, 155, 158, 0.4);
+  font-size: 12px;
+  box-shadow: 0 0 10px white;
+}
+.crm-input input:nth-child(5) {
+  margin-right: 0;
+}
+
+.crm-main-table {
+  font-size: 12px;
+  display: flex;
+  white-space: nowrap;
+}
+.crm-main-table .order-id-style {
+  border-radius: 3px;
+  padding: 0.5px 6px;
+  color: white;
+  opacity: 0.7;
+}
+
+.color-83004F {
+  background-color: #83004F;
+}
+
+.color-C94F62 {
+  background-color: #C94F62;
+}
+
+.color-9C02A7 {
+  background-color: #9C02A7;
+}
+
+.color-1DD787 {
+  background-color: #1DD787;
+}
+
+.color-00CC00 {
+  background-color: #00CC00;
+}
+
+.color-00B9FF {
+  background-color: #00B9FF;
+}
+
+.color-FF0000 {
+  background-color: #FF0000;
+}
+
+.color-FFCF00 {
+  background-color: #FFCF00;
+}
+
+.color-91D100 {
+  background-color: #91D100;
+}
+
+.color-F50296 {
+  background-color: #F50296;
+}
+
+.color-6996D3 {
+  background-color: #6996D3;
+}
+
+.color-3415B0 {
+  background-color: #3415B0;
+}
+
+.color-B0FF00 {
+  background-color: #B0FF00;
+}
+
+.btn-toggle {
+  font-weight: 600;
 }
