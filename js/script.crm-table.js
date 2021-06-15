@@ -17,4 +17,10 @@
 //     let btnArr = $('.crm-header-link .btn-link');
 //     btnArr.map(x => $(".crm-header-link .btn-link").removeClass('btn-toggle'));
 //     $('.btn-link').toggleClass('btn-toggle');
-// });
+// });w
+[...document.querySelectorAll('.crm-header-link')].map(x => {
+    // x.removeClass('btn-toggle');
+    x.addEventListener('click', () => {
+        x.classList.toggle('btn-toggle');
+    });
+})

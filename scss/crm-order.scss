@@ -361,7 +361,8 @@
         margin-right: 1px;
         background: rgba(156, 155, 158, 0.4);
         font-size: 12px;
-        box-shadow: 0 0 10px white;
+        // box-shadow: 0 0 10px white;
+        border: 1px solid white;
     }
     input:nth-child(5) {
         margin-right: 0;
