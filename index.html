@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
     <link rel="stylesheet" href="css/crm-order.css">
+    <link rel="stylesheet" href="css/notification.css">
+
     <title>Document</title>
 </head>
 
@@ -41,7 +43,39 @@
             <button class="btn-header"><img src="img/search.svg" alt="search"></button>
             <button class="btn-header"><img src="img/accept.svg" alt="accept"></button>
             <button class="btn-header"><img src="img/btnplus.svg" alt="plus"></button>
-            <button class="btn-header"><img src="img/Bell24px.svg" alt="bell"><span class="bell-circle-pos">2</span></button>
+            <button class="btn-header notification-btn"><img src="img/Bell24px.svg" alt="bell"><span class="bell-circle-pos">2</span></button>
+        </div>
+        <div class="notifications">
+            <div class="noti-header"><span class="btn-not btn-style">Уведомления</span><span class="btn-tech">Техническое</span></div>
+            <div class="block-not">
+                <div class="call">
+                    <div><span class="call-header"><img src="img/Phone24px.svg" alt="">Пропущеный звонок</span></div>
+                    <div><span>Анатолий</span></div>
+                    <div><span>+3809696966</span></div>
+                </div>
+                <div class="reminder">
+                    <div><span class="reminder-not"><img src="img/calenyellow.svg" alt="">Напоминание</span></div>
+                    <div>Перезвонить клиенту <br> <span class="call-name">Анатолий</span> <span class="call-num">+3809696966</span></div>
+                    <div>17:40 05.01.2021</div>
+                </div>
+                <div class="new-order">
+                    <div><span class="new"><img src="img/sumka.svg" alt="">Новый заказ</span></div>
+                    <div><span class="id">id 264353</span></div>
+                </div>
+            </div>
+            <div class="tech-note">
+                <div class="tech">
+                    <div><span class="tech-header"><img src="img/Infoyellow.svg" alt="">Обновление деклараций Нова Пошта</span></div>
+                    <div><span>204000161913885  Номер не найдено</span></div>
+                    <div><span>204000161913885  Нова Пошта ожидает поступления от отправителя</span></div>
+                    <div class="btn-last-posit"><span class="btn-last">Показать последние</span></div>
+                </div>
+                <div class="tech">
+                    <div><span class="tech-header"><img src="img/Infoyellow.svg" alt="">Обновление деклараций Укрпочта</span></div>
+                    <div><span>0503325159555  Shipment not found</span></div>
+                    <div><span>0503325159555  Shipment not found</span></div>
+                </div>
+            </div>
         </div>
     </header>
     <div class="wrap">
@@ -848,7 +882,7 @@
                             <input class="colum-field-3" type="text">
                             <input class="colum-field-4" type="text">
                         </div>
-                        <div class="crm-main-table">
+                        <div class="crm-main-table" id="1">
                             <div class="colum-id">123451</div>
                             <div class="colum-order-id"><span class="color-FF0000 order-id-style">новый</span></div>
                             <div class="colum-user">Александр Сергеевич</div>
@@ -882,7 +916,7 @@
                             <div class="colum-field-3"></div>
                             <div class="colum-field-4"></div>
                         </div>
-                        <div class="crm-main-table">
+                        <div class="crm-main-table" id="2">
                             <div class="colum-id">123451</div>
                             <div class="colum-order-id"><span class="color-FFCF00 order-id-style">новый</span></div>
                             <div class="colum-user">Александр Сергеевич</div>
@@ -916,7 +950,7 @@
                             <div class="colum-field-3"></div>
                             <div class="colum-field-4"></div>
                         </div>
-                        <div class="crm-main-table">
+                        <div class="crm-main-table" id="3">
                             <div class="colum-id">123451</div>
                             <div class="colum-order-id"><span class="color-00CC00 order-id-style">новый</span></div>
                             <div class="colum-user">Александр Сергеевич</div>
@@ -950,7 +984,7 @@
                             <div class="colum-field-3"></div>
                             <div class="colum-field-4"></div>
                         </div>
-                        <div class="crm-main-table">
+                        <div class="crm-main-table" id="4">
                             <div class="colum-id">123451</div>
                             <div class="colum-order-id"><span class="color-FFCF00 order-id-style">новый</span></div>
                             <div class="colum-user">Александр Сергеевич</div>
@@ -1023,7 +1057,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/jquery.js"></script>
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>

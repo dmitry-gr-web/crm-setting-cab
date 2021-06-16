@@ -1,0 +1,131 @@
+.notifications {
+    width: 290px;
+    height: 330px;
+    z-index: 22;
+    background: rgba(81, 81, 81, 0.7);
+    box-shadow: -4px -4px 9px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
+    position: absolute;
+    color: white;
+    visibility: hidden;
+    top: 51px;
+    right: -400px;
+    transition: 0.2s ease-in;
+    -moz-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+    .noti-header {
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 25px;
+        position: relative;
+        span:first-child {
+            margin-right: 24px;
+        }
+        span {
+            user-select: none;
+        }
+    }
+    .block-not {
+        margin-left: 20px;
+        font-size: 12px;
+        opacity: 1;
+        transition: 0.2s;
+        .call {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            .call-header {
+                position: relative;
+                font-weight: 600;
+                img {
+                    position: absolute;
+                    left: -24px;
+                    top: -2px;
+                }
+            }
+        }
+        .reminder {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            .reminder-not {
+                font-weight: 600;
+                position: relative;
+                img {
+                    position: absolute;
+                    left: -24px;
+                    top: -2px;
+                }
+            }
+        }
+        .new-order {
+            margin-left: 20px;
+            .new {
+                font-weight: 600;
+                position: relative;
+                img {
+                    position: absolute;
+                    left: -24px;
+                    top: -2px;
+                }
+            }
+        }
+        div {
+            margin-bottom: 5px;
+        }
+    }
+    .tech-note {
+        margin-left: 20px;
+        font-size: 12px;
+        visibility: hidden;
+        position: absolute;
+        top: 53px;
+        opacity: 0;
+        transition: 0.2s;
+        div {
+            margin-bottom: 5px;
+        }
+        .tech {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            div:first-child {
+                margin-bottom: 8px;
+            }
+            .tech-header {
+                font-weight: 600;
+                position: relative;
+                img {
+                    position: absolute;
+                    left: -24px;
+                    top: -2px;
+                }
+            }
+            .btn-last {
+                opacity: 0.5;
+            }
+            .btn-last-posit {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.btn-style {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: white;
+        border-radius: 2px;
+        left: 0;
+        top: 22px;
+    }
+}
+
+.notification-toggle {
+    visibility: visible;
+    right: 25px;
+    transition: 0.2s ease-in;
+    -moz-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+}
