@@ -480,10 +480,11 @@ html {
   list-style: none;
   top: 10vh;
   left: 40px;
-  z-index: 99999;
+  z-index: 333;
   align-items: center;
   border-radius: 0 15px 15px 0;
   backdrop-filter: blur(4px);
+  transition: 0.3s;
 }
 @media (max-height: 860px) {
   .nav-crm {
@@ -509,10 +510,6 @@ html {
 .nav-crm .nav-list-crm {
   text-align: center;
   margin-bottom: 2vh;
-  transition: 0.3s;
-  -o-transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
 }
 @media (max-height: 860px) {
   .nav-crm .nav-list-crm {
@@ -545,7 +542,18 @@ html {
 .nav-crm .nav-list-crm:last-child {
   margin-bottom: 3vh;
 }
-.nav-crm .nav-list-crm:hover {
+.nav-crm .nav-list-crm .hover {
+  transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  width: 49px;
+}
+.nav-crm .nav-list-crm .hover:hover {
+  transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
   background-color: #FFE600;
   transform: translateX(10px);
   -o-transformn: translateX(10px);
@@ -604,47 +612,97 @@ html {
 .nav-crm .nav-list-crm .video {
   background-image: url("../img/video.svg");
 }
-.nav-crm .nav-list-crm:hover .inbox {
+.nav-crm .nav-list-crm .hover:hover .inbox {
   background-image: url("../img/inbox.svg");
 }
-.nav-crm .nav-list-crm:hover .airplay {
+.nav-crm .nav-list-crm .hover:hover .airplay {
   background-image: url("../img/airplay-black.svg");
 }
-.nav-crm .nav-list-crm:hover .user {
+.nav-crm .nav-list-crm .hover:hover .user {
   background-image: url("../img/Add-us-black.svg");
 }
-.nav-crm .nav-list-crm:hover .sidebar {
+.nav-crm .nav-list-crm .hover:hover .sidebar {
   background-image: url("../img/Sidebar 24pxblack.svg");
 }
-.nav-crm .nav-list-crm:hover .frame {
+.nav-crm .nav-list-crm .hover:hover .frame {
   background-image: url("../img/Frame 25black.svg");
 }
-.nav-crm .nav-list-crm:hover .squares {
+.nav-crm .nav-list-crm .hover:hover .squares {
   background-image: url("../img/Squares-black.svg");
 }
-.nav-crm .nav-list-crm:hover .list {
+.nav-crm .nav-list-crm .hover:hover .list {
   background-image: url("../img/Groupblack.svg");
 }
-.nav-crm .nav-list-crm:hover .link {
+.nav-crm .nav-list-crm .hover:hover .link {
   background-image: url("../img/Link 16pxblack.svg");
 }
-.nav-crm .nav-list-crm:hover .diag {
+.nav-crm .nav-list-crm .hover:hover .diag {
   background-image: url("../img/diag-black.svg");
 }
-.nav-crm .nav-list-crm:hover .rupor {
+.nav-crm .nav-list-crm .hover:hover .rupor {
   background-image: url("../img/rupor-black.svg");
 }
-.nav-crm .nav-list-crm:hover .setting {
+.nav-crm .nav-list-crm .hover:hover .setting {
   background-image: url("../img/settingblakc.svg");
 }
-.nav-crm .nav-list-crm:hover .trash {
+.nav-crm .nav-list-crm .hover:hover .trash {
   background-image: url("../img/trashblack.svg");
 }
-.nav-crm .nav-list-crm:hover .info {
+.nav-crm .nav-list-crm .hover:hover .info {
   background-image: url("../img/Info 24pxblack.svg");
 }
-.nav-crm .nav-list-crm:hover .video {
+.nav-crm .nav-list-crm .hover:hover .video {
   background-image: url("../img/Camera 24pxblack.svg");
+}
+
+.selected-nav {
+  background-color: #FFE600;
+  transform: translateX(10px);
+  -o-transformn: translateX(10px);
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+}
+.selected-nav .btn-crm.sidebar {
+  background-image: url("../img/Sidebar 24pxblack.svg");
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav-crm-plus {
+  width: 209px;
+}
+.nav-crm-plus .nav-list-crm {
+  width: 209px;
+  display: flex;
+}
+.nav-crm-plus .nav-list-crm .hover {
+  margin-right: 20px;
+  width: 49px;
+}
+
+.nav-desc {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 27px;
+  transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  display: none;
+}
+.nav-desc:hover {
+  color: #FFE600;
+}
+
+.nav-desc-toggle {
+  display: block;
 }
 
 .wrap {

@@ -162,10 +162,11 @@ html {
     list-style: none;
     top: 10vh;
     left: 40px;
-    z-index: 99999;
+    z-index: 333;
     align-items: center;
     border-radius: 0 15px 15px 0;
     backdrop-filter: blur(4px);
+    transition: 0.3s;
     @include breakpoint (lgh) {
         height: 66vh;
         top: 13vh;
@@ -182,10 +183,6 @@ html {
     .nav-list-crm {
         text-align: center;
         margin-bottom: 2vh;
-        transition: 0.3s;
-        -o-transition: 0.3s;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
         @include breakpoint (lgh) {
             margin-bottom: 1vh;
         }
@@ -207,7 +204,18 @@ html {
         &:last-child {
             margin-bottom: 3vh;
         }
-        &:hover {
+        .hover {
+            transition: 0.3s;
+            -o-transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            width: 49px;
+        }
+        .hover:hover {
+            transition: 0.3s;
+            -o-transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
             background-color: #FFE600;
             transform: translateX(10px);
             -o-transformn: translateX(10px);
@@ -266,49 +274,99 @@ html {
         .video {
             background-image: url('../img/video.svg');
         }
-        &:hover .inbox {
+        .hover:hover .inbox {
             background-image: url('../img/inbox.svg');
         }
-        &:hover .airplay {
+        .hover:hover .airplay {
             background-image: url('../img/airplay-black.svg');
         }
-        &:hover .user {
+        .hover:hover .user {
             background-image: url('../img/Add-us-black.svg');
         }
-        &:hover .sidebar {
+        .hover:hover .sidebar {
             background-image: url('../img/Sidebar\ 24pxblack.svg');
         }
-        &:hover .frame {
+        .hover:hover .frame {
             background-image: url('../img/Frame\ 25black.svg');
         }
-        &:hover .squares {
+        .hover:hover .squares {
             background-image: url('../img/Squares-black.svg');
         }
-        &:hover .list {
+        .hover:hover .list {
             background-image: url('../img/Groupblack.svg');
         }
-        &:hover .link {
+        .hover:hover .link {
             background-image: url('../img/Link\ 16pxblack.svg');
         }
-        &:hover .diag {
+        .hover:hover .diag {
             background-image: url('../img/diag-black.svg');
         }
-        &:hover .rupor {
+        .hover:hover .rupor {
             background-image: url('../img/rupor-black.svg');
         }
-        &:hover .setting {
+        .hover:hover .setting {
             background-image: url('../img/settingblakc.svg');
         }
-        &:hover .trash {
+        .hover:hover .trash {
             background-image: url('../img/trashblack.svg');
         }
-        &:hover .info {
+        .hover:hover .info {
             background-image: url('../img/Info\ 24pxblack.svg');
         }
-        &:hover .video {
+        .hover:hover .video {
             background-image: url('../img/Camera\ 24pxblack.svg');
         }
     }
+}
+
+.selected-nav {
+    background-color: #FFE600;
+    transform: translateX(10px);
+    -o-transformn: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    .btn-crm.sidebar {
+        background-image: url('../img/Sidebar\ 24pxblack.svg');
+        display: block;
+        width: 17px;
+        height: 17px;
+        margin: 0 auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.nav-crm-plus {
+    width: 209px;
+    .nav-list-crm {
+        width: 209px;
+        display: flex;
+        .hover {
+            margin-right: 20px;
+            width: 49px;
+        }
+    }
+}
+
+.nav-desc {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 27px;
+    transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    display: none;
+    &:hover {
+        color: #FFE600;
+    }
+}
+
+.nav-desc-toggle {
+    display: block;
 }
 
 .wrap {
