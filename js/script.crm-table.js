@@ -7,7 +7,7 @@
 
 [...document.querySelectorAll('.crm-main-table')].map(x => {
     x.addEventListener('click', (e) => {
-        if (e.ctrlKey) {
+        if (e.ctrlKey || e.keyCode === 91) {
             x.classList.toggle('select-toggle');
         } else {
             [...document.querySelectorAll('.crm-main-table')].map(y => y.classList.remove('select-toggle'));
