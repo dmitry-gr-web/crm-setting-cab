@@ -15,6 +15,28 @@
         }
     });
 });
+
+// $('.crm-main-table').mousemove(function(e) {
+//     var X = e.pageX;
+//     var Y = e.pageY;
+//     var top = Y + 10 + 'px';
+//     var left = X + 10 + 'px';
+//     var id = $(this).data('hoverMouse');
+//     $('#hover').css({
+//         display: "block",
+//         top: top,
+//         left: left
+//     });
+// });
+// $('.crm-main-table').mouseout(function() {
+//     var id = $(this).data('hoverMouse');
+//     $('#hover').css({
+//         display: "none"
+//     });
+// });
+
+
+
 // document.querySelector('.colum-user').innerHTML.slice(0, 5);
 // document.querySelector('.colum-user').slice(0, 5);
 
@@ -107,7 +129,84 @@
 //     }
 // }
 
+//task block
+const btnActual = document.querySelector('.actual');
+const btnDone = document.querySelector('.done');
+const blockActual = document.querySelector('.task-toggle-actual');
+const blockDone = document.querySelector('.task-toggle-done');
 
+btnDone.addEventListener('click', () => {
+    blockActual.style.display = 'none';
+    blockDone.style.display = 'block';
+    btnDone.classList.add('btn-style');
+    btnActual.classList.remove('btn-style');
+});
+btnActual.addEventListener('click', () => {
+    blockActual.style.display = 'block';
+    blockDone.style.display = 'none';
+    btnDone.classList.remove('btn-style');
+    btnActual.classList.add('btn-style');
+});
+
+const btnOpenTask = document.getElementById('inbox');
+const taskBlock = document.querySelector('.task-block');
+
+btnOpenTask.addEventListener('click', () => {
+    taskBlock.classList.toggle('task-block-toggle');
+    btnOpenTask.classList.toggle('selected-nav');
+});
+
+document.addEventListener('mousedown', function(e) {
+    if (e.target.closest('.task-block', '#ui-datepicker-div') === null) {
+        taskBlock.classList.remove('task-block-toggle');
+        btnOpenTask.classList.remove('selected-nav');
+    }
+});
+
+const btnTaskPlus = document.querySelector('.btnplus7');
+const wrapTaskPlus = document.querySelector('.task-plus');
+const btnTaskCancel = document.querySelector('.btn-cancel');
+const btnTaskAccept = document.querySelector('.btn-accept');
+const btnTaskLink = document.querySelector('.task-link');
+const blockTaskList = document.querySelector('.task-list');
+
+btnTaskPlus.addEventListener('click', () => {
+    wrapTaskPlus.classList.toggle('task-block-toggle');
+    btnTaskPlus.style.visibility = "hidden";
+    btnTaskLink.style.display = 'none';
+    blockTaskList.style.display = 'none';
+
+});
+btnTaskCancel.addEventListener('click', () => {
+    wrapTaskPlus.classList.toggle('task-block-toggle');
+    btnTaskPlus.style.visibility = "visible";
+    btnTaskLink.style.display = 'block';
+    blockTaskList.style.display = 'block';
+});
+btnTaskAccept.addEventListener('click', () => {
+    wrapTaskPlus.classList.toggle('task-block-toggle');
+    btnTaskPlus.style.visibility = "visible";
+    btnTaskLink.style.display = 'block';
+    blockTaskList.style.display = 'block';
+});
+
+
+$(".recall-clients .dropdown2 .btn .btn-span").click(function() {
+    let arrbtn = $('.dropdown2 .ul-block');
+    arrbtn.map(x => $(".dropdown2 .ul-block").removeClass('toggle'));
+    $(".recall-clients .dropdown2 .ul-block").toggle();
+});
+$(".recall-clients .dropdown2 .ul-block .list").click(function() {
+    var text = $(this).html();
+    $(".recall-clients .dropdown2 .btn .btn-span").html(text);
+    $(".recall-clients .dropdown2 .ul-block").hide();
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("dropdown2"))
+        $(".recall-clients .dropdown2 .ul-block").hide();
+});
+//task block
 
 
 //notification

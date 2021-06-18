@@ -1,6 +1,7 @@
-// * {
-//     cursor: url('../img/near_me_24px.png') 10 10, crosshair;
-// }
+* {
+    cursor: url('../img/near_me_24px.png') 10 10, crosshair;
+}
+
 // .simplebar-scrollbar:before {
 //     cursor: url('../img/near_me_24px.png') 10 10, crosshair;
 // }
@@ -654,10 +655,15 @@
 }
 
 .hoverMouse {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 38px;
     position: absolute;
-    background-color: green;
+    background-color: #515151;
     z-index: 22;
     display: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 38px;
 }

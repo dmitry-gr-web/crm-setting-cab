@@ -336,6 +336,17 @@ html {
         background-repeat: no-repeat;
         background-position: center;
     }
+    .btn-crm.inbox {
+        background-image: url('../img/inbox.svg');
+        display: block;
+        width: 17px;
+        height: 17px;
+        margin: 0 auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 .nav-crm-plus {

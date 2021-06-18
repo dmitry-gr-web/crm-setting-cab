@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/custom-scroll.css">
     <link rel="stylesheet" href="css/crm-order.css">
     <link rel="stylesheet" href="css/notification.css">
+    <link rel="stylesheet" href="css/task.block.css">
+    <link rel="stylesheet" href="jquery-ui.min.css">
 
     <title>Document</title>
 </head>
@@ -105,7 +107,7 @@
                     <div class="nav-desc">Заказы</div>
                 </li>
                 <li class="nav-list-crm">
-                    <div class="hover"><span class="btn-crm inbox"></span></div>
+                    <div class="hover" id="inbox"><span class="btn-crm inbox"></span></div>
                     <div class="nav-desc">Каталог</div>
                 </li>
                 <li class="nav-list-crm">
@@ -856,7 +858,6 @@
                 </ul>
                 <div class="crm-body">
                     <div class="crm-body-header">
-                        <div class="hoverMouse"></div>
                         <div class="crm-name-list">
                             <div class="colum-id">Id</div>
                             <div class="colum-order-id">order id</div>
@@ -927,6 +928,7 @@
                         </div>
                     </div>
                     <div class="wrap-scroll">
+                        <div class="hoverMouse" id="hover">Выделено 1</div>
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
                             <div class="colum-order-id"><span class="color-FF0000 order-id-style">новый</span></div>
@@ -1749,11 +1751,80 @@
                 </div>
             </div>
         </div>
+        <div class="task-block">
+            <div class="task-wrap">
+                <div class="task-header"><span class="count-calen">24</span><span class='header-text'>Задачи</span><span class="btnplus7"></span></div>
+                <div class="task-link"><span class="actual btn-style">Актуальные</span><span class="done">Выполнено</span></div>
+                <div class="task-list" data-simplebar>
+                    <div class="task-toggle-actual">
+                        <div class="task-recall">
+                            <div class="recall-header">Задача перезвонить<span class="accept-btn"></span></div>
+                            <div class="recall-date">09.01.2020 15.30</div>
+                            <div class="recall-name">Анатолий</div>
+                            <div class="recall-num">+3809696966</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="item-header">Задача<span class="accept-btn"></span></div>
+                            <div class="item-date">09.01.2020 15.30</div>
+                            <div class="item-desc">Проверить Бан лист, очистить список и добавить новых пользователей</div>
+                        </div>
+                        <div class="task-recall">
+                            <div class="recall-header">Задача перезвонить<span class="accept-btn"></span></div>
+                            <div class="recall-date">09.01.2020 15.30</div>
+                            <div class="recall-name">Василий</div>
+                            <div class="recall-num">+3809696966</div>
+                        </div>
+                        <div class="task-recall">
+                            <div class="recall-header">Задача перезвонить<span class="accept-btn"></span></div>
+                            <div class="recall-date">09.01.2020 15.30</div>
+                            <div class="recall-name">Василий</div>
+                            <div class="recall-num">+3809696966</div>
+                        </div>
+                    </div>
+                    <div class="task-toggle-done">
+                        <div class="task-recall">
+                            <div class="recall-header">Задача перезвонить<span class="accept-btn-yellow"></span></div>
+                            <div class="recall-date">09.01.2020 15.30</div>
+                            <div class="recall-name">Анатолий</div>
+                            <div class="recall-num">+3809696966</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="item-header">Задача<span class="accept-btn-yellow"></span></div>
+                            <div class="item-date">09.01.2020 15.30</div>
+                            <div class="item-desc">Проверить Бан лист, очистить список и добавить новых пользователей</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-plus">
+                    <div class="taskplus-header">Дата выполнения<input class="data-cal" placeholder="14.01.2021  13.45" readonly id="datepicker"></div>
+                    <div class="recall-clients">
+                        <div class="dropdown2">
+                            <div class="btn"><span class="btn-span">Перезвонить клиенту </span></div>
+                            <ul class="ul-block">
+                                <li class="list">Перезвонить клиенту</li>
+                                <li class="list">Обычное напоминание</li>
+                                <li class="list">Обычное asdsad</li>
+                                <li class="list">Обычное нasda2</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="responsible">Ответственный:<span>Юля Дизайнер</span></div>
+                    <div class="description">
+                        <div class="text-desc">Описание</div>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="btns-pos "><span class="btn-cancel ">Отмена</span><span class="btn-accept ">Создать</span></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/simplebar.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/script.crm-table.js"></script>
+    <script src="js/jquery.js "></script>
+    <script src="js/simplebar.js "></script>
+    <script src="js/script.js "></script>
+    <script src="js/script.crm-table.js "></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/datepicker-ru.js"></script>
     <script>
         new SimpleBar(document.querySelector('.container-info-settings'), {
             autoHide: true,
@@ -1764,19 +1835,25 @@
         //     forceVisible: true | 'x' | 'y'
         // });
     </script>
-    <script src="js/drag-jq-ui.js"></script>
+    <script src="js/drag-jq-ui.js "></script>
     <script>
         $(function() {
-            $("#sortable").sortable({
+            $("#sortable ").sortable({
                 revert: 200
             });
-            $("#sortable").disableSelection();
+            $("#sortable ").disableSelection();
         });
         $(function() {
-            $("#sortable-2").sortable({
+            $("#sortable-2 ").sortable({
                 revert: 200
             });
-            $("#sortable-2").disableSelection();
+            $("#sortable-2 ").disableSelection();
+        });
+    </script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker();
+            $("#datepicker").datepicker("option", "showButtonPanel", true);
         });
     </script>
 </body>
