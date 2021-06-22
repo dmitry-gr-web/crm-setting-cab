@@ -6,12 +6,59 @@
   width: 3140px;
 }
 
+.wrap-scroll .crm-main-table {
+  width: 3140px;
+}
+.wrap-scroll .simplebar-track.simplebar-vertical {
+  background-color: transparent;
+  width: 6px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+.wrap-scroll .simplebar-track.simplebar-horizontal {
+  background-color: transparent;
+  height: 6px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+.wrap-scroll .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  width: 6px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.wrap-scroll .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  height: 6px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: -2px;
+}
+.wrap-scroll .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.wrap-scroll .simplebar-content-wrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 30px;
+}
+
 .crm-header {
   list-style: none;
   display: flex;
   margin: 0;
   padding-left: 0;
-  position: sticky;
+  position: fixed;
+  top: 60px;
+  z-index: 333;
+  background-color: white;
 }
 .crm-header .crm-header-link {
   padding-left: 10px;
@@ -86,7 +133,7 @@
 }
 
 .crm-body-header {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
   position: sticky;
 }
@@ -556,18 +603,4 @@
   position: absolute;
   top: 3px;
   left: -15px;
-}
-
-.hoverMouse {
-  width: 95px;
-  height: 38px;
-  position: absolute;
-  background-color: #515151;
-  z-index: 22;
-  display: none;
-  border-radius: 3px;
-  color: white;
-  font-size: 12px;
-  text-align: center;
-  line-height: 38px;
 }

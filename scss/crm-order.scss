@@ -52,59 +52,62 @@
     // }
 }
 
-// .wrap-scroll {
-//     width: 3140px;
-//     height: 200px;
-//     .crm-main-table {
-//         width: 3140px;
-//     }
-//     .simplebar-track.simplebar-vertical {
-//         background-color: transparent;
-//         width: 6px;
-//         margin-right: 0px;
-//         margin-top: 0px;
-//         margin-bottom: 40px;
-//     }
-//     .simplebar-track.simplebar-horizontal {
-//         background-color: transparent;
-//         height: 6px;
-//         margin-right: 20px;
-//         margin-bottom: 40px;
-//         margin-left: 30px;
-//     }
-//     .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
-//         background: rgba(0, 0, 0, 0.3);
-//         width: 6px;
-//         border-radius: 5px;
-//         left: 0;
-//         right: 0;
-//         bottom: 0;
-//         top: 0;
-//     }
-//     .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-//         background: rgba(0, 0, 0, 0.3);
-//         border-radius: 5px;
-//         height: 6px;
-//         left: 0;
-//         right: 0;
-//         bottom: 0;
-//         top: -2px;
-//     }
-//     .simplebar-scrollbar.simplebar-visible:before {
-//         opacity: 1;
-//     }
-//     .simplebar-content-wrapper {
-//         padding-right: 15px;
-//         padding-left: 15px;
-//         padding-bottom: 30px;
-//     }
-// }
+.wrap-scroll {
+    // width: 100%;
+    .crm-main-table {
+        width: 3140px;
+    }
+    .simplebar-track.simplebar-vertical {
+        background-color: transparent;
+        width: 6px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 40px;
+    }
+    .simplebar-track.simplebar-horizontal {
+        background-color: transparent;
+        height: 6px;
+        margin-right: 20px;
+        margin-bottom: 40px;
+        margin-left: 30px;
+    }
+    .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+        background: rgba(0, 0, 0, 0.3);
+        width: 6px;
+        border-radius: 5px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+    .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        height: 6px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: -2px;
+    }
+    .simplebar-scrollbar.simplebar-visible:before {
+        opacity: 1;
+    }
+    .simplebar-content-wrapper {
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 30px;
+    }
+}
+
 .crm-header {
     list-style: none;
     display: flex;
     margin: 0;
     padding-left: 0;
-    position: sticky;
+    position: fixed;
+    top: 60px;
+    z-index: 333;
+    background-color: white;
     .crm-header-link {
         padding-left: 10px;
         padding-right: 10px;
@@ -179,7 +182,7 @@
 }
 
 .crm-body-header {
-    margin-top: 15px;
+    margin-top: 20px;
     text-align: center;
     position: sticky;
     .crm-name-list {
@@ -654,16 +657,18 @@
     }
 }
 
-.hoverMouse {
-    width: 95px;
-    height: 38px;
-    position: absolute;
-    background-color: #515151;
-    z-index: 22;
-    display: none;
-    border-radius: 3px;
-    color: white;
-    font-size: 12px;
-    text-align: center;
-    line-height: 38px;
-}
+// #tooltip {
+//     width: 95px;
+//     height: 38px;
+//     position: absolute;
+//     background-color: #515151;
+//     z-index: 22;
+//     border-radius: 3px;
+//     color: white;
+//     font-size: 12px;
+//     text-align: center;
+//     line-height: 38px;
+//     display: none;
+//     top: 0px;
+//     left: 0px;
+// }

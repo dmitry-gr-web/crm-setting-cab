@@ -16,6 +16,24 @@
     });
 });
 
+// $(function() {
+//     $("[data-tooltip]").mousemove(function(eventObject) {
+//         $data_tooltip = $(this).attr("data-tooltip");
+//         $("#tooltip").html($data_tooltip)
+//             .css({
+//                 "top": eventObject.pageY + 5,
+//                 "left": eventObject.pageX + 5
+//             })
+//             .show();
+//     }).mouseout(function() {
+//         $("#tooltip").hide()
+//             .html("")
+//             .css({
+//                 "top": 0,
+//                 "left": 0
+//             });
+//     });
+// });
 // $('.crm-main-table').mousemove(function(e) {
 //     var X = e.pageX;
 //     var Y = e.pageY;
@@ -157,7 +175,8 @@ btnOpenTask.addEventListener('click', () => {
 });
 
 document.addEventListener('mousedown', function(e) {
-    if (e.target.closest('.task-block', '#ui-datepicker-div') === null) {
+    // const ui = document.getElementById('ui-datepicker-div');
+    if (e.target.closest('.task-block') === null) {
         taskBlock.classList.remove('task-block-toggle');
         btnOpenTask.classList.remove('selected-nav');
     }
