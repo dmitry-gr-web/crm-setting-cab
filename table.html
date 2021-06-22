@@ -29,8 +29,6 @@
     .tarif-table {
         text-align: center;
         border-collapse: collapse;
-        height: 453px;
-        width: 644px;
     }
     /* .tarif-table tr {
         display: flex;
@@ -43,6 +41,7 @@
     
     .tarif-main td {
         font-size: 14px;
+        position: relative;
     }
     
     .tarif-main img {
@@ -50,25 +49,6 @@
         height: 16px;
         display: block;
         margin: 0 auto;
-    }
-    
-    .plus:after {
-        content: '';
-        background-color: black;
-        width: 10px;
-        height: 1px;
-        position: absolute;
-    }
-    
-    .plus:before {
-        content: '';
-        background-color: black;
-        width: 10px;
-        height: 1px;
-        position: absolute;
-        transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -webkit-transform: rotate(90deg);
     }
     /* .border {
         border-radius: 18px 0 0 0;
@@ -79,8 +59,8 @@
     } */
     
     .table-style {
-        width: 720px;
-        height: 600px;
+        width: max-content;
+        height: max-content;
         margin: 0 auto;
         position: absolute;
         top: 18%;
@@ -100,7 +80,7 @@
         display: block;
         margin-top: 15px;
         /* border-radius: 18px; */
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         cursor: pointer;
     }
     
@@ -114,70 +94,12 @@
         border: 1px solid rgba(69, 69, 69, 0.5);
         margin: 20px;
         margin-top: 10px;
-        height: 500px;
-        width: 645px;
         padding: 15px;
         margin-bottom: 15px;
     }
     
     .colum-business {
         width: 90px;
-    }
-    
-    .colum-start .plus:before {
-        right: 15px;
-    }
-    
-    .colum-start .plus:after {
-        right: 15px;
-    }
-    
-    .colum-test .plus:before {
-        right: 15px;
-    }
-    
-    .colum-test .plus:after {
-        right: 15px;
-    }
-    
-    .colum-office .plus:before {
-        right: 19px;
-    }
-    
-    .colum-office .plus:after {
-        right: 19px;
-    }
-    
-    .colum-company .plus:before {
-        right: 32px;
-    }
-    
-    .colum-company .plus:after {
-        right: 32px;
-    }
-    
-    .colum-company .plus:before {
-        right: 32px;
-    }
-    
-    .colum-company .plus:after {
-        right: 32px;
-    }
-    
-    .colum-business .plus:before {
-        right: 45px;
-    }
-    
-    .colum-business .plus:after {
-        right: 45px;
-    }
-    
-    .colum-corporation .plus:before {
-        right: 40px;
-    }
-    
-    .colum-corporation .plus:after {
-        right: 40px;
     }
     
     .colum-test {
@@ -206,6 +128,41 @@
     
     .colum-business {
         cursor: pointer;
+    }
+    
+    .plus {
+        content: '';
+        background-color: black;
+        width: 10px;
+        height: 1px;
+        position: absolute;
+        display: block;
+    }
+    /* .plus:after {
+        content: '';
+        background-color: black;
+        width: 10px;
+        height: 1px;
+        position: absolute;
+    } */
+    
+    .plus:before {
+        content: '';
+        background-color: black;
+        width: 10px;
+        height: 1px;
+        display: block;
+        transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+    
+    .plus-pos {
+        display: block;
+        width: 10px;
+        height: 1px;
+        margin: 0 auto;
+        position: relative;
     }
 </style>
 
@@ -244,120 +201,121 @@
                 </tr>
                 <tr class="tarif-main">
                     <td>Интеграция с почтовыми службами</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus-pos"><span class="plus"></span></span>
+                    </td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Интеграция с интернет магазинами</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Интеграция с маркетплейсами</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Интеграция с лендингами</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Импорт/экспорт данных</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Модули автоматизации</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Возможности Postback</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Мобильная версия</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Статистика</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Личный склад</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>SMS рассылка</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>IP-телефония</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
                 <tr class="tarif-main">
                     <td>Техподдержка</td>
-                    <td class="colum-test"><span class="plus"></span></td>
-                    <td class="colum-start"><span class="plus"></span></td>
-                    <td class="colum-office"><span class="plus"></span></td>
-                    <td class="colum-company"><span class="plus"></span></td>
-                    <td class="colum-business"><span class="plus"></span></td>
-                    <td class="colum-corporation"><span class="plus"></span></td>
+                    <td class="colum-test"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-start"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-office"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-company"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-business"><span class="plus-pos"><span class="plus"></span></td>
+                    <td class="colum-corporation"><span class="plus-pos"><span class="plus"></span></td>
                 </tr>
             </table>
             <div class="btn"><button>ИЗМЕНИТЬ / ПРОДЛИТЬ</button></div>
