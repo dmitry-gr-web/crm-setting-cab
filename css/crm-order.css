@@ -2,13 +2,10 @@
   cursor: url("../img/near_me_24px.png") 10 10, crosshair;
 }
 
-.crm-order {
+.crm-main-table {
   width: 3140px;
 }
 
-.wrap-scroll .crm-main-table {
-  width: 3140px;
-}
 .wrap-scroll .simplebar-track.simplebar-vertical {
   background-color: transparent;
   width: 6px;
@@ -63,7 +60,6 @@
 .crm-header .crm-header-link {
   padding-left: 10px;
   padding-right: 10px;
-  white-space: nowrap;
   position: relative;
   text-align: center;
   margin: 1px;
@@ -136,6 +132,7 @@
   margin-top: 20px;
   text-align: center;
   position: sticky;
+  width: 3140px;
 }
 .crm-body-header .crm-name-list {
   font-size: 14px;
@@ -199,6 +196,7 @@
   position: absolute;
   left: 2px;
   top: 2px;
+  z-index: 2;
 }
 
 .colum-tel-info {
@@ -571,6 +569,13 @@
   font-weight: 600;
 }
 
+.block1 {
+  background: #b6b5b5;
+  z-index: 222;
+  color: yellow;
+  display: none;
+}
+
 .select-toggle {
   position: relative;
   color: white;
@@ -588,6 +593,27 @@
   border-radius: 3px 0 0 3px;
 }
 
+.crm-main-table:hover div {
+  background: rgba(81, 81, 81, 0.3);
+}
+.crm-main-table:hover:before {
+  content: "";
+  width: 7px;
+  height: 18px;
+  position: absolute;
+  background: #515151;
+  left: -7px;
+  border-radius: 3px 0 0 3px;
+}
+
+.crm-main-table {
+  position: relative;
+}
+
+.z-index {
+  z-index: -1;
+}
+
 .selected-lock {
   position: relative;
 }
@@ -603,4 +629,28 @@
   position: absolute;
   top: 3px;
   left: -15px;
+}
+
+.owl-carousel {
+  width: 90%;
+  height: 15px;
+  position: fixed;
+}
+
+.owl-stage-outer {
+  height: 15px;
+}
+
+.owl-nav {
+  width: 40px;
+  position: fixed;
+  top: 42px;
+  right: 0px;
+  height: 23px;
+  background-color: white;
+}
+
+.owl-item {
+  position: fixed;
+  white-space: nowrap;
 }

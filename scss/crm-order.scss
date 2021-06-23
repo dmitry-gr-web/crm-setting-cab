@@ -9,7 +9,7 @@
     // overflow: auto;
     // height: 400px;
     // cursor: url('../img/near_me_24px.png');
-    width: 3140px;
+    // width: 3140px;
     // .simplebar-track.simplebar-vertical {
     //     background-color: transparent;
     //     width: 6px;
@@ -52,11 +52,14 @@
     // }
 }
 
+.crm-main-table {
+    width: 3140px;
+}
+
 .wrap-scroll {
-    // width: 100%;
-    .crm-main-table {
-        width: 3140px;
-    }
+    // width: 900px;
+    // height: 300px;
+    // position: sticky;
     .simplebar-track.simplebar-vertical {
         background-color: transparent;
         width: 6px;
@@ -111,7 +114,7 @@
     .crm-header-link {
         padding-left: 10px;
         padding-right: 10px;
-        white-space: nowrap;
+        // white-space: nowrap;
         position: relative;
         text-align: center;
         margin: 1px;
@@ -185,6 +188,7 @@
     margin-top: 20px;
     text-align: center;
     position: sticky;
+    width: 3140px;
     .crm-name-list {
         font-size: 14px;
         display: flex;
@@ -248,6 +252,7 @@
         position: absolute;
         left: 2px;
         top: 2px;
+        z-index: 2;
     }
 }
 
@@ -623,6 +628,88 @@
     font-weight: 600;
 }
 
+.block1 {
+    background: rgb(182, 181, 181);
+    z-index: 222;
+    color: yellow;
+    display: none;
+}
+
+// .colum-country {
+//     position: relative;
+//     z-index: 999;
+//     .dropdown3 {
+//         position: relative;
+//         display: inline-block;
+//         z-index: 999;
+//         .ul-block3 {
+//             background: green;
+//             border: none;
+//             color: black;
+//             display: none;
+//             padding: 5px 0px;
+//             position: absolute;
+//             height: 103px;
+//             width: 56px;
+//             top: -5px;
+//             left: 0px;
+//             list-style: none;
+//             font-size: 14px;
+//             font-weight: 300;
+//             // box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+//             // backdrop-filter: blur(4px);
+//             z-index: 999;
+//             .list {
+//                 cursor: pointer;
+//                 position: relative;
+//                 margin-left: 10px;
+//                 margin-bottom: 5px;
+//                 margin-top: 5px;
+//                 z-index: 9999999;
+//             }
+//             .list:first-child:after {
+//                 content: '';
+//                 width: 10px;
+//                 height: 5px;
+//                 position: absolute;
+//                 background-image: url('../img/arrow-up.svg');
+//                 top: 6px;
+//                 left: 47px;
+//             }
+//         }
+//         .list-img {
+//             border: none;
+//             vertical-align: middle;
+//             margin-left: 5px;
+//             margin-right: 5px;
+//             padding-bottom: 3px;
+//         }
+//         .simplebar-track.simplebar-vertical {
+//             background-color: rgba(0, 0, 0, 0.1);
+//             width: 3px;
+//             margin-top: 5px;
+//             margin-bottom: 5px;
+//             margin-right: 5px;
+//             bottom: 0;
+//             border-radius: 5px;
+//         }
+//         .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+//             background: rgba(0, 0, 0, 0.3);
+//             width: 3px;
+//             border-radius: 5px;
+//             left: 0;
+//             right: 0;
+//             bottom: -9px;
+//             top: 0;
+//         }
+//         .simplebar-scrollbar.simplebar-visible:before {
+//             opacity: 1;
+//         }
+//         .simplebar-content-wrapper {
+//             padding: 0;
+//         }
+//     }
+// }
 .select-toggle {
     position: relative;
     color: white;
@@ -640,6 +727,29 @@
     }
 }
 
+.crm-main-table:hover {
+    div {
+        background: rgba(81, 81, 81, 0.3);
+    }
+    &:before {
+        content: '';
+        width: 7px;
+        height: 18px;
+        position: absolute;
+        background: #515151;
+        left: -7px;
+        border-radius: 3px 0 0 3px;
+    }
+}
+
+.crm-main-table {
+    position: relative;
+}
+
+.z-index {
+    z-index: -1;
+}
+
 .selected-lock {
     position: relative;
     div {
@@ -655,6 +765,36 @@
         top: 3px;
         left: -15px;
     }
+}
+
+.owl-carousel {
+    width: 90%;
+    height: 15px;
+    position: fixed;
+}
+
+.owl-stage-outer {
+    height: 15px;
+    // width: 80%;
+}
+
+.owl-stage {
+    // width: 80%;
+}
+
+.owl-nav {
+    width: 40px;
+    position: fixed;
+    top: 42px;
+    right: 0px;
+    height: 23px;
+    background-color: white;
+}
+
+.owl-item {
+    // width: max-content;
+    position: fixed;
+    white-space: nowrap;
 }
 
 // #tooltip {

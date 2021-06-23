@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/crm-order.css">
     <link rel="stylesheet" href="css/notification.css">
     <link rel="stylesheet" href="css/task.block.css">
     <link rel="stylesheet" href="jquery-ui.min.css">
+
 
     <title>Document</title>
 </head>
@@ -841,94 +844,111 @@
                 </div>
             </div>
             <div class="crm-order">
-                <ul class="crm-header">
-                    <li class="crm-header-link"><span class="color-C4C4C4 color-form"></span><span class="btn-link">Все </span><span class="count-link">755</span></li>
-                    <li class="crm-header-link"><span class="color-FFCF00 color-form"></span><span class="btn-link">Новый </span><span class="count-link">181</span></li>
-                    <li class="crm-header-link"><span class="color-00CC00 color-form"></span><span class="btn-link">Принято </span><span class="count-link">299</span></li>
-                    <li class="crm-header-link"><span class="color-FF0000 color-form"></span><span class="btn-link">Отказ </span><span class="count-link">6</span></li>
-                    <li class="crm-header-link"><span class="color-00B9FF color-form"></span><span class="btn-link">Отправлено </span><span class="count-link">30</span></li>
-                    <li class="crm-header-link"><span class="color-B0FF00 color-form"></span><span class="btn-link">Завершено </span><span class="count-link">43</span></li>
-                    <li class="crm-header-link"><span class="color-F50296 color-form"></span><span class="btn-link">Возврат товара (склад) </span><span class="count-link">42</span></li>
-                    <li class="crm-header-link"><span class="color-83004F color-form"></span><span class="btn-link">Утилизация </span><span class="count-link">42</span></li>
-                    <li class="crm-header-link"><span class="color-3415B0 color-form"></span><span class="btn-link">На контроле </span><span class="count-link">20</span></li>
-                    <li class="crm-header-link"><span class="color-6996D3 color-form"></span><span class="btn-link">Деньги в пути </span><span class="count-link">3</span></li>
-                    <li class="crm-header-link"><span class="color-470010 color-form"></span><span class="btn-link">Возврат товара (в пути) </span><span class="count-link">5</span></li>
-                    <li class="crm-header-link"><span class="color-9C02A7 color-form"></span><span class="btn-link">Успешно выполнено </span><span class="count-link">5</span></li>
-                    <li class="crm-header-link"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></li>
-                </ul>
+                <div class="owl-carousel owl-theme crm-header">
+                    <div class="crm-header-link item"><span class="color-C4C4C4 color-form"></span><span class="btn-link">Все </span><span class="count-link">755</span></div>
+                    <div class="crm-header-link item"><span class="color-FFCF00 color-form"></span><span class="btn-link">Новый </span><span class="count-link">181</span></div>
+                    <div class="crm-header-link item"><span class="color-00CC00 color-form"></span><span class="btn-link">Принято </span><span class="count-link">299</span></div>
+                    <div class="crm-header-link item"><span class="color-FF0000 color-form"></span><span class="btn-link">Отказ </span><span class="count-link">6</span></div>
+                    <div class="crm-header-link item"><span class="color-00B9FF color-form"></span><span class="btn-link">Отправлено </span><span class="count-link">30</span></div>
+                    <div class="crm-header-link item"><span class="color-B0FF00 color-form"></span><span class="btn-link">Завершено </span><span class="count-link">43</span></div>
+                    <div class="crm-header-link item"><span class="color-F50296 color-form"></span><span class="btn-link">Возврат товара (склад) </span><span class="count-link">42</span></div>
+                    <div class="crm-header-link item"><span class="color-83004F color-form"></span><span class="btn-link">Утилизация </span><span class="count-link">42</span></div>
+                    <div class="crm-header-link item"><span class="color-3415B0 color-form"></span><span class="btn-link">На контроле </span><span class="count-link">20</span></div>
+                    <div class="crm-header-link item"><span class="color-6996D3 color-form"></span><span class="btn-link">Деньги в пути </span><span class="count-link">3</span></div>
+                    <div class="crm-header-link item"><span class="color-470010 color-form"></span><span class="btn-link">Возврат товара (в пути) </span><span class="count-link">5</span></div>
+                    <div class="crm-header-link item"><span class="color-9C02A7 color-form"></span><span class="btn-link">Успешно выполнено </span><span class="count-link">5</span></div>
+                    <div class="crm-header-link item"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></div>
+                </div>
                 <div class="crm-body">
-                    <div class="wrap-scroll">
-                        <div class="crm-body-header">
-                            <div class="crm-name-list">
-                                <div class="colum-id">Id</div>
-                                <div class="colum-order-id">order id</div>
-                                <div class="colum-user">Покупатель</div>
-                                <div class="colum-country">Страна</div>
-                                <div class="colum-tel">Телефон</div>
-                                <div class="colum-tel-info"></div>
-                                <div class="colum-comm">Комментарий</div>
-                                <div class="colum-sum">Сумма</div>
-                                <div class="colum-product">Товар</div>
-                                <div class="colum-pay">Оплата</div>
-                                <div class="colum-delivery">Тип доставки</div>
-                                <div class="colum-delivery-adress">Адрес доставки</div>
-                                <div class="colum-TTN">ТТН</div>
-                                <div class="colum-TTN-status">ТТН статус</div>
-                                <div class="colum-add">Добавлено</div>
-                                <div class="colum-employe">Сотрудники</div>
-                                <div class="colum-depart">Отдел</div>
-                                <div class="colum-update">Обновлено</div>
-                                <div class="colum-finish">Сдано</div>
-                                <div class="colum-send">Отправлено</div>
-                                <div class="colum-site">Сайт</div>
-                                <div class="colum-status">Статус</div>
-                                <div class="colum-utm_source">utm_source</div>
-                                <div class="colum-utm_medium">utm_medium</div>
-                                <div class="colum-utm_term">utm_term</div>
-                                <div class="colum-utm_content">utm_content</div>
-                                <div class="colum-utm_campaign">utm_campaign</div>
-                                <div class="colum-ip">IP</div>
-                                <div class="colum-field-1">Доп. поле 1</div>
-                                <div class="colum-field-2">Доп. поле 2</div>
-                                <div class="colum-field-3">Доп. поле 3</div>
-                                <div class="colum-field-4">Доп. поле 4</div>
-                            </div>
-                            <div class="crm-input">
-                                <input class="colum-id" type="text">
-                                <input class="colum-order-id" type="text">
-                                <input class="colum-user" type="text">
-                                <div class="colum-country"><span class="country-btn">Все</span></div>
-                                <input class="colum-tel" type="text">
-                                <div class="colum-tel-info"><span class="tel-btn"></span></div>
-                                <input class="colum-comm" type="text">
-                                <input class="colum-sum" type="text">
-                                <input class="colum-product" type="text" placeholder="ввод">
-                                <div class="colum-pay"><span class="pay-btn">Все</span></div>
-                                <div class="colum-delivery"><span class="delivery-btn">Все</span></div>
-                                <input class="colum-delivery-adress" type="text">
-                                <input class="colum-TTN" type="text">
-                                <input class="colum-TTN-status" type="text">
-                                <input class="colum-add" type="text">
-                                <div class="colum-employe"><span class="employe-btn">Все</span></div>
-                                <input class="colum-depart" type="text">
-                                <input class="colum-update" type="text">
-                                <input class="colum-finish" type="text">
-                                <input class="colum-send" type="text">
-                                <input class="colum-site" type="text">
-                                <input class="colum-status" type="text">
-                                <input class="colum-utm_source" type="text">
-                                <input class="colum-utm_medium" type="text">
-                                <input class="colum-utm_term" type="text">
-                                <input class="colum-utm_content" type="text">
-                                <input class="colum-utm_campaign" type="text">
-                                <input class="colum-ip" type="text">
-                                <input class="colum-field-1" type="text">
-                                <input class="colum-field-2" type="text">
-                                <input class="colum-field-3" type="text">
-                                <input class="colum-field-4" type="text">
-                            </div>
+                    <div class="crm-body-header">
+                        <div class="crm-name-list">
+                            <div class="colum-id">Id</div>
+                            <div class="colum-order-id">order id</div>
+                            <div class="colum-user">Покупатель</div>
+                            <div class="colum-country">Страна</div>
+                            <div class="colum-tel">Телефон</div>
+                            <div class="colum-tel-info"></div>
+                            <div class="colum-comm">Комментарий</div>
+                            <div class="colum-sum">Сумма</div>
+                            <div class="colum-product">Товар</div>
+                            <div class="colum-pay">Оплата</div>
+                            <div class="colum-delivery">Тип доставки</div>
+                            <div class="colum-delivery-adress">Адрес доставки</div>
+                            <div class="colum-TTN">ТТН</div>
+                            <div class="colum-TTN-status">ТТН статус</div>
+                            <div class="colum-add">Добавлено</div>
+                            <div class="colum-employe">Сотрудники</div>
+                            <div class="colum-depart">Отдел</div>
+                            <div class="colum-update">Обновлено</div>
+                            <div class="colum-finish">Сдано</div>
+                            <div class="colum-send">Отправлено</div>
+                            <div class="colum-site">Сайт</div>
+                            <div class="colum-status">Статус</div>
+                            <div class="colum-utm_source">utm_source</div>
+                            <div class="colum-utm_medium">utm_medium</div>
+                            <div class="colum-utm_term">utm_term</div>
+                            <div class="colum-utm_content">utm_content</div>
+                            <div class="colum-utm_campaign">utm_campaign</div>
+                            <div class="colum-ip">IP</div>
+                            <div class="colum-field-1">Доп. поле 1</div>
+                            <div class="colum-field-2">Доп. поле 2</div>
+                            <div class="colum-field-3">Доп. поле 3</div>
+                            <div class="colum-field-4">Доп. поле 4</div>
                         </div>
-
+                        <div class="crm-input">
+                            <input class="colum-id" type="text">
+                            <input class="colum-order-id" type="text">
+                            <input class="colum-user" type="text">
+                            <div class="colum-country"><span class="country-btn">Все</span>
+                                <!-- <div class="dropdown3">
+                                    <div class="btn"><span class="btn-span country-btn">Все</span></div>
+                                    <ul class="ul-block3" data-simplebar data-simplebar-auto-hide="false">
+                                        <li class="list"><img class="list-img" src="img/ukraine.svg" alt="logo" />ua</li>
+                                        <li class="list"><img class="list-img" src="img/russia.svg" alt="logo" />ru</li>
+                                        <li class="list"><img class="list-img" src="img/kazakhstan.svg" alt="logo" />kz</li>
+                                        <li class="list"><img class="list-img" src="img/albania.svg" alt="logo" />alb</li>
+                                        <li class="list"><img class="list-img" src="img/albania.svg" alt="logo" />alb</li>
+                                        <li class="list"><img class="list-img" src="img/albania.svg" alt="logo" />alb</li>
+                                        <li class="list"><img class="list-img" src="img/albania.svg" alt="logo" />alb</li>
+                                    </ul>
+                                </div> -->
+                                <div class="block1">
+                                    <div class="list"><img src="img/ukraine.svg" alt=""> ua</div>
+                                    <div class="list">ru</div>
+                                    <div class="list">kz</div>
+                                </div>
+                            </div>
+                            <input class="colum-tel" type="text">
+                            <div class="colum-tel-info"><span class="tel-btn"></span></div>
+                            <input class="colum-comm" type="text">
+                            <input class="colum-sum" type="text">
+                            <input class="colum-product" type="text" placeholder="ввод">
+                            <div class="colum-pay"><span class="pay-btn">Все</span></div>
+                            <div class="colum-delivery"><span class="delivery-btn">Все</span></div>
+                            <input class="colum-delivery-adress" type="text">
+                            <input class="colum-TTN" type="text">
+                            <input class="colum-TTN-status" type="text">
+                            <input class="colum-add" type="text">
+                            <div class="colum-employe"><span class="employe-btn">Все</span></div>
+                            <input class="colum-depart" type="text">
+                            <input class="colum-update" type="text">
+                            <input class="colum-finish" type="text">
+                            <input class="colum-send" type="text">
+                            <input class="colum-site" type="text">
+                            <input class="colum-status" type="text">
+                            <input class="colum-utm_source" type="text">
+                            <input class="colum-utm_medium" type="text">
+                            <input class="colum-utm_term" type="text">
+                            <input class="colum-utm_content" type="text">
+                            <input class="colum-utm_campaign" type="text">
+                            <input class="colum-ip" type="text">
+                            <input class="colum-field-1" type="text">
+                            <input class="colum-field-2" type="text">
+                            <input class="colum-field-3" type="text">
+                            <input class="colum-field-4" type="text">
+                        </div>
+                    </div>
+                    <div class="wrap-scroll">
                         <!-- <div id="tooltip"></div> -->
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
@@ -2090,6 +2110,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <script src="js/jquery.js"></script>
     <script src="js/simplebar.js"></script>
@@ -2097,6 +2118,7 @@
     <script src="js/script.crm-table.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/datepicker-ru.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script>
         new SimpleBar(document.querySelector('.container-info-settings'), {
             autoHide: true,
@@ -2127,6 +2149,30 @@
             $("#datepicker").datepicker();
             $("#datepicker").datepicker("option", "showButtonPanel", true);
         });
+    </script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: false,
+            margin: 0,
+            nav: true,
+            autoWidth: true,
+            // autoHeight: true,
+            // items: 14,
+            dots: false,
+            // stagePadding: 100,
+            // paginationSpeed: 1000,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 7
+                },
+                1000: {
+                    items: 10
+                }
+            }
+        })
     </script>
 </body>
 
