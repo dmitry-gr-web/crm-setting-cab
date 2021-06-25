@@ -3,7 +3,7 @@
 }
 
 .crm-main-table {
-  width: 3140px;
+  width: 3340px;
 }
 
 .wrap-scroll .simplebar-track.simplebar-vertical {
@@ -132,7 +132,7 @@
   margin-top: 20px;
   text-align: center;
   position: sticky;
-  width: 3140px;
+  width: 3340px;
 }
 .crm-body-header .crm-name-list {
   font-size: 14px;
@@ -235,7 +235,7 @@
 
 .colum-delivery {
   height: 18px;
-  width: 97px;
+  width: 105px;
 }
 
 .colum-delivery-adress {
@@ -569,13 +569,6 @@
   font-weight: 600;
 }
 
-.block1 {
-  background: #b6b5b5;
-  z-index: 222;
-  color: yellow;
-  display: none;
-}
-
 .select-toggle {
   position: relative;
   color: white;
@@ -612,6 +605,24 @@
 
 .z-index {
   z-index: -1;
+}
+
+.crm-main-table.selected-lock:hover {
+  position: relative;
+}
+.crm-main-table.selected-lock:hover div {
+  background: rgba(198, 193, 190, 0.5);
+  color: rgba(0, 0, 0, 0.2);
+}
+.crm-main-table.selected-lock:hover:before {
+  content: "";
+  background: none;
+  background-image: url("../img/lock.svg");
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 3px;
+  left: -15px;
 }
 
 .selected-lock {
@@ -653,4 +664,103 @@
 .owl-item {
   position: fixed;
   white-space: nowrap;
+}
+
+.block1 {
+  background: #d3cece;
+  z-index: 222;
+  color: black;
+  display: none;
+  position: relative;
+  text-align: left;
+}
+.block1 .list {
+  position: relative;
+}
+.block1 .list img {
+  margin-right: 5px;
+}
+.block1 .list-item {
+  margin-left: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.crm-input .colum-country .country-btn .list-item img {
+  position: relative;
+  left: 0px;
+}
+.crm-input .colum-country .country-btn .list-item {
+  text-align: center;
+  line-height: 18px;
+}
+.crm-input .colum-country .country-btn .list-item span {
+  position: relative;
+  bottom: 3px;
+}
+
+.block2 {
+  background: #d3cece;
+  z-index: 222;
+  color: black;
+  display: none;
+  position: relative;
+  text-align: left;
+  height: 90px;
+  overflow-x: hidden;
+}
+.block2 .simplebar-track.simplebar-vertical {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  bottom: 0;
+  border-radius: 5px;
+}
+.block2 .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  width: 3px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  top: 0;
+}
+.block2 .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.block2 .simplebar-content-wrapper {
+  padding: 0;
+}
+.block2 .list {
+  position: relative;
+}
+.block2 .list img {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+}
+.block2 .list-item {
+  margin-left: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.crm-input .colum-delivery .delivery-btn .list-item img {
+  position: relative;
+  left: 0px;
+  bottom: -2px;
+  width: 12px;
+  height: 12px;
+}
+.crm-input .colum-delivery .delivery-btn .list-item {
+  text-align: center;
+  line-height: 18px;
+}
+.crm-input .colum-delivery .delivery-btn .list-item span {
+  position: relative;
+  bottom: -1px;
 }
