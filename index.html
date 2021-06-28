@@ -864,7 +864,7 @@
                         <div class="crm-name-list">
                             <div class="colum-id">Id</div>
                             <div class="colum-order-id">order id</div>
-                            <div class="colum-user">Покупатель</div>
+                            <div class="colum-user" id="text">Покупатель</div>
                             <div class="colum-country">Страна</div>
                             <div class="colum-tel">Телефон</div>
                             <div class="colum-tel-info"></div>
@@ -900,7 +900,7 @@
                             <input class="colum-order-id" type="text">
                             <input class="colum-user" type="text">
                             <div class="colum-country"><span class="country-btn">Все</span>
-                                <div class="block1">
+                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item">Все</span></div>
                                     <div class="list"><span class="list-item"><img src="img/ukraine.svg" alt=""> <span>ua</span></span>
                                     </div>
@@ -917,9 +917,23 @@
                             <input class="colum-comm" type="text">
                             <input class="colum-sum" type="text">
                             <input class="colum-product" type="text" placeholder="ввод">
-                            <div class="colum-pay"><span class="pay-btn">Все</span></div>
+                            <div class="colum-pay"><span class="pay-btn">Все</span>
+                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
+                                    <div class="list"><span class="list-item">Все</span></div>
+                                    <div class="list"><span class="list-item"><img src="img/Cardpay.svg" alt=""></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><img src="img/Coinpay.svg" alt=""></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><img src="img/obmen.svg" alt=""></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><img src="img/convertpay.svg" alt=""></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><img src="img/decline.svg" alt=""></span>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="colum-delivery"><span class="delivery-btn">Все</span>
-                                <div class="block2" data-simplebar data-simplebar-auto-hide="false">
+                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item">Все</span></div>
                                     <div class="list"><span class="list-item"><img src="img/nv.png" alt=""> <span>Новая почта</span></span>
                                     </div>
@@ -947,8 +961,36 @@
                             <input class="colum-TTN" type="text">
                             <input class="colum-TTN-status" type="text">
                             <input class="colum-add" type="text">
-                            <div class="colum-employe"><span class="employe-btn">Все</span></div>
-                            <input class="colum-depart" type="text">
+                            <div class="colum-employe"><span class="employe-btn">Все</span>
+                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
+                                    <div class="list"><span class="list-item">Все</span></div>
+                                    <div class="list"><span class="list-item"><span>Иванов О.А.</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>ФывфывФЫвф А.ы</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>ФЫВвывыф ф .ы</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>фывфыФЫВ ы ы.</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Test</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="colum-depart"><span class="depart-btn">Все</span>
+                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
+                                    <div class="list"><span class="list-item">Все</span></div>
+                                    <div class="list"><span class="list-item"><span>Розничный магазин</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Оптовый магазин</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Отдел АОЭ</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Black slave</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Test</span></span>
+                                    </div>
+                                </div>
+                            </div>
                             <input class="colum-update" type="text">
                             <input class="colum-finish" type="text">
                             <input class="colum-send" type="text">
@@ -970,27 +1012,28 @@
                         <!-- <div id="tooltip"></div> -->
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
-                            <div class="colum-order-id"><span class="color-FF0000 order-id-style">новый</span></div>
-                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-order-id"><span class="color-FF0000 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич Иванов</span></div>
                             <div class="colum-country"><img src="img/ukraine.svg" alt=""><span class="country">ua</span></div>
                             <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
-                            <div class="colum-tel-info"></div>
-                            <div class="colum-comm">Третий комплект (0_З_л)</div>
-                            <div class="colum-sum">9555.40</div>
-                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
-                            <div class="colum-pay"><img src="img/redpay.svg" alt=""></div>
-                            <div class="colum-delivery">СДЭК</div>
-                            <div class="colum-delivery-adress">adress</div>
-                            <div class="colum-TTN">ttn</div>
-                            <div class="colum-TTN-status">ttn-status</div>
-                            <div class="colum-add">добавлено</div>
-                            <div class="colum-employe">Иванов А.С.</div>
-                            <div class="colum-depart">департамент</div>
-                            <div class="colum-update">обновлено</div>
-                            <div class="colum-finish">сдан</div>
-                            <div class="colum-send">что-то</div>
-                            <div class="colum-site">www.abrakadabra</div>
-                            <div class="colum-status">в процесе</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">12</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)12333</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.40</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/Cardpay.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Новая почта</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400228753323</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надходже</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Иванов А.С.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Розничный магазин</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabra.com</span></div>
+                            <div class="colum-status"><span class="item-status">В процесе</span></div>
                             <div class="colum-utm_source">source</div>
                             <div class="colum-utm_medium">mid</div>
                             <div class="colum-utm_term">term</div>
@@ -1004,27 +1047,28 @@
                         </div>
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
-                            <div class="colum-order-id"><span class="color-FFCF00 order-id-style">новый</span></div>
-                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-order-id"><span class="color-FFCF00 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
                             <div class="colum-country"><img src="img/russia.svg" alt=""><span class="country">ru</span></div>
                             <div class="colum-tel"><img src="img/kyivstar.svg" alt="">+38 096 514 25 46</div>
-                            <div class="colum-tel-info"><img src="img/message2.svg" alt=""></div>
-                            <div class="colum-comm">Третий комплект (0_З_л)</div>
-                            <div class="colum-sum">9555.40</div>
-                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
-                            <div class="colum-pay"><img src="img/coin2.svg" alt=""></div>
-                            <div class="colum-delivery">Новая почта</div>
-                            <div class="colum-delivery-adress">adress</div>
-                            <div class="colum-TTN">ttn</div>
-                            <div class="colum-TTN-status">ttn-status</div>
-                            <div class="colum-add">добавлено</div>
-                            <div class="colum-employe">Иванов А.С.</div>
-                            <div class="colum-depart">департамент</div>
-                            <div class="colum-update">обновлено</div>
-                            <div class="colum-finish">сдан</div>
-                            <div class="colum-send">что-то</div>
-                            <div class="colum-site">www.abrakadabra</div>
-                            <div class="colum-status">в процесе</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">12</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.40</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.22330</span></div>
+                            <div class="colum-pay"><img src="img/Coinpay.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Укрпочта</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Ки</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">2040021571865566</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надходже</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Евгений Алe</span></div>
+                            <div class="colum-depart"><span class="depart-item">Оптовый отдел</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabra.com</span></div>
+                            <div class="colum-status"><span class="item-status">На контроле</span></div>
                             <div class="colum-utm_source">source</div>
                             <div class="colum-utm_medium">mid</div>
                             <div class="colum-utm_term">term</div>
@@ -1038,27 +1082,27 @@
                         </div>
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
-                            <div class="colum-order-id"><span class="color-00CC00 order-id-style">новый</span></div>
-                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-order-id"><span class="color-00CC00 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич Иванов</span></div>
                             <div class="colum-country"><img src="img/ukraine.svg" alt=""><span class="country">ua</span></div>
                             <div class="colum-tel"><img src="img/vodafone.svg" alt="">+38 096 514 25 46</div>
                             <div class="colum-tel-info"></div>
-                            <div class="colum-comm">Третий комплект (0_З_л)</div>
-                            <div class="colum-sum">9555.40</div>
-                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
-                            <div class="colum-pay"></div>
-                            <div class="colum-delivery">Новая почта</div>
-                            <div class="colum-delivery-adress">adress</div>
-                            <div class="colum-TTN">ttn</div>
-                            <div class="colum-TTN-status">ttn-status</div>
-                            <div class="colum-add">добавлено</div>
-                            <div class="colum-employe">Иванов А.С.</div>
-                            <div class="colum-depart">департамент</div>
-                            <div class="colum-update">обновлено</div>
-                            <div class="colum-finish">сдан</div>
-                            <div class="colum-send">что-то</div>
-                            <div class="colum-site">www.abrakadabra</div>
-                            <div class="colum-status">в процесе</div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.40</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/convertpay.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Казпочта</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">2040021571865566</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надходже</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Евгений Александрович</span></div>
+                            <div class="colum-depart"><span class="depart-item">Отдел ОАЭ</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Завершено</span></div>
                             <div class="colum-utm_source">source</div>
                             <div class="colum-utm_medium">mid</div>
                             <div class="colum-utm_term">term</div>
@@ -1072,27 +1116,28 @@
                         </div>
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
-                            <div class="colum-order-id"><span class="color-FFCF00 order-id-style">новый</span></div>
-                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-order-id"><span class="color-FFCF00 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
                             <div class="colum-country"><img src="img/kazakhstan.svg " alt=""><span class="country">kz</span></div>
                             <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
-                            <div class="colum-tel-info"><img src="img/message2.svg" alt=""></div>
-                            <div class="colum-comm">Третий комплект (0_З_л)</div>
-                            <div class="colum-sum">9555.40</div>
-                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
-                            <div class="colum-pay"></div>
-                            <div class="colum-delivery">СДЭК</div>
-                            <div class="colum-delivery-adress">adress</div>
-                            <div class="colum-TTN">ttn</div>
-                            <div class="colum-TTN-status">ttn-status</div>
-                            <div class="colum-add">добавлено</div>
-                            <div class="colum-employe">Иванов А.С.</div>
-                            <div class="colum-depart">департамент</div>
-                            <div class="colum-update">обновлено</div>
-                            <div class="colum-finish">сдан</div>
-                            <div class="colum-send">что-то</div>
-                            <div class="colum-site">www.abrakadabra</div>
-                            <div class="colum-status">в процесе</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">2</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.4033</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/obmen.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Shop-Logistics</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400215718655662</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Е.А.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Black Slave</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabadsra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Отправлено</span></div>
                             <div class="colum-utm_source">source</div>
                             <div class="colum-utm_medium">mid</div>
                             <div class="colum-utm_term">term</div>
@@ -1106,27 +1151,28 @@
                         </div>
                         <div class="crm-main-table selected-lock">
                             <div class="colum-id">123451</div>
-                            <div class="colum-order-id"><span class="color-FF0000 order-id-style">новый</span></div>
-                            <div class="colum-user">Александр Сергеевич</div>
+                            <div class="colum-order-id"><span class="color-FF0000 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
                             <div class="colum-country"><img src="img/albania.svg" alt=""><span class="country">alb</span></div>
                             <div class="colum-tel"><img src="img/kyivstar.svg" alt="">+38 096 514 25 46</div>
-                            <div class="colum-tel-info"><img src="img/message2.svg" alt=""></div>
-                            <div class="colum-comm">Третий комплект (0_З_л)</div>
-                            <div class="colum-sum">9555.40</div>
-                            <div class="colum-product">Чай Монастырский (1шт. x 100.00 = 100.00....</div>
-                            <div class="colum-pay"></div>
-                            <div class="colum-delivery">СДЭК</div>
-                            <div class="colum-delivery-adress">adress</div>
-                            <div class="colum-TTN">ttn</div>
-                            <div class="colum-TTN-status">ttn-status</div>
-                            <div class="colum-add">добавлено</div>
-                            <div class="colum-employe">Иванов А.С.</div>
-                            <div class="colum-depart">департамент</div>
-                            <div class="colum-update">обновлено</div>
-                            <div class="colum-finish">сдан</div>
-                            <div class="colum-send">что-то</div>
-                            <div class="colum-site">www.abrakadabra</div>
-                            <div class="colum-status">в процесе</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">7</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.40</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">5</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/decline.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">СДЭК</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення </span></div>
+                            <div class="colum-TTN"><span class="ttn-item">2040021571865566</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Евгений Александрович</span></div>
+                            <div class="colum-depart"><span class="depart-item">Розничный магазин</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Сдано</span></div>
                             <div class="colum-utm_source">source</div>
                             <div class="colum-utm_medium">mid</div>
                             <div class="colum-utm_term">term</div>
@@ -1156,7 +1202,7 @@
                             <div class="colum-add">добавлено</div>
                             <div class="colum-employe">Иванов А.С.</div>
                             <div class="colum-depart">департамент</div>
-                            <div class="colum-update">обновлено</div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
                             <div class="colum-finish">сдан</div>
                             <div class="colum-send">что-то</div>
                             <div class="colum-site">www.abrakadabra</div>

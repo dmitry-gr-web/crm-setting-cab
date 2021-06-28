@@ -19,35 +19,182 @@
         }
     });
 });
+// ...
+
+
+$(".crm-main-table .user-item").text(function(i, text) {
+    if (text.length >= 26) {
+        text = text.substring(0, 25) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .colum-id").text(function(i, text) {
+    if (text.length >= 7) {
+        text = text.substring(0, 5) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .order-id-style").text(function(i, text) {
+    if (text.length >= 12) {
+        text = text.substring(0, 10) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .item-product").text(function(i, text) {
+    if (text.length >= 43) {
+        text = text.substring(0, 41) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .comm-item").text(function(i, text) {
+    if (text.length >= 28) {
+        text = text.substring(0, 27) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .sum-item").text(function(i, text) {
+    if (text.length >= 9) {
+        text = text.substring(0, 7) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .status-item").text(function(i, text) {
+    if (text.length >= 25) {
+        text = text.substring(0, 23) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .ttn-item").text(function(i, text) {
+    if (text.length >= 17) {
+        text = text.substring(0, 15) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .adress-item").text(function(i, text) {
+    if (text.length >= 32) {
+        text = text.substring(0, 31) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .employe-item").text(function(i, text) {
+    if (text.length >= 20) {
+        text = text.substring(0, 19) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .site-item").text(function(i, text) {
+    if (text.length >= 22) {
+        text = text.substring(0, 21) + '...';
+    }
+    $(this).text(text);
+});
+// ...
+
 
 //menu country btn
-$(".country-btn").click(function() {
-    // let arrbtn = $('.block1');
-    // arrbtn.map(x => $(".block1").removeClass('toggle'));
-    $(".block1").toggle(200);
-    $(".crm-main-table").toggleClass('z-index');
+$(".colum-country .country-btn").click(function() {
+    let arrbtn = $('.block1');
+    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    $(".colum-country .block1").toggleClass('toggle');
+    $(".crm-main-table").addClass('z-index');
 });
-$(".block1 .list").click(function() {
+$(".colum-country .block1 .list").click(function() {
     var text = $(this).html();
     $(".country-btn").html(text);
-    $(".block1").hide(200);
-    $(".crm-main-table").toggleClass('z-index');
+    $(".colum-country .block1").removeClass('toggle');
+    $(".crm-main-table").removeClass('z-index');
+
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-country"))
+        $(".colum-country .block1").removeClass('toggle');
+    // else if ($(".crm-main-table").hasClass('z-index')) {
+    //     $(".crm-main-table").removeClass('z-index');
+    // }
+    // else if ($clicked.parents().hasClass("colum-country")) {
+    //     $(".crm-main-table").removeClass('z-index');
+    // }
 });
 //menu country btn
 //menu delivery btn
-$(".delivery-btn").click(function() {
-    // let arrbtn = $('.block2');
-    // arrbtn.map(x => $(".block2").removeClass('toggle'));
-    $(".block2").toggle(200);
-    $(".crm-main-table").toggleClass('z-index');
+$(".colum-delivery .delivery-btn").click(function() {
+    let arrbtn = $('.block1');
+    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    $(".colum-delivery .block1").toggleClass('toggle');
+    $(".crm-main-table").addClass('z-index');
 });
-$(".block2 .list").click(function() {
+$(".colum-delivery .block1 .list").click(function() {
     var text = $(this).html();
     $(".delivery-btn").html(text);
-    $(".block2").hide(200);
-    $(".crm-main-table").toggleClass('z-index');
+    $(".colum-delivery .block1").removeClass('toggle');
+    $(".crm-main-table").removeClass('z-index');
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-delivery"))
+        $(".colum-delivery .block1").removeClass('toggle');
 });
 //menu delivery btn
+//pay btn
+$(".colum-pay .pay-btn").click(function() {
+    let arrbtn = $('.block1');
+    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    $(".colum-pay .block1").toggleClass('toggle');
+    $(".crm-main-table").addClass('z-index');
+});
+$(".colum-pay .block1 .list").click(function() {
+    var text = $(this).html();
+    $(".pay-btn").html(text);
+    $(".colum-pay .block1").removeClass('toggle');
+    $(".crm-main-table").removeClass('z-index');
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-pay"))
+        $(".colum-pay .block1").removeClass('toggle');
+});
+//pay btn
+//depart btn
+$(".colum-depart .depart-btn").click(function() {
+    let arrbtn = $('.block1');
+    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    $(".colum-depart .block1").toggleClass('toggle');
+    $(".crm-main-table").addClass('z-index');
+});
+$(".colum-depart .block1 .list").click(function() {
+    var text = $(this).html();
+    $(".depart-btn").html(text);
+    $(".colum-depart .block1").removeClass('toggle');
+    $(".crm-main-table").removeClass('z-index');
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-depart"))
+        $(".colum-depart .block1").removeClass('toggle');
+});
+
+//depart btn
+//employe btn
+$(".colum-employe .employe-btn").click(function() {
+    let arrbtn = $('.block1');
+    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    $(".colum-employe .block1").toggleClass('toggle');
+    $(".crm-main-table").addClass('z-index');
+});
+$(".colum-employe .block1 .list").click(function() {
+    var text = $(this).html();
+    $(".employe-btn").html(text);
+    $(".colum-employe .block1").removeClass('toggle');
+    $(".crm-main-table").removeClass('z-index');
+});
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-employe"))
+        $(".colum-employe .block1").removeClass('toggle');
+});
+
+//employe btn
 // $(function() {
 //     $("[data-tooltip]").mousemove(function(eventObject) {
 //         $data_tooltip = $(this).attr("data-tooltip");
