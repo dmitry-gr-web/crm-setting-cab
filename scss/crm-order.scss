@@ -70,7 +70,7 @@
 }
 
 .crm-main-table {
-    width: 3840px;
+    width: 4100px;
 }
 
 .wrap-scroll {
@@ -204,7 +204,7 @@
 .crm-body-header {
     margin-top: 20px;
     position: sticky;
-    width: 3840px;
+    width: 4100px;
     .crm-name-list {
         font-size: 14px;
         text-align: center;
@@ -331,7 +331,7 @@
 
 .colum-add {
     height: 18px;
-    width: 135px;
+    width: 155px;
 }
 
 .colum-employe {
@@ -347,18 +347,18 @@
 
 .colum-update {
     height: 18px;
-    width: 135px;
+    width: 155px;
     background-color: #F1F1F1;
 }
 
 .colum-finish {
     height: 18px;
-    width: 135px;
+    width: 155px;
 }
 
 .colum-send {
     height: 18px;
-    width: 135px;
+    width: 155px;
     background-color: #F1F1F1;
 }
 
@@ -402,29 +402,29 @@
 
 .colum-ip {
     height: 18px;
-    width: 100px;
+    width: 110px;
     background-color: #F1F1F1;
 }
 
 .colum-field-1 {
     height: 18px;
-    width: 110px;
+    width: 140px;
 }
 
 .colum-field-2 {
     height: 18px;
-    width: 110px;
+    width: 140px;
     background-color: #F1F1F1;
 }
 
 .colum-field-3 {
     height: 18px;
-    width: 110px;
+    width: 140px;
 }
 
 .colum-field-4 {
     height: 18px;
-    width: 110px;
+    width: 140px;
     background-color: #F1F1F1;
 }
 
@@ -444,6 +444,78 @@
     }
     input:nth-child(5) {
         margin-right: 0;
+    }
+    .colum-add {
+        box-sizing: border-box;
+        border: none;
+        background: rgba(156, 155, 158, 0.4);
+        font-size: 10px;
+        border: 1px solid white;
+        padding: 1px 2px;
+        align-items: center;
+        input {
+            width: 60px;
+            display: inline-block;
+            border: none;
+            background: transparent;
+            padding: 0;
+            height: 100%;
+            font-size: 10px;
+        }
+    }
+    .colum-send {
+        box-sizing: border-box;
+        border: none;
+        background: rgba(156, 155, 158, 0.4);
+        font-size: 10px;
+        border: 1px solid white;
+        padding: 1px 2px;
+        align-items: center;
+        input {
+            width: 60px;
+            display: inline-block;
+            border: none;
+            background: transparent;
+            padding: 0;
+            height: 100%;
+            font-size: 10px;
+        }
+    }
+    .colum-finish {
+        box-sizing: border-box;
+        border: none;
+        background: rgba(156, 155, 158, 0.4);
+        font-size: 10px;
+        border: 1px solid white;
+        padding: 1px 2px;
+        align-items: center;
+        input {
+            width: 60px;
+            display: inline-block;
+            border: none;
+            background: transparent;
+            padding: 0;
+            height: 100%;
+            font-size: 10px;
+        }
+    }
+    .colum-update {
+        box-sizing: border-box;
+        border: none;
+        background: rgba(156, 155, 158, 0.4);
+        font-size: 10px;
+        border: 1px solid white;
+        padding: 1px 2px;
+        align-items: center;
+        input {
+            width: 60px;
+            display: inline-block;
+            border: none;
+            background: transparent;
+            padding: 0;
+            height: 100%;
+            font-size: 10px;
+        }
     }
     .colum-country {
         box-sizing: border-box;
@@ -486,7 +558,7 @@
                 height: 3px;
                 background-size: 100%;
                 top: 7px;
-                right: -8px;
+                right: -20px;
             }
         }
     }
@@ -599,40 +671,46 @@
     div {
         line-height: 18px;
     }
+    .field {
+        margin: 0 3px;
+    }
+    .ip {
+        margin: 0 3px;
+    }
+    .utm {
+        margin: 0 3px;
+    }
+    .camp {
+        margin: 0 3px;
+    }
     .colum-status {
         .item-status {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-site {
         .site-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-employe {
         .employe-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-update {
         .update-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-send {
         .send-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-finish {
         .finish-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-id {
@@ -643,26 +721,22 @@
     }
     .colum-TTN-status {
         .status-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-delivery-adress {
         .adress-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-depart {
         .depart-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-add {
         .add-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .order-id-style {
@@ -674,8 +748,7 @@
     .colum-TTN {
         text-align: left;
         .ttn-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .country {
@@ -693,29 +766,25 @@
     .colum-sum {
         text-align: left;
         .sum-item {
-            margin-left: 3px;
-            margin-right: 3px;
+            margin: 0 3px;
         }
     }
     .colum-delivery {
         text-align: left;
         .delivery-item {
-            margin-right: 3px;
-            margin-left: 3px;
+            margin: 0 3px;
         }
     }
     .colum-comm {
         text-align: left;
         .comm-item {
-            margin-left: 3px;
-            margin-right: 3px;
+            margin: 0 3px;
         }
     }
     .colum-user {
         text-align: left;
         .user-item {
-            margin-left: 3px;
-            margin-right: 3px;
+            margin: 0 3px;
         }
     }
     .colum-tel {
@@ -954,10 +1023,6 @@
     position: relative;
 }
 
-.z-index {
-    z-index: -1;
-}
-
 .crm-main-table.selected-lock:hover {
     position: relative;
     div {
@@ -1111,6 +1176,7 @@
         text-align: left;
         height: 90px;
         overflow-x: hidden;
+        z-index: 2222;
         .simplebar-track.simplebar-vertical {
             background-color: rgba(0, 0, 0, 0.1);
             width: 3px;
@@ -1392,6 +1458,10 @@
 //menu employe
 .block1.toggle {
     display: block;
+}
+
+.z-index {
+    z-index: -1;
 }
 
 // #tooltip {

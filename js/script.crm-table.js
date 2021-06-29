@@ -5,10 +5,32 @@
 //     });
 // });
 
-[...document.querySelectorAll('.crm-main-table')].map(x => {
-    // const selectLock = document.querySelector('.selected-lock');
-    x.addEventListener('click', (e) => {
 
+// function ctrlA(event) {
+
+//     if (event.ctrlKey || event.metaKey + event.which === 65) {
+//         listA.classList.add('select-toggle');
+//     }
+// }
+// ctrlA();
+
+const listA = document.querySelector('body');
+listA.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey) && (e.which == 65) || (e.metaKey) && (e.which == 65)) {
+        document.querySelectorAll('.crm-main-table').forEach(e => {
+            if (!e.classList.contains('selected-lock'))
+                e.classList.add('select-toggle');
+        });
+        e.preventDefault();
+    }
+    // } else if (document.querySelectorAll('.crm-main-table').classList.contains('selected-lock')) {
+    //     document.querySelectorAll('.crm-main-table').classList.remove('select-toggle');
+    // }
+});
+
+
+[...document.querySelectorAll('.crm-main-table')].map(x => {
+    x.addEventListener('click', (e) => {
         if (e.ctrlKey || e.metaKey) {
             x.classList.toggle('select-toggle');
         } else if (x.classList.contains('selected-lock')) {
@@ -88,15 +110,39 @@ $(".crm-main-table .site-item").text(function(i, text) {
     }
     $(this).text(text);
 });
+$(".crm-main-table .utm").text(function(i, text) {
+    if (text.length >= 13) {
+        text = text.substring(0, 12) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .camp").text(function(i, text) {
+    if (text.length >= 18) {
+        text = text.substring(0, 17) + '...';
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .field").text(function(i, text) {
+    if (text.length >= 20) {
+        text = text.substring(0, 19) + '...';
+    }
+    $(this).text(text);
+});
+
 // ...
 
 
 //menu country btn
 $(".colum-country .country-btn").click(function() {
-    let arrbtn = $('.block1');
-    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    // let arrbtn = $('.block1');
+    // arrbtn.map(x => $(".block1").removeClass('toggle'));
     $(".colum-country .block1").toggleClass('toggle');
-    $(".crm-main-table").addClass('z-index');
+    $(".crm-main-table").toggleClass('z-index');
+    // if (  $(".block1").hasClass('toggle')){
+    //     $(".crm-main-table").toggleClass('z-index');
+    // }   
+
+
 });
 $(".colum-country .block1 .list").click(function() {
     var text = $(this).html();
@@ -105,24 +151,41 @@ $(".colum-country .block1 .list").click(function() {
     $(".crm-main-table").removeClass('z-index');
 
 });
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("colum-country"))
-        $(".colum-country .block1").removeClass('toggle');
-    // else if ($(".crm-main-table").hasClass('z-index')) {
-    //     $(".crm-main-table").removeClass('z-index');
-    // }
-    // else if ($clicked.parents().hasClass("colum-country")) {
-    //     $(".crm-main-table").removeClass('z-index');
-    // }
-});
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     // let remove = $('.crm-main-table');
+//     // remove.map(x => $(".crm-main-table").removeClass('z-index'));
+//     if (!$clicked.parents().hasClass("colum-country") || $clicked.$(".block1").hasClass("toggle"))
+//         $(".colum-country .block1").removeClass('toggle');
+//     $(".crm-main-table").removeClass('z-index');
+
+
+//     // else if (!$clicked.parents().hasClass('colum-delivery')) {
+//     //     $(".crm-main-table").addClass('z-index');
+//     // }
+//     // else if ($clicked.parents().hasClass("colum-country")) {
+//     //     $(".crm-main-table").removeClass('z-index');
+//     // }
+// });
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("colum-country"))
+//         $(".colum-country .block1").removeClass('toggle');
+
+//     // else if ($(".crm-main-table").hasClass('z-index')) {
+//     //     $(".crm-main-table").removeClass('z-index');
+//     // }
+//     // else if ($clicked.parents().hasClass("colum-country")) {
+//     //     $(".crm-main-table").removeClass('z-index');
+//     // }
+// });
 //menu country btn
 //menu delivery btn
 $(".colum-delivery .delivery-btn").click(function() {
-    let arrbtn = $('.block1');
-    arrbtn.map(x => $(".block1").removeClass('toggle'));
+    // let arrbtn = $('.block1');
+    // arrbtn.map(x => $(".block1").removeClass('toggle'));
     $(".colum-delivery .block1").toggleClass('toggle');
-    $(".crm-main-table").addClass('z-index');
+    $(".crm-main-table").toggleClass('z-index');
 });
 $(".colum-delivery .block1 .list").click(function() {
     var text = $(this).html();
@@ -130,18 +193,29 @@ $(".colum-delivery .block1 .list").click(function() {
     $(".colum-delivery .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("colum-delivery"))
-        $(".colum-delivery .block1").removeClass('toggle');
-});
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     // let remove = $('.crm-main-table');
+//     // remove.map(x => $(".crm-main-table").removeClass('z-index'));
+//     if (!$clicked.parents().hasClass("colum-delivery") || $clicked.$(".block1").hasClass("toggle"))
+//         $(".colum-delivery .block1").removeClass('toggle');
+//     $(".crm-main-table").removeClass('z-index');
+
+
+//     // else if (!$clicked.parents().hasClass('colum-delivery')) {
+//     //     $(".crm-main-table").addClass('z-index');
+//     // }
+//     // else if ($clicked.parents().hasClass("colum-country")) {
+//     //     $(".crm-main-table").removeClass('z-index');
+//     // }
+// });
 //menu delivery btn
 //pay btn
 $(".colum-pay .pay-btn").click(function() {
     let arrbtn = $('.block1');
     arrbtn.map(x => $(".block1").removeClass('toggle'));
-    $(".colum-pay .block1").toggleClass('toggle');
-    $(".crm-main-table").addClass('z-index');
+    $(".colum-pay .block1").addClass('toggle');
+    $(".crm-main-table").toggleClass('z-index');
 });
 $(".colum-pay .block1 .list").click(function() {
     var text = $(this).html();
@@ -149,18 +223,18 @@ $(".colum-pay .block1 .list").click(function() {
     $(".colum-pay .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("colum-pay"))
-        $(".colum-pay .block1").removeClass('toggle');
-});
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("colum-pay"))
+//         $(".colum-pay .block1").removeClass('toggle');
+// });
 //pay btn
 //depart btn
 $(".colum-depart .depart-btn").click(function() {
     let arrbtn = $('.block1');
     arrbtn.map(x => $(".block1").removeClass('toggle'));
-    $(".colum-depart .block1").toggleClass('toggle');
-    $(".crm-main-table").addClass('z-index');
+    $(".colum-depart .block1").addClass('toggle');
+    $(".crm-main-table").toggleClass('z-index');
 });
 $(".colum-depart .block1 .list").click(function() {
     var text = $(this).html();
@@ -168,19 +242,19 @@ $(".colum-depart .block1 .list").click(function() {
     $(".colum-depart .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("colum-depart"))
-        $(".colum-depart .block1").removeClass('toggle');
-});
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("colum-depart"))
+//         $(".colum-depart .block1").removeClass('toggle');
+// });
 
 //depart btn
 //employe btn
 $(".colum-employe .employe-btn").click(function() {
     let arrbtn = $('.block1');
     arrbtn.map(x => $(".block1").removeClass('toggle'));
-    $(".colum-employe .block1").toggleClass('toggle');
-    $(".crm-main-table").addClass('z-index');
+    $(".colum-employe .block1").addClass('toggle');
+    $(".crm-main-table").toggleClass('z-index');
 });
 $(".colum-employe .block1 .list").click(function() {
     var text = $(this).html();
@@ -188,11 +262,11 @@ $(".colum-employe .block1 .list").click(function() {
     $(".colum-employe .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("colum-employe"))
-        $(".colum-employe .block1").removeClass('toggle');
-});
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("colum-employe"))
+//         $(".colum-employe .block1").removeClass('toggle');
+// });
 
 //employe btn
 // $(function() {

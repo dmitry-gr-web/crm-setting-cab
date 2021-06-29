@@ -1,5 +1,5 @@
 .crm-main-table {
-  width: 3840px;
+  width: 4100px;
 }
 
 .wrap-scroll .simplebar-track.simplebar-vertical {
@@ -127,7 +127,7 @@
 .crm-body-header {
   margin-top: 20px;
   position: sticky;
-  width: 3840px;
+  width: 4100px;
 }
 .crm-body-header .crm-name-list {
   font-size: 14px;
@@ -253,7 +253,7 @@
 
 .colum-add {
   height: 18px;
-  width: 135px;
+  width: 155px;
 }
 
 .colum-employe {
@@ -269,18 +269,18 @@
 
 .colum-update {
   height: 18px;
-  width: 135px;
+  width: 155px;
   background-color: #F1F1F1;
 }
 
 .colum-finish {
   height: 18px;
-  width: 135px;
+  width: 155px;
 }
 
 .colum-send {
   height: 18px;
-  width: 135px;
+  width: 155px;
   background-color: #F1F1F1;
 }
 
@@ -324,29 +324,29 @@
 
 .colum-ip {
   height: 18px;
-  width: 100px;
+  width: 110px;
   background-color: #F1F1F1;
 }
 
 .colum-field-1 {
   height: 18px;
-  width: 110px;
+  width: 140px;
 }
 
 .colum-field-2 {
   height: 18px;
-  width: 110px;
+  width: 140px;
   background-color: #F1F1F1;
 }
 
 .colum-field-3 {
   height: 18px;
-  width: 110px;
+  width: 140px;
 }
 
 .colum-field-4 {
   height: 18px;
-  width: 110px;
+  width: 140px;
   background-color: #F1F1F1;
 }
 
@@ -365,6 +365,78 @@
 }
 .crm-input input:nth-child(5) {
   margin-right: 0;
+}
+.crm-input .colum-add {
+  box-sizing: border-box;
+  border: none;
+  background: rgba(156, 155, 158, 0.4);
+  font-size: 10px;
+  border: 1px solid white;
+  padding: 1px 2px;
+  align-items: center;
+}
+.crm-input .colum-add input {
+  width: 60px;
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  height: 100%;
+  font-size: 10px;
+}
+.crm-input .colum-send {
+  box-sizing: border-box;
+  border: none;
+  background: rgba(156, 155, 158, 0.4);
+  font-size: 10px;
+  border: 1px solid white;
+  padding: 1px 2px;
+  align-items: center;
+}
+.crm-input .colum-send input {
+  width: 60px;
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  height: 100%;
+  font-size: 10px;
+}
+.crm-input .colum-finish {
+  box-sizing: border-box;
+  border: none;
+  background: rgba(156, 155, 158, 0.4);
+  font-size: 10px;
+  border: 1px solid white;
+  padding: 1px 2px;
+  align-items: center;
+}
+.crm-input .colum-finish input {
+  width: 60px;
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  height: 100%;
+  font-size: 10px;
+}
+.crm-input .colum-update {
+  box-sizing: border-box;
+  border: none;
+  background: rgba(156, 155, 158, 0.4);
+  font-size: 10px;
+  border: 1px solid white;
+  padding: 1px 2px;
+  align-items: center;
+}
+.crm-input .colum-update input {
+  width: 60px;
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  height: 100%;
+  font-size: 10px;
 }
 .crm-input .colum-country {
   box-sizing: border-box;
@@ -409,7 +481,7 @@
   height: 3px;
   background-size: 100%;
   top: 7px;
-  right: -8px;
+  right: -20px;
 }
 .crm-input .colum-pay {
   box-sizing: border-box;
@@ -520,29 +592,35 @@
 .crm-main-table div {
   line-height: 18px;
 }
+.crm-main-table .field {
+  margin: 0 3px;
+}
+.crm-main-table .ip {
+  margin: 0 3px;
+}
+.crm-main-table .utm {
+  margin: 0 3px;
+}
+.crm-main-table .camp {
+  margin: 0 3px;
+}
 .crm-main-table .colum-status .item-status {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-site .site-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-employe .employe-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-update .update-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-send .send-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-finish .finish-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-id {
   text-align: center;
@@ -551,20 +629,16 @@
   text-align: center;
 }
 .crm-main-table .colum-TTN-status .status-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-delivery-adress .adress-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-depart .depart-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-add .add-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .order-id-style {
   border-radius: 3px;
@@ -576,8 +650,7 @@
   text-align: left;
 }
 .crm-main-table .colum-TTN .ttn-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .country {
   margin-left: 25px;
@@ -595,29 +668,25 @@
   text-align: left;
 }
 .crm-main-table .colum-sum .sum-item {
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-delivery {
   text-align: left;
 }
 .crm-main-table .colum-delivery .delivery-item {
-  margin-right: 3px;
-  margin-left: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-comm {
   text-align: left;
 }
 .crm-main-table .colum-comm .comm-item {
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-user {
   text-align: left;
 }
 .crm-main-table .colum-user .user-item {
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 0 3px;
 }
 .crm-main-table .colum-tel {
   text-align: center;
@@ -777,10 +846,6 @@
   position: relative;
 }
 
-.z-index {
-  z-index: -1;
-}
-
 .crm-main-table.selected-lock:hover {
   position: relative;
 }
@@ -923,6 +988,7 @@
   text-align: left;
   height: 90px;
   overflow-x: hidden;
+  z-index: 2222;
 }
 .colum-delivery .block1 .simplebar-track.simplebar-vertical {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1172,4 +1238,8 @@
 
 .block1.toggle {
   display: block;
+}
+
+.z-index {
+  z-index: -1;
 }
