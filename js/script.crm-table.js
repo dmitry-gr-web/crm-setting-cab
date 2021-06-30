@@ -1,19 +1,31 @@
-// [...document.querySelectorAll('.crm-header-link')].map(x => {
-//     x.addEventListener('click', () => {
-//         [...document.querySelectorAll('.crm-header-link')].map(y => y.classList.remove('btn-toggle'));
-//         x.classList.toggle('btn-toggle');
-//     });
-// });
+[...document.querySelectorAll('.crm-header-link')].map(x => {
+    x.addEventListener('click', () => {
+        [...document.querySelectorAll('.crm-header-link')].map(y => y.classList.remove('btn-toggle'));
+        x.classList.toggle('btn-toggle');
+    });
+});
+
+$(document).ready(function() {
+    $(".crm-main-table").on('click', (e) => {
+        $(".select-toggle").mousemove(
+            function(pos) {
+                if ($(".crm-main-table").hasClass('select-toggle')) {
+                    $("#hoverSelect").show();
+                    $("#hoverSelect").css('left', (pos.pageX + 10) + 'px').css('top', (pos.pageY + 10) + 'px');
+                }
+                if (!$(".crm-main-table").hasClass('select-toggle')) {
+                    $(".crm-main-table").off();
+                    $("#hoverSelect").hide();
+                }
+            }
+        ).mouseleave(function() {
+            $("#hoverSelect").hide();
+        });
+    });
+});
 
 
-// function ctrlA(event) {
-
-//     if (event.ctrlKey || event.metaKey + event.which === 65) {
-//         listA.classList.add('select-toggle');
-//     }
-// }
-// ctrlA();
-
+//ctrl a
 const listA = document.querySelector('body');
 listA.addEventListener('keydown', (e) => {
     if ((e.ctrlKey) && (e.which == 65) || (e.metaKey) && (e.which == 65)) {
@@ -23,27 +35,94 @@ listA.addEventListener('keydown', (e) => {
         });
         e.preventDefault();
     }
-    // } else if (document.querySelectorAll('.crm-main-table').classList.contains('selected-lock')) {
-    //     document.querySelectorAll('.crm-main-table').classList.remove('select-toggle');
-    // }
+});
+//ctrl a
+//ctrl+click
+
+
+// [...document.querySelectorAll('.crm-main-table')].map(x => {
+//     x.addEventListener('click', (e) => {
+//         if (e.ctrlKey || e.metaKey) {
+//             x.classList.toggle('select-toggle');
+//         }
+//         // else if (e.shiftKey) {
+//         //     x.classList.toggle('select-toggle');
+//         else if (x.classList.contains('selected-lock')) {
+//             x.classList.remove('select-toggle');
+//         } else {
+//             [...document.querySelectorAll('.crm-main-table')].map(y => y.classList.remove('select-toggle'));
+//             x.classList.toggle('select-toggle');
+//         }
+//     });
+// });
+
+
+//ctrl+click
+//shift+click
+;
+(function($) {
+    // selekt jQuery plugin // http://stackoverflow.com/a/35813513/383904
+    $.fn.selekt = function() {
+
+        var settings = $.extend({
+            children: ".wrap-scroll .crm-main-table",
+            className: "select-toggle",
+            onSelect: function() {}
+        }, arguments[0] || {});
+
+        return this.each(function(_, that) {
+            var $ch = $(this).find(settings.children),
+                sel = [],
+                last;
+
+            $ch.on("mousedown", function(ev) {
+                var isCtrl = (ev.ctrlKey || ev.metaKey),
+                    isShift = ev.shiftKey,
+                    ti = $ch.index(this),
+                    li = $ch.index(last),
+                    ai = $.inArray(this, sel);
+
+                if (isShift || isCtrl) ev.preventDefault();
+
+                $(sel).removeClass(settings.className);
+
+                if (isCtrl) {
+                    if (ai > -1) sel.splice(ai, 1);
+                    else sel.push(this);
+                } else if (isShift && sel.length > 0) {
+                    if (ti > li) ti = [li, li = ti][0];
+                    sel = [...$ch.slice(ti, li + 1)].filter(x => {
+                            return !x.classList.contains('selected-lock');
+                        })
+                        //sel = $ch.slice(ti, li + 1);
+                } else {
+                    sel = ai < 0 || sel.length > 1 ? [this] : [];
+                }
+                last = this;
+                // [...sel].map(x => {
+                //         if (!x.classList?.contains('selected-lock')) {
+                //             x.classList.add("select-toggle");
+                //         }
+                //     })
+
+                $(sel).addClass(settings.className);
+
+                settings.onSelect.call(that, sel);
+            });
+
+        });
+    };
+}(jQuery));
+$(".wrap-scroll").selekt({
+    children: ".crm-main-table", // Elements to target (default: "tbody tr")
+    className: "select-toggle", // Desired CSS class  (default: "selected")
+    onSelect: function(sel) { // Useful callback
+        $(".count-hover").text(sel.length);
+    }
 });
 
-
-[...document.querySelectorAll('.crm-main-table')].map(x => {
-    x.addEventListener('click', (e) => {
-        if (e.ctrlKey || e.metaKey) {
-            x.classList.toggle('select-toggle');
-        } else if (x.classList.contains('selected-lock')) {
-            x.classList.remove('select-toggle');
-        } else {
-            [...document.querySelectorAll('.crm-main-table')].map(y => y.classList.remove('select-toggle'));
-            x.classList.toggle('select-toggle');
-        }
-    });
-});
-// ...
-
-
+//shift click
+//...
 $(".crm-main-table .user-item").text(function(i, text) {
     if (text.length >= 26) {
         text = text.substring(0, 25) + '...';
@@ -134,58 +213,30 @@ $(".crm-main-table .field").text(function(i, text) {
 
 //menu country btn
 $(".colum-country .country-btn").click(function() {
-    // let arrbtn = $('.block1');
-    // arrbtn.map(x => $(".block1").removeClass('toggle'));
-    $(".colum-country .block1").toggleClass('toggle');
-    $(".crm-main-table").toggleClass('z-index');
-    // if (  $(".block1").hasClass('toggle')){
-    //     $(".crm-main-table").toggleClass('z-index');
-    // }   
-
-
+    $(".colum-country .block1").addClass('toggle');
+    $(".crm-main-table").addClass('z-index');
 });
 $(".colum-country .block1 .list").click(function() {
     var text = $(this).html();
     $(".country-btn").html(text);
     $(".colum-country .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
-
 });
-// $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     // let remove = $('.crm-main-table');
-//     // remove.map(x => $(".crm-main-table").removeClass('z-index'));
-//     if (!$clicked.parents().hasClass("colum-country") || $clicked.$(".block1").hasClass("toggle"))
-//         $(".colum-country .block1").removeClass('toggle');
-//     $(".crm-main-table").removeClass('z-index');
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-country")) {
+        $(".colum-country .block1").removeClass('toggle');
+    }
+    if (!$(".block1").hasClass('toggle')) {
+        $(".crm-main-table").removeClass('z-index');
+    }
+});
 
-
-//     // else if (!$clicked.parents().hasClass('colum-delivery')) {
-//     //     $(".crm-main-table").addClass('z-index');
-//     // }
-//     // else if ($clicked.parents().hasClass("colum-country")) {
-//     //     $(".crm-main-table").removeClass('z-index');
-//     // }
-// });
-// $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     if (!$clicked.parents().hasClass("colum-country"))
-//         $(".colum-country .block1").removeClass('toggle');
-
-//     // else if ($(".crm-main-table").hasClass('z-index')) {
-//     //     $(".crm-main-table").removeClass('z-index');
-//     // }
-//     // else if ($clicked.parents().hasClass("colum-country")) {
-//     //     $(".crm-main-table").removeClass('z-index');
-//     // }
-// });
 //menu country btn
 //menu delivery btn
 $(".colum-delivery .delivery-btn").click(function() {
-    // let arrbtn = $('.block1');
-    // arrbtn.map(x => $(".block1").removeClass('toggle'));
-    $(".colum-delivery .block1").toggleClass('toggle');
-    $(".crm-main-table").toggleClass('z-index');
+    $(".colum-delivery .block1").addClass('toggle');
+    $(".crm-main-table").addClass('z-index');
 });
 $(".colum-delivery .block1 .list").click(function() {
     var text = $(this).html();
@@ -193,29 +244,21 @@ $(".colum-delivery .block1 .list").click(function() {
     $(".colum-delivery .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-// $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     // let remove = $('.crm-main-table');
-//     // remove.map(x => $(".crm-main-table").removeClass('z-index'));
-//     if (!$clicked.parents().hasClass("colum-delivery") || $clicked.$(".block1").hasClass("toggle"))
-//         $(".colum-delivery .block1").removeClass('toggle');
-//     $(".crm-main-table").removeClass('z-index');
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
 
-
-//     // else if (!$clicked.parents().hasClass('colum-delivery')) {
-//     //     $(".crm-main-table").addClass('z-index');
-//     // }
-//     // else if ($clicked.parents().hasClass("colum-country")) {
-//     //     $(".crm-main-table").removeClass('z-index');
-//     // }
-// });
+    if (!$clicked.parents().hasClass("colum-delivery")) {
+        $(".colum-delivery .block1").removeClass('toggle');
+    }
+    if (!$(".block1").hasClass('toggle')) {
+        $(".crm-main-table").removeClass('z-index');
+    }
+});
 //menu delivery btn
 //pay btn
 $(".colum-pay .pay-btn").click(function() {
-    let arrbtn = $('.block1');
-    arrbtn.map(x => $(".block1").removeClass('toggle'));
     $(".colum-pay .block1").addClass('toggle');
-    $(".crm-main-table").toggleClass('z-index');
+    $(".crm-main-table").addClass('z-index');
 });
 $(".colum-pay .block1 .list").click(function() {
     var text = $(this).html();
@@ -223,18 +266,20 @@ $(".colum-pay .block1 .list").click(function() {
     $(".colum-pay .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-// $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     if (!$clicked.parents().hasClass("colum-pay"))
-//         $(".colum-pay .block1").removeClass('toggle');
-// });
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-pay")) {
+        $(".colum-pay .block1").removeClass('toggle');
+    }
+    if (!$(".block1").hasClass('toggle')) {
+        $(".crm-main-table").removeClass('z-index');
+    }
+});
 //pay btn
 //depart btn
 $(".colum-depart .depart-btn").click(function() {
-    let arrbtn = $('.block1');
-    arrbtn.map(x => $(".block1").removeClass('toggle'));
     $(".colum-depart .block1").addClass('toggle');
-    $(".crm-main-table").toggleClass('z-index');
+    $(".crm-main-table").addClass('z-index');
 });
 $(".colum-depart .block1 .list").click(function() {
     var text = $(this).html();
@@ -242,19 +287,21 @@ $(".colum-depart .block1 .list").click(function() {
     $(".colum-depart .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-// $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     if (!$clicked.parents().hasClass("colum-depart"))
-//         $(".colum-depart .block1").removeClass('toggle');
-// });
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-depart")) {
+        $(".colum-depart .block1").removeClass('toggle');
+    }
+    if (!$(".block1").hasClass('toggle')) {
+        $(".crm-main-table").removeClass('z-index');
+    }
+});
 
 //depart btn
 //employe btn
 $(".colum-employe .employe-btn").click(function() {
-    let arrbtn = $('.block1');
-    arrbtn.map(x => $(".block1").removeClass('toggle'));
     $(".colum-employe .block1").addClass('toggle');
-    $(".crm-main-table").toggleClass('z-index');
+    $(".crm-main-table").addClass('z-index');
 });
 $(".colum-employe .block1 .list").click(function() {
     var text = $(this).html();
@@ -262,11 +309,16 @@ $(".colum-employe .block1 .list").click(function() {
     $(".colum-employe .block1").removeClass('toggle');
     $(".crm-main-table").removeClass('z-index');
 });
-// $(document).bind('click', function(e) {
-//     var $clicked = $(e.target);
-//     if (!$clicked.parents().hasClass("colum-employe"))
-//         $(".colum-employe .block1").removeClass('toggle');
-// });
+$(document).bind('click', function(e) {
+    var $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("colum-employe")) {
+        $(".colum-employe .block1").removeClass('toggle');
+    }
+    if (!$(".block1").hasClass('toggle')) {
+        $(".crm-main-table").removeClass('z-index');
+    }
+});
+
 
 //employe btn
 // $(function() {

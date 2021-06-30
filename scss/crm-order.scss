@@ -70,7 +70,7 @@
 }
 
 .crm-main-table {
-    width: 4100px;
+    width: 4000px;
 }
 
 .wrap-scroll {
@@ -119,6 +119,24 @@
     }
 }
 
+.color-form {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    border-radius: 2px;
+    left: 0;
+}
+
+.btn-toggle {
+    font-weight: 600;
+    position: relative;
+    .color-form {
+        height: 4px;
+        bottom: -4px;
+    }
+}
+
 .crm-header {
     list-style: none;
     display: flex;
@@ -141,14 +159,6 @@
         .count-link {
             font-size: 10px;
             opacity: 0.5;
-        }
-        .color-form {
-            height: 2px;
-            width: 100%;
-            position: absolute;
-            top: 13px;
-            border-radius: 2px;
-            left: 0;
         }
         .color-C4C4C4 {
             background-color: #C4C4C4;
@@ -204,7 +214,7 @@
 .crm-body-header {
     margin-top: 20px;
     position: sticky;
-    width: 4100px;
+    width: 4000px;
     .crm-name-list {
         font-size: 14px;
         text-align: center;
@@ -432,6 +442,12 @@
     display: flex;
     list-style: none;
     padding-left: 0;
+    opacity: 1;
+    transition: 0.3s;
+    // &:hover {
+    //     opacity: 1;
+    //     transition: 0.3s;
+    // }
     input {
         box-sizing: border-box;
         outline: none;
@@ -848,6 +864,10 @@
     }
 }
 
+.color-470010 {
+    background-color: #470010;
+}
+
 .color-83004F {
     background-color: #83004F;
 }
@@ -898,10 +918,6 @@
 
 .color-B0FF00 {
     background-color: #B0FF00;
-}
-
-.btn-toggle {
-    font-weight: 600;
 }
 
 // .colum-country {
@@ -1065,7 +1081,7 @@
 }
 
 .owl-stage-outer {
-    height: 15px;
+    height: 19px;
     // width: 80%;
     width: 1500px;
 }
@@ -1464,18 +1480,22 @@
     z-index: -1;
 }
 
-// #tooltip {
-//     width: 95px;
-//     height: 38px;
-//     position: absolute;
-//     background-color: #515151;
-//     z-index: 22;
-//     border-radius: 3px;
-//     color: white;
-//     font-size: 12px;
-//     text-align: center;
-//     line-height: 38px;
-//     display: none;
-//     top: 0px;
-//     left: 0px;
+#hoverSelect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 12px;
+    background: #515151;
+    color: white;
+    border-radius: 3px;
+    z-index: 999;
+    display: none;
+}
+
+// .active {
+//     background-color: #337ab7;
 // }

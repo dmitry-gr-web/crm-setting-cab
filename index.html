@@ -17,12 +17,14 @@
     <link rel="stylesheet" href="css/notification.css">
     <link rel="stylesheet" href="css/task.block.css">
     <link rel="stylesheet" href="jquery-ui.min.css">
+    <link rel="stylesheet" href="css/calendary.style.css">
 
 
     <title>Document</title>
 </head>
 
 <body>
+    <div id="hoverSelect">Выбрано <span class="count-hover">2</span></div>
     <header class="header-crm">
         <div class="logo-pages-wrap">
             <div class="logo-position"><img class="logo-lp-crm" src="img/crm-logo.svg" alt=""></div>
@@ -1009,7 +1011,6 @@
                         </div>
                     </div>
                     <div class="wrap-scroll">
-                        <!-- <div id="tooltip"></div> -->
                         <div class="crm-main-table">
                             <div class="colum-id">123451</div>
                             <div class="colum-order-id"><span class="color-FF0000 order-id-style">12344321567</span></div>
@@ -1184,6 +1185,181 @@
                             <div class="colum-field-3"><span class="field"></span></div>
                             <div class="colum-field-4"><span class="field"></span></div>
                         </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-9C02A7 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
+                            <div class="colum-country"><img src="img/kazakhstan.svg " alt=""><span class="country">kz</span></div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">2</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.4033</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/obmen.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Shop-Logistics</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400215718655662</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Е.А.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Black Slave</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabadsra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Отправлено</span></div>
+                            <div class="colum-utm_source"><span class="utm">source</span></div>
+                            <div class="colum-utm_medium"><span class="utm">source</span></div>
+                            <div class="colum-utm_term"><span class="utm">source</span></div>
+                            <div class="colum-utm_content"><span class="utm">source</span></div>
+                            <div class="colum-utm_campaign"><span class="camp">campaign</span></div>
+                            <div class="colum-ip"><span class="ip">192.168.1.1</span></div>
+                            <div class="colum-field-1"><span class="field"></span></div>
+                            <div class="colum-field-2"><span class="field"></span></div>
+                            <div class="colum-field-3"><span class="field"></span></div>
+                            <div class="colum-field-4"><span class="field"></span></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-470010 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
+                            <div class="colum-country"><img src="img/kazakhstan.svg " alt=""><span class="country">kz</span></div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">2</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.4033</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/obmen.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Shop-Logistics</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400215718655662</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Е.А.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Black Slave</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabadsra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Отправлено</span></div>
+                            <div class="colum-utm_source"><span class="utm">source</span></div>
+                            <div class="colum-utm_medium"><span class="utm">source</span></div>
+                            <div class="colum-utm_term"><span class="utm">source</span></div>
+                            <div class="colum-utm_content"><span class="utm">source</span></div>
+                            <div class="colum-utm_campaign"><span class="camp">campaign</span></div>
+                            <div class="colum-ip"><span class="ip">192.168.1.1</span></div>
+                            <div class="colum-field-1"><span class="field"></span></div>
+                            <div class="colum-field-2"><span class="field"></span></div>
+                            <div class="colum-field-3"><span class="field"></span></div>
+                            <div class="colum-field-4"><span class="field"></span></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-3415B0 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
+                            <div class="colum-country"><img src="img/kazakhstan.svg " alt=""><span class="country">kz</span></div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">2</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.4033</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/obmen.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Shop-Logistics</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400215718655662</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Е.А.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Black Slave</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabadsra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Отправлено</span></div>
+                            <div class="colum-utm_source"><span class="utm">source</span></div>
+                            <div class="colum-utm_medium"><span class="utm">source</span></div>
+                            <div class="colum-utm_term"><span class="utm">source</span></div>
+                            <div class="colum-utm_content"><span class="utm">source</span></div>
+                            <div class="colum-utm_campaign"><span class="camp">campaign</span></div>
+                            <div class="colum-ip"><span class="ip">192.168.1.1</span></div>
+                            <div class="colum-field-1"><span class="field"></span></div>
+                            <div class="colum-field-2"><span class="field"></span></div>
+                            <div class="colum-field-3"><span class="field"></span></div>
+                            <div class="colum-field-4"><span class="field"></span></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-6996D3 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
+                            <div class="colum-country"><img src="img/kazakhstan.svg " alt=""><span class="country">kz</span></div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">2</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.4033</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/obmen.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Shop-Logistics</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400215718655662</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Е.А.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Black Slave</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabadsra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Отправлено</span></div>
+                            <div class="colum-utm_source"><span class="utm">source</span></div>
+                            <div class="colum-utm_medium"><span class="utm">source</span></div>
+                            <div class="colum-utm_term"><span class="utm">source</span></div>
+                            <div class="colum-utm_content"><span class="utm">source</span></div>
+                            <div class="colum-utm_campaign"><span class="camp">campaign</span></div>
+                            <div class="colum-ip"><span class="ip">192.168.1.1</span></div>
+                            <div class="colum-field-1"><span class="field"></span></div>
+                            <div class="colum-field-2"><span class="field"></span></div>
+                            <div class="colum-field-3"><span class="field"></span></div>
+                            <div class="colum-field-4"><span class="field"></span></div>
+                        </div>
+                        <div class="crm-main-table">
+                            <div class="colum-id">123451</div>
+                            <div class="colum-order-id"><span class="color-F50296 order-id-style">12344321567</span></div>
+                            <div class="colum-user"><span class="user-item">Александр Сергеевич</span></div>
+                            <div class="colum-country"><img src="img/kazakhstan.svg " alt=""><span class="country">kz</span></div>
+                            <div class="colum-tel"><img src="img/beeline.svg" alt="">+38 096 514 25 46</div>
+                            <div class="colum-tel-info"><span class="box"><span class="count">2</span></span>
+                            </div>
+                            <div class="colum-comm"><span class="comm-item">Третий комплект (0_З_л)</span></div>
+                            <div class="colum-sum"><span class="sum-item">9555.4033</span></div>
+                            <div class="colum-product"><span class="box"><span class="count">12</span></span><span class="item-product">Чай Монастырский (1шт. x 100.00 = 100.00</span></div>
+                            <div class="colum-pay"><img src="img/obmen.svg" alt=""></div>
+                            <div class="colum-delivery"><span class="delivery-item">Shop-Logistics</span></div>
+                            <div class="colum-delivery-adress"><span class="adress-item">Євминка, Відділення №1: вул. Київ</span></div>
+                            <div class="colum-TTN"><span class="ttn-item">20400215718655662</span></div>
+                            <div class="colum-TTN-status"><span class="status-item">Нова пошта очікує надхо</span></div>
+                            <div class="colum-add"><span class="add-item">2021-04-08 13:50:51</span></div>
+                            <div class="colum-employe"><span class="employe-item">Лебедев Е.А.</span></div>
+                            <div class="colum-depart"><span class="depart-item">Black Slave</span></div>
+                            <div class="colum-update"><span class="update-item">2021-04-08 22:50:51</span></div>
+                            <div class="colum-finish"><span class="finish-item">2021-04-08 17:50:51</span></div>
+                            <div class="colum-send"><span class="send-item">2001-04-08 7:50:51</span></div>
+                            <div class="colum-site"><span class="site-item">www.abrakadabadsra.com</span></div>
+                            <div class="colum-status"><span class="item-status">Отправлено</span></div>
+                            <div class="colum-utm_source"><span class="utm">source</span></div>
+                            <div class="colum-utm_medium"><span class="utm">source</span></div>
+                            <div class="colum-utm_term"><span class="utm">source</span></div>
+                            <div class="colum-utm_content"><span class="utm">source</span></div>
+                            <div class="colum-utm_campaign"><span class="camp">campaign</span></div>
+                            <div class="colum-ip"><span class="ip">192.168.1.1</span></div>
+                            <div class="colum-field-1"><span class="field"></span></div>
+                            <div class="colum-field-2"><span class="field"></span></div>
+                            <div class="colum-field-3"><span class="field"></span></div>
+                            <div class="colum-field-4"><span class="field"></span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1262,7 +1438,6 @@
     <script src="js/script.js"></script>
     <script src="js/script.crm-table.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/datepicker-ru.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script>
         new SimpleBar(document.querySelector('.container-info-settings'), {
@@ -1334,6 +1509,27 @@
                 }
             }
         })
+    </script>
+    <script>
+        /* Локализация datepicker */
+        $.datepicker.regional['ru'] = {
+            closeText: 'Закрыть',
+            prevText: 'Предыдущий',
+            nextText: 'Следующий',
+            currentText: 'Сегодня',
+            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+            monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+            dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+            dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            weekHeader: 'Не',
+            dateFormat: 'dd.mm.yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['ru']);
     </script>
 
 </body>
