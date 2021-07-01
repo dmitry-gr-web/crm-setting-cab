@@ -1,136 +1,194 @@
-    .ui-datepicker-div {
-        display: block;
-    }
-    
-    .ui-state-default,
-    .ui-widget-content .ui-state-default,
-    .ui-widget-header .ui-state-default,
-    .ui-button,
-    html .ui-button.ui-state-disabled:hover,
-    html .ui-button.ui-state-disabled:active {
-        color: black;
-        border: none;
-        text-align: center;
-    }
-    
-    .ui-state-highlight,
-    .ui-widget-content .ui-state-highlight,
-    .ui-widget-header .ui-state-highlight {
-        background: rgba(0, 0, 0, 0.5);
-        color: #FFE600;
-        border-radius: 100%;
-        height: 100%;
-        line-height: 30px;
-        box-sizing: border-box;
-    }
-    
-    .ui-datepicker td {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .ui-widget-header {
-        background-color: white;
-        border: none;
-    }
-    
-    .ui-widget-content {
-        border: none;
-    }
-    
-    .ui-state-default.ui-state-hover {
-        background: rgba(0, 0, 0, 0.5);
-        color: #FFE600;
-        border-radius: 100%;
-    }
-    
-    .ui-state-active,
-    .ui-widget-content .ui-state-active,
-    .ui-widget-header .ui-state-active,
-    a.ui-button:active,
-    .ui-button:active,
-    .ui-button.ui-state-active:hover {
-        background: rgba(0, 0, 0, 0.5);
-        color: #FFE600;
-        border-radius: 100%;
-        text-align: center;
-        height: 100%;
-        line-height: 30px;
-        box-sizing: border-box;
-    }
-    
-    .ui-widget-header .ui-icon {
-        background-image: url('../img/calen-arrow.svg');
-        width: 15px;
-        height: 30px;
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-    
-    .ui-datepicker-prev span {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin: 0;
-        background-size: 100%;
-        z-index: 666;
-        background-image: url('../img/calen-arrow.svg');
-        width: 15px;
-        height: 30px;
-        position: absolute;
-        display: block;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-    
-    .ui-datepicker-next span {
-        background-image: url('../img/calen-arrow.svg');
-        width: 15px;
-        height: 30px;
-        position: absolute;
-        display: block;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        left: 0;
-        right: 0;
-    }
-    
-    // .ui-datepicker .ui-datepicker-next span {
-    //     right: 0;
-    //     top: 0;
-    // }
-    .ui-datepicker .ui-datepicker-prev,
-    .ui-datepicker .ui-datepicker-next {}
-    
-    .ui-state-hover,
-    .ui-widget-content .ui-state-hover,
-    .ui-widget-header .ui-state-hover,
-    .ui-state-focus,
-    .ui-widget-content .ui-state-focus,
-    .ui-widget-header .ui-state-focus,
-    .ui-button:hover,
-    .ui-button:focus {
-        // border: none;
-        // background-color: transparent;
-        background: rgba(0, 0, 0, 0.5);
-        color: #FFE600;
-        border-radius: 100%;
-        text-align: center;
-        height: 100%;
-        line-height: 30px;
-        box-sizing: border-box;
-    }
-    
-    .ui-datepicker table {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .ui-datepicker-calendar tr {
-        box-sizing: border-box;
-    }
+   .ui-state-default,
+   .ui-widget-content .ui-state-default,
+   .ui-widget-header .ui-state-default,
+   .ui-button,
+   html .ui-button.ui-state-disabled:hover,
+   html .ui-button.ui-state-disabled:active {
+       color: black;
+       border: none;
+       text-align: center;
+   }
+   
+   .ui-state-highlight,
+   .ui-widget-content .ui-state-highlight,
+   .ui-widget-header .ui-state-highlight {
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFE600;
+       border-radius: 100%;
+       // line-height: 30px;
+       box-sizing: border-box;
+       line-height: 30px;
+       text-align: center;
+       width: 35px;
+       height: 35px
+   }
+   
+   .ui-datepicker td {
+       width: 35px;
+       height: 35px;
+   }
+   
+   .ui-widget-header {
+       background-color: white;
+       border: none;
+   }
+   
+   .ui-widget-content {
+       border: none;
+   }
+   
+   .ui-state-default.ui-state-hover {
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFE600;
+       border-radius: 100%;
+       // line-height: 30px;
+       box-sizing: border-box;
+       line-height: 30px;
+       text-align: center;
+       width: 35px;
+       height: 35px
+   }
+   
+   .ui-state-active,
+   .ui-widget-content .ui-state-active,
+   .ui-widget-header .ui-state-active,
+   a.ui-button:active,
+   .ui-button:active,
+   .ui-button.ui-state-active:hover {
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFE600;
+       border-radius: 100%;
+       text-align: center;
+       // line-height: 30px;
+       box-sizing: border-box;
+       line-height: 30px;
+       text-align: center;
+       width: 35px;
+       height: 35px
+   }
+   
+   .ui-widget-header .ui-icon {
+       height: 15px;
+       width: 8px;
+       background-position: center;
+       background-size: 100%;
+   }
+   
+   .ui-datepicker-prev-hover {
+       left: 2px;
+       right: 2px;
+   }
+   
+   .ui-datepicker-next span {
+       transform: rotate(180deg);
+       position: relative;
+   }
+   
+   //    .ui-icon.ui-icon-circle-triangle-e {
+   //        left: 5px;
+   //        position: relative;
+   //    }
+   .ui-datepicker .ui-datepicker-next span {
+       left: 20px;
+       top: 15px;
+       position: relative;
+   }
+   
+   //    .ui-datepicker-prev span {
+   //        display: block;
+   //        position: absolute;
+   //        left: 0;
+   //        top: 0;
+   //        margin: 0;
+   //        background-size: 100%;
+   //        z-index: 666;
+   //        background-image: url('../img/calen-arrow.svg');
+   //        width: 15px;
+   //        height: 30px;
+   //        position: absolute;
+   //        display: block;
+   //        background-size: 100%;
+   //        background-repeat: no-repeat;
+   //    }
+   //    .ui-datepicker-next span {
+   //        background-image: url('../img/calen-arrow.svg');
+   //        width: 15px;
+   //        height: 30px;
+   //        position: absolute;
+   //        display: block;
+   //        background-size: 100%;
+   //        background-repeat: no-repeat;
+   //        left: 20px;
+   //        right: 20px;
+   //    }
+   //    .ui-datepicker .ui-datepicker-prev span,
+   //    .ui-datepicker .ui-datepicker-next span {
+   //        left: 5px;
+   //        top: 5px;
+   //    }
+   //    .ui-corner-all {
+   //        position: relative;
+   //    }
+   //    .ui-icon-circle-triangle-e {
+   //        left: 0;
+   //        top: 0;
+   //    }
+   // .ui-datepicker .ui-datepicker-next span {
+   //     right: 0;
+   //     top: 0;
+   // }
+   //    .ui-datepicker .ui-datepicker-prev,
+   //    .ui-datepicker .ui-datepicker-next {
+   //        position: relative;
+   //    }
+   .ui-state-hover,
+   .ui-widget-content .ui-state-hover,
+   .ui-widget-header .ui-state-hover,
+   .ui-state-focus,
+   .ui-widget-content .ui-state-focus,
+   .ui-widget-header .ui-state-focus,
+   .ui-button:hover,
+   .ui-button:focus {
+       // border: none;
+       // background-color: transparent;
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFE600;
+       border-radius: 100%;
+       text-align: center;
+       // line-height: 30px;
+       box-sizing: border-box;
+   }
+   
+   .ui-datepicker table {
+       width: 100%;
+       box-sizing: border-box;
+   }
+   
+   .ui-datepicker-calendar tr {
+       box-sizing: border-box;
+   }
+   
+   .ui-state-hover,
+   .ui-widget-content .ui-state-hover,
+   .ui-widget-header .ui-state-hover,
+   .ui-state-focus,
+   .ui-widget-content .ui-state-focus,
+   .ui-widget-header .ui-state-focus,
+   .ui-button:hover,
+   .ui-button:focus {
+       border: none;
+       background-color: grey;
+       text-align: center;
+       border-radius: 0;
+       line-height: 30px;
+       border-radius: 100%;
+   }
+   
+   .ui-datepicker .ui-datepicker-buttonpane button {
+       visibility: hidden;
+   }
+   
+   //    .ui-button:hover .ui-datepicker-prev,
+   //    .ui-button:focus .ui-datepicker-next {
+   //        background-color: transparent;
+   //    }

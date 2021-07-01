@@ -1,7 +1,3 @@
-.ui-datepicker-div {
-  display: block;
-}
-
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
@@ -19,9 +15,11 @@ html .ui-button.ui-state-disabled:active {
   background: rgba(0, 0, 0, 0.5);
   color: #FFE600;
   border-radius: 100%;
-  height: 100%;
-  line-height: 30px;
   box-sizing: border-box;
+  line-height: 30px;
+  text-align: center;
+  width: 35px;
+  height: 35px;
 }
 
 .ui-datepicker td {
@@ -42,6 +40,11 @@ html .ui-button.ui-state-disabled:active {
   background: rgba(0, 0, 0, 0.5);
   color: #FFE600;
   border-radius: 100%;
+  box-sizing: border-box;
+  line-height: 30px;
+  text-align: center;
+  width: 35px;
+  height: 35px;
 }
 
 .ui-state-active,
@@ -54,50 +57,34 @@ a.ui-button:active,
   color: #FFE600;
   border-radius: 100%;
   text-align: center;
-  height: 100%;
-  line-height: 30px;
   box-sizing: border-box;
+  line-height: 30px;
+  text-align: center;
+  width: 35px;
+  height: 35px;
 }
 
 .ui-widget-header .ui-icon {
-  background-image: url("../img/calen-arrow.svg");
-  width: 15px;
-  height: 30px;
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 0;
+  height: 15px;
+  width: 8px;
+  background-position: center;
   background-size: 100%;
-  background-repeat: no-repeat;
 }
 
-.ui-datepicker-prev span {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  background-size: 100%;
-  z-index: 666;
-  background-image: url("../img/calen-arrow.svg");
-  width: 15px;
-  height: 30px;
-  position: absolute;
-  display: block;
-  background-size: 100%;
-  background-repeat: no-repeat;
+.ui-datepicker-prev-hover {
+  left: 2px;
+  right: 2px;
 }
 
 .ui-datepicker-next span {
-  background-image: url("../img/calen-arrow.svg");
-  width: 15px;
-  height: 30px;
-  position: absolute;
-  display: block;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  left: 0;
-  right: 0;
+  transform: rotate(180deg);
+  position: relative;
+}
+
+.ui-datepicker .ui-datepicker-next span {
+  left: 20px;
+  top: 15px;
+  position: relative;
 }
 
 .ui-state-hover,
@@ -112,8 +99,6 @@ a.ui-button:active,
   color: #FFE600;
   border-radius: 100%;
   text-align: center;
-  height: 100%;
-  line-height: 30px;
   box-sizing: border-box;
 }
 
@@ -124,4 +109,24 @@ a.ui-button:active,
 
 .ui-datepicker-calendar tr {
   box-sizing: border-box;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+  border: none;
+  background-color: grey;
+  text-align: center;
+  border-radius: 0;
+  line-height: 30px;
+  border-radius: 100%;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  visibility: hidden;
 }

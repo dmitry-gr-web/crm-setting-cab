@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="css/custom-scroll.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/crm-order.css">
     <link rel="stylesheet" href="css/notification.css">
     <link rel="stylesheet" href="css/task.block.css">
     <link rel="stylesheet" href="jquery-ui.min.css">
     <link rel="stylesheet" href="css/calendary.style.css">
-
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" /> -->
 
     <title>Document</title>
 </head>
@@ -846,7 +850,7 @@
                 </div>
             </div>
             <div class="crm-order">
-                <div class="owl-carousel owl-theme crm-header">
+                <div class="crm-header owl-carousel">
                     <div class="crm-header-link item"><span class="color-C4C4C4 color-form"></span><span class="btn-link">Все </span><span class="count-link">755</span></div>
                     <div class="crm-header-link item"><span class="color-FFCF00 color-form"></span><span class="btn-link">Новый </span><span class="count-link">181</span></div>
                     <div class="crm-header-link item"><span class="color-00CC00 color-form"></span><span class="btn-link">Принято </span><span class="count-link">299</span></div>
@@ -962,7 +966,7 @@
                             <input class="colum-delivery-adress" type="text">
                             <input class="colum-TTN" type="text">
                             <input class="colum-TTN-status" type="text">
-                            <div class="colum-add">c <input id="add-s" class="add-input" type="text" readonly> по <input id="add-po" class="add-input" type="text" readonly></div>
+                            <div class="colum-add">c <input id="add-s" class="add-input" type="text" readonly>по <input id="add-po" class="add-input" type="text" readonly></div>
                             <div class="colum-employe"><span class="employe-btn">Все</span>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item">Все</span></div>
@@ -993,9 +997,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="colum-update">c <input id="update-s" class="add-input" type="text" readonly> по <input id="update-po" class="add-input" type="text" readonly></div>
-                            <div class="colum-finish">c <input id="finish-s" class="add-input" type="text" readonly> по <input id="finish-po" class="add-input" type="text" readonly></div>
-                            <div class="colum-send">c <input id="send-s" class="add-input" type="text" readonly> по <input id="send-po" class="add-input" type="text" readonly></div>
+                            <div class="colum-update">c <input id="update-s" class="add-input" type="text" readonly>по <input id="update-po" class="add-input" type="text" readonly></div>
+                            <div class="colum-finish">c <input id="finish-s" class="add-input" type="text" readonly>по <input id="finish-po" class="add-input" type="text" readonly></div>
+                            <div class="colum-send">c <input id="send-s" class="add-input" type="text" readonly>по <input id="send-po" class="add-input" type="text" readonly></div>
                             <input class="colum-site" type="text">
                             <input class="colum-status" type="text">
                             <input class="colum-utm_source" type="text">
@@ -1434,11 +1438,64 @@
 
     </div>
     <script src="js/jquery.js"></script>
+    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script> -->
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script.crm-table.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+    <!-- <script src="js/slick.min.js"></script> -->
     <script src="js/owl.carousel.min.js"></script>
+    <!-- <script src="js/multiselect.js"></script> -->
+    <script>
+        // $('.wrap-scroll').multiSelect({
+        //     actcls: 'select-toggle', //active class
+        //     selector: '.crm-main-table', //specify the selectable elements
+        //     except: ['.wrap-scroll'], //specify the selectable container
+        //     statics: ['.selected-lock'], //rows with 'static' class will be unselectable
+        //     callback: function(items) {
+
+        //         console.log(items);
+        //     }
+        // });
+    </script>
+    <!-- <script>
+        $('.variable-width').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 8,
+            // centerMode: true,
+            variableWidth: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script> -->
+
     <script>
         new SimpleBar(document.querySelector('.container-info-settings'), {
             autoHide: true,
@@ -1497,17 +1554,19 @@
             dots: false,
             // stagePadding: 100,
             // paginationSpeed: 1000,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 7
-                },
-                1000: {
-                    items: 10
-                }
-            }
+            slideBy: 5,
+            items: 12
+                // responsive: {
+                //     0: {
+                //         items: 2
+                //     },
+                //     600: {
+                //         items: 7
+                //     },
+                //     1000: {
+                //         items: 10
+                //     }
+                // }
         })
     </script>
     <script>
@@ -1521,7 +1580,7 @@
             monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
             dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
             dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-            dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+            dayNamesMin: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
             weekHeader: 'Не',
             dateFormat: 'dd.mm.yy',
             firstDay: 1,
@@ -1531,6 +1590,11 @@
         };
         $.datepicker.setDefaults($.datepicker.regional['ru']);
     </script>
+    <!-- <script>
+        tippy('.crm-main-teble', {
+            content: 'My tooltip!',
+        });
+    </script> -->
 
 </body>
 

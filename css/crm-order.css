@@ -70,6 +70,7 @@
   top: 60px;
   z-index: 333;
   background-color: white;
+  width: 4000px;
 }
 .crm-header .crm-header-link {
   padding-left: 10px;
@@ -136,13 +137,15 @@
 
 .crm-body-header {
   margin-top: 20px;
-  position: sticky;
   width: 4000px;
+  position: sticky;
 }
 .crm-body-header .crm-name-list {
   font-size: 14px;
   text-align: center;
   display: flex;
+  position: sticky;
+  white-space: nowrap;
 }
 .crm-body-header .crm-name-list div {
   height: 23px;
@@ -388,7 +391,7 @@
   align-items: center;
 }
 .crm-input .colum-add input {
-  width: 60px;
+  width: 55px;
   display: inline-block;
   border: none;
   background: transparent;
@@ -406,7 +409,7 @@
   align-items: center;
 }
 .crm-input .colum-send input {
-  width: 60px;
+  width: 55px;
   display: inline-block;
   border: none;
   background: transparent;
@@ -424,7 +427,7 @@
   align-items: center;
 }
 .crm-input .colum-finish input {
-  width: 60px;
+  width: 55px;
   display: inline-block;
   border: none;
   background: transparent;
@@ -442,7 +445,7 @@
   align-items: center;
 }
 .crm-input .colum-update input {
-  width: 60px;
+  width: 55px;
   display: inline-block;
   border: none;
   background: transparent;
@@ -895,31 +898,51 @@
 
 .owl-carousel {
   width: 90%;
-  height: 15px;
+  height: 19px;
   position: fixed;
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .owl-stage-outer {
   height: 19px;
-  width: 1500px;
+  width: 110%;
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .owl-stage {
-  width: 105%;
+  width: max-content;
+  height: 19px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .owl-nav {
-  width: 40px;
+  width: 60px;
   position: fixed;
-  top: 42px;
+  top: 58px;
   right: 0px;
   height: 23px;
   background-color: white;
 }
 
-.owl-item {
-  position: fixed;
+.owl-item.active {
+  width: max-content;
   white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.owl-item {
+  width: max-content;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.owl-nav button {
+  margin: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .colum-country {

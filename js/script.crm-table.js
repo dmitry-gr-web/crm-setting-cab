@@ -4,38 +4,50 @@
         x.classList.toggle('btn-toggle');
     });
 });
-
+//tooltip
 $(document).ready(function() {
     $(".crm-main-table").on('click', (e) => {
+        $(".crm-main-table").unbind("mouseleave mousemove");
         $(".select-toggle").mousemove(
             function(pos) {
                 if ($(".crm-main-table").hasClass('select-toggle')) {
                     $("#hoverSelect").show();
                     $("#hoverSelect").css('left', (pos.pageX + 10) + 'px').css('top', (pos.pageY + 10) + 'px');
                 }
-                if (!$(".crm-main-table").hasClass('select-toggle')) {
-                    $(".crm-main-table").off();
-                    $("#hoverSelect").hide();
-                }
             }
-        ).mouseleave(function() {
+        ).mouseleave(function(e) {
             $("#hoverSelect").hide();
         });
     });
 });
-
+//tooltip
 
 //ctrl a
-const listA = document.querySelector('body');
-listA.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey) && (e.which == 65) || (e.metaKey) && (e.which == 65)) {
-        document.querySelectorAll('.crm-main-table').forEach(e => {
-            if (!e.classList.contains('selected-lock'))
-                e.classList.add('select-toggle');
-        });
-        e.preventDefault();
-    }
-});
+// const listA = document.querySelector('body');
+// listA.addEventListener('keydown', (e) => {
+//     if ((e.ctrlKey) && (e.which == 65) || (e.metaKey) && (e.which == 65)) {
+//         document.querySelectorAll('.crm-main-table').forEach(e => {
+//             if (!e.classList.contains('selected-lock')) {
+//                 e.classList.add('select-toggle');
+//                 // count = e.length;
+//                 // // $(".select-toggle").mousemove(
+//                 // //     function(pos) {
+//                 // //         if ($(".crm-main-table").hasClass('select-toggle')) {
+//                 // //             $("#hoverSelect").show();
+//                 // //             $("#hoverSelect").css('left', (pos.pageX + 10) + 'px').css('top', (pos.pageY + 10) + 'px');
+//                 // //         }
+//                 // //     }
+//                 // // )
+//                 // $('.count-hover').text(count);
+//                 // console.log(count);
+//             }
+//             // $('.crm-main-table').length.appendTo('.count-hover');
+//         });
+//         e.preventDefault();
+//     }
+// });
+
+// console.log($('.crm-main-table').length);
 //ctrl a
 //ctrl+click
 
@@ -58,25 +70,55 @@ listA.addEventListener('keydown', (e) => {
 
 
 //ctrl+click
+
+
+// $("a .ui-datepicker-next").hover(function() {
+//     $("a .ui-datepicker-next-hover").removeClass();
+
+// });
+
 //shift+click
-;
+
 (function($) {
     // selekt jQuery plugin // http://stackoverflow.com/a/35813513/383904
     $.fn.selekt = function() {
 
-        var settings = $.extend({
+        let settings = $.extend({
             children: ".wrap-scroll .crm-main-table",
             className: "select-toggle",
             onSelect: function() {}
         }, arguments[0] || {});
 
         return this.each(function(_, that) {
-            var $ch = $(this).find(settings.children),
+            let $ch = $(this).find(settings.children),
                 sel = [],
                 last;
 
+            // $('.crm-main-table').on('keydown', function(e) {
+            //     let isCtrl = (e.ctrlKey || e.metaKey),
+            //         keyA = (e.which == 65);
+
+
+            //     $(sel).removeClass(settings.className);
+
+            //     if (isCtrl && keyA) {
+            //         console.log('1');
+            //         $('.crm-main-table').each(function() {
+            //             if (!$('.crm-main-table').hasClass('selected-lock')) {
+            //                 $('.crm-main-table').addClass('select-toggle');
+            //             }
+
+            //             // $('.crm-main-table').length;
+            //             // console.log($('.crm-main-table').length);
+            //         });
+            //     }
+
+            // });
+
+
+
             $ch.on("mousedown", function(ev) {
-                var isCtrl = (ev.ctrlKey || ev.metaKey),
+                let isCtrl = (ev.ctrlKey || ev.metaKey),
                     isShift = ev.shiftKey,
                     ti = $ch.index(this),
                     li = $ch.index(last),
@@ -97,6 +139,12 @@ listA.addEventListener('keydown', (e) => {
                         //sel = $ch.slice(ti, li + 1);
                 } else {
                     sel = ai < 0 || sel.length > 1 ? [this] : [];
+                    if (!$(".crm-main-table").hasClass('select-toggle')) {
+                        $("#hoverSelect").hide();
+                    }
+                    // if ($(".crm-main-table").hasClass('selected-lock')) {
+                    //     $(".crm-main-table").removeClass('select-toggle');
+                    // }
                 }
                 last = this;
                 // [...sel].map(x => {
@@ -120,6 +168,16 @@ $(".wrap-scroll").selekt({
         $(".count-hover").text(sel.length);
     }
 });
+// $(document).ready(function() {
+//     $(".crm-main-table").on('mousemove', () => {
+//         if ($(".crm-main-table").hasClass('select-toggle')) {
+//             tippy('.select-toggle', {
+//                 content: 'My tooltip!',
+//             });
+//         }
+//     });
+// })
+
 
 //shift click
 //...
