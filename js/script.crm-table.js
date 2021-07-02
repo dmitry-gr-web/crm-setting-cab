@@ -1,9 +1,11 @@
+//header-link
 [...document.querySelectorAll('.crm-header-link')].map(x => {
     x.addEventListener('click', () => {
         [...document.querySelectorAll('.crm-header-link')].map(y => y.classList.remove('btn-toggle'));
         x.classList.toggle('btn-toggle');
     });
 });
+//header-link
 //tooltip
 $(document).ready(function() {
     $(".crm-main-table").on('click', (e) => {
@@ -47,7 +49,6 @@ $(document).ready(function() {
 //     }
 // });
 
-// console.log($('.crm-main-table').length);
 //ctrl a
 //ctrl+click
 
@@ -70,12 +71,6 @@ $(document).ready(function() {
 
 
 //ctrl+click
-
-
-// $("a .ui-datepicker-next").hover(function() {
-//     $("a .ui-datepicker-next-hover").removeClass();
-
-// });
 
 //shift+click
 
@@ -129,16 +124,25 @@ $(document).ready(function() {
                 $(sel).removeClass(settings.className);
 
                 if (isCtrl) {
-                    if (ai > -1) sel.splice(ai, 1);
-                    else sel.push(this);
+                    if (ai > -1) sel.splice(ai, 1).filter(x => !x.classList.contains('selected-lock'));
+                    else {
+                        sel.push(this);
+                        sel = sel.filter(x => !x.classList.contains('selected-lock'))
+                    };
                 } else if (isShift && sel.length > 0) {
                     if (ti > li) ti = [li, li = ti][0];
                     sel = [...$ch.slice(ti, li + 1)].filter(x => {
-                            return !x.classList.contains('selected-lock');
-                        })
-                        //sel = $ch.slice(ti, li + 1);
+                        return !x.classList.contains('selected-lock');
+                    })
                 } else {
                     sel = ai < 0 || sel.length > 1 ? [this] : [];
+
+                    sel.forEach((z) => {
+                        if (z.classList.contains('selected-lock')) {
+                            z.classList.remove('select-toggle');
+                            sel = []
+                        }
+                    });
                     if (!$(".crm-main-table").hasClass('select-toggle')) {
                         $("#hoverSelect").hide();
                     }
@@ -157,18 +161,10 @@ $(".wrap-scroll").selekt({
         $(".count-hover").text(sel.length);
     }
 });
-// $(document).ready(function() {
-//     $(".crm-main-table").on('mousemove', () => {
-//         if ($(".crm-main-table").hasClass('select-toggle')) {
-//             tippy('.select-toggle', {
-//                 content: 'My tooltip!',
-//             });
-//         }
-//     });
-// })
-
 
 //shift click
+
+
 //...
 $(".crm-main-table .user-item").text(function(i, text) {
     if (text.length >= 26) {

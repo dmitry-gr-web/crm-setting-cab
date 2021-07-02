@@ -3,47 +3,7 @@
 }
 
 .wrap-scroll {
-  margin-top: 20px;
-}
-.wrap-scroll .simplebar-track.simplebar-vertical {
-  background-color: transparent;
-  width: 6px;
-  margin-right: 0px;
-  margin-top: 0px;
-  margin-bottom: 40px;
-}
-.wrap-scroll .simplebar-track.simplebar-horizontal {
-  background-color: transparent;
-  height: 6px;
-  margin-right: 20px;
-  margin-bottom: 40px;
-  margin-left: 30px;
-}
-.wrap-scroll .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
-  background: rgba(0, 0, 0, 0.3);
-  width: 6px;
-  border-radius: 5px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-}
-.wrap-scroll .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  height: 6px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: -2px;
-}
-.wrap-scroll .simplebar-scrollbar.simplebar-visible:before {
-  opacity: 1;
-}
-.wrap-scroll .simplebar-content-wrapper {
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-bottom: 30px;
+  margin-top: 15px;
 }
 
 .color-form {
@@ -74,7 +34,9 @@
   top: 60px;
   z-index: 333;
   background-color: white;
-  width: 4000px;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-wrap: nowrap;
 }
 .crm-header:before {
   content: "";
@@ -149,9 +111,10 @@
 }
 
 .crm-body-header {
-  top: 20px;
+  top: 15px;
   width: 4000px;
   position: sticky;
+  position: -webkit-sticky;
   background-color: white;
   z-index: 2222;
 }
@@ -159,8 +122,8 @@
   content: "";
   background-color: white;
   width: 15px;
-  height: 40px;
-  top: 0px;
+  height: 61px;
+  bottom: 0;
   left: -15px;
   position: absolute;
 }
@@ -169,6 +132,9 @@
   text-align: center;
   display: flex;
   white-space: nowrap;
+}
+.crm-body-header .crm-name-list .colum-tel-and-info span {
+  margin-right: 20px;
 }
 .crm-body-header .crm-name-list div {
   height: 23px;
@@ -229,6 +195,13 @@
   left: 2px;
   top: 2px;
   z-index: 2;
+}
+
+.colum-tel-and-info {
+  width: 156px;
+  height: 18px;
+  background-color: #F1F1F1;
+  position: relative;
 }
 
 .colum-tel-info {
@@ -917,55 +890,6 @@
   position: absolute;
   top: 3px;
   left: -15px;
-}
-
-.owl-carousel {
-  width: 90%;
-  height: 19px;
-  position: fixed;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
-.owl-stage-outer {
-  height: 19px;
-  width: 110%;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
-.owl-stage {
-  width: max-content;
-  height: 19px;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
-.owl-nav {
-  width: 60px;
-  position: fixed;
-  top: 58px;
-  right: 0px;
-  height: 23px;
-  background-color: white;
-}
-
-.owl-item.active {
-  width: max-content;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
-.owl-item {
-  width: max-content;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
-
-.owl-nav button {
-  margin: 10px;
-  margin-bottom: 0;
-  margin-top: 0;
 }
 
 .colum-country {
