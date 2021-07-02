@@ -2,6 +2,9 @@
   width: 4000px;
 }
 
+.wrap-scroll {
+  margin-top: 20px;
+}
 .wrap-scroll .simplebar-track.simplebar-vertical {
   background-color: transparent;
   width: 6px;
@@ -67,10 +70,20 @@
   margin: 0;
   padding-left: 0;
   position: fixed;
+  padding-bottom: 12px;
   top: 60px;
   z-index: 333;
   background-color: white;
   width: 4000px;
+}
+.crm-header:before {
+  content: "";
+  background-color: white;
+  width: 15px;
+  height: 40px;
+  top: 0px;
+  left: -15px;
+  position: absolute;
 }
 .crm-header .crm-header-link {
   padding-left: 10px;
@@ -136,15 +149,25 @@
 }
 
 .crm-body-header {
-  margin-top: 20px;
+  top: 20px;
   width: 4000px;
   position: sticky;
+  background-color: white;
+  z-index: 2222;
+}
+.crm-body-header:before {
+  content: "";
+  background-color: white;
+  width: 15px;
+  height: 40px;
+  top: 0px;
+  left: -15px;
+  position: absolute;
 }
 .crm-body-header .crm-name-list {
   font-size: 14px;
   text-align: center;
   display: flex;
-  position: sticky;
   white-space: nowrap;
 }
 .crm-body-header .crm-name-list div {

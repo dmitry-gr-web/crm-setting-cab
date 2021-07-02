@@ -80,43 +80,43 @@ $(document).ready(function() {
 //shift+click
 
 (function($) {
-    // selekt jQuery plugin // http://stackoverflow.com/a/35813513/383904
     $.fn.selekt = function() {
-
         let settings = $.extend({
             children: ".wrap-scroll .crm-main-table",
             className: "select-toggle",
             onSelect: function() {}
         }, arguments[0] || {});
-
         return this.each(function(_, that) {
             let $ch = $(this).find(settings.children),
                 sel = [],
                 last;
-
-            // $('.crm-main-table').on('keydown', function(e) {
-            //     let isCtrl = (e.ctrlKey || e.metaKey),
-            //         keyA = (e.which == 65);
-
-
-            //     $(sel).removeClass(settings.className);
-
-            //     if (isCtrl && keyA) {
-            //         console.log('1');
-            //         $('.crm-main-table').each(function() {
-            //             if (!$('.crm-main-table').hasClass('selected-lock')) {
-            //                 $('.crm-main-table').addClass('select-toggle');
-            //             }
-
-            //             // $('.crm-main-table').length;
-            //             // console.log($('.crm-main-table').length);
-            //         });
-            //     }
-
-            // });
-
-
-
+            $(document).on('keydown', function(e) {
+                let isCtrl = (e.ctrlKey || e.metaKey),
+                    keyA = (e.which == 65);
+                if (isCtrl && keyA) {
+                    $('.crm-main-table').each((_, x) => {
+                        if (!x.classList.contains('selected-lock')) {
+                            x.classList.add('select-toggle');
+                        }
+                    });
+                    $(".crm-main-table").unbind("mouseleave mousemove");
+                    $(".select-toggle").mousemove(
+                        function(pos) {
+                            if ($(".crm-main-table").hasClass('select-toggle')) {
+                                $("#hoverSelect").show();
+                                $("#hoverSelect").css('left', (pos.pageX + 10) + 'px').css('top', (pos.pageY + 10) + 'px');
+                            }
+                        }
+                    ).mouseleave(function(e) {
+                        $("#hoverSelect").hide();
+                    });
+                    sel = [...$('.crm-main-table')].filter(x => {
+                        return !x.classList.contains('selected-lock');
+                    })
+                    settings.onSelect.call(that, sel);
+                    e.preventDefault()
+                }
+            });
             $ch.on("mousedown", function(ev) {
                 let isCtrl = (ev.ctrlKey || ev.metaKey),
                     isShift = ev.shiftKey,
@@ -142,22 +142,11 @@ $(document).ready(function() {
                     if (!$(".crm-main-table").hasClass('select-toggle')) {
                         $("#hoverSelect").hide();
                     }
-                    // if ($(".crm-main-table").hasClass('selected-lock')) {
-                    //     $(".crm-main-table").removeClass('select-toggle');
-                    // }
                 }
                 last = this;
-                // [...sel].map(x => {
-                //         if (!x.classList?.contains('selected-lock')) {
-                //             x.classList.add("select-toggle");
-                //         }
-                //     })
-
                 $(sel).addClass(settings.className);
-
                 settings.onSelect.call(that, sel);
             });
-
         });
     };
 }(jQuery));

@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div id="hoverSelect">Выбрано <span class="count-hover">2</span></div>
+    <div id="hoverSelect">Выделено <span class="count-hover">2</span></div>
     <header class="header-crm">
         <div class="logo-pages-wrap">
             <div class="logo-position"><img class="logo-lp-crm" src="img/crm-logo.svg" alt=""></div>
@@ -867,10 +867,10 @@
                 </div>
                 <div class="crm-body">
                     <div class="crm-body-header">
-                        <div class="crm-name-list">
+                        <div class="crm-name-list" id="header-drag">
                             <div class="colum-id">Id</div>
                             <div class="colum-order-id">order id</div>
-                            <div class="colum-user" id="text">Покупатель</div>
+                            <div class="colum-user">Покупатель</div>
                             <div class="colum-country">Страна</div>
                             <div class="colum-tel">Телефон</div>
                             <div class="colum-tel-info"></div>
@@ -1519,6 +1519,10 @@
                 revert: 200
             });
             $("#sortable-2 ").disableSelection();
+        });
+        $(function() {
+            $("#header-drag").sortable();
+            $("#header-drag").disableSelection();
         });
     </script>
     <script>
