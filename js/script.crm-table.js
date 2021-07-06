@@ -22,8 +22,30 @@ $(document).ready(function() {
         });
     });
 });
+
+// window.addEventListener('DOMContentLoaded', function() {
+//     var menu = document.querySelector('#crmHeader'),
+//         node = menu.querySelectorAll('.crm-header-link');
+//     [].reduce.call(node, function(scrollLeft, item) {
+//         var scroll = scrollLeft + item.offsetWidth;
+//         let btnArrow = document.querySelector('.arrow-next');
+//         btnArrow.addEventListener('click', function() {
+//             menu.scrollLeft = menu.scrollLeft == scrollLeft ? scroll : scrollLeft
+//         });
+//         return scroll
+//     }, 0);
+// });
 //tooltip
 
+// $(".arrow-next").click(function() {
+//     $(".crm-header").scrollTo('toggle');
+
+// });
+// $(".arrow-next").click(function() { // ID откуда кливаем
+//     $('html, body').animate({
+//         scrollTop: $(".item-1").offset().top // класс объекта к которому приезжаем
+//     }, 1000); // Скорость прокрутки
+// });
 //ctrl a
 // const listA = document.querySelector('body');
 // listA.addEventListener('keydown', (e) => {
@@ -198,7 +220,7 @@ $(".crm-main-table .comm-item").text(function(i, text) {
 });
 $(".crm-main-table .sum-item").text(function(i, text) {
     if (text.length >= 9) {
-        text = text.substring(0, 7) + '...';
+        text = text.substring(0, 8) + '...';
     }
     $(this).text(text);
 });

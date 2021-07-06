@@ -747,9 +747,9 @@ html {
 .container-info-settings .simplebar-track.simplebar-horizontal {
   background-color: transparent;
   height: 6px;
-  margin-right: 20px;
-  margin-bottom: 40px;
-  margin-left: 30px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  margin-left: 20px;
 }
 .container-info-settings .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
   background: rgba(0, 0, 0, 0.3);
