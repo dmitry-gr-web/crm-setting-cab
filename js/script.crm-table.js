@@ -28,12 +28,84 @@ $(document).ready(function() {
 //         node = menu.querySelectorAll('.crm-header-link');
 //     [].reduce.call(node, function(scrollLeft, item) {
 //         var scroll = scrollLeft + item.offsetWidth;
-//         let btnArrow = document.querySelector('.arrow-next');
-//         btnArrow.addEventListener('click', function() {
+//         item = document.querySelector('.arrow-next');
+//         item.addEventListener('click', function() {
+
 //             menu.scrollLeft = menu.scrollLeft == scrollLeft ? scroll : scrollLeft
 //         });
 //         return scroll
 //     }, 0);
+// });
+
+
+//scroll slider header
+$("#next").click(function() {
+    $('#crmHeader').animate({
+        'scrollLeft': '+=250px'
+    }, { duration: 300, queue: false });
+});
+$("#prev").click(function() {
+    $('#crmHeader').animate({
+        'scrollLeft': '0px'
+    }, { duration: 300, queue: false });
+});
+//scroll slider header
+
+
+
+// let current,
+//     first = document.querySelector('#crmHeader > div:first-child'),
+//     last = document.querySelector('#crmHeader > div:last-child');
+
+// let btnss = document.getElementsByTagName('span');
+// for (let btn of btnss)
+//     btn.addEventListener('click', onBtnClick);
+
+// function onBtnClick(e) {
+//     if (current)
+//         current.classList.remove('active');
+//     switch (e.target.id) {
+//         case 'prev':
+//             current = current ? current.previousElementSibling || last : last;
+//             break;
+//         case 'next':
+//             current = current ? current.nextElementSibling || first : first;
+//             break;
+//         case 'first':
+//             current = first;
+//             break;
+//         case 'last':
+//             current = last;
+//     }
+//     current.classList.add('active');
+// }
+// $(document).ready(function() {
+
+
+//     $('.arrow-next').on('click', function() {
+//         if ($('div.active').index() == -1) {
+//             $('.crm-header .crm-header-link:first-child').addClass('active');
+//         } else {
+
+//             $('.crm-header-link.active').next('.crm-header-link').addClass('active');
+//             $('.crm-header-link.active').prev('.crm-header-link').removeClass('active');
+//         }
+
+//     });
+
+
+//     $('.arrow-prev').on('click', function() {
+//         if ($('.crm-header-link.active').index() == -1) {
+//             /* без действий */
+//         } else {
+
+//             $('.crm-header-link.active').prev('.crm-header-link').addClass('active');
+//             $('.crm-header-link.active').next('.crm-header-link').removeClass('active');
+//         }
+
+//     });
+
+
 // });
 //tooltip
 
@@ -97,7 +169,7 @@ $(document).ready(function() {
 //shift+click
 
 (function($) {
-    $.fn.selekt = function() {
+    $.fn.select = function() {
         let settings = $.extend({
             children: ".wrap-scroll .crm-main-table",
             className: "select-toggle",
@@ -164,10 +236,24 @@ $(document).ready(function() {
                             z.classList.remove('select-toggle');
                             sel = []
                         }
+
+                        // $(document).bind('click', function(e) {
+                        //     var $clicked = $(e.target);
+                        //     if (!$clicked.parents().hasClass("colum-country")) {
+                        //         $(".colum-country .block1").removeClass('toggle');
+                        //     }
+                        //     if (!$(".block1").hasClass('toggle')) {
+                        //         $(".crm-main-table").removeClass('z-index');
+                        //     }
+                        // });
                     });
                     if (!$(".crm-main-table").hasClass('select-toggle')) {
                         $("#hoverSelect").hide();
                     }
+                    // if (!ti.target == className) {
+                    //     className.classList.remove('select-toggle');
+
+                    // }
                 }
                 last = this;
                 $(sel).addClass(settings.className);
@@ -176,7 +262,7 @@ $(document).ready(function() {
         });
     };
 }(jQuery));
-$(".wrap-scroll").selekt({
+$(".wrap-scroll").select({
     children: ".crm-main-table", // Elements to target (default: "tbody tr")
     className: "select-toggle", // Desired CSS class  (default: "selected")
     onSelect: function(sel) { // Useful callback
@@ -386,42 +472,8 @@ $(document).bind('click', function(e) {
 
 
 //employe btn
-// $(function() {
-//     $("[data-tooltip]").mousemove(function(eventObject) {
-//         $data_tooltip = $(this).attr("data-tooltip");
-//         $("#tooltip").html($data_tooltip)
-//             .css({
-//                 "top": eventObject.pageY + 5,
-//                 "left": eventObject.pageX + 5
-//             })
-//             .show();
-//     }).mouseout(function() {
-//         $("#tooltip").hide()
-//             .html("")
-//             .css({
-//                 "top": 0,
-//                 "left": 0
-//             });
-//     });
-// });
-// $('.crm-main-table').mousemove(function(e) {
-//     var X = e.pageX;
-//     var Y = e.pageY;
-//     var top = Y + 10 + 'px';
-//     var left = X + 10 + 'px';
-//     var id = $(this).data('hoverMouse');
-//     $('#hover').css({
-//         display: "block",
-//         top: top,
-//         left: left
-//     });
-// });
-// $('.crm-main-table').mouseout(function() {
-//     var id = $(this).data('hoverMouse');
-//     $('#hover').css({
-//         display: "none"
-//     });
-// });
+
+
 
 
 
@@ -640,6 +692,7 @@ const navCrmPlus = document.querySelectorAll('.nav-desc');
 
 btnCrmNav.addEventListener('click', () => {
     navWrap.classList.toggle('nav-crm-plus');
+    // navWrap.classList.toggle('nav-crm-overflow');
     navCrmPlus.forEach(x => x.classList.toggle('nav-desc-toggle'));
     btnCrmNav.classList.toggle('selected-nav');
 });
@@ -647,90 +700,16 @@ btnCrmNav.addEventListener('click', () => {
 document.addEventListener('mousedown', function(e) {
     if (e.target.closest('.nav-crm') === null) {
         navWrap.classList.remove('nav-crm-plus');
+        // navWrap.classList.remove('nav-crm-overflow');
         navCrmPlus.forEach(x => x.classList.remove('nav-desc-toggle'));
         btnCrmNav.classList.remove('selected-nav');
     }
 });
 
 //nav sidebar
-// document.querySelector('.btn-not').addEventListener('click', () => {
-//     document.querySelectorAll('.block-not').classList.toggle('toggle-display');
-// });
-// document.querySelector('.btn-tech').addEventListener('click', () => {
-//     document.querySelectorAll('.tech-not').classList.toggle('toggle-display');
-// });
 
-
-// document.querySelectorAll('.crm-main-table').onclick = function(event) {
-//     if (event.target.tagName != "div") return;
-
-//     if (event.ctrlKey || event.metaKey) {
-//         toggleSelect(event.target);
-//     } else {
-//         singleSelect(event.target);
-//     }
-// }
-
-// document.querySelectorAll('.crm-main-table').onmousedown = function() {
-//     return false;
-// };
-
-// function toggleSelect(div) {
-//     div.classList.toggle('select-toggle');
-// }
-
-// function singleSelect(div) {
-//     let selected = document.querySelectorAll('.crm-main-table');
-//     for (let elem of selected) {
-//         elem.classList.remove('select-toggle');
-//     }
-//     document.querySelectorAll('.crm-main-table').classList.add('select-toggle');
-// }
-
-
-// $(".crm-main-table").on("click", function(e) {
-//     if (e.ctrlKey) {
-//         $(this).addClass('select-toggle');
-//     }
-// });
-
-
-// $(document).keydown(function(e) {
-//     if (e.ctrlKey) {
-//         $(".crm-main-table").click(function() {
-//             let btn = $('.crm-main-table');
-//             btn.map(x => $(".crm-main-table").removeClass('select-toggle'));
-//             $('.crm-main-table').addClass('select-toggle');
-//         });
-//     }
-// });
-
-
-// const btn = document.querySelectorAll('.crm-main-table');
-// btn.addEventListener('keydown', function(event) {
-//     if (event.keyCode == 17) {
-//         btn.classList.toggle('select-toggle');
-//     }
-// });
-
-// x.addEventListener('keydown', (event) => {
-//     if (event.keyCode == 17 && x) {
-//         x.classList.toggle('select-toggle');
-//     }
-// });
-
-
-// document.addEventListener('keydown', function() {
-//     if (keyCode == 17) {
-//         document.querySelectorAll('.crm-main-table').addEventListener('click', () => {
-//             document.querySelectorAll('.crm-main-table').classList.toggle('select-toggle');
-//         });
-//     }
-// });
-
-// document.addEventListener("mousedown", function(event) {
-//     if (event.ctrlKey && event.button == 1) {
-//                 document.querySelectorAll('.crm-main-table').addEventListener('click', () => {
-//             document.querySelectorAll('.crm-main-table').classList.toggle('select-toggle');
-//     }
-// });
+//zakaz btn
+$(".zakaz-btn").click(function() {
+    $('.zakaz-block').toggle(200);
+    // $('.nav-crm').prop("data-simplebar", "true");
+});

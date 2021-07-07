@@ -485,6 +485,50 @@ html {
   border-radius: 0 15px 15px 0;
   backdrop-filter: blur(4px);
   transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+.nav-crm .simplebar-track.simplebar-vertical {
+  background-color: transparent;
+  width: 6px;
+  margin-right: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.nav-crm .simplebar-track.simplebar-horizontal {
+  background-color: transparent;
+  height: 6px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+.nav-crm .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.2);
+  width: 6px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.nav-crm .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+  background: transparent;
+  border-radius: 5px;
+  height: 6px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.nav-crm .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.nav-crm .simplebar-content-wrapper {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  margin-right: -10px;
 }
 @media (max-height: 860px) {
   .nav-crm {
@@ -547,7 +591,6 @@ html {
   -o-transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
-  width: 49px;
 }
 .nav-crm .nav-list-crm .hover:hover {
   transition: 0.3s;
@@ -559,14 +602,12 @@ html {
   -o-transformn: translateX(10px);
   -webkit-transform: translateX(10px);
   -moz-transform: translateX(10px);
+  z-index: 9999;
 }
 .nav-crm .nav-list-crm .btn-crm {
   display: block;
-  width: 17px;
-  height: 17px;
-  margin: 0 auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 49px;
+  height: 27px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -621,7 +662,7 @@ html {
 .nav-crm .nav-list-crm .hover:hover .user {
   background-image: url("../img/Add-us-black.svg");
 }
-.nav-crm .nav-list-crm .hover:hover .sidebar {
+.nav-crm .nav-list-crm .hover:hover.sidebar {
   background-image: url("../img/Sidebar 24pxblack.svg");
 }
 .nav-crm .nav-list-crm .hover:hover .frame {
@@ -653,6 +694,21 @@ html {
 }
 .nav-crm .nav-list-crm .hover:hover .video {
   background-image: url("../img/Camera 24pxblack.svg");
+}
+
+.drop-zakaz {
+  text-align: left;
+  position: relative;
+}
+.drop-zakaz .zakaz-block {
+  margin-left: 20px;
+  display: none;
+}
+.drop-zakaz .zakaz-btn:hover {
+  color: yellow;
+}
+.drop-zakaz .zakaz-list:hover {
+  color: yellow;
 }
 
 .selected-nav {
@@ -702,14 +758,7 @@ html {
   font-size: 12px;
   text-align: center;
   line-height: 27px;
-  transition: 0.3s;
-  -o-transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
   display: none;
-}
-.nav-desc:hover {
-  color: #FFE600;
 }
 
 .nav-desc-toggle {
@@ -726,7 +775,7 @@ html {
 .container-info-settings {
   margin-left: 62px;
   margin-top: 20px;
-  margin-right: 10px;
+  margin-right: 0px;
   width: 100%;
   height: 100%;
   justify-content: space-between;

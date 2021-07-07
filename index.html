@@ -102,7 +102,7 @@
             </div>
         </aside>
         <nav>
-            <ul class="nav-crm">
+            <ul class="nav-crm" data-simplebar data-simplebar-auto-hide="false">
                 <li class="nav-list-crm">
                     <div class="hover"><span class="btn-crm airplay"></div>
                     <div class="nav-desc">Рабочий стол</div>
@@ -112,8 +112,19 @@
                     <div class="nav-desc">Контакты</div>
                 </li>
                 <li class="nav-list-crm">
-                    <div class="hover" id="sidebar"><span class="btn-crm sidebar"></span></div>
-                    <div class="nav-desc">Заказы</div>
+                    <div class=""><span id="sidebar" class="hover btn-crm sidebar"></span></div>
+                    <div class="nav-desc">
+                        <div class="drop-zakaz">
+                            <div class="zakaz-btn">Заказы</div>
+                            <div class="zakaz-block">
+                                <div class="zakaz-list">Статус заказов</div>
+                                <div class="zakaz-list">Способы оплаты</div>
+                                <div class="zakaz-list">Перечень заказов</div>
+                                <div class="zakaz-list">Аутсорсинг</div>
+                                <div class="zakaz-list">Способы доставки</div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-list-crm">
                     <div class="hover" id="inbox"><span class="btn-crm inbox"></span></div>
@@ -866,11 +877,9 @@
                     <div class="crm-header-link"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></div>
                     <div class="crm-header-link"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></div>
                     <div class="crm-header-link"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></div>
-                    <div class="crm-header-link"><span class="color-C94F62 color-form"></span><span class="btn-link">Успешно не выполнено </span><span class="count-link">5</span></div>
                 </div>
-                <div class="arrow-bg"><span class="arrow-next"></span></div>
+                <div class="arrow-bg"><span class="arrow-prev" id="prev"></span><span id="next" class="arrow-next"></span></div>
                 <div class="crm-body">
-                    <!--сюда скрол-->
                     <div class="crm-body-header">
                         <div class="crm-name-list" id="header-drag">
                             <div class="colum-id">Id</div>

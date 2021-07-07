@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        button {
+            height: 2.5rem;
+            padding: 0 1.25rem;
+            background: #333;
+            color: #fff;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: 300ms all;
+            border: 2px solid #333;
+            border-radius: 0.25rem;
+            width: 12.5rem;
+        }
+        
+        ul {
+            padding: 0.188rem 0;
+        }
+        
+        a {
+            display: block;
+            padding: 0.438rem 0.625rem;
+            color: #333;
+        }
+        
+        a:hover {
+            background: #f8f8f8;
+        }
+        
+        .dropdown:focus-within nav {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0.25rem);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button>Menü</button>
+        <nav tabindex="0">
+            <ul>
+                <li>
+                    <a href="#">
+                        Edit
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Delete
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Reply
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <script>
+    </script>
+</body>
+
+</html>
