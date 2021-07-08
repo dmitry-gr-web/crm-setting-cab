@@ -530,6 +530,12 @@ html {
   padding-bottom: 0;
   margin-right: -10px;
 }
+.nav-crm .visibleImportant {
+  overflow: visible !important;
+}
+.nav-crm .simplebar-mask {
+  overflow: visible;
+}
 @media (max-height: 860px) {
   .nav-crm {
     height: 66vh;
