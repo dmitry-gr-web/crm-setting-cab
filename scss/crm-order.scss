@@ -348,6 +348,12 @@
 //         padding-bottom: 0px;
 //     }
 // }
+//eto
+.crm-order {
+    user-select: none;
+}
+
+//eto
 .crm-body-header {
     // top: 20px;
     top: 15px;
@@ -370,6 +376,7 @@
         text-align: center;
         display: flex;
         white-space: nowrap;
+        cursor: grab;
         .colum-tel-and-info span {
             margin-right: 20px;
         }
@@ -985,27 +992,21 @@
     .colum-product {
         position: relative;
         .box {
-            background-image: url('../img/box.svg');
-            width: 14px;
-            height: 14px;
+            position: relative;
+        }
+        .count {
+            width: 9px;
+            height: 9px;
+            content: '';
             position: absolute;
-            top: 2px;
-            background-size: 100%;
-            margin-left: 5px;
-            .count {
-                width: 9px;
-                height: 9px;
-                content: '';
-                position: absolute;
-                background-color: #9C9B9E;
-                border-radius: 100%;
-                font-size: 7px;
-                color: white;
-                right: -2px;
-                top: -2px;
-                text-align: center;
-                line-height: 9px;
-            }
+            background-color: #9C9B9E;
+            border-radius: 100%;
+            font-size: 7px;
+            color: white;
+            right: -2px;
+            top: -2px;
+            text-align: center;
+            line-height: 9px;
         }
         .item-product {
             margin-left: 25px;
@@ -1015,27 +1016,22 @@
         position: relative;
         text-align: center;
         .box {
-            background-image: url('../img/convert.svg');
-            width: 14px;
-            height: 14px;
-            position: absolute;
+            position: relative;
             top: 2px;
-            left: 5px;
-            background-size: 100%;
-            .count {
-                width: 9px;
-                height: 9px;
-                content: '';
-                position: absolute;
-                background-color: #9C9B9E;
-                border-radius: 100%;
-                font-size: 7px;
-                color: white;
-                right: -2px;
-                top: -2px;
-                text-align: center;
-                line-height: 9px;
-            }
+        }
+        .count {
+            width: 9px;
+            height: 9px;
+            content: '';
+            position: absolute;
+            background-color: #9C9B9E;
+            border-radius: 100%;
+            font-size: 7px;
+            color: white;
+            right: 2px;
+            top: 1px;
+            text-align: center;
+            line-height: 9px;
         }
     }
 }
@@ -1171,6 +1167,25 @@
 //         }
 //     }
 // }
+.crm-main-table.select-toggle:hover {
+    position: relative;
+    color: white;
+    div {
+        background-color: rgba(81, 81, 81, 0.7);
+    }
+}
+
+.crm-main-table:before {
+    content: '';
+    width: 7px;
+    height: 18px;
+    position: absolute;
+    background: #515151;
+    left: -7px;
+    border-radius: 3px 0 0 3px;
+    opacity: 0;
+}
+
 .select-toggle {
     position: relative;
     color: white;
@@ -1185,14 +1200,7 @@
         background: #515151;
         left: -7px;
         border-radius: 3px 0 0 3px;
-    }
-}
-
-.crm-main-table.select-toggle:hover {
-    position: relative;
-    color: white;
-    div {
-        background-color: rgba(81, 81, 81, 0.7);
+        opacity: 1;
     }
 }
 
@@ -1201,13 +1209,23 @@
         background: rgba(81, 81, 81, 0.3);
     }
     &:before {
-        content: '';
-        width: 7px;
-        height: 18px;
-        position: absolute;
-        background: #515151;
-        left: -7px;
-        border-radius: 3px 0 0 3px;
+        opacity: 1;
+    }
+}
+
+.new-zakaz {
+    animation: new-zakaz 2s infinite;
+}
+
+@keyframes new-zakaz {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
@@ -1247,6 +1265,8 @@
         position: absolute;
         top: 3px;
         left: -15px;
+        opacity: 1;
+        background-color: transparent;
     }
 }
 
@@ -1424,10 +1444,25 @@
 //     width: 100px;
 // }
 //menu country
+//eto
+.block1 .list:hover {
+    // background-color: rgb(240, 238, 238);
+    background-color: rgba(81, 81, 81, 0.3);
+}
+
+.select-btn {
+    background-color: rgba(81, 81, 81, 0.3);
+}
+
+//eto
 .colum-country {
-    cursor: pointer;
+    .country-btn {
+        cursor: pointer;
+    }
     .block1 {
-        background: #d3cece;
+        // background: #d3cece;
+        // background: #d6d6d6;
+        background-color: white;
         z-index: 222;
         color: black;
         display: none;
@@ -1435,6 +1470,14 @@
         text-align: left;
         overflow-x: hidden;
         height: 90px;
+        // width: 57px;
+        // position: relative;
+        // left: -1px;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+        // box-shadow: 0px 0px 20px rgba(85, 84, 84, 0.5);
+        // border: none;
+        // box-shadow: 0 0 2px black;
+        cursor: pointer;
         .list {
             position: relative;
         }
@@ -1499,9 +1542,11 @@
 //menu country
 //menu delivery
 .colum-delivery {
-    cursor: pointer;
+    .delivery-btn {
+        cursor: pointer;
+    }
     .block1 {
-        background: #d3cece;
+        // background: #d3cece;
         z-index: 222;
         color: black;
         display: none;
@@ -1509,7 +1554,10 @@
         text-align: left;
         height: 90px;
         overflow-x: hidden;
+        cursor: pointer;
         z-index: 2222;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
         .simplebar-track.simplebar-vertical {
             background-color: rgba(0, 0, 0, 0.1);
             width: 3px;
@@ -1598,16 +1646,24 @@
 }
 
 .colum-pay {
-    cursor: pointer;
+    .pay-btn {
+        cursor: pointer;
+    }
     .block1 {
-        background: #d3cece;
+        // background: #d3cece;
+        // background-color: white;
         z-index: 222;
         color: black;
+        cursor: pointer;
         display: none;
         position: relative;
         text-align: center;
         height: 90px;
         overflow-x: hidden;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+        // box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.2);
+        // box-shadow: 4px 4px 9px rgba(85, 84, 84, 0.3);
         .simplebar-track.simplebar-vertical {
             background-color: rgba(0, 0, 0, 0.1);
             width: 3px;
@@ -1651,16 +1707,21 @@
 //menu pay
 //menu depart
 .colum-depart {
-    cursor: pointer;
+    .depart-btn {
+        cursor: pointer;
+    }
     .block1 {
-        background: #d3cece;
+        // background: #d3cece;
         z-index: 222;
         color: black;
+        cursor: pointer;
         display: none;
         position: relative;
         text-align: left;
         height: 90px;
         overflow-x: hidden;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
         .list {
             position: relative;
         }
@@ -1721,16 +1782,21 @@
 //menu depart
 //menu employe
 .colum-employe {
-    cursor: pointer;
+    .employe-btn {
+        cursor: pointer;
+    }
     .block1 {
         background: #d3cece;
         z-index: 222;
         color: black;
+        cursor: pointer;
         display: none;
         position: relative;
         text-align: left;
         height: 90px;
         overflow-x: hidden;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
         .list {
             position: relative;
         }

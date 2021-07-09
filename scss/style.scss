@@ -209,14 +209,12 @@ html {
         padding-right: 0;
         padding-left: 0;
         padding-bottom: 0;
-        margin-right: -10px;    
+        margin-right: -10px;  
+        // overflow: visible !important;  
     }
-    .visibleImportant {
-        overflow: visible !important;
-    }
-    .simplebar-mask {
-        overflow: visible;
-    }
+    // .simplebar-mask {
+    //     overflow: visible;
+    // }
     // .simplebar-wrapper {
     //     padding-right: 10px;
     // }

@@ -168,6 +168,10 @@
   background-color: #9C02A7;
 }
 
+.crm-order {
+  user-select: none;
+}
+
 .crm-body-header {
   top: 15px;
   width: 3940px;
@@ -190,6 +194,7 @@
   text-align: center;
   display: flex;
   white-space: nowrap;
+  cursor: grab;
 }
 .crm-body-header .crm-name-list .colum-tel-and-info span {
   margin-right: 20px;
@@ -779,15 +784,9 @@
   position: relative;
 }
 .crm-main-table .colum-product .box {
-  background-image: url("../img/box.svg");
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  top: 2px;
-  background-size: 100%;
-  margin-left: 5px;
+  position: relative;
 }
-.crm-main-table .colum-product .box .count {
+.crm-main-table .colum-product .count {
   width: 9px;
   height: 9px;
   content: "";
@@ -809,15 +808,10 @@
   text-align: center;
 }
 .crm-main-table .colum-tel-info .box {
-  background-image: url("../img/convert.svg");
-  width: 14px;
-  height: 14px;
-  position: absolute;
+  position: relative;
   top: 2px;
-  left: 5px;
-  background-size: 100%;
 }
-.crm-main-table .colum-tel-info .box .count {
+.crm-main-table .colum-tel-info .count {
   width: 9px;
   height: 9px;
   content: "";
@@ -826,8 +820,8 @@
   border-radius: 100%;
   font-size: 7px;
   color: white;
-  right: -2px;
-  top: -2px;
+  right: 2px;
+  top: 1px;
   text-align: center;
   line-height: 9px;
 }
@@ -888,6 +882,25 @@
   background-color: #B0FF00;
 }
 
+.crm-main-table.select-toggle:hover {
+  position: relative;
+  color: white;
+}
+.crm-main-table.select-toggle:hover div {
+  background-color: rgba(81, 81, 81, 0.7);
+}
+
+.crm-main-table:before {
+  content: "";
+  width: 7px;
+  height: 18px;
+  position: absolute;
+  background: #515151;
+  left: -7px;
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+}
+
 .select-toggle {
   position: relative;
   color: white;
@@ -903,29 +916,31 @@
   background: #515151;
   left: -7px;
   border-radius: 3px 0 0 3px;
-}
-
-.crm-main-table.select-toggle:hover {
-  position: relative;
-  color: white;
-}
-.crm-main-table.select-toggle:hover div {
-  background-color: rgba(81, 81, 81, 0.7);
+  opacity: 1;
 }
 
 .crm-main-table:hover div {
   background: rgba(81, 81, 81, 0.3);
 }
 .crm-main-table:hover:before {
-  content: "";
-  width: 7px;
-  height: 18px;
-  position: absolute;
-  background: #515151;
-  left: -7px;
-  border-radius: 3px 0 0 3px;
+  opacity: 1;
 }
 
+.new-zakaz {
+  animation: new-zakaz 2s infinite;
+}
+
+@keyframes new-zakaz {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .crm-main-table {
   position: relative;
 }
@@ -963,6 +978,8 @@
   position: absolute;
   top: 3px;
   left: -15px;
+  opacity: 1;
+  background-color: transparent;
 }
 
 .arrow-bg {
@@ -1005,11 +1022,19 @@
     margin-left: 20px;
   }
 }
-.colum-country {
+.block1 .list:hover {
+  background-color: rgba(81, 81, 81, 0.3);
+}
+
+.select-btn {
+  background-color: rgba(81, 81, 81, 0.3);
+}
+
+.colum-country .country-btn {
   cursor: pointer;
 }
 .colum-country .block1 {
-  background: #d3cece;
+  background-color: white;
   z-index: 222;
   color: black;
   display: none;
@@ -1017,6 +1042,8 @@
   text-align: left;
   overflow-x: hidden;
   height: 90px;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 .colum-country .block1 .list {
   position: relative;
@@ -1071,11 +1098,10 @@
   bottom: 3px;
 }
 
-.colum-delivery {
+.colum-delivery .delivery-btn {
   cursor: pointer;
 }
 .colum-delivery .block1 {
-  background: #d3cece;
   z-index: 222;
   color: black;
   display: none;
@@ -1083,7 +1109,10 @@
   text-align: left;
   height: 90px;
   overflow-x: hidden;
+  cursor: pointer;
   z-index: 2222;
+  background-color: white;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
 }
 .colum-delivery .block1 .simplebar-track.simplebar-vertical {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1156,18 +1185,20 @@
   bottom: -1px;
 }
 
-.colum-pay {
+.colum-pay .pay-btn {
   cursor: pointer;
 }
 .colum-pay .block1 {
-  background: #d3cece;
   z-index: 222;
   color: black;
+  cursor: pointer;
   display: none;
   position: relative;
   text-align: center;
   height: 90px;
   overflow-x: hidden;
+  background-color: white;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
 }
 .colum-pay .block1 .simplebar-track.simplebar-vertical {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1207,18 +1238,20 @@
   display: block;
 }
 
-.colum-depart {
+.colum-depart .depart-btn {
   cursor: pointer;
 }
 .colum-depart .block1 {
-  background: #d3cece;
   z-index: 222;
   color: black;
+  cursor: pointer;
   display: none;
   position: relative;
   text-align: left;
   height: 90px;
   overflow-x: hidden;
+  background-color: white;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
 }
 .colum-depart .block1 .list {
   position: relative;
@@ -1269,18 +1302,21 @@
   position: relative;
 }
 
-.colum-employe {
+.colum-employe .employe-btn {
   cursor: pointer;
 }
 .colum-employe .block1 {
   background: #d3cece;
   z-index: 222;
   color: black;
+  cursor: pointer;
   display: none;
   position: relative;
   text-align: left;
   height: 90px;
   overflow-x: hidden;
+  background-color: white;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
 }
 .colum-employe .block1 .list {
   position: relative;
