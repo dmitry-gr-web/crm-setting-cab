@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container-info-settings {
   margin-left: 62px;
   margin-top: 20px;
@@ -58,10 +59,25 @@
 }
 
 .crm-header {
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.crm-header::-webkit-scrollbar {
+  /* chrome based */
+  width: 0px;
+  /* ширина scrollbar'a */
+  background: transparent;
+  /* опционально */
+}
+
+.crm-header {
   display: flex;
   margin: 0;
   position: fixed;
-  padding-bottom: 12px;
+  padding-bottom: 5px;
   top: 60px;
   z-index: 333;
   background-color: white;
@@ -221,12 +237,13 @@
 }
 
 .crm-table {
-  margin-top: 60px;
+  margin-top: 25px;
 }
 
 .container-info-settings tr td {
   white-space: nowrap;
   height: 18px;
+  line-height: 14px;
 }
 .container-info-settings tr td .input-style {
   background: rgba(156, 155, 158, 0.4);
@@ -241,11 +258,15 @@
 .container-info-settings tr td .input-style::placeholder {
   font-size: 10px;
 }
-.container-info-settings tr td .btn {
+.container-info-settings tr td .count-message {
   background: rgba(156, 155, 158, 0.4);
-  padding: 1px 3px;
-  border: 1px white solid;
-  line-height: 14px;
+  box-sizing: border-box;
+  position: relative;
+  left: -2px;
+  width: 17%;
+}
+.container-info-settings tr td .tel-style {
+  width: 83%;
 }
 .container-info-settings tr td .date-block {
   background: rgba(156, 155, 158, 0.4);
@@ -258,6 +279,10 @@
   text-align: center;
   border: none;
   background-color: transparent;
+}
+
+.date-block {
+  text-align: center;
 }
 
 tr th {
@@ -312,12 +337,10 @@ table tr td {
 .crm-main-table .country-colum .flag {
   margin-right: 5px;
   position: relative;
-  top: 2px;
+  top: 3px;
 }
 .crm-main-table .tel-colum {
   text-align: center;
-  position: relative;
-  top: -2px;
 }
 .crm-main-table .tel-colum .mob-icon {
   position: relative;
@@ -328,6 +351,7 @@ table tr td {
   margin-left: 5px;
   position: relative;
   margin-right: 5px;
+  top: 3px;
 }
 .crm-main-table .svg-wrap .count {
   position: absolute;
@@ -335,11 +359,14 @@ table tr td {
   font-size: 7px;
   width: 8px;
   height: 8px;
+  font-weight: 600;
   background-color: #9C9B9E;
   color: white;
   text-align: center;
   right: -3px;
-  top: -4px;
+  line-height: 9px;
+  top: -5px;
+  border: 1.28571px solid #F1F1F1;
 }
 .crm-main-table .product-colum {
   text-align: center;
@@ -350,13 +377,18 @@ table tr td {
   margin-left: 3px;
   margin-right: 8px;
   position: relative;
-  top: 2px;
+  top: 4px;
 }
 .crm-main-table .product-colum .svg-wrap .count {
   right: 0px;
+  border: 1.28571px solid #F1F1F1;
 }
 .crm-main-table .colum-pay {
   text-align: center;
+}
+.crm-main-table .colum-pay .coin {
+  bottom: 1px;
+  position: relative;
 }
 
 .color-bg {
@@ -396,6 +428,33 @@ table tr td {
   color: white;
   background-color: rgba(81, 81, 81, 0.7);
 }
+.select-toggle .svg-convert path {
+  stroke: #F1F1F1;
+}
+.select-toggle .svg-wrap .count {
+  background: #F1F1F1;
+  color: #515151;
+  border: 1.28571px solid rgba(81, 81, 81, 0.7);
+}
+.select-toggle .product-colum .svg-wrap path {
+  fill: #F1F1F1;
+}
+.select-toggle .product-colum .svg-wrap .count {
+  background: #F1F1F1;
+  border: 1.28571px solid rgba(81, 81, 81, 0.7);
+}
+.select-toggle .card path {
+  fill: #F1F1F1;
+}
+.select-toggle .coin path {
+  fill: #F1F1F1;
+}
+.select-toggle .coin circle {
+  stroke: #F1F1F1;
+}
+.select-toggle .convert-pay path {
+  fill: #F1F1F1;
+}
 .select-toggle .id-table:before {
   content: "";
   width: 7px;
@@ -413,6 +472,9 @@ table tr td {
 .selected-lock td {
   background: rgba(198, 193, 190, 0.5);
   color: rgba(0, 0, 0, 0.2);
+}
+.selected-lock .svg-wrap .count {
+  border: 1.28571px solid #d8d8d8;
 }
 .selected-lock .id-table:before {
   content: "";
@@ -523,4 +585,111 @@ table tr td {
 
 .color-B0FF00 {
   background-color: #B0FF00;
+}
+
+.colum-country {
+  position: relative;
+  box-sizing: border-box;
+  font-size: 10px;
+  height: 0px;
+  box-sizing: border-box;
+}
+.colum-country .country-btn {
+  text-align: left;
+  display: block;
+  opacity: 0.5;
+  cursor: pointer;
+  line-height: 16px;
+  height: 16px;
+  border: 1px solid white;
+  background: rgba(156, 155, 158, 0.7);
+  padding-left: 3px;
+}
+.colum-country .country-btn .list-item img {
+  position: absolute;
+  left: 4px;
+}
+.colum-country .country-btn .list-item span {
+  margin-left: 20px;
+}
+.colum-country .country-btn .list {
+  height: 14px;
+}
+.colum-country .country-btn:after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/arrow-down.svg");
+  width: 6px;
+  height: 3px;
+  background-size: 100%;
+  top: 7px;
+  right: 4px;
+}
+.colum-country .block1 {
+  background: white;
+  z-index: 3;
+  color: black;
+  display: none;
+  position: absolute;
+  text-align: left;
+  overflow-x: hidden;
+  height: 90px;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  width: 55px;
+}
+.colum-country .block1 .list-item img {
+  position: absolute;
+  left: 5px;
+}
+.colum-country .block1 .list-item span {
+  margin-left: 25px;
+}
+.colum-country .block1 .list {
+  height: 18px;
+  line-height: 18px;
+}
+.colum-country .block1 .list:first-child {
+  padding-left: 3px;
+}
+.colum-country .block1 .simplebar-track.simplebar-vertical {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  bottom: 0;
+  border-radius: 5px;
+}
+.colum-country .block1 .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  width: 3px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  top: 0;
+}
+.colum-country .block1 .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.colum-country .block1 .simplebar-content-wrapper {
+  padding: 0;
+}
+
+.z-index {
+  z-index: -1;
+  position: relative;
+}
+
+.block1.toggle {
+  display: block;
+}
+
+.block1 .list:hover {
+  background-color: rgba(81, 81, 81, 0.3);
+}
+
+.select-btn {
+  background-color: rgba(81, 81, 81, 0.3);
 }

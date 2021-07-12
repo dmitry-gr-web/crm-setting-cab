@@ -252,7 +252,7 @@ $(".crm-main-table .user-item").text(function(i, text) {
 
 //menu country btn
 $(".colum-country .country-btn").click(function() {
-    $(".colum-country .block1").addClass("toggle");
+    $(".colum-country .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
 $(".colum-country .block1 .list").click(function() {
@@ -274,7 +274,7 @@ $(document).bind("click", function(e) {
 //menu country btn
 //menu delivery btn
 $(".colum-delivery .delivery-btn").click(function() {
-    $(".colum-delivery .block1").addClass("toggle");
+    $(".colum-delivery .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
 $(".colum-delivery .block1 .list").click(function() {
@@ -296,7 +296,7 @@ $(document).bind("click", function(e) {
 //menu delivery btn
 //pay btn
 $(".colum-pay .pay-btn").click(function() {
-    $(".colum-pay .block1").addClass("toggle");
+    $(".colum-pay .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
 $(".colum-pay .block1 .list").click(function() {
@@ -317,7 +317,7 @@ $(document).bind("click", function(e) {
 //pay btn
 //depart btn
 $(".colum-depart .depart-btn").click(function() {
-    $(".colum-depart .block1").addClass("toggle");
+    $(".colum-depart .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
 $(".colum-depart .block1 .list").click(function() {
@@ -339,15 +339,29 @@ $(document).bind("click", function(e) {
 //depart btn
 //employe btn
 $(".colum-employe .employe-btn").click(function() {
-    $(".colum-employe .block1").addClass("toggle");
+    $(".colum-employe .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
 $(".colum-employe .block1 .list").click(function() {
     var text = $(this).html();
     $(".employe-btn").html(text);
+    // $(".colum-employe .block1").removeClass("toggle");
+    $(".colum-employe .list .all").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    $(this).toggleClass('select-btn');
+    // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.block1 .list.select-btn').length >= 2) {
+        $(".employe-btn").html('комбо');
+    }
+});
+
+
+$(".colum-employe .block1 .list .all").click(function() {
     $(".colum-employe .block1").removeClass("toggle");
     $(".crm-main-table").removeClass("z-index");
 });
+
+
 $(document).bind("click", function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-employe")) {
@@ -357,7 +371,6 @@ $(document).bind("click", function(e) {
         $(".crm-main-table").removeClass("z-index");
     }
 });
-
 //employe btn
 
 // document.querySelector('.colum-user').innerHTML.slice(0, 5);
