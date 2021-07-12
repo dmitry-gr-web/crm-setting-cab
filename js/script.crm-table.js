@@ -160,118 +160,7 @@ $("#prev").click(function() {
 //     });
 // });
 
-//ctrl+click
 
-//shift+click
-
-(function($) {
-    $.fn.select = function() {
-        let settings = $.extend({
-                children: ".crm-main-table",
-                className: "select-toggle",
-                onSelect: function() {},
-            },
-            arguments[0] || {}
-        );
-        return this.each(function(_, that) {
-            let $ch = $(this).find(settings.children),
-                sel = [],
-                last;
-            $(document).on("keydown", function(e) {
-                let isCtrl = e.ctrlKey || e.metaKey,
-                    keyA = e.which == 65;
-                if (isCtrl && keyA) {
-                    $(".crm-main-table").each((_, x) => {
-                        if (!x.classList.contains("selected-lock")) {
-                            x.classList.add("select-toggle");
-                        }
-                    });
-                    $(".crm-main-table").unbind("mouseleave mousemove");
-                    $(".select-toggle")
-                        .mousemove(function(pos) {
-                            if ($(".crm-main-table").hasClass("select-toggle")) {
-                                $("#hoverSelect").show();
-                                $("#hoverSelect")
-                                    .css("left", pos.pageX + 10 + "px")
-                                    .css("top", pos.pageY + 10 + "px");
-                            }
-                        })
-                        .mouseleave(function(e) {
-                            $("#hoverSelect").hide();
-                        });
-                    sel = [...$(".crm-main-table")].filter((x) => {
-                        return !x.classList.contains("selected-lock");
-                    });
-                    settings.onSelect.call(that, sel);
-                    e.preventDefault();
-                }
-            });
-            $ch.on("mousedown", function(ev) {
-                let isCtrl = ev.ctrlKey || ev.metaKey,
-                    isShift = ev.shiftKey,
-                    ti = $ch.index(this),
-                    li = $ch.index(last),
-                    ai = $.inArray(this, sel);
-
-                if (isShift || isCtrl) ev.preventDefault();
-
-                $(sel).removeClass(settings.className);
-
-                if (isCtrl) {
-                    if (ai > -1)
-                        sel
-                        .splice(ai, 1)
-                        .filter((x) => !x.classList.contains("selected-lock"));
-                    else {
-                        sel.push(this);
-                        sel = sel.filter((x) => !x.classList.contains("selected-lock"));
-                    }
-                } else if (isShift && sel.length > 0) {
-                    if (ti > li) ti = [li, (li = ti)][0];
-                    sel = [...$ch.slice(ti, li + 1)].filter((x) => {
-                        return !x.classList.contains("selected-lock");
-                    });
-                } else {
-                    sel = ai < 0 || sel.length > 1 ? [this] : [];
-
-                    sel.forEach((z) => {
-                        if (z.classList.contains("selected-lock")) {
-                            z.classList.remove("select-toggle");
-                            sel = [];
-                        }
-                    });
-                    if (!$(".crm-main-table").hasClass("select-toggle")) {
-                        $("#hoverSelect").hide();
-                    }
-                    document.addEventListener("click", (e) => {
-                        if (
-                            e.target.closest(".crm-main-table") ? .classList == null ||
-                            !e.target
-                            .closest(".crm-main-table")
-                            .classList.contains("crm-main-table")
-                        ) {
-                            $(".crm-main-table").removeClass("select-toggle");
-                            sel = [];
-                        }
-                    });
-                }
-                last = this;
-                $(sel).addClass(settings.className);
-                settings.onSelect.call(that, sel);
-            });
-        });
-    };
-})(jQuery);
-$("table").select({
-    children: ".crm-main-table", // Elements to target (default: "tbody tr")
-    className: "select-toggle", // Desired CSS class  (default: "selected")
-    onSelect: function(sel) {
-        // Useful callback
-        $(".count-hover").text(sel.length);
-    },
-});
-
-//shift click
 
 //...
 $(".crm-main-table .user-item").text(function(i, text) {
@@ -280,84 +169,84 @@ $(".crm-main-table .user-item").text(function(i, text) {
     }
     $(this).text(text);
 });
-$(".crm-main-table .colum-id").text(function(i, text) {
-    if (text.length >= 7) {
-        text = text.substring(0, 5) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .order-id-style").text(function(i, text) {
-    if (text.length >= 12) {
-        text = text.substring(0, 10) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .item-product").text(function(i, text) {
-    if (text.length >= 43) {
-        text = text.substring(0, 41) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .comm-item").text(function(i, text) {
-    if (text.length >= 28) {
-        text = text.substring(0, 27) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .sum-item").text(function(i, text) {
-    if (text.length >= 9) {
-        text = text.substring(0, 8) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .status-item").text(function(i, text) {
-    if (text.length >= 25) {
-        text = text.substring(0, 23) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .ttn-item").text(function(i, text) {
-    if (text.length >= 17) {
-        text = text.substring(0, 15) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .adress-item").text(function(i, text) {
-    if (text.length >= 32) {
-        text = text.substring(0, 31) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .employe-item").text(function(i, text) {
-    if (text.length >= 20) {
-        text = text.substring(0, 19) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .site-item").text(function(i, text) {
-    if (text.length >= 22) {
-        text = text.substring(0, 21) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .utm").text(function(i, text) {
-    if (text.length >= 13) {
-        text = text.substring(0, 12) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .camp").text(function(i, text) {
-    if (text.length >= 18) {
-        text = text.substring(0, 17) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .field").text(function(i, text) {
-    if (text.length >= 20) {
-        text = text.substring(0, 19) + "...";
-    }
-    $(this).text(text);
-});
+// $(".crm-main-table .colum-id").text(function(i, text) {
+//     if (text.length >= 7) {
+//         text = text.substring(0, 5) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .order-id-style").text(function(i, text) {
+//     if (text.length >= 12) {
+//         text = text.substring(0, 10) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .item-product").text(function(i, text) {
+//     if (text.length >= 43) {
+//         text = text.substring(0, 41) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .comm-item").text(function(i, text) {
+//     if (text.length >= 28) {
+//         text = text.substring(0, 27) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .sum-item").text(function(i, text) {
+//     if (text.length >= 9) {
+//         text = text.substring(0, 8) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .status-item").text(function(i, text) {
+//     if (text.length >= 25) {
+//         text = text.substring(0, 23) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .ttn-item").text(function(i, text) {
+//     if (text.length >= 17) {
+//         text = text.substring(0, 15) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .adress-item").text(function(i, text) {
+//     if (text.length >= 32) {
+//         text = text.substring(0, 31) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .employe-item").text(function(i, text) {
+//     if (text.length >= 20) {
+//         text = text.substring(0, 19) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .site-item").text(function(i, text) {
+//     if (text.length >= 22) {
+//         text = text.substring(0, 21) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .utm").text(function(i, text) {
+//     if (text.length >= 13) {
+//         text = text.substring(0, 12) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .camp").text(function(i, text) {
+//     if (text.length >= 18) {
+//         text = text.substring(0, 17) + "...";
+//     }
+//     $(this).text(text);
+// });
+// $(".crm-main-table .field").text(function(i, text) {
+//     if (text.length >= 20) {
+//         text = text.substring(0, 19) + "...";
+//     }
+//     $(this).text(text);
+// });
 
 // ...
 

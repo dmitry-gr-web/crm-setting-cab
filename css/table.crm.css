@@ -226,9 +226,7 @@
 
 .container-info-settings tr td {
   white-space: nowrap;
-}
-.container-info-settings tr td:nth-child(odd) {
-  background-color: #F1F1F1;
+  height: 18px;
 }
 .container-info-settings tr td .input-style {
   background: rgba(156, 155, 158, 0.4);
@@ -238,7 +236,7 @@
   box-sizing: border-box;
   padding: 1px 3px;
   font-size: 10px;
-  line-height: 13px;
+  line-height: 14px;
 }
 .container-info-settings tr td .input-style::placeholder {
   font-size: 10px;
@@ -247,7 +245,7 @@
   background: rgba(156, 155, 158, 0.4);
   padding: 1px 3px;
   border: 1px white solid;
-  line-height: 13px;
+  line-height: 14px;
 }
 .container-info-settings tr td .date-block {
   background: rgba(156, 155, 158, 0.4);
@@ -286,7 +284,7 @@ table tr td {
 .header-search {
   padding: 0;
   font-size: 10px;
-  height: 20px;
+  height: 18px;
   box-sizing: border-box;
 }
 
@@ -361,12 +359,44 @@ table tr td {
   text-align: center;
 }
 
+.color-bg {
+  background-color: #F1F1F1;
+}
+
+.crm-main-table.select-toggle:hover {
+  position: relative;
+  color: white;
+}
+.crm-main-table.select-toggle:hover td {
+  background-color: rgba(81, 81, 81, 0.7);
+}
+
+.crm-main-table.selected-lock:hover {
+  position: relative;
+}
+.crm-main-table.selected-lock:hover td {
+  background: rgba(198, 193, 190, 0.5);
+  color: rgba(0, 0, 0, 0.2);
+}
+.crm-main-table.selected-lock:hover .id-table:before {
+  content: "";
+  background: none;
+  background-image: url("../img/lock.svg");
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 3px;
+  left: -15px;
+}
+
 .select-toggle {
   position: relative;
+}
+.select-toggle td {
   color: white;
   background-color: rgba(81, 81, 81, 0.7);
 }
-.select-toggle .id:before {
+.select-toggle .id-table:before {
   content: "";
   width: 7px;
   height: 18px;
@@ -374,18 +404,17 @@ table tr td {
   background: #515151;
   left: -7px;
   border-radius: 3px 0 0 3px;
+  top: 0;
 }
 
 .selected-lock {
   position: relative;
+}
+.selected-lock td {
   background: rgba(198, 193, 190, 0.5);
   color: rgba(0, 0, 0, 0.2);
-  z-index: 999;
 }
-.selected-lock .container-info-settings tr td:nth-child(odd) {
-  background-color: transparent;
-}
-.selected-lock .id:before {
+.selected-lock .id-table:before {
   content: "";
   background-image: url("../img/lock.svg");
   width: 12px;
@@ -396,10 +425,12 @@ table tr td {
 }
 
 .crm-main-table:hover {
-  background: rgba(81, 81, 81, 0.3);
-  z-index: 999;
+  position: relative;
 }
-.crm-main-table:hover .id:before {
+.crm-main-table:hover td {
+  background: rgba(81, 81, 81, 0.3);
+}
+.crm-main-table:hover .id-table:before {
   content: "";
   width: 7px;
   height: 18px;
@@ -407,12 +438,13 @@ table tr td {
   background: #515151;
   left: -7px;
   border-radius: 3px 0 0 3px;
+  top: 0;
 }
 
-.crm-main-table .status {
+.crm-main-table .status-table {
   text-align: center;
 }
-.crm-main-table .status .color-form2 {
+.crm-main-table .status-table .color-form2 {
   text-align: center;
   line-height: 14px;
   box-sizing: border-box;
@@ -422,7 +454,7 @@ table tr td {
   padding: 0.5px 6px;
   margin: 0 3px;
 }
-.crm-main-table .status .new-zakaz {
+.crm-main-table .status-table .new-zakaz {
   animation: new-zakaz 2s infinite;
 }
 
