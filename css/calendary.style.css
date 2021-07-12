@@ -131,3 +131,7 @@ a.ui-button:active,
 .ui-datepicker .ui-datepicker-buttonpane button {
   visibility: hidden;
 }
+
+.ui-datepicker tr th {
+  background-color: transparent;
+}
