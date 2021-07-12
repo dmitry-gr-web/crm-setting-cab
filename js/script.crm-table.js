@@ -163,12 +163,12 @@ $("#prev").click(function() {
 
 
 //...
-$(".crm-main-table .user-item").text(function(i, text) {
-    if (text.length >= 26) {
-        text = text.substring(0, 25) + "...";
-    }
-    $(this).text(text);
-});
+// $(".crm-main-table").text(function(i, text) {
+//     if (text.length >= 30) {
+//         text = text.substring(0, 28) + "...";
+//     }
+//     $(this).text(text);
+// });
 // $(".crm-main-table .colum-id").text(function(i, text) {
 //     if (text.length >= 7) {
 //         text = text.substring(0, 5) + "...";

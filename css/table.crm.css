@@ -15,7 +15,7 @@
 }
 .container-info-settings .simplebar-track.simplebar-vertical {
   background-color: transparent;
-  width: 6px;
+  width: 8px;
   margin-right: 0px;
   margin-top: 20px;
   margin-bottom: 40px;
@@ -23,11 +23,12 @@
 }
 .container-info-settings .simplebar-track.simplebar-horizontal {
   background-color: transparent;
-  height: 6px;
+  height: 10px;
   margin-right: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   margin-left: 20px;
   cursor: pointer;
+  padding-top: 2px;
 }
 .container-info-settings .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
   background: rgba(0, 0, 0, 0.3);
@@ -42,11 +43,15 @@
 .container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  height: 6px;
+  height: 8px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 35px;
   top: -2px;
+  cursor: pointer;
+  padding-top: 2px;
+}
+.container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before:hover {
   cursor: pointer;
 }
 .container-info-settings .simplebar-scrollbar.simplebar-visible:before {
@@ -238,6 +243,9 @@
 
 .crm-table {
   margin-top: 25px;
+  z-index: 888;
+  position: relative;
+  top: -10px;
 }
 
 .container-info-settings tr td {
@@ -315,13 +323,11 @@ table tr td {
 
 .table-header {
   height: 24px;
-  position: sticky;
   cursor: grab;
 }
 
 .crm-input {
   height: 18px;
-  position: sticky;
 }
 
 .crm-main-table {
@@ -675,6 +681,99 @@ table tr td {
 }
 .colum-country .block1 .simplebar-content-wrapper {
   padding: 0;
+}
+
+.colum-pay {
+  position: relative;
+  box-sizing: border-box;
+  font-size: 10px;
+  height: 0px;
+  box-sizing: border-box;
+}
+.colum-pay .pay-btn {
+  text-align: left;
+  display: block;
+  cursor: pointer;
+  line-height: 16px;
+  height: 16px;
+  border: 1px solid white;
+  background: rgba(156, 155, 158, 0.5);
+  padding-left: 3px;
+}
+.colum-pay .pay-btn svg path {
+  fill: black;
+}
+.colum-pay .pay-btn .list-item img {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  top: 1px;
+  position: relative;
+}
+.colum-pay .pay-btn:after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/arrow-down.svg");
+  width: 6px;
+  height: 3px;
+  background-size: 100%;
+  top: 7px;
+  right: 4px;
+  opacity: 0.5;
+}
+.colum-pay .block1 {
+  background: white;
+  z-index: 3;
+  color: black;
+  display: none;
+  position: absolute;
+  text-align: left;
+  overflow-x: hidden;
+  height: 90px;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  width: 55px;
+}
+.colum-pay .block1 .simplebar-track.simplebar-vertical {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  bottom: 0;
+  border-radius: 5px;
+}
+.colum-pay .block1 .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  width: 3px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  top: 0;
+}
+.colum-pay .block1 .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.colum-pay .block1 .simplebar-content-wrapper {
+  padding: 0;
+}
+.colum-pay .block1 .list {
+  position: relative;
+  height: 18px;
+}
+.colum-pay .block1 .list img {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 2px;
+}
+.colum-pay .block1 .list-item {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
 }
 
 .z-index {
