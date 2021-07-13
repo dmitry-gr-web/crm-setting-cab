@@ -360,31 +360,36 @@ $(".colum-employe .employe-btn").click(function() {
     $(".colum-employe .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
-$(".colum-employe .block1 .list").click(function(e) {
-    var text = $(this).html();
-    var $clicked = $(e.target);
-    $(".employe-btn").html(text);
+$(".colum-employe .block1 .list").click(function() {
     // $(".colum-employe .block1").removeClass("toggle");
     $(".colum-employe .list .all").removeClass("toggle");
     // $(".crm-main-table").removeClass("z-index");
     $(this).toggleClass('select-btn');
+    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
     // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.block1 .list.select-btn').length == 1) {
+        let append = $('.block1 .list.select-btn').text();
+        $(".employe-btn").html(append);
+    }
     if ($('.block1 .list.select-btn').length >= 2) {
         $(".employe-btn").html('Фильтр');
-    } else if ($clicked.hasClass('all')) {
-        $(this).removeClass('select-btn');
-        $(".colum-employe .list .all").removeClass("toggle");
+    }
+    if ($('.block1 .list.select-btn').length == 0) {
         $(".employe-btn").html('Все');
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
     }
 });
-
-
 $(".colum-employe .block1 .list .all").click(function() {
+    let text = $(this).html();
+    $(".employe-btn").html(text);
+
+    $(this).removeClass('select-btn');
+    // $(".employe-btn").html(text);
+    $('.colum-employe .block1 .list').removeClass('select-btn');
     $(".colum-employe .block1").removeClass("toggle");
     $(".crm-main-table").removeClass("z-index");
 });
-
-
 $(document).bind("click", function(e) {
     var $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-employe")) {

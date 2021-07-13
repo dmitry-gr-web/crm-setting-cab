@@ -213,6 +213,7 @@
         transform: rotate(-90deg);
         opacity: 0.7;
         left: 20px;
+        cursor: pointer;
     }
     .arrow-prev {
         width: 13px;
@@ -223,6 +224,7 @@
         position: absolute;
         transform: rotate(90deg);
         opacity: 0.7;
+        cursor: pointer;
     }
 }
 
@@ -377,15 +379,61 @@ table {
     // }
 }
 
+//hover header
 .crm-input {
     height: 18px;
     // td {
-    //     position: sticky;
-    //     top: 40px;
-    //     z-index: 20;
+    //     input,
+    //     div {
+    //         opacity: 0;
+    //         visibility: hidden;
+    //         transition: 0.3s;
+    //         transition-delay: 2s;
+    //     }
+    //     .country-btn,
+    //     .delivery-btn,
+    //     .depart-btn,
+    //     .employe-btn,
+    //     .pay-btn {
+    //         opacity: 0;
+    //         visibility: hidden;
+    //         transition: 0.3s;
+    //         transition-delay: 2s;
+    //     }
+    //     .block1 {
+    //         opacity: 0;
+    //         visibility: hidden;
+    //         transition: 0.3s;
+    //         transition-delay: 2s;
+    //     }
     // }
 }
 
+// .table-header:hover+.crm-input {
+//     td {
+//         input,
+//         div {
+//             opacity: 1;
+//             visibility: visible;
+//             transition: 0.3s;
+//         }
+//         .country-btn,
+//         .delivery-btn,
+//         .depart-btn,
+//         .employe-btn,
+//         .pay-btn {
+//             opacity: 1;
+//             visibility: visible;
+//             transition: 0.3s;
+//         }
+//         .block1 {
+//             opacity: 1;
+//             visibility: visible;
+//             transition: 0.3s;
+//         }
+//     }
+// }
+//hover header
 // .id-table {
 //     position: sticky;
 //     left: 0;
@@ -1214,7 +1262,7 @@ table {
 }
 
 .select-btn {
-    background-color: rgba(81, 81, 81, 0.3);
+    background-color: rgba(81, 81, 81, 0.7);
 }
 
 //BTN header
