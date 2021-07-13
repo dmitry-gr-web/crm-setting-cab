@@ -163,12 +163,30 @@ $("#prev").click(function() {
 
 
 //...
-// $(".crm-main-table").text(function(i, text) {
-//     if (text.length >= 30) {
-//         text = text.substring(0, 28) + "...";
-//     }
-//     $(this).text(text);
-// });
+$(".crm-main-table .max-lenght").text(function(i, text) {
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .max-lenght-product").text(function(i, text) {
+    if (text.length >= 40) {
+        text = text.substring(0, 38) + "...";
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .addres-block").text(function(i, text) {
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .max-lenght-status").text(function(i, text) {
+    if (text.length >= 12) {
+        text = text.substring(0, 11) + "...";
+    }
+    $(this).text(text);
+});
 // $(".crm-main-table .colum-id").text(function(i, text) {
 //     if (text.length >= 7) {
 //         text = text.substring(0, 5) + "...";
@@ -342,8 +360,9 @@ $(".colum-employe .employe-btn").click(function() {
     $(".colum-employe .block1").toggleClass("toggle");
     $(".crm-main-table").addClass("z-index");
 });
-$(".colum-employe .block1 .list").click(function() {
+$(".colum-employe .block1 .list").click(function(e) {
     var text = $(this).html();
+    var $clicked = $(e.target);
     $(".employe-btn").html(text);
     // $(".colum-employe .block1").removeClass("toggle");
     $(".colum-employe .list .all").removeClass("toggle");
@@ -351,7 +370,11 @@ $(".colum-employe .block1 .list").click(function() {
     $(this).toggleClass('select-btn');
     // $('.block1').find('div:first').removeClass('select-btn');
     if ($('.block1 .list.select-btn').length >= 2) {
-        $(".employe-btn").html('комбо');
+        $(".employe-btn").html('Фильтр');
+    } else if ($clicked.hasClass('all')) {
+        $(this).removeClass('select-btn');
+        $(".colum-employe .list .all").removeClass("toggle");
+        $(".employe-btn").html('Все');
     }
 });
 

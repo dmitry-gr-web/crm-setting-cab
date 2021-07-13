@@ -1,7 +1,7 @@
 @import '_adaptive';
 .container-info-settings {
     margin-left: 62px;
-    margin-top: 20px;
+    margin-top: 35px;
     margin-right: 0px;
     width: 100%;
     height: 100%;
@@ -13,23 +13,14 @@
     .simplebar-track.simplebar-vertical {
         background-color: transparent;
         width: 8px;
-        margin-right: 0px;
-        margin-top: 20px;
+        margin-right: 0;
+        margin-top: 0;
         margin-bottom: 40px;
         cursor: pointer;
     }
-    .simplebar-track.simplebar-horizontal {
-        background-color: transparent;
-        height: 10px;
-        margin-right: 10px;
-        margin-bottom: 35px;
-        margin-left: 20px;
-        cursor: pointer;
-        padding-top: 2px;
-    }
     .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
         background: rgba(0, 0, 0, 0.3);
-        width: 6px;
+        width: 8px;
         border-radius: 5px;
         left: 0;
         right: 0;
@@ -37,27 +28,47 @@
         top: 0;
         cursor: pointer;
     }
-    .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
+    .simplebar-track.simplebar-horizontal {
+        background-color: transparent;
         height: 8px;
-        left: 0;
-        right: 0;
-        bottom: 35px;
-        top: -2px;
+        margin-right: 10px;
+        margin-bottom: 40px;
+        margin-left: 20px;
         cursor: pointer;
         padding-top: 2px;
-        &:hover {
-            cursor: pointer;
-        }
+        bottom: 0;
+        border-radius: 10px;
+        // top: -2px;
+    }
+    .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        height: 10px;
+        left: 0;
+        right: 0;
+        bottom: 38px;
+        top: 0px;
+        cursor: pointer;
+        margin-bottom: 2px;
     }
     .simplebar-scrollbar.simplebar-visible:before {
         opacity: 1;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .simplebar-content-wrapper {
         padding-right: 15px;
         padding-left: 15px;
         padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .container-info-settings {
+        .simplebar-track.simplebar-horizontal {
+            margin-bottom: 60px;
+        }
     }
 }
 
@@ -89,15 +100,15 @@
     white-space: nowrap;
     flex-wrap: nowrap;
     padding-right: 20px;
-    &:before {
-        content: '';
-        background-color: white;
-        width: 15px;
-        height: 40px;
-        top: 0px;
-        left: -15px;
-        position: absolute;
-    }
+    // &:before {
+    //     content: '';
+    //     background-color: white;
+    //     width: 15px;
+    //     height: 40px;
+    //     top: 0px;
+    //     left: -15px;
+    //     position: absolute;
+    // }
     .crm-header-link:last-child {
         margin-right: 180px;
     }
@@ -184,18 +195,6 @@
     }
 }
 
-@media screen and (max-height: 800px) {
-    .container-info-settings {
-        .simplebar-track.simplebar-horizontal {
-            background-color: transparent;
-            height: 6px;
-            margin-right: 10px;
-            margin-bottom: 40px;
-            margin-left: 20px;
-        }
-    }
-}
-
 .arrow-bg {
     background-color: white;
     height: 25px;
@@ -244,10 +243,10 @@
 }
 
 .crm-table {
-    margin-top: 25px;
+    margin-top: 0px;
     z-index: 888;
     position: relative;
-    top: -10px;
+    // top: -10px;
 }
 
 .container-info-settings {
@@ -277,6 +276,7 @@
             position: relative;
             left: -2px;
             width: 17%;
+            border-right: 2px white solid;
             // height: 17px;
             // &::placeholder {
             //     content: '';
@@ -304,6 +304,32 @@
                 background-color: transparent;
             }
         }
+    }
+}
+
+.ttn-search {
+    background: rgba(156, 155, 158, 0.4);
+    outline: none;
+    border: 1px white solid;
+    width: 100%;
+    box-sizing: border-box;
+    // padding: 1px 3px;
+    // opacity: 0;
+    font-size: 10px;
+    line-height: 14px;
+    .ttn-style {
+        width: 82%;
+        outline: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        line-height: 16px;
+        box-sizing: border-box;
+        padding-left: 3px;
+    }
+    .ttn-style:first-child {
+        width: 15%;
+        border-right: 2px solid white;
     }
 }
 
@@ -371,7 +397,7 @@ table {
 //     z-index: 25;
 // }
 .crm-main-table {
-    height: 18px;
+    height: 19px;
     .country-colum {
         text-align: left;
         box-sizing: border-box;
@@ -387,9 +413,10 @@ table {
     .tel-colum {
         // margin-right: 5px;
         text-align: center;
+        line-height: 16px;
         .mob-icon {
             position: relative;
-            top: 2px;
+            top: 1px;
             margin-right: 5px;
         }
     }
@@ -434,6 +461,23 @@ table {
         .coin {
             bottom: 1px;
             position: relative;
+        }
+        .card {
+            position: relative;
+            bottom: 2px;
+        }
+        .svg-decline {
+            position: relative;
+            bottom: 2px;
+        }
+        .svg-trade {
+            position: relative;
+            bottom: 2px;
+        }
+    }
+    .ttn-block {
+        .svg-wrap {
+            margin-left: 0;
         }
     }
 }
@@ -505,10 +549,16 @@ table {
     .convert-pay path {
         fill: #F1F1F1;
     }
+    .svg-decline path {
+        stroke: #F1F1F1;
+    }
+    .svg-trade path {
+        stroke: #F1F1F1;
+    }
     .id-table:before {
         content: '';
         width: 7px;
-        height: 18px;
+        height: 19px;
         position: absolute;
         background: #515151;
         left: -7px;
@@ -545,7 +595,7 @@ table {
     .id-table:before {
         content: '';
         width: 7px;
-        height: 18px;
+        height: 19px;
         position: absolute;
         background: #515151;
         left: -7px;
@@ -567,24 +617,53 @@ table {
             padding: 0.5px 6px;
             margin: 0 3px;
         }
-        .new-zakaz {
-            animation: new-zakaz 2s infinite;
-        }
+        // .new-zakaz {
+        //     animation: new-zakaz 2s infinite;
+        // }
     }
 }
 
-@keyframes new-zakaz {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+//новый заказ
+.new-order {
+    position: relative;
 }
 
+.new-order:after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background-color: #1a6cd7;
+    position: absolute;
+    left: -5.5px;
+    top: 7.5px;
+}
+
+// .another {
+//     position: relative;
+// }
+// .another:after {
+//     content: '';
+//     width: 4px;
+//     height: 4px;
+//     border-radius: 100%;
+//     background-color: #FFCF00;
+//     position: absolute;
+//     left: -5.5px;
+//     top: 8px;
+// }
+//новый заказ
+// @keyframes new-zakaz {
+//     0% {
+//         opacity: 0;
+//     }
+//     50% {
+//         opacity: 1;
+//     }
+//     100% {
+//         opacity: 0;
+//     }
+// }
 //hover lock
 //цвета
 .color-470010 {
@@ -646,26 +725,17 @@ table {
 //цвета
 //BTN header
 .colum-country {
-    // background: rgba(156, 155, 158, 0.3);
-    // // font-size: 10px;
-    // // border: 1px solid white;
-    // border: none;
-    // background: rgba(156, 155, 158, 0.4);
-    // border: 2px solid white;
     position: relative;
-    box-sizing: border-box;
-    font-size: 10px;
-    height: 0px;
     box-sizing: border-box;
     .country-btn {
         text-align: left;
         display: block;
-        opacity: 0.5;
         cursor: pointer;
+        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
-        background: rgba(156, 155, 158, 0.7);
+        background: rgba(156, 155, 158, 0.5);
         padding-left: 3px;
         .list-item img {
             position: absolute;
@@ -686,6 +756,7 @@ table {
             background-size: 100%;
             top: 7px;
             right: 4px;
+            opacity: 0.5;
         }
     }
     .block1 {
@@ -744,26 +815,21 @@ table {
 .colum-pay {
     position: relative;
     box-sizing: border-box;
-    font-size: 10px;
-    height: 0px;
-    box-sizing: border-box;
     .pay-btn {
         text-align: left;
         display: block;
         cursor: pointer;
+        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
         background: rgba(156, 155, 158, 0.5);
         padding-left: 3px;
-        svg path {
-            fill: black;
-        }
         .list-item img {
             margin-right: 5px;
             width: 12px;
             height: 12px;
-            top: 1px;
+            top: 2px;
             position: relative;
         }
         &:after {
@@ -830,6 +896,306 @@ table {
             box-sizing: border-box;
             display: block;
             text-align: center;
+        }
+    }
+}
+
+.colum-delivery {
+    box-sizing: border-box;
+    border: none;
+    // background: rgba(156, 155, 158, 0.4);
+    font-size: 10px;
+    position: relative;
+    .delivery-btn {
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        opacity: 0.7;
+        line-height: 16px;
+        height: 16px;
+        border: 1px solid white;
+        background: rgba(156, 155, 158, 0.5);
+        padding-left: 3px;
+        min-width: 100px;
+        .list-item img {
+            position: relative;
+            left: 0px;
+            bottom: -2px;
+            width: 12px;
+            height: 12px;
+        }
+        .list-item {
+            text-align: center;
+            line-height: 18px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            background-image: url('../img/arrow-down.svg');
+            width: 6px;
+            height: 3px;
+            background-size: 100%;
+            top: 7px;
+            right: 4px;
+            opacity: 0.5;
+        }
+    }
+    .block1 {
+        // background: #d3cece;
+        z-index: 222;
+        color: black;
+        display: none;
+        position: absolute;
+        text-align: left;
+        height: 90px;
+        width: 100%;
+        overflow-x: hidden;
+        cursor: pointer;
+        z-index: 2222;
+        top: 18px;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+        .simplebar-track.simplebar-vertical {
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            bottom: 0;
+            border-radius: 5px;
+        }
+        .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+            background: rgba(0, 0, 0, 0.3);
+            width: 3px;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            bottom: -9px;
+            top: 0;
+        }
+        .simplebar-scrollbar.simplebar-visible:before {
+            opacity: 1;
+        }
+        .simplebar-content-wrapper {
+            padding: 0;
+        }
+        .list {
+            position: relative;
+            height: 16px;
+        }
+        .list img {
+            margin-right: 5px;
+            width: 11px;
+            height: 11px;
+            position: relative;
+            top: 2px;
+        }
+        .list-item {
+            margin-left: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            height: 16px;
+        }
+    }
+}
+
+.colum-employe {
+    box-sizing: border-box;
+    border: none;
+    // background: rgba(156, 155, 158, 0.4);
+    font-size: 10px;
+    position: relative;
+    .employe-btn {
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        opacity: 0.7;
+        line-height: 16px;
+        height: 16px;
+        border: 1px solid white;
+        background: rgba(156, 155, 158, 0.5);
+        padding-left: 3px;
+        min-width: 100px;
+        .list-item img {
+            position: relative;
+            left: 0px;
+            bottom: -2px;
+            width: 12px;
+            height: 12px;
+        }
+        .list-item {
+            text-align: center;
+            line-height: 18px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            background-image: url('../img/arrow-down.svg');
+            width: 6px;
+            height: 3px;
+            background-size: 100%;
+            top: 7px;
+            right: 4px;
+            opacity: 0.5;
+        }
+    }
+    .block1 {
+        // background: #d3cece;
+        z-index: 222;
+        color: black;
+        display: none;
+        position: absolute;
+        text-align: left;
+        height: 90px;
+        width: 100%;
+        overflow-x: hidden;
+        cursor: pointer;
+        z-index: 2222;
+        top: 18px;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+        .simplebar-track.simplebar-vertical {
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            bottom: 0;
+            border-radius: 5px;
+        }
+        .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+            background: rgba(0, 0, 0, 0.3);
+            width: 3px;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            bottom: -9px;
+            top: 0;
+        }
+        .simplebar-scrollbar.simplebar-visible:before {
+            opacity: 1;
+        }
+        .simplebar-content-wrapper {
+            padding: 0;
+        }
+        .list {
+            position: relative;
+            height: 16px;
+        }
+        .list img {
+            margin-right: 5px;
+            width: 11px;
+            height: 11px;
+            position: relative;
+            top: 2px;
+        }
+        .list-item {
+            margin-left: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            height: 16px;
+        }
+    }
+}
+
+.colum-depart {
+    box-sizing: border-box;
+    border: none;
+    // background: rgba(156, 155, 158, 0.4);
+    font-size: 10px;
+    position: relative;
+    .depart-btn {
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        opacity: 0.7;
+        line-height: 16px;
+        height: 16px;
+        border: 1px solid white;
+        background: rgba(156, 155, 158, 0.5);
+        padding-left: 3px;
+        min-width: 110px;
+        .list-item img {
+            position: relative;
+            left: 0px;
+            bottom: -2px;
+            width: 12px;
+            height: 12px;
+        }
+        .list-item {
+            text-align: center;
+            line-height: 18px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            background-image: url('../img/arrow-down.svg');
+            width: 6px;
+            height: 3px;
+            background-size: 100%;
+            top: 7px;
+            right: 4px;
+            opacity: 0.5;
+        }
+    }
+    .block1 {
+        // background: #d3cece;
+        z-index: 222;
+        color: black;
+        display: none;
+        position: absolute;
+        text-align: left;
+        height: 90px;
+        width: 100%;
+        overflow-x: hidden;
+        cursor: pointer;
+        z-index: 2222;
+        top: 18px;
+        background-color: white;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+        .simplebar-track.simplebar-vertical {
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            bottom: 0;
+            border-radius: 5px;
+        }
+        .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+            background: rgba(0, 0, 0, 0.3);
+            width: 3px;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            bottom: -9px;
+            top: 0;
+        }
+        .simplebar-scrollbar.simplebar-visible:before {
+            opacity: 1;
+        }
+        .simplebar-content-wrapper {
+            padding: 0;
+        }
+        .list {
+            position: relative;
+            height: 16px;
+        }
+        .list img {
+            margin-right: 5px;
+            width: 11px;
+            height: 11px;
+            position: relative;
+            top: 2px;
+        }
+        .list-item {
+            margin-left: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+            height: 16px;
         }
     }
 }
