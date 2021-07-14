@@ -45,7 +45,7 @@
 .container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  height: 10px;
+  height: 8px;
   left: 0;
   right: 0;
   bottom: 38px;
@@ -56,8 +56,8 @@
 .container-info-settings .simplebar-scrollbar.simplebar-visible:before {
   opacity: 1;
 }
-.container-info-settings .simplebar-scrollbar.simplebar-visible:before:hover {
-  cursor: pointer;
+.container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  height: 10px;
 }
 .container-info-settings .simplebar-content-wrapper {
   padding-right: 15px;
@@ -1130,6 +1130,8 @@ table tr td {
   opacity: 0;
   visibility: hidden;
   transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
   bottom: -18px;
   position: relative;
 }
@@ -1137,6 +1139,9 @@ table tr td {
 .wrap-open {
   opacity: 1;
   visibility: visible;
+  transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
   bottom: 0;
 }

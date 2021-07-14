@@ -318,13 +318,15 @@ html {
             background-position: center;
         }
         .airplay {
-            background-image: url('../img/airplay.svg');
+            position: relative;
+            top: 4px;
         }
         .sidebar {
             background-image: url('../img/Sidebar\ 24px.svg');
         }
         .user {
-            background-image: url('../img/Add\ Users\ 24px.svg');
+            position: relative;
+            top: 4px;
         }
         .inbox {
             background-image: url('../img/inbox-white.svg');
@@ -362,11 +364,14 @@ html {
         .hover:hover .inbox {
             background-image: url('../img/inbox.svg');
         }
-        .hover:hover .airplay {
-            background-image: url('../img/airplay-black.svg');
+        .hover:hover .airplay path {
+            fill: black;
+            fill-opacity: 0.8;
         }
-        .hover:hover .user {
-            background-image: url('../img/Add-us-black.svg');
+        .hover:hover .user path,
+        .hover:hover .user circle {
+            stroke: black;
+            stroke-opacity: 0.8;
         }
         .hover:hover.sidebar {
             background-image: url('../img/Sidebar\ 24pxblack.svg');
@@ -435,28 +440,28 @@ html {
     -o-transformn: translateX(10px);
     -webkit-transform: translateX(10px);
     -moz-transform: translateX(10px);
-    .btn-crm.sidebar {
-        background-image: url('../img/Sidebar\ 24pxblack.svg');
-        display: block;
-        width: 17px;
-        height: 17px;
-        margin: 0 auto;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .btn-crm.inbox {
-        background-image: url('../img/inbox.svg');
-        display: block;
-        width: 17px;
-        height: 17px;
-        margin: 0 auto;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+    // .btn-crm.sidebar {
+    //     background-image: url('../img/Sidebar\ 24pxblack.svg');
+    //     display: block;
+    //     width: 17px;
+    //     height: 17px;
+    //     margin: 0 auto;
+    //     padding-top: 5px;
+    //     padding-bottom: 5px;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    // }
+    // .btn-crm.inbox {
+    //     background-image: url('../img/inbox.svg');
+    //     display: block;
+    //     width: 17px;
+    //     height: 17px;
+    //     margin: 0 auto;
+    //     padding-top: 5px;
+    //     padding-bottom: 5px;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    // }
 }
 
 .nav-crm-plus {

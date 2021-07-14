@@ -43,7 +43,7 @@
     .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
         background: rgba(0, 0, 0, 0.3);
         border-radius: 10px;
-        height: 10px;
+        height: 8px;
         left: 0;
         right: 0;
         bottom: 38px;
@@ -53,9 +53,9 @@
     }
     .simplebar-scrollbar.simplebar-visible:before {
         opacity: 1;
-        &:hover {
-            cursor: pointer;
-        }
+    }
+    .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+        height: 10px;
     }
     .simplebar-content-wrapper {
         padding-right: 15px;
@@ -260,6 +260,19 @@
 // }
 // .crm-header {
 //     zoom: 130%;
+// }
+// @media (min-width: 1680px) {
+//     .crm-table {
+//         zoom: 120%;
+//     }
+//     @-moz-document url-prefix() {
+//         .crm-table {
+//             transform: scale(1.2);
+//             transform-origin: left top;
+//             width: calc(100% / 1.2);
+//             height: calc(100% / 1.2);
+//         }
+//     }
 // }
 //ZOOM
 .container-info-settings {
@@ -1224,6 +1237,8 @@ table {
     opacity: 0;
     visibility: hidden;
     transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
     bottom: -18px;
     position: relative;
 }
@@ -1231,6 +1246,9 @@ table {
 .wrap-open {
     opacity: 1;
     visibility: visible;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
     transition: 0.2s;
     bottom: 0;
 }
