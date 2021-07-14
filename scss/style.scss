@@ -82,6 +82,28 @@ html {
     }
 }
 
+//new adaptive
+@media screen and (max-width: 600px) {
+    .header-crm .block-btn .btn-header:last-child {
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+    .header-crm .logo-pages-wrap .block-pages {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .header-crm .block-btn .btn-header:last-child {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    .header-crm .logo-pages-wrap .block-pages {
+        margin-left: 10px;
+    }
+}
+
+//new adaptive
 .btn-header {
     background-color: transparent;
     outline: none;
@@ -209,7 +231,7 @@ html {
         padding-right: 0;
         padding-left: 0;
         padding-bottom: 0;
-        margin-right: -10px;    
+        margin-right: -10px;
     }
     .visibleImportant {
         overflow: visible !important;
