@@ -626,9 +626,15 @@ document.addEventListener("mousedown", function(e) {
 });
 
 //nav sidebar
-
-//zakaz btn
-$(".zakaz-btn").click(function() {
-    $(".zakaz-block").toggle(200);
-    // $('.nav-crm').prop("data-simplebar", "true");
+// header hide
+$(".table-header").hover(function() {
+    $(".wrap-hide").addClass('wrap-open');
 });
+$(document).bind("click", function(e) {
+    let $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header")) {
+        $(".wrap-hide").removeClass('wrap-open');
+    }
+});
+
+//header hide

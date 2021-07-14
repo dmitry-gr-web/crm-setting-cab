@@ -258,7 +258,7 @@
         line-height: 14px;
         // text-align: center;
         .input-style {
-            background: rgba(156, 155, 158, 0.4);
+            background: rgb(212, 212, 212);
             outline: none;
             border: 1px white solid;
             width: 100%;
@@ -372,78 +372,12 @@ table {
 .table-header {
     height: 24px;
     cursor: grab;
-    // th {
-    //     position: sticky;
-    //     top: 20px;
-    //     z-index: 20;
-    // }
 }
 
-//hover header
 .crm-input {
     height: 18px;
-    // td {
-    //     input,
-    //     div {
-    //         opacity: 0;
-    //         visibility: hidden;
-    //         transition: 0.3s;
-    //         transition-delay: 2s;
-    //     }
-    //     .country-btn,
-    //     .delivery-btn,
-    //     .depart-btn,
-    //     .employe-btn,
-    //     .pay-btn {
-    //         opacity: 0;
-    //         visibility: hidden;
-    //         transition: 0.3s;
-    //         transition-delay: 2s;
-    //     }
-    //     .block1 {
-    //         opacity: 0;
-    //         visibility: hidden;
-    //         transition: 0.3s;
-    //         transition-delay: 2s;
-    //     }
-    // }
 }
 
-// .table-header:hover+.crm-input {
-//     td {
-//         input,
-//         div {
-//             opacity: 1;
-//             visibility: visible;
-//             transition: 0.3s;
-//         }
-//         .country-btn,
-//         .delivery-btn,
-//         .depart-btn,
-//         .employe-btn,
-//         .pay-btn {
-//             opacity: 1;
-//             visibility: visible;
-//             transition: 0.3s;
-//         }
-//         .block1 {
-//             opacity: 1;
-//             visibility: visible;
-//             transition: 0.3s;
-//         }
-//     }
-// }
-//hover header
-// .id-table {
-//     position: sticky;
-//     left: 0;
-//     z-index: 25;
-// }
-// .status-table {
-//     position: sticky;
-//     left: 45px;
-//     z-index: 25;
-// }
 .crm-main-table {
     height: 19px;
     .country-colum {
@@ -613,6 +547,9 @@ table {
         border-radius: 3px 0 0 3px;
         top: 0;
     }
+    .svg-box path {
+        fill: #F1F1F1;
+    }
 }
 
 .selected-lock {
@@ -665,9 +602,6 @@ table {
             padding: 0.5px 6px;
             margin: 0 3px;
         }
-        // .new-zakaz {
-        //     animation: new-zakaz 2s infinite;
-        // }
     }
 }
 
@@ -687,6 +621,7 @@ table {
     top: 7.5px;
 }
 
+//новый заказ
 // .another {
 //     position: relative;
 // }
@@ -779,11 +714,11 @@ table {
         text-align: left;
         display: block;
         cursor: pointer;
-        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
-        background: rgba(156, 155, 158, 0.5);
+        background: rgb(212, 212, 212);
+        color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
         .list-item img {
             position: absolute;
@@ -867,11 +802,11 @@ table {
         text-align: left;
         display: block;
         cursor: pointer;
-        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
-        background: rgba(156, 155, 158, 0.5);
+        background: rgb(212, 212, 212);
+        color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
         .list-item img {
             margin-right: 5px;
@@ -958,11 +893,11 @@ table {
         text-align: left;
         display: block;
         cursor: pointer;
-        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
-        background: rgba(156, 155, 158, 0.5);
+        background: rgb(212, 212, 212);
+        color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
         min-width: 100px;
         .list-item img {
@@ -1058,11 +993,11 @@ table {
         text-align: left;
         display: block;
         cursor: pointer;
-        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
-        background: rgba(156, 155, 158, 0.5);
+        background: rgb(212, 212, 212);
+        color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
         min-width: 100px;
         .list-item img {
@@ -1158,11 +1093,11 @@ table {
         text-align: left;
         display: block;
         cursor: pointer;
-        opacity: 0.7;
         line-height: 16px;
         height: 16px;
         border: 1px solid white;
-        background: rgba(156, 155, 158, 0.5);
+        background: rgb(212, 212, 212);
+        color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
         min-width: 110px;
         .list-item img {
@@ -1266,3 +1201,15 @@ table {
 }
 
 //BTN header
+// hover header
+.wrap-hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.wrap-open {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s;
+}

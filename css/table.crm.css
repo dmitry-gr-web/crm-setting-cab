@@ -244,7 +244,7 @@
   line-height: 14px;
 }
 .container-info-settings tr td .input-style {
-  background: rgba(156, 155, 158, 0.4);
+  background: #d4d4d4;
   outline: none;
   border: 1px white solid;
   width: 100%;
@@ -508,6 +508,9 @@ table tr td {
   border-radius: 3px 0 0 3px;
   top: 0;
 }
+.select-toggle .svg-box path {
+  fill: #F1F1F1;
+}
 
 .selected-lock {
   position: relative;
@@ -639,11 +642,11 @@ table tr td {
   text-align: left;
   display: block;
   cursor: pointer;
-  opacity: 0.7;
   line-height: 16px;
   height: 16px;
   border: 1px solid white;
-  background: rgba(156, 155, 158, 0.5);
+  background: #d4d4d4;
+  color: rgba(0, 0, 0, 0.5);
   padding-left: 3px;
 }
 .colum-country .country-btn .list-item img {
@@ -727,11 +730,11 @@ table tr td {
   text-align: left;
   display: block;
   cursor: pointer;
-  opacity: 0.7;
   line-height: 16px;
   height: 16px;
   border: 1px solid white;
-  background: rgba(156, 155, 158, 0.5);
+  background: #d4d4d4;
+  color: rgba(0, 0, 0, 0.5);
   padding-left: 3px;
 }
 .colum-pay .pay-btn .list-item img {
@@ -817,11 +820,11 @@ table tr td {
   text-align: left;
   display: block;
   cursor: pointer;
-  opacity: 0.7;
   line-height: 16px;
   height: 16px;
   border: 1px solid white;
-  background: rgba(156, 155, 158, 0.5);
+  background: #d4d4d4;
+  color: rgba(0, 0, 0, 0.5);
   padding-left: 3px;
   min-width: 100px;
 }
@@ -915,11 +918,11 @@ table tr td {
   text-align: left;
   display: block;
   cursor: pointer;
-  opacity: 0.7;
   line-height: 16px;
   height: 16px;
   border: 1px solid white;
-  background: rgba(156, 155, 158, 0.5);
+  background: #d4d4d4;
+  color: rgba(0, 0, 0, 0.5);
   padding-left: 3px;
   min-width: 100px;
 }
@@ -1013,11 +1016,11 @@ table tr td {
   text-align: left;
   display: block;
   cursor: pointer;
-  opacity: 0.7;
   line-height: 16px;
   height: 16px;
   border: 1px solid white;
-  background: rgba(156, 155, 158, 0.5);
+  background: #d4d4d4;
+  color: rgba(0, 0, 0, 0.5);
   padding-left: 3px;
   min-width: 110px;
 }
@@ -1116,4 +1119,16 @@ table tr td {
 
 .select-btn {
   background-color: rgba(81, 81, 81, 0.7);
+}
+
+.wrap-hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.wrap-open {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s;
 }
