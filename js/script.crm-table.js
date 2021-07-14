@@ -187,84 +187,7 @@ $(".crm-main-table .max-lenght-status").text(function(i, text) {
     }
     $(this).text(text);
 });
-// $(".crm-main-table .colum-id").text(function(i, text) {
-//     if (text.length >= 7) {
-//         text = text.substring(0, 5) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .order-id-style").text(function(i, text) {
-//     if (text.length >= 12) {
-//         text = text.substring(0, 10) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .item-product").text(function(i, text) {
-//     if (text.length >= 43) {
-//         text = text.substring(0, 41) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .comm-item").text(function(i, text) {
-//     if (text.length >= 28) {
-//         text = text.substring(0, 27) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .sum-item").text(function(i, text) {
-//     if (text.length >= 9) {
-//         text = text.substring(0, 8) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .status-item").text(function(i, text) {
-//     if (text.length >= 25) {
-//         text = text.substring(0, 23) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .ttn-item").text(function(i, text) {
-//     if (text.length >= 17) {
-//         text = text.substring(0, 15) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .adress-item").text(function(i, text) {
-//     if (text.length >= 32) {
-//         text = text.substring(0, 31) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .employe-item").text(function(i, text) {
-//     if (text.length >= 20) {
-//         text = text.substring(0, 19) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .site-item").text(function(i, text) {
-//     if (text.length >= 22) {
-//         text = text.substring(0, 21) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .utm").text(function(i, text) {
-//     if (text.length >= 13) {
-//         text = text.substring(0, 12) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .camp").text(function(i, text) {
-//     if (text.length >= 18) {
-//         text = text.substring(0, 17) + "...";
-//     }
-//     $(this).text(text);
-// });
-// $(".crm-main-table .field").text(function(i, text) {
-//     if (text.length >= 20) {
-//         text = text.substring(0, 19) + "...";
-//     }
-//     $(this).text(text);
-// });
+
 
 // ...
 
@@ -627,7 +550,7 @@ document.addEventListener("mousedown", function(e) {
 
 //nav sidebar
 // header hide
-$(".table-header").hover(function() {
+$(".crm-input").hover(function() {
     $(".wrap-hide").addClass('wrap-open');
 });
 $(document).bind("click", function(e) {

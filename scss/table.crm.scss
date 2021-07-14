@@ -1207,10 +1207,13 @@ table {
     opacity: 0;
     visibility: hidden;
     transition: 0.2s;
+    bottom: -18px;
+    position: relative;
 }
 
 .wrap-open {
     opacity: 1;
     visibility: visible;
     transition: 0.2s;
+    bottom: 0;
 }
