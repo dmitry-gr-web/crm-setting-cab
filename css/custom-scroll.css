@@ -32,6 +32,7 @@
 }
 .pages-dropdown .dropdown .btn {
   font-size: 12px;
+  width: 135px;
 }
 .pages-dropdown .dropdown .btn .btn-span {
   position: relative;

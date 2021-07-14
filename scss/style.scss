@@ -69,13 +69,17 @@ html {
                 // }
             }
             .pages-total {
-                margin-left: 15px;
+                margin-left: 0px;
             }
             .block-pages-num {
                 margin-top: 5px;
                 span {
-                    margin-right: 4px;
+                    padding-right: 4px;
+                    padding-left: 4px;
                     cursor: pointer;
+                }
+                span:first-child {
+                    padding-left: 0;
                 }
             }
         }

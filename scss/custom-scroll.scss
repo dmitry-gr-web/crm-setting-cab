@@ -2,6 +2,7 @@
 .pages-dropdown {
     .dropdown {
         margin-left: 0;
+        ;
         .ul-block {
             font-size: 12px;
             top: -12px;
@@ -33,6 +34,7 @@
         }
         .btn {
             font-size: 12px;
+            width: 135px;
             .btn-span {
                 position: relative;
                 &::after {

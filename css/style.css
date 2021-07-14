@@ -390,14 +390,18 @@ html {
   position: relative;
 }
 .header-crm .logo-pages-wrap .block-pages .pages-total {
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .header-crm .logo-pages-wrap .block-pages .block-pages-num {
   margin-top: 5px;
 }
 .header-crm .logo-pages-wrap .block-pages .block-pages-num span {
-  margin-right: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
   cursor: pointer;
+}
+.header-crm .logo-pages-wrap .block-pages .block-pages-num span:first-child {
+  padding-left: 0;
 }
 
 @media screen and (max-width: 600px) {
