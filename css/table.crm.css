@@ -743,6 +743,7 @@ table tr td {
   height: 12px;
   top: 2px;
   position: relative;
+  margin-left: 18px;
 }
 .colum-pay .pay-btn:after {
   content: "";
