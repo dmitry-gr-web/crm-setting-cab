@@ -549,6 +549,14 @@ document.addEventListener("mousedown", function(e) {
 });
 
 //nav sidebar
+
+//zakaz btn
+$(".zakaz-btn").click(function() {
+    $(".zakaz-block").toggle(200);
+    // $('.nav-crm').prop("data-simplebar", "true");
+});
+//zakaz btn
+
 // header hide
 $(".crm-input").hover(function() {
     $(".wrap-hide").addClass('wrap-open');
@@ -559,5 +567,35 @@ $(document).bind("click", function(e) {
         $(".wrap-hide").removeClass('wrap-open');
     }
 });
-
 //header hide
+
+// (function() {
+//     var currentScale = 1;
+
+//     var cssPrefixesMap = [
+//         'scale',
+//         '-webkit-transform',
+//         '-moz-transform',
+//         '-ms-transform',
+//         '-o-transform',
+//         'transform'
+//     ];
+
+//     function setScale(scale) {
+//         var scaleCss = {};
+
+//         cssPrefixesMap.forEach(function(prefix) {
+//             scaleCss[prefix] = 'scale(' + scale + ')';
+//         });
+
+//         $('.crm-table').css(scaleCss);
+//     }
+
+//     $(".decrease").click(function() {
+//         setScale(currentScale = currentScale - 0.1);
+//     });
+
+//     $(".increase").click(function() {
+//         setScale(currentScale = currentScale + 0.1);
+//     });
+// })();

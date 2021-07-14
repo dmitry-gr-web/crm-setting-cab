@@ -532,6 +532,10 @@ table tr td {
   left: -15px;
 }
 
+.id-table {
+  position: relative;
+}
+
 .crm-main-table:hover {
   position: relative;
 }
