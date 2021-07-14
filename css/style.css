@@ -642,89 +642,114 @@ html {
   top: 4px;
 }
 .nav-crm .nav-list-crm .sidebar {
-  background-image: url("../img/Sidebar 24px.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .user {
   position: relative;
   top: 4px;
 }
 .nav-crm .nav-list-crm .inbox {
-  background-image: url("../img/inbox-white.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .frame {
-  background-image: url("../img/Frame 25.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .squares {
-  background-image: url("../img/Squares.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .list {
-  background-image: url("../img/list.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .link {
-  background-image: url("../img/Link 16px.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .diag {
-  background-image: url("../img/diag.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .rupor {
-  background-image: url("../img/rupor.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .setting {
-  background-image: url("../img/settings.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .trash {
-  background-image: url("../img/korzina.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .info {
-  background-image: url("../img/Info 24px.svg");
+  position: relative;
+  top: 4px;
 }
 .nav-crm .nav-list-crm .video {
-  background-image: url("../img/video.svg");
+  position: relative;
+  top: 4px;
 }
-.nav-crm .nav-list-crm .hover:hover .inbox {
-  background-image: url("../img/inbox.svg");
+.nav-crm .nav-list-crm .hover:hover .inbox path {
+  fill: #515151;
+  fill-opacity: 1;
 }
 .nav-crm .nav-list-crm .hover:hover .airplay path {
-  fill: black;
-  fill-opacity: 0.8;
+  fill: #515151;
+  fill-opacity: 1;
 }
 .nav-crm .nav-list-crm .hover:hover .user path,
 .nav-crm .nav-list-crm .hover:hover .user circle {
-  stroke: black;
-  stroke-opacity: 0.8;
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover.sidebar {
-  background-image: url("../img/Sidebar 24pxblack.svg");
+.nav-crm .nav-list-crm .hover:hover .sidebar rect {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .frame {
-  background-image: url("../img/Frame 25black.svg");
+.nav-crm .nav-list-crm .hover:hover .frame path {
+  fill: #515151;
+  fill-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .squares {
-  background-image: url("../img/Squares-black.svg");
+.nav-crm .nav-list-crm .hover:hover .squares rect {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .list {
-  background-image: url("../img/Groupblack.svg");
+.nav-crm .nav-list-crm .hover:hover .list path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .link {
-  background-image: url("../img/Link 16pxblack.svg");
+.nav-crm .nav-list-crm .hover:hover .link path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .diag {
-  background-image: url("../img/diag-black.svg");
+.nav-crm .nav-list-crm .hover:hover .diag path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .rupor {
-  background-image: url("../img/rupor-black.svg");
+.nav-crm .nav-list-crm .hover:hover .rupor path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .setting {
-  background-image: url("../img/settingblakc.svg");
+.nav-crm .nav-list-crm .hover:hover .setting path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .trash {
-  background-image: url("../img/trashblack.svg");
+.nav-crm .nav-list-crm .hover:hover .trash path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .info {
-  background-image: url("../img/Info 24pxblack.svg");
+.nav-crm .nav-list-crm .hover:hover .info circle,
+.nav-crm .nav-list-crm .hover:hover .info path {
+  stroke: #515151;
+  stroke-opacity: 1;
 }
-.nav-crm .nav-list-crm .hover:hover .video {
-  background-image: url("../img/Camera 24pxblack.svg");
+.nav-crm .nav-list-crm .hover:hover .video path {
+  fill: #515151;
+  fill-opacity: 1;
 }
 
 .drop-zakaz {

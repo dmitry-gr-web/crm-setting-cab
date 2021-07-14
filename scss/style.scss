@@ -322,89 +322,114 @@ html {
             top: 4px;
         }
         .sidebar {
-            background-image: url('../img/Sidebar\ 24px.svg');
+            position: relative;
+            top: 4px;
         }
         .user {
             position: relative;
             top: 4px;
         }
         .inbox {
-            background-image: url('../img/inbox-white.svg');
+            position: relative;
+            top: 4px;
         }
         .frame {
-            background-image: url('../img/Frame\ 25.svg');
+            position: relative;
+            top: 4px;
         }
         .squares {
-            background-image: url('../img/Squares.svg');
+            position: relative;
+            top: 4px;
         }
         .list {
-            background-image: url('../img/list.svg');
+            position: relative;
+            top: 4px;
         }
         .link {
-            background-image: url('../img/Link\ 16px.svg');
+            position: relative;
+            top: 4px;
         }
         .diag {
-            background-image: url('../img/diag.svg');
+            position: relative;
+            top: 4px;
         }
         .rupor {
-            background-image: url('../img/rupor.svg');
+            position: relative;
+            top: 4px;
         }
         .setting {
-            background-image: url('../img/settings.svg');
+            position: relative;
+            top: 4px;
         }
         .trash {
-            background-image: url('../img/korzina.svg');
+            position: relative;
+            top: 4px;
         }
         .info {
-            background-image: url('../img/Info\ 24px.svg');
+            position: relative;
+            top: 4px;
         }
         .video {
-            background-image: url('../img/video.svg');
+            position: relative;
+            top: 4px;
         }
-        .hover:hover .inbox {
-            background-image: url('../img/inbox.svg');
+        .hover:hover .inbox path {
+            fill: #515151;
+            fill-opacity: 1;
         }
         .hover:hover .airplay path {
-            fill: black;
-            fill-opacity: 0.8;
+            fill: #515151;
+            fill-opacity: 1;
         }
         .hover:hover .user path,
         .hover:hover .user circle {
-            stroke: black;
-            stroke-opacity: 0.8;
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover.sidebar {
-            background-image: url('../img/Sidebar\ 24pxblack.svg');
+        .hover:hover .sidebar rect {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .frame {
-            background-image: url('../img/Frame\ 25black.svg');
+        .hover:hover .frame path {
+            fill: #515151;
+            fill-opacity: 1;
         }
-        .hover:hover .squares {
-            background-image: url('../img/Squares-black.svg');
+        .hover:hover .squares rect {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .list {
-            background-image: url('../img/Groupblack.svg');
+        .hover:hover .list path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .link {
-            background-image: url('../img/Link\ 16pxblack.svg');
+        .hover:hover .link path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .diag {
-            background-image: url('../img/diag-black.svg');
+        .hover:hover .diag path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .rupor {
-            background-image: url('../img/rupor-black.svg');
+        .hover:hover .rupor path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .setting {
-            background-image: url('../img/settingblakc.svg');
+        .hover:hover .setting path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .trash {
-            background-image: url('../img/trashblack.svg');
+        .hover:hover .trash path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .info {
-            background-image: url('../img/Info\ 24pxblack.svg');
+        .hover:hover .info circle,
+        .hover:hover .info path {
+            stroke: #515151;
+            stroke-opacity: 1;
         }
-        .hover:hover .video {
-            background-image: url('../img/Camera\ 24pxblack.svg');
+        .hover:hover .video path {
+            fill: #515151;
+            fill-opacity: 1;
         }
     }
 }
