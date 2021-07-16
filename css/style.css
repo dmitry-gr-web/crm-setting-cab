@@ -383,25 +383,36 @@ html {
 }
 .header-crm .logo-pages-wrap .block-pages {
   margin-left: 90px;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
+  width: max-content;
   font-size: 12px;
 }
 .header-crm .logo-pages-wrap .block-pages .pages-dropdown {
   position: relative;
+  width: max-content;
 }
 .header-crm .logo-pages-wrap .block-pages .pages-total {
-  margin-left: 0px;
+  margin-left: 60px;
 }
 .header-crm .logo-pages-wrap .block-pages .block-pages-num {
   margin-top: 5px;
+  position: relative;
+  left: -2px;
 }
 .header-crm .logo-pages-wrap .block-pages .block-pages-num span {
-  padding-right: 4px;
-  padding-left: 4px;
+  padding-right: 2px;
+  padding-left: 2px;
   cursor: pointer;
+  position: relative;
 }
-.header-crm .logo-pages-wrap .block-pages .block-pages-num span:first-child {
-  padding-left: 0;
+.header-crm .logo-pages-wrap .block-pages .block-pages-num span:first-child:before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  bottom: -1px;
+  left: 1.5px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 @media screen and (max-width: 600px) {

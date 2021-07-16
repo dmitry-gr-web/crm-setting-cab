@@ -53,6 +53,7 @@
     }
     .simplebar-scrollbar.simplebar-visible:before {
         opacity: 1;
+        cursor: pointer;
     }
     .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
         height: 10px;
@@ -116,6 +117,7 @@
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 5px;
+        padding-bottom: 5px;
         // white-space: nowrap;
         position: relative;
         text-align: center;
@@ -130,6 +132,14 @@
     }
 }
 
+.color-64a727 {
+    background-color: #64a727;
+}
+
+.color-515151 {
+    background-color: rgba(81, 81, 81, 0.7);
+}
+
 .color-C4C4C4 {
     background-color: #C4C4C4;
 }
@@ -138,10 +148,9 @@
     background-color: #83004F;
 }
 
-.color-515151 {
-    background-color: #515151;
-}
-
+// .color-515151 {
+//     background-color: #515151;
+// }
 .color-91d100 {
     background-color: #91d100;
 }
@@ -171,7 +180,8 @@
 }
 
 .color-ffe600 {
-    background-color: #ffe600;
+    // background-color: #ffe600;
+    background-color: #d4c72a;
 }
 
 .color-FF0000 {
@@ -186,8 +196,8 @@
     background-color: #91D100;
 }
 
-.color-F50296 {
-    background-color: #F50296;
+.color-da291c {
+    background-color: #da291c;
 }
 
 .color-6996D3 {
@@ -229,9 +239,10 @@
     height: 2px;
     width: 100%;
     position: absolute;
-    bottom: -2px;
+    bottom: 2px;
     border-radius: 2px;
     left: 0;
+    opacity: 0.75;
 }
 
 .btn-toggle {
@@ -239,7 +250,7 @@
     position: relative;
     .color-form {
         height: 4px;
-        bottom: -3px;
+        bottom: 2px;
     }
 }
 
@@ -370,15 +381,38 @@
             background: rgba(156, 155, 158, 0.4);
             padding: 0 3px;
             border: 1px white solid;
-            min-width: 130px;
+            min-width: 113px;
+            justify-content: space-between;
+            display: flex;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.5);
+            // span {
+            //     position: relative;
+            //     top: 1px;
+            // }
             .date-style {
-                width: 45%;
+                width: 50px;
                 text-align: center;
                 border: none;
+                font-size: 9px;
                 background-color: transparent;
+                color: rgba(0, 0, 0, 0.5);
+                padding: 0;
             }
+            // .date-style:nth-child(2) {
+            //     padding-right: 0px;
+            //     padding-left: 0px;
+            // }
+            // .date-style:nth-child(1) {
+            //     padding-left: 0px;
+            //     padding-right: 0px;
+            // }
         }
     }
+}
+
+.date-block {
+    text-align: center;
 }
 
 .ttn-search {
@@ -392,7 +426,7 @@
     font-size: 10px;
     line-height: 14px;
     .ttn-style {
-        width: 15%;
+        width: 12%;
         outline: none;
         border: none;
         background: transparent;
@@ -402,15 +436,14 @@
         padding-left: 3px;
     }
     .ttn-style:first-child {
-        width: 82%;
+        width: 86%;
         border-right: 2px solid white;
     }
 }
 
-.date-block {
-    text-align: center;
-}
-
+// .date-block {
+//     text-align: center;
+// }
 tr th {
     white-space: nowrap;
     &:nth-child(odd) {
@@ -464,7 +497,21 @@ table {
             top: 3px;
         }
     }
-    .tel-colum {
+    .svg-np {
+        position: relative;
+        top: 1px;
+    }
+    .svg-uk {
+        position: relative;
+        top: 1px;
+    }
+    .np-ico path {
+        fill: red;
+    }
+    .uk-ico path {
+        fill: #ffc627;
+    }
+    .tel {
         // margin-right: 5px;
         text-align: center;
         line-height: 16px;
@@ -474,11 +521,18 @@ table {
             margin-right: 5px;
         }
     }
+    .tel-colum {
+        position: relative;
+        // .svg-wrap {
+        //     position: absolute;
+        //     right: 0;
+        // }
+    }
     .svg-wrap {
         margin-left: 5px;
         position: relative;
-        margin-right: 5px;
-        top: 3px;
+        margin-right: 3px;
+        top: 2px;
         .count {
             position: absolute;
             border-radius: 100%;
@@ -505,7 +559,7 @@ table {
             position: relative;
             top: 4px;
             .count {
-                right: 0px;
+                right: -2px;
                 border: 1.28571px solid #F1F1F1;
             }
         }
@@ -518,21 +572,24 @@ table {
         }
         .card {
             position: relative;
-            bottom: 2px;
+            bottom: 1px;
         }
         .svg-decline {
             position: relative;
-            bottom: 2px;
+            bottom: 1px;
         }
         .svg-trade {
             position: relative;
-            bottom: 2px;
+            bottom: 1px;
         }
     }
     .ttn-block {
         .svg-wrap {
             margin-left: 0;
             margin-right: 0;
+            .count {
+                right: -4px;
+            }
         }
     }
 }
@@ -577,7 +634,13 @@ table {
         color: white;
         background-color: rgba(81, 81, 81, 0.7);
     }
-    .date-time2 {
+    .np-ico path {
+        opacity: 0.5;
+    }
+    .cls-2 {
+        opacity: 0.5;
+    }
+    .date-time {
         color: white;
     }
     .svg-convert path {
@@ -616,6 +679,9 @@ table {
     .svg-trade path {
         stroke: #F1F1F1;
     }
+    .svg-box path {
+        fill: #F1F1F1;
+    }
     .id-table:before {
         content: '';
         width: 7px;
@@ -626,9 +692,6 @@ table {
         border-radius: 3px 0 0 3px;
         top: 0;
     }
-    .svg-box path {
-        fill: #F1F1F1;
-    }
 }
 
 .selected-lock {
@@ -636,6 +699,15 @@ table {
     td {
         background: rgba(198, 193, 190, 0.5);
         color: rgba(0, 0, 0, 0.2);
+    }
+    img {
+        opacity: 0.5;
+    }
+    .np-ico path {
+        opacity: 0.5;
+    }
+    .cls-2 {
+        opacity: 0.5;
     }
     .svg-wrap .count {
         border: 1.28571px solid #d8d8d8;
@@ -648,6 +720,9 @@ table {
         position: absolute;
         top: 3px;
         left: -15px;
+    }
+    .date-time {
+        color: rgb(197, 191, 191);
     }
 }
 
@@ -827,6 +902,16 @@ table {
             opacity: 0.5;
         }
     }
+    .block1 .list:hover:before {
+        background-color: rgba(81, 81, 81, 0.3);
+        content: '';
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        border-radius: 100%;
+        top: 6px;
+        left: -2px;
+    }
     .block1 {
         background: white;
         z-index: 3;
@@ -849,9 +934,11 @@ table {
         .list {
             height: 18px;
             line-height: 18px;
+            margin-left: 5px;
         }
-        .list:first-child {
+        .list:first-child span {
             padding-left: 3px;
+            margin-left: 0;
         }
         .simplebar-track.simplebar-vertical {
             background-color: rgba(0, 0, 0, 0.1);
@@ -912,6 +999,16 @@ table {
             right: 4px;
             opacity: 0.5;
         }
+    }
+    .block1 .list:hover:before {
+        background-color: rgba(81, 81, 81, 0.3);
+        content: '';
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        border-radius: 100%;
+        top: 6px;
+        left: 6px;
     }
     .block1 {
         background: white;
@@ -1008,6 +1105,16 @@ table {
             right: 4px;
             opacity: 0.5;
         }
+    }
+    .block1 .list:hover:before {
+        background-color: rgba(81, 81, 81, 0.3);
+        content: '';
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        border-radius: 100%;
+        top: 6px;
+        left: 6px;
     }
     .block1 {
         // background: #d3cece;
@@ -1278,8 +1385,8 @@ table {
     display: block;
 }
 
-.block1 .list:hover {
-    background-color: rgba(81, 81, 81, 0.3);
+.list {
+    position: relative;
 }
 
 .select-btn {
@@ -1313,11 +1420,28 @@ table {
 }
 
 .date-time {
-    color: #d4d4d4;
-}
-
-.date-time2 {
     font-size: 10px;
     color: #7b7b7b;
-    margin-left: 10px;
+    margin-left: 4px;
+}
+
+//TOOLTIP
+.tooltip:hover:before {
+    content: attr(data);
+    position: absolute;
+    left: -60px;
+    width: max-content;
+    height: 20px;
+    background-color: #515151;
+    opacity: 0.7;
+    border-radius: 3px;
+    top: 5px;
+    color: white;
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.colum-sum {
+    text-align: right;
 }

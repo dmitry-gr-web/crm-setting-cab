@@ -49,14 +49,16 @@ html {
         display: flex;
         .block-pages {
             margin-left: 90px;
-            color: white;
+            color: rgba(255, 255, 255, 0.7);
             // opacity: 0.7;
+            width: max-content;
             font-size: 12px;
             @include breakpoint (sm) {
                 margin-left: 25px;
             }
             .pages-dropdown {
                 position: relative;
+                width: max-content;
                 // &:after {
                 //     background-image: url('../img/arrow-white-down.svg');
                 //     content: '';
@@ -69,17 +71,26 @@ html {
                 // }
             }
             .pages-total {
-                margin-left: 0px;
+                margin-left: 60px;
             }
             .block-pages-num {
                 margin-top: 5px;
+                position: relative;
+                left: -2px;
                 span {
-                    padding-right: 4px;
-                    padding-left: 4px;
+                    padding-right: 2px;
+                    padding-left: 2px;
                     cursor: pointer;
+                    position: relative;
                 }
-                span:first-child {
-                    padding-left: 0;
+                span:first-child:before {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    height: 1px;
+                    bottom: -1px;
+                    left: 1.5px;
+                    background-color: rgba(255, 255, 255, 0.7);
                 }
             }
         }

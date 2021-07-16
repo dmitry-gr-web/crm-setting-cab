@@ -1,5 +1,7 @@
 .pages-dropdown .dropdown {
   margin-left: 0;
+  height: 14px;
+  white-space: nowrap;
 }
 .pages-dropdown .dropdown .ul-block {
   font-size: 12px;
@@ -7,9 +9,13 @@
   background-color: #515151;
   color: white;
 }
+.pages-dropdown .dropdown .ul-block .list {
+  text-align: center;
+}
 .pages-dropdown .dropdown .ul-block .list:first-child {
   margin-left: 5px;
   margin-bottom: 10px;
+  text-align: left;
 }
 .pages-dropdown .dropdown .ul-block .list:hover:before {
   top: 4px;
@@ -33,6 +39,7 @@
 .pages-dropdown .dropdown .btn {
   font-size: 12px;
   width: 135px;
+  position: relative;
 }
 .pages-dropdown .dropdown .btn .btn-span {
   position: relative;
@@ -44,7 +51,7 @@
   position: absolute;
   background-image: url("../img/arrow-white-down.svg");
   top: 6px;
-  right: -12px;
+  right: -7px;
 }
 .pages-dropdown .dropdown .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
   background: white;

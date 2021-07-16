@@ -55,6 +55,7 @@
 }
 .container-info-settings .simplebar-scrollbar.simplebar-visible:before {
   opacity: 1;
+  cursor: pointer;
 }
 .container-info-settings .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
   height: 10px;
@@ -106,6 +107,7 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
+  padding-bottom: 5px;
   position: relative;
   text-align: center;
   margin: 1px;
@@ -118,16 +120,20 @@
   opacity: 0.5;
 }
 
+.color-64a727 {
+  background-color: #64a727;
+}
+
+.color-515151 {
+  background-color: rgba(81, 81, 81, 0.7);
+}
+
 .color-C4C4C4 {
   background-color: #C4C4C4;
 }
 
 .color-83004F {
   background-color: #83004F;
-}
-
-.color-515151 {
-  background-color: #515151;
 }
 
 .color-91d100 {
@@ -159,7 +165,7 @@
 }
 
 .color-ffe600 {
-  background-color: #ffe600;
+  background-color: #d4c72a;
 }
 
 .color-FF0000 {
@@ -174,8 +180,8 @@
   background-color: #91D100;
 }
 
-.color-F50296 {
-  background-color: #F50296;
+.color-da291c {
+  background-color: #da291c;
 }
 
 .color-6996D3 {
@@ -202,9 +208,10 @@
   height: 2px;
   width: 100%;
   position: absolute;
-  bottom: -2px;
+  bottom: 2px;
   border-radius: 2px;
   left: 0;
+  opacity: 0.75;
 }
 
 .btn-toggle {
@@ -213,7 +220,7 @@
 }
 .btn-toggle .color-form {
   height: 4px;
-  bottom: -3px;
+  bottom: 2px;
 }
 
 .arrow-bg {
@@ -304,13 +311,24 @@
   background: rgba(156, 155, 158, 0.4);
   padding: 0 3px;
   border: 1px white solid;
-  min-width: 130px;
+  min-width: 113px;
+  justify-content: space-between;
+  display: flex;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
 }
 .container-info-settings tr td .date-block .date-style {
-  width: 45%;
+  width: 50px;
   text-align: center;
   border: none;
+  font-size: 9px;
   background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+}
+
+.date-block {
+  text-align: center;
 }
 
 .ttn-search {
@@ -323,7 +341,7 @@
   line-height: 14px;
 }
 .ttn-search .ttn-style {
-  width: 15%;
+  width: 12%;
   outline: none;
   border: none;
   background: transparent;
@@ -333,12 +351,8 @@
   padding-left: 3px;
 }
 .ttn-search .ttn-style:first-child {
-  width: 82%;
+  width: 86%;
   border-right: 2px solid white;
-}
-
-.date-block {
-  text-align: center;
 }
 
 tr th {
@@ -393,20 +407,37 @@ table tr td {
   position: relative;
   top: 3px;
 }
-.crm-main-table .tel-colum {
+.crm-main-table .svg-np {
+  position: relative;
+  top: 1px;
+}
+.crm-main-table .svg-uk {
+  position: relative;
+  top: 1px;
+}
+.crm-main-table .np-ico path {
+  fill: red;
+}
+.crm-main-table .uk-ico path {
+  fill: #ffc627;
+}
+.crm-main-table .tel {
   text-align: center;
   line-height: 16px;
 }
-.crm-main-table .tel-colum .mob-icon {
+.crm-main-table .tel .mob-icon {
   position: relative;
   top: 1px;
   margin-right: 5px;
 }
+.crm-main-table .tel-colum {
+  position: relative;
+}
 .crm-main-table .svg-wrap {
   margin-left: 5px;
   position: relative;
-  margin-right: 5px;
-  top: 3px;
+  margin-right: 3px;
+  top: 2px;
 }
 .crm-main-table .svg-wrap .count {
   position: absolute;
@@ -435,7 +466,7 @@ table tr td {
   top: 4px;
 }
 .crm-main-table .product-colum .svg-wrap .count {
-  right: 0px;
+  right: -2px;
   border: 1.28571px solid #F1F1F1;
 }
 .crm-main-table .colum-pay {
@@ -447,19 +478,22 @@ table tr td {
 }
 .crm-main-table .colum-pay .card {
   position: relative;
-  bottom: 2px;
+  bottom: 1px;
 }
 .crm-main-table .colum-pay .svg-decline {
   position: relative;
-  bottom: 2px;
+  bottom: 1px;
 }
 .crm-main-table .colum-pay .svg-trade {
   position: relative;
-  bottom: 2px;
+  bottom: 1px;
 }
 .crm-main-table .ttn-block .svg-wrap {
   margin-left: 0;
   margin-right: 0;
+}
+.crm-main-table .ttn-block .svg-wrap .count {
+  right: -4px;
 }
 
 .color-bg {
@@ -502,7 +536,13 @@ table tr td {
   color: white;
   background-color: rgba(81, 81, 81, 0.7);
 }
-.select-toggle .date-time2 {
+.select-toggle .np-ico path {
+  opacity: 0.5;
+}
+.select-toggle .cls-2 {
+  opacity: 0.5;
+}
+.select-toggle .date-time {
   color: white;
 }
 .select-toggle .svg-convert path {
@@ -538,6 +578,9 @@ table tr td {
 .select-toggle .svg-trade path {
   stroke: #F1F1F1;
 }
+.select-toggle .svg-box path {
+  fill: #F1F1F1;
+}
 .select-toggle .id-table:before {
   content: "";
   width: 7px;
@@ -548,9 +591,6 @@ table tr td {
   border-radius: 3px 0 0 3px;
   top: 0;
 }
-.select-toggle .svg-box path {
-  fill: #F1F1F1;
-}
 
 .selected-lock {
   position: relative;
@@ -558,6 +598,15 @@ table tr td {
 .selected-lock td {
   background: rgba(198, 193, 190, 0.5);
   color: rgba(0, 0, 0, 0.2);
+}
+.selected-lock img {
+  opacity: 0.5;
+}
+.selected-lock .np-ico path {
+  opacity: 0.5;
+}
+.selected-lock .cls-2 {
+  opacity: 0.5;
 }
 .selected-lock .svg-wrap .count {
   border: 1.28571px solid #d8d8d8;
@@ -570,6 +619,9 @@ table tr td {
   position: absolute;
   top: 3px;
   left: -15px;
+}
+.selected-lock .date-time {
+  color: #c5bfbf;
 }
 
 .id-table {
@@ -714,6 +766,16 @@ table tr td {
   right: 4px;
   opacity: 0.5;
 }
+.colum-country .block1 .list:hover:before {
+  background-color: rgba(81, 81, 81, 0.3);
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border-radius: 100%;
+  top: 6px;
+  left: -2px;
+}
 .colum-country .block1 {
   background: white;
   z-index: 3;
@@ -737,9 +799,11 @@ table tr td {
 .colum-country .block1 .list {
   height: 18px;
   line-height: 18px;
+  margin-left: 5px;
 }
-.colum-country .block1 .list:first-child {
+.colum-country .block1 .list:first-child span {
   padding-left: 3px;
+  margin-left: 0;
 }
 .colum-country .block1 .simplebar-track.simplebar-vertical {
   background-color: rgba(0, 0, 0, 0.1);
@@ -799,6 +863,16 @@ table tr td {
   top: 7px;
   right: 4px;
   opacity: 0.5;
+}
+.colum-pay .block1 .list:hover:before {
+  background-color: rgba(81, 81, 81, 0.3);
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border-radius: 100%;
+  top: 6px;
+  left: 6px;
 }
 .colum-pay .block1 {
   background: white;
@@ -893,6 +967,16 @@ table tr td {
   top: 7px;
   right: 4px;
   opacity: 0.5;
+}
+.colum-delivery .block1 .list:hover:before {
+  background-color: rgba(81, 81, 81, 0.3);
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border-radius: 100%;
+  top: 6px;
+  left: 6px;
 }
 .colum-delivery .block1 {
   z-index: 222;
@@ -1157,8 +1241,8 @@ table tr td {
   display: block;
 }
 
-.block1 .list:hover {
-  background-color: rgba(81, 81, 81, 0.3);
+.list {
+  position: relative;
 }
 
 .select-btn {
@@ -1190,11 +1274,27 @@ table tr td {
 }
 
 .date-time {
-  color: #d4d4d4;
-}
-
-.date-time2 {
   font-size: 10px;
   color: #7b7b7b;
-  margin-left: 10px;
+  margin-left: 4px;
+}
+
+.tooltip:hover:before {
+  content: attr(data);
+  position: absolute;
+  left: -60px;
+  width: max-content;
+  height: 20px;
+  background-color: #515151;
+  opacity: 0.7;
+  border-radius: 3px;
+  top: 5px;
+  color: white;
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.colum-sum {
+  text-align: right;
 }

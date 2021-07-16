@@ -310,11 +310,16 @@ $(".pages-dropdown .dropdown .btn .btn-span").click(function() {
     let arrbtn = $('.dropdown .ul-block');
     arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
     $(".pages-dropdown .dropdown .ul-block").toggle();
+    $(".btn").css('opacity', '0');
+    $(".pages-total").css('opacity', '0');
+    $(".block-pages-num").css('opacity', '0');
+    $(".dropdown").css('opacity', '1');
 });
 $(".pages-dropdown .dropdown .ul-block .list").click(function() {
     var text = $(this).html();
     $(".pages-dropdown .dropdown .btn .btn-span").html(text);
     $(".pages-dropdown .dropdown .ul-block").hide();
+
 });
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);

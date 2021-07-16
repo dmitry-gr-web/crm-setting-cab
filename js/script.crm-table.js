@@ -26,7 +26,24 @@ $(document).ready(function() {
             });
     });
 });
+//aasdads
+$(document).ready(function() {
+    let countryUA = 'Ukraine';
 
+    // $(".tooltip").on("hover", (e) => {
+    if ($('.tooltip .flag').hasClass('ua')) {
+        $('.tooltip').attr('data', 'Ukraine');
+    }
+    if ($('.tooltip .flag.ru')) {
+        $('.tooltip').attr('data', 'Russia');
+    }
+    // });
+});
+
+//asdasd
+// $(".country-colum").on("hover", (e) => {
+//     $(".ua").addClass('tooltip');
+// });
 // window.addEventListener('DOMContentLoaded', function() {
 //     var menu = document.querySelector('#crmHeader'),
 //         node = menu.querySelectorAll('.crm-header-link');
@@ -164,6 +181,12 @@ $("#prev").click(function() {
 
 //...
 $(".crm-main-table .max-lenght").text(function(i, text) {
+    if (text.length >= 20) {
+        text = text.substring(0, 18) + "...";
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .max-lenght-comment").text(function(i, text) {
     if (text.length >= 30) {
         text = text.substring(0, 28) + "...";
     }

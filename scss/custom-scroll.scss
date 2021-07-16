@@ -2,15 +2,20 @@
 .pages-dropdown {
     .dropdown {
         margin-left: 0;
-        ;
+        height: 14px;
+        white-space: nowrap;
         .ul-block {
             font-size: 12px;
             top: -12px;
             background-color: #515151;
             color: white;
+            .list {
+                text-align: center;
+            }
             .list:first-child {
                 margin-left: 5px;
                 margin-bottom: 10px;
+                text-align: left;
             }
             .list:hover:before {
                 top: 4px;
@@ -35,6 +40,7 @@
         .btn {
             font-size: 12px;
             width: 135px;
+            position: relative;
             .btn-span {
                 position: relative;
                 &::after {
@@ -44,7 +50,7 @@
                     position: absolute;
                     background-image: url('../img/arrow-white-down.svg');
                     top: 6px;
-                    right: -12px;
+                    right: -7px;
                 }
             }
         }
