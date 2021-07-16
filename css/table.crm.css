@@ -316,6 +316,7 @@
   display: flex;
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
+  line-height: 16px;
 }
 .container-info-settings tr td .date-block .date-style {
   width: 50px;
@@ -355,6 +356,18 @@
   border-right: 2px solid white;
 }
 
+table {
+  border-collapse: collapse;
+}
+table tr td {
+  width: max-content;
+  padding: 0px 4px;
+  font-size: 12px;
+}
+table tr td:nth-child(odd) {
+  background-color: #F1F1F1;
+}
+
 tr th {
   white-space: nowrap;
   padding: 2.5px 4px;
@@ -365,15 +378,6 @@ tr th {
 }
 tr th:nth-child(odd) {
   background-color: #F1F1F1;
-}
-
-table {
-  border-collapse: collapse;
-}
-table tr td {
-  width: max-content;
-  padding: 0px 4px;
-  font-size: 12px;
 }
 
 .header-search {
@@ -395,31 +399,28 @@ table tr td {
 .crm-main-table {
   height: 19px;
 }
+.crm-main-table .colum-country {
+  text-align: center;
+}
 .crm-main-table .country-colum {
-  text-align: left;
+  text-align: center;
   box-sizing: border-box;
   height: 18px;
   position: relative;
-  top: -2px;
+  top: 2px;
 }
 .crm-main-table .country-colum .flag {
-  margin-right: 5px;
+  height: 13px;
+}
+.crm-main-table .svg-pos {
   position: relative;
-  top: 3px;
+  top: 2px;
 }
-.crm-main-table .svg-np {
-  position: relative;
-  top: 1px;
+.crm-main-table .svg-pos img {
+  height: 15px;
 }
-.crm-main-table .svg-uk {
-  position: relative;
-  top: 1px;
-}
-.crm-main-table .np-ico path {
-  fill: red;
-}
-.crm-main-table .uk-ico path {
-  fill: #ffc627;
+.crm-main-table .svg-pos .samovivoz path {
+  fill: #515151;
 }
 .crm-main-table .tel {
   text-align: center;
@@ -427,11 +428,9 @@ table tr td {
 }
 .crm-main-table .tel .mob-icon {
   position: relative;
-  top: 1px;
+  top: 2px;
   margin-right: 5px;
-}
-.crm-main-table .tel-colum {
-  position: relative;
+  height: 13px;
 }
 .crm-main-table .svg-wrap {
   margin-left: 5px;
@@ -472,32 +471,12 @@ table tr td {
 .crm-main-table .colum-pay {
   text-align: center;
 }
-.crm-main-table .colum-pay .coin {
-  bottom: 1px;
-  position: relative;
-}
-.crm-main-table .colum-pay .card {
-  position: relative;
-  bottom: 1px;
-}
-.crm-main-table .colum-pay .svg-decline {
-  position: relative;
-  bottom: 1px;
-}
-.crm-main-table .colum-pay .svg-trade {
-  position: relative;
-  bottom: 1px;
-}
 .crm-main-table .ttn-block .svg-wrap {
   margin-left: 0;
   margin-right: 0;
 }
 .crm-main-table .ttn-block .svg-wrap .count {
   right: -4px;
-}
-
-.color-bg {
-  background-color: #F1F1F1;
 }
 
 .crm-main-table.select-toggle:hover {
@@ -529,8 +508,8 @@ table tr td {
 .select-toggle {
   position: relative;
 }
-.select-toggle img {
-  opacity: 0.5;
+.select-toggle td:nth-child(odd) {
+  background-color: rgba(81, 81, 81, 0.7);
 }
 .select-toggle td {
   color: white;
@@ -598,6 +577,9 @@ table tr td {
 .selected-lock td {
   background: rgba(198, 193, 190, 0.5);
   color: rgba(0, 0, 0, 0.2);
+}
+.selected-lock td:nth-child(odd) {
+  background: rgba(198, 193, 190, 0.5);
 }
 .selected-lock img {
   opacity: 0.5;
@@ -986,7 +968,6 @@ table tr td {
   text-align: left;
   height: 90px;
   width: 100%;
-  overflow-x: hidden;
   cursor: pointer;
   z-index: 2222;
   top: 18px;
@@ -1009,6 +990,31 @@ table tr td {
   left: 0;
   right: 0;
   bottom: -9px;
+  top: 0;
+}
+.colum-delivery .block1 .simplebar-track.simplebar-horizontal {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 3px;
+  bottom: 0;
+  margin: 0;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding-top: 0;
+}
+.colum-delivery .block1 .simplebar-track.simplebar-horizontal .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  height: 3px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: 0;
+  margin-left: 5px;
+}
+.colum-delivery .block1 .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  height: 3px;
+  left: 0;
   top: 0;
 }
 .colum-delivery .block1 .simplebar-scrollbar.simplebar-visible:before {
@@ -1285,14 +1291,18 @@ table tr td {
   left: -60px;
   width: max-content;
   height: 20px;
-  background-color: #515151;
-  opacity: 0.7;
+  background-color: rgba(81, 81, 81, 0.8);
   border-radius: 3px;
   top: 5px;
   color: white;
   padding-top: 4px;
   padding-left: 5px;
   padding-right: 5px;
+  z-index: 999;
+}
+
+.max-lenght-comment {
+  position: relative;
 }
 
 .colum-sum {

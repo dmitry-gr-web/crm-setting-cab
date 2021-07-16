@@ -27,19 +27,72 @@ $(document).ready(function() {
     });
 });
 //aasdads
-$(document).ready(function() {
-    let countryUA = 'Ukraine';
+// $('.tooltip').on('hover', function() {
+//     let countryUA = 'Ukraine';
+//     if ($(this).find('img.ua')) {
+//         $(this).attr('data', countryUA);
+//     }
+//     // if ($('.tooltip .flag').hasClass('ru')) {
+//     //     $(this).attr('data', 'Russia');
+//     //     console.log('2');
+//     // }
+// });
+$(".colum-country").on(function() {
+    let ukraine = 'ukraine';
+    let russia = 'russia';
+    if ($(this).find('ua') == true) {
+        $(this).attr('data', ukraine);
+    }
+    if ($(".colum-country").hasClass('ru')) {
+        $(this).attr('data', russia);
+    }
 
-    // $(".tooltip").on("hover", (e) => {
-    if ($('.tooltip .flag').hasClass('ua')) {
-        $('.tooltip').attr('data', 'Ukraine');
+});
+// $(".tooltip").on("hover", (p) => {
+//     $(p).attr('data', 'Ukraine');
+//     $(".tooltip").css('visibility', 'visible');
+// });
+
+//...
+$(".crm-main-table .max-lenght").text(function(i, text) {
+    if (text.length >= 20) {
+        text = text.substring(0, 18) + "...";
     }
-    if ($('.tooltip .flag.ru')) {
-        $('.tooltip').attr('data', 'Russia');
+    $(this).text(text);
+});
+$(".crm-main-table .max-lenght-comment").text(function(i, text) {
+    let boxMemory = text;
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+        // $('.tooltip').css('visibility', 'visible');
+        $('.max-lenght-comment').addClass('tooltip');
+        $(this).attr('data', boxMemory);
     }
-    // });
+    $(this).text(text);
+    $(this).removeClass('tooltip');
+    // $('.tooltip').css('visibility', 'hidden');
+});
+$(".crm-main-table .max-lenght-product").text(function(i, text) {
+    if (text.length >= 40) {
+        text = text.substring(0, 38) + "...";
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .addres-block").text(function(i, text) {
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+    }
+    $(this).text(text);
+});
+$(".crm-main-table .max-lenght-status").text(function(i, text) {
+    if (text.length >= 12) {
+        text = text.substring(0, 11) + "...";
+    }
+    $(this).text(text);
 });
 
+
+// ...
 //asdasd
 // $(".country-colum").on("hover", (e) => {
 //     $(".ua").addClass('tooltip');
@@ -179,40 +232,6 @@ $("#prev").click(function() {
 
 
 
-//...
-$(".crm-main-table .max-lenght").text(function(i, text) {
-    if (text.length >= 20) {
-        text = text.substring(0, 18) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .max-lenght-comment").text(function(i, text) {
-    if (text.length >= 30) {
-        text = text.substring(0, 28) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .max-lenght-product").text(function(i, text) {
-    if (text.length >= 40) {
-        text = text.substring(0, 38) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .addres-block").text(function(i, text) {
-    if (text.length >= 30) {
-        text = text.substring(0, 28) + "...";
-    }
-    $(this).text(text);
-});
-$(".crm-main-table .max-lenght-status").text(function(i, text) {
-    if (text.length >= 12) {
-        text = text.substring(0, 11) + "...";
-    }
-    $(this).text(text);
-});
-
-
-// ...
 
 //menu country btn
 $(".colum-country .country-btn").click(function() {
