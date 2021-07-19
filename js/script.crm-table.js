@@ -37,16 +37,43 @@ $(document).ready(function() {
 //     //     console.log('2');
 //     // }
 // });
-$(".country-block").text(function() {
+$(".country-block").text(function(e) {
     let ukraine = 'ukraine';
     let russia = 'russia';
-    if ($(this).find('ua')) {
-        // $(this).addClass('tooltip');
+    if ($(".country-block .country-flag .flag").hasClass('ua')) {
+        $(this).addClass('tooltip');
         $(this).attr('data', ukraine);
     }
-    // if ($(this).find('ru')) {
-    //     $(this).attr('data', russia);
-    // }
+    if ($(".country-block .country-flag .flag").hasClass('ru')) {
+        $(this).addClass('tooltip');
+        $(this).attr('data', russia);
+    }
+
+
+
+
+
+
+
+    // let ukraine = 'ukraine';
+    // let russia = 'russia';
+    // $.each($(e), function() {
+    //     // console.log(index + ':' + $(value).text());
+    //     let flagUa = $('.flag.ua');
+    //     let flagRu = $('.flag.ru');
+
+    //     if ($(flagUa).hasClass('ua')) {
+    //         // $(this).addClass('tooltip');
+    //         $(this).attr('data', ukraine);
+    //     }
+    //     if ($(flagRu).hasClass('ru')) {
+    //         $(this).attr('data', russia);
+    //     }
+    // });
+});
+$('.container-info-settings').mousewheel(function(e, delta) {
+    $(this).scrollLeft(this.scrollLeft + (-delta * 40));
+    e.preventDefault();
 });
 // $(".tooltip").on("hover", (p) => {
 //     $(p).attr('data', 'Ukraine');

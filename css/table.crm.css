@@ -485,12 +485,12 @@ tr th:nth-child(odd) {
 .crm-main-table .colum-pay {
   text-align: center;
 }
-.crm-main-table .ttn-block {
+.crm-main-table .ttn-block .ttn-position {
   justify-content: space-between;
-  height: 100%;
-  width: inherit;
+  height: auto;
+  width: 100%;
   display: flex;
-  line-height: 19px;
+  align-items: center;
 }
 .crm-main-table .ttn-block .ttn-number {
   display: inline-block;
@@ -498,7 +498,7 @@ tr th:nth-child(odd) {
 }
 .crm-main-table .ttn-block .svg-wrap {
   margin-left: 3px;
-  margin-right: 0;
+  margin-right: 3px;
   display: inline-block;
 }
 .crm-main-table .ttn-block .svg-wrap .count {
@@ -534,6 +534,9 @@ tr th:nth-child(odd) {
 
 .select-toggle {
   position: relative;
+}
+.select-toggle img {
+  opacity: 0.5;
 }
 .select-toggle td:nth-child(odd) {
   background-color: rgba(81, 81, 81, 0.7);
@@ -681,6 +684,10 @@ tr th:nth-child(odd) {
   position: absolute;
   left: -11px;
   top: 8px;
+}
+
+.color-928c42 {
+  background-color: #928c42;
 }
 
 .color-470010 {
@@ -1310,6 +1317,7 @@ tr th:nth-child(odd) {
   font-size: 10px;
   color: #7b7b7b;
   margin-left: 4px;
+  text-align: center;
 }
 
 .tooltip:hover:before {
@@ -1337,6 +1345,7 @@ tr th:nth-child(odd) {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
+  backdrop-filter: blur(4px);
 }
 
 .max-lenght-comment {

@@ -580,19 +580,20 @@ tr th {
         text-align: center;
     }
     .ttn-block {
-        justify-content: space-between;
-        height: 100%;
-        width: inherit;
-        display: flex;
-        line-height: 19px;
+        .ttn-position {
+            justify-content: space-between;
+            height: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
         .ttn-number {
             display: inline-block;
             text-align: left;
-            // line-height: 19px;
         }
         .svg-wrap {
             margin-left: 3px;
-            margin-right: 0;
+            margin-right: 3px;
             display: inline-block;
             .count {
                 right: -4px;
@@ -634,6 +635,9 @@ tr th {
     // img {
     //     opacity: 0.5;
     // }
+    img {
+        opacity: 0.5;
+    }
     td:nth-child(odd) {
         background-color: rgba(81, 81, 81, 0.7);
     }
@@ -818,7 +822,11 @@ tr th {
 //     }
 // }
 //hover lock
-//цвета
+//цветаs
+.color-928c42 {
+    background-color: #928c42;
+}
+
 .color-470010 {
     background-color: #470010;
 }
@@ -1458,6 +1466,7 @@ tr th {
     font-size: 10px;
     color: #7b7b7b;
     margin-left: 4px;
+    text-align: center;
 }
 
 //TOOLTIP
@@ -1486,6 +1495,7 @@ tr th {
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
+    backdrop-filter: blur(4px);
 }
 
 // .tooltip::before:hover {
