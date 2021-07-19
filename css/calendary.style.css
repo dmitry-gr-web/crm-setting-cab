@@ -135,3 +135,6 @@ a.ui-button:active,
 .ui-datepicker tr th {
   background-color: transparent;
 }
+.ui-datepicker td:nth-child(odd) {
+  background-color: transparent;
+}

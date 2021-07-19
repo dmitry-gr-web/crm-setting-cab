@@ -37,16 +37,16 @@ $(document).ready(function() {
 //     //     console.log('2');
 //     // }
 // });
-$(".colum-country").on(function() {
+$(".country-block").text(function() {
     let ukraine = 'ukraine';
     let russia = 'russia';
-    if ($(this).find('ua') == true) {
+    if ($(this).find('ua')) {
+        // $(this).addClass('tooltip');
         $(this).attr('data', ukraine);
     }
-    if ($(".colum-country").hasClass('ru')) {
-        $(this).attr('data', russia);
-    }
-
+    // if ($(this).find('ru')) {
+    //     $(this).attr('data', russia);
+    // }
 });
 // $(".tooltip").on("hover", (p) => {
 //     $(p).attr('data', 'Ukraine');
@@ -54,28 +54,35 @@ $(".colum-country").on(function() {
 // });
 
 //...
+
+$(".crm-main-table .max-lenght-comment").text(function(i, text) {
+    let boxMemory = text;
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+        // $('.tooltip').css('visibility', 'visible');
+        $(this).addClass('tooltip');
+        $(this).attr('data', boxMemory);
+    } else {
+        $(this).removeClass('tooltip');
+    }
+    $(this).text(text);
+    // $('.tooltip').css('visibility', 'hidden');
+});
+
+
 $(".crm-main-table .max-lenght").text(function(i, text) {
     if (text.length >= 20) {
         text = text.substring(0, 18) + "...";
     }
     $(this).text(text);
 });
-$(".crm-main-table .max-lenght-comment").text(function(i, text) {
-    let boxMemory = text;
-    if (text.length >= 30) {
-        text = text.substring(0, 28) + "...";
-        // $('.tooltip').css('visibility', 'visible');
-        $('.max-lenght-comment').addClass('tooltip');
-        $(this).attr('data', boxMemory);
-    }
-    $(this).text(text);
-    $(this).removeClass('tooltip');
-    // $('.tooltip').css('visibility', 'hidden');
-});
 $(".crm-main-table .max-lenght-product").text(function(i, text) {
     if (text.length >= 40) {
         text = text.substring(0, 38) + "...";
     }
+    // if ($(".product-colum").hasClass('svg-wrap')){
+
+    // }
     $(this).text(text);
 });
 $(".crm-main-table .addres-block").text(function(i, text) {
@@ -605,7 +612,7 @@ $(".crm-input").hover(function() {
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header")) {
+    if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header") && !$clicked.parents().hasClass("ui-datepicker-buttonpane") && !$clicked.parents().hasClass("ui-datepicker-header") && !$clicked.parents().hasClass("ui-datepicker-calendar") && !$clicked.hasClass("ui-datepicker")) {
         $(".wrap-hide").removeClass('wrap-open');
     }
 });

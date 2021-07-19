@@ -488,10 +488,11 @@ tr th {
 
 .crm-main-table {
     height: 19px;
-    .colum-country {
+    .country-block {
         text-align: center;
+        position: relative;
     }
-    .country-colum {
+    .country-flag {
         text-align: center;
         box-sizing: border-box;
         height: 18px;
@@ -512,15 +513,24 @@ tr th {
         }
     }
     .tel-colum {
-        // display: flex;
-        // justify-content: space-between;
-        // width: 100%;
+        justify-content: space-between;
+        width: inherit;
+        display: flex;
+        height: 19px;
+        .svg-wrap {
+            display: inline-block;
+            .count {
+                top: -2px;
+                // line-height: 8px;
+                // text-align: center;
+            }
+        }
     }
     .tel {
         // margin-right: 5px;
         text-align: center;
         line-height: 16px;
-        // display: inline-block;
+        display: inline-block;
         .mob-icon {
             position: relative;
             top: 2px;
@@ -559,6 +569,7 @@ tr th {
             margin-right: 8px;
             position: relative;
             top: 4px;
+            // display: none;
             .count {
                 right: -2px;
                 border: 1.28571px solid #F1F1F1;
@@ -569,11 +580,23 @@ tr th {
         text-align: center;
     }
     .ttn-block {
+        justify-content: space-between;
+        height: 100%;
+        width: inherit;
+        display: flex;
+        line-height: 19px;
+        .ttn-number {
+            display: inline-block;
+            text-align: left;
+            // line-height: 19px;
+        }
         .svg-wrap {
-            margin-left: 0;
+            margin-left: 3px;
             margin-right: 0;
+            display: inline-block;
             .count {
                 right: -4px;
+                top: -3px;
             }
         }
     }
@@ -1439,23 +1462,36 @@ tr th {
 
 //TOOLTIP
 .tooltip:hover:before {
+    transition: 0.3s;
+    transition-delay: .2s;
+    opacity: 1;
+    visibility: visible;
+    top: 22px;
+}
+
+.tooltip:before {
     content: attr(data);
     position: absolute;
-    left: -60px;
+    right: -40%;
     width: max-content;
     height: 20px;
     background-color: rgba(81, 81, 81, 0.8);
     border-radius: 3px;
-    top: 5px;
+    top: 0;
     color: white;
     padding-top: 4px;
     padding-left: 5px;
     padding-right: 5px;
     z-index: 999;
-    // visibility: hidden;
-    // backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
 }
 
+// .tooltip::before:hover {
+//     visibility: hidden;
+// }
+//TOOLTIP
 .max-lenght-comment {
     position: relative;
 }
