@@ -306,26 +306,38 @@ $("#block-product-category").click(function() {
 //link blocks end
 
 //pages-dropdown btn
-$(".pages-dropdown .dropdown .btn .btn-span").click(function() {
-    let arrbtn = $('.dropdown .ul-block');
-    arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
+// $(".pages-dropdown .dropdown .btn").click(function() {
+//     let arrbtn = $('.dropdown .ul-block');
+//     arrbtn.map(x => $(".dropdown .ul-block").removeClass('toggle'));
+//     // $(".pages-dropdown .dropdown .ul-block").toggle();
+// });
+$(".current-pages").click(function() {
+    $(".pages-dropdown").css({ 'visibility': 'visible', 'top': '0' });
     $(".pages-dropdown .dropdown .ul-block").toggle();
-    $(".btn").css('opacity', '0');
-    $(".pages-total").css('opacity', '0');
-    $(".block-pages-num").css('opacity', '0');
-    $(".dropdown").css('opacity', '1');
+    $('.pages-animation-block').css({ 'visibility': 'hidden', 'top': '-100px' });
 });
 $(".pages-dropdown .dropdown .ul-block .list").click(function() {
-    var text = $(this).html();
-    $(".pages-dropdown .dropdown .btn .btn-span").html(text);
+    let text = $(this).html();
+    $(".pages-dropdown .dropdown .btn .btn-chose").html(text);
     $(".pages-dropdown .dropdown .ul-block").hide();
+    $(".pages-dropdown").css({ 'visibility': 'hidden', 'top': '-100px' });
+    $('.pages-animation-block').css({ 'visibility': 'visible', 'top': '0' });
+    $(this).toggleClass('select-btn-white');
+    if ($('.select-btn-white').lenght >= 2) {
+        $(this).removeClass('select-btn-white');
+    }
+    // $('.ul-block').css({ 'height': '0px' });
 
 });
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("dropdown"))
+    if (!$clicked.parents().hasClass("block-pages")) {
+        $('.pages-animation-block').css({ 'visibility': 'visible', 'top': '0' });
+        $(".pages-dropdown").css({ 'visibility': 'hidden', 'top': '-100px' });
         $(".pages-dropdown .dropdown .ul-block").hide();
+    }
 });
+
 //status local btn
 $(".status-local-btn .dropdown .btn .btn-span").click(function() {
     let arrbtn = $('.dropdown .ul-block');

@@ -8,7 +8,7 @@
     });
 });
 //header-link
-//tooltip
+//tooltip select
 $(document).ready(function() {
     $(".crm-main-table").on("click", (e) => {
         $(".crm-main-table").unbind("mouseleave mousemove");
@@ -26,6 +26,14 @@ $(document).ready(function() {
             });
     });
 });
+// $('.container-info-settings').on(function(e) {
+//     let leftCLick = (e.which == 1);
+//     let middleClick = (e.which == 3);
+//     if (leftCLick.mousedown()) {
+//         middleClick.mousedown();
+//     }
+// })​;
+// $(".simplebar-content-wrapper").addClass("dragscroll");
 //aasdads
 // $('.tooltip').on('hover', function() {
 //     let countryUA = 'Ukraine';
@@ -37,55 +45,62 @@ $(document).ready(function() {
 //     //     console.log('2');
 //     // }
 // });
-$(".country-block").text(function(e) {
-    let ukraine = 'ukraine';
-    let russia = 'russia';
-    if ($(".country-block .country-flag .flag").hasClass('ua')) {
+//tooltip 
+$(".crm-main-table .country-block").each(function(e, item) {
+    // if ($(item.children[0].children).hasClass('ua')) {
+    //     $(this).append('<div class="tooltip">Украина</div>');
+    //     // $('.tooltip').attr('data', ukraine);
+    // }
+    // if ($(item.children[0].children).hasClass('ru')) {
+    //     $(this).append('<div class="tooltip">Россия</div>');
+    //     // $('.tooltip').attr('data', ukraine);
+    // }
+    // if ($(item.children[0].children).hasClass('kz')) {
+    //     $(this).append('<div class="tooltip">Казахстан</div>');
+    //     // $('.tooltip').attr('data', ukraine);
+    // }
+    // if ($(item.children[0].children).hasClass('al')) {
+    //     $(this).append('<div class="tooltip">Албания</div>');
+    //     // $('.tooltip').attr('data', ukraine);
+    // }
+    // if ($(item.children[0].children).hasClass('world')) {
+    //     $(this).append('<div class="tooltip">Мир</div>');
+    //     // $('.tooltip').attr('data', ukraine);
+    // }
+    let ukraine = 'Украина';
+    let russia = 'Россия';
+    let kazahstan = 'Казахстан';
+    let alb = 'Албания';
+    let world = 'Мир';
+    if ($(item.children[0].children).hasClass('ua')) {
         $(this).addClass('tooltip');
         $(this).attr('data', ukraine);
     }
-    if ($(".country-block .country-flag .flag").hasClass('ru')) {
+    if ($(item.children[0].children).hasClass('ru')) {
         $(this).addClass('tooltip');
         $(this).attr('data', russia);
     }
-
-
-
-
-
-
-
-    // let ukraine = 'ukraine';
-    // let russia = 'russia';
-    // $.each($(e), function() {
-    //     // console.log(index + ':' + $(value).text());
-    //     let flagUa = $('.flag.ua');
-    //     let flagRu = $('.flag.ru');
-
-    //     if ($(flagUa).hasClass('ua')) {
-    //         // $(this).addClass('tooltip');
-    //         $(this).attr('data', ukraine);
-    //     }
-    //     if ($(flagRu).hasClass('ru')) {
-    //         $(this).attr('data', russia);
-    //     }
-    // });
+    if ($(item.children[0].children).hasClass('kz')) {
+        $(this).addClass('tooltip');
+        $(this).attr('data', kazahstan);
+    }
+    if ($(item.children[0].children).hasClass('al')) {
+        $(this).addClass('tooltip');
+        $(this).attr('data', alb);
+    }
+    if ($(item.children[0].children).hasClass('world')) {
+        $(this).addClass('tooltip');
+        $(this).attr('data', world);
+    }
 });
-$('.container-info-settings').mousewheel(function(e, delta) {
-    $(this).scrollLeft(this.scrollLeft + (-delta * 40));
-    e.preventDefault();
-});
-// $(".tooltip").on("hover", (p) => {
-//     $(p).attr('data', 'Ukraine');
-//     $(".tooltip").css('visibility', 'visible');
-// });
-
+//tooltip
 //...
 
 $(".crm-main-table .max-lenght-comment").text(function(i, text) {
     let boxMemory = text;
     if (text.length >= 30) {
         text = text.substring(0, 28) + "...";
+        // $(this).append('<div class="tooltip"></div>');
         // $('.tooltip').css('visibility', 'visible');
         $(this).addClass('tooltip');
         $(this).attr('data', boxMemory);
@@ -93,13 +108,14 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
         $(this).removeClass('tooltip');
     }
     $(this).text(text);
-    // $('.tooltip').css('visibility', 'hidden');
 });
 
 
 $(".crm-main-table .max-lenght").text(function(i, text) {
+    let boxMemory = text;
     if (text.length >= 20) {
         text = text.substring(0, 18) + "...";
+
     }
     $(this).text(text);
 });
@@ -126,7 +142,18 @@ $(".crm-main-table .max-lenght-status").text(function(i, text) {
 });
 
 
-// ...
+// });
+// $("#prev").click(function() {
+//     $("#crmHeader").animate({
+//         scrollLeft: "0px",
+//     }, { duration: 300, queue: false });
+// });
+// $(".tooltip").on("hover", (p) => {
+//     $(p).attr('data', 'Ukraine');
+//     $(".tooltip").css('visibility', 'visible');
+// });
+
+
 //asdasd
 // $(".country-colum").on("hover", (e) => {
 //     $(".ua").addClass('tooltip');

@@ -5,93 +5,54 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            border: 0;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        
         .dropdown {
+            /* width: 300px; */
             position: relative;
-        }
-        
-        button {
-            height: 2.5rem;
-            padding: 0 1.25rem;
-            background: #333;
-            color: #fff;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-        
-        nav {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: 300ms all;
-            border: 2px solid #333;
-            border-radius: 0.25rem;
-            width: 12.5rem;
-        }
-        
-        ul {
-            padding: 0.188rem 0;
-        }
-        
-        a {
-            display: block;
-            padding: 0.438rem 0.625rem;
-            color: #333;
-        }
-        
-        a:hover {
-            background: #f8f8f8;
-        }
-        
-        .dropdown:focus-within nav {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0.25rem);
+            height: 50px;
+            width: 3000px;
         }
     </style>
 </head>
 
 <body>
-    <div class="dropdown">
-        <button>Menü</button>
-        <nav tabindex="0">
-            <ul>
-                <li>
-                    <a href="#">
-                        Edit
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Delete
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Reply
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="dropdown" id="loh">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus commodi voluptatem quam dolores consequatur cupiditate omnis necessitatibus ducimus deleniti inventore ut nemo ad, unde, quo neque provident? Officiis harum officia placeat blanditiis,
+        at explicabo in facilis dolore, amet sunt architecto praesentium perspiciatis! Reprehenderit ut numquam explicabo minima culpa dolorem, tempora molestiae in expedita placeat rem aliquid! Iusto sit doloribus maiores, provident id veniam dolor esse
+        nihil odio repudiandae dolores facilis molestiae? Quaerat ducimus voluptate rem voluptas repudiandae, corrupti corporis laudantium culpa magni quos accusantium iure, quae doloremque repellendus non illo ea quisquam voluptatem dolorum reiciendis!
+        In animi, soluta maiores laudantium a placeat, distinctio quam sequi omnis obcaecati similique, eos praesentium doloremque sit dolorem quo repellendus! Accusantium ratione animi, distinctio doloribus ab illum soluta natus ut reprehenderit sed
+        non labore tempora velit, odio saepe modi eius consectetur fugiat aliquid molestiae iure, id nemo at quaerat? Aperiam ducimus voluptatibus, nisi error iusto quam molestias quasi, laborum nesciunt culpa soluta nostrum quaerat magnam at. Quas in
+        blanditiis iure similique. Non ad, sed, architecto recusandae aliquam sit facere quis dolores cum amet nemo, totam temporibus consequuntur reprehenderit est consectetur. Quidem quis dignissimos eveniet eligendi delectus ratione sint officiis et
+        iste mollitia. Sit, repellendus veritatis!
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        jQuery(function($) {
+            var $doc = $(document),
+                ratio = $doc.width() / $(window).width() * 1.5, //отношение окна к общей ширене блока, чтобы тянуть весь блок.
+                mousepos, to;
+            $doc.on('mousedown', '.dropdown', dragstart);
+
+            function dragstart(e) {
+                e.preventDefault();
+                mousepos = e.screenX;
+                $doc.on('mousemove.drag', drag);
+                $doc.one('mouseup.drag mouseout.drag', dragstop);
+            }
+
+            function drag(e) {
+                clearTimeout(to);
+                var delta = (e.screenX - mousepos) * ratio;
+                to = setTimeout(function() { // таймаут чтобы события от мыши не перекрывали друг друга, 
+                    $doc.scrollLeft($doc.scrollLeft() - delta);
+                    mousepos = e.screenX;
+                }, 0);
+            }
+
+            function dragstop(e) {
+                $doc.off('mousemove.drag mouseup.drag mouseout.drag');
+            }
+        });
     </script>
 </body>
 

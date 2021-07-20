@@ -775,6 +775,7 @@ tr th {
             opacity: 0.75;
             padding: 0.5px 6px;
             margin: 0 3px;
+            z-index: 22;
         }
     }
 }
@@ -901,6 +902,11 @@ tr th {
         .list-item img {
             position: absolute;
             left: 4px;
+            height: 10px;
+            top: 3px;
+        }
+        .list-item span:first-child {
+            margin-left: 0;
         }
         .list-item span {
             margin-left: 20px;
@@ -921,13 +927,13 @@ tr th {
         }
     }
     .block1 .list:hover:before {
-        background-color: rgba(81, 81, 81, 0.3);
+        background-color: rgb(120, 120, 133);
         content: '';
         width: 4px;
         height: 4px;
         position: absolute;
         border-radius: 100%;
-        top: 6px;
+        top: 4px;
         left: -2px;
     }
     .block1 {
@@ -947,11 +953,12 @@ tr th {
             left: 5px;
         }
         .list-item span {
-            margin-left: 25px;
+            margin-left: 27px;
+            // text-align: center;
         }
         .list {
             height: 18px;
-            line-height: 18px;
+            // line-height: 18px;
             margin-left: 5px;
         }
         .list:first-child span {
@@ -998,11 +1005,11 @@ tr th {
         background: rgb(212, 212, 212);
         color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
-        .list-item img {
+        .list-item svg {
             margin-right: 5px;
-            width: 12px;
-            height: 12px;
-            top: 2px;
+            width: 14px;
+            height: 14px;
+            top: 1px;
             position: relative;
             margin-left: 18px;
         }
@@ -1019,13 +1026,13 @@ tr th {
         }
     }
     .block1 .list:hover:before {
-        background-color: rgba(81, 81, 81, 0.3);
+        background-color: rgb(120, 120, 133);
         content: '';
         width: 4px;
         height: 4px;
         position: absolute;
         border-radius: 100%;
-        top: 6px;
+        top: 5px;
         left: 6px;
     }
     .block1 {
@@ -1310,7 +1317,7 @@ tr th {
             top: 2px;
         }
         .list-item {
-            margin-left: 5px;
+            margin-left: 10px;
             width: 100%;
             box-sizing: border-box;
             display: block;
@@ -1432,8 +1439,15 @@ tr th {
     position: relative;
 }
 
-.select-btn {
-    background-color: rgba(81, 81, 81, 0.7);
+.select-btn:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    top: 5px;
+    left: 3px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgb(120, 120, 133);
 }
 
 //BTN header
@@ -1469,22 +1483,47 @@ tr th {
     text-align: center;
 }
 
+.colum-sum {
+    text-align: right;
+}
+
 //TOOLTIP
 .tooltip:hover:before {
-    transition: 0.3s;
-    transition-delay: .2s;
     opacity: 1;
     visibility: visible;
     top: 22px;
+    z-index: 999;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition-delay: .3s;
+    -moz-transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
 }
 
+// .country-block:hover .tooltip {
+//     visibility: visible;
+//     opacity: 1;
+//     top: 22px;
+//     z-index: 999;
+//     transition: 0.3s;
+//     -moz-transition: 0.3s;
+//     -webkit-transition: 0.3s;
+//     transition-delay: .3s;
+//     -moz-transition-delay: 0.3s;
+//     -webkit-transition-delay: 0.3s;
+// }
+// .tooltip:hover {
+//     visibility: hidden !important;
+// }
 .tooltip:before {
     content: attr(data);
     position: absolute;
     right: -40%;
     width: max-content;
+    user-select: none;
     height: 20px;
-    background-color: rgba(81, 81, 81, 0.8);
+    background-color: rgba(81, 81, 81, 0.6);
     border-radius: 3px;
     top: 0;
     color: white;
@@ -1492,20 +1531,22 @@ tr th {
     padding-left: 5px;
     padding-right: 5px;
     z-index: 999;
+    // transition: 0.2s;
+    // -moz-transition: 0.2s;
+    // -webkit-transition: 0.2s;
+    // transition-delay: .2s;
+    // -moz-transition-delay: 0.2s;
+    // -webkit-transition-delay: 0.2s;
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s;
     backdrop-filter: blur(4px);
 }
 
-// .tooltip::before:hover {
-//     visibility: hidden;
-// }
 //TOOLTIP
-.max-lenght-comment {
+.max-lenght-comment,
+.max-lenght-product,
+.max-lenght-status,
+.max-lenght,
+.addres-block {
     position: relative;
-}
-
-.colum-sum {
-    text-align: right;
 }

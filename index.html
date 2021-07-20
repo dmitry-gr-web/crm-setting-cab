@@ -34,25 +34,30 @@
         <div class="logo-pages-wrap">
             <div class="logo-position"><img class="logo-lp-crm" src="img/crm-logo.svg" alt=""></div>
             <div class="block-pages">
-                <span class="pages-dropdown">
-                <div class="dropdown">
-                    <div class="btn"><span class="btn-span">Отображено с 10000 по 50000</span></div>
-            <ul class="ul-block" data-simplebar data-simplebar-auto-hide="false">
-                <li class="list">Отображать по:</li>
-                <li class="list">50</li>
-                <li class="list">100</li>
-                <li class="list">300</li>
-                <li class="list">500</li>
-                <li class="list">800</li>
-                <li class="list">1000</li>
-            </ul>
-        </div>
-        </span>
-        <span class="pages-total">/456</span>
-        <div class="block-pages-num">
-            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>.... 159</span>
-        </div>
-        </div>
+                <div class="pages-animation-block">
+                    <div class="current-pages">
+                        <span class="pages-btn-span">Отображено с 10000 по 50000</span>
+                        <span class="pages-total">/456</span>
+                    </div>
+                    <div class="block-pages-num">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>.... 159</span>
+                    </div>
+                </div>
+                <div class="pages-dropdown">
+                    <div class="dropdown">
+                        <div class="btn"><span class="btn-span">Отображать по:</span> <span class="btn-chose">50</span></div>
+                        <ul class="ul-block">
+                            <!-- <li class="list">Отображать по:</li> -->
+                            <li class="list">50</li>
+                            <li class="list">100</li>
+                            <li class="list">300</li>
+                            <li class="list">500</li>
+                            <li class="list">800</li>
+                            <li class="list">1000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="block-btn">
             <button class="btn-header"><img src="img/settings.svg" alt="setting"></button>
@@ -341,13 +346,13 @@
                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                 <div class="list"><span class="list-item"><span>Все</span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/ukraine.svg" alt=""> <span>ua</span></span>
+                                <div class="list"><span class="list-item"><img src="img/ukraine2.svg" alt=""> <span>ua</span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/russia.svg" alt=""> <span>ru</span></span>
+                                <div class="list"><span class="list-item"><img src="img/rus.svg" alt=""> <span>ru</span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/kazakhstan.svg" alt=""> <span>kz</span></span>
+                                <div class="list"><span class="list-item"><img src="img/kz.svg" alt=""> <span>kz</span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/albania.svg" alt=""> <span>al</span></span>
+                                <div class="list"><span class="list-item"><img src="img/alban.svg" alt=""> <span>al</span></span>
                                 </div>
                             </div>
                         </div>
@@ -372,15 +377,39 @@
                             <div class="pay-btn">Вcе</div>
                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                 <div class="list"><span class="list-item">Все</span></div>
-                                <div class="list"><span class="list-item"><img src="img/card.svg" alt=""></span>
+                                <div class="list"><span class="list-item"><span class="svg-wrap">
+                                    <svg class="card" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.92 10.8C8.92 10.9867 9.1 11.14 9.32666 11.14H10.9H12.4733C12.7 11.14 12.88 10.9867 12.88 10.8V10.46C12.88 10.2733 12.7 10.12 12.4733 10.12H10.9H9.32666C9.1 10.12 8.92 10.2733 8.92 10.46V10.8V10.8Z" fill="#9C9B9E"/>
+                                        <path d="M13.8022 2H2.21379C0.999001 2 0.015984 3.025 0.015984 4.29167L0.015984 5.6C0.015984 5.61667 0 5.625 0 5.65C0 5.675 0.015984 5.68333 0.015984 5.7L0.015984 11.7083C0.015984 12.975 0.999001 14 2.21379 14H13.8022C15.017 14 16 12.975 16 11.7083V4.29167C16 3.025 15.017 2 13.8022 2ZM2.21379 3.25H13.8022C14.3536 3.25 14.8012 3.71667 14.8012 4.29167V5.025H1.21479V4.29167C1.21479 3.71667 1.66234 3.25 2.21379 3.25ZM13.8022 12.75H2.21379C1.66234 12.75 1.21479 12.2833 1.21479 11.7083V6.275H14.8012V11.7167C14.8012 12.2833 14.3536 12.75 13.8022 12.75Z" fill="#9C9B9E"/>
+                                    </svg>
+                                    </span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/Coinpay.svg" alt=""></span>
+                                <div class="list"><span class="list-item"><span class="svg-wrap">
+                                    <svg class="coin" width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
+                                    </svg>                            
+                                    </span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/convertpay.svg" alt=""></span>
+                                <div class="list"><span class="list-item"><span class="svg-wrap">
+                                    <svg class="convert-pay" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.5642 14H5.4276C4.64446 14 4 13.4184 4 12.7117V9.28834C4 8.5816 4.64446 8 5.4276 8H14.5724C15.3555 8 16 8.5816 16 9.28834V12.7117C15.9918 13.4258 15.3555 14 14.5642 14ZM5.4276 9.10429C5.31339 9.10429 5.22366 9.18528 5.22366 9.28834V12.7117C5.22366 12.8147 5.31339 12.8957 5.4276 12.8957H14.5724C14.6866 12.8957 14.7763 12.8147 14.7763 12.7117V9.28834C14.7763 9.18528 14.6866 9.10429 14.5724 9.10429H5.4276V9.10429Z" fill="#9C9B9E"/>
+                                        <path d="M10.9399 11.2212C10.897 11.1058 10.8455 11.0096 10.7682 10.9231C10.691 10.8365 10.5966 10.7692 10.485 10.7115C10.4335 10.6827 10.3391 10.6538 10.1931 10.6154V9.71154C10.2446 9.73077 10.279 9.76923 10.3133 9.80769C10.3648 9.875 10.3991 9.97115 10.4163 10.1058L10.4249 10.1923L10.9313 10.1058L10.9227 10.0192C10.8884 9.75962 10.794 9.54808 10.6223 9.39423C10.5107 9.28846 10.3648 9.22115 10.1845 9.19231V9H9.82403V9.19231C9.61803 9.23077 9.45494 9.29808 9.34335 9.41346C9.15451 9.59615 9.06009 9.84615 9.06009 10.1346C9.06009 10.2981 9.09442 10.4519 9.15451 10.5865C9.22318 10.7212 9.3176 10.8269 9.43777 10.9038C9.56652 10.9904 9.69528 11.0481 9.82403 11.0769V12.1058C9.74678 12.0769 9.68669 12.0192 9.62661 11.9327C9.56652 11.8462 9.52361 11.7115 9.50644 11.5288L9.49785 11.4327L9 11.5385L9.00858 11.6154C9.02575 11.8269 9.06867 12.0096 9.15451 12.1538C9.24034 12.3077 9.34335 12.4135 9.46352 12.4808C9.56652 12.5385 9.68669 12.5769 9.83262 12.6058V13H10.1931V12.6154C10.4163 12.5865 10.6052 12.4808 10.7511 12.3077C10.9142 12.1154 11 11.875 11 11.5865C11 11.4615 10.9828 11.3365 10.9399 11.2212ZM10.4936 11.6154C10.4936 11.7596 10.4592 11.8654 10.382 11.9615C10.3305 12.0288 10.2704 12.0769 10.1931 12.1058V11.1827C10.3219 11.2404 10.3906 11.2981 10.4163 11.3365C10.4678 11.4038 10.4936 11.5 10.4936 11.6154ZM9.83262 9.70192V10.5096C9.74678 10.4712 9.6867 10.4231 9.64378 10.3654C9.59227 10.2981 9.56652 10.2019 9.56652 10.0962C9.56652 9.99038 9.60086 9.89423 9.66094 9.81731C9.70386 9.76923 9.76395 9.73077 9.83262 9.70192Z" fill="#9C9B9E"/>
+                                        <path d="M11.8966 2H2.09581C0.937398 2 0 2.902 0 4.01667V10.9833C0 12.098 0.937398 13 2.09581 13H3.01796V11.9H2.09581C1.56995 11.9 1.14317 11.4893 1.14317 10.9833V4.01667C1.14317 3.92133 1.17365 3.84067 1.19652 3.76L5.69298 6.67867C6.08166 6.97933 6.54654 7.126 7.01143 7.126C7.46108 7.126 7.91072 6.98667 8.27654 6.70067L12.7959 3.72333C12.8263 3.81867 12.8568 3.914 12.8568 4.01667V6.972H14V4.01667C13.9924 2.90933 13.055 2 11.8966 2ZM7.59064 5.82067C7.24007 6.092 6.75231 6.092 6.36364 5.79133L2.22537 3.1H11.7137L7.59064 5.82067Z" fill="#9C9B9E"/>
+                                    </svg>
+                                    </span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/decline.svg" alt=""> </span>
+                                <div class="list"><span class="list-item"><span class="svg-wrap">
+                                    <svg class="svg-decline" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.6471 0H2.35294C1.05241 0 0 1.05241 0 2.35294V13.6471C0 14.9476 1.05241 16 2.35294 16H13.6471C14.9476 16 16 14.9476 16 13.6471V2.35294C16 1.06096 14.939 0 13.6471 0ZM14.7166 13.6471C14.7166 14.2374 14.2374 14.7166 13.6471 14.7166H2.35294C1.76257 14.7166 1.28342 14.2374 1.28342 13.6471V2.35294C1.28342 1.76257 1.76257 1.28342 2.35294 1.28342H13.6471C14.2374 1.28342 14.7166 1.76257 14.7166 2.35294V13.6471Z" fill="#9C9B9E"/>
+                                        <path d="M11.662 4.33797C11.4139 4.08984 11.0032 4.08984 10.7551 4.33797L8.11123 6.98182L5.46738 4.33797C5.21925 4.08984 4.80855 4.08984 4.56042 4.33797C4.3123 4.5861 4.3123 4.99679 4.56042 5.24492L7.20427 7.88877L4.56042 10.5326C4.3123 10.7807 4.3123 11.1914 4.56042 11.4396C4.68877 11.5679 4.85133 11.6278 5.0139 11.6278C5.17647 11.6278 5.33903 11.5679 5.46738 11.4396L8.11123 8.79572L10.7551 11.4396C10.8834 11.5679 11.046 11.6278 11.2086 11.6278C11.3711 11.6278 11.5337 11.5679 11.662 11.4396C11.9102 11.1914 11.9102 10.7807 11.662 10.5326L9.01818 7.88877L11.662 5.24492C11.9102 4.99679 11.9102 4.59465 11.662 4.33797Z" fill="#9C9B9E"/>
+                                    </svg>              
+                                    </span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/obmen.svg" alt=""></span>
+                                <div class="list"><span class="list-item"><span class="svg-wrap">
+                                    <svg class="svg-trade" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.3015 15C14.9197 15 14.603 14.7025 14.603 14.3438V11.7012L13.2712 12.9525C10.3655 15.6825 5.63446 15.6825 2.72875 12.9525C1.93714 12.2087 1.34109 11.325 0.968568 10.3363C0.838184 9.995 1.03376 9.61875 1.39697 9.49625C1.76019 9.37375 2.16065 9.5575 2.29104 9.89875C2.58906 10.7038 3.07334 11.4213 3.71595 12.025C6.08149 14.2475 9.91851 14.2475 12.2841 12.025L13.6158 10.7738H10.8033C10.4214 10.7738 10.1048 10.4763 10.1048 10.1175C10.1048 9.75875 10.4214 9.46125 10.8033 9.46125H15.3015C15.3946 9.46125 15.4878 9.47875 15.5716 9.51375C15.6554 9.54875 15.7299 9.5925 15.7951 9.65375C15.8603 9.715 15.9162 9.785 15.9441 9.86375C15.9814 9.9425 16 10.03 16 10.1175V14.3438C16 14.7112 15.6834 15 15.3015 15ZM14.3702 6.53875C14.0815 6.53875 13.8114 6.3725 13.709 6.10125C13.4109 5.29625 12.9267 4.5875 12.2841 3.975C9.91851 1.7525 6.08149 1.76125 3.71595 3.975L2.38417 5.22625H5.19674C5.57858 5.22625 5.89523 5.52375 5.89523 5.8825C5.89523 6.24125 5.57858 6.53875 5.19674 6.53875H0.698486C0.605355 6.53875 0.512224 6.52125 0.437718 6.48625C0.363213 6.46 0.288708 6.41625 0.223516 6.355C0.214203 6.34625 0.204889 6.3375 0.195576 6.32875C0.130384 6.27625 0.0838183 6.20625 0.0558789 6.13625C0.0186263 6.0575 0 5.97875 0 5.8825V1.65625C0 1.28875 0.316647 1 0.698486 1C1.08033 1 1.39697 1.2975 1.39697 1.65625V4.29875L2.72875 3.0475C5.63446 0.3175 10.3655 0.3175 13.2712 3.0475C14.0629 3.79125 14.6589 4.675 15.0314 5.66375C15.1618 6.005 14.9662 6.38125 14.603 6.50375C14.5285 6.53 14.4447 6.53875 14.3702 6.53875Z" fill="#9C9B9E"/>
+                                    </svg>        
+                                    </span></span>
                                 </div>
                             </div>
                         </div>
@@ -641,7 +670,7 @@
                         <div class="color-91d100 color-form2"><span class="max-lenght-status">Принят</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block tooltip"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -711,11 +740,11 @@
                     <td class="max-lenght">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
-                    <td class="max-lenght ">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
-                    <td class="max-lenght ">Доп поле</td>
+                    <td class="max-lenght">Доп поле</td>
+                    <td class="max-lenght">Доп поле</td>
                 </tr>
                 <tr class="crm-main-table selected-lock">
                     <td class="id-table">12341</td>
@@ -723,7 +752,7 @@
                         <div class="color-fd7777 color-form2"><span class="max-lenght-status">Отказ</span></div>
                     </td>
                     <td class="max-lenght">Александр </td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/kz.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag kz" src="img/kz.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Lifecell.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -793,13 +822,13 @@
                     <td class="max-lenght">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
-                    <td class="max-lenght ">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
-                    <td class="max-lenght ">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
-                    <td class="max-lenght ">Доп поле</td>
                     <td class="max-lenght">Доп поле</td>
-                    <td class="max-lenght ">Доп поле</td>
+                    <td class="max-lenght">Доп поле</td>
+                    <td class="max-lenght">Доп поле</td>
+                    <td class="max-lenght">Доп поле</td>
+                    <td class="max-lenght">Доп поле</td>
                 </tr>
                 <tr class="crm-main-table">
                     <td class="id-table">1251</td>
@@ -807,7 +836,7 @@
                         <div class="color-ffe600 color-form2"><span class="max-lenght-status">Отправлен</span></div>
                     </td>
                     <td class="max-lenght">Александр Серич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Unknow number.svg" alt="">+38 011 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -891,7 +920,7 @@
                         <div class="color-00CC00 color-form2"><span class="max-lenght-status">Завершен</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/incorrect number.svg" alt="">+38 096</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -973,7 +1002,7 @@
                         <div class="color-da291c color-form2"><span class="max-lenght-status">Возврат (в пути)</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1055,7 +1084,7 @@
                         <div class="color-83004F color-form2"><span class="max-lenght-status">Утилизация</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/earth 1.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag world" src="img/earth 1.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1137,7 +1166,7 @@
                         <div class="color-3415B0 color-form2"><span class="max-lenght-status">На контроле</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1220,7 +1249,7 @@
                         <div class="color-6996D3 color-form2"><span class="max-lenght-status">Деньги в пути</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1310,7 +1339,7 @@
                         <div class="color-FF0000 color-form2"><span class="max-lenght-status">Возврат (завершён)</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1392,7 +1421,7 @@
                         <div class="color-9C02A7 color-form2"><span class="max-lenght-status">Успешно выполнено</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/rus.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1483,7 +1512,7 @@
                         <div class="color-C94F62 color-form2"><span class="max-lenght-status">Успешно не выполнено</span></div>
                     </td>
                     <td class="max-lenght">Александр Сергеевич</td>
-                    <td class="country-block"><span class="country-flag"><img class="flag" src="img/alban.svg" alt="flag"></span>
+                    <td class="country-block"><span class="country-flag"><img class="flag al" src="img/alban.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1630,71 +1659,12 @@
 
     </div>
     <script src="js/jquery.js"></script>
-    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script> -->
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script.crm-table.js"></script>
     <script src="js/select.js"></script>
+    <!-- <script src="js/dragscroll.js"></script> -->
     <script src="js/jquery-ui.min.js"></script>
-    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
-    <!-- <script src="js/slick.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script> -->
-    <!-- <script src="js/multiselect.js"></script> -->
-    <script>
-        // $('.wrap-scroll').multiSelect({
-        //     actcls: 'select-toggle', //active class
-        //     selector: '.crm-main-table', //specify the selectable elements
-        //     except: ['.wrap-scroll'], //specify the selectable container
-        //     statics: ['.selected-lock'], //rows with 'static' class will be unselectable
-        //     callback: function(items) {
-
-        //         console.log(items);
-        //     }
-        // });
-    </script>
-    <!-- <script>
-        $('.crm-header').slick({
-            slidesToShow: 13,
-            dots: false,
-            infinite: false,
-            speed: 300,
-            arrows: false,
-            slidesToScroll: 13,
-
-            draggable: true,
-            variableWidth: true,
-            responsive: [{
-                breakpoint: 1620,
-                settings: {
-                    slidesToShow: 5,
-                    arrows: true,
-                    slidesToScroll: 12,
-                }
-                // }, {
-                //     breakpoint: 1480,
-                //     settings: {
-                //         slidesToShow: 12,
-                //         arrows: true,
-                //         slidesToScroll: 3,
-                //     }
-                // }, {
-                //     breakpoint: 1350,
-                //     settings: {
-                //         slidesToShow: 8,
-                //         arrows: true,
-                //         slidesToScroll: 6,
-                //     }
-                // }, {
-                //     breakpoint: 1180,
-                //     settings: {
-                //         slidesToShow: 7,
-                //         arrows: true,
-                //         slidesToScroll: 7,
-                //     }
-            }]
-        })
-    </script> -->
 
     <script>
         new SimpleBar(document.querySelector('.container-info-settings'), {
@@ -1702,14 +1672,6 @@
             forceVisible: true | 'x' | 'y',
             clickOnTrack: false
         });
-        // new SimpleBar(document.querySelector('.wrap-scroll'), {
-        //     autoHide: true,
-        //     forceVisible: true | 'x' | 'y'
-        // });
-        // new SimpleBar(document.querySelector('.crm-body'), {
-        //     autoHide: true,
-        //     forceVisible: true | 'x' | 'y'
-        // });
     </script>
     <script src="js/drag-jq-ui.js "></script>
     <script>
@@ -1758,36 +1720,6 @@
             $("#fixed-s").datepicker("option", "showButtonPanel", true);
         });
     </script>
-    <!-- <script>
-        $('.owl-carousel').owlCarousel({
-            loop: false,
-            margin: 2,
-            nav: true,
-            autoWidth: true,
-
-            // autoHeight: true,
-            // items: 14,
-            dots: false,
-            // stagePadding: 100,
-            // paginationSpeed: 1000,
-            slideBy: 5,
-            items: 12
-                // responsiveClass: true,
-                // autoHeightClass: true
-                // stagePadding: '20px'
-                // responsive: {
-                //     0: {
-                //         items: 2
-                //     },
-                //     600: {
-                //         items: 7
-                //     },
-                //     1000: {
-                //         items: 10
-                //     }
-                // }
-        })
-    </script> -->
     <script>
         /* Локализация datepicker */
         $.datepicker.regional['ru'] = {
@@ -1809,11 +1741,7 @@
         };
         $.datepicker.setDefaults($.datepicker.regional['ru']);
     </script>
-    <!-- <script>
-        tippy('.crm-main-teble', {
-            content: 'My tooltip!',
-        });
-    </script> -->
+
 
 </body>
 
