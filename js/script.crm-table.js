@@ -17,8 +17,8 @@ $(document).ready(function() {
                 if ($(".crm-main-table").hasClass("select-toggle")) {
                     $("#hoverSelect").show();
                     $("#hoverSelect")
-                        .css("left", pos.pageX + 10 + "px")
-                        .css("top", pos.pageY + 10 + "px");
+                        .css("left", pos.pageX + 20 + "px")
+                        .css("top", pos.pageY + -40 + "px");
                 }
             })
             .mouseleave(function(e) {
@@ -26,71 +26,86 @@ $(document).ready(function() {
             });
     });
 });
-// $('.container-info-settings').on(function(e) {
-//     let leftCLick = (e.which == 1);
-//     let middleClick = (e.which == 3);
-//     if (leftCLick.mousedown()) {
-//         middleClick.mousedown();
-//     }
-// })​;
-// $(".simplebar-content-wrapper").addClass("dragscroll");
-//aasdads
-// $('.tooltip').on('hover', function() {
-//     let countryUA = 'Ukraine';
-//     if ($(this).find('img.ua')) {
-//         $(this).attr('data', countryUA);
-//     }
-//     // if ($('.tooltip .flag').hasClass('ru')) {
-//     //     $(this).attr('data', 'Russia');
-//     //     console.log('2');
-//     // }
+// $(".container-info-settings").on("mousedown", (e) => {
+//     $(".simplebar-scrollbar").click();
+//     $(".simplebar-scrollbar ").css('transform','translate3d(200px,0px,0px)');
+ 
 // });
 //tooltip 
+// $(".crm-main-table .country-block").each(function(e, item) {
+//     let ukraine = 'Украина';
+//     let russia = 'Россия';
+//     let kazahstan = 'Казахстан';
+//     let alb = 'Албания';
+//     let world = 'Мир';
+//     if ($(item.children[0].children).hasClass('ua')) {
+//         $(this).addClass('tooltip');
+//         $(this).attr('data', ukraine);
+//     }
+//     if ($(item.children[0].children).hasClass('ru')) {
+//         $(this).addClass('tooltip');
+//         $(this).attr('data', russia);
+//     }
+//     if ($(item.children[0].children).hasClass('kz')) {
+//         $(this).addClass('tooltip');
+//         $(this).attr('data', kazahstan);
+//     }
+//     if ($(item.children[0].children).hasClass('al')) {
+//         $(this).addClass('tooltip');
+//         $(this).attr('data', alb);
+//     }
+//     if ($(item.children[0].children).hasClass('world')) {
+//         $(this).addClass('tooltip');
+//         $(this).attr('data', world);
+//     }
+// });
+$(".crm-main-table .tel-colum .tel").each(function(e, item) {
+    let vodofone = 'Водафон';
+    let kyivstar = 'Киевстар';
+    let lifecell = 'Лайфселл';
+    let incorrectNumber = 'Неверный номер';
+    let unknownNumber = 'Неизвестный номер';
+    if ($(item.children[0]).hasClass('vod')) {
+        $(this).append('<div class="tooltip">' + vodofone + '</div>');
+    }
+    if ($(item.children[0]).hasClass('ky')) {
+        $(this).append('<div class="tooltip">' + kyivstar + '</div>');
+    }
+    if ($(item.children[0]).hasClass('life')) {
+        $(this).append('<div class="tooltip">' + lifecell + '</div>');
+    }
+    if ($(item.children[0]).hasClass('unk')) {
+        $(this).append('<div class="tooltip">' + incorrectNumber + '</div>');
+    }
+    if ($(item.children[0]).hasClass('incorr')) {
+        $(this).append('<div class="tooltip">' + unknownNumber + '</div>');
+    }
+});
 $(".crm-main-table .country-block").each(function(e, item) {
-    // if ($(item.children[0].children).hasClass('ua')) {
-    //     $(this).append('<div class="tooltip">Украина</div>');
-    //     // $('.tooltip').attr('data', ukraine);
-    // }
-    // if ($(item.children[0].children).hasClass('ru')) {
-    //     $(this).append('<div class="tooltip">Россия</div>');
-    //     // $('.tooltip').attr('data', ukraine);
-    // }
-    // if ($(item.children[0].children).hasClass('kz')) {
-    //     $(this).append('<div class="tooltip">Казахстан</div>');
-    //     // $('.tooltip').attr('data', ukraine);
-    // }
-    // if ($(item.children[0].children).hasClass('al')) {
-    //     $(this).append('<div class="tooltip">Албания</div>');
-    //     // $('.tooltip').attr('data', ukraine);
-    // }
-    // if ($(item.children[0].children).hasClass('world')) {
-    //     $(this).append('<div class="tooltip">Мир</div>');
-    //     // $('.tooltip').attr('data', ukraine);
-    // }
     let ukraine = 'Украина';
     let russia = 'Россия';
     let kazahstan = 'Казахстан';
     let alb = 'Албания';
     let world = 'Мир';
     if ($(item.children[0].children).hasClass('ua')) {
-        $(this).addClass('tooltip');
-        $(this).attr('data', ukraine);
+        $(this).append('<div class="tooltip">' + ukraine + '</div>');
+        // $('.tooltip').attr('data', ukraine);
     }
     if ($(item.children[0].children).hasClass('ru')) {
-        $(this).addClass('tooltip');
-        $(this).attr('data', russia);
-    }
-    if ($(item.children[0].children).hasClass('kz')) {
-        $(this).addClass('tooltip');
-        $(this).attr('data', kazahstan);
+        $(this).append('<div class="tooltip">' + russia + '</div>');
+        // $('.tooltip').attr('data', ukraine);
     }
     if ($(item.children[0].children).hasClass('al')) {
-        $(this).addClass('tooltip');
-        $(this).attr('data', alb);
+        $(this).append('<div class="tooltip">' + alb + '</div>');
+        // $('.tooltip').attr('data', ukraine);
     }
     if ($(item.children[0].children).hasClass('world')) {
-        $(this).addClass('tooltip');
-        $(this).attr('data', world);
+        $(this).append('<div class="tooltip">' + world + '</div>');
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if ($(item.children[0].children).hasClass('kz')) {
+        $(this).append('<div class="tooltip">' + kazahstan + '</div>');
+        // $('.tooltip').attr('data', ukraine);
     }
 });
 //tooltip
@@ -102,13 +117,23 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
         text = text.substring(0, 28) + "...";
         // $(this).append('<div class="tooltip"></div>');
         // $('.tooltip').css('visibility', 'visible');
-        $(this).addClass('tooltip');
-        $(this).attr('data', boxMemory);
-    } else {
-        $(this).removeClass('tooltip');
+        $(this).text(text);
+        $(this).append('<div class="tooltip">' + boxMemory + '</div>');
     }
-    $(this).text(text);
 });
+// $(".crm-main-table .max-lenght-comment").text(function(i, text) {
+//     let boxMemory = text;
+//     if (text.length >= 30) {
+//         text = text.substring(0, 28) + "...";
+//         // $(this).append('<div class="tooltip"></div>');
+//         // $('.tooltip').css('visibility', 'visible');
+//         $(this).addClass('tooltip');
+//         $(this).attr('data', boxMemory);
+//     } else {
+//         $(this).removeClass('tooltip');
+//     }
+//     $(this).text(text);
+// });
 
 
 $(".crm-main-table .max-lenght").text(function(i, text) {
@@ -142,35 +167,8 @@ $(".crm-main-table .max-lenght-status").text(function(i, text) {
 });
 
 
-// });
-// $("#prev").click(function() {
-//     $("#crmHeader").animate({
-//         scrollLeft: "0px",
-//     }, { duration: 300, queue: false });
-// });
-// $(".tooltip").on("hover", (p) => {
-//     $(p).attr('data', 'Ukraine');
-//     $(".tooltip").css('visibility', 'visible');
-// });
 
 
-//asdasd
-// $(".country-colum").on("hover", (e) => {
-//     $(".ua").addClass('tooltip');
-// });
-// window.addEventListener('DOMContentLoaded', function() {
-//     var menu = document.querySelector('#crmHeader'),
-//         node = menu.querySelectorAll('.crm-header-link');
-//     [].reduce.call(node, function(scrollLeft, item) {
-//         var scroll = scrollLeft + item.offsetWidth;
-//         item = document.querySelector('.arrow-next');
-//         item.addEventListener('click', function() {
-
-//             menu.scrollLeft = menu.scrollLeft == scrollLeft ? scroll : scrollLeft
-//         });
-//         return scroll
-//     }, 0);
-// });
 
 //scroll slider header
 $("#next").click(function() {
@@ -183,149 +181,97 @@ $("#prev").click(function() {
         scrollLeft: "0px",
     }, { duration: 300, queue: false });
 });
-//scroll slider header
-
-// let current,
-//     first = document.querySelector('#crmHeader > div:first-child'),
-//     last = document.querySelector('#crmHeader > div:last-child');
-
-// let btnss = document.getElementsByTagName('span');
-// for (let btn of btnss)
-//     btn.addEventListener('click', onBtnClick);
-
-// function onBtnClick(e) {
-//     if (current)
-//         current.classList.remove('active');
-//     switch (e.target.id) {
-//         case 'prev':
-//             current = current ? current.previousElementSibling || last : last;
-//             break;
-//         case 'next':
-//             current = current ? current.nextElementSibling || first : first;
-//             break;
-//         case 'first':
-//             current = first;
-//             break;
-//         case 'last':
-//             current = last;
-//     }
-//     current.classList.add('active');
-// }
-// $(document).ready(function() {
-
-//     $('.arrow-next').on('click', function() {
-//         if ($('div.active').index() == -1) {
-//             $('.crm-header .crm-header-link:first-child').addClass('active');
-//         } else {
-
-//             $('.crm-header-link.active').next('.crm-header-link').addClass('active');
-//             $('.crm-header-link.active').prev('.crm-header-link').removeClass('active');
-//         }
-
-//     });
-
-//     $('.arrow-prev').on('click', function() {
-//         if ($('.crm-header-link.active').index() == -1) {
-//             /* без действий */
-//         } else {
-
-//             $('.crm-header-link.active').prev('.crm-header-link').addClass('active');
-//             $('.crm-header-link.active').next('.crm-header-link').removeClass('active');
-//         }
-
-//     });
-
-// });
-//tooltip
-
-// $(".arrow-next").click(function() {
-//     $(".crm-header").scrollTo('toggle');
-
-// });
-// $(".arrow-next").click(function() { // ID откуда кливаем
-//     $('html, body').animate({
-//         scrollTop: $(".item-1").offset().top // класс объекта к которому приезжаем
-//     }, 1000); // Скорость прокрутки
-// });
-//ctrl a
-// const listA = document.querySelector('body');
-// listA.addEventListener('keydown', (e) => {
-//     if ((e.ctrlKey) && (e.which == 65) || (e.metaKey) && (e.which == 65)) {
-//         document.querySelectorAll('.crm-main-table').forEach(e => {
-//             if (!e.classList.contains('selected-lock')) {
-//                 e.classList.add('select-toggle');
-//                 // count = e.length;
-//                 // // $(".select-toggle").mousemove(
-//                 // //     function(pos) {
-//                 // //         if ($(".crm-main-table").hasClass('select-toggle')) {
-//                 // //             $("#hoverSelect").show();
-//                 // //             $("#hoverSelect").css('left', (pos.pageX + 10) + 'px').css('top', (pos.pageY + 10) + 'px');
-//                 // //         }
-//                 // //     }
-//                 // // )
-//                 // $('.count-hover').text(count);
-//                 // console.log(count);
-//             }
-//             // $('.crm-main-table').length.appendTo('.count-hover');
-//         });
-//         e.preventDefault();
-//     }
-// });
-
-//ctrl a
-//ctrl+click
-
-// [...document.querySelectorAll('.crm-main-table')].map(x => {
-//     x.addEventListener('click', (e) => {
-//         if (e.ctrlKey || e.metaKey) {
-//             x.classList.toggle('select-toggle');
-//         }
-//         // else if (e.shiftKey) {
-//         //     x.classList.toggle('select-toggle');
-//         else if (x.classList.contains('selected-lock')) {
-//             x.classList.remove('select-toggle');
-//         } else {
-//             [...document.querySelectorAll('.crm-main-table')].map(y => y.classList.remove('select-toggle'));
-//             x.classList.toggle('select-toggle');
-//         }
-//     });
-// });
-
-
 
 
 //menu country btn
 $(".colum-country .country-btn").click(function() {
     $(".colum-country .block1").toggleClass("toggle");
-    $(".crm-main-table").addClass("z-index");
+    // $(".crm-main-table").addClass("z-index");
 });
 $(".colum-country .block1 .list").click(function() {
-    let text = $(this).html();
-    $(".country-btn").html(text);
+    // let text = $(this).html();
+    // $(".country-btn").html(text);
+    // $(".colum-country .block1").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+
+
+    $(".colum-country .list .all").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    $(this).toggleClass('select-btn');
+    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
+    // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.colum-country .block1 .list.select-btn').length == 1) {
+        let appendCountry = $('.list.select-btn').clone();
+        $(".country-btn").html(appendCountry);
+        $($('.country-btn .list.select-btn')).removeClass('select-btn');
+    }
+    if ($('.colum-country .block1 .list.select-btn').length >= 2) {
+        $(".country-btn").html('Фильтр');
+    }
+    if ($('.colum-country .block1 .list.select-btn').length == 0) {
+        $(".country-btn").html('Все');
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
+    }
+});
+$(".colum-country .block1 .list .all").click(function() {
+    let textDelivery = $(this).html();
+    $(".country-btn").html(textDelivery);
+    $(this).removeClass('select-btn');
+    // $(".employe-btn").html(text);
+    $('.colum-country .block1 .list').removeClass('select-btn');
     $(".colum-country .block1").removeClass("toggle");
-    $(".crm-main-table").removeClass("z-index");
+    // $(".crm-main-table").removeClass("z-index");
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-country")) {
         $(".colum-country .block1").removeClass("toggle");
     }
-    if (!$(".block1").hasClass("toggle")) {
-        $(".crm-main-table").removeClass("z-index");
-    }
+    // if (!$(".block1").hasClass("toggle")) {
+    //     $(".crm-main-table").removeClass("z-index");
+    // }
 });
 
 //menu country btn
 //menu delivery btn
 $(".colum-delivery .delivery-btn").click(function() {
     $(".colum-delivery .block1").toggleClass("toggle");
-    $(".crm-main-table").addClass("z-index");
+    // $(".crm-main-table").addClass("z-index");
 });
 $(".colum-delivery .block1 .list").click(function() {
-    let text = $(this).html();
-    $(".delivery-btn").html(text);
+    // let text = $(this).html();
+    // $(".delivery-btn").html(text);
+    // $(".colum-delivery .block1").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+
+    $(".colum-delivery .list .all").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    $(this).toggleClass('select-btn');
+    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
+    // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.colum-delivery .block1 .list.select-btn').length == 1) {
+        let appendDelivery = $('.list.select-btn').clone();
+        $(".delivery-btn").html(appendDelivery);
+        $($('.delivery-btn .list.select-btn')).removeClass('select-btn');
+    }
+    if ($('.colum-delivery .block1 .list.select-btn').length >= 2) {
+        $(".delivery-btn").html('Фильтр');
+    }
+    if ($('.colum-delivery .block1 .list.select-btn').length == 0) {
+        $(".delivery-btn").html('Все');
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
+    }
+});
+$(".colum-delivery .block1 .list .all").click(function() {
+    let textDelivery = $(this).html();
+    $(".delivery-btn").html(textDelivery);
+    $(this).removeClass('select-btn');
+    // $(".employe-btn").html(text);
+    $('.colum-delivery .block1 .list').removeClass('select-btn');
     $(".colum-delivery .block1").removeClass("toggle");
-    $(".crm-main-table").removeClass("z-index");
+    // $(".crm-main-table").removeClass("z-index");
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
@@ -333,58 +279,137 @@ $(document).bind("click", function(e) {
     if (!$clicked.parents().hasClass("colum-delivery")) {
         $(".colum-delivery .block1").removeClass("toggle");
     }
-    if (!$(".block1").hasClass("toggle")) {
-        $(".crm-main-table").removeClass("z-index");
-    }
+    // if (!$(".block1").hasClass("toggle")) {
+    //     $(".crm-main-table").removeClass("z-index");
+    // }
 });
 //menu delivery btn
 //pay btn
 $(".colum-pay .pay-btn").click(function() {
     $(".colum-pay .block1").toggleClass("toggle");
-    $(".crm-main-table").addClass("z-index");
+    // $(".crm-main-table").addClass("z-index");
 });
 $(".colum-pay .block1 .list").click(function() {
-    var text = $(this).html();
-    $(".pay-btn").html(text);
+    // var text = $(this).html();
+    // $(".pay-btn").html(text);
+    // $(".colum-pay .block1").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+
+    $(".colum-pay .list .all").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    $(this).toggleClass('select-btn');
+    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
+    // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.colum-pay .block1 .list.select-btn').length == 1) {
+        let appendPay = $('.list.select-btn').clone();
+        $(".pay-btn").html(appendPay);
+        $($('.pay-btn .list.select-btn')).removeClass('select-btn');
+    }
+    if ($('.colum-pay .block1 .list.select-btn').length >= 2) {
+        $(".pay-btn").html('Фильтр');
+    }
+    if ($('.colum-pay .block1 .list.select-btn').length == 0) {
+        $(".pay-btn").html('Все');
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
+    }
+});
+$(".colum-pay .block1 .list .all").click(function() {
+    let textPay = $(this).html();
+    $(".pay-btn").html(textPay);
+
+    $(this).removeClass('select-btn');
+    // $(".employe-btn").html(text);
+    $('.colum-pay .block1 .list').removeClass('select-btn');
     $(".colum-pay .block1").removeClass("toggle");
-    $(".crm-main-table").removeClass("z-index");
+    // $(".crm-main-table").removeClass("z-index");
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-pay")) {
         $(".colum-pay .block1").removeClass("toggle");
     }
-    if (!$(".block1").hasClass("toggle")) {
-        $(".crm-main-table").removeClass("z-index");
-    }
+    // if (!$(".block1").hasClass("toggle")) {
+    //     $(".crm-main-table").removeClass("z-index");
+    // }
 });
+
+
+// $(".colum-pay .pay-btn").click(function() {
+//     $(".colum-pay .block1").toggleClass("toggle");
+//     $(".crm-main-table").addClass("z-index");
+// });
+// $(".colum-pay .block1 .list").click(function() {
+//     var text = $(this).html();
+//     $(".pay-btn").html(text);
+//     $(".colum-pay .block1").removeClass("toggle");
+//     $(".crm-main-table").removeClass("z-index");
+// });
+// $(document).bind("click", function(e) {
+//     let $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("colum-pay")) {
+//         $(".colum-pay .block1").removeClass("toggle");
+//     }
+//     if (!$(".block1").hasClass("toggle")) {
+//         $(".crm-main-table").removeClass("z-index");
+//     }
+// });
 //pay btn
 //depart btn
 $(".colum-depart .depart-btn").click(function() {
     $(".colum-depart .block1").toggleClass("toggle");
-    $(".crm-main-table").addClass("z-index");
+    // $(".crm-main-table").addClass("z-index");
 });
 $(".colum-depart .block1 .list").click(function() {
-    let text = $(this).html();
-    $(".depart-btn").html(text);
+    // let text = $(this).html();
+    // $(".depart-btn").html(text);
+    // $(".colum-depart .block1").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+
+
+    $(".colum-depart .list .all").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    $(this).toggleClass('select-btn');
+    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
+    // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.colum-depart .block1 .list.select-btn').length == 1) {
+        let appendDepart = $('.list.select-btn').text();
+        $(".depart-btn").html(appendDepart);
+    }
+    if ($('.colum-depart .block1 .list.select-btn').length >= 2) {
+        $(".depart-btn").html('Фильтр');
+    }
+    if ($('.colum-depart .block1 .list.select-btn').length == 0) {
+        $(".depart-btn").html('Все');
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
+    }
+});
+$(".colum-depart .block1 .list .all").click(function() {
+    let textDepart = $(this).html();
+    $(".depart-btn").html(textDepart);
+
+    $(this).removeClass('select-btn');
+    // $(".employe-btn").html(text);
+    $('.colum-depart .block1 .list').removeClass('select-btn');
     $(".colum-depart .block1").removeClass("toggle");
-    $(".crm-main-table").removeClass("z-index");
+    // $(".crm-main-table").removeClass("z-index");
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-depart")) {
         $(".colum-depart .block1").removeClass("toggle");
     }
-    if (!$(".block1").hasClass("toggle")) {
-        $(".crm-main-table").removeClass("z-index");
-    }
+    // if (!$(".block1").hasClass("toggle")) {
+    //     // $(".crm-main-table").removeClass("z-index");
+    // }
 });
 
 //depart btn
 //employe btn
 $(".colum-employe .employe-btn").click(function() {
     $(".colum-employe .block1").toggleClass("toggle");
-    $(".crm-main-table").addClass("z-index");
+    // $(".crm-main-table").addClass("z-index");
 });
 $(".colum-employe .block1 .list").click(function() {
     // $(".colum-employe .block1").removeClass("toggle");
@@ -393,130 +418,39 @@ $(".colum-employe .block1 .list").click(function() {
     $(this).toggleClass('select-btn');
     // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
     // $('.block1').find('div:first').removeClass('select-btn');
-    if ($('.block1 .list.select-btn').length == 1) {
-        let append = $('.block1 .list.select-btn').text();
-        $(".employe-btn").html(append);
+    if ($('.colum-employe .block1 .list.select-btn').length == 1) {
+        let appendEmploye = $('.list.select-btn').text();
+        $(".employe-btn").html(appendEmploye);
     }
-    if ($('.block1 .list.select-btn').length >= 2) {
+    if ($('.colum-employe .block1 .list.select-btn').length >= 2) {
         $(".employe-btn").html('Фильтр');
     }
-    if ($('.block1 .list.select-btn').length == 0) {
+    if ($('.colum-employe .block1 .list.select-btn').length == 0) {
         $(".employe-btn").html('Все');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
     }
 });
 $(".colum-employe .block1 .list .all").click(function() {
-    let text = $(this).html();
-    $(".employe-btn").html(text);
+    let textEmploye = $(this).html();
+    $(".employe-btn").html(textEmploye);
 
     $(this).removeClass('select-btn');
     // $(".employe-btn").html(text);
     $('.colum-employe .block1 .list').removeClass('select-btn');
     $(".colum-employe .block1").removeClass("toggle");
-    $(".crm-main-table").removeClass("z-index");
+    // $(".crm-main-table").removeClass("z-index");
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-employe")) {
         $(".colum-employe .block1").removeClass("toggle");
     }
-    if (!$(".block1").hasClass("toggle")) {
-        $(".crm-main-table").removeClass("z-index");
-    }
+    // if (!$(".block1").hasClass("toggle")) {
+    //     // $(".crm-main-table").removeClass("z-index");
+    // }
 });
-//employe btn
 
-// document.querySelector('.colum-user').innerHTML.slice(0, 5);
-// document.querySelector('.colum-user').slice(0, 5);
-
-// var size = 15,
-//     newsContent = $('.colum-user'),
-//     newsText = newsContent.text();
-
-// if (newsText.length > size) {
-//     newsContent.text(newsText.slice(0, size) + ' ...');
-// }
-// /**
-//  * Функция для сокращения длинного текста
-//  * @var object element - элемент, в котором необходимо укоротить текст
-//  * @var int count_lit - лимит символов
-//  * @var bool light - true|false задать осветление последних символов или нет
-//  */
-// function cutLongString(element, count_lit, light) {
-//     // текст в блоке
-//     var text = element.html();
-//     // длина текста в блоке
-//     var all_len = text.length;
-//     // хранилище для нового текста
-//     var new_text;
-
-//     // если текст больше заданного лимита, то обрезаем его
-//     if (all_len > count_lit) {
-//         // обрезаем текст и добавляем три точки в конец
-//         new_text = text.substr(0, (count_lit - 3)) + '...';
-//         // если необходимо задать осветление последним символам
-//         if (light) {
-//             // кусок обычного текста
-//             var first_part_text = new_text.substr(0, (count_lit - 10));
-//             // кусок текста, который будет осветлен
-//             var light_part_text = new_text.substr((count_lit - 10), count_lit);
-//             // переменная, для хранения осветленного текста
-//             var light_text = "";
-//             // цвета для последний 10 символов
-//             var array_color = ["#444444", "#545454", "#646464", "#747474", "#848484", "#949494", "#a4a4a4", "#b4b4b4", "#c4c4c4", "#d4d4d4"];
-//             // перебираем по одному символу текст, который будет осветлен
-//             for (var i = 0; i < 10; i++) {
-//                 // оборачиваем каждый символ в span и задаем ему цвет
-//                 light_text += "<span style='color: " + array_color[i] + "'>" + light_part_text.substr(i, 1) + "</span>";
-//             }
-//             // склеиваем две части текста
-//             new_text = first_part_text + light_text;
-//         }
-//         // заменяем текст в блоке
-//         element.html(new_text);
-//     }
-// }
-// $(document).ready(function() {
-//     // после загрузки страницы вызываем функцию
-//     // обрезание с осветлением
-//     // cutLongString($('.colum-user'), 10, true);
-//     // обрезание без осветления
-//     cutLongString($('.colum-user'), 8, false);
-// });
-
-// const sliced = document.querySelector('.colum-user');
-
-// sliced.text.slice(0, 10);
-// if (sliced.length < text.length) {
-//     sliced += '...';
-// }
-
-// const hoverMouse = document.querySelector('.select-toggle');
-// const hoverMouseBlock = document.querySelector('.hoverMouse');
-
-// hoverMouse.addEventListener('onmouseover', (e) => {
-//     hoverMouse.style.display = 'block';
-//     hoverMouseBlock.style.display = 'block';
-// });
-
-// function mouseOver() {
-//     document.querySelector(".select-toggle").document.querySelector(".hoverMouse").style.display = 'block';
-// }
-
-// function mouseOut() {
-//     document.getElementById("button").src = "../images/button1.png";
-// }
-// const listBtn = document.querySelector('.crm-main-table');
-
-// listBtn.addEventListener('click', func);
-
-// function func(event) {
-//     if (event.ctrlKey) {
-//         [...document.querySelectorAll('.crm-main-table')].map(y => y.classList.add('select-toggle'));
-//         event.classList.add('select-toggle');
-//     }
-// }
 
 //task block
 const btnActual = document.querySelector(".actual");

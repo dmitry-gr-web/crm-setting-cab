@@ -1,32 +1,8 @@
-// (function() {
-//     let speed = 2; // Скорость скролла.
-
-//     let scroll = document.querySelector('.container-info-settings');
-
-//     let left = 0; // отпустили мышку - сохраняем положение скролла
-//     let drag = false;
-//     let coorX = 0; // нажали мышку - сохраняем координаты.
-
-//     scroll.addEventListener('mousedown', function(e) {
-//         drag = true;
-//         coorX = e.pageX - this.offsetLeft;
-//     });
-//     document.addEventListener('mouseup', function() {
-//         drag = false;
-//         left = scroll.scrollLeft;
-//     });
-//     scroll.addEventListener('mousemove', function(e) {
-//         if (drag) {
-//             this.scrollLeft = left + (e.pageX - this.offsetLeft - coorX) * speed;
-//         }
-//     });
-
-// })();
-// jQuery(function($) {
-//     var $doc = $('.container-info-settings'),
-//         ratio = $doc.width() / $(window).width(), //отношение окна к общей ширене блока, чтобы тянуть весь блок.
+// jQuery(function ($) {
+//     var $doc = $(document),
+//         ratio = $doc.width() / $(window).width()*1.5, //отношение окна к общей ширене блока, чтобы тянуть весь блок.
 //         mousepos, to;
-//     $doc.on('mousedown', '.simplebar-content-wrapper', dragstart);
+//     $doc.on('mousedown', '.crm-table', dragstart);
 
 //     function dragstart(e) {
 //         e.preventDefault();
@@ -38,10 +14,10 @@
 //     function drag(e) {
 //         clearTimeout(to);
 //         var delta = (e.screenX - mousepos) * ratio;
-//         to = setTimeout(function() { // таймаут чтобы события от мыши не перекрывали друг друга, 
+//         to = setTimeout(function () { // таймаут чтобы события от мыши не перекрывали друг друга, 
 //             $doc.scrollLeft($doc.scrollLeft() - delta);
 //             mousepos = e.screenX;
-//         }, 1);
+//         }, 0);
 //     }
 
 //     function dragstop(e) {
@@ -50,32 +26,50 @@
 
 
 // });
-// {
-//     var lastX = 0; //последняя координата x мыши
-//     var SliderScroll = false; //требуется ли анимация?
+// mc = new Hammer.Manager('.container-info-settings', {
+//     touchAction: 'auto',
+//     recognizers: [
+//         [Hammer.Pan,{ direction: Hammer.DIRECTION_HORIZONTAL }],
+//     ]
+// });
+const container = document.querySelector('.crm-table');
+                
+let startY;
+let startX;
+let scrollLeft;
+let scrollTop;
+let isDown;
 
+container.addEventListener('mousedown',e => mouseIsDown(e));  
+container.addEventListener('mouseup',e => mouseUp(e))
+container.addEventListener('mouseleave',e=>mouseLeave(e));
+container.addEventListener('mousemove',e=>mouseMove(e));
 
-//     $(document).mousemove(function(e) {
-//         lastX = e.clientX; //обновили горизонтальное положение курсора
-//     });
+function mouseIsDown(e){
+  isDown = true;
+  startY = e.pageY - container.offsetTop;
+  startX = e.pageX - container.offsetLeft;
+  scrollLeft = container.scrollLeft;
+  scrollTop = container.scrollTop; 
+}
+function mouseUp(e){
+  isDown = false;
+}
+function mouseLeave(e){
+  isDown = false;
+}
+function mouseMove(e){
+  if(isDown){
+    e.preventDefault();
+    //Move vertcally
+    const y = e.pageY - container.offsetTop;
+    const walkY = y - startY;
+    container.scrollTop = scrollTop - walkY;
 
-//     //как только курсор оказывается в элементе news-slider начинаем анимацию прокрутки
-//     $(".container-info-settings").mouseenter(function(e) {
-//         SliderScroll = true;
-//         NewsSliderScroll(); //запуск самой анимации
-//     });
+    //Move Horizontally
+    const x = e.pageX - container.offsetLeft;
+    const walkX = x - startX;
+    container.scrollLeft = scrollLeft - walkX;
 
-//     $(".container-info-settings").mouseenter(function(e) {
-//         SliderScroll = false; //сбрасываем для выхода из рекурсии
-//     });
-
-
-//     function NewsSliderScroll() {
-//         setTimeout(function() {
-//             var speed = (0.5 - ($(window).width() - lastX) / $(window).width()).toFixed(2); //не суть важно, нужно для расчета шага прокрутки
-//             var step = $(".container-info-settings").scrollLeft() + 200 * speed; //шаг прокрутки
-//             $(".crm-table").stop().animate({ scrollLeft: step }, 100); // останавливаем предыдущую анимацию и сразу же запускаем следующую. на скрол шага 100 милисекунд
-//             if (SliderScroll) NewsSliderScroll(); //рекурсивно вызываем саму себя
-//         }, 100); //все это дело запускаем с отсрочкой в 100 мс, требующиеся на анимацию. 
-//     }
-// }
+  }
+}

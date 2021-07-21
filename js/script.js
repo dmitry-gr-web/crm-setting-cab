@@ -322,10 +322,13 @@ $(".pages-dropdown .dropdown .ul-block .list").click(function() {
     $(".pages-dropdown .dropdown .ul-block").hide();
     $(".pages-dropdown").css({ 'visibility': 'hidden', 'top': '-100px' });
     $('.pages-animation-block').css({ 'visibility': 'visible', 'top': '0' });
+
+    let arrbtn = $('.list');
+    arrbtn.map(x => $(".list").removeClass('select-btn-white'));
     $(this).toggleClass('select-btn-white');
-    if ($('.select-btn-white').lenght >= 2) {
-        $(this).removeClass('select-btn-white');
-    }
+    // if ($('.select-btn-white').lenght >= 2) {
+    //     $(this).removeClass('select-btn-white');
+    // }
     // $('.ul-block').css({ 'height': '0px' });
 
 });

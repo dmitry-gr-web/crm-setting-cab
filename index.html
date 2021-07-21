@@ -344,7 +344,7 @@
                         <div class="wrap-hide">
                             <div class="country-btn">Вcе</div>
                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                <div class="list"><span class="list-item"><span>Все</span></span>
+                                <div class="list"><span class="list-item all"><span>Все</span></span>
                                 </div>
                                 <div class="list"><span class="list-item"><img src="img/ukraine2.svg" alt=""> <span>ua</span></span>
                                 </div>
@@ -360,7 +360,8 @@
                     <td class="header-search">
                         <div class="wrap-hide">
                             <input type="text" class="input-style tel-style">
-                            <input type="text" class="input-style count-message">
+                            <input type="text" class="input-style count-message" value="">
+                            <div class="message-btn"></div>
                         </div>
                     </td>
                     <td class="header-search">
@@ -376,7 +377,7 @@
                         <div class="wrap-hide">
                             <div class="pay-btn">Вcе</div>
                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                <div class="list"><span class="list-item">Все</span></div>
+                                <div class="list"><span class="list-item all">Все</span></div>
                                 <div class="list"><span class="list-item"><span class="svg-wrap">
                                     <svg class="card" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.92 10.8C8.92 10.9867 9.1 11.14 9.32666 11.14H10.9H12.4733C12.7 11.14 12.88 10.9867 12.88 10.8V10.46C12.88 10.2733 12.7 10.12 12.4733 10.12H10.9H9.32666C9.1 10.12 8.92 10.2733 8.92 10.46V10.8V10.8Z" fill="#9C9B9E"/>
@@ -418,10 +419,12 @@
                         <div class="wrap-hide">
                             <div class="delivery-btn">Вcе</div>
                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                <div class="list"><span class="list-item">Все</span></div>
-                                <div class="list"><span class="list-item"><img src="img/nv.png" alt=""> <span>Новая почта</span></span>
+                                <div class="list"><span class="list-item all">Все</span></div>
+                                <div class="list"><span class="list-item"><img src="img/Nova poshta.svg" alt=""> <span>Новая почта</span></span>
                                 </div>
                                 <div class="list"><span class="list-item"><img src="img/kazmail.png" alt=""> <span>Казпочта</span></span>
+                                </div>
+                                <div class="list"><span class="list-item"><img src="img/justin.svg" alt=""> <span>Джастин</span></span>
                                 </div>
                                 <div class="list"><span class="list-item"><img src="img/delivery.png" alt=""> <span>Delivery</span></span>
                                 </div>
@@ -429,9 +432,17 @@
                                 </div>
                                 <div class="list"><span class="list-item"><img src="img/rusmail.png" alt=""> <span>Почта России</span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/truck.svg" alt=""> <span>Самовывоз</span></span>
+                                <div class="list"><span class="list-item"><span class="svg-position"> 
+                                    <svg class="samovivoz" width="17.5" height="15" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.041502 0.00603294C0.0177866 0.023819 0 0.183898 0 0.355835V0.675993L1.31621 0.687851L2.63241 0.705637L2.79249 1.23923C2.88142 1.52975 3.21344 2.6918 3.5336 3.81829C3.84783 4.94477 4.2747 6.43884 4.47628 7.13844L4.84387 8.41315L5.02174 8.40129C5.12253 8.38943 5.27075 8.35979 5.35375 8.33014L5.50198 8.27085L5.36561 7.8084C5.15217 7.0673 4.88538 6.1424 4.47628 4.67797C4.26285 3.925 4.01383 3.03568 3.91304 2.6918C3.81818 2.34793 3.65217 1.77283 3.55138 1.4171C3.45059 1.05544 3.31423 0.58706 3.25494 0.361764L3.13636 -0.0354691H1.60672C0.764822 -0.0354691 0.0592885 -0.017683 0.041502 0.00603294Z" fill="black" fill-opacity="0.7"/>
+                                    <path d="M8.53756 1.6839C8.2589 1.77283 7.67194 1.96255 7.23321 2.09892C5.05732 2.77481 4.73716 2.88746 4.76088 2.95267C4.77273 2.98825 4.96246 3.59299 5.18182 4.29852L5.58499 5.57323L7.70159 4.90327C8.86364 4.53568 9.8419 4.22145 9.87748 4.20959C9.92491 4.1918 9.80633 3.72935 9.52767 2.84595C9.29645 2.11078 9.08894 1.50603 9.07115 1.51196C9.05337 1.51196 8.81621 1.58904 8.53756 1.6839Z" fill="black" fill-opacity="0.7"/>
+                                    <path d="M11.5909 4.29853C11.3004 4.39339 9.84782 4.84991 8.37153 5.31236C6.18379 6.00011 5.69762 6.17205 5.72726 6.24912C5.74505 6.29655 5.93477 6.90722 6.15414 7.6009C6.37944 8.32422 6.56916 8.85189 6.60474 8.84003C6.64031 8.82817 8.08695 8.36572 9.81225 7.82027C11.5435 7.27481 12.9605 6.82422 12.9723 6.81236C12.9842 6.80643 12.8538 6.36177 12.6877 5.82817C12.5158 5.29457 12.3261 4.68983 12.2668 4.48232C12.2016 4.28074 12.1423 4.11473 12.1364 4.12066C12.1304 4.12066 11.8873 4.20367 11.5909 4.29853Z" fill="black" fill-opacity="0.7"/>
+                                    <path d="M11.6798 8.08707C11.0751 8.2768 9.89526 8.65031 9.04743 8.91118C8.20554 9.17205 7.5 9.39735 7.48222 9.41514C7.4585 9.43885 7.57708 9.97245 7.61858 10.0317C7.62451 10.0377 8.33597 9.83016 9.19565 9.56336C10.0553 9.29656 11.2589 8.92897 11.8755 8.73925C12.4862 8.55545 12.996 8.38944 13.0138 8.37759C13.0435 8.34201 12.8775 7.83806 12.8182 7.7847C12.7945 7.76099 12.2846 7.89735 11.6798 8.08707Z" fill="black" fill-opacity="0.7"/>
+                                    <path d="M4.90316 8.90525C4.52964 9.04161 4.25098 9.27284 4.0494 9.61671C3.90711 9.8598 3.88339 9.96059 3.88339 10.3697C3.88339 10.9092 3.98418 11.1819 4.31027 11.5021C4.64229 11.8341 4.95059 11.9645 5.42489 11.9645C6.07114 11.9645 6.56916 11.6562 6.85375 11.0811C7.47035 9.81829 6.23122 8.43094 4.90316 8.90525ZM5.81027 9.58114C6.19565 9.77679 6.36165 10.0495 6.33201 10.4408C6.28458 11.01 5.87549 11.3361 5.29446 11.2709C4.87351 11.2234 4.50592 10.7966 4.50592 10.3578C4.50592 10.0792 4.749 9.72936 5.03952 9.58114C5.18181 9.50999 5.35968 9.4507 5.42489 9.4507C5.49011 9.4507 5.66798 9.50999 5.81027 9.58114Z" fill="black" fill-opacity="0.7"/>
+                                    </svg>
+                                </span> <span>Самовывоз</span></span>
                                 </div>
-                                <div class="list"><span class="list-item"><img src="img/ukrmail.png" alt=""> <span>Укрпочта</span></span>
+                                <div class="list"><span class="list-item"><img src="img/ukrposhta.svg" alt=""> <span>Укрпочта</span></span>
                                 </div>
                                 <div class="list"><span class="list-item"><img src="img/avtoluks.png" alt=""> <span>Автолюкс</span></span>
                                 </div>
@@ -479,7 +490,7 @@
                         <div class="wrap-hide">
                             <div class="depart-btn">Вcе</div>
                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                <div class="list"><span class="list-item">Все</span></div>
+                                <div class="list"><span class="list-item all">Все</span></div>
                                 <div class="list"><span class="list-item"><span>Розничный магазин</span></span>
                                 </div>
                                 <div class="list"><span class="list-item"><span>Отдел АОЕ</span></span>
@@ -588,7 +599,7 @@
                     <td class="country-block"><span class="country-flag"><img class="flag ua" src="img/ukraine2.svg" alt="flag"></span>
                     </td>
                     <td class="tel-colum">
-                        <span class="tel"><img class="mob-icon" src="img/vodafone2.svg" alt="">+38 096 514 25 46</span>
+                        <span class="tel"><img class="mob-icon vod" src="img/vodafone2.svg" alt="">+38 096 514 25 46</span>
                         <span class="svg-wrap">
                             <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -618,7 +629,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -672,7 +683,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -700,7 +711,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -754,7 +765,7 @@
                     <td class="max-lenght">Александр </td>
                     <td class="country-block"><span class="country-flag"><img class="flag kz" src="img/kz.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Lifecell.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon life" src="img/Lifecell.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -784,7 +795,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/ukrposhta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/ukrposhta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -838,7 +849,7 @@
                     <td class="max-lenght">Александр Серич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Unknow number.svg" alt="">+38 011 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon unk" src="img/Unknow number.svg" alt="">+38 011 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -868,7 +879,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення </td>
                     <td class="ttn-block">
@@ -922,7 +933,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/incorrect number.svg" alt="">+38 096</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon incorr" src="img/incorrect number.svg" alt="">+38 096</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -950,7 +961,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -1004,7 +1015,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1032,7 +1043,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -1086,7 +1097,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag world" src="img/earth 1.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1114,7 +1125,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -1168,7 +1179,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1197,7 +1208,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/Nova poshta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -1251,7 +1262,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1279,7 +1290,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"> 
+                        <span class="svg-position"> 
                             <svg class="samovivoz" width="17.5" height="15" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.041502 0.00603294C0.0177866 0.023819 0 0.183898 0 0.355835V0.675993L1.31621 0.687851L2.63241 0.705637L2.79249 1.23923C2.88142 1.52975 3.21344 2.6918 3.5336 3.81829C3.84783 4.94477 4.2747 6.43884 4.47628 7.13844L4.84387 8.41315L5.02174 8.40129C5.12253 8.38943 5.27075 8.35979 5.35375 8.33014L5.50198 8.27085L5.36561 7.8084C5.15217 7.0673 4.88538 6.1424 4.47628 4.67797C4.26285 3.925 4.01383 3.03568 3.91304 2.6918C3.81818 2.34793 3.65217 1.77283 3.55138 1.4171C3.45059 1.05544 3.31423 0.58706 3.25494 0.361764L3.13636 -0.0354691H1.60672C0.764822 -0.0354691 0.0592885 -0.017683 0.041502 0.00603294Z" fill="black" fill-opacity="0.7"/>
                             <path d="M8.53756 1.6839C8.2589 1.77283 7.67194 1.96255 7.23321 2.09892C5.05732 2.77481 4.73716 2.88746 4.76088 2.95267C4.77273 2.98825 4.96246 3.59299 5.18182 4.29852L5.58499 5.57323L7.70159 4.90327C8.86364 4.53568 9.8419 4.22145 9.87748 4.20959C9.92491 4.1918 9.80633 3.72935 9.52767 2.84595C9.29645 2.11078 9.08894 1.50603 9.07115 1.51196C9.05337 1.51196 8.81621 1.58904 8.53756 1.6839Z" fill="black" fill-opacity="0.7"/>
@@ -1341,7 +1352,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1369,7 +1380,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/justin.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/justin.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -1423,7 +1434,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1452,7 +1463,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos">
+                        <span class="svg-position">
                             <svg class="samovivoz" width="17.5" height="15" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.041502 0.00603294C0.0177866 0.023819 0 0.183898 0 0.355835V0.675993L1.31621 0.687851L2.63241 0.705637L2.79249 1.23923C2.88142 1.52975 3.21344 2.6918 3.5336 3.81829C3.84783 4.94477 4.2747 6.43884 4.47628 7.13844L4.84387 8.41315L5.02174 8.40129C5.12253 8.38943 5.27075 8.35979 5.35375 8.33014L5.50198 8.27085L5.36561 7.8084C5.15217 7.0673 4.88538 6.1424 4.47628 4.67797C4.26285 3.925 4.01383 3.03568 3.91304 2.6918C3.81818 2.34793 3.65217 1.77283 3.55138 1.4171C3.45059 1.05544 3.31423 0.58706 3.25494 0.361764L3.13636 -0.0354691H1.60672C0.764822 -0.0354691 0.0592885 -0.017683 0.041502 0.00603294Z" fill="black" fill-opacity="0.7"/>
                                 <path d="M8.53756 1.6839C8.2589 1.77283 7.67194 1.96255 7.23321 2.09892C5.05732 2.77481 4.73716 2.88746 4.76088 2.95267C4.77273 2.98825 4.96246 3.59299 5.18182 4.29852L5.58499 5.57323L7.70159 4.90327C8.86364 4.53568 9.8419 4.22145 9.87748 4.20959C9.92491 4.1918 9.80633 3.72935 9.52767 2.84595C9.29645 2.11078 9.08894 1.50603 9.07115 1.51196C9.05337 1.51196 8.81621 1.58904 8.53756 1.6839Z" fill="black" fill-opacity="0.7"/>
@@ -1514,7 +1525,7 @@
                     <td class="max-lenght">Александр Сергеевич</td>
                     <td class="country-block"><span class="country-flag"><img class="flag al" src="img/alban.svg" alt="flag"></span>
                     </td>
-                    <td class="tel-colum"><span class="tel"><img class="mob-icon" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
+                    <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt="">+38 096 514 25 46</span><span class="svg-wrap">
                         <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1542,7 +1553,7 @@
                         </span>
                     </td>
                     <td class="svg-delivery">
-                        <span class="svg-pos"><img src="img/ukrposhta.svg" alt=""></span>
+                        <span class="svg-position"><img src="img/ukrposhta.svg" alt=""></span>
                     </td>
                     <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                     <td class="ttn-block">
@@ -1663,7 +1674,8 @@
     <script src="js/script.js"></script>
     <script src="js/script.crm-table.js"></script>
     <script src="js/select.js"></script>
-    <!-- <script src="js/dragscroll.js"></script> -->
+    <!-- <script src="js/hammer.js"></script> -->
+    <!-- <script src="js/scroll-mouse.js"></script> -->
     <script src="js/jquery-ui.min.js"></script>
 
     <script>
@@ -1693,6 +1705,14 @@
             });
             $("#header-drag").disableSelection();
         });
+//         jQuery(".crm-table").draggable({ 
+//     cursor: "move", 
+//     containment: "parent",
+//     stop: function() {
+//       if(jQuery("#child").position().left < 1)
+//           jQuery("#child").css("left", "4000px");
+//     }
+// });
     </script>
     <script>
         $(function() {

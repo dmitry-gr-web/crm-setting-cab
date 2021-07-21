@@ -27,7 +27,7 @@
                                 $("#hoverSelect").show();
                                 $("#hoverSelect")
                                     .css("left", pos.pageX + 10 + "px")
-                                    .css("top", pos.pageY + 10 + "px");
+                                    .css("top", pos.pageY + -40 + "px");
                             }
                         })
                         .mouseleave(function(e) {
