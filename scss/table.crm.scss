@@ -64,7 +64,15 @@
         padding-bottom: 30px;
     }
 }
-
+// .active {
+//    transform:scale(1.01);
+//    .crm-header {
+//        opacity: 0;
+//    }
+//    .arrow-bg {
+//        opacity: 0;
+//    }
+// }
 @media screen and (max-height: 800px) {
     .container-info-settings {
         .simplebar-track.simplebar-horizontal {
@@ -361,6 +369,7 @@
             position: relative;
             left: -2px;
             width: 17%;
+            cursor: pointer;
             border-right: 2px white solid;
             // height: 17px;
             // &::placeholder {
@@ -376,6 +385,7 @@
         }
         .message-btn {
             position: relative;
+            cursor: pointer;
             &:after {
                 content: '';
                 position: absolute;
@@ -388,6 +398,63 @@
                 opacity: 0.8;
                 z-index: 22;
             }
+        }
+        .message-menu {
+            display: none;
+            z-index: 3;
+            box-shadow: 4px 4px 9px rgb(0 ,0, 0, 0.15);
+            cursor: pointer;
+            position:absolute;
+            width:25px;
+            text-align: center;
+            background-color:white;
+            right:0;
+            top:18px;
+            height:90px;
+            .simplebar-track.simplebar-vertical {
+                background-color: rgba(0, 0, 0, 0.1);
+                width: 3px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-right: 2px;
+                bottom: 0;
+                border-radius: 5px;
+            }
+            .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+                background: rgba(0, 0, 0, 0.3);
+                width: 3px;
+                border-radius: 5px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+            }
+            .simplebar-scrollbar.simplebar-visible:before {
+                opacity: 1;
+            }
+            .simplebar-content-wrapper {
+                padding: 0;
+            }
+            .message-list{
+                position:relative;
+                &:hover:before {
+                    content: '';
+                    width: 4px;
+                    height: 4px;
+                    top: 4px;
+                    left: 2px;
+                    border-radius: 100%;
+                    position: absolute;
+                    background-color: rgb(120, 120, 133);
+                }
+            }
+            .select-btn:before {
+                top: 4px;
+                left: 2px;
+            }
+        }
+        .count-toggle {
+            display: block;
         }
         .tel-style {
             width: 83%;
@@ -489,6 +556,7 @@ tr th {
     padding: 0;
     font-size: 10px;
     height: 18px;
+    position: relative;
     box-sizing: border-box;
 }
 
@@ -1647,9 +1715,9 @@ tr th {
     // content: attr(data);
     position: absolute;
     right: -40%;
-    width: max-content;
+    
     user-select: none;
-    height: 20px;
+    max-height: 100px;
     background-color: rgba(81, 81, 81, 0.6);
     border-radius: 3px;
     top: 0;
@@ -1657,7 +1725,11 @@ tr th {
     padding-top: 4px;
     padding-left: 5px;
     padding-right: 5px;
+    padding-bottom: 4px;
     z-index: 999;
+    white-space:normal;
+    width:max-content;
+    max-width: 200px;
     // transition: 0.2s;
     // -moz-transition: 0.2s;
     // -webkit-transition: 0.2s;

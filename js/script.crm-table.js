@@ -26,6 +26,45 @@ $(document).ready(function() {
             });
     });
 });
+
+
+// $(".container-info-settings").on( function(e) {
+//     if (e.which == 1) {
+//     (e.which==2).mousedown();
+//     }
+//  });
+
+
+// const slider = document.querySelector('.crm-table');
+// let isDown = false;
+// let startX;
+// let scrollLeft;
+
+// slider.addEventListener('mousedown', (e) => {
+//   isDown = true;
+
+//   startX = e.pageX - slider.offsetLeft;
+//   scrollLeft = slider.scrollLeft;
+// });
+// slider.addEventListener('mouseleave', () => {
+//   isDown = false;
+
+// });
+// slider.addEventListener('mouseup', () => {
+//   isDown = false;
+
+// });
+// slider.addEventListener('mousemove', (e) => {
+//   if(!isDown) return;
+//   e.preventDefault();
+//   const x = e.pageX - slider.offsetLeft;
+//   const walk = (x - startX) * 3; //scroll-fast
+//   slider.scrollLeft = scrollLeft - walk;
+//   console.log(walk);
+// });
+// let container = $('.container-info-settings');
+
+// container.on('mousedown') = container.on('touchstart')
 // $(".container-info-settings").on("mousedown", (e) => {
 //     $(".simplebar-scrollbar").click();
 //     $(".simplebar-scrollbar ").css('transform','translate3d(200px,0px,0px)');
@@ -182,7 +221,34 @@ $("#prev").click(function() {
     }, { duration: 300, queue: false });
 });
 
-
+//COUNT MESSAGE
+$(".count-message").focus(function() {
+    $(".count-message").val('');
+    $('.message-list').removeClass('select-btn');
+});
+$(".count-message, .message-btn").click(function() {
+    $(".message-menu").toggleClass('count-toggle');
+});
+$(".message-list").click(function() {
+    $(this).toggleClass('select-btn');
+    if ($('.message-list.select-btn').length == 1) {
+        let appendCount = $('.message-list.select-btn').text();
+        $(".count-message").val(appendCount);
+    }
+    if ($('.message-list.select-btn').length >= 2) {
+        $(".count-message").val('~');
+    }
+    if ($('.message-list.select-btn').length == 0) {
+        $(".count-message").val('');
+    }
+});
+$(document).bind("click", function(e) {
+    let $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("message-box")) {
+        $(".message-menu").removeClass('count-toggle');
+    }
+});
+//COUNT MESSAGE
 //menu country btn
 $(".colum-country .country-btn").click(function() {
     $(".colum-country .block1").toggleClass("toggle");

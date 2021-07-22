@@ -1,75 +1,87 @@
-// jQuery(function ($) {
-//     var $doc = $(document),
-//         ratio = $doc.width() / $(window).width()*1.5, //отношение окна к общей ширене блока, чтобы тянуть весь блок.
-//         mousepos, to;
-//     $doc.on('mousedown', '.crm-table', dragstart);
+const slider = document.querySelectorAll('.simplebar-content-wrapper');
+slider.forEach((el) => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-//     function dragstart(e) {
-//         e.preventDefault();
-//         mousepos = e.screenX;
-//         $doc.on('mousemove.drag', drag);
-//         $doc.one('mouseup.drag mouseout.drag', dragstop);
-//     }
-
-//     function drag(e) {
-//         clearTimeout(to);
-//         var delta = (e.screenX - mousepos) * ratio;
-//         to = setTimeout(function () { // таймаут чтобы события от мыши не перекрывали друг друга, 
-//             $doc.scrollLeft($doc.scrollLeft() - delta);
-//             mousepos = e.screenX;
-//         }, 0);
-//     }
-
-//     function dragstop(e) {
-//         $doc.off('mousemove.drag mouseup.drag mouseout.drag');
-//     }
-
-
-// });
-// mc = new Hammer.Manager('.container-info-settings', {
-//     touchAction: 'auto',
-//     recognizers: [
-//         [Hammer.Pan,{ direction: Hammer.DIRECTION_HORIZONTAL }],
-//     ]
-// });
-const container = document.querySelector('.crm-table');
-                
-let startY;
-let startX;
-let scrollLeft;
-let scrollTop;
-let isDown;
-
-container.addEventListener('mousedown',e => mouseIsDown(e));  
-container.addEventListener('mouseup',e => mouseUp(e))
-container.addEventListener('mouseleave',e=>mouseLeave(e));
-container.addEventListener('mousemove',e=>mouseMove(e));
-
-function mouseIsDown(e){
-  isDown = true;
-  startY = e.pageY - container.offsetTop;
-  startX = e.pageX - container.offsetLeft;
-  scrollLeft = container.scrollLeft;
-  scrollTop = container.scrollTop; 
-}
-function mouseUp(e){
-  isDown = false;
-}
-function mouseLeave(e){
-  isDown = false;
-}
-function mouseMove(e){
-  if(isDown){
+  el.addEventListener('mousedown', (e) => {
+    isDown = true;
+    // slider.classList.add('active');
+    startX = e.pageX - el.offsetLeft;
+    scrollLeft = el.scrollLeft;
+  });
+  el.addEventListener('mouseleave', () => {
+    isDown = false;
+    // slider.classList.remove('active');
+  });
+  el.addEventListener('mouseup', () => {
+    isDown = false;
+    // slider.classList.remove('active');
+  });
+  el.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
     e.preventDefault();
-    //Move vertcally
-    const y = e.pageY - container.offsetTop;
-    const walkY = y - startY;
-    container.scrollTop = scrollTop - walkY;
+    const x = e.pageX - el.offsetLeft;
+    const walk = (x - startX) * 5; //scroll-fast
+    el.scrollLeft = scrollLeft - walk;
+    // console.log(walk);
+  });
+})
 
-    //Move Horizontally
-    const x = e.pageX - container.offsetLeft;
-    const walkX = x - startX;
-    container.scrollLeft = scrollLeft - walkX;
 
-  }
-}
+// const slider2 = document.querySelector('.crm-header');
+// let isDown2 = false;
+// let startX2;
+// let scrollLeft2;
+
+// slider2.addEventListener('mousedown', (e) => {
+//   isDown2 = true;
+//   // slider.classList.add('active');
+//   startX2 = e.pageX - slider2.offsetLeft;
+//   scrollLeft2 = slider2.scrollLeft2;
+// });
+// slider2.addEventListener('mouseleave', () => {
+//   isDown2 = false;
+//   // slider.classList.remove('active');
+// });
+// slider2.addEventListener('mouseup', () => {
+//   isDown2 = false;
+//   // slider.classList.remove('active');
+// });
+// slider2.addEventListener('mousemove', (e) => {
+//   if(!isDown2) return;
+//   e.preventDefault();
+//   const x2 = e.pageX - slider2.offsetLeft;
+//   const walk2 = (x2 - startX2) * 5; //scroll-fast
+//   slider2.scrollLeft2 = scrollLeft2 - walk2;
+//   console.log(walk2);
+// });
+
+// jQuery(function ($) {
+//   var $doc = $(document),
+//       ratio = $doc.width() / $(window).width(), //отношение окна к общей ширене блока, чтобы тянуть весь блок.
+//       mousepos, to;
+//   $doc.on('mousedown', '.f', dragstart);
+
+//   function dragstart(e) {
+//       e.preventDefault();
+//       mousepos = e.screenX;
+//       $doc.on('mousemove.drag', drag);
+//       $doc.one('mouseup.drag mouseout.drag', dragstop);
+//   }
+
+//   function drag(e) {
+//       clearTimeout(to);
+//       var delta = (e.screenX - mousepos) * ratio;
+//       to = setTimeout(function () { // таймаут чтобы события от мыши не перекрывали друг друга, 
+//           $doc.scrollLeft($doc.scrollLeft() - delta);
+//           mousepos = e.screenX;
+//       }, 1);
+//   }
+
+//   function dragstop(e) {
+//       $doc.off('mousemove.drag mouseup.drag mouseout.drag');
+//   }
+
+
+// });
