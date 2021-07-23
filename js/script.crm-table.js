@@ -68,7 +68,7 @@ $(document).ready(function() {
 // $(".container-info-settings").on("mousedown", (e) => {
 //     $(".simplebar-scrollbar").click();
 //     $(".simplebar-scrollbar ").css('transform','translate3d(200px,0px,0px)');
- 
+
 // });
 //tooltip 
 // $(".crm-main-table .country-block").each(function(e, item) {
@@ -98,12 +98,13 @@ $(document).ready(function() {
 //         $(this).attr('data', world);
 //     }
 // });
-$(".crm-main-table .tel-colum .tel").each(function(e, item) {
+$(".tel").each(function(e, item) {
     let vodofone = 'Водафон';
     let kyivstar = 'Киевстар';
     let lifecell = 'Лайфселл';
     let incorrectNumber = 'Неверный номер';
     let unknownNumber = 'Неизвестный номер';
+
     if ($(item.children[0]).hasClass('vod')) {
         $(this).append('<div class="tooltip">' + vodofone + '</div>');
     }
@@ -120,12 +121,25 @@ $(".crm-main-table .tel-colum .tel").each(function(e, item) {
         $(this).append('<div class="tooltip">' + unknownNumber + '</div>');
     }
 });
+$(".crm-main-table .svg-wrap").each(function(e, item) {
+    let message = 'У вас 4 сообщения!';
+    if ($(item.children[0]).hasClass('svg-convert')) {
+        $(this).append('<div class="tooltip">' + message + '</div>');
+    }
+});
+$(".table-header th").each(function(e, item) {
+    let id = 'ID товара';
+    if ($(item).hasClass('header-id')) {
+        $(this).append('<div class="tooltip">' + id + '</div>');
+    }
+});
 $(".crm-main-table .country-block").each(function(e, item) {
     let ukraine = 'Украина';
     let russia = 'Россия';
     let kazahstan = 'Казахстан';
     let alb = 'Албания';
     let world = 'Мир';
+
     if ($(item.children[0].children).hasClass('ua')) {
         $(this).append('<div class="tooltip">' + ukraine + '</div>');
         // $('.tooltip').attr('data', ukraine);
@@ -179,44 +193,47 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
     let boxMemory = text;
     if (text.length >= 20) {
         text = text.substring(0, 18) + "...";
-
+        $(this).text(text);
+        $(this).append('<div class="tooltip">' + boxMemory + '</div>');
     }
-    $(this).text(text);
 });
 $(".crm-main-table .max-lenght-product").text(function(i, text) {
+    let boxMemory = text;
     if (text.length >= 40) {
         text = text.substring(0, 38) + "...";
+        $(this).text(text);
+        $(this).append('<div class="tooltip">' + boxMemory + '</div>');
     }
-    // if ($(".product-colum").hasClass('svg-wrap')){
-
-    // }
-    $(this).text(text);
 });
 $(".crm-main-table .addres-block").text(function(i, text) {
+    let boxMemory = text;
     if (text.length >= 30) {
         text = text.substring(0, 28) + "...";
+        $(this).text(text);
+        $(this).append('<div class="tooltip">' + boxMemory + '</div>');
     }
-    $(this).text(text);
 });
-$(".crm-main-table .max-lenght-status").text(function(i, text) {
+$(".status-table .color-form2").text(function(i, text) {
+    let boxMemory = text;
     if (text.length >= 12) {
         text = text.substring(0, 11) + "...";
+        $(this).text(text).parent().append('<div class="tooltip">' + boxMemory + '</div>');;
+        // $(this.parents[0]).append('<div class="tooltip">' + boxMemory + '</div>');
     }
-    $(this).text(text);
 });
 
+// $(".simplebar-content-wrapper").addClass('huy');
 
 
-
-
+// $(".scroll-wrap2").children().addClass("huy");
 //scroll slider header
 $("#next").click(function() {
-    $("#crmHeader").animate({
+    $(".scroll-wrap2 .simplebar-content-wrapper").animate({
         scrollLeft: "+=250px",
     }, { duration: 300, queue: false });
 });
 $("#prev").click(function() {
-    $("#crmHeader").animate({
+    $(".scroll-wrap2 .simplebar-content-wrapper").animate({
         scrollLeft: "0px",
     }, { duration: 300, queue: false });
 });

@@ -1,60 +1,60 @@
 const slider = document.querySelectorAll('.simplebar-content-wrapper');
 slider.forEach((el) => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-  el.addEventListener('mousedown', (e) => {
-    isDown = true;
-    // slider.classList.add('active');
-    startX = e.pageX - el.offsetLeft;
-    scrollLeft = el.scrollLeft;
-  });
-  el.addEventListener('mouseleave', () => {
-    isDown = false;
-    // slider.classList.remove('active');
-  });
-  el.addEventListener('mouseup', () => {
-    isDown = false;
-    // slider.classList.remove('active');
-  });
-  el.addEventListener('mousemove', (e) => {
-    if(!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - el.offsetLeft;
-    const walk = (x - startX) * 5; //scroll-fast
-    el.scrollLeft = scrollLeft - walk;
-    // console.log(walk);
-  });
+    el.addEventListener('mousedown', (e) => {
+        isDown = true;
+        // slider.classList.add('active');
+        startX = e.pageX - el.offsetLeft;
+        scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('mouseleave', () => {
+        isDown = false;
+        // slider.classList.remove('active');
+    });
+    el.addEventListener('mouseup', () => {
+        isDown = false;
+        // slider.classList.remove('active');
+    });
+    el.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - el.offsetLeft;
+        const walk = (x - startX) * 5; //scroll-fast
+        el.scrollLeft = scrollLeft - walk;
+        // console.log(walk);
+    });
 })
 
 
-// const slider2 = document.querySelector('.crm-header');
+// const slider2 = document.querySelector('.scroll-wrap2');
 // let isDown2 = false;
 // let startX2;
 // let scrollLeft2;
 
 // slider2.addEventListener('mousedown', (e) => {
-//   isDown2 = true;
-//   // slider.classList.add('active');
-//   startX2 = e.pageX - slider2.offsetLeft;
-//   scrollLeft2 = slider2.scrollLeft2;
+//     isDown2 = true;
+//     // slider.classList.add('active');
+//     startX2 = e.pageX - slider2.offsetLeft;
+//     scrollLeft2 = slider2.scrollLeft2;
 // });
 // slider2.addEventListener('mouseleave', () => {
-//   isDown2 = false;
-//   // slider.classList.remove('active');
+//     isDown2 = false;
+//     // slider.classList.remove('active');
 // });
 // slider2.addEventListener('mouseup', () => {
-//   isDown2 = false;
-//   // slider.classList.remove('active');
+//     isDown2 = false;
+//     // slider.classList.remove('active');
 // });
 // slider2.addEventListener('mousemove', (e) => {
-//   if(!isDown2) return;
-//   e.preventDefault();
-//   const x2 = e.pageX - slider2.offsetLeft;
-//   const walk2 = (x2 - startX2) * 5; //scroll-fast
-//   slider2.scrollLeft2 = scrollLeft2 - walk2;
-//   console.log(walk2);
+//     if (!isDown2) return;
+//     e.preventDefault();
+//     const x2 = e.pageX - slider2.offsetLeft;
+//     const walk2 = (x2 - startX2) * 5; //scroll-fast
+//     slider2.scrollLeft2 = scrollLeft2 - walk2;
+//     console.log(walk2);
 // });
 
 // jQuery(function ($) {
