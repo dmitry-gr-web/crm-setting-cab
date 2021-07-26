@@ -5,10 +5,14 @@ slider.forEach((el) => {
     let scrollLeft;
 
     el.addEventListener('mousedown', (e) => {
-        isDown = true;
-        // slider.classList.add('active');
-        startX = e.pageX - el.offsetLeft;
-        scrollLeft = el.scrollLeft;
+        if (el.closest('.wrap-hide') == null) {
+            isDown = true;
+            // slider.classList.add('active');
+            startX = e.pageX - el.offsetLeft;
+            scrollLeft = el.scrollLeft;
+        } else {
+            isDown = false;
+        }
     });
     el.addEventListener('mouseleave', () => {
         isDown = false;
@@ -22,9 +26,12 @@ slider.forEach((el) => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - el.offsetLeft;
-        const walk = (x - startX) * 5; //scroll-fast
+        const walk = (x - startX) * 5 //scroll-fast
         el.scrollLeft = scrollLeft - walk;
         // console.log(walk);
+        // if (!el.closest('.toggle') == null) {
+        //     e.preventDefault();
+        // }
     });
 })
 

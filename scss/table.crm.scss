@@ -1,8 +1,8 @@
 @import '_adaptive';
 .container-info-settings {
     margin-left: 51px;
-    margin-top: 10px;
-    margin-right: 0px;
+    margin-top: 5px;
+    margin-right: 0;
     width: 100%;
     height: 100%;
     justify-content: space-between;
@@ -105,8 +105,9 @@
     display: flex;
     margin: 0;
     // position: fixed;
-    padding-bottom: 5px;
+    // padding-bottom: 5px;
     top: -5px;
+    padding-top: 5px;
     position: relative;
     z-index: 333;
     background-color: white;
@@ -257,6 +258,7 @@
         padding-right: 15px;
         padding-left: 15px;
         padding-bottom: 0px;
+        // padding-top: 5px;
         width: calc(100% - 40px);
     }
 }
@@ -1857,8 +1859,14 @@ tr th {
     padding-right: 5px;
     padding-bottom: 4px;
     z-index: 999;
+    // width: max-content;
+    // max-width: max-content;
     white-space: normal;
+    // max-width: 200px;
     width: max-content;
+    word-break: break-all;
+    // word-break: break-word;
+    text-align: left;
     max-width: 200px;
     // transition: 0.2s;
     // -moz-transition: 0.2s;

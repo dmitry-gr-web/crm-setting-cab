@@ -1,8 +1,8 @@
 @charset "UTF-8";
 .container-info-settings {
   margin-left: 51px;
-  margin-top: 10px;
-  margin-right: 0px;
+  margin-top: 5px;
+  margin-right: 0;
   width: 100%;
   height: 100%;
   justify-content: space-between;
@@ -38,8 +38,8 @@
 .crm-header {
   display: flex;
   margin: 0;
-  padding-bottom: 5px;
   top: -5px;
+  padding-top: 5px;
   position: relative;
   z-index: 333;
   background-color: white;
@@ -1569,6 +1569,8 @@ tr th:nth-child(odd) {
   z-index: 999;
   white-space: normal;
   width: max-content;
+  word-break: break-all;
+  text-align: left;
   max-width: 200px;
   opacity: 0;
   visibility: hidden;
