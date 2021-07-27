@@ -3,6 +3,7 @@ slider.forEach((el) => {
     let isDown = false;
     let startX;
     let scrollLeft;
+    // let wrapHide = document.querySelector('.wrap-hide');
 
     el.addEventListener('mousedown', (e) => {
         if (el.closest('.wrap-hide') == null) {
@@ -29,8 +30,8 @@ slider.forEach((el) => {
         const walk = (x - startX) * 5 //scroll-fast
         el.scrollLeft = scrollLeft - walk;
         // console.log(walk);
-        // if (!el.closest('.toggle') == null) {
-        //     e.preventDefault();
+        // if (el.closest('.toggle') == null) {
+        //     e.isDown = false;
         // }
     });
 })

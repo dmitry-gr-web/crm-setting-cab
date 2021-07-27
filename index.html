@@ -112,7 +112,7 @@
             </div>
         </aside>
         <nav>
-            <ul class="nav-crm" data-simplebar data-simplebar-auto-hide="false">
+            <ul class="nav-crm" id="simpleBar">
                 <li class="nav-list-crm">
                     <div class="hover"><span class="btn-crm">
                         <svg class="airplay" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,12 +133,12 @@
                     <div class="nav-desc">Контакты</div>
                 </li>
                 <li class="nav-list-crm">
-                    <div class=""><span id="sidebar" class="hover btn-crm">
-                        <svg class="sidebar" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div id="sidebar" class="hover btn-crm">
+                        <svg align="center" class="sidebar" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="2" width="12" height="12" rx="2" stroke="white" stroke-opacity="0.5" stroke-width="1.2"/>
                             <rect x="4.66663" y="4.66663" width="0.333333" height="6.66667" rx="0.166667" stroke="white" stroke-opacity="0.5" stroke-width="1.2"/>
                         </svg>
-                    </span></div>
+                    </div>
                     <div class="nav-desc">
                         <div class="drop-zakaz">
                             <div class="zakaz-btn">Заказы</div>
@@ -153,13 +153,28 @@
                     </div>
                 </li>
                 <li class="nav-list-crm">
-                    <div class="hover" id="inbox"><span class="btn-crm">
+                    <div class="hover btn-crm" id="inbox">
                         <svg class="inbox" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.708374 8.49996C0.708374 8.10876 1.02551 7.79163 1.41671 7.79163H5.66671C5.90354 7.79163 6.1247 7.90999 6.25608 8.10705L7.1656 9.47133C7.35106 9.74952 7.66329 9.91663 7.99765 9.91663H9.00243C9.33679 9.91663 9.64902 9.74952 9.83449 9.47133L10.744 8.10705C10.8754 7.90999 11.0965 7.79163 11.3334 7.79163H15.5834C15.9746 7.79163 16.2917 8.10876 16.2917 8.49996C16.2917 8.89116 15.9746 9.20829 15.5834 9.20829H12.2476C11.9133 9.20829 11.6011 9.37539 11.4156 9.65359L10.5061 11.0179C10.3747 11.2149 10.1535 11.3333 9.91671 11.3333H7.08337C6.84654 11.3333 6.62538 11.2149 6.494 11.0179L5.58449 9.65359C5.39902 9.37539 5.08679 9.20829 4.75243 9.20829H1.41671C1.02551 9.20829 0.708374 8.89116 0.708374 8.49996Z" fill="white" fill-opacity="0.5"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M5.12837 2.125L11.8717 2.125C12.267 2.12521 12.6549 2.2357 12.9908 2.44405C13.3265 2.65221 13.5976 2.94981 13.7735 3.30344L13.774 3.30438L16.2167 8.18286C16.266 8.28131 16.2917 8.3899 16.2917 8.5V12.75C16.2917 13.3136 16.0678 13.8541 15.6693 14.2526C15.2708 14.6511 14.7303 14.875 14.1667 14.875H2.83337C2.26979 14.875 1.72929 14.6511 1.33077 14.2526C0.932257 13.8541 0.708374 13.3136 0.708374 12.75V8.5C0.708374 8.3899 0.734041 8.28131 0.783339 8.18286L3.22612 3.30438L3.22664 3.30334C3.40258 2.94976 3.67358 2.65219 4.00923 2.44405C4.34522 2.2357 4.73303 2.12521 5.12837 2.125ZM3.86046 3.61958L4.49383 3.93673L2.33671 8.24472C2.19751 8.5227 2.12504 8.8293 2.12504 9.14018V12.75C2.12504 12.9379 2.19967 13.118 2.33251 13.2509C2.46535 13.3837 2.64551 13.4583 2.83337 13.4583H14.1667C14.3546 13.4583 14.5347 13.3837 14.6676 13.2509C14.8004 13.118 14.875 12.9379 14.875 12.75V9.14018C14.875 8.8293 14.8026 8.5227 14.6634 8.24471L12.5063 3.93673L12.5053 3.93479C12.4466 3.81678 12.3562 3.71746 12.2443 3.64802C12.1323 3.57859 12.0032 3.54176 11.8715 3.54167H5.12861C4.99688 3.54176 4.86778 3.57859 4.75583 3.64802C4.64383 3.71746 4.55343 3.81678 4.49479 3.93479L3.86046 3.61958Z" fill="white" fill-opacity="0.5"/>
                         </svg>
-                    </span></div>
-                    <div class="nav-desc">Каталог</div>
+                    </div>
+                    <div class="nav-desc">
+                        <div class="drop-zakaz">
+                            <div class="zakaz-btn">Каталог</div>
+                            <div class="zakaz-block">
+                                <div class="zakaz-list">Категории товаров</div>
+                                <div class="zakaz-list">Товары</div>
+                                <div class="zakaz-list">Производители</div>
+                                <div class="zakaz-list">Валюта</div>
+                                <div class="zakaz-list">Сайты (лендинги)</div>
+                                <div class="zakaz-list">Категории атрибутов</div>
+                                <div class="zakaz-list">Атрибуты (Sub-ID)</div>
+                                <div class="zakaz-list">Цвета товаров</div>
+                                <div class="zakaz-list">Страны</div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-list-crm">
                     <div class="hover"><span class="btn-crm">
@@ -287,44 +302,44 @@
                     <tr class="table-header">
                         <th class="header-id">ID</th>
                         <th class="header-status">Статус</th>
-                        <th class="header-user">Покупатель</th>
+                        <th class="header-pokupatel">Покупатель</th>
                         <th class="header-country">Страна</th>
                         <th class="header-tel">Телефон</th>
-                        <th>Комментарий</th>
-                        <th>Сумма</th>
-                        <th>Товар</th>
-                        <th>Оплата</th>
-                        <th>Доставка</th>
-                        <th>Адрес доставки</th>
-                        <th>ТТН</th>
-                        <th>ТТН статус</th>
-                        <th>Пользователь</th>
-                        <th>Отдел</th>
-                        <th>Добавлен</th>
-                        <th>Открыт</th>
-                        <th>Принят</th>
-                        <th>Закреплён</th>
-                        <th>Передан</th>
-                        <th>Отправлен</th>
-                        <th>Обновлён</th>
-                        <th>Завершён</th>
-                        <th>Сайт</th>
-                        <th>IP</th>
-                        <th>utm_source</th>
-                        <th>utm_medium</th>
-                        <th>utm_term</th>
-                        <th>utm_content</th>
-                        <th>utm_campaign</th>
-                        <th>Доп. поле 1</th>
-                        <th>Доп. поле 2</th>
-                        <th>Доп. поле 3</th>
-                        <th>Доп. поле 4</th>
-                        <th>Доп. поле 5</th>
-                        <th>Доп. поле 6</th>
-                        <th>Доп. поле 7</th>
-                        <th>Доп. поле 8</th>
-                        <th>Доп. поле 9</th>
-                        <th>Доп. поле 10</th>
+                        <th class="header-comm">Комментарий</th>
+                        <th class="header-sum">Сумма</th>
+                        <th class="header-product">Товар</th>
+                        <th class="header-pay">Оплата</th>
+                        <th class="header-delivery">Доставка</th>
+                        <th class="header-addres">Адрес доставки</th>
+                        <th class="header-ttn">ТТН</th>
+                        <th class="header-ttn-status">ТТН статус</th>
+                        <th class="header-user">Пользователь</th>
+                        <th class="header-depart">Отдел</th>
+                        <th class="header-add">Добавлен</th>
+                        <th class="header-open">Открыт</th>
+                        <th class="header-adopted">Принят</th>
+                        <th class="header-zakr">Закреплён</th>
+                        <th class="header-pered">Передан</th>
+                        <th class="header-send">Отправлен</th>
+                        <th class="header-update">Обновлён</th>
+                        <th class="header-finish">Завершён</th>
+                        <th class="header-site">Сайт</th>
+                        <th class="header-ip">IP</th>
+                        <th class="header-utm">utm_source</th>
+                        <th class="header-utm">utm_medium</th>
+                        <th class="header-utm">utm_term</th>
+                        <th class="header-utm">utm_content</th>
+                        <th class="header-utm">utm_campaign</th>
+                        <th class="header-field">Доп. поле 1</th>
+                        <th class="header-field">Доп. поле 2</th>
+                        <th class="header-field">Доп. поле 3</th>
+                        <th class="header-field">Доп. поле 4</th>
+                        <th class="header-field">Доп. поле 5</th>
+                        <th class="header-field">Доп. поле 6</th>
+                        <th class="header-field">Доп. поле 7</th>
+                        <th class="header-field">Доп. поле 8</th>
+                        <th class="header-field">Доп. поле 9</th>
+                        <th class="header-field">Доп. поле 10</th>
                     </tr>
                     <tr class="crm-input">
                         <td class="header-search id-table">
@@ -348,15 +363,27 @@
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all"><span>Все</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><img src="img/ukraine2.svg" alt=""> <span>ua</span></span>
+                                    <div class="list ua"><span class="list-item"><img src="img/ukraine2.svg" alt=""></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><img src="img/rus.svg" alt=""> <span>ru</span></span>
+                                    <div class="list ru"><span class="list-item"><img src="img/rus.svg" alt=""></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><img src="img/kz.svg" alt=""> <span>kz</span></span>
+                                    <div class="list kz"><span class="list-item"><img src="img/kz.svg" alt=""></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><img src="img/alban.svg" alt=""> <span>al</span></span>
+                                    <div class="list al"><span class="list-item"><img src="img/alban.svg" alt=""></span>
                                     </div>
                                 </div>
+                                <!-- <div class="block1" data-simplebar data-simplebar-auto-hide="false">
+                                    <div class="list"><span class="list-item all"><span>Все</span></span>
+                                    </div>
+                                    <div class="list ua"><span class="list-item"><img src="img/ukraine2.svg" alt=""> <span>ua</span></span>
+                                    </div>
+                                    <div class="list rus"><span class="list-item"><img src="img/rus.svg" alt=""> <span>ru</span></span>
+                                    </div>
+                                    <div class="list kz"><span class="list-item"><img src="img/kz.svg" alt=""> <span>kz</span></span>
+                                    </div>
+                                    <div class="list al"><span class="list-item"><img src="img/alban.svg" alt=""> <span>al</span></span>
+                                    </div>
+                                </div> -->
                             </div>
                         </td>
                         <td class="header-search">
@@ -436,11 +463,11 @@
                                 <div class="delivery-btn">Вcе</div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all">Все</span></div>
-                                    <div class="list"><span class="list-item"><img src="img/Nova poshta.svg" alt=""> <span>Новая почта</span></span>
+                                    <div class="list"><span class="list-item"><img src="img/Nova poshta.svg" class="nv" alt=""> <span>Новая почта</span></span>
                                     </div>
                                     <div class="list"><span class="list-item"><img src="img/kazmail.png" alt=""> <span>Казпочта</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><img src="img/justin.svg" alt=""> <span>Джастин</span></span>
+                                    <div class="list"><span class="list-item"><img src="img/justin.svg" class="justin" alt=""> <span>Джастин</span></span>
                                     </div>
                                     <div class="list"><span class="list-item"><img src="img/delivery.png" alt=""> <span>Delivery</span></span>
                                     </div>
@@ -458,7 +485,7 @@
                                     </svg>
                                 </span> <span>Самовывоз</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><img src="img/ukrposhta.svg" alt=""> <span>Укрпочта</span></span>
+                                    <div class="list"><span class="list-item"><img src="img/ukrposhta.svg" class="ukrp" alt=""> <span>Укрпочта</span></span>
                                     </div>
                                     <div class="list"><span class="list-item"><img src="img/avtoluks.png" alt=""> <span>Автолюкс</span></span>
                                     </div>
@@ -645,7 +672,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -727,7 +754,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -811,7 +838,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/ukrposhta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/ukrposhta.svg" class="ukrp" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -895,7 +922,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення </td>
                         <td class="ttn-block">
@@ -977,7 +1004,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -1059,7 +1086,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -1141,7 +1168,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -1224,7 +1251,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/Nova poshta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -1396,7 +1423,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/justin.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/justin.svg" class="justin" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">
@@ -1569,7 +1596,7 @@
                         </span>
                         </td>
                         <td class="svg-delivery">
-                            <span class="svg-position"><img src="img/ukrposhta.svg" alt=""></span>
+                            <span class="svg-position"><img src="img/ukrposhta.svg" class="ukrp" alt=""></span>
                         </td>
                         <td class="addres-block">Євминка, Відділення №1: вул. Київ</td>
                         <td class="ttn-block">

@@ -99,9 +99,9 @@ $(document).ready(function() {
 //     }
 // });
 $(".tel").each(function(e, item) {
-    let vodofone = 'Водафон';
+    let vodofone = 'Vodafone';
     let kyivstar = 'Киевстар';
-    let lifecell = 'Лайфселл';
+    let lifecell = 'Lifecell';
     let incorrectNumber = 'Неверный номер';
     let unknownNumber = 'Неизвестный номер';
 
@@ -115,22 +115,174 @@ $(".tel").each(function(e, item) {
         $(this).append('<div class="tooltip">' + lifecell + '</div>');
     }
     if ($(item.children[0]).hasClass('unk')) {
-        $(this).append('<div class="tooltip">' + incorrectNumber + '</div>');
+        $(this).append('<div class="tooltip">' + unknownNumber + '</div>');
     }
     if ($(item.children[0]).hasClass('incorr')) {
-        $(this).append('<div class="tooltip">' + unknownNumber + '</div>');
+        $(this).append('<div class="tooltip">' + incorrectNumber + '</div>');
+    }
+});
+$(".colum-pay").each(function(e, item) {
+    let card = 'Предоплата';
+    let card2 = 'Наложенный платёж';
+    let acceptPay = 'Оплачен';
+    let decline = 'Отказ';
+    let trade = 'Обмен';
+
+    if ($(item.children[0].children).hasClass('card')) {
+        $(this).append('<div class="tooltip">' + card + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('svg-trade')) {
+        $(this).append('<div class="tooltip">' + trade + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('svg-decline')) {
+        $(this).append('<div class="tooltip">' + decline + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('coin')) {
+        $(this).append('<div class="tooltip">' + acceptPay + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('convert-pay')) {
+        $(this).append('<div class="tooltip">' + card2 + '</div>');
+    }
+});
+$(".svg-delivery").each(function(e, item) {
+    let ukrPochta = 'Укрпочта';
+    let nv = 'Новая почта';
+    let samovivoz = 'Самовывоз';
+    let justin = 'Justin';
+    if ($(item.children[0].children).hasClass('ukrp')) {
+        $(this).append('<div class="tooltip">' + ukrPochta + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('nv')) {
+        $(this).append('<div class="tooltip">' + nv + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('justin')) {
+        $(this).append('<div class="tooltip">' + justin + '</div>');
+    }
+    if ($(item.children[0].children).hasClass('samovivoz')) {
+        $(this).append('<div class="tooltip">' + samovivoz + '</div>');
+    }
+
+});
+$(".crm-main-table .svg-wrap").each(function(e, item) {
+    let message = 'Отправлено 4 сообщения';
+    if ($(item.children[0]).hasClass('svg-convert')) {
+        $(this).append('<div class="tooltip">' + message + '</div>');
     }
 });
 $(".crm-main-table .svg-wrap").each(function(e, item) {
-    let message = 'У вас 4 сообщения!';
-    if ($(item.children[0]).hasClass('svg-convert')) {
+    let message = 'Остался 1 день до платного хранения';
+    if ($(item.children[0]).hasClass('svg-box')) {
         $(this).append('<div class="tooltip">' + message + '</div>');
     }
 });
 $(".table-header th").each(function(e, item) {
     let id = 'ID товара';
+    let adopted = 'Время за которое заказа был принят';
+    let status = '...';
+    let pokupatel = '...';
+    let country = '...';
+    let tel = '...';
+    let commentary = '...';
+    let sum = '...';
+    let product = '...';
+    let pay = '...';
+    let delivery = '...';
+    let addres = '...';
+    let ttn = '...';
+    let ttnStatus = '...';
+    let user = '...';
+    let depart = '...';
+    let add = '...';
+    let open = '...';
+    let zakr = '...';
+    let pered = '...';
+    let send = '...';
+    let update = '...';
+    let finish = '...';
+    let site = '...';
+    let ip = '...';
+    let utm = '...';
+    let field = '...';
     if ($(item).hasClass('header-id')) {
         $(this).append('<div class="tooltip">' + id + '</div>');
+    }
+    if ($(item).hasClass('header-status')) {
+        $(this).append('<div class="tooltip">' + status + '</div>');
+    }
+    if ($(item).hasClass('header-pokupatel')) {
+        $(this).append('<div class="tooltip">' + pokupatel + '</div>');
+    }
+    if ($(item).hasClass('header-country')) {
+        $(this).append('<div class="tooltip">' + country + '</div>');
+    }
+    if ($(item).hasClass('header-tel')) {
+        $(this).append('<div class="tooltip">' + tel + '</div>');
+    }
+    if ($(item).hasClass('header-comm')) {
+        $(this).append('<div class="tooltip">' + commentary + '</div>');
+    }
+    if ($(item).hasClass('header-sum')) {
+        $(this).append('<div class="tooltip">' + sum + '</div>');
+    }
+    if ($(item).hasClass('header-product')) {
+        $(this).append('<div class="tooltip">' + product + '</div>');
+    }
+    if ($(item).hasClass('header-pay')) {
+        $(this).append('<div class="tooltip">' + pay + '</div>');
+    }
+    if ($(item).hasClass('header-delivery')) {
+        $(this).append('<div class="tooltip">' + delivery + '</div>');
+    }
+    if ($(item).hasClass('header-addres')) {
+        $(this).append('<div class="tooltip">' + addres + '</div>');
+    }
+    if ($(item).hasClass('header-ttn')) {
+        $(this).append('<div class="tooltip">' + ttn + '</div>');
+    }
+    if ($(item).hasClass('header-ttn-status')) {
+        $(this).append('<div class="tooltip">' + ttnStatus + '</div>');
+    }
+    if ($(item).hasClass('header-user')) {
+        $(this).append('<div class="tooltip">' + user + '</div>');
+    }
+    if ($(item).hasClass('header-depart')) {
+        $(this).append('<div class="tooltip">' + depart + '</div>');
+    }
+    if ($(item).hasClass('header-add')) {
+        $(this).append('<div class="tooltip">' + add + '</div>');
+    }
+    if ($(item).hasClass('header-open')) {
+        $(this).append('<div class="tooltip">' + open + '</div>');
+    }
+    if ($(item).hasClass('header-adopted')) {
+        $(this).append('<div class="tooltip">' + adopted + '</div>');
+    }
+    if ($(item).hasClass('header-zakr')) {
+        $(this).append('<div class="tooltip">' + zakr + '</div>');
+    }
+    if ($(item).hasClass('header-pered')) {
+        $(this).append('<div class="tooltip">' + pered + '</div>');
+    }
+    if ($(item).hasClass('header-send')) {
+        $(this).append('<div class="tooltip">' + send + '</div>');
+    }
+    if ($(item).hasClass('header-update')) {
+        $(this).append('<div class="tooltip">' + update + '</div>');
+    }
+    if ($(item).hasClass('header-finish')) {
+        $(this).append('<div class="tooltip">' + finish + '</div>');
+    }
+    if ($(item).hasClass('header-site')) {
+        $(this).append('<div class="tooltip">' + site + '</div>');
+    }
+    if ($(item).hasClass('header-ip')) {
+        $(this).append('<div class="tooltip">' + ip + '</div>');
+    }
+    if ($(item).hasClass('header-utm')) {
+        $(this).append('<div class="tooltip">' + utm + '</div>');
+    }
+    if ($(item).hasClass('header-field')) {
+        $(this).append('<div class="tooltip">' + field + '</div>');
     }
 });
 $(".crm-main-table .country-block").each(function(e, item) {
@@ -157,6 +309,34 @@ $(".crm-main-table .country-block").each(function(e, item) {
         // $('.tooltip').attr('data', ukraine);
     }
     if ($(item.children[0].children).hasClass('kz')) {
+        $(this).append('<div class="tooltip">' + kazahstan + '</div>');
+        // $('.tooltip').attr('data', ukraine);
+    }
+});
+$(".list").each(function(e, item) {
+    let ukraine = 'Украина';
+    let russia = 'Россия';
+    let kazahstan = 'Казахстан';
+    let alb = 'Албания';
+    let world = 'Мир';
+
+    if ($(item).hasClass('ua')) {
+        $(this).append('<div class="tooltip">' + ukraine + '</div>');
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if ($(item).hasClass('ru')) {
+        $(this).append('<div class="tooltip">' + russia + '</div>');
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if ($(item).hasClass('al')) {
+        $(this).append('<div class="tooltip">' + alb + '</div>');
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if ($(item).hasClass('world')) {
+        $(this).append('<div class="tooltip">' + world + '</div>');
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if ($(item).hasClass('kz')) {
         $(this).append('<div class="tooltip">' + kazahstan + '</div>');
         // $('.tooltip').attr('data', ukraine);
     }
@@ -239,8 +419,12 @@ $("#prev").click(function() {
 });
 
 //COUNT MESSAGE
-$(".count-message").focus(function() {
-    $(".count-message").val('');
+// $(".count-message").focus(function() {
+//     $(".count-message").val('');
+//     $('.message-list').removeClass('select-btn');
+// });
+$(".count-message").change(function() {
+    // $(".count-message").val('');
     $('.message-list').removeClass('select-btn');
 });
 $(".count-message, .message-btn").click(function() {
@@ -564,10 +748,11 @@ btnOpenTask.addEventListener("click", () => {
 
 document.addEventListener("mousedown", function(e) {
     // const ui = document.getElementById('ui-datepicker-div');
-    if (e.target.closest(".task-block") === null) {
+    if (e.target.closest(".task-block") === null && !e.target.closest("ui-datepicker-buttonpane") === null && !e.target.closest("ui-datepicker-header") === null && !e.target.closest("ui-datepicker-calendar") === null && !e.target.closest("ui-datepicker") === null) {
         taskBlock.classList.remove("task-block-toggle");
         btnOpenTask.classList.remove("selected-nav");
     }
+
 });
 
 const btnTaskPlus = document.querySelector(".btnplus7");
@@ -651,12 +836,19 @@ document.addEventListener("mousedown", function(e) {
 const btnCrmNav = document.getElementById("sidebar");
 const navWrap = document.querySelector(".nav-crm");
 const navCrmPlus = document.querySelectorAll(".nav-desc");
+let simpleBar = null;
 
 btnCrmNav.addEventListener("click", () => {
     navWrap.classList.toggle("nav-crm-plus");
-    // navWrap.classList.toggle('nav-crm-overflow');
     navCrmPlus.forEach((x) => x.classList.toggle("nav-desc-toggle"));
     btnCrmNav.classList.toggle("selected-nav");
+    // if (navWrap.closest('.nav-crm-plus')) {
+    //     simpleBar = new SimpleBar(document.querySelector('.nav-crm-plus'));
+    // }
+    //  else {
+    //     // simpleBar.unMount();
+    //     document.querySelector('.simplebar-content-wrapper').style.overflow = '';
+    // }
 });
 
 document.addEventListener("mousedown", function(e) {
@@ -666,15 +858,51 @@ document.addEventListener("mousedown", function(e) {
         navCrmPlus.forEach((x) => x.classList.remove("nav-desc-toggle"));
         btnCrmNav.classList.remove("selected-nav");
     }
+    // if (!navWrap.closest('.nav-crm-plus')) {
+    //     simpleBar.unMount();
+    //     document.querySelector('.simplebar-content-wrapper').style.overflow = '';
+    // }
 });
 
 //nav sidebar
 
 //zakaz btn
-$(".zakaz-btn").click(function() {
-    $(".zakaz-block").toggle(200);
+// $(".zakaz-btn").click(function() {
+//     let arrbtn = $(".drop-zakaz .zakaz-block");
+//     arrbtn.map((x) => $(".drop-zakaz .zakaz-block").removeClass('zakaz-visible'));
+//     $(".zakaz-block").toggleClass('zakaz-visible');
+//     // $(".zakaz-block").each((x) => x.toggleClass('zakaz-visible'));
+//     // $('.nav-crm').prop("data-simplebar", "true");
+// });
+$(".zakaz-btn").on('click', function() {
+
+    $(".zakaz-block").each(function(e) {
+        $(this).toggleClass('block-visible');
+    });
+    // $(".zakaz-block").each((x) => x.toggleClass('zakaz-visible'));
     // $('.nav-crm').prop("data-simplebar", "true");
 });
+// $(document).ready(function() {
+//     $(".zakaz-block").each(function(index, element) { // производим перебор элементов <li> коллекции jQuery
+//         if (element.hasClass('zakaz-visible').length = 1) { // если остаток от деления индекса элемента на 2 не равен нулю
+//             $(this).toggleClass('zakaz-visible'); // устанавливаем цвет текста текущему элементу
+//         } else {
+//             $(this).removeClass('zakaz-visible');
+//         }
+//     });
+// });
+// document.querySelectorAll('.zakaz-btn').addEventListener('click', (e) => {
+//     document.querySelectorAll('.zakaz-block').forEach((x) => x.classList.toggle("zakaz-visible"));
+
+
+// });
+
+// $('.dropDown').each(function() {
+//   $(this).click(function() {
+//     $('.drop').removeClass('drop');
+//     $(this).addClass('drop');
+//   })
+// })
 //zakaz btn
 
 // header hide

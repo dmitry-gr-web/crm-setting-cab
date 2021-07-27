@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -422,6 +423,13 @@ html {
 .header-crm .logo-pages-wrap .block-pages .current-pages {
   cursor: pointer;
 }
+.header-crm .logo-pages-wrap .block-pages .current-pages:hover {
+  opacity: 0.4;
+  transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
 .header-crm .logo-pages-wrap .block-pages .current-pages .pages-btn-span {
   position: relative;
 }
@@ -447,6 +455,13 @@ html {
   padding-left: 2px;
   cursor: pointer;
   position: relative;
+}
+.header-crm .logo-pages-wrap .block-pages .block-pages-num span:hover {
+  opacity: 0.4;
+  transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
 }
 .header-crm .logo-pages-wrap .block-pages .block-pages-num span:first-child:before {
   content: "";
@@ -695,61 +710,8 @@ html {
   background-repeat: no-repeat;
   background-position: center;
 }
-.nav-crm .nav-list-crm .airplay {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .sidebar {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .user {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .inbox {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .frame {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .squares {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .list {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .link {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .diag {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .rupor {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .setting {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .trash {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .info {
-  position: relative;
-  top: 4px;
-}
-.nav-crm .nav-list-crm .video {
-  position: relative;
-  top: 4px;
+.nav-crm .nav-list-crm svg {
+  transform: translateY(5px);
 }
 .nav-crm .nav-list-crm .hover:hover .inbox path {
   fill: #515151;
@@ -824,6 +786,9 @@ html {
 .drop-zakaz .zakaz-list:hover {
   color: yellow;
 }
+.drop-zakaz .block-visible {
+  display: block;
+}
 
 .selected-nav {
   background-color: #FFE600;
@@ -832,17 +797,93 @@ html {
   -webkit-transform: translateX(10px);
   -moz-transform: translateX(10px);
 }
+.selected-nav .sidebar rect {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .inbox path {
+  fill: #515151;
+  fill-opacity: 1;
+}
+.selected-nav .airplay path {
+  fill: #515151;
+  fill-opacity: 1;
+}
+.selected-nav .user path,
+.selected-nav .user circle {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .sidebar rect {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .frame path {
+  fill: #515151;
+  fill-opacity: 1;
+}
+.selected-nav .squares rect {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .list path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .link path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .diag path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .rupor path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .setting path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .trash path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .info circle,
+.selected-nav .info path {
+  stroke: #515151;
+  stroke-opacity: 1;
+}
+.selected-nav .video path {
+  fill: #515151;
+  fill-opacity: 1;
+}
 
 .nav-crm-plus {
-  width: 209px;
+  width: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 .nav-crm-plus .nav-list-crm {
-  width: 209px;
+  width: 220px;
   display: flex;
 }
 .nav-crm-plus .nav-list-crm .hover {
   margin-right: 20px;
   width: 49px;
+}
+.nav-crm-plus::-webkit-scrollbar {
+  /* chrome based */
+  width: 0px;
+  height: 0px;
+  /* ширина scrollbar'a */
+  background: transparent;
+  /* опционально */
 }
 
 .nav-desc {

@@ -85,22 +85,20 @@
     }
 }
 
-.crm-header {
-    -ms-overflow-style: none;
-    /* IE 10+ */
-    scrollbar-width: none;
-    /* Firefox */
-}
-
-.crm-header::-webkit-scrollbar {
-    /* chrome based */
-    width: 0px;
-    height: 0px;
-    /* ширина scrollbar'a */
-    background: transparent;
-    /* опционально */
-}
-
+// .crm-header {
+//     -ms-overflow-style: none;
+//     /* IE 10+ */
+//     scrollbar-width: none;
+//     /* Firefox */
+// }
+// .crm-header::-webkit-scrollbar {
+//     /* chrome based */
+//     width: 0px;
+//     height: 0px;
+//     /* ширина scrollbar'a */
+//     background: transparent;
+//     /* опционально */
+// }
 .crm-header {
     display: flex;
     margin: 0;
@@ -172,7 +170,7 @@
         background-color: transparent;
         height: 8px;
         margin-right: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
         margin-left: 20px;
         cursor: pointer;
         padding-top: 2px;
@@ -570,6 +568,13 @@
                     position: absolute;
                     background-color: rgb(120, 120, 133);
                 }
+                input {
+                    outline: none;
+                    border: none;
+                }
+            }
+            .message-list:first-child:hover:before {
+                background-color: transparent;
             }
             .select-btn:before {
                 top: 4px;
@@ -1141,7 +1146,8 @@ tr th {
         position: absolute;
         border-radius: 100%;
         top: 4px;
-        left: -2px;
+        // left: -2px;
+        left: 5px;
     }
     .block1 {
         background: white;
@@ -1155,25 +1161,30 @@ tr th {
         box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
         cursor: pointer;
         width: 55px;
+        // overflow: hidden;
         .select-btn:before {
             left: -2px;
             top: 4px;
         }
         .list-item img {
-            position: absolute;
-            left: 5px;
+            // position: absolute;
+            // left: 5px;
+            display: block;
+            margin: auto;
         }
         .list-item span {
-            margin-left: 27px;
+            // margin-left: 27px;
             // text-align: center;
         }
         .list {
             height: 18px;
             // line-height: 18px;
-            margin-left: 5px;
+            // margin-left: 5px;
+            text-align: center;
+            position: relative;
         }
         .list:first-child span {
-            padding-left: 3px;
+            // padding-left: 3px;
             margin-left: 0;
         }
         .simplebar-track.simplebar-vertical {
@@ -1819,11 +1830,13 @@ tr th {
 .max-lenght-comment:hover .tooltip,
 .country-block:hover .tooltip,
 .svg-wrap:hover .tooltip,
-.header-id:hover .tooltip,
 .max-lenght:hover .tooltip,
 .max-lenght-product:hover .tooltip,
 .addres-block:hover .tooltip,
-.status-table:hover .tooltip {
+.status-table:hover .tooltip,
+.colum-pay:hover .tooltip,
+.svg-delivery:hover .tooltip,
+th:hover .tooltip {
     visibility: visible;
     opacity: 1;
     top: 22px;
@@ -1834,6 +1847,20 @@ tr th {
     transition-delay: .3s;
     -moz-transition-delay: 0.3s;
     -webkit-transition-delay: 0.3s;
+}
+
+.list:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    z-index: 999;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition-delay: .3s;
+    -moz-transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
+    z-index: 566;
 }
 
 .tooltip:hover {
@@ -1847,7 +1874,7 @@ tr th {
 .tooltip {
     // content: attr(data);
     position: absolute;
-    right: -40%;
+    // right: -40%;
     user-select: none;
     max-height: 100px;
     background-color: rgba(81, 81, 81, 0.6);
@@ -1867,7 +1894,7 @@ tr th {
     word-break: break-all;
     // word-break: break-word;
     text-align: left;
-    max-width: 200px;
+    max-width: 300px;
     // transition: 0.2s;
     // -moz-transition: 0.2s;
     // -webkit-transition: 0.2s;

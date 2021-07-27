@@ -101,6 +101,13 @@ html {
             }
             .current-pages {
                 cursor: pointer;
+                &:hover {
+                    opacity: 0.4;
+                    transition: 0.3s;
+                    -o-transition: 0.3s;
+                    -webkit-transition: 0.3s;
+                    -moz-transition: 0.3s;
+                }
                 .pages-btn-span {
                     position: relative;
                     &::after {
@@ -126,6 +133,13 @@ html {
                     padding-left: 2px;
                     cursor: pointer;
                     position: relative;
+                    &:hover {
+                        opacity: 0.4;
+                        transition: 0.3s;
+                        -o-transition: 0.3s;
+                        -webkit-transition: 0.3s;
+                        -moz-transition: 0.3s;
+                    }
                 }
                 span:first-child:before {
                     content: '';
@@ -376,61 +390,8 @@ html {
             background-repeat: no-repeat;
             background-position: center;
         }
-        .airplay {
-            position: relative;
-            top: 4px;
-        }
-        .sidebar {
-            position: relative;
-            top: 4px;
-        }
-        .user {
-            position: relative;
-            top: 4px;
-        }
-        .inbox {
-            position: relative;
-            top: 4px;
-        }
-        .frame {
-            position: relative;
-            top: 4px;
-        }
-        .squares {
-            position: relative;
-            top: 4px;
-        }
-        .list {
-            position: relative;
-            top: 4px;
-        }
-        .link {
-            position: relative;
-            top: 4px;
-        }
-        .diag {
-            position: relative;
-            top: 4px;
-        }
-        .rupor {
-            position: relative;
-            top: 4px;
-        }
-        .setting {
-            position: relative;
-            top: 4px;
-        }
-        .trash {
-            position: relative;
-            top: 4px;
-        }
-        .info {
-            position: relative;
-            top: 4px;
-        }
-        .video {
-            position: relative;
-            top: 4px;
+        svg {
+            transform: translateY(5px);
         }
         .hover:hover .inbox path {
             fill: #515151;
@@ -513,17 +474,79 @@ html {
             color: yellow;
         }
     }
+    .block-visible {
+        display: block;
+    }
 }
 
-// .zakaz-visible {
-//     display: block;
-// }
 .selected-nav {
     background-color: #FFE600;
     transform: translateX(10px);
     -o-transformn: translateX(10px);
     -webkit-transform: translateX(10px);
     -moz-transform: translateX(10px);
+    .sidebar rect {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .inbox path {
+        fill: #515151;
+        fill-opacity: 1;
+    }
+    .airplay path {
+        fill: #515151;
+        fill-opacity: 1;
+    }
+    .user path,
+    .user circle {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .sidebar rect {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .frame path {
+        fill: #515151;
+        fill-opacity: 1;
+    }
+    .squares rect {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .list path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .link path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .diag path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .rupor path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .setting path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .trash path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .info circle,
+    .info path {
+        stroke: #515151;
+        stroke-opacity: 1;
+    }
+    .video path {
+        fill: #515151;
+        fill-opacity: 1;
+    }
     // .btn-crm.sidebar {
     //     background-image: url('../img/Sidebar\ 24pxblack.svg');
     //     display: block;
@@ -549,14 +572,28 @@ html {
 }
 
 .nav-crm-plus {
-    width: 209px;
+    width: 220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
     .nav-list-crm {
-        width: 209px;
+        width: 220px;
         display: flex;
         .hover {
             margin-right: 20px;
             width: 49px;
         }
+    }
+    &::-webkit-scrollbar {
+        /* chrome based */
+        width: 0px;
+        height: 0px;
+        /* ширина scrollbar'a */
+        background: transparent;
+        /* опционально */
     }
 }
 
