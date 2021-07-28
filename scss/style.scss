@@ -141,10 +141,10 @@ html {
                         -moz-transition: 0.3s;
                     }
                 }
-                span:first-child:before {
+                span:nth-child(5):before {
                     content: '';
                     position: absolute;
-                    width: 6px;
+                    width: 15px;
                     height: 1px;
                     bottom: -1px;
                     left: 1.5px;

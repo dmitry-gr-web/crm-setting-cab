@@ -463,10 +463,10 @@ html {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
 }
-.header-crm .logo-pages-wrap .block-pages .block-pages-num span:first-child:before {
+.header-crm .logo-pages-wrap .block-pages .block-pages-num span:nth-child(5):before {
   content: "";
   position: absolute;
-  width: 6px;
+  width: 15px;
   height: 1px;
   bottom: -1px;
   left: 1.5px;

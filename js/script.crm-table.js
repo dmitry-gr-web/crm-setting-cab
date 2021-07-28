@@ -26,7 +26,83 @@ $(document).ready(function() {
             });
     });
 });
+$(".user-lock").on("mouseenter", (e) => {
+    $(".user-lock").unbind("click");
+    $(".user-lock").mousemove(function(posXY) {
+        $("#hoverSelected-lock").show();
+        $("#hoverSelected-lock")
+            .css("left", posXY.pageX + -100 + "%")
+            .css("top", posXY.pageY + 20 + "px");
 
+    })
+    $(".user-lock").mouseleave(function(e) {
+        $("#hoverSelected-lock").hide();
+    });
+});
+// $(document).ready(function() {
+//     $(".crm-main-table").on("click", (e) => {
+//         $(".crm-main-table").unbind("mouseleave mousemove");
+//         $(".select-toggle")
+//             .mousemove(function(pos) {
+//                 if ($(".crm-main-table").hasClass("selected-lock")) {
+//                     $("#hoverSelectedLock").show();
+//                     $("#hoverSelectedLock")
+//                         .css("left", pos.pageX + 20 + "px")
+//                         .css("top", pos.pageY + -40 + "px");
+//                 }
+//             })
+//             .mouseleave(function(e) {
+//                 $("#hoverSelectedLock").hide();
+//             });
+//     });
+// });
+// $(".block1").css('overflow', '');
+// $(".block1").css('clear', 'both');
+$(".list-item img").hover(function(xy) {
+    let ukraine = 'Украина';
+    let russia = 'Россия';
+    let kazahstan = 'Казахстан';
+    let alb = 'Албания';
+    let world = 'Мир';
+    // console.log();
+    // $('.list').each(function(_, item) {
+    //     console.log(item);
+    if (xy.target.offsetParent.classList.contains('ua')) {
+        $('#tooltipBtn').text(ukraine);
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if (xy.target.offsetParent.classList.contains('ru')) {
+        $('#tooltipBtn').text(russia);
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if (xy.target.offsetParent.classList.contains('kz')) {
+        $('#tooltipBtn').text(kazahstan);
+        // $('.tooltip').attr('data', ukraine);
+    }
+    if (xy.target.offsetParent.classList.contains('al')) {
+        $('#tooltipBtn').text(alb);
+        // $('.tooltip').attr('data', ukraine);
+    }
+    $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
+    // $(".lazyBlock").css('opacity', '1');
+    $("#tooltipBtn")
+        .css("left", xy.pageX + 20 + "px")
+        .css("top", xy.pageY + 10 + "px");
+    // });
+
+
+}).mouseleave(function(e) {
+    // $("#tooltipBtn").hide();
+
+    $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
+    // $(".lazyBlock").css('opacity', '0');
+});
+// let = gus = document.querySelector('.crm-table').offsetWidth
+// console.log(gus);
+// $(".list").mouseleave(function() {
+//     $(".block1").css('overflow', 'auto');
+//     // $(".block1").css('clear', 'both');
+// });
 
 // $(".container-info-settings").on( function(e) {
 //     if (e.which == 1) {
@@ -169,6 +245,29 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
         $(this).append('<div class="tooltip">' + message + '</div>');
     }
 });
+$(".crm-main-table .date-time").each(function(e, item) {
+    let message = 'Принят за 3 минуты 25 секунд';
+    let message2 = 'Принят за 1 час 3 минуты 25 секунд';
+    let open = 'Открыт через 3 дня 3 минуты 23 секунды';
+    let open2 = 'Открыт через 10 дней 1 час 3 минуты 23 секунды';
+    let peredan = 'Передан через 3 дня 3 минуты 23 секунды';
+
+    if ($(item).hasClass('acceptfor')) {
+        $(this).append('<div class="tooltip">' + message + '</div>');
+    }
+    if ($(item).hasClass('acceptforhours')) {
+        $(this).append('<div class="tooltip">' + message2 + '</div>');
+    }
+    if ($(item).hasClass('open')) {
+        $(this).append('<div class="tooltip">' + open + '</div>');
+    }
+    if ($(item).hasClass('openforhours')) {
+        $(this).append('<div class="tooltip">' + open2 + '</div>');
+    }
+    if ($(item).hasClass('peredan')) {
+        $(this).append('<div class="tooltip">' + peredan + '</div>');
+    }
+});
 $(".crm-main-table .svg-wrap").each(function(e, item) {
     let message = 'Остался 1 день до платного хранения';
     if ($(item.children[0]).hasClass('svg-box')) {
@@ -176,33 +275,33 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
     }
 });
 $(".table-header th").each(function(e, item) {
-    let id = 'ID товара';
-    let adopted = 'Время за которое заказа был принят';
-    let status = '...';
-    let pokupatel = '...';
-    let country = '...';
-    let tel = '...';
+    let id = 'Идентификатор/номер заказа<br>Используется для поиска и передачи заказа между пользователями CRM';
+    let status = 'Текущий статус заказа<br><br>Используется для контроля, анализа и отслеживания заказа в CRM';
+    let pokupatel = 'ФИО покупателя<br><span class="text-tooltip">Используется при автозаполнении ТТН почтовых служб</span>';
+    let country = 'Страна за которой закреплён заказ<br>Используется для разделения заказов из разных стран';
+    let tel = 'Телефон покупателя<br>Используется при автозаполнении ТТН почтовых служб';
     let commentary = '...';
-    let sum = '...';
+    let sum = 'Итоговая сумма заказа';
     let product = '...';
-    let pay = '...';
-    let delivery = '...';
+    let pay = 'Используемый вид оплаты';
+    let delivery = 'Используемый вид доставки';
     let addres = '...';
-    let ttn = '...';
-    let ttnStatus = '...';
-    let user = '...';
-    let depart = '...';
-    let add = '...';
-    let open = '...';
-    let zakr = '...';
-    let pered = '...';
-    let send = '...';
-    let update = '...';
-    let finish = '...';
-    let site = '...';
-    let ip = '...';
-    let utm = '...';
-    let field = '...';
+    let ttn = 'Товарно-транспортная накладная';
+    let ttnStatus = 'Информация за последний час о статусе посылки.<br>Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM';
+    let user = 'Пользователь за которым закреплён заказ';
+    let depart = 'Заказ с "отделом" виден только тем пользователям у которых есть доступ к сооответствуещему отделу';
+    let add = 'Дата и время добавления заказа в CRM';
+    let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним.<br>Показывает сколько времени покупатель ожидал звонка/ответа';
+    let adopted = 'Время между открытием заказа и изменением его статуса на «Принят».<br>Используется для оценки времени потраченого на подтверждение заказа';
+    let zakr = 'Дата и время изменения статуса заказа на «Принят»';
+    let pered = 'Время между получением статуса принят и получением посылки почтой.<br>Показывает сколько времени покупатель ожидал отправку заказа';
+    let send = 'Дата и время регистрации посылки в почтовой службе';
+    let update = 'Дата и время последнего изменения заказа';
+    let finish = 'Дата и время завершения заказа, дальнейшее редактирование запрещено кроме группы администратор';
+    let site = 'Место откуда поступил заказ';
+    let ip = 'Ip адрес откуда поступил заказ.<br>Используется для отслеживания и блокировки в случаях спама';
+    let utm = 'UTM-метка.<br>Используется для отслеживания рекламного источника, который привел клиента на Ваш сайт';
+    let field = 'Дополнительное поле заказа.<br>Используется для передачи,или хранения информации о заказе.';
     if ($(item).hasClass('header-id')) {
         $(this).append('<div class="tooltip">' + id + '</div>');
     }
@@ -313,34 +412,34 @@ $(".crm-main-table .country-block").each(function(e, item) {
         // $('.tooltip').attr('data', ukraine);
     }
 });
-$(".list").each(function(e, item) {
-    let ukraine = 'Украина';
-    let russia = 'Россия';
-    let kazahstan = 'Казахстан';
-    let alb = 'Албания';
-    let world = 'Мир';
+// $(".list").each(function(e, item) {
+//     let ukraine = 'Украина';
+//     let russia = 'Россия';
+//     let kazahstan = 'Казахстан';
+//     let alb = 'Албания';
+//     let world = 'Мир';
 
-    if ($(item).hasClass('ua')) {
-        $(this).append('<div class="tooltip">' + ukraine + '</div>');
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if ($(item).hasClass('ru')) {
-        $(this).append('<div class="tooltip">' + russia + '</div>');
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if ($(item).hasClass('al')) {
-        $(this).append('<div class="tooltip">' + alb + '</div>');
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if ($(item).hasClass('world')) {
-        $(this).append('<div class="tooltip">' + world + '</div>');
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if ($(item).hasClass('kz')) {
-        $(this).append('<div class="tooltip">' + kazahstan + '</div>');
-        // $('.tooltip').attr('data', ukraine);
-    }
-});
+//     if ($(item).hasClass('ua')) {
+//         $(this).append('<div class="tooltip">' + ukraine + '</div>');
+//         // $('.tooltip').attr('data', ukraine);
+//     }
+//     if ($(item).hasClass('ru')) {
+//         $(this).append('<div class="tooltip">' + russia + '</div>');
+//         // $('.tooltip').attr('data', ukraine);
+//     }
+//     if ($(item).hasClass('al')) {
+//         $(this).append('<div class="tooltip">' + alb + '</div>');
+//         // $('.tooltip').attr('data', ukraine);
+//     }
+//     if ($(item).hasClass('world')) {
+//         $(this).append('<div class="tooltip">' + world + '</div>');
+//         // $('.tooltip').attr('data', ukraine);
+//     }
+//     if ($(item).hasClass('kz')) {
+//         $(this).append('<div class="tooltip">' + kazahstan + '</div>');
+//         // $('.tooltip').attr('data', ukraine);
+//     }
+// });
 //tooltip
 //...
 

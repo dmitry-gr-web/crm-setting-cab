@@ -29,7 +29,11 @@
 </head>
 
 <body>
-    <div id="hoverSelect">Выделено <span class="count-hover">2</span></div>
+    <div id="hoverSelect">Выделено <span class="count-hover"></span></div>
+    <div id="hoverSelected-lock">Заказ заблокирован <span class="lock-count">Васей</span></div>
+    <div id="tooltipBtn">
+        <!-- <div class="lazyBlock"></div> -->
+    </div>
     <header class="header-crm">
         <div class="logo-pages-wrap">
             <div class="logo-position"><img class="logo-lp-crm" src="img/crm-logo.svg" alt=""></div>
@@ -40,7 +44,7 @@
                         <span class="pages-total">/456</span>
                     </div>
                     <div class="block-pages-num">
-                        <span>1</span><span>....</span><span>20</span><span>21</span><span>22</span><span>23</span><span>....</span><span>159</span>
+                        <span>1</span><span>....</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>....</span><span>159</span>
                     </div>
                 </div>
                 <div class="pages-dropdown">
@@ -303,7 +307,7 @@
                         <th class="header-id">ID</th>
                         <th class="header-status">Статус</th>
                         <th class="header-pokupatel">Покупатель</th>
-                        <th class="header-country">Страна</th>
+                        <th class="header-country">Гео</th>
                         <th class="header-tel">Телефон</th>
                         <th class="header-comm">Комментарий</th>
                         <th class="header-sum">Сумма</th>
@@ -313,12 +317,13 @@
                         <th class="header-addres">Адрес доставки</th>
                         <th class="header-ttn">ТТН</th>
                         <th class="header-ttn-status">ТТН статус</th>
-                        <th class="header-user">Пользователь</th>
                         <th class="header-depart">Отдел</th>
+                        <th class="header-opened">Открыл</th>
+                        <th class="header-user">Подтвердил</th>
                         <th class="header-add">Добавлен</th>
                         <th class="header-open">Открыт</th>
                         <th class="header-adopted">Принят</th>
-                        <th class="header-zakr">Закреплён</th>
+                        <th class="header-zakr">Подтверджён</th>
                         <th class="header-pered">Передан</th>
                         <th class="header-send">Отправлен</th>
                         <th class="header-update">Обновлён</th>
@@ -360,7 +365,8 @@
                         <td class="header-search colum-country">
                             <div class="wrap-hide">
                                 <div class="country-btn">Вcе</div>
-                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
+                                <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
+                                <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all"><span>Все</span></span>
                                     </div>
                                     <div class="list ua"><span class="list-item"><img src="img/ukraine2.svg" alt=""></span>
@@ -371,7 +377,10 @@
                                     </div>
                                     <div class="list al"><span class="list-item"><img src="img/alban.svg" alt=""></span>
                                     </div>
+                                    <div class="list al"><span class="list-item"><img src="img/alban.svg" alt=""></span>
+                                    </div>
                                 </div>
+
                                 <!-- <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all"><span>Все</span></span>
                                     </div>
@@ -507,6 +516,24 @@
                         <td class="header-search">
                             <div class="wrap-hide"><input type="text" class="input-style"></div>
                         </td>
+                        <td class="header-search colum-depart">
+                            <div class="wrap-hide">
+                                <div class="depart-btn">Вcе</div>
+                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
+                                    <div class="list"><span class="list-item all">Все</span></div>
+                                    <div class="list"><span class="list-item"><span>Розничный магазин</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Отдел АОЕ</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Test</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Black slave</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Оптовый магазин</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                         <td class="header-search colum-employe">
                             <div class="wrap-hide">
                                 <div class="employe-btn">Вcе</div>
@@ -529,22 +556,27 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="header-search colum-depart">
+                        <td class="header-search colum-employe">
                             <div class="wrap-hide">
-                                <div class="depart-btn">Вcе</div>
+                                <input type="text" class="input-style" readonly>
+                                <!-- <div class="employe-btn">Вcе</div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all">Все</span></div>
-                                    <div class="list"><span class="list-item"><span>Розничный магазин</span></span>
+                                    <div class="list"><span class="list-item"><span>Лебедев Евгений Александрович</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><span>Отдел АОЕ</span></span>
+                                    <div class="list"><span class="list-item"><span>Лебедев Евгений Александрович</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><span>Test</span></span>
+                                    <div class="list"><span class="list-item"><span>Лебедев Евгений Александрович</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><span>Black slave</span></span>
+                                    <div class="list"><span class="list-item"><span>Лебедев Евгений</span></span>
                                     </div>
-                                    <div class="list"><span class="list-item"><span>Оптовый магазин</span></span>
+                                    <div class="list"><span class="list-item"><span>Евгений Александрович</span></span>
                                     </div>
-                                </div>
+                                    <div class="list"><span class="list-item"><span>Лебедев Евгений Александрович</span></span>
+                                    </div>
+                                    <div class="list"><span class="list-item"><span>Евгений Александрович</span></span>
+                                    </div>
+                                </div> -->
                             </div>
                         </td>
                         <td class="header-search">
@@ -690,13 +722,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходженняя</td>
-                        <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
                         <td class="otdel-block max-lenght">Розничный магазин</td>
+                        <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
+                        <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -772,13 +805,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -800,7 +834,7 @@
                         <td class="max-lenght">Доп поле</td>
                         <td class="max-lenght">Доп поле</td>
                     </tr>
-                    <tr class="crm-main-table selected-lock">
+                    <tr class="crm-main-table selected-lock user-lock">
                         <td class="id-table">12341</td>
                         <td class="status-table">
                             <div class="color-fd7777 color-form2">Отказ</div>
@@ -856,13 +890,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -940,13 +975,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очіку</td>
-                        <td class="max-lenght">Лебедев Евгений</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений</td>
+                        <td class="max-lenght">Лебедев Евгений</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time openforhours">10/01:03:23</td>
+                        <td class="date-time acceptforhours">01:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1022,13 +1058,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1104,13 +1141,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1186,13 +1224,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1269,13 +1308,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1359,13 +1399,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1441,13 +1482,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1532,13 +1574,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1614,13 +1657,14 @@
                             </div>
                         </td>
                         <td class="max-lenght">Нова пошта очікує надходже</td>
-                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
+                        <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
-                        <td class="max-lenght date-time">00:03:25</td>
+                        <td class="date-time open">03/00:03:23</td>
+                        <td class="date-time acceptfor">00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="max-lenght date-time">03/00:03:23</td>
+                        <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
