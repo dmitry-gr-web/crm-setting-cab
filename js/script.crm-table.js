@@ -25,155 +25,58 @@ $(document).ready(function() {
                 $("#hoverSelect").hide();
             });
     });
-});
-$(".user-lock").on("mouseenter", (e) => {
-    $(".user-lock").unbind("click");
-    $(".user-lock").mousemove(function(posXY) {
-        $("#hoverSelected-lock").show();
-        $("#hoverSelected-lock")
-            .css("left", posXY.pageX + -100 + "%")
-            .css("top", posXY.pageY + 20 + "px");
+    $(".user-lock").on("mouseenter", (e) => {
+        $(".user-lock").unbind("click");
+        $(".user-lock").mousemove(function(posXY) {
+            $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });;
+            $("#hoverSelected-lock")
+                .css("left", posXY.pageX + 20 + "px")
+                .css("top", posXY.pageY + -30 + "px");
 
-    })
-    $(".user-lock").mouseleave(function(e) {
-        $("#hoverSelected-lock").hide();
+        })
+        $(".user-lock").mouseleave(function(e) {
+            $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });;
+        });
+    });
+    $(".list-item img").hover(function(xy) {
+        let ukraine = 'Украина';
+        let russia = 'Россия';
+        let kazahstan = 'Казахстан';
+        let alb = 'Албания';
+        let world = 'Мир';
+
+        if (xy.target.offsetParent.classList.contains('ua')) {
+            $('#tooltipBtn').text(ukraine);
+        }
+        if (xy.target.offsetParent.classList.contains('ru')) {
+            $('#tooltipBtn').text(russia);
+        }
+        if (xy.target.offsetParent.classList.contains('kz')) {
+            $('#tooltipBtn').text(kazahstan);
+        }
+        if (xy.target.offsetParent.classList.contains('al')) {
+            $('#tooltipBtn').text(alb);
+        }
+        $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
+        $("#tooltipBtn")
+            .css("left", xy.pageX + 20 + "px")
+            .css("top", xy.pageY + 10 + "px");
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
+    });
+    $(".filter").hover(function(filter) {
+        if (filter.target) {
+            $('#tooltipBtn').text('Применился фильтер');
+        }
+        $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
+        $("#tooltipBtn")
+            .css("left", xy.pageX + 20 + "px")
+            .css("top", xy.pageY + 10 + "px");
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
     });
 });
-// $(document).ready(function() {
-//     $(".crm-main-table").on("click", (e) => {
-//         $(".crm-main-table").unbind("mouseleave mousemove");
-//         $(".select-toggle")
-//             .mousemove(function(pos) {
-//                 if ($(".crm-main-table").hasClass("selected-lock")) {
-//                     $("#hoverSelectedLock").show();
-//                     $("#hoverSelectedLock")
-//                         .css("left", pos.pageX + 20 + "px")
-//                         .css("top", pos.pageY + -40 + "px");
-//                 }
-//             })
-//             .mouseleave(function(e) {
-//                 $("#hoverSelectedLock").hide();
-//             });
-//     });
-// });
-// $(".block1").css('overflow', '');
-// $(".block1").css('clear', 'both');
-$(".list-item img").hover(function(xy) {
-    let ukraine = 'Украина';
-    let russia = 'Россия';
-    let kazahstan = 'Казахстан';
-    let alb = 'Албания';
-    let world = 'Мир';
-    // console.log();
-    // $('.list').each(function(_, item) {
-    //     console.log(item);
-    if (xy.target.offsetParent.classList.contains('ua')) {
-        $('#tooltipBtn').text(ukraine);
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if (xy.target.offsetParent.classList.contains('ru')) {
-        $('#tooltipBtn').text(russia);
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if (xy.target.offsetParent.classList.contains('kz')) {
-        $('#tooltipBtn').text(kazahstan);
-        // $('.tooltip').attr('data', ukraine);
-    }
-    if (xy.target.offsetParent.classList.contains('al')) {
-        $('#tooltipBtn').text(alb);
-        // $('.tooltip').attr('data', ukraine);
-    }
-    $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
-    // $(".lazyBlock").css('opacity', '1');
-    $("#tooltipBtn")
-        .css("left", xy.pageX + 20 + "px")
-        .css("top", xy.pageY + 10 + "px");
-    // });
 
-
-}).mouseleave(function(e) {
-    // $("#tooltipBtn").hide();
-
-    $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
-    // $(".lazyBlock").css('opacity', '0');
-});
-// let = gus = document.querySelector('.crm-table').offsetWidth
-// console.log(gus);
-// $(".list").mouseleave(function() {
-//     $(".block1").css('overflow', 'auto');
-//     // $(".block1").css('clear', 'both');
-// });
-
-// $(".container-info-settings").on( function(e) {
-//     if (e.which == 1) {
-//     (e.which==2).mousedown();
-//     }
-//  });
-
-
-// const slider = document.querySelector('.crm-table');
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-
-// slider.addEventListener('mousedown', (e) => {
-//   isDown = true;
-
-//   startX = e.pageX - slider.offsetLeft;
-//   scrollLeft = slider.scrollLeft;
-// });
-// slider.addEventListener('mouseleave', () => {
-//   isDown = false;
-
-// });
-// slider.addEventListener('mouseup', () => {
-//   isDown = false;
-
-// });
-// slider.addEventListener('mousemove', (e) => {
-//   if(!isDown) return;
-//   e.preventDefault();
-//   const x = e.pageX - slider.offsetLeft;
-//   const walk = (x - startX) * 3; //scroll-fast
-//   slider.scrollLeft = scrollLeft - walk;
-//   console.log(walk);
-// });
-// let container = $('.container-info-settings');
-
-// container.on('mousedown') = container.on('touchstart')
-// $(".container-info-settings").on("mousedown", (e) => {
-//     $(".simplebar-scrollbar").click();
-//     $(".simplebar-scrollbar ").css('transform','translate3d(200px,0px,0px)');
-
-// });
-//tooltip 
-// $(".crm-main-table .country-block").each(function(e, item) {
-//     let ukraine = 'Украина';
-//     let russia = 'Россия';
-//     let kazahstan = 'Казахстан';
-//     let alb = 'Албания';
-//     let world = 'Мир';
-//     if ($(item.children[0].children).hasClass('ua')) {
-//         $(this).addClass('tooltip');
-//         $(this).attr('data', ukraine);
-//     }
-//     if ($(item.children[0].children).hasClass('ru')) {
-//         $(this).addClass('tooltip');
-//         $(this).attr('data', russia);
-//     }
-//     if ($(item.children[0].children).hasClass('kz')) {
-//         $(this).addClass('tooltip');
-//         $(this).attr('data', kazahstan);
-//     }
-//     if ($(item.children[0].children).hasClass('al')) {
-//         $(this).addClass('tooltip');
-//         $(this).attr('data', alb);
-//     }
-//     if ($(item.children[0].children).hasClass('world')) {
-//         $(this).addClass('tooltip');
-//         $(this).attr('data', world);
-//     }
-// });
 $(".tel").each(function(e, item) {
     let vodofone = 'Vodafone';
     let kyivstar = 'Киевстар';
@@ -275,11 +178,11 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
     }
 });
 $(".table-header th").each(function(e, item) {
-    let id = 'Идентификатор/номер заказа<br>Используется для поиска и передачи заказа между пользователями CRM';
-    let status = 'Текущий статус заказа<br><br>Используется для контроля, анализа и отслеживания заказа в CRM';
+    let id = 'Идентификатор/номер заказа<br><span class="text-tooltip">Используется для поиска и передачи заказа между пользователями CRM</span>';
+    let status = 'Текущий статус заказа<br><span class="text-tooltip">Используется для контроля, анализа и отслеживания заказа в CRM</span>';
     let pokupatel = 'ФИО покупателя<br><span class="text-tooltip">Используется при автозаполнении ТТН почтовых служб</span>';
-    let country = 'Страна за которой закреплён заказ<br>Используется для разделения заказов из разных стран';
-    let tel = 'Телефон покупателя<br>Используется при автозаполнении ТТН почтовых служб';
+    let country = 'Страна за которой закреплён заказ<br><span class="text-tooltip">Используется для разделения заказов из разных стран</span>';
+    let tel = 'Телефон покупателя<br><span class="text-tooltip">Используется при автозаполнении ТТН почтовых служб</span>';
     let commentary = '...';
     let sum = 'Итоговая сумма заказа';
     let product = '...';
@@ -287,21 +190,21 @@ $(".table-header th").each(function(e, item) {
     let delivery = 'Используемый вид доставки';
     let addres = '...';
     let ttn = 'Товарно-транспортная накладная';
-    let ttnStatus = 'Информация за последний час о статусе посылки.<br>Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM';
+    let ttnStatus = 'Информация за последний час о статусе посылки.<br><span class="text-tooltip">Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM</span>';
     let user = 'Пользователь за которым закреплён заказ';
     let depart = 'Заказ с "отделом" виден только тем пользователям у которых есть доступ к сооответствуещему отделу';
     let add = 'Дата и время добавления заказа в CRM';
-    let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним.<br>Показывает сколько времени покупатель ожидал звонка/ответа';
-    let adopted = 'Время между открытием заказа и изменением его статуса на «Принят».<br>Используется для оценки времени потраченого на подтверждение заказа';
+    let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним.<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал звонка/ответа</span>';
+    let adopted = 'Время между открытием заказа и изменением его статуса на «Принят».<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
     let zakr = 'Дата и время изменения статуса заказа на «Принят»';
-    let pered = 'Время между получением статуса принят и получением посылки почтой.<br>Показывает сколько времени покупатель ожидал отправку заказа';
+    let pered = 'Время между получением статуса принят и получением посылки почтой.<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
     let send = 'Дата и время регистрации посылки в почтовой службе';
     let update = 'Дата и время последнего изменения заказа';
     let finish = 'Дата и время завершения заказа, дальнейшее редактирование запрещено кроме группы администратор';
     let site = 'Место откуда поступил заказ';
-    let ip = 'Ip адрес откуда поступил заказ.<br>Используется для отслеживания и блокировки в случаях спама';
-    let utm = 'UTM-метка.<br>Используется для отслеживания рекламного источника, который привел клиента на Ваш сайт';
-    let field = 'Дополнительное поле заказа.<br>Используется для передачи,или хранения информации о заказе.';
+    let ip = 'Ip адрес откуда поступил заказ.<br><span class="text-tooltip">Используется для отслеживания и блокировки в случаях спама</span>';
+    let utm = 'UTM-метка.<br><span class="text-tooltip">Используется для отслеживания рекламного источника, который привел клиента на Ваш сайт</span>';
+    let field = 'Дополнительное поле заказа.<br><span class="text-tooltip">Используется для передачи,или хранения информации о заказе</span>';
     if ($(item).hasClass('header-id')) {
         $(this).append('<div class="tooltip">' + id + '</div>');
     }
@@ -572,7 +475,18 @@ $(".colum-country .block1 .list").click(function() {
         $($('.country-btn .list.select-btn')).removeClass('select-btn');
     }
     if ($('.colum-country .block1 .list.select-btn').length >= 2) {
-        $(".country-btn").html('Фильтр');
+        $(".country-btn").html('<svg class="filter" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6668 9.73313C12.3334 9.53313 12.2001 9.1998 12.2668 8.86646C12.3334 8.5998 12.3334 8.26646 12.3334 7.99979C12.3334 7.73313 12.3334 7.3998 12.2668 7.13313C12.2001 6.7998 12.4001 6.46646 12.6668 6.26646C13.0668 5.99979 13.2001 5.46646 13.0001 5.06646L12.5334 4.26646C12.2668 3.86646 11.7334 3.73313 11.3334 3.93313C11.0001 4.13313 10.6668 4.06646 10.4001 3.86646C9.93344 3.46646 9.46678 3.1998 8.86678 2.9998C8.53344 2.86646 8.33344 2.53313 8.33344 2.1998C8.33344 1.73313 7.93344 1.33313 7.46677 1.33313H6.53344C6.06678 1.33313 5.66677 1.73313 5.66677 2.1998C5.66677 2.53313 5.46678 2.86646 5.13344 2.9998C4.60011 3.1998 4.06677 3.53313 3.60011 3.86646C3.33344 4.06646 2.93344 4.13313 2.60011 3.93313C2.20011 3.73313 1.66678 3.86646 1.46677 4.26646L1.00011 5.06646C0.733442 5.46646 0.933442 5.99979 1.33344 6.26646C1.66677 6.46646 1.80011 6.7998 1.73344 7.13313C1.73344 7.46646 1.66677 7.73313 1.66677 7.99979C1.66677 8.26646 1.66677 8.5998 1.73344 8.86646C1.80011 9.1998 1.60011 9.53313 1.33344 9.73313C0.866775 9.9998 0.733442 10.5331 1.00011 10.9331L1.46677 11.7331C1.73344 12.1331 2.26677 12.2665 2.66677 12.0665C3.00011 11.8665 3.33344 11.9331 3.66677 12.1331C4.13344 12.4665 4.60011 12.7998 5.13344 12.9998C5.46678 13.1331 5.66677 13.4665 5.66677 13.7998V13.8665C5.66677 14.3331 6.06678 14.7331 6.53344 14.7331H7.46677C7.93344 14.7331 8.33344 14.3331 8.33344 13.8665C8.33344 13.5331 8.53344 13.1998 8.86678 13.0665C9.40011 12.8665 9.93344 12.5998 10.3334 12.1998C10.6001 11.9998 11.0001 11.9331 11.2668 12.1331C11.6668 12.3998 12.2001 12.1998 12.4668 11.7998L12.9334 10.9998C13.2668 10.5331 13.1334 9.9998 12.6668 9.73313ZM7.00011 10.6665C5.53344 10.6665 4.33344 9.46646 4.33344 7.99979C4.33344 6.53313 5.53344 5.33313 7.00011 5.33313C8.46678 5.33313 9.66678 6.53313 9.66678 7.99979C9.66678 9.46646 8.46678 10.6665 7.00011 10.6665Z" stroke="#515151" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        $(".filter").mousemove(function(filter) {
+            if (filter.target) {
+                $('#tooltipBtn').text('Применился фильтер');
+            }
+            $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
+            $("#tooltipBtn")
+                .css("left", filter.pageX + 20 + "px")
+                .css("top", filter.pageY + 10 + "px");
+        }).mouseleave(function(e) {
+            $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
+        });
     }
     if ($('.colum-country .block1 .list.select-btn').length == 0) {
         $(".country-btn").html('Все');

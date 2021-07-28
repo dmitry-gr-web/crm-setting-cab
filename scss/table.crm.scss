@@ -1851,24 +1851,38 @@ th:hover .tooltip,
     transition: 0.3s;
     -moz-transition: 0.3s;
     -webkit-transition: 0.3s;
-    transition-delay: .3s;
-    -moz-transition-delay: 0.3s;
-    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
 }
 
-.list:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    top: 22px;
-    transition: 0.3s;
-    -moz-transition: 0.3s;
-    -webkit-transition: 0.3s;
-    transition-delay: .3s;
-    -moz-transition-delay: 0.3s;
-    -webkit-transition-delay: 0.3s;
-    z-index: 999 !important;
+th:hover .tooltip {
+    top: 27px;
+    left: 0px;
 }
 
+.filter {
+    animation: circle 2s infinite linear;
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+// .list:hover .tooltip {
+//     visibility: visible;
+//     opacity: 1;
+//     top: 22px;
+//     transition: 0.3s;
+//     -moz-transition: 0.3s;
+//     -webkit-transition: 0.3s;
+//     transition-delay: .3s;
+//     -moz-transition-delay: 0.3s;
+//     -webkit-transition-delay: 0.3s;
+//     z-index: 999 !important;
+// }
 .tooltip:hover {
     visibility: hidden !important;
 }
@@ -1985,14 +1999,16 @@ th:hover .tooltip,
 
 #hoverSelected-lock {
     position: absolute;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    // transition: 0.2s;
     user-select: none;
     max-height: 100px;
     // background-color: transparent;
     background-color: rgba(81, 81, 81, 0.6);
     border-radius: 3px;
     top: 0;
-    left: 0%;
+    left: 0;
     font-size: 12px;
     color: white;
     padding: 4px 5px;
