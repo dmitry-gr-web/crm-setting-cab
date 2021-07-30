@@ -429,6 +429,9 @@
     // top: -10px;
 }
 
+// .s10 {
+//     overflow: hidden;
+// }
 //ZOOM
 // .crm-table {
 //     zoom: 130%;
@@ -548,24 +551,27 @@
             }
             .message-list {
                 position: relative;
-                &:hover:before {
-                    content: '';
-                    width: 4px;
-                    height: 4px;
-                    top: 4px;
-                    left: 2px;
-                    border-radius: 100%;
-                    position: absolute;
-                    background-color: rgb(120, 120, 133);
+                // &:hover:before {
+                //     content: '';
+                //     width: 4px;
+                //     height: 4px;
+                //     top: 4px;
+                //     left: 2px;
+                //     border-radius: 100%;
+                //     position: absolute;
+                //     background-color: rgb(120, 120, 133);
+                // }
+                &:hover .message-link {
+                    opacity: 0.5;
                 }
                 input {
                     outline: none;
                     border: none;
                 }
             }
-            .message-list:first-child:hover:before {
-                background-color: transparent;
-            }
+            // .message-list:first-child:hover:before {
+            //     background-color: transparent;
+            // }
             .select-btn:before {
                 top: 4px;
                 left: 2px;
@@ -895,6 +901,9 @@ tr th {
     .svg-box path {
         fill: #F1F1F1;
     }
+    .svg-box-day path {
+        fill: #F1F1F1;
+    }
     .id-table:before {
         content: '';
         width: 7px;
@@ -1088,6 +1097,130 @@ tr th {
 
 //цвета
 //BTN header
+.status-table {
+    position: relative;
+    box-sizing: border-box;
+    .status-btn {
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        line-height: 16px;
+        height: 16px;
+        border: 1px solid white;
+        background: rgb(212, 212, 212);
+        color: rgba(0, 0, 0, 0.5);
+        padding-left: 3px;
+        width: 100%;
+        .color-form {
+            bottom: -3px;
+        }
+        // .color-form {
+        //     bottom: 4px;
+        // }
+        .list-item {
+            // width: 100%;
+            // height: 100%;
+            position: relative;
+            height: 12px;
+            display: inline-block;
+        }
+        .status-text {
+            display: inline-block;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            background-image: url('../img/arrow-down.svg');
+            width: 6px;
+            height: 3px;
+            background-size: 100%;
+            top: 7px;
+            right: 4px;
+            opacity: 0.8;
+        }
+    }
+    .block1 .list:hover .list-item span {}
+    .block1 {
+        background: white;
+        z-index: 3;
+        color: black;
+        display: none;
+        position: absolute;
+        text-align: left;
+        overflow-x: hidden;
+        // text-overflow: ellipsis;
+        height: 90px;
+        box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        width: 100%;
+        .status-text {
+            display: inline-block;
+        }
+        .select-btn:before {
+            left: 6px;
+            top: 4px;
+        }
+        .select-btn-static:before {
+            left: -9px;
+            top: 4px;
+        }
+        .all {
+            width: 100%;
+            display: block;
+        }
+        .color-form {
+            bottom: -2px;
+        }
+        // .color-form {
+        //     bottom: -2px;
+        // }
+        .list:hover span:nth-child(2) {
+            opacity: 0.5;
+        }
+        .list span:nth-child(2) {
+            display: inline-block;
+            height: 14px;
+        }
+        .list-item {
+            // width: 100%;
+            // height: 100%;
+            position: relative;
+            left: 15px;
+            height: 12px;
+            display: inline-block;
+        }
+        .list {
+            height: 18px;
+            position: relative;
+            margin-right: 10px;
+        }
+        .simplebar-track.simplebar-vertical {
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            bottom: 0;
+            border-radius: 5px;
+        }
+        .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+            background: rgba(0, 0, 0, 0.3);
+            width: 3px;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        .simplebar-scrollbar.simplebar-visible:before {
+            opacity: 1;
+        }
+        .simplebar-content-wrapper {
+            padding: 0;
+        }
+    }
+}
+
 .colum-country {
     position: relative;
     box-sizing: border-box;
@@ -1103,7 +1236,7 @@ tr th {
         padding-left: 3px;
         .list-item img {
             position: absolute;
-            left: 4px;
+            left: 15px;
             height: 10px;
             top: 3px;
         }
@@ -1128,16 +1261,23 @@ tr th {
             opacity: 0.8;
         }
     }
-    .block1 .list:hover:before {
-        background-color: rgb(120, 120, 133);
-        content: '';
-        width: 4px;
-        height: 4px;
-        position: absolute;
-        border-radius: 100%;
-        top: 4px;
-        // left: -2px;
-        left: 0px;
+    // .filter {
+    //     display: block;
+    //     margin-left: 16px;
+    // }
+    // .block1 .list:hover:before {
+    //     background-color: rgb(120, 120, 133);
+    //     content: '';
+    //     width: 4px;
+    //     height: 4px;
+    //     position: absolute;
+    //     border-radius: 100%;
+    //     top: 4px;
+    //     // left: -2px;
+    //     left: 7px;
+    // }
+    .block1 .list:hover img {
+        opacity: 0.5;
     }
     .block1 {
         background: white;
@@ -1169,8 +1309,12 @@ tr th {
         //     /* опционально */
         // }
         .select-btn:before {
-            left: 0;
+            left: 7px;
             top: 4px;
+        }
+        .all {
+            width: 100%;
+            display: block;
         }
         .list-item img {
             // position: absolute;
@@ -1181,6 +1325,10 @@ tr th {
         .list-item span {
             // margin-left: 27px;
             // text-align: center;
+        }
+        .list-item {
+            width: 100%;
+            height: 100%;
         }
         .list {
             height: 18px;
@@ -1198,7 +1346,7 @@ tr th {
             width: 3px;
             margin-top: 5px;
             margin-bottom: 5px;
-            margin-right: 2px;
+            margin-right: 5px;
             bottom: 0;
             border-radius: 5px;
         }
@@ -1253,16 +1401,29 @@ tr th {
             opacity: 0.8;
         }
     }
-    .block1 .list:hover:before {
-        background-color: rgb(120, 120, 133);
-        content: '';
-        width: 4px;
-        height: 4px;
-        position: absolute;
-        border-radius: 100%;
-        top: 5px;
-        left: 6px;
+    // .block1 .list:hover:before {
+    //     background-color: rgb(120, 120, 133);
+    //     content: '';
+    //     width: 6px;
+    //     height: 6px;
+    //     position: absolute;
+    //     border-radius: 100%;
+    //     left: 7px;
+    //     top: 4px;
+    // }
+    .block1 .list:hover svg {
+        opacity: 0.5;
     }
+    // .block1 .list:hover:after {
+    //     background-color: rgb(120, 120, 133);
+    //     content: '';
+    //     width: 2px;
+    //     height: 12px;
+    //     position: absolute;
+    //     // border-radius: 100%;
+    //     left: 0px;
+    //     top: 2px;
+    // }
     .block1 {
         background: white;
         z-index: 3;
@@ -1276,7 +1437,8 @@ tr th {
         cursor: pointer;
         width: 55px;
         .select-btn:before {
-            left: 6px;
+            left: 7px;
+            top: 4px;
         }
         .simplebar-track.simplebar-vertical {
             background-color: rgba(0, 0, 0, 0.1);
@@ -1370,6 +1532,10 @@ tr th {
         height: 4px;
         position: absolute;
         border-radius: 100%;
+        top: 5px;
+        left: 3px;
+    }
+    .select-btn-static:before {
         top: 5px;
         left: 3px;
     }
@@ -1489,7 +1655,7 @@ tr th {
         background: rgb(212, 212, 212);
         color: rgba(0, 0, 0, 0.5);
         padding-left: 3px;
-        width: 100%;
+        // width: 100%;
         padding-right: 10px; // dlya strelki
         .list-item img {
             position: relative;
@@ -1740,6 +1906,17 @@ tr th {
     background-color: rgb(120, 120, 133);
 }
 
+.select-btn-static:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    left: 7px;
+    top: 4px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgb(120, 120, 133);
+}
+
 //BTN header
 // hover header
 .wrap-hide {
@@ -1851,20 +2028,37 @@ th:hover .tooltip,
     transition: 0.3s;
     -moz-transition: 0.3s;
     -webkit-transition: 0.3s;
-    transition-delay: 0.5s;
-    -moz-transition-delay: 0.5s;
-    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
 }
 
 th:hover .tooltip {
     top: 27px;
     left: 0px;
+    transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
 }
 
 .filter {
     animation: circle 2s infinite linear;
 }
 
+// .filter path {
+//     animation: suka 2s infinite;
+// }
+// @keyframes suka {
+//     0% {
+//         stroke: rgb(81, 81, 81);
+//     }
+//     50% {
+//         stroke: black;
+//     }
+//     0% {
+//         stroke: rgb(81, 81, 81);
+//     }
+// }
 @keyframes circle {
     from {
         transform: rotate(360deg);
@@ -1923,6 +2117,10 @@ th:hover .tooltip {
     backdrop-filter: blur(4px);
 }
 
+.table-header th:last-child .tooltip {
+    left: -235%;
+}
+
 #hoverSelect {
     position: absolute;
     top: 0;
@@ -1954,7 +2152,8 @@ th:hover .tooltip {
     font-size: 12px;
     color: white;
     padding: 4px 5px;
-    transition: 0.2s;
+    // animation: open 0.3s;
+    // transition: 0.2s;
     // transition-delay: 0.2s;
     // transition-delay: 0.2s;
     // transition: 0.2s;
@@ -1985,8 +2184,26 @@ th:hover .tooltip {
     //     width: max-content;
     //     background-color: rgba(81, 81, 81, 0.6);
     // }
+    backdrop-filter: blur(4px);
 }
 
+// @keyframes open {
+//     0% {
+//         opacity: 0;
+//     }
+//     20% {
+//         opacity: 0;
+//     }
+//     40% {
+//         opacity: 0.4;
+//     }
+//     80% {
+//         opacity: 0.8;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
 .text-tooltip {
     // font-size: 12px;
     // span {
@@ -2026,6 +2243,7 @@ th:hover .tooltip {
     word-break: break-word;
     text-align: left;
     max-width: 300px;
+    backdrop-filter: blur(4px);
 }
 
 // .max-lenght-comment,

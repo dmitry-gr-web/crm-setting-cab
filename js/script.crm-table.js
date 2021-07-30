@@ -38,42 +38,90 @@ $(document).ready(function() {
             $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });;
         });
     });
-    $(".list-item img").hover(function(xy) {
+    $(".list").hover(function(xy) {
         let ukraine = 'Украина';
         let russia = 'Россия';
         let kazahstan = 'Казахстан';
         let alb = 'Албания';
         let world = 'Мир';
+        let predoplata = 'Предоплата';
+        let nalozhplatezh = 'Наложенный платёж';
+        let acceptPay = 'Оплачен';
+        let decline = 'Отказ';
+        let trade = 'Обмен';
+        let newOrder = 'Новый';
+        let accept = 'Принят';
+        let declineOrder = 'Отказ';
+        // let uspeh = $('.status-text').text();
 
-        if (xy.target.offsetParent.classList.contains('ua')) {
+        // $(this).stop(true, true).animate({ width: "200px" });
+        // if ($(this).hasClass('newOrder')) {
+        //     $('#tooltipBtn').text(newOrder);
+        // }
+        // if ($(this).hasClass('accept')) {
+        //     $('#tooltipBtn').text(accept);
+        // }
+        // if ($(this).hasClass('declineOrder')) {
+        //     $('#tooltipBtn').text(declineOrder);
+        // }
+        // if ($(this).hasClass('uspeh')) {
+        //     $('#tooltipBtn').text(uspeh);
+        // }
+        if ($(this).hasClass('ua')) {
             $('#tooltipBtn').text(ukraine);
         }
-        if (xy.target.offsetParent.classList.contains('ru')) {
+        if ($(this).hasClass('ru')) {
             $('#tooltipBtn').text(russia);
         }
-        if (xy.target.offsetParent.classList.contains('kz')) {
+        if ($(this).hasClass('kz')) {
             $('#tooltipBtn').text(kazahstan);
         }
-        if (xy.target.offsetParent.classList.contains('al')) {
+        if ($(this).hasClass('al')) {
             $('#tooltipBtn').text(alb);
         }
-        $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
-        $("#tooltipBtn")
-            .css("left", xy.pageX + 20 + "px")
-            .css("top", xy.pageY + 10 + "px");
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
-    });
-    $(".filter").hover(function(filter) {
-        if (filter.target) {
-            $('#tooltipBtn').text('Применился фильтер');
+        if ($(this).hasClass('predoplata')) {
+            $('#tooltipBtn').text(predoplata);
         }
-        $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
+        if ($(this).hasClass('acceptPay')) {
+            $('#tooltipBtn').text(acceptPay);
+        }
+        if ($(this).hasClass('decline')) {
+            $('#tooltipBtn').text(decline);
+        }
+        if ($(this).hasClass('trade')) {
+            $('#tooltipBtn').text(trade);
+        }
+        if ($(this).hasClass('nalozhplatezh')) {
+            $('#tooltipBtn').text(nalozhplatezh);
+        }
+        // if (xy.target.offsetParent.classList.contains('ru')) {
+        //     $('#tooltipBtn').text(russia);
+        // }
+        // if (xy.target.offsetParent.classList.contains('kz')) {
+        //     $('#tooltipBtn').text(kazahstan);
+        // }
+        // if (xy.target.offsetParent.classList.contains('al')) {
+        //     $('#tooltipBtn').text(alb);
+        // }
+        // .delay(500)
+        // .stop(true, false)
+        $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+        let tooltipWidth = $("#tooltipBtn").width();
+
+        // console.log(tooltipWidth)
+        // .css("left", xy.pageX - tooltip + -30 + "px")
+        // let tooltip = $(".list-item img").width();
         $("#tooltipBtn")
-            .css("left", xy.pageX + 20 + "px")
-            .css("top", xy.pageY + 10 + "px");
+            .css("left", xy.pageX - tooltipWidth + -40 + "px")
+            .css("top", xy.pageY + 0 + "px");
+        if ($(this).children()[0].classList.contains('all')) {
+            $("#tooltipBtn").css({ 'visibility': 'hidden' });
+        }
+        // if (!$(this).hasClass('uspeh')) {
+        //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+        // }
     }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
+        $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
 });
 
@@ -101,14 +149,14 @@ $(".tel").each(function(e, item) {
     }
 });
 $(".colum-pay").each(function(e, item) {
-    let card = 'Предоплата';
-    let card2 = 'Наложенный платёж';
+    let predoplata = 'Предоплата';
+    let nalozhplatezh = 'Наложенный платёж';
     let acceptPay = 'Оплачен';
     let decline = 'Отказ';
     let trade = 'Обмен';
 
     if ($(item.children[0].children).hasClass('card')) {
-        $(this).append('<div class="tooltip">' + card + '</div>');
+        $(this).append('<div class="tooltip">' + predoplata + '</div>');
     }
     if ($(item.children[0].children).hasClass('svg-trade')) {
         $(this).append('<div class="tooltip">' + trade + '</div>');
@@ -120,7 +168,7 @@ $(".colum-pay").each(function(e, item) {
         $(this).append('<div class="tooltip">' + acceptPay + '</div>');
     }
     if ($(item.children[0].children).hasClass('convert-pay')) {
-        $(this).append('<div class="tooltip">' + card2 + '</div>');
+        $(this).append('<div class="tooltip">' + nalozhplatezh + '</div>');
     }
 });
 $(".svg-delivery").each(function(e, item) {
@@ -149,17 +197,17 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
     }
 });
 $(".crm-main-table .date-time").each(function(e, item) {
-    let message = 'Принят за 3 минуты 25 секунд';
-    let message2 = 'Принят за 1 час 3 минуты 25 секунд';
-    let open = 'Открыт через 3 дня 3 минуты 23 секунды';
-    let open2 = 'Открыт через 10 дней 1 час 3 минуты 23 секунды';
+    let acceptfor = 'Открыт через 10 дней 3 минуты 25 секунд';
+    let acceptforhours = 'Открыт через 3 дня 1 час 3 минуты 25 секунд';
+    let open = 'Принят за 3 минуты 23 секунды';
+    let open2 = 'Принят за 1 час 3 минуты 23 секунды';
     let peredan = 'Передан через 3 дня 3 минуты 23 секунды';
 
     if ($(item).hasClass('acceptfor')) {
-        $(this).append('<div class="tooltip">' + message + '</div>');
+        $(this).append('<div class="tooltip">' + acceptfor + '</div>');
     }
     if ($(item).hasClass('acceptforhours')) {
-        $(this).append('<div class="tooltip">' + message2 + '</div>');
+        $(this).append('<div class="tooltip">' + acceptforhours + '</div>');
     }
     if ($(item).hasClass('open')) {
         $(this).append('<div class="tooltip">' + open + '</div>');
@@ -173,40 +221,45 @@ $(".crm-main-table .date-time").each(function(e, item) {
 });
 $(".crm-main-table .svg-wrap").each(function(e, item) {
     let message = 'Остался 1 день до платного хранения';
-    if ($(item.children[0]).hasClass('svg-box')) {
+    if ($(item.children[0]).hasClass('svg-box-day')) {
         $(this).append('<div class="tooltip">' + message + '</div>');
     }
 });
 $(".table-header th").each(function(e, item) {
     let id = 'Идентификатор/номер заказа<br><span class="text-tooltip">Используется для поиска и передачи заказа между пользователями CRM</span>';
     let status = 'Текущий статус заказа<br><span class="text-tooltip">Используется для контроля, анализа и отслеживания заказа в CRM</span>';
-    let pokupatel = 'ФИО покупателя<br><span class="text-tooltip">Используется при автозаполнении ТТН почтовых служб</span>';
+    let pokupatel = 'Фамилия имя отчество покупателя<br><span class="text-tooltip">Используется для автоматического заполнения товарно-транспортной накладной почтовой службы</span>';
     let country = 'Страна за которой закреплён заказ<br><span class="text-tooltip">Используется для разделения заказов из разных стран</span>';
-    let tel = 'Телефон покупателя<br><span class="text-tooltip">Используется при автозаполнении ТТН почтовых служб</span>';
+    let tel = 'Телефон покупателя<br><span class="text-tooltip">Используется для:<br>-Автоматического заполнения товарно-транспортной накладной почтовой службы<br>-Автоматической отправки SMS</span>';
     let commentary = '...';
     let sum = 'Итоговая сумма заказа';
     let product = '...';
     let pay = 'Используемый вид оплаты';
     let delivery = 'Используемый вид доставки';
     let addres = '...';
-    let ttn = 'Товарно-транспортная накладная';
-    let ttnStatus = 'Информация за последний час о статусе посылки.<br><span class="text-tooltip">Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM</span>';
-    let user = 'Пользователь за которым закреплён заказ';
-    let depart = 'Заказ с "отделом" виден только тем пользователям у которых есть доступ к сооответствуещему отделу';
+    let ttn = 'Номер товарно-транспортной накладной';
+    let ttnStatus = 'Информация за последний час о статусе посылки<br><span class="text-tooltip">Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM</span>';
+    let user = 'Пользователь подтвердивший заказ<br><span class="text-tooltip">Закрепление происходит автоматически при изменении статуса заказа на «Принят». Используется для расчета зарплаты/премии сотрудника</span>';
+    let depart = 'Используемый отдел в заказе<br><span class="text-tooltip">Заказ с "отделом" виден только тем пользователям у которых есть доступ к сооответствующему отделу</span>';
     let add = 'Дата и время добавления заказа в CRM';
-    let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним.<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал звонка/ответа</span>';
-    let adopted = 'Время между открытием заказа и изменением его статуса на «Принят».<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
-    let zakr = 'Дата и время изменения статуса заказа на «Принят»';
-    let pered = 'Время между получением статуса принят и получением посылки почтой.<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
-    let send = 'Дата и время регистрации посылки в почтовой службе';
-    let update = 'Дата и время последнего изменения заказа';
-    let finish = 'Дата и время завершения заказа, дальнейшее редактирование запрещено кроме группы администратор';
-    let site = 'Место откуда поступил заказ';
-    let ip = 'Ip адрес откуда поступил заказ.<br><span class="text-tooltip">Используется для отслеживания и блокировки в случаях спама</span>';
-    let utm = 'UTM-метка.<br><span class="text-tooltip">Используется для отслеживания рекламного источника, который привел клиента на Ваш сайт</span>';
-    let field = 'Дополнительное поле заказа.<br><span class="text-tooltip">Используется для передачи,или хранения информации о заказе</span>';
+    let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал звонка/ответа</span>';
+    let opened = 'Последний пользователь открывший заказ<br><span class="text-tooltip">Используется для выявления сотрудников "ворующих" заказы</span>';
+    let adopted = 'Время между открытием заказа и изменением его статуса на «Принят»<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
+    let zakr = 'Дата и время изменения статуса заказа на «Принят»<br><span class="text-tooltip">Используется для расчета зарплаты/премии сотрудника за период врмени</span>';
+    let pered = 'Время между изменением статуса заказа на "Принят" и получением посылки почтовой службой<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
+    let send = 'Дата и время получения посылки почтовой службой<br><span class="text-tooltip">Используется для контроля сотрудников отвечающих за отправку заказа</span>';
+    let change = 'Дата и время последнего изменения заказа';
+    let changed = 'Последний пользователь изменивший заказ';
+    let finish = 'Дата и время завершения заказа<br><span class="text-tooltip">Используется для подтверждения завершения заказа. Дальнейшее редактирование заказа сотрудниками не имеющим доступ, запрещен</span>';
+    let site = 'Источник заказа';
+    let ip = 'IP адрес устройства с которого поступил заказ<br><span class="text-tooltip">Используется для отслеживания и блокировки в случаях спама</span>';
+    let utm = 'UTM-метка<br><span class="text-tooltip">Используется для передачи переменных рекламного источника с которого поступил заказ</span>';
+    let field = 'Дополнительное поле заказа<br><span class="text-tooltip">Используется для передачи и хранения дополнительных параметров заказа</span>';
     if ($(item).hasClass('header-id')) {
         $(this).append('<div class="tooltip">' + id + '</div>');
+    }
+    if ($(item).hasClass('header-opened')) {
+        $(this).append('<div class="tooltip">' + opened + '</div>');
     }
     if ($(item).hasClass('header-status')) {
         $(this).append('<div class="tooltip">' + status + '</div>');
@@ -268,8 +321,11 @@ $(".table-header th").each(function(e, item) {
     if ($(item).hasClass('header-send')) {
         $(this).append('<div class="tooltip">' + send + '</div>');
     }
-    if ($(item).hasClass('header-update')) {
-        $(this).append('<div class="tooltip">' + update + '</div>');
+    if ($(item).hasClass('header-change')) {
+        $(this).append('<div class="tooltip">' + change + '</div>');
+    }
+    if ($(item).hasClass('header-changed')) {
+        $(this).append('<div class="tooltip">' + changed + '</div>');
     }
     if ($(item).hasClass('header-finish')) {
         $(this).append('<div class="tooltip">' + finish + '</div>');
@@ -452,12 +508,103 @@ $(document).bind("click", function(e) {
     }
 });
 //COUNT MESSAGE
+//menu status
+$(".status-table .status-btn").click(function() {
+    $(".status-table .block1").toggleClass("toggle");
+    $(".status-text").text(function(i, text) {
+        let textEllipsis = $(".status-text").width();
+        console.log(textEllipsis);
+        if (textEllipsis > 90) {
+            $(".status-text").css({
+                'overflow': 'hidden',
+                'text-overflow': 'ellipsis',
+                'width': '84px'
+            });
+            // text = text + "...";
+            // $(this).text(text);
+        }
+    });
+});
+$(".status-table .block1 .list").click(function(e) {
+    // let text = $(this).html();
+    // $(".country-btn").html(text);
+    // $(".colum-country .block1").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+
+
+    $(".status-table .list .all").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    $(this).toggleClass('select-btn');
+    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
+    // $('.block1').find('div:first').removeClass('select-btn');
+    if ($('.status-table .block1 .list.select-btn').length == 1) {
+        let appendCountry = $('.list.select-btn').clone();
+        $(".status-btn").html(appendCountry);
+        $('.all').removeClass("select-btn-static");
+        // $(".country-btn .list .all.select-btn-static").removeClass("select-btn-static");
+        $('.status-btn .list.select-btn').removeClass('select-btn');
+    }
+    if ($('.status-table .block1 .list.select-btn').length >= 2) {
+        $(".status-btn").html('Фильтр');
+        // $(".country-btn").html('<svg class="filter" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6668 9.73313C12.3334 9.53313 12.2001 9.1998 12.2668 8.86646C12.3334 8.5998 12.3334 8.26646 12.3334 7.99979C12.3334 7.73313 12.3334 7.3998 12.2668 7.13313C12.2001 6.7998 12.4001 6.46646 12.6668 6.26646C13.0668 5.99979 13.2001 5.46646 13.0001 5.06646L12.5334 4.26646C12.2668 3.86646 11.7334 3.73313 11.3334 3.93313C11.0001 4.13313 10.6668 4.06646 10.4001 3.86646C9.93344 3.46646 9.46678 3.1998 8.86678 2.9998C8.53344 2.86646 8.33344 2.53313 8.33344 2.1998C8.33344 1.73313 7.93344 1.33313 7.46677 1.33313H6.53344C6.06678 1.33313 5.66677 1.73313 5.66677 2.1998C5.66677 2.53313 5.46678 2.86646 5.13344 2.9998C4.60011 3.1998 4.06677 3.53313 3.60011 3.86646C3.33344 4.06646 2.93344 4.13313 2.60011 3.93313C2.20011 3.73313 1.66678 3.86646 1.46677 4.26646L1.00011 5.06646C0.733442 5.46646 0.933442 5.99979 1.33344 6.26646C1.66677 6.46646 1.80011 6.7998 1.73344 7.13313C1.73344 7.46646 1.66677 7.73313 1.66677 7.99979C1.66677 8.26646 1.66677 8.5998 1.73344 8.86646C1.80011 9.1998 1.60011 9.53313 1.33344 9.73313C0.866775 9.9998 0.733442 10.5331 1.00011 10.9331L1.46677 11.7331C1.73344 12.1331 2.26677 12.2665 2.66677 12.0665C3.00011 11.8665 3.33344 11.9331 3.66677 12.1331C4.13344 12.4665 4.60011 12.7998 5.13344 12.9998C5.46678 13.1331 5.66677 13.4665 5.66677 13.7998V13.8665C5.66677 14.3331 6.06678 14.7331 6.53344 14.7331H7.46677C7.93344 14.7331 8.33344 14.3331 8.33344 13.8665C8.33344 13.5331 8.53344 13.1998 8.86678 13.0665C9.40011 12.8665 9.93344 12.5998 10.3334 12.1998C10.6001 11.9998 11.0001 11.9331 11.2668 12.1331C11.6668 12.3998 12.2001 12.1998 12.4668 11.7998L12.9334 10.9998C13.2668 10.5331 13.1334 9.9998 12.6668 9.73313ZM7.00011 10.6665C5.53344 10.6665 4.33344 9.46646 4.33344 7.99979C4.33344 6.53313 5.53344 5.33313 7.00011 5.33313C8.46678 5.33313 9.66678 6.53313 9.66678 7.99979C9.66678 9.46646 8.46678 10.6665 7.00011 10.6665Z" stroke="#515151" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        // $(".filter").hover(function(filter) {
+        //     if (filter.target) {
+        //         $('#tooltipBtn').text('Применился фильтер');
+        //     }
+        //     $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
+        //     $("#tooltipBtn")
+        //         .css("left", filter.pageX + 20 + "px")
+        //         .css("top", filter.pageY + 10 + "px");
+        // }).mouseleave(function(e) {
+        //     $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+        // });
+    }
+    if ($('.status-table .block1 .list.select-btn').length == 0) {
+        $(".status-btn").html('Все');
+        $('.all').addClass("select-btn-static");
+        // $('.all').addClass("select-btn-static");
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
+        $(this).children().addClass("select-btn-static");
+        // $('.list .all').addClass("select-btn-static");
+    }
+});
+$(".status-table .block1 .list .all").click(function() {
+    // let textDelivery = $(this).html();
+    $(".status-btn").html('Все');
+    $(this).removeClass('select-btn');
+    // $('.list .all').addClass("select-btn-static");
+    // $(this).addClass('select-btn-static');
+    // $('.list-item.all').addClass("select-btn-static");
+    // $(".employe- btn").html(text);
+    $('.status-table .block1 .list').removeClass('select-btn');
+    $(".status-table .block1").removeClass("toggle");
+    // $(".crm-main-table").removeClass("z-index");
+    // $('.all').removeClass("select-btn-static");
+    // if (!$('.list .all').hasClass('select-btn-static')) {
+    //     $('.all').addClass("select-btn-static");
+    // };
+
+});
+
+$(document).bind("click", function(e) {
+    let $clicked = $(e.target);
+    if (!$clicked.parents().hasClass("status-table")) {
+        $(".status-table .block1").removeClass("toggle");
+        // $('.all').addClass("select-btn-static");
+    }
+    // if (!$(".block1").hasClass("toggle")) {
+    //     $(".crm-main-table").removeClass("z-index");
+    // }
+});
+
+//menu status
 //menu country btn
 $(".colum-country .country-btn").click(function() {
     $(".colum-country .block1").toggleClass("toggle");
     // $(".crm-main-table").addClass("z-index");
 });
-$(".colum-country .block1 .list").click(function() {
+$(".colum-country .block1 .list").click(function(e) {
     // let text = $(this).html();
     // $(".country-btn").html(text);
     // $(".colum-country .block1").removeClass("toggle");
@@ -472,41 +619,58 @@ $(".colum-country .block1 .list").click(function() {
     if ($('.colum-country .block1 .list.select-btn').length == 1) {
         let appendCountry = $('.list.select-btn').clone();
         $(".country-btn").html(appendCountry);
-        $($('.country-btn .list.select-btn')).removeClass('select-btn');
+        $('.all').removeClass("select-btn-static");
+        // $(".country-btn .list .all.select-btn-static").removeClass("select-btn-static");
+        $('.country-btn .list.select-btn').removeClass('select-btn');
     }
     if ($('.colum-country .block1 .list.select-btn').length >= 2) {
-        $(".country-btn").html('<svg class="filter" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6668 9.73313C12.3334 9.53313 12.2001 9.1998 12.2668 8.86646C12.3334 8.5998 12.3334 8.26646 12.3334 7.99979C12.3334 7.73313 12.3334 7.3998 12.2668 7.13313C12.2001 6.7998 12.4001 6.46646 12.6668 6.26646C13.0668 5.99979 13.2001 5.46646 13.0001 5.06646L12.5334 4.26646C12.2668 3.86646 11.7334 3.73313 11.3334 3.93313C11.0001 4.13313 10.6668 4.06646 10.4001 3.86646C9.93344 3.46646 9.46678 3.1998 8.86678 2.9998C8.53344 2.86646 8.33344 2.53313 8.33344 2.1998C8.33344 1.73313 7.93344 1.33313 7.46677 1.33313H6.53344C6.06678 1.33313 5.66677 1.73313 5.66677 2.1998C5.66677 2.53313 5.46678 2.86646 5.13344 2.9998C4.60011 3.1998 4.06677 3.53313 3.60011 3.86646C3.33344 4.06646 2.93344 4.13313 2.60011 3.93313C2.20011 3.73313 1.66678 3.86646 1.46677 4.26646L1.00011 5.06646C0.733442 5.46646 0.933442 5.99979 1.33344 6.26646C1.66677 6.46646 1.80011 6.7998 1.73344 7.13313C1.73344 7.46646 1.66677 7.73313 1.66677 7.99979C1.66677 8.26646 1.66677 8.5998 1.73344 8.86646C1.80011 9.1998 1.60011 9.53313 1.33344 9.73313C0.866775 9.9998 0.733442 10.5331 1.00011 10.9331L1.46677 11.7331C1.73344 12.1331 2.26677 12.2665 2.66677 12.0665C3.00011 11.8665 3.33344 11.9331 3.66677 12.1331C4.13344 12.4665 4.60011 12.7998 5.13344 12.9998C5.46678 13.1331 5.66677 13.4665 5.66677 13.7998V13.8665C5.66677 14.3331 6.06678 14.7331 6.53344 14.7331H7.46677C7.93344 14.7331 8.33344 14.3331 8.33344 13.8665C8.33344 13.5331 8.53344 13.1998 8.86678 13.0665C9.40011 12.8665 9.93344 12.5998 10.3334 12.1998C10.6001 11.9998 11.0001 11.9331 11.2668 12.1331C11.6668 12.3998 12.2001 12.1998 12.4668 11.7998L12.9334 10.9998C13.2668 10.5331 13.1334 9.9998 12.6668 9.73313ZM7.00011 10.6665C5.53344 10.6665 4.33344 9.46646 4.33344 7.99979C4.33344 6.53313 5.53344 5.33313 7.00011 5.33313C8.46678 5.33313 9.66678 6.53313 9.66678 7.99979C9.66678 9.46646 8.46678 10.6665 7.00011 10.6665Z" stroke="#515151" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-        $(".filter").mousemove(function(filter) {
-            if (filter.target) {
-                $('#tooltipBtn').text('Применился фильтер');
-            }
-            $("#tooltipBtn").css({ 'visibility': 'visible', 'opacity': '1' });
-            $("#tooltipBtn")
-                .css("left", filter.pageX + 20 + "px")
-                .css("top", filter.pageY + 10 + "px");
-        }).mouseleave(function(e) {
-            $("#tooltipBtn").css({ 'visibility': 'hidden', 'opacity': '0' });
-        });
+        $(".country-btn").html('Фильтр');
+        // $(".country-btn").html('<svg class="filter" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6668 9.73313C12.3334 9.53313 12.2001 9.1998 12.2668 8.86646C12.3334 8.5998 12.3334 8.26646 12.3334 7.99979C12.3334 7.73313 12.3334 7.3998 12.2668 7.13313C12.2001 6.7998 12.4001 6.46646 12.6668 6.26646C13.0668 5.99979 13.2001 5.46646 13.0001 5.06646L12.5334 4.26646C12.2668 3.86646 11.7334 3.73313 11.3334 3.93313C11.0001 4.13313 10.6668 4.06646 10.4001 3.86646C9.93344 3.46646 9.46678 3.1998 8.86678 2.9998C8.53344 2.86646 8.33344 2.53313 8.33344 2.1998C8.33344 1.73313 7.93344 1.33313 7.46677 1.33313H6.53344C6.06678 1.33313 5.66677 1.73313 5.66677 2.1998C5.66677 2.53313 5.46678 2.86646 5.13344 2.9998C4.60011 3.1998 4.06677 3.53313 3.60011 3.86646C3.33344 4.06646 2.93344 4.13313 2.60011 3.93313C2.20011 3.73313 1.66678 3.86646 1.46677 4.26646L1.00011 5.06646C0.733442 5.46646 0.933442 5.99979 1.33344 6.26646C1.66677 6.46646 1.80011 6.7998 1.73344 7.13313C1.73344 7.46646 1.66677 7.73313 1.66677 7.99979C1.66677 8.26646 1.66677 8.5998 1.73344 8.86646C1.80011 9.1998 1.60011 9.53313 1.33344 9.73313C0.866775 9.9998 0.733442 10.5331 1.00011 10.9331L1.46677 11.7331C1.73344 12.1331 2.26677 12.2665 2.66677 12.0665C3.00011 11.8665 3.33344 11.9331 3.66677 12.1331C4.13344 12.4665 4.60011 12.7998 5.13344 12.9998C5.46678 13.1331 5.66677 13.4665 5.66677 13.7998V13.8665C5.66677 14.3331 6.06678 14.7331 6.53344 14.7331H7.46677C7.93344 14.7331 8.33344 14.3331 8.33344 13.8665C8.33344 13.5331 8.53344 13.1998 8.86678 13.0665C9.40011 12.8665 9.93344 12.5998 10.3334 12.1998C10.6001 11.9998 11.0001 11.9331 11.2668 12.1331C11.6668 12.3998 12.2001 12.1998 12.4668 11.7998L12.9334 10.9998C13.2668 10.5331 13.1334 9.9998 12.6668 9.73313ZM7.00011 10.6665C5.53344 10.6665 4.33344 9.46646 4.33344 7.99979C4.33344 6.53313 5.53344 5.33313 7.00011 5.33313C8.46678 5.33313 9.66678 6.53313 9.66678 7.99979C9.66678 9.46646 8.46678 10.6665 7.00011 10.6665Z" stroke="#515151" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        // $(".filter").hover(function(filter) {
+        //     if (filter.target) {
+        //         $('#tooltipBtn').text('Применился фильтер');
+        //     }
+        //     $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
+        //     $("#tooltipBtn")
+        //         .css("left", filter.pageX + 20 + "px")
+        //         .css("top", filter.pageY + 10 + "px");
+        // }).mouseleave(function(e) {
+        //     $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+        // });
     }
     if ($('.colum-country .block1 .list.select-btn').length == 0) {
         $(".country-btn").html('Все');
+        $('.all').addClass("select-btn-static");
+        // $('.all').addClass("select-btn-static");
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
+        $(this).children().addClass("select-btn-static");
+        // $('.list .all').addClass("select-btn-static");
     }
 });
 $(".colum-country .block1 .list .all").click(function() {
-    let textDelivery = $(this).html();
-    $(".country-btn").html(textDelivery);
+    // let textDelivery = $(this).html();
+    $(".country-btn").html('Все');
     $(this).removeClass('select-btn');
-    // $(".employe-btn").html(text);
+    // $('.list .all').addClass("select-btn-static");
+    // $(this).addClass('select-btn-static');
+    // $('.list-item.all').addClass("select-btn-static");
+    // $(".employe- btn").html(text);
     $('.colum-country .block1 .list').removeClass('select-btn');
     $(".colum-country .block1").removeClass("toggle");
     // $(".crm-main-table").removeClass("z-index");
+    // $('.all').removeClass("select-btn-static");
+    // if (!$('.list .all').hasClass('select-btn-static')) {
+    //     $('.all').addClass("select-btn-static");
+    // };
+
 });
+
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-country")) {
         $(".colum-country .block1").removeClass("toggle");
+        // $('.all').addClass("select-btn-static");
     }
     // if (!$(".block1").hasClass("toggle")) {
     //     $(".crm-main-table").removeClass("z-index");
@@ -533,6 +697,7 @@ $(".colum-delivery .block1 .list").click(function() {
     if ($('.colum-delivery .block1 .list.select-btn').length == 1) {
         let appendDelivery = $('.list.select-btn').clone();
         $(".delivery-btn").html(appendDelivery);
+        $('.all').removeClass("select-btn-static");
         $($('.delivery-btn .list.select-btn')).removeClass('select-btn');
     }
     if ($('.colum-delivery .block1 .list.select-btn').length >= 2) {
@@ -540,13 +705,15 @@ $(".colum-delivery .block1 .list").click(function() {
     }
     if ($('.colum-delivery .block1 .list.select-btn').length == 0) {
         $(".delivery-btn").html('Все');
+        $('.all').addClass("select-btn-static");
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
+        $(this).children().addClass("select-btn-static");
     }
 });
 $(".colum-delivery .block1 .list .all").click(function() {
-    let textDelivery = $(this).html();
-    $(".delivery-btn").html(textDelivery);
+    // let textDelivery = $(this).html();
+    $(".delivery-btn").html('Все');
     $(this).removeClass('select-btn');
     // $(".employe-btn").html(text);
     $('.colum-delivery .block1 .list').removeClass('select-btn');
@@ -583,6 +750,7 @@ $(".colum-pay .block1 .list").click(function() {
     if ($('.colum-pay .block1 .list.select-btn').length == 1) {
         let appendPay = $('.list.select-btn').clone();
         $(".pay-btn").html(appendPay);
+        $('.all').removeClass("select-btn-static");
         $($('.pay-btn .list.select-btn')).removeClass('select-btn');
     }
     if ($('.colum-pay .block1 .list.select-btn').length >= 2) {
@@ -590,13 +758,15 @@ $(".colum-pay .block1 .list").click(function() {
     }
     if ($('.colum-pay .block1 .list.select-btn').length == 0) {
         $(".pay-btn").html('Все');
+        $('.all').addClass("select-btn-static");
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
+        $(this).children().addClass("select-btn-static");
     }
 });
 $(".colum-pay .block1 .list .all").click(function() {
-    let textPay = $(this).html();
-    $(".pay-btn").html(textPay);
+    // let textPay = $(this).html();
+    $(".pay-btn").html('Все');
 
     $(this).removeClass('select-btn');
     // $(".employe-btn").html(text);

@@ -17,6 +17,7 @@ slider.forEach((el) => {
     });
     el.addEventListener('mouseleave', () => {
         isDown = false;
+
         // slider.classList.remove('active');
     });
     el.addEventListener('mouseup', () => {

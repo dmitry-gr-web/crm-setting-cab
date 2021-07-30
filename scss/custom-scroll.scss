@@ -3,6 +3,7 @@
     .btn {
         font-size: 12px;
         position: relative;
+        width: 125px;
         .btn-span {
             position: relative;
         }
@@ -24,7 +25,7 @@
             height: 80px;
             transition: 0.4s;
             top: 0;
-            right: -25px;
+            right: -9px;
             list-style: none;
             display: none;
             font-size: 12px;
@@ -32,20 +33,23 @@
             box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
             // backdrop-filter: blur(4px);
             z-index: 2;
-            .list {
+            .list-pages {
                 text-align: left;
                 margin-left: 10px;
                 position: relative;
             }
-            .list:hover:before {
-                content: '';
-                width: 4px;
-                height: 4px;
-                position: absolute;
-                border-radius: 100%;
-                top: 4px;
-                left: -7px;
-                background-color: white;
+            // .list-pages:hover:before {
+            //     content: '';
+            //     width: 4px;
+            //     height: 4px;
+            //     position: absolute;
+            //     border-radius: 100%;
+            //     top: 4px;
+            //     left: -7px;
+            //     background-color: white;
+            // }
+            .list-pages:hover span {
+                opacity: 0.5;
             }
         }
     }

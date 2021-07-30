@@ -1,6 +1,7 @@
 .pages-dropdown .btn {
   font-size: 12px;
   position: relative;
+  width: 125px;
 }
 .pages-dropdown .btn .btn-span {
   position: relative;
@@ -22,7 +23,7 @@
   height: 80px;
   transition: 0.4s;
   top: 0;
-  right: -25px;
+  right: -9px;
   list-style: none;
   display: none;
   font-size: 12px;
@@ -30,20 +31,13 @@
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
-.pages-dropdown .dropdown .ul-block .list {
+.pages-dropdown .dropdown .ul-block .list-pages {
   text-align: left;
   margin-left: 10px;
   position: relative;
 }
-.pages-dropdown .dropdown .ul-block .list:hover:before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  position: absolute;
-  border-radius: 100%;
-  top: 4px;
-  left: -7px;
-  background-color: white;
+.pages-dropdown .dropdown .ul-block .list-pages:hover span {
+  opacity: 0.5;
 }
 
 .status-local-btn .dropdown {

@@ -316,15 +316,15 @@ $(".current-pages").click(function() {
     $(".pages-dropdown .dropdown .ul-block").toggle();
     $('.pages-animation-block').css({ 'visibility': 'hidden', 'top': '-100px' });
 });
-$(".pages-dropdown .dropdown .ul-block .list").click(function() {
+$(".pages-dropdown .dropdown .ul-block .list-pages").click(function() {
     let text = $(this).html();
     $(".pages-dropdown .dropdown .btn .btn-chose").html(text);
     $(".pages-dropdown .dropdown .ul-block").hide();
     $(".pages-dropdown").css({ 'visibility': 'hidden', 'top': '-100px' });
     $('.pages-animation-block').css({ 'visibility': 'visible', 'top': '0' });
 
-    let arrbtn = $('.list');
-    arrbtn.map(x => $(".list").removeClass('select-btn-white'));
+    let arrbtn = $('.list-pages');
+    arrbtn.map(x => $(".list-pages").removeClass('select-btn-white'));
     $(this).toggleClass('select-btn-white');
     // if ($('.select-btn-white').lenght >= 2) {
     //     $(this).removeClass('select-btn-white');
