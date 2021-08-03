@@ -151,7 +151,7 @@ $(document).ready(function() {
         // .delay(500)
         // .stop(true, false)
         $("#tooltipBtn").css({ 'background': 'rgba(255, 255, 255, 0.7)', 'color': 'black' })
-        $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+        $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
         let tooltipWidth = $("#tooltipBtn").width();
         $("#tooltipBtn")
             .css("left", xy.pageX - tooltipWidth + -40 + "px")
@@ -665,55 +665,63 @@ $(document).bind("click", function(e) {
 //     $(".input-btn").val('');
 
 // });
+$(".status-text").text(function(i, text) {
+    // let textEllipsis = $(this).width();
+    // console.log(textEllipsis);
+    let boxMemory = text;
+    if (text.length >= 14) {
+        text = text.substring(0, 13) + "...";
+        $(this).text(text);
 
+        // console.log(posElement);
+
+        $(this).parents('.list-status').hover(function(xy) {
+            // let huy = $('.list-status').offset();
+            // console.log(huy);
+            let posElement = this.getBoundingClientRect();
+            $('#tooltipBtn').text(boxMemory);
+
+            $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+            let tooltipWidth = $("#tooltipBtn").width();
+            $("#tooltipBtn")
+                .css("left", posElement.x - tooltipWidth - 10 + "px")
+                .css("top", xy.pageY + 0 + "px");
+            // .css("top", posElement.y - 55 + "px");
+            // if ($(this).children()[0].classList.contains('all')) {
+            //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+            // }
+
+        }).mouseleave(function(e) {
+            $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+        });
+    }
+    // if (textEllipsis > 90) {
+    //     $(this).css({
+    //         'overflow': 'hidden',
+    //         'text-overflow': 'ellipsis',
+    //         'width': '84px'
+    //     });
+    //     $(this).parents('.list-status').hover(function(xy) {
+    //         let boxMemory = text;
+    //         $('#tooltipBtn').text(boxMemory);
+    //         $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+    //         let tooltipWidth = $("#tooltipBtn").width();
+    //         $("#tooltipBtn")
+    //             .css("left", xy.pageX - tooltipWidth + -40 + "px")
+    //             .css("top", xy.pageY + 0 + "px");
+    //         // if ($(this).children()[0].classList.contains('all')) {
+    //         //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+    //         // }
+    //     }).mouseleave(function(e) {
+    //         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+    //     });
+    // }
+});
 $(".status-table .status-btn").click(function() {
     $(".input-btn").focus().val('');
     $(".status-table .block1").addClass("toggle");
-    $(".status-text").text(function(i, text) {
-        let textEllipsis = $(this).width();
-        console.log(textEllipsis);
-        let boxMemory = text;
-        if (text.length >= 14) {
-            text = text.substring(0, 13) + "...";
-            $(this).text(text);
-            $(this).parents('.list-status').hover(function(xy) {
-                // let huy = $('.list-status').offset();
-                // console.log(huy);
-                $('#tooltipBtn').text(boxMemory);
-                $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
-                let tooltipWidth = $("#tooltipBtn").width();
-                $("#tooltipBtn")
-                    .css("left", xy.pageX - tooltipWidth - 40 + "px")
-                    .css("top", xy.pageY + 0 + "px");
-                // if ($(this).children()[0].classList.contains('all')) {
-                //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
-                // }
-            }).mouseleave(function(e) {
-                $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
-            });
-        }
-        // if (textEllipsis > 90) {
-        //     $(this).css({
-        //         'overflow': 'hidden',
-        //         'text-overflow': 'ellipsis',
-        //         'width': '84px'
-        //     });
-        //     $(this).parents('.list-status').hover(function(xy) {
-        //         let boxMemory = text;
-        //         $('#tooltipBtn').text(boxMemory);
-        //         $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
-        //         let tooltipWidth = $("#tooltipBtn").width();
-        //         $("#tooltipBtn")
-        //             .css("left", xy.pageX - tooltipWidth + -40 + "px")
-        //             .css("top", xy.pageY + 0 + "px");
-        //         // if ($(this).children()[0].classList.contains('all')) {
-        //         //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
-        //         // }
-        //     }).mouseleave(function(e) {
-        //         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
-        //     });
-        // }
-    });
+    $(".simplebar-content-wrapper").animate({ scrollTop: 0 }, { duration: 300 });
+
 });
 $(".status-table .block1 .list-status").click(function(e) {
     $(".status-table .list-status .all").removeClass("toggle");
@@ -737,7 +745,7 @@ $(".status-table .block1 .list-status").click(function(e) {
 
     }
 });
-$(".status-table .block1 .list-status .all").click(function() {
+$(".status-table .block1 .list-status .all").parent().click(function() {
     // $(".status-btn").html('Все');
     $(".input-btn").val('Все');
     $(this).removeClass('select-btn');
@@ -749,6 +757,7 @@ $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("status-table")) {
         $(".status-table .block1").removeClass("toggle");
+
         if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
             // $(".status-btn").html('Фильтр');
             $(".input-btn").val('Фильтр');
@@ -763,39 +772,35 @@ $(document).bind("click", function(e) {
         if ($('.status-table .block1 .list-status.select-btn').length == 0) {
             // $(".status-btn").html('Все');
             $(".input-btn").val('Все');
-            $('.all').addClass("select-btn-static");
-        } else if ($(this).children()[0].classList.contains('all')) {
-            $(this).removeClass('select-btn');
-            $(this).children().addClass("select-btn-static");
-
+            // $('.all').addClass("select-btn-static");
         }
-        // $(".block1").animate({ scrollTop: 0 }, "slow");
+        //  else if ($(this).children()[0].classList.contains('all')) {
+        //     $(this).removeClass('select-btn');
+        //     $(this).children().addClass("select-btn-static");
+
+        // }
+
     }
+
 });
 //menu status
 //menu country btn
 $(".colum-country .country-btn").click(function() {
     $(".colum-country .block1").toggleClass("toggle");
-    // $(".crm-main-table").addClass("z-index");
 });
 $(".colum-country .block1 .list").click(function(e) {
-    // let text = $(this).html();
-    // $(".country-btn").html(text);
-    // $(".colum-country .block1").removeClass("toggle");
-    // $(".crm-main-table").removeClass("z-index");
-
-
-    $(".colum-country .list .all").removeClass("toggle");
-    // $(".crm-main-table").removeClass("z-index");
+    $(".colum-country .list .all").removeClass("toggle")
     $(this).toggleClass('select-btn');
     // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
     // $('.block1').find('div:first').removeClass('select-btn');
     if ($('.colum-country .block1 .list.select-btn').length == 1) {
-        let appendCountry = $('.list.select-btn').clone();
+        let appendCountry = $('.list.select-btn').html();
+        // $('.list.select-btn').html();
         $(".country-btn").html(appendCountry);
-        $('.all').removeClass("select-btn-static");
+        $('.list').children('.all').removeClass("select-btn-static");
+        $('.country-btn').children('.all').removeClass("select-btn-static");
         // $(".country-btn .list .all.select-btn-static").removeClass("select-btn-static");
-        $('.country-btn .list.select-btn').removeClass('select-btn');
+        // $('.country-btn .list.select-btn').removeClass('select-btn');
     }
     if ($('.colum-country .block1 .list.select-btn').length >= 2) {
         $(".country-btn").html('Фильтр');
@@ -826,6 +831,7 @@ $(".colum-country .block1 .list .all").click(function() {
     // let textDelivery = $(this).html();
     $(".country-btn").html('Все');
     $(this).removeClass('select-btn');
+    // $(".country-btn .list-item").removeClass('select-btn-static');
     // $('.list .all').addClass("select-btn-static");
     // $(this).addClass('select-btn-static');
     // $('.list-item.all').addClass("select-btn-static");
@@ -1268,10 +1274,71 @@ $(".crm-input").hover(function() {
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header") && !$clicked.parents().hasClass("ui-datepicker-buttonpane") && !$clicked.parents().hasClass("ui-datepicker-header") && !$clicked.parents().hasClass("ui-datepicker-calendar") && !$clicked.hasClass("ui-datepicker")) {
+    if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header") && !$clicked.parents().hasClass("ui-datepicker-buttonpane") && !$clicked.parents().hasClass("ui-datepicker-header") && !$clicked.parents().hasClass("ui-datepicker-calendar") && !$clicked.hasClass("ui-datepicker") && !$clicked.parents().hasClass("block-btn")) {
         $(".wrap-hide").removeClass('wrap-open');
     }
 });
+
+// $(".btn-refresh").click(function(e) {
+//     let rotates = 360;
+//     // $(this).css({ 'transition': '0.3s', 'transform': 'rotate(' + rotates + 'deg)' });
+//     $(this).toggleClass('rotate');
+//     // $(".btn-refresh").rotate(360);
+
+// });
+
+//reset filter rotate
+let rotate = 0;
+$(".btn-refresh").click(function() {
+    rotate = rotate + 360;
+
+    $(".btn-refresh").css({
+        "transform": "rotate(" + rotate + "deg)",
+        'transition': '0.4s'
+    });
+    // $(".wrap-open").animate({ opacity: 0 }, 0).delay(100).animate({ opacity: 1 }, 0);
+    // $(".wrap-open").css({ 'opacity': '0' }).delay(100).css({ 'opacity': '1' });
+    //СБРОС КНОПОК
+    $(".input-btn").val('Все');
+    $('.list-status').removeClass('select-btn');
+    $('.status-table .block1 .list-status').removeClass('select-btn');
+    $(".status-table .block1").removeClass("toggle");
+    $(".all").addClass("select-btn-static");
+
+    $(".country-btn").html('Все');
+    $('.list').removeClass('select-btn');
+    $('.colum-country .block1 .list').removeClass('select-btn');
+    $(".colum-country .block1").removeClass("toggle");
+    //СБРОС КНОПОК
+});
+//reset filter rotate
+
+// $(".btn-refresh").mouseleave(function(e) {
+
+//     // $(this).css({ 'transition': '0.3s', 'transform': 'rotate(' + rotates + 'deg)' });
+//     $(this).removeClass('rotate');
+//     // $(".btn-refresh").rotate(360);
+
+// });
+
+
+
+// var toggle = 1;
+// $('.btn-refresh').click(function() {
+//     toggle++;
+//     if ((toggle % 2) == 0) {
+//         $(this).css({ 'transform': 'rotate(180deg)', 'transition': '0.3s' });
+//     } else {
+//         $(this).css({ 'transform': 'rotate(0deg)', 'transition': '0' });
+//     }
+// });
+// $(function() { // doc ready
+//     var rotation = 0; // variable to do rotation with
+//     $(".btn-refresh").click(function() {
+//         rotation = (rotation + 45) % 360; // the mod 360 probably isn't needed
+//         $(this).rotate(rotation);
+//     });
+// });
 //header hide
 
 // (function() {
