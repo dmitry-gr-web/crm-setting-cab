@@ -8,6 +8,12 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
@@ -64,11 +70,11 @@
             </div>
         </div>
         <div class="block-btn">
-            <button class="btn-header"><img src="img/settings.svg" alt="setting"></button>
-            <button class="btn-header"><img src="img/search.svg" alt="search"></button>
-            <button class="btn-header"><img src="img/accept.svg" alt="accept"></button>
-            <button class="btn-header"><img src="img/btnplus.svg" alt="plus"></button>
-            <button class="btn-header notification-btn"><img src="img/Bell24px.svg" alt="bell"><span class="bell-circle-pos">2</span></button>
+            <button class="btn-header"><img class="btn-refresh" src="img/refresh.svg" alt="search"></button>
+            <button class="btn-header"><img class="btn-settings" src="img/settings (1).svg" alt="setting"></button>
+            <button class="btn-header"><img class="btn-accept" src="img/submit.svg" alt="accept"></button>
+            <button class="btn-header"><img class="btn-order" src="img/add order.svg" alt="plus"></button>
+            <button class="btn-header notification-btn"><img src="img/Vector (3).svg" alt="bell"><span class="bell-circle-pos">2</span></button>
         </div>
         <div class="notifications">
             <div class="noti-header"><span class="btn-not btn-style">Уведомления</span><span class="btn-tech">Техническое</span></div>
@@ -321,9 +327,9 @@
                         <th class="header-opened">Просмотрел</th>
                         <th class="header-add">Добавлен</th>
                         <th class="header-open">Открыт</th>
-                        <th class="header-zakr">Принят</th>
-                        <th class="header-adopted">Принят за</th>
-                        <th class="header-user">Принял</th>
+                        <th class="header-accepted">Принят</th>
+                        <th class="header-prinyatZa">Принят за</th>
+                        <th class="header-prinyal">Принял</th>
                         <th class="header-pered">Передан</th>
                         <th class="header-send">Отправлен</th>
                         <th class="header-change">Изменён</th>
@@ -355,27 +361,31 @@
                         </td>
                         <td class="header-search status-table">
                             <div class="wrap-hide">
-                                <div class="status-btn">Вcе</div>
+                                <div class="status-btn"><input type="text" class="input-btn" value="Все"></div>
+                                <!-- <div class="status-btn">Вcе</div> -->
                                 <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
                                 <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
-                                    <div class="list "><span class="list-item all select-btn-static"><span>Все</span></span>
+                                    <div class="list-status"><span class="list-item all select-btn-static"><span class="status-text">Все</span></span>
                                     </div>
-                                    <div class="list newOrder"><span class="list-item"><span class="color-515151 color-form"></span><span>Новый</span>
+                                    <div class="list-status"><span class="list-item"><span class="color-515151 color-form"></span><span class="status-text">Новый</span>
                                         </span>
                                     </div>
-                                    <div class="list accept"><span class="list-item"><span class="color-91d100 color-form"></span><span>Принят</span>
+                                    <div class="list-status"><span class="list-item"><span class="color-91d100 color-form"></span><span class="status-text">Принят</span>
                                         </span>
                                     </div>
-                                    <div class="list declineOrder"><span class="list-item"><span class="color-fd7777 color-form"></span><span>Отказ</span>
+                                    <div class="list-status"><span class="list-item"><span class="color-fd7777 color-form"></span><span class="status-text">Отказ</span>
                                         </span>
                                     </div>
-                                    <div class="list send"><span class="list-item"><span class="color-ffe600 color-form"></span><span>Отправлен</span>
+                                    <div class="list-status"><span class="list-item"><span class="color-ffe600 color-form"></span><span class="status-text">Отправлен</span>
                                         </span>
                                     </div>
-                                    <div class="list"><span class="list-item"><span class="color-00CC00 color-form"></span><span>Завершен</span>
+                                    <div class="list-status"><span class="list-item"><span class="color-00CC00 color-form"></span><span class="status-text">Завершен</span>
                                         </span>
                                     </div>
-                                    <div class="list uspeh"><span class="list-item"><span class="color-9C02A7 color-form"></span><span class="status-text">Успешно выполнено</span>
+                                    <div class="list-status"><span class="list-item"><span class="color-9C02A7 color-form"></span><span class="status-text">Успешно выполнено</span>
+                                        </span>
+                                    </div>
+                                    <div class="list-status"><span class="list-item"><span class="color-C94F62 color-form"></span><span class="status-text">Успешно не выполнено</span>
                                         </span>
                                     </div>
                                 </div>
@@ -426,6 +436,8 @@
                                     <input type="text" class="input-style count-message" value="">
                                     <div class="message-btn"></div>
                                     <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                        <div class="message-list"><span class="message-link all select-btn-static"><span>∞</span></span>
+                                        </div>
                                         <div class="message-list"><span class="message-link">1</span></div>
                                         <div class="message-list"><span class="message-link">2</span></div>
                                         <div class="message-list"><span class="message-link">3</span></div>
@@ -447,13 +459,14 @@
                             <div class="wrap-hide"><input type="text" class="input-style"></div>
                         </td>
                         <td class="header-search">
-                            <div class="wrap-hide"><input type="text" class="input-style" placeholder="ввод"></div>
+                            <div class="wrap-hide"><input type="text" class="input-style"></div>
                         </td>
                         <td class="header-search colum-pay">
                             <div class="wrap-hide">
                                 <div class="pay-btn">Вcе</div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                    <div class="list"><span class="list-item all select-btn-static">Все</span></div>
+                                    <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
+                                    </div>
                                     <div class="list predoplata"><span class="list-item"><span class="svg-wrap">
                                     <svg class="card" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.92 10.8C8.92 10.9867 9.1 11.14 9.32666 11.14H10.9H12.4733C12.7 11.14 12.88 10.9867 12.88 10.8V10.46C12.88 10.2733 12.7 10.12 12.4733 10.12H10.9H9.32666C9.1 10.12 8.92 10.2733 8.92 10.46V10.8V10.8Z" fill="#9C9B9E"/>
@@ -582,7 +595,7 @@
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide">
-                                <div class="date-block"><span>с</span><input id="fixed-s" type="text" class="input-style date-style" readonly><span>по</span><input id="fixed-po" type="text" class="input-style date-style" readonly></div>
+                                <div class="date-block"><span>с</span><input id="add-s" type="text" class="input-style date-style" readonly><span>по</span><input id="add-po" type="text" class="input-style date-style" readonly></div>
                             </div>
                         </td>
                         <td class="header-search">
@@ -590,7 +603,7 @@
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide">
-                                <div class="date-block"><span>с</span><input id="add-s" type="text" class="input-style date-style" readonly><span>по</span><input id="add-po" type="text" class="input-style date-style" readonly></div>
+                                <div class="date-block"><span>с</span><input id="accept-s" type="text" class="input-style date-style" readonly><span>по</span><input id="accept-po" type="text" class="input-style date-style" readonly></div>
                             </div>
                         </td>
                         <td class="header-search">
@@ -606,12 +619,12 @@
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide">
-                                <div class="date-block"><span>с</span><input type="text" id="update-s" class="input-style date-style" readonly><span>по</span><input id="update-po" type="text" class="input-style date-style" readonly></div>
+                                <div class="date-block"><span>с</span><input type="text" id="send-s" class="input-style date-style" readonly><span>по</span><input id="send-po" type="text" class="input-style date-style" readonly></div>
                             </div>
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide">
-                                <div class="date-block"><span>с</span><input id="finish-s" type="text" class="input-style date-style" readonly><span>по</span><input id="finish-po" type="text" class="input-style date-style" readonly></div>
+                                <div class="date-block"><span>с</span><input id="fixed-s" type="text" class="input-style date-style" readonly><span>по</span><input id="fixed-po" type="text" class="input-style date-style" readonly></div>
                             </div>
                         </td>
                         <td class="header-search">
@@ -619,7 +632,7 @@
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide">
-                                <div class="date-block"><span>с</span><input id="send-s" type="text" class="input-style date-style" readonly><span>по</span><input id="send-po" type="text" class="input-style date-style" readonly></div>
+                                <div class="date-block"><span>с</span><input id="finish-s" type="text" class="input-style date-style" readonly><span>по</span><input id="finish-po" type="text" class="input-style date-style" readonly></div>
                             </div>
                         </td>
                         <td class="header-search">
@@ -675,7 +688,7 @@
                         </td>
                     </tr>
                     <tr class="crm-main-table">
-                        <td class="id-table new-order">123451</td>
+                        <td class="id-table new-orders">123451</td>
                         <td class="status-table">
                             <div class="new-zakaz color-515151 color-form2">Новый</div>
                         </td>
@@ -734,9 +747,9 @@
                         <td class="otdel-block max-lenght">Розничный магазин</td>
                         <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -818,9 +831,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -904,9 +917,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -990,9 +1003,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptforhours">03/01:03:25</td>
+                        <td class="date-time otkrithours">03/01:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time openforhours">01:03:23</td>
+                        <td class="date-time acceptzahours">01:03:23</td>
                         <td class="max-lenght">Лебедев Евгений</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1074,9 +1087,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1158,9 +1171,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1242,9 +1255,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1327,9 +1340,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1419,9 +1432,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1503,9 +1516,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1596,9 +1609,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
@@ -1680,9 +1693,9 @@
                         <td class="otdel-block max-lenght">Отдел ОАЭ</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time acceptfor">10/00:03:25</td>
+                        <td class="date-time otkrit">10/00:03:25</td>
                         <td class="date-block">2020-00-00 <span class="date-time">00:00:00</span></td>
-                        <td class="date-time open">00:03:23</td>
+                        <td class="date-time acceptza">00:03:23</td>
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-time peredan">03/00:03:23</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>

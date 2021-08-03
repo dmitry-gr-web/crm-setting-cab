@@ -317,13 +317,17 @@
 .container-info-settings tr td .input-style::placeholder {
   font-size: 10px;
 }
+.container-info-settings tr td .message-box {
+  display: flex;
+  justify-content: space-between;
+}
 .container-info-settings tr td .count-message {
   background: rgba(156, 155, 158, 0.4);
   box-sizing: border-box;
   position: relative;
-  left: -2px;
-  width: 17%;
+  width: 18%;
   cursor: pointer;
+  text-align: left;
   border-right: 2px white solid;
 }
 .container-info-settings tr td .message-btn {
@@ -337,7 +341,7 @@
   width: 6px;
   height: 3px;
   background-size: 100%;
-  top: -11px;
+  top: 7px;
   right: 4px;
   opacity: 0.8;
   z-index: 22;
@@ -382,14 +386,22 @@
 .container-info-settings tr td .message-menu .message-list {
   position: relative;
 }
+.container-info-settings tr td .message-menu .message-list .all {
+  width: 100%;
+  display: inline-block;
+}
 .container-info-settings tr td .message-menu .message-list:hover .message-link {
-  opacity: 0.5;
+  color: rgba(0, 0, 0, 0.5);
 }
 .container-info-settings tr td .message-menu .message-list input {
   outline: none;
   border: none;
 }
 .container-info-settings tr td .message-menu .select-btn:before {
+  top: 4px;
+  left: 2px;
+}
+.container-info-settings tr td .message-menu .select-btn-static:before {
   top: 4px;
   left: 2px;
 }
@@ -773,7 +785,7 @@ tr th:nth-child(odd) {
   position: relative;
 }
 
-.new-order:after {
+.new-orders:after {
   content: "";
   width: 4px;
   height: 4px;
@@ -858,7 +870,21 @@ tr th:nth-child(odd) {
   background: #d4d4d4;
   color: rgba(0, 0, 0, 0.5);
   padding-left: 3px;
+}
+.status-table .status-btn .input-btn {
+  background: transparent;
+  outline: none;
+  border: none;
   width: 100%;
+  color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 0;
+  padding-right: 15px;
+  font-size: 10px;
+  line-height: 14px;
+}
+.status-table .status-btn .input-btn::placeholder {
+  font-size: 10px;
 }
 .status-table .status-btn .color-form {
   bottom: -3px;
@@ -881,6 +907,9 @@ tr th:nth-child(odd) {
   top: 7px;
   right: 4px;
   opacity: 0.8;
+}
+.status-table .list-status:hover .status-text {
+  color: rgba(0, 0, 0, 0.5);
 }
 .status-table .block1 {
   background: white;
@@ -913,10 +942,7 @@ tr th:nth-child(odd) {
 .status-table .block1 .color-form {
   bottom: -2px;
 }
-.status-table .block1 .list:hover span:nth-child(2) {
-  opacity: 0.5;
-}
-.status-table .block1 .list span:nth-child(2) {
+.status-table .block1 .list-status span:nth-child(2) {
   display: inline-block;
   height: 14px;
 }
@@ -926,7 +952,7 @@ tr th:nth-child(odd) {
   height: 12px;
   display: inline-block;
 }
-.status-table .block1 .list {
+.status-table .block1 .list-status {
   height: 18px;
   position: relative;
   margin-right: 10px;
@@ -998,6 +1024,9 @@ tr th:nth-child(odd) {
   opacity: 0.8;
 }
 .colum-country .block1 .list:hover img {
+  opacity: 0.5;
+}
+.colum-country .block1 .list:hover .all span {
   opacity: 0.5;
 }
 .colum-country .block1 {
@@ -1100,6 +1129,9 @@ tr th:nth-child(odd) {
 .colum-pay .block1 .list:hover svg {
   opacity: 0.5;
 }
+.colum-pay .block1 .list:hover .all span {
+  opacity: 0.5;
+}
 .colum-pay .block1 {
   background: white;
   z-index: 3;
@@ -1111,7 +1143,7 @@ tr th:nth-child(odd) {
   height: 90px;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  width: 55px;
+  width: 100%;
 }
 .colum-pay .block1 .select-btn:before {
   left: 7px;

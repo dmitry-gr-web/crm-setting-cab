@@ -49,9 +49,9 @@ $(document).ready(function() {
         let acceptPay = 'Оплачен';
         let decline = 'Отказ';
         let trade = 'Обмен';
-        let newOrder = 'Новый';
-        let accept = 'Принят';
-        let declineOrder = 'Отказ';
+        // let newOrder = 'Новый';
+        // let accept = 'Принят';
+        // let declineOrder = 'Отказ';
         // let uspeh = $('.status-text').text();
 
         // $(this).stop(true, true).animate({ width: "200px" });
@@ -122,6 +122,43 @@ $(document).ready(function() {
         // }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+    });
+    $(".btn-header").hover(function(xy) {
+        let refresh = 'Сбросить все фильтры';
+        let settings = 'Настройки';
+        let submit = '??';
+        let addOrder = 'Создать заказ';
+        let notification = 'Уведомления';
+
+        if ($(this).children().hasClass('btn-refresh')) {
+            $('#tooltipBtn').text(refresh);
+
+        }
+        if ($(this).children().hasClass('btn-settings')) {
+            $('#tooltipBtn').text(settings);
+        }
+        if ($(this).children().hasClass('btn-accept')) {
+            $('#tooltipBtn').text(submit);
+        }
+        if ($(this).children().hasClass('btn-order')) {
+            $('#tooltipBtn').text(addOrder);
+        }
+        if ($(this).hasClass('notification-btn')) {
+            $('#tooltipBtn').text(notification);
+        }
+        // let huy = $('.btn-refresh').offset();
+        // console.log(huy);
+        // .delay(500)
+        // .stop(true, false)
+        $("#tooltipBtn").css({ 'background': 'rgba(255, 255, 255, 0.7)', 'color': 'black' })
+        $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+        let tooltipWidth = $("#tooltipBtn").width();
+        $("#tooltipBtn")
+            .css("left", xy.pageX - tooltipWidth + -40 + "px")
+            .css("top", xy.pageY + 5 + "px");
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+        $("#tooltipBtn").css({ 'background': 'rgba(81, 81, 81, 0.6)', 'color': 'white' })
     });
 });
 
@@ -197,23 +234,23 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
     }
 });
 $(".crm-main-table .date-time").each(function(e, item) {
-    let acceptfor = 'Открыт через 10 дней 3 минуты 25 секунд';
-    let acceptforhours = 'Открыт через 3 дня 1 час 3 минуты 25 секунд';
-    let open = 'Принят за 3 минуты 23 секунды';
-    let open2 = 'Принят за 1 час 3 минуты 23 секунды';
+    let otkrit = 'Открыт через 10 дней 3 минуты 25 секунд';
+    let otkritHours = 'Открыт через 3 дня 1 час 3 минуты 25 секунд';
+    let acceptZa = 'Принят за 3 минуты 23 секунды';
+    let acceptZahours = 'Принят за 1 час 3 минуты 23 секунды';
     let peredan = 'Передан через 3 дня 3 минуты 23 секунды';
 
-    if ($(item).hasClass('acceptfor')) {
-        $(this).append('<div class="tooltip">' + acceptfor + '</div>');
+    if ($(item).hasClass('otkrit')) {
+        $(this).append('<div class="tooltip">' + otkrit + '</div>');
     }
-    if ($(item).hasClass('acceptforhours')) {
-        $(this).append('<div class="tooltip">' + acceptforhours + '</div>');
+    if ($(item).hasClass('otkrithours')) {
+        $(this).append('<div class="tooltip">' + otkritHours + '</div>');
     }
-    if ($(item).hasClass('open')) {
-        $(this).append('<div class="tooltip">' + open + '</div>');
+    if ($(item).hasClass('acceptza')) {
+        $(this).append('<div class="tooltip">' + acceptZa + '</div>');
     }
-    if ($(item).hasClass('openforhours')) {
-        $(this).append('<div class="tooltip">' + open2 + '</div>');
+    if ($(item).hasClass('acceptzahours')) {
+        $(this).append('<div class="tooltip">' + acceptZahours + '</div>');
     }
     if ($(item).hasClass('peredan')) {
         $(this).append('<div class="tooltip">' + peredan + '</div>');
@@ -231,7 +268,7 @@ $(".table-header th").each(function(e, item) {
     let pokupatel = 'Фамилия имя отчество покупателя<br><span class="text-tooltip">Используется для автоматического заполнения товарно-транспортной накладной почтовой службы</span>';
     let country = 'Страна за которой закреплён заказ<br><span class="text-tooltip">Используется для разделения заказов из разных стран</span>';
     let tel = 'Телефон покупателя<br><span class="text-tooltip">Используется для:<br>-Автоматического заполнения товарно-транспортной накладной почтовой службы<br>-Автоматической отправки SMS</span>';
-    let commentary = '...';
+    let comm = '...';
     let sum = 'Итоговая сумма заказа';
     let product = '...';
     let pay = 'Используемый вид оплаты';
@@ -239,13 +276,13 @@ $(".table-header th").each(function(e, item) {
     let addres = '...';
     let ttn = 'Номер товарно-транспортной накладной';
     let ttnStatus = 'Информация за последний час о статусе посылки<br><span class="text-tooltip">Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM</span>';
-    let user = 'Пользователь подтвердивший заказ<br><span class="text-tooltip">Закрепление происходит автоматически при изменении статуса заказа на «Принят». Используется для расчета зарплаты/премии сотрудника</span>';
+    let prinyal = 'Пользователь подтвердивший заказ<br><span class="text-tooltip">Закрепление происходит автоматически при изменении статуса заказа на «Принят». Используется для расчета зарплаты/премии сотрудника</span>';
     let depart = 'Используемый отдел в заказе<br><span class="text-tooltip">Заказ с "отделом" виден только тем пользователям у которых есть доступ к сооответствующему отделу</span>';
     let add = 'Дата и время добавления заказа в CRM';
     let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал звонка/ответа</span>';
     let opened = 'Последний пользователь открывший заказ<br><span class="text-tooltip">Используется для выявления сотрудников "ворующих" заказы</span>';
-    let adopted = 'Время между открытием заказа и изменением его статуса на «Принят»<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
-    let zakr = 'Дата и время изменения статуса заказа на «Принят»<br><span class="text-tooltip">Используется для расчета зарплаты/премии сотрудника за период врмени</span>';
+    let prinyatZa = 'Время между открытием заказа и изменением его статуса на «Принят»<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
+    let accepted = 'Дата и время изменения статуса заказа на «Принят»<br><span class="text-tooltip">Используется для расчета зарплаты/премии сотрудника за период врмени</span>';
     let pered = 'Время между изменением статуса заказа на "Принят" и получением посылки почтовой службой<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
     let send = 'Дата и время получения посылки почтовой службой<br><span class="text-tooltip">Используется для контроля сотрудников отвечающих за отправку заказа</span>';
     let change = 'Дата и время последнего изменения заказа';
@@ -274,7 +311,7 @@ $(".table-header th").each(function(e, item) {
         $(this).append('<div class="tooltip">' + tel + '</div>');
     }
     if ($(item).hasClass('header-comm')) {
-        $(this).append('<div class="tooltip">' + commentary + '</div>');
+        $(this).append('<div class="tooltip">' + comm + '</div>');
     }
     if ($(item).hasClass('header-sum')) {
         $(this).append('<div class="tooltip">' + sum + '</div>');
@@ -297,8 +334,8 @@ $(".table-header th").each(function(e, item) {
     if ($(item).hasClass('header-ttn-status')) {
         $(this).append('<div class="tooltip">' + ttnStatus + '</div>');
     }
-    if ($(item).hasClass('header-user')) {
-        $(this).append('<div class="tooltip">' + user + '</div>');
+    if ($(item).hasClass('header-prinyal')) {
+        $(this).append('<div class="tooltip">' + prinyal + '</div>');
     }
     if ($(item).hasClass('header-depart')) {
         $(this).append('<div class="tooltip">' + depart + '</div>');
@@ -309,11 +346,11 @@ $(".table-header th").each(function(e, item) {
     if ($(item).hasClass('header-open')) {
         $(this).append('<div class="tooltip">' + open + '</div>');
     }
-    if ($(item).hasClass('header-adopted')) {
-        $(this).append('<div class="tooltip">' + adopted + '</div>');
+    if ($(item).hasClass('header-prinyatZa')) {
+        $(this).append('<div class="tooltip">' + prinyatZa + '</div>');
     }
-    if ($(item).hasClass('header-zakr')) {
-        $(this).append('<div class="tooltip">' + zakr + '</div>');
+    if ($(item).hasClass('header-accepted')) {
+        $(this).append('<div class="tooltip">' + accepted + '</div>');
     }
     if ($(item).hasClass('header-pered')) {
         $(this).append('<div class="tooltip">' + pered + '</div>');
@@ -489,17 +526,49 @@ $(".count-message, .message-btn").click(function() {
     $(".message-menu").toggleClass('count-toggle');
 });
 $(".message-list").click(function() {
+
     $(this).toggleClass('select-btn');
+    // if ($(this).children().hasClass('all')) {
+    //     $(this).removeClass('select-btn');
+    // }
+
     if ($('.message-list.select-btn').length == 1) {
         let appendCount = $('.message-list.select-btn').text();
         $(".count-message").val(appendCount);
+        $('.all').removeClass("select-btn-static");
+        // $('.status-btn .list-status.select-btn').removeClass('select-btn');
     }
     if ($('.message-list.select-btn').length >= 2) {
-        $(".count-message").val('~');
+        $(".count-message").val('∞');
     }
     if ($('.message-list.select-btn').length == 0) {
-        $(".count-message").val('');
+        $(".count-message").val('∞');
+        $('.all').addClass("select-btn-static");
+    } else if ($(this).children()[0].classList.contains('all')) {
+        $(this).removeClass('select-btn');
+        $(this).children().addClass("select-btn-static");
+        // $('.list .all').addClass("select-btn-static");
     }
+    // if ($('.message-list.select-btn-static').length == 1) {
+    //     $(".count-message").val('');
+
+    // }
+
+    // if ($('.message-list').hasClass('select-btn-static')) {
+    //     $(this).children().removeClass('select-btn-static');
+    // }
+    $(".message-list").removeClass('select-btn-static');
+});
+$(".message-list .all").click(function() {
+    // $(this).parent().addClass('select-btn-static');
+    $(this).removeClass('select-btn');
+    $(".message-menu").removeClass('count-toggle');
+    $(".message-list").removeClass('select-btn');
+    $(".count-message").val('');
+    // if ($('.message-list.select-btn-static').length == 0) {
+    //     $(".count-message").val('');
+    // }
+
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
@@ -509,95 +578,200 @@ $(document).bind("click", function(e) {
 });
 //COUNT MESSAGE
 //menu status
+// $(".status-table .status-btn").click(function() {
+//     $(".status-table .block1").toggleClass("toggle");
+//     $(".status-text").text(function(i, text) {
+//         let textEllipsis = $(this).width();
+//         console.log(textEllipsis);
+//         // let boxMemory = text;
+//         // if (text.length >= 12) {
+//         //     text = text.substring(0, 11) + "...";
+//         //     $(this).text(text);
+//         //     $(this).parents('.list-status').hover(function(xy) {
+
+//         //         $('#tooltipBtn').text(boxMemory);
+//         //         $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+//         //         let tooltipWidth = $("#tooltipBtn").width();
+//         //         $("#tooltipBtn")
+//         //             .css("left", xy.pageX - tooltipWidth + -40 + "px")
+//         //             .css("top", xy.pageY + 0 + "px");
+//         //         // if ($(this).children()[0].classList.contains('all')) {
+//         //         //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+//         //         // }
+//         //     }).mouseleave(function(e) {
+//         //         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+//         //     });
+//         // }
+//         if (textEllipsis > 90) {
+//             $(this).css({
+//                 'overflow': 'hidden',
+//                 'text-overflow': 'ellipsis',
+//                 'width': '84px'
+//             });
+//             $(this).parents('.list-status').hover(function(xy) {
+//                 let boxMemory = text;
+//                 $('#tooltipBtn').text(boxMemory);
+//                 $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+//                 let tooltipWidth = $("#tooltipBtn").width();
+//                 $("#tooltipBtn")
+//                     .css("left", xy.pageX - tooltipWidth + -40 + "px")
+//                     .css("top", xy.pageY + 0 + "px");
+//                 // if ($(this).children()[0].classList.contains('all')) {
+//                 //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+//                 // }
+//             }).mouseleave(function(e) {
+//                 $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+//             });
+//         }
+//     });
+// });
+// $(".status-table .block1 .list-status").click(function(e) {
+//     $(".status-table .list-status .all").removeClass("toggle");
+//     $(this).toggleClass('select-btn');
+
+//     if ($('.status-table .block1 .list-status.select-btn').length == 1) {
+//         let appendCountry = $('.list-status.select-btn').clone();
+//         $(".status-btn").html(appendCountry);
+//         $('.all').removeClass("select-btn-static");
+//         $('.status-btn .list-status.select-btn').removeClass('select-btn');
+//     }
+//     if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
+//         $(".status-btn").html('Фильтр');
+//     }
+//     if ($('.status-table .block1 .list-status.select-btn').length == 0) {
+//         $(".status-btn").html('Все');
+//         $('.all').addClass("select-btn-static");
+//     } else if ($(this).children()[0].classList.contains('all')) {
+//         $(this).removeClass('select-btn');
+//         $(this).children().addClass("select-btn-static");
+
+//     }
+// });
+// $(".status-table .block1 .list-status .all").click(function() {
+//     $(".status-btn").html('Все');
+//     $(this).removeClass('select-btn');
+//     $('.status-table .block1 .list-status').removeClass('select-btn');
+//     $(".status-table .block1").removeClass("toggle");
+// });
+
+// $(document).bind("click", function(e) {
+//     let $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("status-table")) {
+//         $(".status-table .block1").removeClass("toggle");
+//     }
+// });
+// $('.input-btn').focus(function() {
+
+//     $(".input-btn").val('');
+
+// });
+
 $(".status-table .status-btn").click(function() {
-    $(".status-table .block1").toggleClass("toggle");
+    $(".input-btn").focus().val('');
+    $(".status-table .block1").addClass("toggle");
     $(".status-text").text(function(i, text) {
-        let textEllipsis = $(".status-text").width();
+        let textEllipsis = $(this).width();
         console.log(textEllipsis);
-        if (textEllipsis > 90) {
-            $(".status-text").css({
-                'overflow': 'hidden',
-                'text-overflow': 'ellipsis',
-                'width': '84px'
+        let boxMemory = text;
+        if (text.length >= 14) {
+            text = text.substring(0, 13) + "...";
+            $(this).text(text);
+            $(this).parents('.list-status').hover(function(xy) {
+                // let huy = $('.list-status').offset();
+                // console.log(huy);
+                $('#tooltipBtn').text(boxMemory);
+                $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+                let tooltipWidth = $("#tooltipBtn").width();
+                $("#tooltipBtn")
+                    .css("left", xy.pageX - tooltipWidth - 40 + "px")
+                    .css("top", xy.pageY + 0 + "px");
+                // if ($(this).children()[0].classList.contains('all')) {
+                //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+                // }
+            }).mouseleave(function(e) {
+                $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
             });
-            // text = text + "...";
-            // $(this).text(text);
         }
+        // if (textEllipsis > 90) {
+        //     $(this).css({
+        //         'overflow': 'hidden',
+        //         'text-overflow': 'ellipsis',
+        //         'width': '84px'
+        //     });
+        //     $(this).parents('.list-status').hover(function(xy) {
+        //         let boxMemory = text;
+        //         $('#tooltipBtn').text(boxMemory);
+        //         $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
+        //         let tooltipWidth = $("#tooltipBtn").width();
+        //         $("#tooltipBtn")
+        //             .css("left", xy.pageX - tooltipWidth + -40 + "px")
+        //             .css("top", xy.pageY + 0 + "px");
+        //         // if ($(this).children()[0].classList.contains('all')) {
+        //         //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+        //         // }
+        //     }).mouseleave(function(e) {
+        //         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+        //     });
+        // }
     });
 });
-$(".status-table .block1 .list").click(function(e) {
-    // let text = $(this).html();
-    // $(".country-btn").html(text);
-    // $(".colum-country .block1").removeClass("toggle");
-    // $(".crm-main-table").removeClass("z-index");
-
-
-    $(".status-table .list .all").removeClass("toggle");
-    // $(".crm-main-table").removeClass("z-index");
+$(".status-table .block1 .list-status").click(function(e) {
+    $(".status-table .list-status .all").removeClass("toggle");
     $(this).toggleClass('select-btn');
-    // $('.all').parents().hasClass('select-btn').removeClass('select-btn');
-    // $('.block1').find('div:first').removeClass('select-btn');
-    if ($('.status-table .block1 .list.select-btn').length == 1) {
-        let appendCountry = $('.list.select-btn').clone();
-        $(".status-btn").html(appendCountry);
+
+    if ($('.status-table .block1 .list-status.select-btn').length == 1) {
+        // let appendCountry = $('.list-status.select-btn').text();
+        // $(".status-btn").html(appendCountry);
+        // $(".input-btn").val(appendCountry);
         $('.all').removeClass("select-btn-static");
-        // $(".country-btn .list .all.select-btn-static").removeClass("select-btn-static");
-        $('.status-btn .list.select-btn').removeClass('select-btn');
+        $('.status-btn .list-status.select-btn').removeClass('select-btn');
     }
-    if ($('.status-table .block1 .list.select-btn').length >= 2) {
-        $(".status-btn").html('Фильтр');
-        // $(".country-btn").html('<svg class="filter" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6668 9.73313C12.3334 9.53313 12.2001 9.1998 12.2668 8.86646C12.3334 8.5998 12.3334 8.26646 12.3334 7.99979C12.3334 7.73313 12.3334 7.3998 12.2668 7.13313C12.2001 6.7998 12.4001 6.46646 12.6668 6.26646C13.0668 5.99979 13.2001 5.46646 13.0001 5.06646L12.5334 4.26646C12.2668 3.86646 11.7334 3.73313 11.3334 3.93313C11.0001 4.13313 10.6668 4.06646 10.4001 3.86646C9.93344 3.46646 9.46678 3.1998 8.86678 2.9998C8.53344 2.86646 8.33344 2.53313 8.33344 2.1998C8.33344 1.73313 7.93344 1.33313 7.46677 1.33313H6.53344C6.06678 1.33313 5.66677 1.73313 5.66677 2.1998C5.66677 2.53313 5.46678 2.86646 5.13344 2.9998C4.60011 3.1998 4.06677 3.53313 3.60011 3.86646C3.33344 4.06646 2.93344 4.13313 2.60011 3.93313C2.20011 3.73313 1.66678 3.86646 1.46677 4.26646L1.00011 5.06646C0.733442 5.46646 0.933442 5.99979 1.33344 6.26646C1.66677 6.46646 1.80011 6.7998 1.73344 7.13313C1.73344 7.46646 1.66677 7.73313 1.66677 7.99979C1.66677 8.26646 1.66677 8.5998 1.73344 8.86646C1.80011 9.1998 1.60011 9.53313 1.33344 9.73313C0.866775 9.9998 0.733442 10.5331 1.00011 10.9331L1.46677 11.7331C1.73344 12.1331 2.26677 12.2665 2.66677 12.0665C3.00011 11.8665 3.33344 11.9331 3.66677 12.1331C4.13344 12.4665 4.60011 12.7998 5.13344 12.9998C5.46678 13.1331 5.66677 13.4665 5.66677 13.7998V13.8665C5.66677 14.3331 6.06678 14.7331 6.53344 14.7331H7.46677C7.93344 14.7331 8.33344 14.3331 8.33344 13.8665C8.33344 13.5331 8.53344 13.1998 8.86678 13.0665C9.40011 12.8665 9.93344 12.5998 10.3334 12.1998C10.6001 11.9998 11.0001 11.9331 11.2668 12.1331C11.6668 12.3998 12.2001 12.1998 12.4668 11.7998L12.9334 10.9998C13.2668 10.5331 13.1334 9.9998 12.6668 9.73313ZM7.00011 10.6665C5.53344 10.6665 4.33344 9.46646 4.33344 7.99979C4.33344 6.53313 5.53344 5.33313 7.00011 5.33313C8.46678 5.33313 9.66678 6.53313 9.66678 7.99979C9.66678 9.46646 8.46678 10.6665 7.00011 10.6665Z" stroke="#515151" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-        // $(".filter").hover(function(filter) {
-        //     if (filter.target) {
-        //         $('#tooltipBtn').text('Применился фильтер');
-        //     }
-        //     $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
-        //     $("#tooltipBtn")
-        //         .css("left", filter.pageX + 20 + "px")
-        //         .css("top", filter.pageY + 10 + "px");
-        // }).mouseleave(function(e) {
-        //     $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
-        // });
-    }
-    if ($('.status-table .block1 .list.select-btn').length == 0) {
-        $(".status-btn").html('Все');
+
+    if ($('.status-table .block1 .list-status.select-btn').length == 0) {
+        // $(".status-btn").html('Все');
+        $(".input-btn").val('Все');
         $('.all').addClass("select-btn-static");
-        // $('.all').addClass("select-btn-static");
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        // $('.list .all').addClass("select-btn-static");
+
     }
 });
-$(".status-table .block1 .list .all").click(function() {
-    // let textDelivery = $(this).html();
-    $(".status-btn").html('Все');
+$(".status-table .block1 .list-status .all").click(function() {
+    // $(".status-btn").html('Все');
+    $(".input-btn").val('Все');
     $(this).removeClass('select-btn');
-    // $('.list .all').addClass("select-btn-static");
-    // $(this).addClass('select-btn-static');
-    // $('.list-item.all').addClass("select-btn-static");
-    // $(".employe- btn").html(text);
-    $('.status-table .block1 .list').removeClass('select-btn');
+    $('.status-table .block1 .list-status').removeClass('select-btn');
     $(".status-table .block1").removeClass("toggle");
-    // $(".crm-main-table").removeClass("z-index");
-    // $('.all').removeClass("select-btn-static");
-    // if (!$('.list .all').hasClass('select-btn-static')) {
-    //     $('.all').addClass("select-btn-static");
-    // };
-
 });
 
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("status-table")) {
         $(".status-table .block1").removeClass("toggle");
-        // $('.all').addClass("select-btn-static");
-    }
-    // if (!$(".block1").hasClass("toggle")) {
-    //     $(".crm-main-table").removeClass("z-index");
-    // }
-});
+        if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
+            // $(".status-btn").html('Фильтр');
+            $(".input-btn").val('Фильтр');
+        }
+        if ($('.status-table .block1 .list-status.select-btn').length == 1) {
+            let appendCountry = $('.list-status.select-btn').text();
+            $(".input-btn").val(appendCountry);
+            // $(".input-btn").val(appendCountry);
+            $('.all').removeClass("select-btn-static");
+            $('.status-btn .list-status.select-btn').removeClass('select-btn');
+        }
+        if ($('.status-table .block1 .list-status.select-btn').length == 0) {
+            // $(".status-btn").html('Все');
+            $(".input-btn").val('Все');
+            $('.all').addClass("select-btn-static");
+        } else if ($(this).children()[0].classList.contains('all')) {
+            $(this).removeClass('select-btn');
+            $(this).children().addClass("select-btn-static");
 
+        }
+        // $(".block1").animate({ scrollTop: 0 }, "slow");
+    }
+});
 //menu status
 //menu country btn
 $(".colum-country .country-btn").click(function() {
