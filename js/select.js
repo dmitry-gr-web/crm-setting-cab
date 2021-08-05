@@ -21,6 +21,13 @@
                         }
                     });
                     $(".crm-main-table").unbind("mouseleave mousemove");
+                    if ($(".crm-main-table").hasClass("select-toggle")) {
+                        $('.btn-settings').addClass('active-btn-header');
+                        $('.btn-accept').addClass('active-btn-header');
+                    } else {
+                        $('.btn-settings').removeClass('active-btn-header');
+                        $('.btn-accept').removeClass('active-btn-header');
+                    }
                     $(".select-toggle")
                         .mousemove(function(pos) {
                             if ($(".crm-main-table").hasClass("select-toggle")) {
@@ -71,6 +78,8 @@
                     sel.forEach((z) => {
                         if (z.classList.contains("selected-lock")) {
                             z.classList.remove("select-toggle");
+                            $('.btn-settings').removeClass('active-btn-header');
+                            $('.btn-accept').removeClass('active-btn-header');
                             sel = [];
                         }
                     });
@@ -79,14 +88,25 @@
                     }
                     document.addEventListener("click", (e) => {
                         if (
-                            e.target.closest(".crm-main-table")?.classList == null ||
+                            e.target.closest(".crm-main-table")?.classList == null
+                            // && e.target.closest(".block-btn")?.classList == null
+                            ||
                             !e.target
                             .closest(".crm-main-table")
                             .classList.contains("crm-main-table")
+                            // && e.target.closest(".block-btn").classList.contains("block-btn")
                         ) {
                             $(".crm-main-table").removeClass("select-toggle");
+                            $('.btn-settings').removeClass('active-btn-header');
+                            $('.btn-accept').removeClass('active-btn-header');
                             sel = [];
                         }
+                        // if (e.target.closest(".block-btn") ){
+                        //     // $(".crm-main-table").addClass("select-toggle");
+                        //     $('.btn-settings').addClass('active-btn-header');
+                        //     $('.btn-accept').addClass('active-btn-header');
+                        //     sel = [];
+                        // }
                     });
                 }
                 last = this;

@@ -12,6 +12,13 @@
 $(document).ready(function() {
     $(".crm-main-table").on("click", (e) => {
         $(".crm-main-table").unbind("mouseleave mousemove");
+        if ($(".crm-main-table").hasClass("select-toggle")) {
+            $('.btn-settings').addClass('active-btn-header');
+            $('.btn-accept').addClass('active-btn-header');
+        } else {
+            $('.btn-settings').removeClass('active-btn-header');
+            $('.btn-accept').removeClass('active-btn-header');
+        }
         $(".select-toggle")
             .mousemove(function(pos) {
                 if ($(".crm-main-table").hasClass("select-toggle")) {
@@ -103,17 +110,19 @@ $(document).ready(function() {
         // if (xy.target.offsetParent.classList.contains('al')) {
         //     $('#tooltipBtn').text(alb);
         // }
+
         // .delay(500)
         // .stop(true, false)
         $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
-        let tooltipWidth = $("#tooltipBtn").width();
-
+        // let tooltipWidth = $("#tooltipBtn").width();
+        let posElement = this.getBoundingClientRect();
+        let blockWidth = $(this).width();
         // console.log(tooltipWidth)
         // .css("left", xy.pageX - tooltip + -30 + "px")
         // let tooltip = $(".list-item img").width();
         $("#tooltipBtn")
-            .css("left", xy.pageX - tooltipWidth + -40 + "px")
-            .css("top", xy.pageY + 0 + "px");
+            .css("left", posElement.x + blockWidth + 0 + "px")
+            .css("top", posElement.y - 4 + "px");
         if ($(this).children()[0].classList.contains('all')) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' });
         }
@@ -125,22 +134,21 @@ $(document).ready(function() {
     });
     $(".btn-header").hover(function(xy) {
         let refresh = 'Сбросить все фильтры';
-        let settings = 'Настройки';
-        let submit = '??';
+        let settings = 'Расширения модулей + массовость';
+        let submit = 'Импорт экспорт данных';
         let addOrder = 'Создать заказ';
         let notification = 'Уведомления';
 
-        if ($(this).children().hasClass('btn-refresh')) {
+        if ($(this).hasClass('btn-refresh')) {
             $('#tooltipBtn').text(refresh);
-
         }
-        if ($(this).children().hasClass('btn-settings')) {
+        if ($(this).hasClass('btn-settings')) {
             $('#tooltipBtn').text(settings);
         }
-        if ($(this).children().hasClass('btn-accept')) {
+        if ($(this).hasClass('btn-accept')) {
             $('#tooltipBtn').text(submit);
         }
-        if ($(this).children().hasClass('btn-order')) {
+        if ($(this).hasClass('btn-order')) {
             $('#tooltipBtn').text(addOrder);
         }
         if ($(this).hasClass('notification-btn')) {
@@ -150,15 +158,94 @@ $(document).ready(function() {
         // console.log(huy);
         // .delay(500)
         // .stop(true, false)
-        $("#tooltipBtn").css({ 'background': 'rgba(255, 255, 255, 0.7)', 'color': 'black' })
-        $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
-        let tooltipWidth = $("#tooltipBtn").width();
+        // $("#tooltipBtn").css({ 'background': 'rgba(255, 255, 255, 0.7)', 'color': 'black' })
+        $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
+        // let tooltipWidth = $("#tooltipBtn").width();
+        let posElement = this.getBoundingClientRect();
+        // let blockWidth = $(this).width();
+        let widthElement = $("#tooltipBtn").width();
         $("#tooltipBtn")
-            .css("left", xy.pageX - tooltipWidth + -40 + "px")
-            .css("top", xy.pageY + 5 + "px");
+            .css("left", posElement.x - widthElement * 0.38 + "px")
+            .css("top", posElement.y + 35 + "px");
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
-        $("#tooltipBtn").css({ 'background': 'rgba(81, 81, 81, 0.6)', 'color': 'white' })
+        // $("#tooltipBtn").css({ 'background': 'rgba(81, 81, 81, 0.6)', 'color': 'white' })
+    });
+    $(".new-orders").hover(function(xy) {
+        let zakazNotOpen = 'Заказ не открывался';
+        let posElement = this.getBoundingClientRect();
+        // let blockHeight = $(this).height();
+        // let blockWidth = $(this).width();
+        $('#tooltipBtn').text(zakazNotOpen);
+        $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
+        // let tooltipWidth = $("#tooltipBtn").width();
+        $("#tooltipBtn")
+            .css("left", posElement.x - 10 + "px")
+            .css("top", posElement.y + 22 + "px");
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+
+    });
+    $(".crm-header-link").hover(function(xy) {
+        let allOrder = 'Все заказы в CRM';
+        let newOrder = 'Заказ без статуса';
+        let acceptOrder = 'Покупатель подтвердил заказ';
+        let declineOrder = 'Покупатель отказался от заказа';
+        let upakovanOrder = 'Заказ готов к передаче или передан почтовой службе';
+        let sendOrder = 'Почтовая служба подтвердила получение заказа<br><span class="text-tooltip">-Статус присваивается автоматически согласно настройкам модулей «Новая почта» и «Укрпочта»<br>-Включена автоматическая отправка SMS «Заказ отправлен»<br>-Включена автоматическая отправка SMS «Заказ прибыл»<br>-Включена автоматическая отправка SMS «Остался 1 день»</span>';
+        let vikuplenOrder = 'Заказ выкуплен, ожидается получение наложенного платежа';
+        let moneyGrab = 'Наложенный платеж заказа получен';
+        let finishOrder = 'Заказ завершён';
+        let backOrder = 'Покупатель не выкупил заказ';
+        let backOrderWarehouse = 'Не выкупленный заказ вернулся на склад';
+        let posElement = this.getBoundingClientRect();
+        // let blockHeight = $(this).height();
+        // let blockWidth = $(this).width();
+        // $('#tooltipBtn').text(' ');
+        if ($(this).hasClass('allOrder')) {
+            $('#tooltipBtn').text(allOrder);
+        }
+        if ($(this).hasClass('newOrder')) {
+            $('#tooltipBtn').text(newOrder);
+        }
+        if ($(this).hasClass('acceptOrder')) {
+            $('#tooltipBtn').text(acceptOrder);
+        }
+        if ($(this).hasClass('declineOrder')) {
+            $('#tooltipBtn').text(declineOrder);
+        }
+        if ($(this).hasClass('upakovanOrder')) {
+            $('#tooltipBtn').text(upakovanOrder);
+        }
+        if ($(this).hasClass('sendOrder')) {
+            $('#tooltipBtn').html(sendOrder);
+        }
+        if ($(this).hasClass('vikuplenOrder')) {
+            $('#tooltipBtn').text(vikuplenOrder);
+        }
+        if ($(this).hasClass('moneyGrab')) {
+            $('#tooltipBtn').text(moneyGrab);
+        }
+        if ($(this).hasClass('finishOrder')) {
+            $('#tooltipBtn').text(finishOrder);
+        }
+        if ($(this).hasClass('backOrder')) {
+            $('#tooltipBtn').text(backOrder);
+        }
+        if ($(this).hasClass('backOrderWarehouse')) {
+            $('#tooltipBtn').text(backOrderWarehouse);
+        }
+
+        $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
+        // let tooltipWidth = $("#tooltipBtn").width();
+        $("#tooltipBtn")
+            .css("left", posElement.x + 0 + "px")
+            .css("top", posElement.y + 22 + "px");
+        if ($(this).hasClass('test')) {
+            $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
+        }
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
 });
 
@@ -262,7 +349,7 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
         $(this).append('<div class="tooltip">' + message + '</div>');
     }
 });
-$(".table-header th").each(function(e, item) {
+$(".table-header th").hover(function(e, item) {
     let id = 'Идентификатор/номер заказа<br><span class="text-tooltip">Используется для поиска и передачи заказа между пользователями CRM</span>';
     let status = 'Текущий статус заказа<br><span class="text-tooltip">Используется для контроля, анализа и отслеживания заказа в CRM</span>';
     let pokupatel = 'Фамилия имя отчество покупателя<br><span class="text-tooltip">Используется для автоматического заполнения товарно-транспортной накладной почтовой службы</span>';
@@ -292,94 +379,220 @@ $(".table-header th").each(function(e, item) {
     let ip = 'IP адрес устройства с которого поступил заказ<br><span class="text-tooltip">Используется для отслеживания и блокировки в случаях спама</span>';
     let utm = 'UTM-метка<br><span class="text-tooltip">Используется для передачи переменных рекламного источника с которого поступил заказ</span>';
     let field = 'Дополнительное поле заказа<br><span class="text-tooltip">Используется для передачи и хранения дополнительных параметров заказа</span>';
-    if ($(item).hasClass('header-id')) {
-        $(this).append('<div class="tooltip">' + id + '</div>');
+ 
+    if ($(this).hasClass('header-field')) {
+        $('#tooltipBtn').html(field)
     }
-    if ($(item).hasClass('header-opened')) {
-        $(this).append('<div class="tooltip">' + opened + '</div>');
+    if ($(this).hasClass('header-utm')) {
+        $('#tooltipBtn').html(utm)
     }
-    if ($(item).hasClass('header-status')) {
-        $(this).append('<div class="tooltip">' + status + '</div>');
+    if ($(this).hasClass('header-sum')) {
+        $('#tooltipBtn').html(sum)
     }
-    if ($(item).hasClass('header-pokupatel')) {
-        $(this).append('<div class="tooltip">' + pokupatel + '</div>');
+    $("#tooltipBtn").css({ 'visibility': 'visible','font-size': '14px' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
+
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    // let screenWidth = window.screen.width;
+    let screenWidth = document.body.clientWidth;
+    let widthTooltip = $('#tooltipBtn').width();
+    let px110 = '110px';
+    console.log(posElement);
+    console.log(blockWidth);
+    console.log(screenWidth);
+    console.log(widthTooltip);
+ 
+    $("#tooltipBtn")
+        .css("left", posElement.x + 0 + "px")
+        .css("top", posElement.y + 28 + "px");
+
+ 
+
+    if (screenWidth < posElement.x + widthTooltip) {
+        $("#tooltipBtn").css( 'left', posElement.x - widthTooltip -10 + 'px' );
+    } 
+    if (posElement.x < 110) {
+        $("#tooltipBtn").css( 'left', posElement.x + blockWidth + 10 + 'px' );
     }
-    if ($(item).hasClass('header-country')) {
-        $(this).append('<div class="tooltip">' + country + '</div>');
-    }
-    if ($(item).hasClass('header-tel')) {
-        $(this).append('<div class="tooltip">' + tel + '</div>');
-    }
-    if ($(item).hasClass('header-comm')) {
-        $(this).append('<div class="tooltip">' + comm + '</div>');
-    }
-    if ($(item).hasClass('header-sum')) {
-        $(this).append('<div class="tooltip">' + sum + '</div>');
-    }
-    if ($(item).hasClass('header-product')) {
-        $(this).append('<div class="tooltip">' + product + '</div>');
-    }
-    if ($(item).hasClass('header-pay')) {
-        $(this).append('<div class="tooltip">' + pay + '</div>');
-    }
-    if ($(item).hasClass('header-delivery')) {
-        $(this).append('<div class="tooltip">' + delivery + '</div>');
-    }
-    if ($(item).hasClass('header-addres')) {
-        $(this).append('<div class="tooltip">' + addres + '</div>');
-    }
-    if ($(item).hasClass('header-ttn')) {
-        $(this).append('<div class="tooltip">' + ttn + '</div>');
-    }
-    if ($(item).hasClass('header-ttn-status')) {
-        $(this).append('<div class="tooltip">' + ttnStatus + '</div>');
-    }
-    if ($(item).hasClass('header-prinyal')) {
-        $(this).append('<div class="tooltip">' + prinyal + '</div>');
-    }
-    if ($(item).hasClass('header-depart')) {
-        $(this).append('<div class="tooltip">' + depart + '</div>');
-    }
-    if ($(item).hasClass('header-add')) {
-        $(this).append('<div class="tooltip">' + add + '</div>');
-    }
-    if ($(item).hasClass('header-open')) {
-        $(this).append('<div class="tooltip">' + open + '</div>');
-    }
-    if ($(item).hasClass('header-prinyatZa')) {
-        $(this).append('<div class="tooltip">' + prinyatZa + '</div>');
-    }
-    if ($(item).hasClass('header-accepted')) {
-        $(this).append('<div class="tooltip">' + accepted + '</div>');
-    }
-    if ($(item).hasClass('header-pered')) {
-        $(this).append('<div class="tooltip">' + pered + '</div>');
-    }
-    if ($(item).hasClass('header-send')) {
-        $(this).append('<div class="tooltip">' + send + '</div>');
-    }
-    if ($(item).hasClass('header-change')) {
-        $(this).append('<div class="tooltip">' + change + '</div>');
-    }
-    if ($(item).hasClass('header-changed')) {
-        $(this).append('<div class="tooltip">' + changed + '</div>');
-    }
-    if ($(item).hasClass('header-finish')) {
-        $(this).append('<div class="tooltip">' + finish + '</div>');
-    }
-    if ($(item).hasClass('header-site')) {
-        $(this).append('<div class="tooltip">' + site + '</div>');
-    }
-    if ($(item).hasClass('header-ip')) {
-        $(this).append('<div class="tooltip">' + ip + '</div>');
-    }
-    if ($(item).hasClass('header-utm')) {
-        $(this).append('<div class="tooltip">' + utm + '</div>');
-    }
-    if ($(item).hasClass('header-field')) {
-        $(this).append('<div class="tooltip">' + field + '</div>');
-    }
+}).mouseleave(function(e) {
+    $("#tooltipBtn").css({ 'visibility': 'hidden','font-size': '12px' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
 });
+ 
+
+
+// $(".table-header th").each(function(e, item) {
+//     let id = 'Идентификатор/номер заказа<br><span class="text-tooltip">Используется для поиска и передачи заказа между пользователями CRM</span>';
+//     let status = 'Текущий статус заказа<br><span class="text-tooltip">Используется для контроля, анализа и отслеживания заказа в CRM</span>';
+//     let pokupatel = 'Фамилия имя отчество покупателя<br><span class="text-tooltip">Используется для автоматического заполнения товарно-транспортной накладной почтовой службы</span>';
+//     let country = 'Страна за которой закреплён заказ<br><span class="text-tooltip">Используется для разделения заказов из разных стран</span>';
+//     let tel = 'Телефон покупателя<br><span class="text-tooltip">Используется для:<br>-Автоматического заполнения товарно-транспортной накладной почтовой службы<br>-Автоматической отправки SMS</span>';
+//     let comm = '...';
+//     let sum = 'Итоговая сумма заказа';
+//     let product = '...';
+//     let pay = 'Используемый вид оплаты';
+//     let delivery = 'Используемый вид доставки';
+//     let addres = '...';
+//     let ttn = 'Номер товарно-транспортной накладной';
+//     let ttnStatus = 'Информация за последний час о статусе посылки<br><span class="text-tooltip">Используется для:<br>-автоматической отправки SMS<br>-автоматической смены статусов в CRM</span>';
+//     let prinyal = 'Пользователь подтвердивший заказ<br><span class="text-tooltip">Закрепление происходит автоматически при изменении статуса заказа на «Принят». Используется для расчета зарплаты/премии сотрудника</span>';
+//     let depart = 'Используемый отдел в заказе<br><span class="text-tooltip">Заказ с "отделом" виден только тем пользователям у которых есть доступ к сооответствующему отделу</span>';
+//     let add = 'Дата и время добавления заказа в CRM';
+//     let open = 'Время между добавлением заказа в CRM и первым взаимодействием с ним<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал звонка/ответа</span>';
+//     let opened = 'Последний пользователь открывший заказ<br><span class="text-tooltip">Используется для выявления сотрудников "ворующих" заказы</span>';
+//     let prinyatZa = 'Время между открытием заказа и изменением его статуса на «Принят»<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
+//     let accepted = 'Дата и время изменения статуса заказа на «Принят»<br><span class="text-tooltip">Используется для расчета зарплаты/премии сотрудника за период врмени</span>';
+//     let pered = 'Время между изменением статуса заказа на "Принят" и получением посылки почтовой службой<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
+//     let send = 'Дата и время получения посылки почтовой службой<br><span class="text-tooltip">Используется для контроля сотрудников отвечающих за отправку заказа</span>';
+//     let change = 'Дата и время последнего изменения заказа';
+//     let changed = 'Последний пользователь изменивший заказ';
+//     let finish = 'Дата и время завершения заказа<br><span class="text-tooltip">Используется для подтверждения завершения заказа. Дальнейшее редактирование заказа сотрудниками не имеющим доступ, запрещен</span>';
+//     let site = 'Источник заказа';
+//     let ip = 'IP адрес устройства с которого поступил заказ<br><span class="text-tooltip">Используется для отслеживания и блокировки в случаях спама</span>';
+//     let utm = 'UTM-метка<br><span class="text-tooltip">Используется для передачи переменных рекламного источника с которого поступил заказ</span>';
+//     let field = 'Дополнительное поле заказа<br><span class="text-tooltip">Используется для передачи и хранения дополнительных параметров заказа</span>';
+
+//     if ($(item).hasClass('header-id')) {
+//         $(this).append('<div class="tooltip">' + id + '</div>');
+//     }
+//     if ($(item).hasClass('header-opened')) {
+//         $(this).append('<div class="tooltip">' + opened + '</div>');
+//     }
+//     if ($(item).hasClass('header-status')) {
+//         $(this).append('<div class="tooltip">' + status + '</div>');
+//     }
+//     if ($(item).hasClass('header-pokupatel')) {
+//         $(this).append('<div class="tooltip">' + pokupatel + '</div>');
+//     }
+//     if ($(item).hasClass('header-country')) {
+//         $(this).append('<div class="tooltip">' + country + '</div>');
+//     }
+//     if ($(item).hasClass('header-tel')) {
+//         $(this).append('<div class="tooltip">' + tel + '</div>');
+//     }
+//     if ($(item).hasClass('header-comm')) {
+//         $(this).append('<div class="tooltip">' + comm + '</div>');
+//     }
+//     if ($(item).hasClass('header-sum')) {
+//         $(this).append('<div class="tooltip">' + sum + '</div>');
+//     }
+//     if ($(item).hasClass('header-product')) {
+//         $(this).append('<div class="tooltip">' + product + '</div>');
+//     }
+//     if ($(item).hasClass('header-pay')) {
+//         $(this).append('<div class="tooltip">' + pay + '</div>');
+//     }
+//     if ($(item).hasClass('header-delivery')) {
+//         $(this).append('<div class="tooltip">' + delivery + '</div>');
+//     }
+//     if ($(item).hasClass('header-addres')) {
+//         $(this).append('<div class="tooltip">' + addres + '</div>');
+//     }
+//     if ($(item).hasClass('header-ttn')) {
+//         $(this).append('<div class="tooltip">' + ttn + '</div>');
+//     }
+//     if ($(item).hasClass('header-ttn-status')) {
+//         $(this).append('<div class="tooltip">' + ttnStatus + '</div>');
+//     }
+//     if ($(item).hasClass('header-prinyal')) {
+//         $(this).append('<div class="tooltip">' + prinyal + '</div>');
+//     }
+//     if ($(item).hasClass('header-depart')) {
+//         $(this).append('<div class="tooltip">' + depart + '</div>');
+//     }
+//     if ($(item).hasClass('header-add')) {
+//         $(this).append('<div class="tooltip">' + add + '</div>');
+//     }
+//     if ($(item).hasClass('header-open')) {
+//         $(this).append('<div class="tooltip">' + open + '</div>');
+//     }
+//     if ($(item).hasClass('header-prinyatZa')) {
+//         $(this).append('<div class="tooltip">' + prinyatZa + '</div>');
+//     }
+//     if ($(item).hasClass('header-accepted')) {
+//         $(this).append('<div class="tooltip">' + accepted + '</div>');
+//     }
+//     if ($(item).hasClass('header-pered')) {
+//         $(this).append('<div class="tooltip">' + pered + '</div>');
+//     }
+//     if ($(item).hasClass('header-send')) {
+//         $(this).append('<div class="tooltip">' + send + '</div>');
+//     }
+//     if ($(item).hasClass('header-change')) {
+//         $(this).append('<div class="tooltip">' + change + '</div>');
+//     }
+//     if ($(item).hasClass('header-changed')) {
+//         $(this).append('<div class="tooltip">' + changed + '</div>');
+//     }
+//     if ($(item).hasClass('header-finish')) {
+//         $(this).append('<div class="tooltip">' + finish + '</div>');
+//     }
+//     if ($(item).hasClass('header-site')) {
+//         $(this).append('<div class="tooltip">' + site + '</div>');
+//     }
+//     if ($(item).hasClass('header-ip')) {
+//         $(this).append('<div class="tooltip">' + ip + '</div>');
+//     }
+//     if ($(item).hasClass('header-utm')) {
+//         $(this).append('<div class="tooltip">' + utm + '</div>');
+//     }
+//     if ($(item).hasClass('header-field')) {
+//         $(this).append('<div class="tooltip">' + field + '</div>');
+//         // let elemW = $('.header-field-5');  
+//     }
+//     let arr = document.querySelectorAll('tr th');
+//     let posElement = arr[arr.length - 1].getBoundingClientRect();
+//     let screenWidth = window.screen.width;
+//     let widthElement = $('.tooltip').width();
+//     console.log(posElement);
+//     console.log(widthElement);
+//     console.log(screenWidth);
+//     console.log(e === (arr.length - 1));
+//     if (screenWidth < posElement.x + widthElement && e === (arr.length - 1)) {
+//         $(arr[arr.length - 1].children[0]).css('left', 0 - widthElement +  'px');
+//     }
+
+// });
+// // Получаем нужный элемент
+// var element = document.querySelector('.header-field');
+
+// var Visible = function(target) {
+//     // Все позиции элемента
+//     var targetPosition = {
+//             top: window.pageYOffset + target.getBoundingClientRect().top,
+//             left: window.pageXOffset + target.getBoundingClientRect().left,
+//             right: window.pageXOffset + target.getBoundingClientRect().right,
+//             bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+//         },
+//         // Получаем позиции окна
+//         windowPosition = {
+//             top: window.pageYOffset,
+//             left: window.pageXOffset,
+//             right: window.pageXOffset + document.documentElement.clientWidth,
+//             bottom: window.pageYOffset + document.documentElement.clientHeight
+//         };
+
+//     if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+//         targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+//         targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+//         targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+//         // Если элемент полностью видно, то запускаем следующий код
+//         console.clear();
+//         console.log('Вы видите элемент :)');
+//         $('.header-field .tooltip').css('left', '0');
+//     } else {
+//         // Если элемент не видно, то запускаем этот код
+//         console.clear();
+//         $('.header-field .tooltip').css('left', '-200%');
+//     };
+// };
+
+// // Запускаем функцию при прокрутке страницы
+// window.addEventListener('scroll', function() {
+//     Visible(element);
+// });
+
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+// Visible(element);
 $(".crm-main-table .country-block").each(function(e, item) {
     let ukraine = 'Украина';
     let russia = 'Россия';
@@ -463,7 +676,14 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
 //     $(this).text(text);
 // });
 
-
+// $(".crm-header .max-lenght").text(function(i, text) {
+//     let boxMemory = text;
+//     if (text.length >= 20) {
+//         text = text.substring(0, 18) + "...";
+//         $(this).text(text);
+//         $(this).append('<div class="tooltip">' + boxMemory + '</div>');
+//     }
+// });
 $(".crm-main-table .max-lenght").text(function(i, text) {
     let boxMemory = text;
     if (text.length >= 20) {
@@ -472,6 +692,7 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
         $(this).append('<div class="tooltip">' + boxMemory + '</div>');
     }
 });
+
 $(".crm-main-table .max-lenght-product").text(function(i, text) {
     let boxMemory = text;
     if (text.length >= 40) {
@@ -480,6 +701,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
         $(this).append('<div class="tooltip">' + boxMemory + '</div>');
     }
 });
+
 $(".crm-main-table .addres-block").text(function(i, text) {
     let boxMemory = text;
     if (text.length >= 30) {
@@ -673,19 +895,18 @@ $(".status-text").text(function(i, text) {
         text = text.substring(0, 13) + "...";
         $(this).text(text);
 
-        // console.log(posElement);
-
         $(this).parents('.list-status').hover(function(xy) {
             // let huy = $('.list-status').offset();
             // console.log(huy);
             let posElement = this.getBoundingClientRect();
             $('#tooltipBtn').text(boxMemory);
-
+            // console.log(posElement)
             $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
-            let tooltipWidth = $("#tooltipBtn").width();
+            // let tooltipWidth = $("#tooltipBtn").width();
+            let blockWidth = $(".list-status").width();
             $("#tooltipBtn")
-                .css("left", posElement.x - tooltipWidth - 10 + "px")
-                .css("top", xy.pageY + 0 + "px");
+                .css("left", posElement.x + blockWidth + 10 + "px")
+                .css("top", posElement.y - 4 + "px");
             // .css("top", posElement.y - 55 + "px");
             // if ($(this).children()[0].classList.contains('all')) {
             //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
@@ -717,10 +938,21 @@ $(".status-text").text(function(i, text) {
     //     });
     // }
 });
+// $(".simplebar-content").animate({ scrollTop: 0 }, 3500);
+// $('.simplebar-content-wrapper').bind('mousewheel', function(e) {
+//     var nt = $(document.body).scrollTop() - (e.deltaY * e.deltaFactor * 100);
+//     e.preventDefault();
+//     e.stopPropagation();
+//     $(document.body).stop().animate({
+//         scrollTop: nt
+//     }, 20, 'easeInOutCubic');
+// });
+// $('.simplebar-content-wrapper')[0].scrollIntoView({ behavior: 'smooth' })
+// $(".simplebar-content-wrapper").animate({ scrollTop: 0 }, 'slow');
 $(".status-table .status-btn").click(function() {
     $(".input-btn").focus().val('');
     $(".status-table .block1").addClass("toggle");
-    $(".simplebar-content-wrapper").animate({ scrollTop: 0 }, { duration: 300 });
+    $(".simplebar-content-wrapper").animate({ scrollTop: 0 }, { duration: 0 });
 
 });
 $(".status-table .block1 .list-status").click(function(e) {
@@ -784,6 +1016,8 @@ $(document).bind("click", function(e) {
 
 });
 //menu status
+
+
 //menu country btn
 $(".colum-country .country-btn").click(function() {
     $(".colum-country .block1").toggleClass("toggle");
@@ -1186,6 +1420,8 @@ const notificationBlock = document.querySelector(".notifications");
 
 notificationBtn.addEventListener("click", () => {
     notificationBlock.classList.toggle("notification-toggle");
+    importBlock.classList.remove("import-toggle");
+    modulBlock.classList.remove("modul-toggle");
 });
 document.addEventListener("mousedown", function(e) {
     if (e.target.closest(".header-crm") === null) {
@@ -1193,18 +1429,52 @@ document.addEventListener("mousedown", function(e) {
     }
 });
 //notification
+//import block
+const importBtn = document.querySelector(".btn-accept");
+const importBlock = document.querySelector(".import-block");
 
+importBtn.addEventListener("click", () => {
+    importBlock.classList.toggle("import-toggle");
+    notificationBlock.classList.remove("notification-toggle");
+    modulBlock.classList.remove("modul-toggle");
+});
+
+document.addEventListener("mousedown", function(e) {
+    if (e.target.closest(".header-crm") === null) {
+        importBlock.classList.remove("import-toggle");
+    }
+});
+//import block
+//modul block
+const modulBtn = document.querySelector(".btn-settings");
+const modulBlock = document.querySelector(".modul-block");
+
+modulBtn.addEventListener("click", () => {
+    modulBlock.classList.toggle("modul-toggle");
+    notificationBlock.classList.remove("notification-toggle");
+    importBlock.classList.remove("import-toggle");
+});
+
+document.addEventListener("mousedown", function(e) {
+    if (e.target.closest(".header-crm") === null) {
+        modulBlock.classList.remove("modul-toggle");
+    }
+});
+//modul block
 // nav sidebar
 
 const btnCrmNav = document.getElementById("sidebar");
 const navWrap = document.querySelector(".nav-crm");
 const navCrmPlus = document.querySelectorAll(".nav-desc");
-let simpleBar = null;
+
 
 btnCrmNav.addEventListener("click", () => {
     navWrap.classList.toggle("nav-crm-plus");
     navCrmPlus.forEach((x) => x.classList.toggle("nav-desc-toggle"));
     btnCrmNav.classList.toggle("selected-nav");
+    // if ($('.drop-list').parents().hasClass('.block-visible')) {
+    //     $(".animation-arrow").css({ 'display': 'block' });
+    // }
     // if (navWrap.closest('.nav-crm-plus')) {
     //     simpleBar = new SimpleBar(document.querySelector('.nav-crm-plus'));
     // }
@@ -1229,44 +1499,55 @@ document.addEventListener("mousedown", function(e) {
 
 //nav sidebar
 
-//zakaz btn
-// $(".zakaz-btn").click(function() {
-//     let arrbtn = $(".drop-zakaz .zakaz-block");
-//     arrbtn.map((x) => $(".drop-zakaz .zakaz-block").removeClass('zakaz-visible'));
-//     $(".zakaz-block").toggleClass('zakaz-visible');
-//     // $(".zakaz-block").each((x) => x.toggleClass('zakaz-visible'));
-//     // $('.nav-crm').prop("data-simplebar", "true");
-// });
-$(".zakaz-btn").on('click', function() {
+//drop nav btn
 
-    $(".zakaz-block").each(function(e) {
-        $(this).toggleClass('block-visible');
-    });
-    // $(".zakaz-block").each((x) => x.toggleClass('zakaz-visible'));
+$(".zakaz-btn").click(function() {
+    // let dropBlock = $(".drop-nav .zakaz-block");
+    // dropBlock.map((x) => $(".drop-nav .zakaz-block").removeClass('block-visible'));
+    $(".zakaz-drop-block").toggleClass('block-visible');
+    // let arrbtn = $(".dropdown2 .ul-block");
+    // arrbtn.map((x) => $(".dropdown2 .ul-block").removeClass("toggle"));
     // $('.nav-crm').prop("data-simplebar", "true");
+    $(".animation-arrow").css({ 'display': 'block' });
+
 });
-// $(document).ready(function() {
-//     $(".zakaz-block").each(function(index, element) { // производим перебор элементов <li> коллекции jQuery
-//         if (element.hasClass('zakaz-visible').length = 1) { // если остаток от деления индекса элемента на 2 не равен нулю
-//             $(this).toggleClass('zakaz-visible'); // устанавливаем цвет текста текущему элементу
-//         } else {
-//             $(this).removeClass('zakaz-visible');
-//         }
-//     });
-// });
-// document.querySelectorAll('.zakaz-btn').addEventListener('click', (e) => {
-//     document.querySelectorAll('.zakaz-block').forEach((x) => x.classList.toggle("zakaz-visible"));
-
-
-// });
-
-// $('.dropDown').each(function() {
-//   $(this).click(function() {
-//     $('.drop').removeClass('drop');
-//     $(this).addClass('drop');
-//   })
-// })
-//zakaz btn
+$(".catalog-btn").click(function() {
+    $(".catalog-drop-block").toggleClass('block-visible');
+});
+$(".contact-btn").click(function() {
+    $(".contact-drop-block").toggleClass('block-visible');
+});
+$(".send-product-btn").click(function() {
+    $(".send-drop-block").toggleClass('block-visible');
+});
+$(".warehouse-btn").click(function() {
+    $(".warehouse-drop-block").toggleClass('block-visible');
+});
+$(".templates-btn").click(function() {
+    $(".templates-drop-block").toggleClass('block-visible');
+});
+$(".modul-btn").click(function() {
+    $(".modul-drop-block").toggleClass('block-visible');
+});
+$(".statistic-btn").click(function() {
+    $(".statistic-drop-block").toggleClass('block-visible');
+});
+$(".mailing-btn").click(function() {
+    $(".mailing-drop-block").toggleClass('block-visible');
+});
+$(".setting-btn").click(function() {
+    $(".setting-drop-block").toggleClass('block-visible');
+});
+$(".trash-btn").click(function() {
+    $(".trash-drop-block").toggleClass('block-visible');
+});
+$(".info-btn").click(function() {
+    $(".info-drop-block").toggleClass('block-visible');
+});
+$(".video-btn").click(function() {
+    $(".video-drop-block").toggleClass('block-visible');
+});
+//drop nav btn
 
 // header hide
 $(".crm-input").hover(function() {
@@ -1289,7 +1570,7 @@ $(document).bind("click", function(e) {
 
 //reset filter rotate
 let rotate = 0;
-$(".btn-refresh").click(function() {
+$(".btn-header").first().click(function() {
     rotate = rotate + 360;
 
     $(".btn-refresh").css({
@@ -1372,6 +1653,23 @@ $(".btn-refresh").click(function() {
 //     });
 // })();
 
+
+//RAZOBRAT
+// $('#faq h3').click(function (e) {
+//     e.preventDefault();
+//     var p = $(this).parents('li');
+//     if (p.hasClass('active')) {
+//         $('.desc', p).slideUp(400, function () {
+//             $(p).removeClass('active');
+//         });
+//     } else {
+//         $('#faq li.active .desc').slideUp(400);
+//         $('.desc', p).slideDown(400);
+//         $('#faq li.active').removeClass('active');
+//         $(p).addClass('active');
+//     }
+// });
+//RAZOBRAT
 
 // var w=document.documentElement.clientWidth;
 // var zoom;   

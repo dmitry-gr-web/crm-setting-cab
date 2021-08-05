@@ -38,6 +38,19 @@
   font-size: 12px;
   user-select: none;
 }
+.crm-header .crm-header-link .new-orders-header {
+  position: relative;
+}
+.crm-header .crm-header-link .new-orders-header::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: #00B9FF;
+  position: absolute;
+  left: -7px;
+  top: 5px;
+}
 .crm-header .crm-header-link .count-link {
   font-size: 10px;
   opacity: 0.5;
@@ -242,6 +255,10 @@
   background-color: #9C02A7;
 }
 
+.color-2c8b11 {
+  background-color: #2c8b11;
+}
+
 .color-form {
   height: 2px;
   width: 100%;
@@ -328,7 +345,7 @@
   width: 18%;
   cursor: pointer;
   text-align: left;
-  border-right: 2px white solid;
+  border-right: 1px white solid;
 }
 .container-info-settings tr td .message-btn {
   position: relative;
@@ -781,11 +798,10 @@ tr th:nth-child(odd) {
   z-index: 22;
 }
 
-.new-order {
+.new-orders {
   position: relative;
 }
-
-.new-orders:after {
+.new-orders::after {
   content: "";
   width: 4px;
   height: 4px;
@@ -921,9 +937,6 @@ tr th:nth-child(odd) {
   position: absolute;
   text-align: left;
   overflow-x: hidden;
-  transition: 0.3s;
-  -moz-transition: 0.3s;
-  -webkit-transition: 0.3s;
   height: 90px;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -1047,9 +1060,6 @@ tr th:nth-child(odd) {
   cursor: pointer;
   width: 100%;
   top: 0;
-  transition: 0.3s;
-  -moz-transition: 0.3s;
-  -webkit-transition: 0.3s;
   /* IE 10+ */
   /* Firefox */
 }
@@ -1716,6 +1726,7 @@ th:hover .tooltip {
   background-color: rgba(81, 81, 81, 0.6);
   border-radius: 3px;
   top: 0;
+  left: 0;
   color: white;
   padding: 4px 5px;
   z-index: 999 !important;
@@ -1727,10 +1738,6 @@ th:hover .tooltip {
   opacity: 0;
   visibility: hidden;
   backdrop-filter: blur(4px);
-}
-
-.table-header th:last-child .tooltip {
-  left: -235%;
 }
 
 #hoverSelect {
@@ -1763,6 +1770,7 @@ th:hover .tooltip {
   font-size: 12px;
   color: white;
   padding: 4px 5px;
+  overflow: hidden;
   z-index: 999 !important;
   white-space: normal;
   width: max-content;

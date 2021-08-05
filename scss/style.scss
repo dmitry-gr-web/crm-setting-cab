@@ -55,6 +55,12 @@ html {
                 -moz-transition: 0.3s;
             }
         }
+        .notification-btn:hover {
+            opacity: 0.25;
+        }
+        .active-btn-header path {
+            stroke-opacity: 1;
+        }
     }
     .logo-position {
         margin-left: 10px;
@@ -261,6 +267,8 @@ html {
     top: 10vh;
     left: 40px;
     z-index: 333;
+    cursor: pointer;
+    user-select: none;
     align-items: center;
     border-radius: 0 15px 15px 0;
     backdrop-filter: blur(4px);
@@ -460,28 +468,226 @@ html {
 // .nav-crm-overflow {
 //     overflow-y: auto;
 // }
-.drop-zakaz {
+//DROPDOWN NAV
+.drop-nav {
     text-align: left;
     position: relative;
-    .zakaz-block {
+    .zakaz-drop-block {
         margin-left: 20px;
         display: none;
+        // visibility: hidden;
+        // height: 0px;
+        // transition: 0.3s;
+        // opacity: 0;
+        // top: -20px;
+        position: relative;
     }
-    .zakaz-btn {
+    .catalog-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .contact-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .send-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .warehouse-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .templates-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .modul-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .statistic-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .mailing-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .setting-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .trash-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .info-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .video-drop-block {
+        margin-left: 20px;
+        display: none;
+        position: relative;
+    }
+    .drop-btn {
         &:hover {
-            color: yellow;
+            color: #FFE600;
         }
     }
-    .zakaz-list {
+    .drop-list {
+        font-size: 11px;
         &:hover {
-            color: yellow;
+            color: #FFE600;
         }
     }
     .block-visible {
         display: block;
+        // height: 150px;
+        // visibility: visible;
+        // top: 0;
+        // opacity: 1;
+        // transition: 0.3s;
     }
 }
 
+.animation-arrow {
+    position: sticky;
+    right: 5px;
+    bottom: 20px;
+    width: 10px;
+    height: 20px;
+    float: right;
+    display: none;
+    .str {
+        animation: str 1s linear infinite;
+        opacity: 0;
+        transform: rotate(90deg);
+        color: yellow;
+        text-shadow: 0 0 2px black;
+    }
+    .str2 {
+        animation: str2 1s linear infinite;
+        transform: rotate(45deg);
+        color: yellow;
+        text-shadow: 0 0 2px black;
+        font-size: 25px;
+    }
+    span {
+        display: block;
+        width: 2px;
+        height: 2px;
+        animation: arrow 2s linear infinite;
+        opacity: 0;
+        color: yellow;
+        text-shadow: 0 0 2px black;
+    }
+    span:nth-child(2) {
+        position: relative;
+        top: 2px;
+        opacity: 0;
+        animation: arrow2 2s linear infinite;
+    }
+    span:last-child {
+        width: 5px;
+        height: 5px;
+        transform: rotate(180deg);
+        top: 22px;
+        left: 0.5px;
+        position: relative;
+        opacity: 0;
+        animation: arrow3 2s linear infinite;
+    }
+}
+
+@keyframes str {
+    10% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+
+@keyframes str2 {
+    0% {
+        transform: translateY(0px) rotate(45deg);
+    }
+    40% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(0px) rotate(45deg);
+    }
+    80% {
+        transform: translateY(5px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(45deg);
+    }
+}
+
+@keyframes arrow {
+    10% {
+        opacity: 0.5;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0.8;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+
+@keyframes arrow2 {
+    40% {
+        opacity: 0.5;
+    }
+    45% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+
+@keyframes arrow3 {
+    60% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+
+//DROPDOWN NAV
 .selected-nav {
     background-color: #FFE600;
     transform: translateX(10px);

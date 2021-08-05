@@ -6,14 +6,17 @@ slider.forEach((el) => {
     // let wrapHide = document.querySelector('.wrap-hide');
 
     el.addEventListener('mousedown', (e) => {
+        $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         if (el.closest('.wrap-hide') == null) {
             isDown = true;
             // slider.classList.add('active');
             startX = e.pageX - el.offsetLeft;
             scrollLeft = el.scrollLeft;
+          
         } else {
             isDown = false;
         }
+       
     });
     el.addEventListener('mouseleave', () => {
         isDown = false;
@@ -27,6 +30,7 @@ slider.forEach((el) => {
     el.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
+        $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         const x = e.pageX - el.offsetLeft;
         const walk = (x - startX) * 5 //scroll-fast
         el.scrollLeft = scrollLeft - walk;

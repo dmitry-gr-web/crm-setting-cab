@@ -387,6 +387,12 @@ html {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
 }
+.header-crm .block-btn .notification-btn:hover {
+  opacity: 0.25;
+}
+.header-crm .block-btn .active-btn-header path {
+  stroke-opacity: 1;
+}
 .header-crm .logo-position {
   margin-left: 10px;
 }
@@ -572,6 +578,8 @@ html {
   top: 10vh;
   left: 40px;
   z-index: 333;
+  cursor: pointer;
+  user-select: none;
   align-items: center;
   border-radius: 0 15px 15px 0;
   backdrop-filter: blur(4px);
@@ -770,24 +778,207 @@ html {
   fill-opacity: 1;
 }
 
-.drop-zakaz {
+.drop-nav {
   text-align: left;
   position: relative;
 }
-.drop-zakaz .zakaz-block {
+.drop-nav .zakaz-drop-block {
   margin-left: 20px;
   display: none;
+  position: relative;
 }
-.drop-zakaz .zakaz-btn:hover {
-  color: yellow;
+.drop-nav .catalog-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
 }
-.drop-zakaz .zakaz-list:hover {
-  color: yellow;
+.drop-nav .contact-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
 }
-.drop-zakaz .block-visible {
+.drop-nav .send-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .warehouse-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .templates-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .modul-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .statistic-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .mailing-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .setting-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .trash-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .info-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .video-drop-block {
+  margin-left: 20px;
+  display: none;
+  position: relative;
+}
+.drop-nav .drop-btn:hover {
+  color: #FFE600;
+}
+.drop-nav .drop-list {
+  font-size: 11px;
+}
+.drop-nav .drop-list:hover {
+  color: #FFE600;
+}
+.drop-nav .block-visible {
   display: block;
 }
 
+.animation-arrow {
+  position: sticky;
+  right: 5px;
+  bottom: 20px;
+  width: 10px;
+  height: 20px;
+  float: right;
+  display: none;
+}
+.animation-arrow .str {
+  animation: str 1s linear infinite;
+  opacity: 0;
+  transform: rotate(90deg);
+  color: yellow;
+  text-shadow: 0 0 2px black;
+}
+.animation-arrow .str2 {
+  animation: str2 1s linear infinite;
+  transform: rotate(45deg);
+  color: yellow;
+  text-shadow: 0 0 2px black;
+  font-size: 25px;
+}
+.animation-arrow span {
+  display: block;
+  width: 2px;
+  height: 2px;
+  animation: arrow 2s linear infinite;
+  opacity: 0;
+  color: yellow;
+  text-shadow: 0 0 2px black;
+}
+.animation-arrow span:nth-child(2) {
+  position: relative;
+  top: 2px;
+  opacity: 0;
+  animation: arrow2 2s linear infinite;
+}
+.animation-arrow span:last-child {
+  width: 5px;
+  height: 5px;
+  transform: rotate(180deg);
+  top: 22px;
+  left: 0.5px;
+  position: relative;
+  opacity: 0;
+  animation: arrow3 2s linear infinite;
+}
+
+@keyframes str {
+  10% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+@keyframes str2 {
+  0% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  40% {
+    transform: translateY(-5px) rotate(45deg);
+  }
+  60% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  80% {
+    transform: translateY(5px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+@keyframes arrow {
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+@keyframes arrow2 {
+  40% {
+    opacity: 0.5;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+@keyframes arrow3 {
+  60% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+}
 .selected-nav {
   background-color: #FFE600;
   transform: translateX(10px);
