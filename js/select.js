@@ -101,7 +101,7 @@
                             $('.btn-accept').removeClass('active-btn-header');
                             sel = [];
                         }
-                        // if (e.target.closest(".block-btn") ){
+                        // else if (e.target.closest(".block-btn")?.classList == null ){
                         //     // $(".crm-main-table").addClass("select-toggle");
                         //     $('.btn-settings').addClass('active-btn-header');
                         //     $('.btn-accept').addClass('active-btn-header');
