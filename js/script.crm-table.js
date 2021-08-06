@@ -379,7 +379,25 @@ $(".table-header th").hover(function(e, item) {
     let ip = 'IP адрес устройства с которого поступил заказ<br><span class="text-tooltip">Используется для отслеживания и блокировки в случаях спама</span>';
     let utm = 'UTM-метка<br><span class="text-tooltip">Используется для передачи переменных рекламного источника с которого поступил заказ</span>';
     let field = 'Дополнительное поле заказа<br><span class="text-tooltip">Используется для передачи и хранения дополнительных параметров заказа</span>';
- 
+   
+    if ($(this).hasClass('header-id')) {
+        $('#tooltipBtn').html(id)
+    }
+    if ($(this).hasClass('header-status')) {
+        $('#tooltipBtn').html(status)
+    }
+    if ($(this).hasClass('header-pokupatel')) {
+        $('#tooltipBtn').html(pokupatel)
+    }
+    if ($(this).hasClass('header-country')) {
+        $('#tooltipBtn').html(country)
+    }
+    if ($(this).hasClass('header-tel')) {
+        $('#tooltipBtn').html(tel)
+    }
+    if ($(this).hasClass('header-comm')) {
+        $('#tooltipBtn').html(comm)
+    }
     if ($(this).hasClass('header-field')) {
         $('#tooltipBtn').html(field)
     }
