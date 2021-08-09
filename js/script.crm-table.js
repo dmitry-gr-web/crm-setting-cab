@@ -32,16 +32,16 @@ $(document).ready(function() {
                 $("#hoverSelect").hide();
             });
     });
-    $(".user-lock").on("mouseenter", (e) => {
-        $(".user-lock").unbind("click");
-        $(".user-lock").mousemove(function(posXY) {
+    $(".selected-lock").on("mouseenter", (e) => {
+        $(".selected-lock").unbind("click");
+        $(".selected-lock").mousemove(function(posXY) {
             $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });;
             $("#hoverSelected-lock")
                 .css("left", posXY.pageX + 20 + "px")
                 .css("top", posXY.pageY + -30 + "px");
 
         })
-        $(".user-lock").mouseleave(function(e) {
+        $(".selected-lock").mouseleave(function(e) {
             $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });;
         });
     });
@@ -126,6 +126,15 @@ $(document).ready(function() {
         if ($(this).children()[0].classList.contains('all')) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' });
         }
+
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+        }
         // if (!$(this).hasClass('uspeh')) {
         //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
         // }
@@ -188,59 +197,79 @@ $(document).ready(function() {
     });
     $(".crm-header-link").hover(function(xy) {
         let allOrder = 'Все заказы в CRM';
-        let newOrder = 'Заказ без статуса';
-        let acceptOrder = 'Покупатель подтвердил заказ';
+        let newOrder = 'Заказ без статуса<br><span class="text-tooltip">Ожидает обработку</span>';
+        let acceptOrder = 'Покупатель подтвердил заказ<br><span class="text-tooltip">Ожидает упаковку<br><br>В статусе включена автоматическая отправка SMS согласно настроек модуля. Используемый шаблон:<br>- «Заказ принят, готовится к отправке»</span>';
         let declineOrder = 'Покупатель отказался от заказа';
-        let upakovanOrder = 'Заказ готов к передаче или передан почтовой службе';
-        let sendOrder = 'Почтовая служба подтвердила получение заказа<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br>Включена автоматическая отправка SMS по шаблону:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Остался 1 день»</span>';
-        let vikuplenOrder = 'Заказ выкуплен, ожидается получение наложенного платежа';
-        let moneyGrab = 'Наложенный платеж заказа получен';
-        let finishOrder = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить»:<br>-подтвердил получение наложенного платежа;<br>-подтвердил выполнение заказа.<br>Присваивает заказу статус "Завершён" и блокирует заказ кнопкой "Завершить". Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно </span>';
-        let backOrder = 'Покупатель не выкупил заказ';
-        let backOrderWarehouse = 'Не выкупленный заказ вернулся на склад';
-        let posElement = this.getBoundingClientRect();
+        let upakovanOrder = 'Заказ упакован<br><span class="text-tooltip">Ожидает передачу почтовой службе</span>';
+        let peredanOrder = 'Заказ передан почтовой службе<br><span class="text-tooltip">Ожидает подтверждения получения почтовой службой</span>';
+        let sendOrder = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта: За 1 день до платного хранения<br>- Укрпочта: За 1 день до платного хранения<br>- Justin: За 1 день до платного хранения<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
+        let vikuplenOrder = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает получения наложенного платежа<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
+        let moneyGrab = 'Наложенный платёж получен<br><span class="text-tooltip">Заказ ожидает завершения<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
+        let finishOrder = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки "Завершить" подтвердил:<br>- получение наложенного платежа<br>- выполнение заказа<br>Присвоил заказу статус "Завершён", заблокировал заказ кнопкой "Завершить".<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
+        let backOrder = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает получения отправителем<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
+        let backOrderWarehouse = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Пользователь с правом использования кнопки "Завершить" подтвердил получение возвращенного заказа. Присвоил заказу статус "Возврат (завершён)", заблокировал заказ кнопкой "Завершить".<br> Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
+
         // let blockHeight = $(this).height();
         // let blockWidth = $(this).width();
         // $('#tooltipBtn').text(' ');
         if ($(this).hasClass('allOrder')) {
-            $('#tooltipBtn').text(allOrder);
+            $('#tooltipBtn').html(allOrder);
         }
         if ($(this).hasClass('newOrder')) {
-            $('#tooltipBtn').text(newOrder);
+            $('#tooltipBtn').html(newOrder);
         }
         if ($(this).hasClass('acceptOrder')) {
-            $('#tooltipBtn').text(acceptOrder);
+            $('#tooltipBtn').html(acceptOrder);
         }
         if ($(this).hasClass('declineOrder')) {
-            $('#tooltipBtn').text(declineOrder);
+            $('#tooltipBtn').html(declineOrder);
         }
         if ($(this).hasClass('upakovanOrder')) {
-            $('#tooltipBtn').text(upakovanOrder);
+            $('#tooltipBtn').html(upakovanOrder);
+        }
+        if ($(this).hasClass('peredanOrder')) {
+            $('#tooltipBtn').html(peredanOrder);
         }
         if ($(this).hasClass('sendOrder')) {
             $('#tooltipBtn').html(sendOrder);
         }
         if ($(this).hasClass('vikuplenOrder')) {
-            $('#tooltipBtn').text(vikuplenOrder);
+            $('#tooltipBtn').html(vikuplenOrder);
         }
         if ($(this).hasClass('moneyGrab')) {
-            $('#tooltipBtn').text(moneyGrab);
+            $('#tooltipBtn').html(moneyGrab);
         }
         if ($(this).hasClass('finishOrder')) {
             $('#tooltipBtn').html(finishOrder);
         }
         if ($(this).hasClass('backOrder')) {
-            $('#tooltipBtn').text(backOrder);
+            $('#tooltipBtn').html(backOrder);
         }
         if ($(this).hasClass('backOrderWarehouse')) {
-            $('#tooltipBtn').text(backOrderWarehouse);
+            $('#tooltipBtn').html(backOrderWarehouse);
         }
-
+        let posElement = this.getBoundingClientRect();
         $("#tooltipBtn").css({ 'visibility': 'visible', 'font-size': '14px' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
         // let tooltipWidth = $("#tooltipBtn").width();
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
             .css("top", posElement.y + 22 + "px");
+
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth + 10 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 20 + 'px');
+        }
+        // if (screenHeight < posElement.y + heightTooltip + 25) {
+        //     $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+        // }
         if ($(this).hasClass('test')) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         }
@@ -285,10 +314,11 @@ $(".tel").each(function(e, item) {
         // console.log(blockWidth);
         // console.log(screenWidth);
         // console.log(widthTooltip);
-        console.log(posElement);
-        console.log(blockHeight);
-        console.log(screenHeight);
-        console.log(heightTooltip);
+
+        // console.log(posElement);
+        // console.log(blockHeight);
+        // console.log(screenHeight);
+        // console.log(heightTooltip);
 
         $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
         $("#tooltipBtn")
@@ -297,7 +327,7 @@ $(".tel").each(function(e, item) {
 
 
         if (screenWidth < posElement.x + widthTooltip) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
         }
         if (posElement.x < 110) {
             $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -309,6 +339,22 @@ $(".tel").each(function(e, item) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
 });
+// let posElement = this.getBoundingClientRect();
+// let blockWidth = $(this).width();
+// let blockHeight = $(this).height();
+// let screenWidth = document.body.clientWidth;
+// let screenHeight = document.body.clientHeight;
+// let widthTooltip = $('#tooltipBtn').width();
+// let heightTooltip = $('#tooltipBtn').height();
+// if (screenWidth < posElement.x + widthTooltip) {
+//     $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
+// }
+// if (posElement.x < 110) {
+//     $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+// }
+// if (screenHeight < posElement.y + heightTooltip + 25) {
+//     $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+// }
 $(".colum-pay").each(function(e, item) {
     let predoplata = 'Предоплата';
     let nalozhplatezh = 'Наложенный платёж';
@@ -338,6 +384,21 @@ $(".colum-pay").each(function(e, item) {
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
             .css("top", posElement.y + 22 + "px");
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
@@ -367,15 +428,31 @@ $(".svg-delivery").each(function(e, item) {
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
             .css("top", posElement.y + 22 + "px");
+
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
 });
-$(".crm-main-table .svg-wrap").each(function(e, item) {
+$(".crm-main-table .convert-tooltip").each(function(e, item) {
     let message = 'Отправлено 4 сообщения';
 
     $(this).hover(function(xy) {
-        if ($(item.children[0]).hasClass('svg-convert')) {
+        if ($(this).hasClass('convert-tooltip')) {
             $('#tooltipBtn').text(message);
         }
         let posElement = this.getBoundingClientRect();
@@ -383,7 +460,23 @@ $(".crm-main-table .svg-wrap").each(function(e, item) {
         $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
-            .css("top", posElement.y + 22 + "px");
+            .css("top", posElement.y + 20 + "px");
+
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -7 + 'px');
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
@@ -393,7 +486,7 @@ $(".crm-main-table .date-time").each(function(e, item) {
     let otkritHours = 'Открыт через 3 дня 1 час 3 минуты 25 секунд';
     let acceptZa = 'Принят за 3 минуты 23 секунды';
     let acceptZahours = 'Принят за 1 час 3 минуты 23 секунды';
-    let peredan = 'Передан через 3 дня 3 минуты 23 секунды';
+    let otpravka = 'Отправлен через 3 дня 3 минуты 23 секунды';
 
     $(this).hover(function(xy) {
         if ($(item).hasClass('otkrit')) {
@@ -408,8 +501,8 @@ $(".crm-main-table .date-time").each(function(e, item) {
         if ($(item).hasClass('acceptzahours')) {
             $('#tooltipBtn').text(acceptZahours);
         }
-        if ($(item).hasClass('peredan')) {
-            $('#tooltipBtn').text(peredan);
+        if ($(item).hasClass('otpravka')) {
+            $('#tooltipBtn').text(otpravka);
         }
         let posElement = this.getBoundingClientRect();
 
@@ -417,26 +510,57 @@ $(".crm-main-table .date-time").each(function(e, item) {
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
             .css("top", posElement.y + 22 + "px");
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -7 + 'px');
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
 });
-$(".crm-main-table .svg-wrap").each(function(e, item) {
+$(".crm-main-table .box-day-tooltip").each(function(e, item) {
     let message = 'Остался 1 день до платного хранения';
 
     $(this).hover(function(xy) {
-        if ($(item.children[0]).hasClass('svg-box-day')) {
+        if ($(this).hasClass('box-day-tooltip')) {
             $('#tooltipBtn').text(message);
         }
         let posElement = this.getBoundingClientRect();
-
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
         $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
             .css("top", posElement.y + 19 + "px");
+
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
+
 });
 $(".table-header th").hover(function(e, item) {
     let id = 'Идентификатор/номер заказа<br><span class="text-tooltip">Используется для поиска и передачи заказа между пользователями CRM</span>';
@@ -459,7 +583,7 @@ $(".table-header th").hover(function(e, item) {
     let opened = 'Последний пользователь открывший заказ<br><span class="text-tooltip">Используется для выявления сотрудников "ворующих" заказы</span>';
     let prinyatZa = 'Время между открытием заказа и изменением его статуса на «Принят»<br><span class="text-tooltip">Используется для оценки времени потраченого на подтверждение заказа</span>';
     let accepted = 'Дата и время изменения статуса заказа на «Принят»<br><span class="text-tooltip">Используется для расчета зарплаты/премии сотрудника за период врмени</span>';
-    let pered = 'Время между изменением статуса заказа на "Принят" и получением посылки почтовой службой<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
+    let otpravka = 'Время между изменением статуса заказа на "Принят" и получением посылки почтовой службой<br><span class="text-tooltip">Показывает сколько времени покупатель ожидал отправку заказа</span>';
     let send = 'Дата и время получения посылки почтовой службой<br><span class="text-tooltip">Используется для контроля сотрудников отвечающих за отправку заказа</span>';
     let change = 'Дата и время последнего изменения заказа';
     let changed = 'Последний пользователь изменивший заказ';
@@ -529,8 +653,8 @@ $(".table-header th").hover(function(e, item) {
     if ($(this).hasClass('header-prinyal')) {
         $('#tooltipBtn').html(prinyal)
     }
-    if ($(this).hasClass('header-pered')) {
-        $('#tooltipBtn').html(pered)
+    if ($(this).hasClass('header-otpravka')) {
+        $('#tooltipBtn').html(otpravka)
     }
     if ($(this).hasClass('header-send')) {
         $('#tooltipBtn').html(send)
@@ -589,7 +713,7 @@ $(".table-header th").hover(function(e, item) {
     // });
 
     if (screenWidth < posElement.x + widthTooltip) {
-        $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
     }
     if (posElement.x < 110) {
         $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -804,6 +928,21 @@ $(".crm-main-table .country-block").each(function(e, item) {
         $("#tooltipBtn")
             .css("left", posElement.x + 0 + "px")
             .css("top", posElement.y + 22 + "px");
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
     });
@@ -881,6 +1020,22 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
             $("#tooltipBtn")
                 .css("left", posElement.x + 0 + "px")
                 .css("top", posElement.y + 22 + "px");
+
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
         }).mouseleave(function(e) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         });
@@ -922,6 +1077,23 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
             $("#tooltipBtn")
                 .css("left", posElement.x + 0 + "px")
                 .css("top", posElement.y + 22 + "px");
+
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+            }
+
         }).mouseleave(function(e) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         });
@@ -940,7 +1112,23 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
             $("#tooltipBtn")
                 .css("left", posElement.x + 0 + "px")
-                .css("top", posElement.y + 22 + "px");
+                .css("top", posElement.y + 20 + "px");
+
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
         }).mouseleave(function(e) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         });
@@ -960,6 +1148,21 @@ $(".crm-main-table .addres-block").text(function(i, text) {
             $("#tooltipBtn")
                 .css("left", posElement.x + 0 + "px")
                 .css("top", posElement.y + 22 + "px");
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+            }
         }).mouseleave(function(e) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         });
@@ -979,6 +1182,21 @@ $(".status-table .color-form2").text(function(i, text) {
             $("#tooltipBtn")
                 .css("left", posElement.x + 0 + "px")
                 .css("top", posElement.y + 19 + "px");
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
         }).mouseleave(function(e) {
             $("#tooltipBtn").css({ 'visibility': 'hidden' }).stop(true, true).animate({ opacity: "0" }, { duration: 0, queue: true });
         });
@@ -1169,13 +1387,28 @@ $(".status-text").text(function(i, text) {
             // console.log(posElement)
             $("#tooltipBtn").css({ 'visibility': 'visible' }).animate({ opacity: "1" }, { duration: 300, queue: true });
             // let tooltipWidth = $("#tooltipBtn").width();
-            let blockWidth = $(".list-status").width();
+            let blockWidth = $(this).width();
             $("#tooltipBtn")
                 .css("left", posElement.x + blockWidth + 10 + "px")
                 .css("top", posElement.y - 4 + "px");
             // .css("top", posElement.y - 55 + "px");
             // if ($(this).children()[0].classList.contains('all')) {
             //     $("#tooltipBtn").css({ 'visibility': 'hidden' });
+            // }
+
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+            }
+            // if (posElement.x < 110) {
+            //     $("#tooltipBtn").css('left', posElement.x - blockWidth + 10 + 'px');
+            // }
+            // if (screenHeight < posElement.y + heightTooltip + 25) {
+            //     $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
             // }
 
         }).mouseleave(function(e) {
@@ -1229,13 +1462,20 @@ $(".status-table .block1 .list-status").click(function(e) {
         // let appendCountry = $('.list-status.select-btn').text();
         // $(".status-btn").html(appendCountry);
         // $(".input-btn").val(appendCountry);
-        $('.all').removeClass("select-btn-static");
+        $('.status-table .list-status .all').removeClass("select-btn-static");
         $('.status-btn .list-status.select-btn').removeClass('select-btn');
+        $('.btn-refresh').addClass('active-btn-header');
+    }
+    if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
+        // $(".status-btn").html('Фильтр');
+        $(".input-btn").val('Фильтр');
+        $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.status-table .block1 .list-status.select-btn').length == 0) {
         // $(".status-btn").html('Все');
         $(".input-btn").val('Все');
-        $('.all').addClass("select-btn-static");
+        $('.status-table .list-status .all').addClass("select-btn-static");
+        $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
@@ -1259,20 +1499,20 @@ $(document).bind("click", function(e) {
         if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
             // $(".status-btn").html('Фильтр');
             $(".input-btn").val('Фильтр');
-            $('.btn-refresh').addClass('active-btn-header');
+
         }
         if ($('.status-table .block1 .list-status.select-btn').length == 1) {
             let appendCountry = $('.list-status.select-btn').text();
             $(".input-btn").val(appendCountry);
             // $(".input-btn").val(appendCountry);
-            $('.all').removeClass("select-btn-static");
+            $('.status-table .list-status .all').removeClass("select-btn-static");
             $('.status-btn .list-status.select-btn').removeClass('select-btn');
-            $('.btn-refresh').addClass('active-btn-header');
+            // $('.btn-refresh').addClass('active-btn-header');
         }
         if ($('.status-table .block1 .list-status.select-btn').length == 0) {
             // $(".status-btn").html('Все');
             $(".input-btn").val('Все');
-            $('.btn-refresh').removeClass('active-btn-header');
+            // $('.btn-refresh').removeClass('active-btn-header');
             // $('.all').addClass("select-btn-static");
         }
         //  else if ($(this).children()[0].classList.contains('all')) {
@@ -1298,9 +1538,9 @@ $(".colum-country .block1 .list").click(function(e) {
     // $('.block1').find('div:first').removeClass('select-btn');
     if ($('.colum-country .block1 .list.select-btn').length == 1) {
         let appendCountry = $('.list.select-btn').html();
-        // $('.list.select-btn').html();
-
+        // $('.list.select-btn').html();  
         $(".country-btn").html(appendCountry);
+        $('.btn-refresh').addClass('active-btn-header');
         $('.list').children('.all').removeClass("select-btn-static");
         $('.country-btn').children('.all').removeClass("select-btn-static");
         // $(".country-btn .list .all.select-btn-static").removeClass("select-btn-static");
@@ -1308,6 +1548,7 @@ $(".colum-country .block1 .list").click(function(e) {
     }
     if ($('.colum-country .block1 .list.select-btn').length >= 2) {
         $(".country-btn").html('Фильтр');
+        $('.btn-refresh').addClass('active-btn-header');
         // $(".country-btn").html('<svg class="filter" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6668 9.73313C12.3334 9.53313 12.2001 9.1998 12.2668 8.86646C12.3334 8.5998 12.3334 8.26646 12.3334 7.99979C12.3334 7.73313 12.3334 7.3998 12.2668 7.13313C12.2001 6.7998 12.4001 6.46646 12.6668 6.26646C13.0668 5.99979 13.2001 5.46646 13.0001 5.06646L12.5334 4.26646C12.2668 3.86646 11.7334 3.73313 11.3334 3.93313C11.0001 4.13313 10.6668 4.06646 10.4001 3.86646C9.93344 3.46646 9.46678 3.1998 8.86678 2.9998C8.53344 2.86646 8.33344 2.53313 8.33344 2.1998C8.33344 1.73313 7.93344 1.33313 7.46677 1.33313H6.53344C6.06678 1.33313 5.66677 1.73313 5.66677 2.1998C5.66677 2.53313 5.46678 2.86646 5.13344 2.9998C4.60011 3.1998 4.06677 3.53313 3.60011 3.86646C3.33344 4.06646 2.93344 4.13313 2.60011 3.93313C2.20011 3.73313 1.66678 3.86646 1.46677 4.26646L1.00011 5.06646C0.733442 5.46646 0.933442 5.99979 1.33344 6.26646C1.66677 6.46646 1.80011 6.7998 1.73344 7.13313C1.73344 7.46646 1.66677 7.73313 1.66677 7.99979C1.66677 8.26646 1.66677 8.5998 1.73344 8.86646C1.80011 9.1998 1.60011 9.53313 1.33344 9.73313C0.866775 9.9998 0.733442 10.5331 1.00011 10.9331L1.46677 11.7331C1.73344 12.1331 2.26677 12.2665 2.66677 12.0665C3.00011 11.8665 3.33344 11.9331 3.66677 12.1331C4.13344 12.4665 4.60011 12.7998 5.13344 12.9998C5.46678 13.1331 5.66677 13.4665 5.66677 13.7998V13.8665C5.66677 14.3331 6.06678 14.7331 6.53344 14.7331H7.46677C7.93344 14.7331 8.33344 14.3331 8.33344 13.8665C8.33344 13.5331 8.53344 13.1998 8.86678 13.0665C9.40011 12.8665 9.93344 12.5998 10.3334 12.1998C10.6001 11.9998 11.0001 11.9331 11.2668 12.1331C11.6668 12.3998 12.2001 12.1998 12.4668 11.7998L12.9334 10.9998C13.2668 10.5331 13.1334 9.9998 12.6668 9.73313ZM7.00011 10.6665C5.53344 10.6665 4.33344 9.46646 4.33344 7.99979C4.33344 6.53313 5.53344 5.33313 7.00011 5.33313C8.46678 5.33313 9.66678 6.53313 9.66678 7.99979C9.66678 9.46646 8.46678 10.6665 7.00011 10.6665Z" stroke="#515151" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>');
         // $(".filter").hover(function(filter) {
         //     if (filter.target) {
@@ -1324,10 +1565,12 @@ $(".colum-country .block1 .list").click(function(e) {
     if ($('.colum-country .block1 .list.select-btn').length == 0) {
         $(".country-btn").html('Все');
         $('.all').addClass("select-btn-static");
+        $('.btn-refresh').removeClass('active-btn-header');
         // $('.all').addClass("select-btn-static");
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
+        $('.btn-refresh').removeClass('active-btn-header');
         // $('.list .all').addClass("select-btn-static");
     }
 });
@@ -1335,6 +1578,7 @@ $(".colum-country .block1 .list .all").click(function() {
     // let textDelivery = $(this).html();
     $(".country-btn").html('Все');
     $(this).removeClass('select-btn');
+
     // $(".country-btn .list-item").removeClass('select-btn-static');
     // $('.list .all').addClass("select-btn-static");
     // $(this).addClass('select-btn-static');
@@ -1342,6 +1586,7 @@ $(".colum-country .block1 .list .all").click(function() {
     // $(".employe- btn").html(text);
     $('.colum-country .block1 .list').removeClass('select-btn');
     $(".colum-country .block1").removeClass("toggle");
+    $('.btn-refresh').removeClass('active-btn-header');
     // $(".crm-main-table").removeClass("z-index");
     // $('.all').removeClass("select-btn-static");
     // if (!$('.list .all').hasClass('select-btn-static')) {

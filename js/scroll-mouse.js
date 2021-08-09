@@ -12,11 +12,11 @@ slider.forEach((el) => {
             // slider.classList.add('active');
             startX = e.pageX - el.offsetLeft;
             scrollLeft = el.scrollLeft;
-          
+
         } else {
             isDown = false;
         }
-       
+
     });
     el.addEventListener('mouseleave', () => {
         isDown = false;
@@ -39,7 +39,7 @@ slider.forEach((el) => {
         //     e.isDown = false;
         // }
     });
-})
+});
 
 
 // const slider2 = document.querySelector('.scroll-wrap2');
