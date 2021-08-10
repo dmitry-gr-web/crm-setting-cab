@@ -198,16 +198,23 @@ $(document).ready(function() {
     $(".crm-header-link").hover(function(xy) {
         let allOrder = 'Все заказы в CRM';
         let newOrder = 'Заказ без статуса<br><span class="text-tooltip">Ожидает обработку</span>';
-        let acceptOrder = 'Покупатель подтвердил заказ<br><span class="text-tooltip">Ожидает упаковку<br><br>В статусе включена автоматическая отправка SMS согласно настроек модуля. Используемый шаблон:<br>- «Заказ принят, готовится к отправке»</span>';
+        let acceptOrder = 'Покупатель подтвердил заказ<br><span class="text-tooltip">Ожидает упаковку или передачу в «(Drop) Ожидает ТТН»<br><br>В статусе включена автоматическая отправка SMS согласно настроек модуля. Используемый шаблон:<br>- «Заказ принят, готовится к отправке»</span>';
         let declineOrder = 'Покупатель отказался от заказа';
+        let finishOrder = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил:<br>- получение наложенного платежа;<br>- выполнение заказа.<br>Присвоил заказу статус «Завершён», заблокировал заказ кнопкой «Завершить».<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let upakovanOrder = 'Заказ упакован<br><span class="text-tooltip">Ожидает передачу почтовой службе</span>';
-        let peredanOrder = 'Заказ передан почтовой службе<br><span class="text-tooltip">Ожидает подтверждения получения почтовой службой</span>';
+        let peredanOrder = 'Заказ передан почтовой службе<br><span class="text-tooltip">Ожидает автоматического присвоения статуса «Отправлен», после подтверждения получения посылки почтовой службой</span>';
         let sendOrder = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта: За 1 день до платного хранения<br>- Укрпочта: За 1 день до платного хранения<br>- Justin: За 1 день до платного хранения<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
+        let backOrderWarehouse = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить» подтвердил получение возвращенного заказа. Присвоил заказу статус «Возврат (завершён)», заблокировал заказ кнопкой «Завершить».<br> Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let vikuplenOrder = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает получения наложенного платежа<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let moneyGrab = 'Наложенный платёж получен<br><span class="text-tooltip">Заказ ожидает завершения<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
-        let finishOrder = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки "Завершить" подтвердил:<br>- получение наложенного платежа<br>- выполнение заказа<br>Присвоил заказу статус "Завершён", заблокировал заказ кнопкой "Завершить".<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let backOrder = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает получения отправителем<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
-        let backOrderWarehouse = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Пользователь с правом использования кнопки "Завершить" подтвердил получение возвращенного заказа. Присвоил заказу статус "Возврат (завершён)", заблокировал заказ кнопкой "Завершить".<br> Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
+        let dropWaitTtn = 'Заказ передан Dropshipping компании<br><span class="text-tooltip">Ожидает создания товарно-транспортной накладной дропшиппером, для её присвоения заказу с дальнейшим отслеживания в CRM системе</span>';
+        let dropAssignedTtn = 'Заказу присвоена ТТН<br><span class="text-tooltip">Ожидает автоматического присвоения статуса «(Drop) Отправлен», после подтверждения получения посылки почтовой службой</span>';
+        let dropSend = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта: За 1 день до платного хранения<br>- Укрпочта: За 1 день до платного хранения<br>- Justin: За 1 день до платного хранения<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
+        let dropBuying = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает выплату от дропшиппера</span>';
+        let dropFinish = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил:<br>- получение выплаты от дропшиппера;<br>- выполнение заказа.<br>Присвоил заказу статус «(Drop) Завершён», заблокировал заказ кнопкой «Завершить».<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
+        let dropBack = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает вычитания стоимости за возврат заказа из выплат дропшиппера</span>';
+        let dropBackFinish = 'Возврат учтён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил вычитание стоимости за возврат заказ, из выплат дропшиппера. Присвоил заказу статус «(Drop) Возврат (завершён)», заблокировал заказ кнопкой «Завершить». Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
 
         // let blockHeight = $(this).height();
         // let blockWidth = $(this).width();
@@ -247,6 +254,27 @@ $(document).ready(function() {
         }
         if ($(this).hasClass('backOrderWarehouse')) {
             $('#tooltipBtn').html(backOrderWarehouse);
+        }
+        if ($(this).hasClass('dropWaitTtn')) {
+            $('#tooltipBtn').html(dropWaitTtn);
+        }
+        if ($(this).hasClass('dropAssignedTtn')) {
+            $('#tooltipBtn').html(dropAssignedTtn);
+        }
+        if ($(this).hasClass('dropSend')) {
+            $('#tooltipBtn').html(dropSend);
+        }
+        if ($(this).hasClass('dropBuying')) {
+            $('#tooltipBtn').html(dropBuying);
+        }
+        if ($(this).hasClass('dropFinish')) {
+            $('#tooltipBtn').html(dropFinish);
+        }
+        if ($(this).hasClass('dropBack')) {
+            $('#tooltipBtn').html(dropBack);
+        }
+        if ($(this).hasClass('dropBackFinish')) {
+            $('#tooltipBtn').html(dropBackFinish);
         }
         let posElement = this.getBoundingClientRect();
         $("#tooltipBtn").css({ 'visibility': 'visible', 'font-size': '14px' }).delay(500).animate({ opacity: "1" }, { duration: 300, queue: true });
@@ -322,7 +350,7 @@ $(".tel").each(function(e, item) {
 
         $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
         $("#tooltipBtn")
-            .css("left", posElement.x + 0 + "px")
+            .css("left", posElement.x - 4 + "px")
             .css("top", posElement.y + 22 + "px");
 
 
@@ -1028,7 +1056,7 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1085,7 +1113,7 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1111,7 +1139,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css({ 'visibility': 'visible' }).delay(300).animate({ opacity: "1" }, { duration: 300, queue: true });
             $("#tooltipBtn")
-                .css("left", posElement.x + 0 + "px")
+                .css("left", posElement.x - 5 + "px")
                 .css("top", posElement.y + 20 + "px");
 
             let blockWidth = $(this).width();
@@ -1121,7 +1149,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 7 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1155,7 +1183,7 @@ $(".crm-main-table .addres-block").text(function(i, text) {
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1189,7 +1217,7 @@ $(".status-table .color-form2").text(function(i, text) {
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
