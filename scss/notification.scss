@@ -23,6 +23,14 @@
         }
         span {
             user-select: none;
+            cursor: pointer;
+            transition: 0.3s;
+            -o-transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            &:hover {
+                opacity: 0.5;
+            }
         }
     }
     .block-not {

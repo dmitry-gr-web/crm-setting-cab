@@ -13,6 +13,7 @@
   transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -webkit-transition: 0.3s ease-in;
+  user-select: none;
 }
 
 .modul-toggle {
@@ -23,7 +24,46 @@
   -webkit-transition: 0.3s ease-in;
 }
 
+.modul-header-1,
+.modul-header-2 {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.modul-header-1 {
+  margin-top: 20px;
+}
+
+.modul-list {
+  padding: 2.5px 0;
+  cursor: pointer;
+}
+.modul-list:hover {
+  opacity: 0.5;
+}
+
+.modul-ul {
+  list-style: none;
+  padding-left: 10px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.createTtn {
+  padding-left: 10px;
+}
+
+.avtoobzvon {
+  padding-left: 10px;
+}
+
+.modul-header {
+  position: relative;
+  display: inline;
+}
+
 .modul-wrap {
   margin-top: 10px;
   margin-left: 20px;
+  margin-right: 20px;
 }

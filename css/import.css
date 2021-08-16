@@ -13,6 +13,7 @@
   transition: 0.3s ease-in;
   -moz-transition: 0.3s ease-in;
   -webkit-transition: 0.3s ease-in;
+  user-select: none;
 }
 
 .import-toggle {
@@ -23,7 +24,28 @@
   -webkit-transition: 0.3s ease-in;
 }
 
+.import-header {
+  position: relative;
+  display: inline;
+}
+
+.import-ul {
+  margin-top: 25px;
+  list-style: none;
+  padding-left: 0;
+  font-size: 12px;
+}
+.import-ul .import-list {
+  cursor: pointer;
+  padding: 2.5px 0;
+  font-weight: 600;
+}
+.import-ul .import-list:hover {
+  opacity: 0.5;
+}
+
 .import-wrap {
   margin-top: 10px;
   margin-left: 20px;
+  margin-right: 20px;
 }
