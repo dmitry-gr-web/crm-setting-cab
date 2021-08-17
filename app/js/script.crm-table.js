@@ -35,14 +35,14 @@ $(document).ready(function() {
     $(".selected-lock").on("mouseenter", (e) => {
         $(".selected-lock").unbind("click");
         $(".selected-lock").mousemove(function(posXY) {
-            $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });;
+            $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });
             $("#hoverSelected-lock")
                 .css("left", posXY.pageX + 20 + "px")
                 .css("top", posXY.pageY + -30 + "px");
 
         })
         $(".selected-lock").mouseleave(function(e) {
-            $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });;
+            $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
         });
     });
     $(".list").hover(function(xy) {
@@ -109,7 +109,7 @@ $(document).ready(function() {
         let widthTooltip = $('#tooltipBtn').width();
         let heightTooltip = $('#tooltipBtn').height();
         $("#tooltipBtn").css("left", posElement.x + blockWidth + 0 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
         if ($(this).children()[0].classList.contains('all')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
@@ -200,7 +200,7 @@ $(document).ready(function() {
         $("#tooltipBtn").css({ 'animation': '' });
     });
     $(".resize").hover(function(e) {
-        $('#tooltipBtn').html('Задать размер столбца<br>Зажать и понятуь для изменения размера<br>Двойной клик возвращает размер по умолчанию');
+        $('#tooltipBtn').html('Задать размер столбца<br>Зажать и потянуть для изменения размера<br>Двойной клик возвращает размер по умолчанию');
         let posElement = this.getBoundingClientRect();
         let blockWidth = $(this).width();
         let widthTooltip = $('#tooltipBtn').width();
@@ -927,6 +927,7 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
         text = text.substring(0, 28) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -934,11 +935,10 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -981,6 +981,7 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
         text = text.substring(0, 18) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -988,11 +989,10 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1013,6 +1013,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
         text = text.substring(0, 38) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1020,7 +1021,6 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x - 5 + "px").css("top", posElement.y + 20 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
@@ -1045,6 +1045,7 @@ $(".crm-main-table .addres-block").text(function(i, text) {
         text = text.substring(0, 28) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1052,11 +1053,10 @@ $(".crm-main-table .addres-block").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1077,6 +1077,7 @@ $(".status-table .color-form2").text(function(i, text) {
         text = text.substring(0, 11) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1084,11 +1085,10 @@ $(".status-table .color-form2").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 19 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1314,7 +1314,7 @@ $(".text-lenght").text(function(i, text) {
             let heightTooltip = $('#tooltipBtn').height();
 
             $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
             }
@@ -1532,7 +1532,7 @@ $(".text-lenght-2").text(function(i, text) {
             let heightTooltip = $('#tooltipBtn').height();
             let blockWidth = $('.list-depart').width();
             $("#tooltipBtn").css("left", posElement.x + blockWidth + 0 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
             }
@@ -1612,7 +1612,7 @@ $(".text-lenght-3").text(function(i, text) {
             let blockWidth = $('.list-employe').width();
 
             $("#tooltipBtn").css("left", posElement.x + blockWidth + 0 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
 
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');

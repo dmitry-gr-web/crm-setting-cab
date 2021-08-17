@@ -2,8 +2,10 @@
   width: 408px;
   height: 464px;
   background: rgba(81, 81, 81, 0.85);
-  box-shadow: -4px -4px 9px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(5px);
+  -webkit-box-shadow: -4px -4px 9px rgba(0, 0, 0, 0.15);
+          box-shadow: -4px -4px 9px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   top: 150px;
   margin: 0 auto;
   position: absolute;
@@ -179,7 +181,20 @@
   padding-top: 7px;
   padding-bottom: 5px;
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8.32569px);
+  -webkit-backdrop-filter: blur(8.32569px);
+          backdrop-filter: blur(8.32569px);
+  color: white;
+}
+.task-plus .taskplus-header .data-cal::-webkit-input-placeholder {
+  color: white;
+}
+.task-plus .taskplus-header .data-cal::-moz-placeholder {
+  color: white;
+}
+.task-plus .taskplus-header .data-cal:-ms-input-placeholder {
+  color: white;
+}
+.task-plus .taskplus-header .data-cal::-ms-input-placeholder {
   color: white;
 }
 .task-plus .taskplus-header .data-cal::placeholder {
@@ -196,7 +211,8 @@
 }
 .task-plus .recall-clients .dropdown2 .ul-block {
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8.32569px);
+  -webkit-backdrop-filter: blur(8.32569px);
+          backdrop-filter: blur(8.32569px);
   border: none;
   color: white;
   display: block;
@@ -228,7 +244,8 @@
   height: 6px;
   right: 9px;
   top: 6px;
-  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
 }
@@ -260,8 +277,14 @@
 }
 .task-plus .description {
   text-align: center;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .task-plus .description .text-desc {
   font-size: 14px;
@@ -290,12 +313,16 @@
   height: 140px;
   width: 350px;
   resize: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   display: block;
   opacity: 0.2;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, white), color-stop(80.77%, rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(bottom, white 30%, rgba(255, 255, 255, 0) 80.77%);
   background: linear-gradient(0deg, white 30%, rgba(255, 255, 255, 0) 80.77%);
-  backdrop-filter: blur(8.32569px);
+  -webkit-backdrop-filter: blur(8.32569px);
+          backdrop-filter: blur(8.32569px);
   border: none;
   outline: none;
   position: relative;
@@ -320,7 +347,8 @@
   background-color: #FFE600;
   left: -25px;
   top: 9px;
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
 }
@@ -332,7 +360,8 @@
   background-color: #FFE600;
   left: -25px;
   top: 9px;
-  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
 }
@@ -347,7 +376,8 @@
   background-color: #FFE600;
   left: -25px;
   top: 9px;
-  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
 }
@@ -359,7 +389,8 @@
   background-color: #FFE600;
   left: -28px;
   top: 11px;
-  transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+      transform: rotate(40deg);
   -webkit-transform: rotate(40deg);
   -moz-transform: rotate(40deg);
 }

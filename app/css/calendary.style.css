@@ -16,7 +16,8 @@ html .ui-button.ui-state-disabled:active {
   background: rgba(0, 0, 0, 0.5);
   color: #FFE600;
   border-radius: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 30px;
   text-align: center;
   width: 35px;
@@ -41,7 +42,8 @@ html .ui-button.ui-state-disabled:active {
   background: rgba(0, 0, 0, 0.5);
   color: #FFE600;
   border-radius: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 30px;
   text-align: center;
   width: 35px;
@@ -58,7 +60,8 @@ a.ui-button:active,
   color: #FFE600;
   border-radius: 100%;
   text-align: center;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 30px;
   text-align: center;
   width: 35px;
@@ -78,7 +81,9 @@ a.ui-button:active,
 }
 
 .ui-datepicker-next span {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
   position: relative;
 }
 
@@ -100,16 +105,19 @@ a.ui-button:active,
   color: #FFE600;
   border-radius: 100%;
   text-align: center;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .ui-datepicker table {
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .ui-datepicker-calendar tr {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .ui-state-hover,
