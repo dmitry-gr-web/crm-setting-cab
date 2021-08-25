@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="css/BabelStone.css"> -->
     <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
@@ -27,8 +28,9 @@
     <link rel="stylesheet" href="css/import.css">
     <link rel="stylesheet" href="css/modul.css">
     <link rel="stylesheet" href="css/task.block.css">
-    <link rel="stylesheet" href="jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/calendary.style.css">
+    <link rel="stylesheet" href="css/modul-nv.css">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" /> -->
@@ -40,7 +42,7 @@
     <div id="hoverSelect">Выделено <span class="count-hover"></span></div>
     <div id="hoverSelected-lock">Заказ открыт пользователем <span class="lock-count">Василий Хмурый</span><br>Заказ заблокирован сервером для проверки статуса ТТН</div>
     <div id="tooltipBtn">
-        <!-- <div class="lazyBlock"></div> -->
+
     </div>
     <!-- <div id="resizeTooltip"></div> -->
     <header class="header-crm">
@@ -143,6 +145,7 @@
                 <ul class="modul-ul">
                     <li class="modul-list none">Новая почта</li>
                     <li class="modul-list createTtn">Создать ТТН</li>
+                    <li class="modul-list backOrderSelect">Возврат заказа</li>
                     <li class="modul-list none">Nextel</li>
                     <li class="modul-list avtoobzvon">Автообзвон</li>
                 </ul>
@@ -293,7 +296,7 @@
                 </li>
                 <li class="nav-list-crm">
                     <div class="hover btn-crm">
-                        <svg class="list" width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="list-shablon" width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.875 7.08329V12.75C13.875 14.3083 12.6 15.5833 11.0417 15.5833H3.95833C2.4 15.5833 1.125 14.3083 1.125 12.75V4.24996C1.125 2.69163 2.4 1.41663 3.95833 1.41663H8.20833L13.875 7.08329Z" stroke="white" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M8.20837 1.41675V5.66675C8.20837 6.44591 8.84587 7.08341 9.62504 7.08341H13.875L8.20837 1.41675Z" stroke="white" stroke-opacity="0.5" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -451,7 +454,7 @@
                     <div class="crm-header-link backOrder"><span class="color-da291c color-form"></span><span class="btn-link max-lenght">Возврат (в пути) </span><span class="count-link">42</span></div>
                     <div class="crm-header-link backOrderWarehouse"><span class="color-FF0000 color-form"></span><span class="btn-link max-lenght">Возврат (завершён) </span><span class="count-link">42</span></div>
                     <div class="crm-header-link dropWaitTtn"><span class="color-856915 color-form"></span><span class="btn-link max-lenght">(Drop) Ожидает ТТН </span><span class="count-link">42</span></div>
-                    <div class="crm-header-link dropAssignedTtn"><span class="color-c7a95c color-form"></span><span class="btn-link max-lenght">(Drop) Присвоен ТТН </span><span class="count-link">20</span></div>
+                    <div class="crm-header-link dropAssignedTtn"><span class="color-c7a95c color-form"></span><span class="btn-link max-lenght">(Drop) Присвоена ТТН </span><span class="count-link">20</span></div>
                     <div class="crm-header-link dropSend"><span class="color-d7a214 color-form"></span><span class="btn-link max-lenght">(Drop) Отправлен </span><span class="count-link">3</span></div>
                     <div class="crm-header-link dropBuying"><span class="color-68a6d7 color-form"></span><span class="btn-link max-lenght">(Drop) Выкуплен </span><span class="count-link">5</span></div>
                     <div class="crm-header-link dropFinish"><span class="color-169dd9 color-form"></span><span class="btn-link max-lenght">(Drop) Завершён </span><span class="count-link">5</span></div>
@@ -461,7 +464,7 @@
             </div>
             <div class="arrow-bg"><span class="arrow-prev" id="prev"></span><span id="next" class="arrow-next"></span></div>
             <div class="scroll-wrap">
-                <table class="crm-table" id="table">
+                <table class="crm-table" id="crm-table">
                     <tr class="table-header">
                         <th class="header-id">ID
                             <div class="resize"></div>
@@ -598,7 +601,7 @@
                         </td>
                         <td class="header-search status-table">
                             <div class="wrap-hide">
-                                <div class="status-btn"><input type="text" class="input-btn input-status" value="Все"></div>
+                                <div class="status-btn"><input type="text" class="input-btn input-status" value="Все" placeholder=""></div>
                                 <!-- <div class="status-btn">Вcе</div> -->
                                 <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
                                 <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -640,15 +643,15 @@
                                 <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
                                     </div>
-                                    <div class="list ua"><span class="list-item"><img src="img/ukraine2.svg" alt=""></span>
+                                    <div class="list ua"><span class="list-item"><img data-img src="img/ukraine2.svg" alt=""></span>
                                     </div>
-                                    <div class="list ru"><span class="list-item"><img src="img/rus.svg" alt=""></span>
+                                    <div class="list ru"><span class="list-item"><img data-img src="img/rus.svg" alt=""></span>
                                     </div>
-                                    <div class="list kz"><span class="list-item"><img src="img/kz.svg" alt=""></span>
+                                    <div class="list kz"><span class="list-item"><img data-img src="img/kz.svg" alt=""></span>
                                     </div>
-                                    <div class="list al"><span class="list-item"><img src="img/alban.svg" alt=""></span>
+                                    <div class="list al"><span class="list-item"><img data-img src="img/alban.svg" alt=""></span>
                                     </div>
-                                    <div class="list al"><span class="list-item"><img src="img/alban.svg" alt=""></span>
+                                    <div class="list al"><span class="list-item"><img data-img src="img/alban.svg" alt=""></span>
                                     </div>
                                 </div>
 
@@ -704,20 +707,20 @@
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
                                     </div>
-                                    <div class="list predoplata"><span class="list-item"><span class="svg-wrap">
+                                    <div class="list predoplata"><span class="list-item"><span class="svg-wrap" data-img>
                                     <svg class="card" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M8.92 10.8C8.92 10.9867 9.1 11.14 9.32666 11.14H10.9H12.4733C12.7 11.14 12.88 10.9867 12.88 10.8V10.46C12.88 10.2733 12.7 10.12 12.4733 10.12H10.9H9.32666C9.1 10.12 8.92 10.2733 8.92 10.46V10.8V10.8Z" fill="#9C9B9E"/>
                                         <path d="M13.8022 2H2.21379C0.999001 2 0.015984 3.025 0.015984 4.29167L0.015984 5.6C0.015984 5.61667 0 5.625 0 5.65C0 5.675 0.015984 5.68333 0.015984 5.7L0.015984 11.7083C0.015984 12.975 0.999001 14 2.21379 14H13.8022C15.017 14 16 12.975 16 11.7083V4.29167C16 3.025 15.017 2 13.8022 2ZM2.21379 3.25H13.8022C14.3536 3.25 14.8012 3.71667 14.8012 4.29167V5.025H1.21479V4.29167C1.21479 3.71667 1.66234 3.25 2.21379 3.25ZM13.8022 12.75H2.21379C1.66234 12.75 1.21479 12.2833 1.21479 11.7083V6.275H14.8012V11.7167C14.8012 12.2833 14.3536 12.75 13.8022 12.75Z" fill="#9C9B9E"/>
                                     </svg>
                                     </span></span>
                                     </div>
-                                    <div class="list acceptPay"><span class="list-item"><span class="svg-wrap">
+                                    <div class="list acceptPay"><span class="list-item"><span class="svg-wrap" data-img>
                                     <svg class="coin" width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                                     </svg>                            
                                     </span></span>
                                     </div>
-                                    <div class="list nalozhplatezh"><span class="list-item"><span class="svg-wrap">
+                                    <div class="list nalozhplatezh"><span class="list-item"><span class="svg-wrap" data-img>
                                     <svg class="convert-pay" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14.5642 14H5.4276C4.64446 14 4 13.4184 4 12.7117V9.28834C4 8.5816 4.64446 8 5.4276 8H14.5724C15.3555 8 16 8.5816 16 9.28834V12.7117C15.9918 13.4258 15.3555 14 14.5642 14ZM5.4276 9.10429C5.31339 9.10429 5.22366 9.18528 5.22366 9.28834V12.7117C5.22366 12.8147 5.31339 12.8957 5.4276 12.8957H14.5724C14.6866 12.8957 14.7763 12.8147 14.7763 12.7117V9.28834C14.7763 9.18528 14.6866 9.10429 14.5724 9.10429H5.4276V9.10429Z" fill="#9C9B9E"/>
                                         <path d="M10.9399 11.2212C10.897 11.1058 10.8455 11.0096 10.7682 10.9231C10.691 10.8365 10.5966 10.7692 10.485 10.7115C10.4335 10.6827 10.3391 10.6538 10.1931 10.6154V9.71154C10.2446 9.73077 10.279 9.76923 10.3133 9.80769C10.3648 9.875 10.3991 9.97115 10.4163 10.1058L10.4249 10.1923L10.9313 10.1058L10.9227 10.0192C10.8884 9.75962 10.794 9.54808 10.6223 9.39423C10.5107 9.28846 10.3648 9.22115 10.1845 9.19231V9H9.82403V9.19231C9.61803 9.23077 9.45494 9.29808 9.34335 9.41346C9.15451 9.59615 9.06009 9.84615 9.06009 10.1346C9.06009 10.2981 9.09442 10.4519 9.15451 10.5865C9.22318 10.7212 9.3176 10.8269 9.43777 10.9038C9.56652 10.9904 9.69528 11.0481 9.82403 11.0769V12.1058C9.74678 12.0769 9.68669 12.0192 9.62661 11.9327C9.56652 11.8462 9.52361 11.7115 9.50644 11.5288L9.49785 11.4327L9 11.5385L9.00858 11.6154C9.02575 11.8269 9.06867 12.0096 9.15451 12.1538C9.24034 12.3077 9.34335 12.4135 9.46352 12.4808C9.56652 12.5385 9.68669 12.5769 9.83262 12.6058V13H10.1931V12.6154C10.4163 12.5865 10.6052 12.4808 10.7511 12.3077C10.9142 12.1154 11 11.875 11 11.5865C11 11.4615 10.9828 11.3365 10.9399 11.2212ZM10.4936 11.6154C10.4936 11.7596 10.4592 11.8654 10.382 11.9615C10.3305 12.0288 10.2704 12.0769 10.1931 12.1058V11.1827C10.3219 11.2404 10.3906 11.2981 10.4163 11.3365C10.4678 11.4038 10.4936 11.5 10.4936 11.6154ZM9.83262 9.70192V10.5096C9.74678 10.4712 9.6867 10.4231 9.64378 10.3654C9.59227 10.2981 9.56652 10.2019 9.56652 10.0962C9.56652 9.99038 9.60086 9.89423 9.66094 9.81731C9.70386 9.76923 9.76395 9.73077 9.83262 9.70192Z" fill="#9C9B9E"/>
@@ -725,14 +728,14 @@
                                     </svg>
                                     </span></span>
                                     </div>
-                                    <div class="list decline"><span class="list-item"><span class="svg-wrap">
+                                    <div class="list decline"><span class="list-item"><span class="svg-wrap" data-img>
                                     <svg class="svg-decline" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13.6471 0H2.35294C1.05241 0 0 1.05241 0 2.35294V13.6471C0 14.9476 1.05241 16 2.35294 16H13.6471C14.9476 16 16 14.9476 16 13.6471V2.35294C16 1.06096 14.939 0 13.6471 0ZM14.7166 13.6471C14.7166 14.2374 14.2374 14.7166 13.6471 14.7166H2.35294C1.76257 14.7166 1.28342 14.2374 1.28342 13.6471V2.35294C1.28342 1.76257 1.76257 1.28342 2.35294 1.28342H13.6471C14.2374 1.28342 14.7166 1.76257 14.7166 2.35294V13.6471Z" fill="#9C9B9E"/>
                                         <path d="M11.662 4.33797C11.4139 4.08984 11.0032 4.08984 10.7551 4.33797L8.11123 6.98182L5.46738 4.33797C5.21925 4.08984 4.80855 4.08984 4.56042 4.33797C4.3123 4.5861 4.3123 4.99679 4.56042 5.24492L7.20427 7.88877L4.56042 10.5326C4.3123 10.7807 4.3123 11.1914 4.56042 11.4396C4.68877 11.5679 4.85133 11.6278 5.0139 11.6278C5.17647 11.6278 5.33903 11.5679 5.46738 11.4396L8.11123 8.79572L10.7551 11.4396C10.8834 11.5679 11.046 11.6278 11.2086 11.6278C11.3711 11.6278 11.5337 11.5679 11.662 11.4396C11.9102 11.1914 11.9102 10.7807 11.662 10.5326L9.01818 7.88877L11.662 5.24492C11.9102 4.99679 11.9102 4.59465 11.662 4.33797Z" fill="#9C9B9E"/>
                                     </svg>              
                                     </span></span>
                                     </div>
-                                    <div class="list trade"><span class="list-item"><span class="svg-wrap">
+                                    <div class="list trade"><span class="list-item"><span class="svg-wrap" data-img>
                                     <svg class="svg-trade" width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.3015 15C14.9197 15 14.603 14.7025 14.603 14.3438V11.7012L13.2712 12.9525C10.3655 15.6825 5.63446 15.6825 2.72875 12.9525C1.93714 12.2087 1.34109 11.325 0.968568 10.3363C0.838184 9.995 1.03376 9.61875 1.39697 9.49625C1.76019 9.37375 2.16065 9.5575 2.29104 9.89875C2.58906 10.7038 3.07334 11.4213 3.71595 12.025C6.08149 14.2475 9.91851 14.2475 12.2841 12.025L13.6158 10.7738H10.8033C10.4214 10.7738 10.1048 10.4763 10.1048 10.1175C10.1048 9.75875 10.4214 9.46125 10.8033 9.46125H15.3015C15.3946 9.46125 15.4878 9.47875 15.5716 9.51375C15.6554 9.54875 15.7299 9.5925 15.7951 9.65375C15.8603 9.715 15.9162 9.785 15.9441 9.86375C15.9814 9.9425 16 10.03 16 10.1175V14.3438C16 14.7112 15.6834 15 15.3015 15ZM14.3702 6.53875C14.0815 6.53875 13.8114 6.3725 13.709 6.10125C13.4109 5.29625 12.9267 4.5875 12.2841 3.975C9.91851 1.7525 6.08149 1.76125 3.71595 3.975L2.38417 5.22625H5.19674C5.57858 5.22625 5.89523 5.52375 5.89523 5.8825C5.89523 6.24125 5.57858 6.53875 5.19674 6.53875H0.698486C0.605355 6.53875 0.512224 6.52125 0.437718 6.48625C0.363213 6.46 0.288708 6.41625 0.223516 6.355C0.214203 6.34625 0.204889 6.3375 0.195576 6.32875C0.130384 6.27625 0.0838183 6.20625 0.0558789 6.13625C0.0186263 6.0575 0 5.97875 0 5.8825V1.65625C0 1.28875 0.316647 1 0.698486 1C1.08033 1 1.39697 1.2975 1.39697 1.65625V4.29875L2.72875 3.0475C5.63446 0.3175 10.3655 0.3175 13.2712 3.0475C14.0629 3.79125 14.6589 4.675 15.0314 5.66375C15.1618 6.005 14.9662 6.38125 14.603 6.50375C14.5285 6.53 14.4447 6.53875 14.3702 6.53875Z" fill="#9C9B9E"/>
                                     </svg>        
@@ -747,12 +750,12 @@
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
                                     </div>
-                                    <div class="list nv"><span class="list-item"><img src="img/Nova poshta.svg" alt=""></span>
+                                    <div class="list nv"><span class="list-item"><img data-img src="img/Nova poshta.svg" alt=""></span>
                                     </div>
-                                    <div class="list justin"><span class="list-item"><img src="img/justin.svg" alt=""></span>
+                                    <div class="list justin"><span class="list-item"><img data-img src="img/justin.svg" alt=""></span>
                                     </div>
                                     <div class="list samovivoz"><span class="list-item">
-                                        <span class="svg-position"> 
+                                        <span class="svg-position" data-img> 
                                             <svg class="samovivoz" width="17.5" height="15" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M0.041502 0.00603294C0.0177866 0.023819 0 0.183898 0 0.355835V0.675993L1.31621 0.687851L2.63241 0.705637L2.79249 1.23923C2.88142 1.52975 3.21344 2.6918 3.5336 3.81829C3.84783 4.94477 4.2747 6.43884 4.47628 7.13844L4.84387 8.41315L5.02174 8.40129C5.12253 8.38943 5.27075 8.35979 5.35375 8.33014L5.50198 8.27085L5.36561 7.8084C5.15217 7.0673 4.88538 6.1424 4.47628 4.67797C4.26285 3.925 4.01383 3.03568 3.91304 2.6918C3.81818 2.34793 3.65217 1.77283 3.55138 1.4171C3.45059 1.05544 3.31423 0.58706 3.25494 0.361764L3.13636 -0.0354691H1.60672C0.764822 -0.0354691 0.0592885 -0.017683 0.041502 0.00603294Z" fill="black" fill-opacity="0.7"/>
                                             <path d="M8.53756 1.6839C8.2589 1.77283 7.67194 1.96255 7.23321 2.09892C5.05732 2.77481 4.73716 2.88746 4.76088 2.95267C4.77273 2.98825 4.96246 3.59299 5.18182 4.29852L5.58499 5.57323L7.70159 4.90327C8.86364 4.53568 9.8419 4.22145 9.87748 4.20959C9.92491 4.1918 9.80633 3.72935 9.52767 2.84595C9.29645 2.11078 9.08894 1.50603 9.07115 1.51196C9.05337 1.51196 8.81621 1.58904 8.53756 1.6839Z" fill="black" fill-opacity="0.7"/>
@@ -762,11 +765,11 @@
                                             </svg>
                                         </span></span>
                                     </div>
-                                    <div class="list ukrp"><span class="list-item"><img src="img/ukrposhta.svg" alt=""></span>
+                                    <div class="list ukrp"><span class="list-item"><img data-img src="img/ukrposhta.svg" alt=""></span>
                                     </div>
-                                    <div class="list ukrp"><span class="list-item"><img src="img/ukrposhta.svg" alt=""></span>
+                                    <div class="list ukrp"><span class="list-item"><img data-img src="img/ukrposhta.svg" alt=""></span>
                                     </div>
-                                    <div class="list ukrp"><span class="list-item"><img src="img/ukrposhta.svg" alt=""></span>
+                                    <div class="list ukrp"><span class="list-item"><img data-img src="img/ukrposhta.svg" alt=""></span>
                                     </div>
                                 </div>
                             </div>
@@ -999,7 +1002,8 @@
                             <span class="count">4</span>
                             </span>
                         </td>
-                        <td class="max-lenght-comment">Lorem ipsum dolor sit amet consectetur.</td>
+                        <td class="max-lenght-comment">
+                        </td>
                         <td class="colum-sum">9555.40</td>
                         <td><span class="product-colum"><span class="svg-wrap">
                         <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1073,7 +1077,7 @@
                         <td class="status-table">
                             <div class="color-91d100 color-form2">Принят</div>
                         </td>
-                        <td class="max-lenght">Александр Сергеевич</td>
+                        <td class="max-lenght"><span class="flags">&#x1F3F4;&#xE0061;&#xE0074;&#xE0033;&#xE007F;</span></td>
                         <td class="country-block"><span class="country-flag"><img class="flag ru" src="img/rus.svg" alt="flag"></span>
                         </td>
                         <td class="tel-colum"><span class="tel"><img class="mob-icon ky" src="img/Kievstar.svg" alt=""><span class="tel-number max-lenght">+38 096 514 25 46</span></span><span class="svg-wrap convert-tooltip">
@@ -2270,6 +2274,7 @@
                 </table>
             </div>
         </div>
+        <div class="bg-blur"></div>
         <div class="task-block">
             <div class="task-wrap">
                 <div class="task-header"><span class="count-calen">24</span><span class='header-text'>Задачи</span><span class="btnplus7"></span></div>
@@ -2332,17 +2337,324 @@
                         <div class="text-desc">Описание</div>
                         <textarea name="" id="" cols="30" rows="10"></textarea>
                     </div>
-                    <div class="btns-pos "><span class="btn-cancel ">Отмена</span><span class="btn-accept ">Создать</span></div>
+                    <div class="btns-pos"><span class="btn-cancel">Отмена</span><span class="btn-accept ">Создать</span></div>
                 </div>
             </div>
         </div>
-
+        <style>
+            .suda {
+                position: absolute;
+                top: -26px;
+                left: 50%;
+            }
+            /* .modul-np {
+                display: block;
+            } */
+            
+            .epta {
+                display: none;
+            }
+        </style>
+        <div class="suda"><button class="su">МОДУЛЬ НОВАЯ ПОЧТА</button></div>
+        <!-- <script>
+            document.querySelector('.su').addEventListener('click', () => {
+                document.querySelector('.modul-np').classList.toggle('modul-np-toggle');
+                document.querySelector('.bg-blur').classList.toggle('on-off');
+            });
+            document.querySelector('.np-close').addEventListener('click', () => {
+                document.querySelector('.modul-np').classList.toggle('epta');
+                document.querySelector('.bg-blur').classList.toggle('on-off');
+            });
+            document.querySelector('.save-btn').addEventListener('click', () => {
+                document.querySelector('.modul-np').classList.toggle('epta');
+                document.querySelector('.bg-blur').classList.toggle('on-off');
+            });
+        </script> -->
+        <div class="modul-np">
+            <div class="wrapper-np">
+                <div class="np-header"><span class="np-header-text">Налаштування модуля: Нова Пошта</span><button class="np-close"></button></div>
+                <div class="np-logo"><img class="np-img" src="img/logo_NP.svg" alt=""></div>
+                <table class="user-name-cab">
+                    <tr>
+                        <td>Активний ключ АРI:</td>
+                        <td>
+                            <div class="dropMenu">
+                                <div class="btn-menu">Олена (ghjiouohlhlhlh34wа...</div>
+                                <ul class="block-menu user-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                    <li class="menu-list">Олена (ghjiouohlhlh4wа...</li>
+                                    <li class="menu-list">Олена (ghjiouohlhlwа...</li>
+                                    <li class="menu-list">Олена (ghjiowа.32..</li>
+                                    <li class="menu-list">Олена (ghjiowа.32..</li>
+                                    <li class="menu-list">Олена (ghjiowа.32..</li>
+                                    <li class="menu-list">Олена (ghjiowа.32..</li>
+                                    <li class="menu-list">Олена (ghjiowа.32..</li>
+                                    <li class="menu-list">Олена (ghjiowа.32..</li>
+                                    <li class="menu-list">Олена (ghjh34wа...</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="np-body">
+                    <div class="np-default-setting">
+                        <div class="np-default-header header-style">
+                            <div>Значення ТТН (за замовчув-ям)</div>
+                        </div>
+                        <table class="np-ttn-default">
+                            <tr>
+                                <td>Відправник:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Спересенко Олена Володло...</div>
+                                        <ul class="block-menu vidpravnik-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Назва мiста вiдправки:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Євгеніка</div>
+                                        <ul class="block-menu mistoVidpravnika-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Відділення вiдправки:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Пункт приймання-видачі (до...</div>
+                                        <ul class="block-menu viddilenyaVidpravnika-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Технологія доставки:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Відділення-Відділення</div>
+                                        <ul class="block-menu tehnologiyaDostavky-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Тип доставки:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Посилка</div>
+                                        <ul class="block-menu tipDostavki-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Платник відправлення:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Відправник</div>
+                                        <ul class="block-menu platnik-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Платник зворотної до... :</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Відправник</div>
+                                        <ul class="block-menu platnikZvorot-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Тип оплати:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Переказ коштів відправнику</div>
+                                        <ul class="block-menu tipOplaty-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Форма сплати:</td>
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu">Готівка</div>
+                                        <ul class="block-menu formaSpalti-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list">Даша</li>
+                                            <li class="menu-list">Маша</li>
+                                            <li class="menu-list">Гусь</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Відправ-ня не в коробці</td>
+                                <td class="switches">
+                                    <span class="switch-btn">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                    </label>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="np-change-order">
+                        <div class="np-auto-header header-style">
+                            <div class="btn-auto-order btn-np-select">Автоматический возврат заказов
+                                <span class="switches">
+                                    <span class="switch-btn">
+                                        <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                </label>
+                                </span>
+                                </span>
+                            </div>
+                            <div class="btn-auto-status">Автоматическая смена статусов<span class="switches">
+                            <span class="switch-btn">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <table class="np-auto-order">
+                            <tr>
+                                <th>Осталось дней:</th>
+                                <th>Применять к статусу:</th>
+                                <th></th>
+                            </tr>
+                            <tr class="stroke-np-order">
+                                <td>
+                                    <div class="dropMenu">
+                                        <div class="btn-menu day-last">2 дня до платного хранени</div>
+                                        <ul class="block-menu ostalosDney-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list">1 дня до платного хранени</li>
+                                            <li class="menu-list">2 дня до платного хранени</li>
+                                            <li class="menu-list">3 дня до платного хранени</li>
+                                            <li class="menu-list">4 дня до платного хранени</li>
+                                            <li class="menu-list">5 дня до платного хранени</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dropFilter">
+                                        <div class="btn-menu-filter"><span class="1">Принят </span></div>
+                                        <ul class="block-menu-filter ostalosDney-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list-filter"><span class="1">Принят </span></li>
+                                            <li class="menu-list-filter"><span class="2">Новый </span></li>
+                                            <li class="menu-list-filter"><span class="3">Отказ </span></li>
+                                            <li class="menu-list-filter"><span class="4">Отправлен </span></li>
+                                            <li class="menu-list-filter"><span class="5">Передан </span></li>
+                                            <li class="menu-list-filter"><span class="7">Упакован </span></li>
+                                            <li class="menu-list-filter"><span class="8">Упакован </span></li>
+                                            <li class="menu-list-filter"><span class="9">Упакован </span></li>
+                                            <li class="menu-list-filter"><span class="10">Упакован </span></li>
+                                            <li class="menu-list-filter"><span class="11">Упакован </span></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td><button class="np-delete"></button></td>
+                            </tr>
+                        </table>
+                        <table class="np-auto-status">
+                            <tr>
+                                <th>Статус в Новой Почте:</th>
+                                <th>Статус в CRM:</th>
+                                <th>Применять к статусу:</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <div class="dropMenu-search">
+                                        <div class="btn-menu-search">Нова пошта очікує надхо...</div>
+                                        <div class="block-menu-search statusV-np">
+                                            <div class="search-block"><button class="search-btn"></button><input type="text" class="search-input"></div>
+                                            <ul class="menu-ul" data-simplebar="" data-simplebar-auto-hide="false">
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                </td>
+                                <td>
+                                </td>
+                                <td>Принято</td>
+                                <td><button class="np-delete"></button></td>
+                            </tr>
+                        </table>
+                        <button class="add-new-np"></button>
+                    </div>
+                </div>
+                <div class="np-footer"><button class="instruction-modul">Инструкция к модулю</button><button class="save-btn">Зберегти</button></div>
+            </div>
+        </div>
     </div>
     <script src="js/jquery.js"></script>
     <!-- <script src="js/jquery.rotate.js"></script> -->
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script.crm-table.js"></script>
+    <script src="js/modul-nv.js"></script>
     <script src="js/select.js"></script>
     <!-- <script src="js/hammer.js"></script> -->
     <!-- <script src="js/drag-colum.js"></script> -->

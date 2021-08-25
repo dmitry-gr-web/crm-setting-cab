@@ -7,6 +7,7 @@ slider.forEach((el) => {
 
     el.addEventListener('mousedown', (e) => {
         $("#tooltipBtn").css({ 'animation': '' });
+        $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
         if (el.closest('.wrap-hide') == null) {
             isDown = true;
             // slider.classList.add('active');
@@ -31,6 +32,7 @@ slider.forEach((el) => {
         if (!isDown) return;
         e.preventDefault();
         $("#tooltipBtn").css({ 'animation': '' });
+        $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
         const x = e.pageX - el.offsetLeft;
         const walk = (x - startX) * 5 //scroll-fast
         el.scrollLeft = scrollLeft - walk;

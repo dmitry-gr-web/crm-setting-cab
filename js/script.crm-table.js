@@ -35,14 +35,14 @@ $(document).ready(function() {
     $(".selected-lock").on("mouseenter", (e) => {
         $(".selected-lock").unbind("click");
         $(".selected-lock").mousemove(function(posXY) {
-            $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });;
+            $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });
             $("#hoverSelected-lock")
                 .css("left", posXY.pageX + 20 + "px")
                 .css("top", posXY.pageY + -30 + "px");
 
         })
         $(".selected-lock").mouseleave(function(e) {
-            $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });;
+            $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
         });
     });
     $(".list").hover(function(xy) {
@@ -109,7 +109,7 @@ $(document).ready(function() {
         let widthTooltip = $('#tooltipBtn').width();
         let heightTooltip = $('#tooltipBtn').height();
         $("#tooltipBtn").css("left", posElement.x + blockWidth + 0 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
         if ($(this).children()[0].classList.contains('all')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
@@ -163,8 +163,12 @@ $(document).ready(function() {
         let copy = 'Копировать выделенный заказ';
         let delet = 'Удалить выделенные заказы';
         let changeStatus = 'Массовая смена статуса в выделенных заказах';
+        let backOrderSelect = 'Принудительный возврат выделенных заказов отправителю';
         if ($(this).hasClass('createTtn')) {
             $('#tooltipBtn').text(createTtn);
+        }
+        if ($(this).hasClass('backOrderSelect')) {
+            $('#tooltipBtn').text(backOrderSelect);
         }
         if ($(this).hasClass('avtoobzvon')) {
             $('#tooltipBtn').text(avtoobzvon);
@@ -200,7 +204,7 @@ $(document).ready(function() {
         $("#tooltipBtn").css({ 'animation': '' });
     });
     $(".resize").hover(function(e) {
-        $('#tooltipBtn').html('Задать размер столбца<br>Зажать и понятуь для изменения размера<br>Двойной клик возвращает размер по умолчанию');
+        $('#tooltipBtn').html('Задать размер столбца<br>Зажать и потянуть для изменения размера<br>Двойной клик возвращает размер по умолчанию');
         let posElement = this.getBoundingClientRect();
         let blockWidth = $(this).width();
         let widthTooltip = $('#tooltipBtn').width();
@@ -216,7 +220,7 @@ $(document).ready(function() {
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
-    $(".btn-header").hover(function(xy) {
+    $(".block-btn .btn-header").hover(function(xy) {
         let refresh = 'Сбросить все фильтры';
         let settings = 'Дополнения и расширения';
         let submit = 'Импорт экспорт данных';
@@ -268,17 +272,17 @@ $(document).ready(function() {
         let finishOrder = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил:<br>- получение наложенного платежа;<br>- выполнение заказа.<br>Присвоил заказу статус «Завершён», заблокировал заказ кнопкой «Завершить».<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let upakovanOrder = 'Заказ упакован<br><span class="text-tooltip">Ожидает передачу почтовой службе</span>';
         let peredanOrder = 'Заказ передан почтовой службе<br><span class="text-tooltip">Ожидает автоматического присвоения статуса «Отправлен», после подтверждения получения посылки почтовой службой</span>';
-        let sendOrder = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта: За 1 день до платного хранения<br>- Укрпочта: За 1 день до платного хранения<br>- Justin: За 1 день до платного хранения<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
+        let sendOrder = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
         let backOrderWarehouse = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить» подтвердил получение возвращенного заказа. Присвоил заказу статус «Возврат (завершён)», заблокировал заказ кнопкой «Завершить».<br> Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let vikuplenOrder = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает получения наложенного платежа<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let moneyGrab = 'Наложенный платёж получен<br><span class="text-tooltip">Заказ ожидает завершения<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let backOrder = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает получения отправителем<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let dropWaitTtn = 'Заказ передан Dropshipping компании<br><span class="text-tooltip">Ожидает создания товарно-транспортной накладной дропшиппером, для её присвоения заказу с дальнейшим отслеживания в CRM системе</span>';
         let dropAssignedTtn = 'Заказу присвоена ТТН<br><span class="text-tooltip">Ожидает автоматического присвоения статуса «(Drop) Отправлен», после подтверждения получения посылки почтовой службой</span>';
-        let dropSend = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта: За 1 день до платного хранения<br>- Укрпочта: За 1 день до платного хранения<br>- Justin: За 1 день до платного хранения<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
-        let dropBuying = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает выплату от дропшиппера</span>';
+        let dropSend = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
+        let dropBuying = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает выплату от дропшиппера<br><br>Статус присваивается автоматически, согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let dropFinish = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил:<br>- получение выплаты от дропшиппера;<br>- выполнение заказа.<br>Присвоил заказу статус «(Drop) Завершён», заблокировал заказ кнопкой «Завершить».<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
-        let dropBack = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает вычитания стоимости за возврат заказа из выплат дропшиппера</span>';
+        let dropBack = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает вычитания стоимости за возврат заказа из выплат дропшиппера<br><br>Статус присваивается автоматически, согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span></span>';
         let dropBackFinish = 'Возврат учтён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил вычитание стоимости за возврат заказ, из выплат дропшиппера. Присвоил заказу статус «(Drop) Возврат (завершён)», заблокировал заказ кнопкой «Завершить». Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         $(this).hover(function() {
             $("#tooltipBtn").css('font-size', '14px');
@@ -379,10 +383,10 @@ $(".tel").each(function(e, item) {
             $('#tooltipBtn').text(lifecell);
         }
         if ($(item.children[0]).hasClass('unk')) {
-            $('#tooltipBtn').text(incorrectNumber);
+            $('#tooltipBtn').text(unknownNumber);
         }
         if ($(item.children[0]).hasClass('incorr')) {
-            $('#tooltipBtn').text(unknownNumber);
+            $('#tooltipBtn').text(incorrectNumber);
         }
         let posElement = this.getBoundingClientRect();
         let blockWidth = $(this).width();
@@ -927,6 +931,7 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
         text = text.substring(0, 28) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -934,11 +939,10 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -981,6 +985,7 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
         text = text.substring(0, 18) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -988,11 +993,10 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1013,6 +1017,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
         text = text.substring(0, 38) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1020,7 +1025,6 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x - 5 + "px").css("top", posElement.y + 20 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
@@ -1045,6 +1049,7 @@ $(".crm-main-table .addres-block").text(function(i, text) {
         text = text.substring(0, 28) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1052,11 +1057,10 @@ $(".crm-main-table .addres-block").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1077,6 +1081,7 @@ $(".status-table .color-form2").text(function(i, text) {
         text = text.substring(0, 11) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1084,11 +1089,10 @@ $(".status-table .color-form2").text(function(i, text) {
             let screenHeight = document.body.clientHeight;
             let widthTooltip = $('#tooltipBtn').width();
             let heightTooltip = $('#tooltipBtn').height();
-            $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 19 + "px");
             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
             if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 2 + 'px');
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
             }
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
@@ -1131,21 +1135,17 @@ $(".message-list").click(function() {
     if ($('.message-list.select-btn').length == 1) {
         let appendCount = $('.message-list.select-btn').text();
         $(".count-message").val(appendCount);
-        $('.btn-refresh').addClass('active-btn-header');
         $('.message-list').children('.all').removeClass("select-btn-static");
     }
     if ($('.message-list.select-btn').length >= 2) {
-        $(".count-message").val('∞');
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".count-message").val('~');
     }
     if ($('.message-list.select-btn').length == 0) {
         $(".count-message").val('∞');
         $('.message-list .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".message-list .all").click(function() {
@@ -1153,12 +1153,13 @@ $(".message-list .all").click(function() {
     $(this).removeClass('select-btn');
     $(".message-menu").removeClass('count-toggle');
     $(".message-list").removeClass('select-btn');
-    $('.btn-refresh').removeClass('active-btn-header');
+    console.log($(".count-message"));
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("message-box")) {
         $(".message-menu").removeClass('count-toggle');
+        changesInput();
     }
 });
 
@@ -1175,21 +1176,17 @@ $(".list-ttn").click(function() {
     if ($('.list-ttn.select-btn').length == 1) {
         let appendCount = $('.list-ttn.select-btn').text();
         $(".count-ttn").val(appendCount);
-        $('.btn-refresh').addClass('active-btn-header');
         $('.list-ttn').children('.all').removeClass("select-btn-static");
     }
     if ($('.list-ttn.select-btn').length >= 2) {
-        $(".count-ttn").val('∞');
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".count-ttn").val('~');
     }
     if ($('.list-ttn.select-btn').length == 0) {
         $(".count-ttn").val('∞');
         $('.list-ttn .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".list-ttn .all").click(function() {
@@ -1197,12 +1194,12 @@ $(".list-ttn .all").click(function() {
     $(this).removeClass('select-btn');
     $(".menu-ttn").removeClass('count-toggle');
     $(".list-ttn").removeClass('select-btn');
-    $('.btn-refresh').removeClass('active-btn-header');
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("message-box-ttn")) {
         $(".menu-ttn").removeClass('count-toggle');
+        changesInput();
     }
 });
 
@@ -1314,7 +1311,7 @@ $(".text-lenght").text(function(i, text) {
             let heightTooltip = $('#tooltipBtn').height();
 
             $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
             }
@@ -1323,6 +1320,29 @@ $(".text-lenght").text(function(i, text) {
         });
     }
 });
+// $(".input-status").change(function() {
+//     $('.btn-refresh').addClass('active-btn-header');
+// });
+// $(".crm-input input").change(function() {
+//     $('.btn-refresh').addClass('active-btn-header');
+// });
+// (function($) {
+//     var originalVal = $.fn.val;
+//     $.fn.val = function() {
+//         var prev;
+//         if (arguments.length > 0) {
+//             prev = originalVal.apply(this, []);
+//         }
+//         var result = originalVal.apply(this, arguments);
+//         if (arguments.length > 0 && prev != originalVal.apply(this, []))
+//             $(this).change(); // OR with custom event $(this).trigger('value-changed')
+//         return result;
+//     };
+// })(jQuery);
+// $(".input-status").change(function() {
+//     // $(".input-status").trigger("change");
+//     $('.btn-refresh').addClass('active-btn-header');
+// });
 
 $(".status-table .status-btn").click(function() {
     $(".input-status").focus().val('');
@@ -1333,30 +1353,43 @@ $(".status-table .block1 .list-status").click(function(e) {
     $(".status-table .list-status .all").removeClass("toggle");
     $(this).toggleClass('select-btn');
     if ($('.status-table .block1 .list-status.select-btn').length == 1) {
+        let appendStatus = $('.list-status.select-btn').text();
+        $(".input-status").val(appendStatus);
         $('.status-table .list-status .all').removeClass("select-btn-static");
         $('.status-btn .list-status.select-btn').removeClass('select-btn');
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
     }
+    // if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
+    //     $('.btn-refresh').addClass('active-btn-header');
+    // }
     if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".input-status").val('Фильтр');
+        // console.log($(".input-status").val())
     }
     if ($('.status-table .block1 .list-status.select-btn').length == 0) {
         $(".input-status").val('Все');
         $('.status-table .list-status .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
 
     }
 });
 $(".status-table .block1 .list-status .all").parent().click(function() {
-    $('.btn-refresh').removeClass('active-btn-header');
+
+    // $('.btn-refresh').removeClass('active-btn-header');
     $(".input-status").val('Все');
     $(this).removeClass('select-btn');
     $('.status-table .block1 .list-status').removeClass('select-btn');
     $(".status-table .block1").removeClass("toggle");
+    // changesInput();
+    // if ($(".country-btn").find('Все')) {
+    //     $('.btn-refresh').removeClass('active-btn-header');
+    // } else {
+    //     $('.btn-refresh').addClass('active-btn-header');
+    // }
 });
 
 $(document).bind("click", function(e) {
@@ -1366,20 +1399,41 @@ $(document).bind("click", function(e) {
 
         if ($('.status-table .block1 .list-status.select-btn').length >= 2) {
             $(".input-status").val('Фильтр');
+            // console.log($(".input-status").val())
+        }
+        // if ($('.status-table .block1 .list-status.select-btn').length == 1) {
+        //     let appendStatus = $('.list-status.select-btn').text();
+        //     $(".input-status").change().val(appendStatus);
+        //     $('.status-table .list-status .all').removeClass("select-btn-static");
+        //     $('.status-btn .list-status.select-btn').removeClass('select-btn');
+        //     // console.log(appendStatus);
 
-        }
-        if ($('.status-table .block1 .list-status.select-btn').length == 1) {
-            let appendCountry = $('.list-status.select-btn').text();
-            $(".input-status").val(appendCountry);
-            $('.status-table .list-status .all').removeClass("select-btn-static");
-            $('.status-btn .list-status.select-btn').removeClass('select-btn');
-        }
+        // }
+
         if ($('.status-table .block1 .list-status.select-btn').length == 0) {
             $(".input-status").val('Все');
         }
+        if ($('.status-table .block1 .list-status.select-btn').length == 1) {
+            let appendStatus = $('.list-status.select-btn').text();
+            $(".input-status").val(appendStatus);
+            // $('.status-table .list-status .all').removeClass("select-btn-static");
+            // $('.status-btn .list-status.select-btn').removeClass('select-btn');
+            // $('.btn-refresh').addClass('active-btn-header');
+        }
+        changesInput();
+        // $(".input-status").change(function() {
+        //     if ($(".input-status").val() == 'Все') {
+        //         $('.btn-refresh').removeClass('active-btn-header');
+        //     } else {
+        //         $('.btn-refresh').addClass('active-btn-header');
+        //     }
+        //     // $(this).attr('value');
+        //     // console.log($(this).attr('value'))
+        // });
 
     }
 });
+
 //menu status
 
 
@@ -1394,13 +1448,13 @@ $(".colum-country .block1 .list").click(function(e) {
     if ($('.colum-country .block1 .list.select-btn').length == 1) {
         let appendCountry = $('.colum-country .list.select-btn').html();
         $(".country-btn").html(appendCountry);
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
         $('.colum-country .list').children('.all').removeClass("select-btn-static");
         $('.country-btn').children('.all').removeClass("select-btn-static");
     }
     if ($('.colum-country .block1 .list.select-btn').length >= 2) {
         $(".country-btn").html('Фильтр');
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
 
     }
     if ($('.colum-country .block1 .list.select-btn').length == 0) {
@@ -1409,7 +1463,7 @@ $(".colum-country .block1 .list").click(function(e) {
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-country .block1 .list .all").click(function() {
@@ -1417,13 +1471,15 @@ $(".colum-country .block1 .list .all").click(function() {
     $(this).removeClass('select-btn');
     $('.colum-country .block1 .list').removeClass('select-btn');
     $(".colum-country .block1").removeClass("toggle");
-    $('.btn-refresh').removeClass('active-btn-header');
+    // $('.btn-refresh').removeClass('active-btn-header');
 });
 
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-country")) {
         $(".colum-country .block1").removeClass("toggle");
+        changesInput();
+        // changeInputBtn();
     }
 });
 
@@ -1439,22 +1495,22 @@ $(".colum-delivery .block1 .list").click(function() {
     if ($('.colum-delivery .block1 .list.select-btn').length == 1) {
         let appendDelivery = $('.colum-delivery .list.select-btn').html();
         $(".delivery-btn").html(appendDelivery);
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
         $('.colum-delivery .list').children('.all').removeClass("select-btn-static");
         $('.delivery-btn').children('.all').removeClass("select-btn-static");
     }
     if ($('.colum-delivery .block1 .list.select-btn').length >= 2) {
         $(".delivery-btn").html('Фильтр');
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.colum-delivery .block1 .list.select-btn').length == 0) {
         $(".delivery-btn").html('Все');
         $('.colum-delivery .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-delivery .block1 .list .all").click(function() {
@@ -1462,12 +1518,13 @@ $(".colum-delivery .block1 .list .all").click(function() {
     $(this).removeClass('select-btn');
     $('.colum-delivery .block1 .list').removeClass('select-btn');
     $(".colum-delivery .block1").removeClass("toggle");
-    $('.btn-refresh').removeClass('active-btn-header');
+    // $('.btn-refresh').removeClass('active-btn-header');
 });
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-delivery")) {
         $(".colum-delivery .block1").removeClass("toggle");
+        changesInput();
     }
 });
 //menu delivery btn
@@ -1482,22 +1539,22 @@ $(".colum-pay .block1 .list").click(function() {
     if ($('.colum-pay .block1 .list.select-btn').length == 1) {
         let appendPay = $('.colum-pay .list.select-btn').html();
         $(".pay-btn").html(appendPay);
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
         $('.colum-pay .list').children('.all').removeClass("select-btn-static");
         $('.pay-btn').children('.all').removeClass("select-btn-static");
     }
     if ($('.colum-pay .block1 .list.select-btn').length >= 2) {
         $(".pay-btn").html('Фильтр');
-        $('.btn-refresh').addClass('active-btn-header');
+        // $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.colum-pay .block1 .list.select-btn').length == 0) {
         $(".pay-btn").html('Все');
         $('.colum-pay .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+        // $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-pay .block1 .list .all").click(function() {
@@ -1510,6 +1567,7 @@ $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("colum-pay")) {
         $(".colum-pay .block1").removeClass("toggle");
+        changesInput();
     }
 });
 
@@ -1532,7 +1590,7 @@ $(".text-lenght-2").text(function(i, text) {
             let heightTooltip = $('#tooltipBtn').height();
             let blockWidth = $('.list-depart').width();
             $("#tooltipBtn").css("left", posElement.x + blockWidth + 0 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
             }
@@ -1550,25 +1608,23 @@ $(".colum-depart .block1 .list-depart").click(function() {
     $(".colum-depart .list-depart .all").removeClass("toggle");
     $(this).toggleClass('select-btn');
     if ($('.colum-depart .block1 .list-depart.select-btn').length == 1) {
+        let appendDepart = $('.colum-depart .list-depart.select-btn').text();
+        $(".input-depart").val(appendDepart);
         $('.colum-depart .list-depart .all').removeClass("select-btn-static");
         $('.depart-btn .list-depart.select-btn').removeClass('select-btn');
-        $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.colum-depart .block1 .list-depart.select-btn').length >= 2) {
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".input-depart").val('Фильтр');
     }
     if ($('.colum-depart .block1 .list-depart.select-btn').length == 0) {
         $(".input-depart").val('Все');
         $('.colum-depart .list-depart .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-depart .block1 .list-depart .all").parent().click(function() {
-    $('.btn-refresh').removeClass('active-btn-header');
     $(".input-depart").val('Все');
     $(this).removeClass('select-btn');
     $('.colum-depart .block1 .list-depart').removeClass('select-btn');
@@ -1584,12 +1640,11 @@ $(document).bind("click", function(e) {
         if ($('.colum-depart .block1 .list-depart.select-btn').length == 1) {
             let appendDepart = $('.colum-depart .list-depart.select-btn').text();
             $(".input-depart").val(appendDepart);
-            $('.colum-depart .list-depart .all').removeClass("select-btn-static");
-            $('.status-btn .list-departs.select-btn').removeClass('select-btn');
         }
         if ($('.colum-depart .block1 .list-depart.select-btn').length == 0) {
             $(".input-depart").val('Все');
         }
+        changesInput();
     }
 });
 
@@ -1612,7 +1667,7 @@ $(".text-lenght-3").text(function(i, text) {
             let blockWidth = $('.list-employe').width();
 
             $("#tooltipBtn").css("left", posElement.x + blockWidth + 0 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.4s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.5s forwards' });
 
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
@@ -1631,25 +1686,24 @@ $(".colum-employe .block1 .list-employe").click(function() {
     $(".colum-employe .list-employe .all").removeClass("toggle");
     $(this).toggleClass('select-btn');
     if ($('.colum-employe .block1 .list-employe.select-btn').length == 1) {
+        let appendEmploye = $('.colum-employe .list-employe.select-btn').text();
+        $(".input-employe").val(appendEmploye);
         $('.colum-employe .list-employe .all').removeClass("select-btn-static");
         $('.status-btn .list-employe.select-btn').removeClass('select-btn');
-        $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.colum-employe .block1 .list-employe.select-btn').length >= 2) {
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".input-employe").val('Фильтр');
     }
     if ($('.colum-employe .block1 .list-employe.select-btn').length == 0) {
         $(".input-employe").val('Все');
         $('.colum-employe .list-employe .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
+
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-employe .block1 .list-employe .all").parent().click(function() {
-    $('.btn-refresh').removeClass('active-btn-header');
     $(".input-employe").val('Все');
     $(this).removeClass('select-btn');
     $('.colum-employe .block1 .list-employe').removeClass('select-btn');
@@ -1665,12 +1719,11 @@ $(document).bind("click", function(e) {
         if ($('.colum-employe .block1 .list-employe.select-btn').length == 1) {
             let appendEmploye = $('.colum-employe .list-employe.select-btn').text();
             $(".input-employe").val(appendEmploye);
-            $('.colum-employe .list-employe .all').removeClass("select-btn-static");
-            $('.status-btn .list-employe.select-btn').removeClass('select-btn');
         }
         if ($('.colum-employe .block1 .list-employe.select-btn').length == 0) {
             $(".input-employe").val('Все');
         }
+        changesInput();
     }
 });
 
@@ -1683,25 +1736,23 @@ $(".colum-employe-prinyal .block1 .list-employe").click(function() {
     $(".colum-employe-prinyal .list-employe .all").removeClass("toggle");
     $(this).toggleClass('select-btn');
     if ($('.colum-employe-prinyal .block1 .list-employe.select-btn').length == 1) {
+        let appendEmploye = $('.colum-employe-prinyal .list-employe.select-btn').text();
+        $(".input-employe-prinyal").val(appendEmploye);
         $('.colum-employe-prinyal .list-employe .all').removeClass("select-btn-static");
         $('.status-btn .list-employe.select-btn').removeClass('select-btn');
-        $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.colum-employe-prinyal .block1 .list-employe.select-btn').length >= 2) {
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".input-employe-prinyal").val('Фильтр');
     }
     if ($('.colum-employe-prinyal .block1 .list-employe.select-btn').length == 0) {
         $(".input-employe-prinyal").val('Все');
         $('.colum-employe-prinyal .list-employe .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-employe-prinyal .block1 .list-employe .all").parent().click(function() {
-    $('.btn-refresh').removeClass('active-btn-header');
     $(".input-employe-prinyal").val('Все');
     $(this).removeClass('select-btn');
     $('.colum-employe-prinyal .block1 .list-employe').removeClass('select-btn');
@@ -1717,12 +1768,11 @@ $(document).bind("click", function(e) {
         if ($('.colum-employe-prinyal .block1 .list-employe.select-btn').length == 1) {
             let appendEmploye = $('.colum-employe-prinyal .list-employe.select-btn').text();
             $(".input-employe-prinyal").val(appendEmploye);
-            $('.colum-employe-prinyal .list-employe .all').removeClass("select-btn-static");
-            $('.status-btn .list-employe.select-btn').removeClass('select-btn');
         }
         if ($('.colum-employe-prinyal .block1 .list-employe.select-btn').length == 0) {
             $(".input-employe-prinyal").val('Все');
         }
+        changesInput();
     }
 });
 $(".colum-employe-izmenil .employe-btn").click(function() {
@@ -1734,25 +1784,23 @@ $(".colum-employe-izmenil .block1 .list-employe").click(function() {
     $(".colum-employe-izmenil .list-employe .all").removeClass("toggle");
     $(this).toggleClass('select-btn');
     if ($('.colum-employe-izmenil .block1 .list-employe.select-btn').length == 1) {
+        let appendEmploye = $('.colum-employe-izmenil .list-employe.select-btn').text();
+        $(".input-employe-izmenil").val(appendEmploye);
         $('.colum-employe-izmenil .list-employe .all').removeClass("select-btn-static");
         $('.status-btn .list-employe.select-btn').removeClass('select-btn');
-        $('.btn-refresh').addClass('active-btn-header');
     }
     if ($('.colum-employe-izmenil .block1 .list-employe.select-btn').length >= 2) {
-        $('.btn-refresh').addClass('active-btn-header');
+        $(".input-employe-izmenil").val('Фильтр');
     }
     if ($('.colum-employe-izmenil .block1 .list-employe.select-btn').length == 0) {
         $(".input-employe-izmenil").val('Все');
         $('.colum-employe-izmenil .list-employe .all').addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     } else if ($(this).children()[0].classList.contains('all')) {
         $(this).removeClass('select-btn');
         $(this).children().addClass("select-btn-static");
-        $('.btn-refresh').removeClass('active-btn-header');
     }
 });
 $(".colum-employe-izmenil .block1 .list-employe .all").parent().click(function() {
-    $('.btn-refresh').removeClass('active-btn-header');
     $(".input-employe-izmenil").val('Все');
     $(this).removeClass('select-btn');
     $('.colum-employe-izmenil .block1 .list-employe').removeClass('select-btn');
@@ -1768,12 +1816,12 @@ $(document).bind("click", function(e) {
         if ($('.colum-employe-izmenil .block1 .list-employe.select-btn').length == 1) {
             let appendEmploye = $('.colum-employe-izmenil .list-employe.select-btn').text();
             $(".input-employe-izmenil").val(appendEmploye);
-            $('.colum-employe-izmenil .list-employe .all').removeClass("select-btn-static");
-            $('.status-btn .list-employe.select-btn').removeClass('select-btn');
+
         }
         if ($('.colum-employe-izmenil .block1 .list-employe.select-btn').length == 0) {
             $(".input-employe-izmenil").val('Все');
         }
+        changesInput();
     }
 });
 //task block
@@ -2001,6 +2049,9 @@ $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header") && !$clicked.parents().hasClass("ui-datepicker-buttonpane") && !$clicked.parents().hasClass("ui-datepicker-header") && !$clicked.parents().hasClass("ui-datepicker-calendar") && !$clicked.hasClass("ui-datepicker") && !$clicked.parents().hasClass("block-btn")) {
         $(".wrap-hide").removeClass('wrap-open');
+        if ($(".btn-refresh").hasClass('active-btn-header')) {
+            $(".wrap-hide").addClass('wrap-open');
+        }
     }
 });
 
@@ -2009,7 +2060,7 @@ $(document).bind("click", function(e) {
 let rotate = 0;
 $(".btn-header").first().click(function() {
     rotate = rotate + 360;
-
+    $(".crm-input input").val('');
     $(".btn-refresh").css({
         "transform": "rotate(" + rotate + "deg)",
         'transition': '0.4s'
@@ -2018,16 +2069,17 @@ $(".btn-header").first().click(function() {
     // $(".wrap-open").animate({ opacity: 0 }, 0).delay(100).animate({ opacity: 1 }, 0);
     // $(".wrap-open").css({ 'opacity': '0' }).delay(100).css({ 'opacity': '1' });
     //СБРОС КНОПОК
-    $(".input-status").val('Все');
+    $(".input-btn").val('Все');
+    // $(".input-status").val('Все');
     $('.list-status').removeClass('select-btn');
     $('.status-table .block1 .list-status').removeClass('select-btn');
 
 
-    $(".input-depart").val('Все');
+    // $(".input-depart").val('Все');
     $('.list-depart').removeClass('select-btn');
     $('.colum-depart .block1 .list-depart').removeClass('select-btn');
 
-    $(".input-employe").val('Все');
+    // $(".input-employe").val('Все');
     $('.colum-employe .block1 .list-employe').removeClass('select-btn');
     $('.list-employe').removeClass('select-btn');
 
@@ -2052,4 +2104,48 @@ $(".btn-header").first().click(function() {
     //СБРОС КНОПОК
 });
 
+
+$(".crm-input .input-style , .crm-input .input-btn").change(function() {
+    changesInput();
+});
+
+
+function changesInput() {
+    let flag = false;
+    $(".input-style , .input-btn, .country-btn , .pay-btn , .delivery-btn").each(function(_, item) {
+        if (($(item).val() !== '' && $(item).val().toString().trim() !== "∞" && $(item).val() !== 'Все') || $(item).children().children().attr('data-img') === "" || $(item)[0].innerText === "Фильтр") {
+            flag = true;
+        }
+        if (flag == true) {
+            $('.btn-refresh').addClass('active-btn-header');
+        } else {
+            $('.btn-refresh').removeClass('active-btn-header');
+        }
+    });
+}
+
+// function changeInputBtn() {
+//     $(".country-btn").each(function(_, item) {
+//         if ($(item).children().children().attr('data-img') === "" || $(item)[0].innerText === "Фильтр") {
+//             $('.btn-refresh').addClass('active-btn-header');
+//         } else {
+//             $('.btn-refresh').removeClass('active-btn-header');
+//         }
+//     });
+// }
+
+
+
+// $(document).ready(function() {
+//     $('.crm-input').find(".input-style").change().each(function(ev) {
+//         // if (!$(this).val()) {
+//         //     $(this).attr("placeholder", "Type your answer here");
+//         // }
+//         if (!$(this).val() == '') {
+//             $('.btn-refresh').addClass('active-btn-header');
+//         } else {
+//             $('.btn-refresh').removeClass('active-btn-header');
+//         }
+//     });
+// });
 //reset filter rotate
