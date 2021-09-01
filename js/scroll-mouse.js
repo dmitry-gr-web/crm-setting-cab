@@ -8,7 +8,7 @@ slider.forEach((el) => {
     el.addEventListener('mousedown', (e) => {
         $("#tooltipBtn").css({ 'animation': '' });
         $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
-        if (el.closest('.wrap-hide') == null) {
+        if (el.closest('.wrap-hide') == null && el.closest('.modul-np') == null) {
             isDown = true;
             // slider.classList.add('active');
             startX = e.pageX - el.offsetLeft;

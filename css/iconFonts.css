@@ -1,0 +1,349 @@
+@font-face {
+    font-family: 'W_font';
+    src: url('../fonts/W_font.ttf?e63k5y') format('truetype'), url('../fonts/W_font.woff?e63k5y') format('woff'), url('../fonts/W_font.svg?e63k5y#W_font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'W_font' !important;
+    /* speak: never; */
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 13px;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Exclude:before {
+    content: "\31";
+    color: #9c9b9e;
+}
+
+.icon-Exclude-1:before {
+    content: "\32";
+    color: #fff;
+}
+
+.icon-Exclude-2:before {
+    content: "\33";
+}
+
+.icon-phone:before {
+    content: "\34";
+    color: #ffe600;
+}
+
+.icon-ukrposhta:before {
+    content: "\35";
+    color: #ffc627;
+}
+
+.icon-Union:before {
+    content: "\36";
+    color: #9c9b9e;
+}
+
+.icon-Union-1:before {
+    content: "\37";
+    color: #229fff;
+}
+
+.icon-Union-2:before {
+    content: "\38";
+    color: #9c9b9e;
+}
+
+.icon-Union-3:before {
+    content: "\39";
+    color: #da291c;
+}
+
+.icon-Union-4:before {
+    content: "\30";
+}
+
+.icon-Union-5:before {
+    content: "\71";
+    color: #fff;
+}
+
+.icon-Union-6:before {
+    content: "\77";
+    color: #fff;
+}
+
+.icon-Union-7:before {
+    content: "\65";
+    color: #fff;
+}
+
+.icon-Union-8:before {
+    content: "\72";
+    color: #fff;
+}
+
+.icon-Union-9:before {
+    content: "\74";
+    color: #fff;
+}
+
+.icon-Union-10:before {
+    content: "\79";
+    color: #fff;
+}
+
+.icon-Union-11:before {
+    content: "\75";
+    color: #fff;
+}
+
+.icon-Union-12:before {
+    content: "\69";
+    color: #9c9b9e;
+}
+
+.icon-Union-13:before {
+    content: "\6f";
+    color: #9c9b9e;
+}
+
+.icon-Union-14:before {
+    content: "\70";
+    color: #9c9b9e;
+}
+
+.icon-Union-15:before {
+    content: "\61";
+    color: #9c9b9e;
+}
+
+.icon-Union-16:before {
+    content: "\73";
+    color: #9c9b9e;
+}
+
+.icon-Union-17:before {
+    content: "\64";
+    color: #9c9b9e;
+}
+
+.icon-Union-18:before {
+    content: "\66";
+    color: #9c9b9e;
+}
+
+.icon-Union-19:before {
+    content: "\67";
+    color: #ffe600;
+}
+
+.icon-Union-20:before {
+    content: "\68";
+    color: #fff;
+}
+
+.icon-Union-21:before {
+    content: "\6a";
+    color: #fff;
+}
+
+.icon-Union-22:before {
+    content: "\6b";
+    color: #fff;
+}
+
+.icon-Union-23:before {
+    content: "\6c";
+    color: #fff;
+}
+
+.icon-Vector-81:before {
+    content: "\7a";
+}
+
+.icon-Vector:before {
+    content: "\78";
+}
+
+.icon-Vector-1:before {
+    content: "\63";
+    color: #e60000;
+}
+
+.icon-Vector-2:before {
+    content: "\76";
+    color: #104eff;
+}
+
+.icon-Vector-3:before {
+    content: "\62";
+    color: #fabb0b;
+}
+
+.icon-Vector-4:before {
+    content: "\6e";
+    color: #fff;
+}
+
+.icon-Vector-5:before {
+    content: "\6d";
+    color: #fff;
+}
+
+.icon-Vector-6:before {
+    content: "\51";
+    color: #fff;
+}
+
+.icon-Vector-7:before {
+    content: "\57";
+    color: #fff;
+}
+
+.icon-Vector-8:before {
+    content: "\45";
+    color: #fff;
+}
+
+.icon-Vector-9:before {
+    content: "\52";
+    color: #9c9b9e;
+}
+
+.icon-Vector-10:before {
+    content: "\54";
+    color: #9c9b9e;
+}
+
+.icon-Vector-11:before {
+    content: "\59";
+    color: #9c9b9e;
+}
+
+.icon-Vector-12:before {
+    content: "\55";
+    color: #9c9b9e;
+}
+
+.icon-Vector-13:before {
+    content: "\49";
+    color: #9c9b9e;
+}
+
+.icon-Vector-14:before {
+    content: "\4f";
+    color: #9c9b9e;
+}
+
+.icon-Vector-15:before {
+    content: "\50";
+    color: #9c9b9e;
+}
+
+.icon-Vector-16:before {
+    content: "\41";
+    color: #9c9b9e;
+}
+
+.icon-Vector-17:before {
+    content: "\53";
+    color: #9c9b9e;
+}
+
+.icon-Vector-18:before {
+    content: "\44";
+    color: #9c9b9e;
+}
+
+.icon-Vector-19:before {
+    content: "\46";
+    color: #9c9b9e;
+}
+
+.icon-Vector-20:before {
+    content: "\47";
+    color: #9c9b9e;
+}
+
+.icon-Vector-21:before {
+    content: "\48";
+    color: #9c9b9e;
+}
+
+.icon-Vector-22:before {
+    content: "\4a";
+    color: #fff;
+}
+
+.icon-Vector-23:before {
+    content: "\4b";
+    color: #fff;
+}
+
+.icon-Vector-24:before {
+    content: "\5a";
+    color: #fff;
+}
+
+.icon-Vector-25:before {
+    content: "\58";
+    color: #fff;
+}
+
+.icon-Vector-26:before {
+    content: "\43";
+    color: #fff;
+}
+
+.icon-Vector-27:before {
+    content: "\56";
+    color: #fff;
+}
+
+.icon-Vector-28:before {
+    content: "\42";
+    color: #fff;
+}
+
+.icon-Vector-29:before {
+    content: "\4e";
+    color: #fff;
+}
+
+.icon-Vector-30:before {
+    content: "\4d";
+    color: #ffe600;
+}
+
+.icon-Vector-31:before {
+    content: "\5b";
+    color: #fff;
+}
+
+.icon-Windows:before {
+    content: "\5d";
+    color: #fff;
+}
+
+.icon-Windows-1:before {
+    content: "\5c";
+    color: #9c9b9e;
+}
+
+.icon-1:before {
+    content: "\3b";
+    color: #fff;
+}
+
+.icon-uniE941:before {
+    content: "\2f";
+    color: #9c9b9e;
+}

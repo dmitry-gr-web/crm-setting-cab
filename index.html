@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="css/BabelStone.css"> -->
     <link rel="stylesheet" href="css/simplebar.css">
+    <link rel="stylesheet" href="css/iconFonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom-scroll.css">
     <!-- <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -493,6 +494,9 @@
                         <th class="header-pay">Оплата
                             <div class="resize"></div>
                         </th>
+                        <th class="header-PRRO">ПРРО
+                            <div class="resize"></div>
+                        </th>
                         <th class="header-delivery">Доставка
                             <div class="resize"></div>
                         </th>
@@ -601,32 +605,34 @@
                         </td>
                         <td class="header-search status-table">
                             <div class="wrap-hide">
-                                <div class="status-btn"><input type="text" class="input-btn input-status" value="Все" placeholder=""></div>
-                                <!-- <div class="status-btn">Вcе</div> -->
-                                <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
-                                <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
-                                    <div class="list-status"><span class="list-item all select-btn-static"><span class="text-lenght">Все</span></span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-515151 color-form"></span><span class="text-lenght">Новый</span>
-                                        </span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-91d100 color-form"></span><span class="text-lenght">Принят</span>
-                                        </span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-fd7777 color-form"></span><span class="text-lenght">Отказ</span>
-                                        </span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-e2d317 color-form"></span><span class="text-lenght">Отправлен</span>
-                                        </span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-00CC00 color-form"></span><span class="text-lenght">Завершён</span>
-                                        </span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-9C02A7 color-form"></span><span class="text-lenght">Успешно выполнено</span>
-                                        </span>
-                                    </div>
-                                    <div class="list-status"><span class="list-item"><span class="color-C94F62 color-form"></span><span class="text-lenght">Успешно не выполнено</span>
-                                        </span>
+                                <div class="status-btn">
+                                    <input type="text" class="input-btn input-status" value="" placeholder="">
+                                    <!-- <div class="status-btn">Вcе</div> -->
+                                    <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
+                                    <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
+                                        <div class="list-status"><span class="list-item all select-btn-static"><span class="text-lenght">Все</span></span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-515151 color-form"></span><span class="text-lenght">Новый</span>
+                                            </span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-91d100 color-form"></span><span class="text-lenght">Принят</span>
+                                            </span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-fd7777 color-form"></span><span class="text-lenght">Отказ</span>
+                                            </span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-e2d317 color-form"></span><span class="text-lenght">Отправлен</span>
+                                            </span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-00CC00 color-form"></span><span class="text-lenght">Завершён</span>
+                                            </span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-9C02A7 color-form"></span><span class="text-lenght">Успешно выполнено</span>
+                                            </span>
+                                        </div>
+                                        <div class="list-status"><span class="list-item"><span class="color-C94F62 color-form"></span><span class="text-lenght">Успешно не выполнено</span>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -638,7 +644,7 @@
                         </td>
                         <td class="header-search colum-country">
                             <div class="wrap-hide">
-                                <div class="country-btn">Вcе</div>
+                                <div class="country-btn"></div>
                                 <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
                                 <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
@@ -671,23 +677,45 @@
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide">
-                                <div class="message-box">
-                                    <input type="text" class="input-style tel-style">
-                                    <input type="text" class="input-style count-message" value="∞">
-                                    <div class="message-btn"></div>
-                                    <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                        <div class="message-list"><span class="message-link all select-btn-static"><span>∞</span></span>
+                                <div class="message-box tel-box">
+                                    <div class="message-btn">
+                                        <!-- <input type="text" class="input-style count-message" value="" readonly> -->
+                                        <div class="count-message"></div>
+                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
+                                            </div>
+                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
+                                            <div class="message-list"><span data-img class="message-link">1</span></div>
+                                            <div class="message-list"><span data-img class="message-link">2</span></div>
+                                            <div class="message-list"><span data-img class="message-link">3</span></div>
+                                            <div class="message-list"><span data-img class="message-link">4</span></div>
+                                            <div class="message-list"><span data-img class="message-link">5</span></div>
+                                            <div class="message-list"><span data-img class="message-link">6</span></div>
+                                            <div class="message-list"><span data-img class="message-link">7</span></div>
+                                            <div class="message-list"><span data-img class="message-link">8</span></div>
+                                            <div class="message-list"><span data-img class="message-link">9</span></div>
+                                            <div class="message-list"><span data-img class="message-link">10</span></div>
                                         </div>
-                                        <div class="message-list"><span class="message-link">1</span></div>
-                                        <div class="message-list"><span class="message-link">2</span></div>
-                                        <div class="message-list"><span class="message-link">3</span></div>
-                                        <div class="message-list"><span class="message-link">4</span></div>
-                                        <div class="message-list"><span class="message-link">5</span></div>
-                                        <div class="message-list"><span class="message-link">6</span></div>
-                                        <div class="message-list"><span class="message-link">7</span></div>
-                                        <div class="message-list"><span class="message-link">8</span></div>
-                                        <div class="message-list"><span class="message-link">9</span></div>
-                                        <div class="message-list"><span class="message-link">10</span></div>
+                                    </div>
+                                    <input type="text" class="input-style tel-style">
+                                    <div class="message-btn">
+                                        <!-- <input type="text" class="input-style count-message" value="" readonly> -->
+                                        <div class="count-message"></div>
+                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
+                                            </div>
+                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
+                                            <div class="message-list"><span data-img class="message-link">1</span></div>
+                                            <div class="message-list"><span data-img class="message-link">2</span></div>
+                                            <div class="message-list"><span data-img class="message-link">3</span></div>
+                                            <div class="message-list"><span data-img class="message-link">4</span></div>
+                                            <div class="message-list"><span data-img class="message-link">5</span></div>
+                                            <div class="message-list"><span data-img class="message-link">6</span></div>
+                                            <div class="message-list"><span data-img class="message-link">7</span></div>
+                                            <div class="message-list"><span data-img class="message-link">8</span></div>
+                                            <div class="message-list"><span data-img class="message-link">9</span></div>
+                                            <div class="message-list"><span data-img class="message-link">10</span></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -699,11 +727,53 @@
                             <div class="wrap-hide"><input type="text" class="input-style"></div>
                         </td>
                         <td class="header-search">
-                            <div class="wrap-hide"><input type="text" class="input-style"></div>
+                            <div class="wrap-hide">
+                                <div class="message-box product-box">
+                                    <div class="message-btn">
+                                        <!-- <input type="text" class="input-style count-message" value="" readonly> -->
+                                        <div class="count-message"></div>
+                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
+                                            </div>
+                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
+                                            <div class="message-list"><span data-img class="message-link">1</span></div>
+                                            <div class="message-list"><span data-img class="message-link">2</span></div>
+                                            <div class="message-list"><span data-img class="message-link">3</span></div>
+                                            <div class="message-list"><span data-img class="message-link">4</span></div>
+                                            <div class="message-list"><span data-img class="message-link">5</span></div>
+                                            <div class="message-list"><span data-img class="message-link">6</span></div>
+                                            <div class="message-list"><span data-img class="message-link">7</span></div>
+                                            <div class="message-list"><span data-img class="message-link">8</span></div>
+                                            <div class="message-list"><span data-img class="message-link">9</span></div>
+                                            <div class="message-list"><span data-img class="message-link">10</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="message-btn">
+                                        <!-- <input type="text" class="input-style count-message" value="" readonly> -->
+                                        <div class="count-message"></div>
+                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
+                                            </div>
+                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
+                                            <div class="message-list"><span data-img class="message-link">1</span></div>
+                                            <div class="message-list"><span data-img class="message-link">2</span></div>
+                                            <div class="message-list"><span data-img class="message-link">3</span></div>
+                                            <div class="message-list"><span data-img class="message-link">4</span></div>
+                                            <div class="message-list"><span data-img class="message-link">5</span></div>
+                                            <div class="message-list"><span data-img class="message-link">6</span></div>
+                                            <div class="message-list"><span data-img class="message-link">7</span></div>
+                                            <div class="message-list"><span data-img class="message-link">8</span></div>
+                                            <div class="message-list"><span data-img class="message-link">9</span></div>
+                                            <div class="message-list"><span data-img class="message-link">10</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="text" class="input-style product-style">
+                            </div>
                         </td>
                         <td class="header-search colum-pay">
                             <div class="wrap-hide">
-                                <div class="pay-btn">Вcе</div>
+                                <div class="pay-btn"></div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
                                     </div>
@@ -744,9 +814,35 @@
                                 </div>
                             </div>
                         </td>
+                        <td class="header-search">
+                            <div class="wrap-hide">
+                                <div class="message-box prro-box">
+                                    <input type="text" class="input-style">
+                                    <div class="message-btn">
+                                        <!-- <input type="text" class="input-style count-message" value="" readonly> -->
+                                        <div class="count-message"></div>
+                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
+                                            </div>
+                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
+                                            <div class="message-list"><span data-img class="message-link">1</span></div>
+                                            <div class="message-list"><span data-img class="message-link">2</span></div>
+                                            <div class="message-list"><span data-img class="message-link">3</span></div>
+                                            <div class="message-list"><span data-img class="message-link">4</span></div>
+                                            <div class="message-list"><span data-img class="message-link">5</span></div>
+                                            <div class="message-list"><span data-img class="message-link">6</span></div>
+                                            <div class="message-list"><span data-img class="message-link">7</span></div>
+                                            <div class="message-list"><span data-img class="message-link">8</span></div>
+                                            <div class="message-list"><span data-img class="message-link">9</span></div>
+                                            <div class="message-list"><span data-img class="message-link">10</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                         <td class="header-search colum-delivery">
                             <div class="wrap-hide">
-                                <div class="delivery-btn">Вcе</div>
+                                <div class="delivery-btn"></div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list"><span class="list-item all select-btn-static"><span>Все</span></span>
                                     </div>
@@ -782,23 +878,26 @@
 
                                 <!-- <input type="text" class="ttn-style">
                                     <input type="text" class="ttn-style"> -->
-                                <div class="message-box-ttn">
-                                    <input type="text" class="input-style ttn-style">
-                                    <input type="text" class="input-style count-ttn" value="∞">
-                                    <div class="btn-ttn"></div>
-                                    <div class="menu-ttn" data-simplebar data-simplebar-auto-hide="false">
-                                        <div class="list-ttn"><span class="link-ttn all select-btn-static"><span>∞</span></span>
+                                <div class="message-box ttn-box">
+                                    <input type="text" class="input-style">
+                                    <div class="message-btn">
+                                        <!-- <input type="text" class="input-style count-message" value="" readonly> -->
+                                        <div class="count-message"></div>
+                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
+                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
+                                            </div>
+                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
+                                            <div class="message-list"><span data-img class="message-link">1</span></div>
+                                            <div class="message-list"><span data-img class="message-link">2</span></div>
+                                            <div class="message-list"><span data-img class="message-link">3</span></div>
+                                            <div class="message-list"><span data-img class="message-link">4</span></div>
+                                            <div class="message-list"><span data-img class="message-link">5</span></div>
+                                            <div class="message-list"><span data-img class="message-link">6</span></div>
+                                            <div class="message-list"><span data-img class="message-link">7</span></div>
+                                            <div class="message-list"><span data-img class="message-link">8</span></div>
+                                            <div class="message-list"><span data-img class="message-link">9</span></div>
+                                            <div class="message-list"><span data-img class="message-link">10</span></div>
                                         </div>
-                                        <div class="list-ttn"><span class="link-ttn">1</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">2</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">3</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">4</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">5</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">6</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">7</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">8</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">9</span></div>
-                                        <div class="list-ttn"><span class="link-ttn">10</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -808,7 +907,7 @@
                         </td>
                         <td class="header-search colum-depart">
                             <div class="wrap-hide">
-                                <div class="depart-btn"><input type="text" class="input-btn input-depart" value="Все"></div>
+                                <div class="depart-btn"><input type="text" class="input-btn input-depart" value=""></div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list-depart"><span class="list-item all select-btn-static"><span class="text-lenght-2">Все</span></span>
                                     </div>
@@ -831,7 +930,7 @@
                         </td>
                         <td class="header-search colum-employe">
                             <div class="wrap-hide">
-                                <div class="employe-btn"><input type="text" class="input-btn input-employe" value="Все"></div>
+                                <div class="employe-btn"><input type="text" class="input-btn input-employe" value=""></div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list-employe"><span class="list-item all select-btn-static"><span class="text-lenght-3">Все</span></span>
                                     </div>
@@ -870,7 +969,7 @@
                         </td>
                         <td class="header-search colum-employe-prinyal">
                             <div class="wrap-hide">
-                                <div class="employe-btn"><input type="text" class="input-btn input-employe-prinyal" value="Все"></div>
+                                <div class="employe-btn"><input type="text" class="input-btn input-employe-prinyal" value=""></div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list-employe"><span class="list-item all select-btn-static"><span class="text-lenght-3">Все</span></span>
                                     </div>
@@ -906,7 +1005,7 @@
                         </td>
                         <td class="header-search colum-employe-izmenil">
                             <div class="wrap-hide">
-                                <div class="employe-btn"><input type="text" class="input-btn input-employe-izmenil" value="Все"></div>
+                                <div class="employe-btn"><input type="text" class="input-btn input-employe-izmenil" value=""></div>
                                 <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                     <div class="list-employe"><span class="list-item all select-btn-static"><span class="text-lenght-3">Все</span></span>
                                     </div>
@@ -933,10 +1032,195 @@
                             </div>
                         </td>
                         <td class="header-search">
-                            <div class="wrap-hide"><input type="text" class="input-style"></div>
+                            <div class="wrap-hide">
+                                <input type="text" class="input-style input-ip">
+                                <div class="ip-buttons">
+                                    <div class="ip-wrap">
+                                        <div class="ip-btn"></div>
+                                        <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
+                                        <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <!-- <div class="list-ip select-btn"><span class="list-item all-ip"><span>∞</span></span>
+                                            </div> -->
+                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="flags">&#x1F1FA;&#x1F1E6;</span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="flags">&#x1F1F7;&#x1F1FA;</span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="flags">&#x1F1E6;&#x1F1F1;</span></span>
+                                            </div>
+
+                                            <!-- <div class="list-ip"><span class="list-item"><img class="flag ua" src="img/ukraine2.svg" alt="flag"></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><img class="flag ua" src="img/ukraine2.svg" alt="flag"></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><img class="flag ua" src="img/ukraine2.svg" alt="flag"></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><img class="flag ua" src="img/ukraine2.svg" alt="flag"></span>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <!-- <img class="flag ua" src="img/ukraine2.svg" alt="flag">
+                                    <img class="mob-icon ky" src="img/Kievstar.svg" alt="">
+                                    <img class="mob-icon vod" src="img/vodafone2.svg" alt="">
+                                    <img class="mob-icon vod" src="img/vodafone2.svg" alt=""> -->
+                                    <!-- <span class="flags">&#x1F3F4;&#xE0061;&#xE0074;&#xE0033;&#xE007F;</span>
+                                    <i class="ip-icon-small ip-icon-device-desktop"></i>
+                                    <i class="ip-icon-small ip-icon-os-windows"></i>
+                                    <i class="ip-icon-small ip-icon-browser-chrome"></i> -->
+                                    <div class="ip-wrap">
+                                        <div class="ip-btn"></div>
+                                        <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
+                                        <div class="block1 1" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-13 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-10 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-uniE941 icons"></span></span>
+                                            </div>
+                                            <!-- <div class="list-ip"><span class="list-item"><img class="mob-icon ky" src="img/Kievstar.svg" alt=""></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><img class="mob-icon ky" src="img/Kievstar.svg" alt=""></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><img class="mob-icon ky" src="img/Kievstar.svg" alt=""></span>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="ip-wrap">
+                                        <div class="ip-btn"></div>
+                                        <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
+                                        <div class="block1 2" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-12 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Windows-1 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-9 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-uniE941 icons"></span></span>
+                                            </div>
+                                            <!-- <div class="list-ip"><span class="list-item"><img class="mob-icon vod" src="img/vodafone2.svg" alt=""></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><img class="mob-icon vod" src="img/vodafone2.svg" alt=""></span>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="ip-wrap">
+                                        <div class="ip-btn"></div>
+                                        <!-- <div class="tooltip" style="visibility: visible;opacity: 1;">Украина</div> -->
+                                        <div class="block1 3" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-14 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-15 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-11 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-16 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-12 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-17 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-13 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip"><span class="list-item"><span class="icon-uniE941 icons"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                         <td class="header-search">
-                            <div class="wrap-hide"><input type="text" class="input-style"></div>
+                            <div class="wrap-hide">
+                                <input type="text" class="input-style input-ip">
+                                <div class="ip-buttons">
+                                    <div class="ip-wrap-2">
+                                        <div class="ip-btn-2"></div>
+                                        <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip-2 select-btn all"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip-2 p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip-2 ua"><span class="list-item"><span data-img class="flags">&#x1F1FA;&#x1F1E6;</span></span>
+                                            </div>
+                                            <div class="list-ip-2 ru"><span class="list-item"><span data-img class="flags">&#x1F1F7;&#x1F1FA;</span></span>
+                                            </div>
+                                            <div class="list-ip-2 alb"><span class="list-item"><span data-img class="flags">&#x1F1E6;&#x1F1F1;</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ip-wrap-2">
+                                        <div class="ip-btn-2"></div>
+                                        <div class="block1 1" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip-2 select-btn all"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip-2 p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip-2 mobile"><span class="list-item"><span data-img class="icon-Union-13 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 desktop"><span class="list-item"><span data-img class="icon-Vector-10 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 unknownDevice"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ip-wrap-2">
+                                        <div class="ip-btn-2"></div>
+                                        <div class="block1 2" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip-2 select-btn"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip-2 p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip-2 android"><span class="list-item"><span data-img class="icon-Union-12 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 windows"><span class="list-item"><span data-img class="icon-Windows-1 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 apple"><span class="list-item"><span data-img class="icon-Vector-9 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 unknownSystem"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ip-wrap-2">
+                                        <div class="ip-btn-2"></div>
+                                        <div class="block1 3" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <div class="list-ip-2 select-btn"><span class="list-item"><span>Все</span></span>
+                                            </div>
+                                            <div class="list-ip-2 p-p"><span class="list-item padding-left">П/п</span>
+                                            </div>
+                                            <div class="list-ip-2 chrome"><span class="list-item"><span data-img class="icon-Union-14 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 safari"><span class="list-item"><span data-img class="icon-Union-15 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 firefox"><span class="list-item"><span data-img class="icon-Vector-11 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 opera"><span class="list-item"><span data-imgclass="icon-Union-16 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 edge"><span class="list-item"><span data-img class="icon-Vector-12 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 yandex"><span class="list-item"><span data-img class="icon-Union-17 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 mail"><span class="list-item"><span data-img class="icon-Vector-13 icons"></span></span>
+                                            </div>
+                                            <div class="list-ip-2 unknownBrowser"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                         <td class="header-search">
                             <div class="wrap-hide"><input type="text" class="input-style"></div>
@@ -1012,7 +1296,16 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
                             </svg>
-                        <span class="count">1</span>
+                                <span class="count">1</span>
+                            </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
                             </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
@@ -1022,6 +1315,16 @@
                             <path d="M13.8022 2H2.21379C0.999001 2 0.015984 3.025 0.015984 4.29167L0.015984 5.6C0.015984 5.61667 0 5.625 0 5.65C0 5.675 0.015984 5.68333 0.015984 5.7L0.015984 11.7083C0.015984 12.975 0.999001 14 2.21379 14H13.8022C15.017 14 16 12.975 16 11.7083V4.29167C16 3.025 15.017 2 13.8022 2ZM2.21379 3.25H13.8022C14.3536 3.25 14.8012 3.71667 14.8012 4.29167V5.025H1.21479V4.29167C1.21479 3.71667 1.66234 3.25 2.21379 3.25ZM13.8022 12.75H2.21379C1.66234 12.75 1.21479 12.2833 1.21479 11.7083V6.275H14.8012V11.7167C14.8012 12.2833 14.3536 12.75 13.8022 12.75Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1055,7 +1358,7 @@
                         <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1099,6 +1402,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1106,6 +1418,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>                            
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1139,7 +1461,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1183,6 +1505,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1192,6 +1523,16 @@
                             <path d="M11.8966 2H2.09581C0.937398 2 0 2.902 0 4.01667V10.9833C0 12.098 0.937398 13 2.09581 13H3.01796V11.9H2.09581C1.56995 11.9 1.14317 11.4893 1.14317 10.9833V4.01667C1.14317 3.92133 1.17365 3.84067 1.19652 3.76L5.69298 6.67867C6.08166 6.97933 6.54654 7.126 7.01143 7.126C7.46108 7.126 7.91072 6.98667 8.27654 6.70067L12.7959 3.72333C12.8263 3.81867 12.8568 3.914 12.8568 4.01667V6.972H14V4.01667C13.9924 2.90933 13.055 2 11.8966 2ZM7.59064 5.82067C7.24007 6.092 6.75231 6.092 6.36364 5.79133L2.22537 3.1H11.7137L7.59064 5.82067Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/ukrposhta.svg" class="ukrp" alt=""></span>
@@ -1225,7 +1566,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1269,6 +1610,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1276,6 +1626,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>                            
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1309,7 +1669,25 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">
+                            <div class="ip-block-position">
+                                <span class="ip-current">192.168.168.168</span>
+                                <!-- <span class="ozozz"></span><span class="ozozz"></span><span class="ozozz"></i></span>
+                            <span class="ozozz"></span> -->
+                                <!-- <span class="ip-icons-position">
+                                    <img class="flag ua" src="img/ukraine2.svg" alt="flag">
+                                    <img class="mob-icon ky" src="img/Kievstar.svg" alt="">
+                                    <img class="mob-icon vod" src="img/vodafone2.svg" alt="">
+                                    <img class="mob-icon vod" src="img/vodafone2.svg" alt="">
+                                </span> -->
+                                <span class="ip-icons-position">
+                                <span class="flags">&#x1F1FA;&#x1F1E6;</span>
+                                <span class="icon-Vector-10 icons"></span>
+                                <span class="icon-Windows-1 icons"></span>
+                                <span class="icon-Union-14 icons"></span>
+                                </span>
+                            </div>
+                        </td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1353,6 +1731,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский </span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1362,6 +1749,16 @@
                             <path d="M11.8966 2H2.09581C0.937398 2 0 2.902 0 4.01667V10.9833C0 12.098 0.937398 13 2.09581 13H3.01796V11.9H2.09581C1.56995 11.9 1.14317 11.4893 1.14317 10.9833V4.01667C1.14317 3.92133 1.17365 3.84067 1.19652 3.76L5.69298 6.67867C6.08166 6.97933 6.54654 7.126 7.01143 7.126C7.46108 7.126 7.91072 6.98667 8.27654 6.70067L12.7959 3.72333C12.8263 3.81867 12.8568 3.914 12.8568 4.01667V6.972H14V4.01667C13.9924 2.90933 13.055 2 11.8966 2ZM7.59064 5.82067C7.24007 6.092 6.75231 6.092 6.36364 5.79133L2.22537 3.1H11.7137L7.59064 5.82067Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1395,7 +1792,25 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abraka</td>
-                        <td class="">192.168.</td>
+                        <td class="ip-block">
+                            <div class="ip-block-position">
+                                <span class="ip-current">192.168</span>
+                                <!-- <span class="ozozz"></span><span class="ozozz"></span><span class="ozozz"></i></span>
+                            <span class="ozozz"></span> -->
+                                <!-- <span class="ip-icons-position">
+                                <span class="flags">&#x1F3F4;&#xE0061;&#xE0074;&#xE0033;&#xE007F;</span>
+                                <i class="ip-icon-small ip-icon-device-desktop"></i>
+                                <i class="ip-icon-small ip-icon-os-windows"></i>
+                                <i class="ip-icon-small ip-icon-browser-chrome"></i>
+                                </span> -->
+                                <!-- <span class="ip-icons-position">
+                                    <img class="flag ua" src="img/ukraine2.svg" alt="flag">
+                                    <img class="mob-icon ky" src="img/Kievstar.svg" alt="">
+                                    <img class="mob-icon vod" src="img/vodafone2.svg" alt="">
+                                    <img class="mob-icon vod" src="img/vodafone2.svg" alt="">
+                                </span> -->
+                            </div>
+                        </td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1439,6 +1854,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1446,6 +1870,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>                            
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1479,7 +1913,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1523,6 +1957,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1530,6 +1973,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>                            
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1563,7 +2016,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1607,6 +2060,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1614,6 +2076,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1647,7 +2119,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1691,6 +2163,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1698,6 +2179,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1731,7 +2222,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1775,6 +2266,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1782,6 +2282,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/justin.svg" class="justin" alt=""></span>
@@ -1815,7 +2325,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1859,6 +2369,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1866,6 +2385,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1899,7 +2428,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -1944,6 +2473,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -1951,6 +2489,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/Nova poshta.svg" class="nv" alt=""></span>
@@ -1984,7 +2532,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -2028,6 +2576,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -2035,6 +2592,16 @@
                             <path d="M3.3582 6.63906C3.33027 6.60898 3.30527 6.57676 3.28379 6.54326C3.26221 6.50957 3.24336 6.47354 3.22783 6.43613C3.17598 6.3126 3.16191 6.1792 3.18379 6.05195C3.20566 5.92559 3.26309 5.80479 3.3541 5.70547L3.38731 5.67129C3.61123 5.45791 3.95088 5.41816 4.21729 5.57842C4.25537 5.60117 4.2917 5.62822 4.32559 5.65918L4.32891 5.66221C4.51748 5.84307 4.83652 6.13887 5.046 6.32529L5.22578 6.48652L7.42617 4.17842C7.45713 4.14648 7.49121 4.11787 7.52725 4.09287C7.56416 4.06738 7.60293 4.0458 7.64297 4.02832C7.6834 4.01064 7.72617 3.99678 7.76992 3.98721C7.81358 3.97754 7.85811 3.97207 7.90234 3.97109H7.90488C7.94893 3.97061 7.99209 3.97373 8.03584 3.98115C8.07852 3.98838 8.12139 4 8.16602 4.01719C8.20713 4.03291 8.24658 4.05264 8.28389 4.07617C8.31953 4.09873 8.3543 4.12559 8.38701 4.15645L8.40283 4.1708C8.43369 4.20137 8.46152 4.23457 8.48584 4.26982C8.51084 4.30586 8.53223 4.34463 8.54951 4.38486C8.56738 4.42529 8.58125 4.46807 8.59092 4.51172C8.60068 4.55459 8.60596 4.59912 8.60703 4.64453V4.66699C8.60664 4.70596 8.60293 4.74551 8.5959 4.78457C8.58818 4.82705 8.57656 4.86885 8.56113 4.90869C8.54551 4.94951 8.52549 4.98926 8.50186 5.02686C8.47861 5.06367 8.45127 5.09902 8.42061 5.13135L5.7625 7.92041C5.73125 7.95381 5.69775 7.98311 5.6627 8.00811C5.62666 8.03389 5.58779 8.05605 5.54717 8.07461C5.50645 8.09297 5.46406 8.10752 5.42139 8.11758C5.37891 8.12773 5.33457 8.13379 5.28955 8.13584L5.27734 8.13613C5.23604 8.13701 5.19531 8.13457 5.15615 8.12852L5.14619 8.12656C5.10566 8.11973 5.06621 8.10957 5.02852 8.09629C4.9874 8.08164 4.94717 8.06279 4.90879 8.04014L4.90264 8.03623C4.86641 8.01436 4.83262 7.98965 4.80186 7.9626L4.7957 7.95674C4.64141 7.81357 4.47373 7.66787 4.3042 7.52061C4.01055 7.26543 3.60322 6.89736 3.35908 6.63975L3.3582 6.63906ZM6 0C7.65625 0 9.15703 0.672168 10.2435 1.75654C11.3278 2.84297 11.9999 4.34375 11.9999 6C11.9999 7.65635 11.3277 9.15713 10.2435 10.2436C9.15713 11.3279 7.65625 12 6 12C4.34365 12 2.84287 11.3279 1.75645 10.2436C0.67207 9.15713 0 7.65625 0 5.9999C0 4.34375 0.67207 2.84297 1.75645 1.75654C2.84297 0.672168 4.34365 0 6 0ZM9.46279 2.53721C8.57676 1.65107 7.35254 1.10312 6 1.10312C4.64736 1.10312 3.42314 1.65107 2.53711 2.53721C1.65107 3.42324 1.10313 4.64746 1.10313 5.9999C1.10313 7.35254 1.65107 8.57676 2.53711 9.46279C3.42314 10.3488 4.64736 10.8969 6 10.8969C7.35254 10.8969 8.57676 10.3489 9.46279 9.46279C10.3488 8.57666 10.8968 7.35254 10.8968 5.9999C10.8968 4.64746 10.3489 3.42324 9.46279 2.53721Z" fill="#9C9B9E"/>
                         </svg>
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"> 
@@ -2076,7 +2643,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -2120,6 +2687,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -2128,6 +2704,16 @@
                             <path d="M11.662 4.33797C11.4139 4.08984 11.0032 4.08984 10.7551 4.33797L8.11123 6.98182L5.46738 4.33797C5.21925 4.08984 4.80855 4.08984 4.56042 4.33797C4.3123 4.5861 4.3123 4.99679 4.56042 5.24492L7.20427 7.88877L4.56042 10.5326C4.3123 10.7807 4.3123 11.1914 4.56042 11.4396C4.68877 11.5679 4.85133 11.6278 5.0139 11.6278C5.17647 11.6278 5.33903 11.5679 5.46738 11.4396L8.11123 8.79572L10.7551 11.4396C10.8834 11.5679 11.046 11.6278 11.2086 11.6278C11.3711 11.6278 11.5337 11.5679 11.662 11.4396C11.9102 11.1914 11.9102 10.7807 11.662 10.5326L9.01818 7.88877L11.662 5.24492C11.9102 4.99679 11.9102 4.59465 11.662 4.33797Z" fill="#9C9B9E"/>
                         </svg>              
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position">
@@ -2169,7 +2755,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -2213,6 +2799,15 @@
                             </svg>
                         <span class="count">1</span>
                             </span>
+                            <span class="svg-wrap">
+                                <svg class="svg-box" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.49929 1.48529C5.49914 1.48536 5.49898 1.48544 5.49883 1.48552L1.33225 3.56881L1.33109 3.56938C1.2443 3.61251 1.17125 3.679 1.12018 3.76137C1.06911 3.84371 1.04203 3.93866 1.04196 4.03555C1.04196 4.03552 1.04196 4.03558 1.04196 4.03555V8.9986C1.04128 9.09569 1.06774 9.19104 1.11837 9.27388C1.16891 9.35659 1.24153 9.42356 1.32805 9.46725C1.32791 9.46718 1.32819 9.46732 1.32805 9.46725L5.49477 11.5506C5.56715 11.5868 5.64712 11.6058 5.72805 11.6058C5.80898 11.6058 5.88881 11.5869 5.96118 11.5507L10.1291 9.46675L10.1302 9.46617C10.217 9.42304 10.2901 9.35655 10.3411 9.27419C10.3922 9.19182 10.4193 9.09683 10.4194 8.99991V4.03565C10.4193 3.93873 10.3922 3.84374 10.3411 3.76137C10.2901 3.679 10.217 3.61251 10.1302 3.56938L10.1291 3.56881L5.96249 1.48552C5.96233 1.48544 5.96217 1.48536 5.96202 1.48529C5.8901 1.44964 5.81092 1.43109 5.73066 1.43109C5.65039 1.43109 5.57121 1.44964 5.49929 1.48529ZM6.19432 1.01898L6.42615 0.552435C6.21003 0.445045 5.97198 0.38916 5.73066 0.38916C5.48933 0.38916 5.25128 0.445045 5.03517 0.552435L5.03401 0.55301L0.867434 2.6363C0.86722 2.63641 0.867006 2.63651 0.866792 2.63662C0.606685 2.76602 0.387788 2.96536 0.234679 3.21226C0.081443 3.45937 0.000179611 3.74433 2.53139e-05 4.0351L2.52518e-05 8.99334C-0.00162631 9.28392 0.0777662 9.56922 0.229306 9.8172C0.381192 10.0657 0.599511 10.2669 0.859632 10.398L0.861072 10.3987L5.02865 12.4825C5.24579 12.5911 5.48525 12.6477 5.72805 12.6477C5.9708 12.6477 6.21021 12.5912 6.4273 12.4825C6.42735 12.4825 6.42725 12.4826 6.4273 12.4825L10.5939 10.3993C10.5941 10.3992 10.5942 10.3991 10.5944 10.399C10.8546 10.2696 11.0735 10.0702 11.2266 9.82329C11.3799 9.57618 11.4611 9.29122 11.4613 9.00046V4.03537C11.4611 3.74461 11.3799 3.45937 11.2266 3.21226C11.0735 2.96537 10.8546 2.76603 10.5945 2.63663C10.5943 2.63652 10.5941 2.63641 10.5939 2.6363L6.4273 0.55301L6.19432 1.01898Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.221734 3.23975C0.350407 2.9824 0.663338 2.87809 0.920684 3.00676L5.73066 5.41175L10.5406 3.00676C10.798 2.87809 11.1109 2.9824 11.2396 3.23975C11.3683 3.49709 11.2639 3.81002 11.0066 3.9387L5.96364 6.46017C5.81697 6.53351 5.64434 6.53351 5.49767 6.46017L0.454718 3.9387C0.197371 3.81002 0.0930612 3.49709 0.221734 3.23975Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.73066 5.47324C6.01838 5.47324 6.25162 5.70648 6.25162 5.99421V12.1208C6.25162 12.4085 6.01838 12.6417 5.73066 12.6417C5.44293 12.6417 5.20969 12.4085 5.20969 12.1208V5.99421C5.20969 5.70648 5.44293 5.47324 5.73066 5.47324Z" fill="#9C9B9E"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.65986 1.85397C2.78853 1.59663 3.10146 1.49232 3.35881 1.62099L8.56847 4.22582C8.82582 4.3545 8.93013 4.66743 8.80146 4.92477C8.67278 5.18212 8.35985 5.28643 8.10251 5.15776L2.89284 2.55292C2.63549 2.42425 2.53118 2.11132 2.65986 1.85397Z" fill="#9C9B9E"/>
+                                    </svg>
+                                <span class="count">1</span>
+                            </span>
                             <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span></span>
                         </td>
                         <td class="colum-pay"><span class="svg-wrap">
@@ -2220,6 +2815,16 @@
                             <path d="M15.3015 15C14.9197 15 14.603 14.7025 14.603 14.3438V11.7012L13.2712 12.9525C10.3655 15.6825 5.63446 15.6825 2.72875 12.9525C1.93714 12.2087 1.34109 11.325 0.968568 10.3363C0.838184 9.995 1.03376 9.61875 1.39697 9.49625C1.76019 9.37375 2.16065 9.5575 2.29104 9.89875C2.58906 10.7038 3.07334 11.4213 3.71595 12.025C6.08149 14.2475 9.91851 14.2475 12.2841 12.025L13.6158 10.7738H10.8033C10.4214 10.7738 10.1048 10.4763 10.1048 10.1175C10.1048 9.75875 10.4214 9.46125 10.8033 9.46125H15.3015C15.3946 9.46125 15.4878 9.47875 15.5716 9.51375C15.6554 9.54875 15.7299 9.5925 15.7951 9.65375C15.8603 9.715 15.9162 9.785 15.9441 9.86375C15.9814 9.9425 16 10.03 16 10.1175V14.3438C16 14.7112 15.6834 15 15.3015 15ZM14.3702 6.53875C14.0815 6.53875 13.8114 6.3725 13.709 6.10125C13.4109 5.29625 12.9267 4.5875 12.2841 3.975C9.91851 1.7525 6.08149 1.76125 3.71595 3.975L2.38417 5.22625H5.19674C5.57858 5.22625 5.89523 5.52375 5.89523 5.8825C5.89523 6.24125 5.57858 6.53875 5.19674 6.53875H0.698486C0.605355 6.53875 0.512224 6.52125 0.437718 6.48625C0.363213 6.46 0.288708 6.41625 0.223516 6.355C0.214203 6.34625 0.204889 6.3375 0.195576 6.32875C0.130384 6.27625 0.0838183 6.20625 0.0558789 6.13625C0.0186263 6.0575 0 5.97875 0 5.8825V1.65625C0 1.28875 0.316647 1 0.698486 1C1.08033 1 1.39697 1.2975 1.39697 1.65625V4.29875L2.72875 3.0475C5.63446 0.3175 10.3655 0.3175 13.2712 3.0475C14.0629 3.79125 14.6589 4.675 15.0314 5.66375C15.1618 6.005 14.9662 6.38125 14.603 6.50375C14.5285 6.53 14.4447 6.53875 14.3702 6.53875Z" fill="#9C9B9E"/>
                         </svg>        
                         </span>
+                        </td>
+                        <td class="tel-colum">
+                            <span class="tel"><span class="tel-number max-lenght">+38 096 514 25 46</span></span>
+                            <span class="svg-wrap convert-tooltip">
+                            <svg class="svg-convert" width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.64296 12.1067H3.21439C2.03582 12.1067 1.07153 11.1424 1.07153 9.96387V4.60672C1.07153 3.42815 2.03582 2.46387 3.21439 2.46387H9.64296C10.8215 2.46387 11.7858 3.42815 11.7858 4.60672V9.96387C11.7858 11.1424 10.8215 12.1067 9.64296 12.1067Z" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.2146 5.14307L5.67889 7.60735C6.10746 8.03592 6.75031 8.03592 7.17888 7.60735L9.64317 5.14307" stroke="#9C9B9E" stroke-width="1.28571" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            <span class="count">4</span>
+                            </span>
                         </td>
                         <td class="svg-delivery">
                             <span class="svg-position"><img src="img/ukrposhta.svg" class="ukrp" alt=""></span>
@@ -2253,7 +2858,7 @@
                         <td class="max-lenght">Лебедев Евгений Александрович</td>
                         <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
                         <td class="max-lenght">www.abrakadabra.com</td>
-                        <td class="">192.168.168.168</td>
+                        <td class="ip-block">192.168.168.168</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
                         <td class="max-lenght">source</td>
@@ -2381,7 +2986,7 @@
                             <div class="dropMenu">
                                 <div class="btn-menu">Олена (ghjiouohlhlhlh34wа...</div>
                                 <ul class="block-menu user-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                    <li class="menu-list">Олена (ghjiouohlhlh4wа...</li>
+                                    <li class="menu-list menu-select-filter">Олена (ghjiouohlhlh4wа...</li>
                                     <li class="menu-list">Олена (ghjiouohlhlwа...</li>
                                     <li class="menu-list">Олена (ghjiowа.32..</li>
                                     <li class="menu-list">Олена (ghjiowа.32..</li>
@@ -2407,7 +3012,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Спересенко Олена Володло...</div>
                                         <ul class="block-menu vidpravnik-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Спересенко Олена Володло...</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
                                             <li class="menu-list">Гусь</li>
@@ -2422,7 +3027,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Євгеніка</div>
                                         <ul class="block-menu mistoVidpravnika-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Євгеніка</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
                                             <li class="menu-list">Гусь</li>
@@ -2437,7 +3042,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Пункт приймання-видачі (до...</div>
                                         <ul class="block-menu viddilenyaVidpravnika-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Пункт приймання-видачі (до...</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
                                             <li class="menu-list">Гусь</li>
@@ -2452,7 +3057,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Відділення-Відділення</div>
                                         <ul class="block-menu tehnologiyaDostavky-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Відділення-Відділення</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
                                             <li class="menu-list">Гусь</li>
@@ -2467,7 +3072,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Посилка</div>
                                         <ul class="block-menu tipDostavki-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Посилка</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
                                             <li class="menu-list">Гусь</li>
@@ -2482,7 +3087,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Відправник</div>
                                         <ul class="block-menu platnik-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Відправник</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
                                             <li class="menu-list">Маша</li>
@@ -2497,7 +3102,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Відправник</div>
                                         <ul class="block-menu platnikZvorot-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Відправник</li>
                                             <li class="menu-list">Євгеніка</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
@@ -2512,7 +3117,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Переказ коштів відправнику</div>
                                         <ul class="block-menu tipOplaty-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">Євгеніка</li>
+                                            <li class="menu-list menu-select-filter">Переказ коштів відправнику</li>
                                             <li class="menu-list">Євгеніка</li>
                                             <li class="menu-list">Даша</li>
                                             <li class="menu-list">Маша</li>
@@ -2527,6 +3132,7 @@
                                     <div class="dropMenu">
                                         <div class="btn-menu">Готівка</div>
                                         <ul class="block-menu formaSpalti-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                            <li class="menu-list menu-select-filter">Готівка</li>
                                             <li class="menu-list">Євгеніка</li>
                                             <li class="menu-list">Євгеніка</li>
                                             <li class="menu-list">Даша</li>
@@ -2551,7 +3157,8 @@
                     </div>
                     <div class="np-change-order">
                         <div class="np-auto-header header-style">
-                            <div class="btn-auto-order btn-np-select">Автоматический возврат заказов
+                            <div class="btn-auto-order btn-np-select">
+                                <span class="button-order">Автоматический возврат заказов</span>
                                 <span class="switches">
                                     <span class="switch-btn">
                                         <label class="switch">
@@ -2561,7 +3168,9 @@
                                 </span>
                                 </span>
                             </div>
-                            <div class="btn-auto-status">Автоматическая смена статусов<span class="switches">
+                            <div class="btn-auto-status">
+                                <span class="button-status">Автоматическая смена статусов</span>
+                                <span class="switches">
                             <span class="switch-btn">
                                 <label class="switch">
                                     <input type="checkbox">
@@ -2571,78 +3180,139 @@
                                 </span>
                             </div>
                         </div>
-                        <table class="np-auto-order">
-                            <tr>
-                                <th>Осталось дней:</th>
-                                <th>Применять к статусу:</th>
-                                <th></th>
-                            </tr>
-                            <tr class="stroke-np-order">
-                                <td>
-                                    <div class="dropMenu">
-                                        <div class="btn-menu day-last">2 дня до платного хранени</div>
-                                        <ul class="block-menu ostalosDney-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list">1 дня до платного хранени</li>
-                                            <li class="menu-list">2 дня до платного хранени</li>
-                                            <li class="menu-list">3 дня до платного хранени</li>
-                                            <li class="menu-list">4 дня до платного хранени</li>
-                                            <li class="menu-list">5 дня до платного хранени</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="dropFilter">
-                                        <div class="btn-menu-filter"><span class="1">Принят </span></div>
-                                        <ul class="block-menu-filter ostalosDney-np" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <li class="menu-list-filter"><span class="1">Принят </span></li>
-                                            <li class="menu-list-filter"><span class="2">Новый </span></li>
-                                            <li class="menu-list-filter"><span class="3">Отказ </span></li>
-                                            <li class="menu-list-filter"><span class="4">Отправлен </span></li>
-                                            <li class="menu-list-filter"><span class="5">Передан </span></li>
-                                            <li class="menu-list-filter"><span class="7">Упакован </span></li>
-                                            <li class="menu-list-filter"><span class="8">Упакован </span></li>
-                                            <li class="menu-list-filter"><span class="9">Упакован </span></li>
-                                            <li class="menu-list-filter"><span class="10">Упакован </span></li>
-                                            <li class="menu-list-filter"><span class="11">Упакован </span></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td><button class="np-delete"></button></td>
-                            </tr>
-                        </table>
-                        <table class="np-auto-status">
-                            <tr>
-                                <th>Статус в Новой Почте:</th>
-                                <th>Статус в CRM:</th>
-                                <th>Применять к статусу:</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <!-- <div class="dropMenu-search">
-                                        <div class="btn-menu-search">Нова пошта очікує надхо...</div>
-                                        <div class="block-menu-search statusV-np">
-                                            <div class="search-block"><button class="search-btn"></button><input type="text" class="search-input"></div>
-                                            <ul class="menu-ul" data-simplebar="" data-simplebar-auto-hide="false">
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
-                                                <li class="menu-list-search">Нова пошта очікує надхо...</li>
+                        <div class="np-scroll">
+                            <table class="np-auto-order">
+                                <tr>
+                                    <th>Осталось дней:</th>
+                                    <th>Применять к статусу:</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="stroke-np-order">
+                                    <td>
+                                        <div class="dropMenu">
+                                            <div class="btn-menu day-last">1 день до платного хранения</div>
+                                            <ul class="block-menu ostalosDney-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                                <li class="menu-list menu-select-filter">1 день до платного хранения</li>
+                                                <li class="menu-list">2 дня до платного хранения</li>
+                                                <li class="menu-list">3 дня до платного хранения</li>
+                                                <li class="menu-list">4 дня до платного хранения</li>
+                                                <li class="menu-list">5 дней до платного хранения</li>
                                             </ul>
                                         </div>
-                                    </div> -->
-                                </td>
-                                <td>
-                                </td>
-                                <td>Принято</td>
-                                <td><button class="np-delete"></button></td>
-                            </tr>
-                        </table>
-                        <button class="add-new-np"></button>
+                                    </td>
+                                    <td>
+                                        <div class="dropFilter">
+                                            <div class="btn-menu-filter"><span class="s-1"><span class="color-91d100 color-form"></span><span class="btn-link">Принят</span></span>
+                                            </div>
+                                            <ul class="block-menu-filter ostalosDney-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                                <li class="menu-list-filter"><span class="s-1"><span class="color-91d100 color-form"></span><span class="btn-link">Принят</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-2"><span class="color-515151 color-form"></span><span class="btn-link">Новый</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-3"><span class="color-fd7777 color-form"></span><span class="btn-link">Отказ</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-4"><span class="color-e2d317 color-form"></span><span class="btn-link">Отправлен</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-5"><span class="color-c6b922 color-form"></span><span class="btn-link">Передан</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-6"><span class="color-928c42 color-form"></span><span class="btn-link">Упакован</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-7"><span class="color-2c8b11 color-form"></span><span class="btn-link">Деньги получены</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-8"><span class="color-00CC00 color-form"></span><span class="btn-link">Завершён</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-9"><span class="color-da291c color-form"></span><span class="btn-link">Возврат (в пути)</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-10"><span class="color-FF0000 color-form"></span><span class="btn-link">Возврат (завершён)</span></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td><button class="np-delete"></button></td>
+                                </tr>
+                            </table>
+                            <table class="np-auto-status">
+                                <tr>
+                                    <th>Статус в Новой Почте:</th>
+                                    <th>Статус в CRM:</th>
+                                    <th>Применять к статусу:</th>
+                                    <th></th>
+                                </tr>
+                                <tr class="stroke-np-status">
+                                    <td>
+                                        <div class="dropMenu">
+                                            <div class="btn-menu day-last">Нова пошта оч1</div>
+                                            <ul class="block-menu status-np" data-simplebar="" data-simplebar-auto-hide="false">
+                                                <li class="menu-list menu-select-filter">Нова пошта оч1</li>
+                                                <li class="menu-list">Нова пошта оч2</li>
+                                                <li class="menu-list">Нова пошта оч3</li>
+                                                <li class="menu-list">Нова пошта оч4</li>
+                                                <li class="menu-list">Нова пошта оч5
+                                                    <li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="dropMenu">
+                                            <div class="btn-menu status-crm-btn"><span class="s-1"><span class="color-91d100 color-form"></span><span class="btn-link">Принят</span></span>
+                                            </div>
+                                            <ul class="block-menu status-crm" data-simplebar="" data-simplebar-auto-hide="false">
+                                                <li class="menu-list menu-select-filter"><span class="s-1"><span class="color-91d100 color-form"></span><span class="btn-link">Принят</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-2"><span class="color-515151 color-form"></span><span class="btn-link">Новый</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-3"><span class="color-fd7777 color-form"></span><span class="btn-link">Отказ</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-4"><span class="color-e2d317 color-form"></span><span class="btn-link">Отправлен</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-5"><span class="color-c6b922 color-form"></span><span class="btn-link">Передан</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-6"><span class="color-928c42 color-form"></span><span class="btn-link">Упакован</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-7"><span class="color-2c8b11 color-form"></span><span class="btn-link">Деньги получены</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-8"><span class="color-00CC00 color-form"></span><span class="btn-link">Завершён</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-9"><span class="color-da291c color-form"></span><span class="btn-link">Возврат (в пути)</span></span>
+                                                </li>
+                                                <li class="menu-list"><span class="s-10"><span class="color-FF0000 color-form"></span><span class="btn-link">Возврат (завершён)</span></span>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="dropFilter">
+                                            <div class="btn-menu-filter primenyat-k-btn"><span class="s-1"><span class="color-91d100 color-form"></span><span class="btn-link">Принят</span></span>
+                                            </div>
+                                            <ul class="block-menu-filter primenyat-k" data-simplebar="" data-simplebar-auto-hide="false">
+                                                <li class="menu-list-filter"><span class="s-1"><span class="color-91d100 color-form"></span><span class="btn-link">Принят</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-2"><span class="color-515151 color-form"></span><span class="btn-link">Новый</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-3"><span class="color-fd7777 color-form"></span><span class="btn-link">Отказ</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-4"><span class="color-e2d317 color-form"></span><span class="btn-link">Отправлен</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-5"><span class="color-c6b922 color-form"></span><span class="btn-link">Передан</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-6"><span class="color-928c42 color-form"></span><span class="btn-link">Упакован</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-7"><span class="color-2c8b11 color-form"></span><span class="btn-link">Деньги получены</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-8"><span class="color-00CC00 color-form"></span><span class="btn-link">Завершён</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-9"><span class="color-da291c color-form"></span><span class="btn-link">Возврат (в пути)</span></span>
+                                                </li>
+                                                <li class="menu-list-filter"><span class="s-10"><span class="color-FF0000 color-form"></span><span class="btn-link">Возврат (завершён)</span></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td><button class="np-delete"></button></td>
+                                </tr>
+                            </table>
+                            <button class="add-new-np"></button>
+                        </div>
+
                     </div>
                 </div>
                 <div class="np-footer"><button class="instruction-modul">Инструкция к модулю</button><button class="save-btn">Зберегти</button></div>
@@ -2654,6 +3324,7 @@
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script.crm-table.js"></script>
+    <script src="js/btn-ip-wrap.js"></script>
     <script src="js/modul-nv.js"></script>
     <script src="js/select.js"></script>
     <!-- <script src="js/hammer.js"></script> -->
@@ -2670,6 +3341,11 @@
         new SimpleBar(document.querySelector('.scroll-wrap'), {
             autoHide: true,
             forceVisible: true | 'x' | 'y',
+            clickOnTrack: false
+        });
+        new SimpleBar(document.querySelector('.np-scroll'), {
+            autoHide: true,
+            forceVisible: true | 'y',
             clickOnTrack: false
         });
         new SimpleBar(document.querySelector('.scroll-wrap2'), {
