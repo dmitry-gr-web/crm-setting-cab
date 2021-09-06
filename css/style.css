@@ -338,14 +338,49 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Light.woff");
+  src: local("../fonts/roboto/Roboto-Light"), url("../fonts/roboto/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Thin.woff");
+  src: local("../fonts/roboto/Roboto-Thin"), url("../fonts/roboto/Roboto-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Regular.woff");
+  src: local("../fonts/roboto/Roboto-Regular"), url("../fonts/roboto/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Medium.woff");
+  src: local("../fonts/roboto/Roboto-Medium"), url("../fonts/roboto/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto/Roboto-Bold.woff");
+  src: local("../fonts/roboto/Roboto-Bold"), url("../fonts/roboto/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
 body {
-  font-family: "Raleway";
-  font-feature-settings: "pnum" on, "lnum" on;
   position: fixed;
   top: 0;
   left: 0;
+  font-weight: 300;
   width: 100%;
   height: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
 html {

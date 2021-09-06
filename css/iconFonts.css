@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'W_font';
-    src: url('../fonts/W_font.ttf?e63k5y') format('truetype'), url('../fonts/W_font.woff?e63k5y') format('woff'), url('../fonts/W_font.svg?e63k5y#W_font') format('svg');
+    src: url('../fonts/W_font.ttf?kiktmd') format('truetype'), url('../fonts/W_font.woff?kiktmd') format('woff'), url('../fonts/W_font.svg?kiktmd#W_font') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -15,30 +15,32 @@
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 12px;
+    line-height: 13px;
     font-size: 13px;
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Exclude:before {
-    content: "\31";
+.icon-2:before {
+    content: "\77";
+    color: #9c9b9e;
+    font-size: 11px;
+}
+
+.icon-1:before {
+    content: "\61";
     color: #9c9b9e;
 }
 
-.icon-Exclude-1:before {
-    content: "\32";
-    color: #fff;
+.icon-Exclude:before {
+    content: "\47";
+    color: #9c9b9e;
+    font-size: 12px;
 }
 
 .icon-Exclude-2:before {
     content: "\33";
-}
-
-.icon-phone:before {
-    content: "\34";
-    color: #ffe600;
 }
 
 .icon-ukrposhta:before {
@@ -68,41 +70,8 @@
 
 .icon-Union-4:before {
     content: "\30";
-}
-
-.icon-Union-5:before {
-    content: "\71";
-    color: #fff;
-}
-
-.icon-Union-6:before {
-    content: "\77";
-    color: #fff;
-}
-
-.icon-Union-7:before {
-    content: "\65";
-    color: #fff;
-}
-
-.icon-Union-8:before {
-    content: "\72";
-    color: #fff;
-}
-
-.icon-Union-9:before {
-    content: "\74";
-    color: #fff;
-}
-
-.icon-Union-10:before {
-    content: "\79";
-    color: #fff;
-}
-
-.icon-Union-11:before {
-    content: "\75";
-    color: #fff;
+    color: #474747;
+    /* color: #9c9b9e; */
 }
 
 .icon-Union-12:before {
@@ -121,7 +90,7 @@
 }
 
 .icon-Union-15:before {
-    content: "\61";
+    content: "\65";
     color: #9c9b9e;
 }
 
@@ -137,32 +106,7 @@
 
 .icon-Union-18:before {
     content: "\66";
-    color: #9c9b9e;
-}
-
-.icon-Union-19:before {
-    content: "\67";
-    color: #ffe600;
-}
-
-.icon-Union-20:before {
-    content: "\68";
-    color: #fff;
-}
-
-.icon-Union-21:before {
-    content: "\6a";
-    color: #fff;
-}
-
-.icon-Union-22:before {
-    content: "\6b";
-    color: #fff;
-}
-
-.icon-Union-23:before {
-    content: "\6c";
-    color: #fff;
+    color: #E60000;
 }
 
 .icon-Vector-81:before {
@@ -186,31 +130,6 @@
 .icon-Vector-3:before {
     content: "\62";
     color: #fabb0b;
-}
-
-.icon-Vector-4:before {
-    content: "\6e";
-    color: #fff;
-}
-
-.icon-Vector-5:before {
-    content: "\6d";
-    color: #fff;
-}
-
-.icon-Vector-6:before {
-    content: "\51";
-    color: #fff;
-}
-
-.icon-Vector-7:before {
-    content: "\57";
-    color: #fff;
-}
-
-.icon-Vector-8:before {
-    content: "\45";
-    color: #fff;
 }
 
 .icon-Vector-9:before {
@@ -268,79 +187,14 @@
     color: #9c9b9e;
 }
 
-.icon-Vector-20:before {
-    content: "\47";
-    color: #9c9b9e;
-}
-
 .icon-Vector-21:before {
     content: "\48";
     color: #9c9b9e;
 }
 
-.icon-Vector-22:before {
-    content: "\4a";
-    color: #fff;
-}
-
-.icon-Vector-23:before {
-    content: "\4b";
-    color: #fff;
-}
-
-.icon-Vector-24:before {
-    content: "\5a";
-    color: #fff;
-}
-
-.icon-Vector-25:before {
-    content: "\58";
-    color: #fff;
-}
-
-.icon-Vector-26:before {
-    content: "\43";
-    color: #fff;
-}
-
-.icon-Vector-27:before {
-    content: "\56";
-    color: #fff;
-}
-
-.icon-Vector-28:before {
-    content: "\42";
-    color: #fff;
-}
-
-.icon-Vector-29:before {
-    content: "\4e";
-    color: #fff;
-}
-
-.icon-Vector-30:before {
-    content: "\4d";
-    color: #ffe600;
-}
-
-.icon-Vector-31:before {
-    content: "\5b";
-    color: #fff;
-}
-
-.icon-Windows:before {
-    content: "\5d";
-    color: #fff;
-}
-
 .icon-Windows-1:before {
     content: "\5c";
     color: #9c9b9e;
-}
-
-.icon-1:before {
-    content: "\3b";
-    color: #fff;
 }
 
 .icon-uniE941:before {
