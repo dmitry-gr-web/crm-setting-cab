@@ -25,7 +25,7 @@
 .icon-2:before {
     content: "\77";
     color: #9c9b9e;
-    font-size: 11px;
+    /* font-size: 11px; */
 }
 
 .icon-1:before {
@@ -36,7 +36,7 @@
 .icon-Exclude:before {
     content: "\47";
     color: #9c9b9e;
-    font-size: 12px;
+    /* font-size: 12px; */
 }
 
 .icon-Exclude-2:before {

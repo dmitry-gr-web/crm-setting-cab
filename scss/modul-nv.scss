@@ -31,7 +31,7 @@
 }
 
 .modul-np-toggle {
-    display: none;
+    display: block;
 }
 
 .wrapper-np {
@@ -184,7 +184,7 @@
         white-space: nowrap;
     }
     td:nth-child(2) {
-        width: 464px;
+        min-width: 464px;
     }
     td:last-child {
         background-color: transparent;
@@ -390,6 +390,7 @@
     .switch-btn {
         position: relative;
         top: 2px;
+        left: 5px;
     }
     .switch {
         position: relative;
@@ -446,6 +447,12 @@
     }
 }
 
+// .stroke-np-order {
+//     transition: 0.2s;
+// }
+// .uk {
+//     transition: 0.2s;
+// }
 .dropMenu {
     position: relative;
     box-sizing: border-box;
@@ -646,11 +653,15 @@
         padding: 10px;
         // padding-right: 0;
         // margin-right: 20px;
-        max-width: 430px;
+        max-width: 425px;
         overflow: hidden;
         text-overflow: ellipsis;
+        // padding-right: 0;
+        // margin-right: 10px;
         span {
             margin-right: 5px;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
         }
         .btn-link {
             margin-right: 0;
@@ -665,7 +676,7 @@
             height: 5px;
             position: absolute;
             background-image: url('../img/arrow-down.svg');
-            right: 5px;
+            right: 0;
             top: 13px;
         }
     }

@@ -397,6 +397,8 @@ $(document).ready(function() {
     });
     $(".crm-header-link").each(function(e, item) {
         let allOrder = 'Все заказы в CRM';
+        let backOrderPoluchen = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Ожидает завершения<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
+        let backOrderPribil = 'Возвращенный заказ прибыл на почту<br><span class="text-tooltip">Ожидает получения отправителем<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let newOrder = 'Заказ без статуса<br><span class="text-tooltip">Ожидает обработку</span>';
         let acceptOrder = 'Покупатель подтвердил заказ<br><span class="text-tooltip">Ожидает упаковку или передачу в «(Drop) Ожидает ТТН»<br><br>В статусе включена автоматическая отправка SMS согласно настроек модуля. Используемый шаблон:<br>- «Заказ принят, готовится к отправке»</span>';
         let declineOrder = 'Покупатель отказался от заказа';
@@ -404,10 +406,10 @@ $(document).ready(function() {
         let upakovanOrder = 'Заказ упакован<br><span class="text-tooltip">Ожидает передачу почтовой службе</span>';
         let peredanOrder = 'Заказ передан почтовой службе<br><span class="text-tooltip">Ожидает автоматического присвоения статуса «Отправлен», после подтверждения получения посылки почтовой службой</span>';
         let sendOrder = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включен автоматический возврат заказа, согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
-        let backOrderWarehouse = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить» подтвердил получение возвращенного заказа. Присвоил заказу статус «Возврат (завершён)», заблокировал заказ кнопкой «Завершить».<br> Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
+        let backOrderWarehouse = 'Возврат учтён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить» подтвердил получение возвращенного заказа. Присвоил заказу статус «Возврат (завершён)», заблокировал заказ кнопкой «Завершить».<br> Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let vikuplenOrder = 'Заказ выкуплен<br><span class="text-tooltip">Ожидает получения наложенного платежа<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let moneyGrab = 'Наложенный платёж получен<br><span class="text-tooltip">Заказ ожидает завершения<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
-        let backOrder = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает получения отправителем<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
+        let backOrder = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let dropWaitTtn = 'Заказ передан Dropshipping компании<br><span class="text-tooltip">Ожидает создания товарно-транспортной накладной дропшиппером, для её присвоения заказу с дальнейшим отслеживания в CRM системе</span>';
         let dropAssignedTtn = 'Заказу присвоена ТТН<br><span class="text-tooltip">Ожидает автоматического присвоения статуса «(Drop) Отправлен», после подтверждения получения посылки почтовой службой</span>';
         let dropSend = 'Почтовая служба получила посылку<br><span class="text-tooltip">Статус присваивается автоматически согласно настроек модуя:<br>- Новая почта<br>- Укрпочта<br>- Justin<br><br>В статусе включена автоматическая отправка SMS, согласно настроек модуля. Используемый шаблон:<br>- «Заказ отправлен»<br>- «Заказ прибыл»<br>- «Заказ 3-й день в отделении»<br>- «Последний день хранения»</span>';
@@ -418,8 +420,14 @@ $(document).ready(function() {
         $(this).hover(function() {
             $("#tooltipBtn").css('font-size', '14px');
 
+            if ($(this).hasClass('backOrderPribil')) {
+                $('#tooltipBtn').html(backOrderPribil);
+            }
             if ($(this).hasClass('allOrder')) {
                 $('#tooltipBtn').html(allOrder);
+            }
+            if ($(this).hasClass('backOrderPoluchen')) {
+                $('#tooltipBtn').html(backOrderPoluchen);
             }
             if ($(this).hasClass('newOrder')) {
                 $('#tooltipBtn').html(newOrder);
@@ -637,7 +645,8 @@ $(".ip-icons-position").children().each(function(e, item) {
 $(".icons-tooltip").each(function(e, item) {
     let sms = 'Электронный чек отправлен по SMS';
     let mail = 'Электронный чек отправлен на почту';
-    let smsCurrent = 'Отправлено 4 сообщения';
+    let currentCount = $(this).children('.count').html();
+    let smsCurrent = 'Отправлено ' + currentCount + ' сообщения';
     let lastDay = 'Остался 1 день до платного хранения';
 
     $(this).hover(function(xy) {
@@ -648,9 +657,9 @@ $(".icons-tooltip").each(function(e, item) {
             $('#tooltipBtn').text(mail);
         }
         if ($(this).children().hasClass('icon-1')) {
-            $('#tooltipBtn').text(smsCurrent);
+            $('#tooltipBtn').html(smsCurrent);
         }
-        if ($(this).hasClass('icon-Exclude')) {
+        if ($(this).children().hasClass('icon-Exclude')) {
             $('#tooltipBtn').text(lastDay);
         }
 
@@ -1204,11 +1213,58 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
 // product ...
 $(".crm-main-table .max-lenght-product").text(function(i, text) {
     let boxMemory = text;
-    if (text.length >= 40) {
-        text = text.substring(0, 38) + "...";
+    let dopProdazhi = '<span style="text-alignt:center;display:block;margin-bottom:5px;">Доппродажа</span><span class="icon-2" style="font-size:12px;margin-right:5px;"></span>Чтото<br><span class="icon-2" style="font-size:12px;margin-right:5px;"></span>Еще чтото';
+    if (text.length >= 35) {
+        text = text.substring(0, 33) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
+            $('#tooltipBtn').html('<span style="text-alignt:center;display:block;margin-bottom:5px;">Основной</span>' + '<span class="icon-Vector-81" style="transform:rotate(90deg);"></span>' + boxMemory + '<br><br>' + dopProdazhi);
+            let posElement = this.getBoundingClientRect();
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            $("#tooltipBtn").css("left", posElement.x - 5 + "px").css("top", posElement.y + 20 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 7 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
+        }).mouseleave(function(e) {
+            $("#tooltipBtn").css({ 'animation': '' });
+        });
+        $(this).parent('.product-colum').find('.ico-wrap').hover(function(xy) {
+            $('#tooltipBtn').html('<span style="text-alignt:center;display:block;margin-bottom:5px;">Основной</span>' + '<span class="icon-Vector-81" style="transform:rotate(90deg);"></span>' + boxMemory + '<br><br>' + dopProdazhi);
+            let posElement = this.getBoundingClientRect();
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            $("#tooltipBtn").css("left", posElement.x - 5 + "px").css("top", posElement.y + 20 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 7 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
+        }).mouseleave(function(e) {
+            $("#tooltipBtn").css({ 'animation': '' });
+        });
+        $(this).parent('.product-colum').find('.ico-wrap:last-child').hover(function(xy) {
+            $('#tooltipBtn').html(dopProdazhi);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1400,11 +1456,9 @@ $(document).bind("click", function(e) {
             if ($(this).find('.select-btn').length == 1) {
                 let appendStatus = $(this).find('.select-btn').text();
                 $(this).children('.input-btn-large').val(appendStatus);
-                if ($(this).children('.input-btn-large').text() == 'Все') {
+                if ($(this).children('.input-btn-large').val().trim() == 'Все') {
                     $(this).children('.input-btn-large').val('');
-                    console.log($(this).children('.input-btn-large').val('Все'))
                 }
-
             }
             if ($(this).find('.select-btn').length >= 2) {
                 $(this).children('.input-btn-large').val('Фильтр');
@@ -1423,7 +1477,7 @@ $(document).bind("click", function(e) {
 //menu country btn
 function openMediumMenu() {
     $(this).children('.block1').addClass("toggle");
-    $(".list-large").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
+    $(".list-medium").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
 };
 
 function closeMediumMenu() {
@@ -1433,14 +1487,19 @@ function closeMediumMenu() {
 function btnMediumMenu() {
 
 
-    $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
-    $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
-    $(".list-small").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
-    if ($(this).siblings('.block1').hasClass('toggle')) {
-        $(this).siblings('.block1').removeClass("toggle");
-    } else {
-        $(this).siblings('.block1').addClass("toggle");
-    }
+    // $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+    $(".list-medium").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
+    // if ($(this).siblings('.block1').hasClass('toggle')) {
+    //     $(this).siblings('.block1').removeClass("toggle");
+    // } else {
+    // }
+
+    // if ($(this).siblings('.block1').hasClass('toggle')) {
+    //     $(this).siblings('.block1').removeClass("toggle");
+    // } else {
+    // }
+    $(this).siblings('.block1').addClass("toggle");
 };
 $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
 $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
@@ -1451,7 +1510,7 @@ $(".list-medium").click(function(e) {
     $('.btn-wrap-medium').off('mouseenter', openMediumMenu);
     $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
     $(".btn-medium").off('click', btnMediumMenu);
-    $(this).parents('.btn-wrap-medium').children('.btn-medium').on('click', btnMenu);
+    // $(this).parents('.btn-wrap-medium').children('.btn-medium').on('click', btnMediumMenu);
     $(this).parent().find('.list-medium:first-child').removeClass('select-btn');
 
     if ($(this).parents('.btn-wrap-medium').find('.select-btn').length == 1) {
@@ -1463,7 +1522,7 @@ $(".list-medium").click(function(e) {
     }
     if ($(this).parents('.btn-wrap-medium').find('.select-btn').length == 0) {
         $(this).parents('.block1').siblings('.btn-medium').html('');
-        $(this).parent().find('.list-small:first-child').addClass('select-btn');
+        $(this).parent().find('.list-medium:first-child').addClass('select-btn');
     }
 });
 $(".list-medium:first-child").click(function() {
@@ -1494,7 +1553,7 @@ $(document).bind("click", function(e) {
 
 function openMenu() {
     $(".list-small").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
-    $(this).css('width', '51px');
+    $(this).css('width', '53px');
     $(this).children('.block1').addClass("toggle");
     $(this).children('.btn-small').removeClass('hide-arrow');
 };
@@ -1502,9 +1561,11 @@ function openMenu() {
 function closeMenu() {
     $(this).children('.block1').removeClass("toggle");
     $('.btn-wrap').css('width', '16px');
-    $('.btn-wrap.width25').css('width', '25px');
-    $('.btn-wrap.width21').css('width', '21px');
-    $('.btn-wrap.width18').css('width', '18px');
+    $('.btn-wrap.width23').css('width', '23px');
+    // $('.btn-wrap.width23').css('width', '23px');
+    // $('.btn-wrap.width21').css('width', '21px');
+    $('.btn-wrap.width17').css('width', '17px');
+    $('.btn-wrap.width16').css('width', '16px');
     if ($(this).children('.btn-small').html() == '') {
         $(this).children('.btn-small').removeClass('hide-arrow');
     } else {
@@ -1516,9 +1577,9 @@ $('.btn-wrap').on('mouseenter', openMenu);
 $('.btn-wrap').on('mouseleave', closeMenu);
 
 function btnMenu() {
-    $('.btn-wrap').on('mouseenter', openMenu);
-    $('.btn-wrap').on('mouseleave', closeMenu);
-    $(this).siblings('.block1').toggleClass("toggle");
+    // $('.btn-wrap').on('mouseenter', openMenu);
+    // $('.btn-wrap').on('mouseleave', closeMenu);
+    $(this).siblings('.block1').addClass("toggle");
 
     $(".list-small").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
 };
@@ -1527,7 +1588,7 @@ function btnMenu() {
 $(".list-small").click(function(e) {
     $(this).toggleClass('select-btn');
     $(".btn-small").off('click', btnMenu);
-    $(this).parents('.btn-wrap').children('.btn-small').on('click', btnMenu);
+    // $(this).parents('.btn-wrap').children('.btn-small').on('click', btnMenu);
     $('.btn-wrap').off('mouseenter', openMenu);
     $('.btn-wrap').off('mouseleave', closeMenu);
     $(this).parent().find('.list-small:first-child').removeClass('select-btn');
@@ -1571,9 +1632,11 @@ $(document).bind("click", function(e) {
         $('.btn-wrap').on('mouseleave', closeMenu);
         $(".btn-small").on('click', btnMenu);
         $('.btn-wrap').css('width', '16px');
-        $('.btn-wrap.width21').css('width', '21px');
-        $(".btn-wrap.width25").css('width', '25px');
-        $(".btn-wrap.width18").css('width', '18px');
+        // $('.btn-wrap.width21').css('width', '21px');
+        $(".btn-wrap.width23").css('width', '23px');
+        // $(".btn-wrap.width23").css('width', '23px');
+        $(".btn-wrap.width17").css('width', '17px');
+        $(".btn-wrap.width16").css('width', '16px');
     }
 });
 
@@ -1826,6 +1889,69 @@ $(".video-btn").click(function() {
 $(".crm-input").hover(function() {
     $(".wrap-hide").addClass('wrap-open');
 });
+$(".wrap-hide").mouseenter(function() {
+    $(this).children('.sort-btn').addClass('sort-toggle');
+    $(this).find('.btn-medium').addClass('hide-arrow');
+    $(this).find('.btn-small').addClass('hide-arrow');
+    $(this).find('.btn-wrap-large').addClass('hide-arrow');
+});
+$(".wrap-hide").mouseleave(function(e) {
+    $(this).children('.sort-btn').removeClass('sort-toggle');
+    $(this).find('.btn-medium').removeClass('hide-arrow');
+    $(this).find('.btn-small').removeClass('hide-arrow');
+    $(this).find('.btn-wrap-large').removeClass('hide-arrow');
+    if ($(this).children().hasClass('border-sort')) {
+        $(this).children('.sort-btn').addClass('sort-toggle');
+    }
+
+});
+let sortRotate = 180;
+$(".sort-btn").on('click', function(e) {
+    sortRotate = sortRotate + 180;
+    if (!$(this).siblings('.input-style').hasClass('border-sort')) {
+        // e.preventDefault();
+        $(this).css({
+            "transform": "rotate(" + sortRotate + "deg)"
+        });
+        $(this).siblings('.input-style').addClass('border-sort');
+        $(this).siblings('.input-style').val('');
+        // $(this).parent('.wrap-hide').css('border', '1px solid black');
+    } else if ($(this).siblings('.input-style').hasClass('border-sort')) {
+        $(this).css({
+            "transform": "rotate(" + sortRotate + "deg)"
+        });
+        $(this).siblings('.input-style').removeClass('border-sort');
+        // $(this).parent('.wrap-hide').css('border', '1px solid white');
+        // e.stopPropagation();
+    }
+});
+$(".sort-btn").hover(function(e, item) {
+    let ttnFirst = 'Первая ТТН';
+    let ttnSecond = 'Вторая ТТН';
+    $('#tooltipBtn').text('Сортировка колонки');
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    let blockHeight = $(this).height();
+    let screenWidth = document.body.clientWidth;
+    let screenHeight = document.body.clientHeight;
+    let widthTooltip = $('#tooltipBtn').width();
+    let heightTooltip = $('#tooltipBtn').height();
+
+    $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 20 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+    if (screenWidth < posElement.x + widthTooltip) {
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+    }
+    if (posElement.x < 110) {
+        $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+    }
+    if (screenHeight < posElement.y + heightTooltip + 25) {
+        $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+    }
+}).mouseleave(function(e) {
+    $("#tooltipBtn").css({ 'animation': '' });
+});
+
 $(document).bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("crm-input") && !$clicked.parents().hasClass("table-header") && !$clicked.parents().hasClass("ui-datepicker-buttonpane") && !$clicked.parents().hasClass("ui-datepicker-header") && !$clicked.parents().hasClass("ui-datepicker-calendar") && !$clicked.hasClass("ui-datepicker") && !$clicked.parents().hasClass("block-btn")) {
@@ -1839,7 +1965,7 @@ $(document).bind("click", function(e) {
 
 //reset filter rotate
 let rotate = 0;
-$(".btn-header").first().click(function() {
+$(".btn-header.btn-refresh").click(function() {
     rotate = rotate + 360;
     $(".crm-input input").val('');
     $(".btn-refresh").css({
@@ -1850,7 +1976,6 @@ $(".btn-header").first().click(function() {
 
     $('.list').removeClass('select-btn');
     $(".block1").removeClass("toggle");
-
 
     $(".btn-medium").html('');
     $(".pay-btn").html('');
@@ -1887,4 +2012,361 @@ function changesInput() {
     });
 }
 
+
 //reset filter rotate
+// $('.ttn-first').mouseenter(function() {
+//     $('.ttn-first').css('width', '94px');
+//     // $('.ttn-second').css('width', '0px');
+//     $('.ttn-second').css({ 'width': '0px', 'margin-left': '0' });
+//     $('.icon-Vector-81').toggleClass('hide-arrow-ttn2');
+// });
+// $('.ttn-first').mouseleave(function() {
+//     $('.ttn-first').css('width', '42px');
+//     // $('.ttn-second').css('width', '42px');
+//     $('.ttn-second').css({ 'width': '42px', 'margin-left': '10px' });
+//     $('.icon-Vector-81').removeClass('hide-arrow-ttn2');
+//     // $('.ttn-second').css('width', '0px')
+// });
+// $('.ttn-second').mouseenter(function() {
+//     $('.ttn-second').css({ 'width': '94px', 'margin-left': '0' });
+//     $('.icon-Vector-81').toggleClass('hide-arrow-ttn1').css('left', '-4px');
+//     $('.ttn-first').css('width', '0px');
+//     // $('.ttn-first').css('width', '35px').toggleClass('gusgus');;
+// });
+// $('.ttn-second').mouseleave(function() {
+//     $('.ttn-second').css({ 'width': '42px', 'margin-left': '10px' });
+//     $('.icon-Vector-81').removeClass('hide-arrow-ttn1').css('left', '4px');
+//     $('.ttn-first').css('width', '42px');
+// });
+// $(".ttn-second-2").text(function(i, text) {
+//     let boxMemory = text;
+//     if (text.length >= 5) {
+//         // text = "..." + text.substring(-1, 5);
+//         text = "..." + text.substring(text.length - 5);
+//         $(this).text(text);
+//     }
+//     $('.ttn-second-2').mouseenter(function() {
+//         $(this).css({ 'width': '94px', 'padding-left': '0px' });
+//         $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn1').css('left', '-4.5px');
+//         $(this).siblings('.ttn-first-2').css({ 'opacity': '0', 'width': '0px', 'padding-right': '4.5px' });
+//         $(this).html(boxMemory);
+//         // $('.colum-ttn-2').css('padding-left', '0px');
+//         // $('.ttn-first').css('width', '35px').toggleClass('gusgus');;
+//     });
+//     $('.ttn-second-2').mouseleave(function() {
+//         $(this).css({ 'width': '42px', 'padding-left': '4.5px' });
+//         $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn1').css('left', '0px');
+//         $(this).siblings('.ttn-first-2').css({ 'opacity': '1', 'width': '42px', 'padding-right': '4.5px' });
+//         $(this).html(text);
+//         // $('.colum-ttn-2').css('padding-left', '3px');
+//     });
+// });
+// $(".ttn-first-2").text(function(i, text) {
+//     let boxMemory = text;
+//     if (text.length >= 5) {
+//         text = text.substring(0, 5) + "...";
+//         // text = text.substring(text.length = 5) + "...";
+//         $(this).text(text);
+//     }
+//     $('.ttn-first-2').mouseenter(function() {
+//         console.log($(this).siblings('.icon-Vector-81'))
+//         $(this).css('width', '94px');
+//         // $('.ttn-first-2').animate({ width: 94 }, 200);
+//         // $('.ttn-second').css('width', '0px');
+//         $(this).siblings('.ttn-second-2').css({ 'opacity': '0', 'width': '0px', 'padding-left': '0px' });
+//         $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn2');
+//         $(this).html(boxMemory);
+//     });
+//     $('.ttn-first-2').mouseleave(function() {
+//         $(this).css('width', '42px');
+//         // $('.ttn-first-2').animate({ width: 42 }, 200);
+//         // $('.ttn-second').css('width', '42px');
+//         $(this).siblings('.ttn-second-2').css({ 'opacity': '1', 'width': '42px', 'padding-left': '4.5px' });
+//         $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn2');
+//         // $('.ttn-second').css('width', '0px')
+//         $(this).html(text);
+//     });
+// });
+
+// //3
+// $('.ttn-second-3').mouseenter(function() {
+//     $(this).css({ 'width': '94px' });
+//     $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn1').css('left', '-4.5px');
+//     $(this).siblings('.ttn-first-3').css({ 'opacity': '0', 'width': '0px' });
+//     // console.log($(this).siblings('.tri-tochki'))
+//     $(this).siblings('.tri-tochki').css({ 'opacity': '0', 'width': '0px' });
+//     $(this).siblings('.tri-tochki-2').css({ 'opacity': '0', 'width': '0px', 'margin': '0px' });
+//     // $('.colum-ttn-2').css('padding-left', '0px');
+//     // $('.ttn-first').css('width', '35px').toggleClass('gusgus');;
+// });
+// $('.ttn-second-3').mouseleave(function() {
+//     $(this).css({ 'width': '33px' });
+//     $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn1').css('left', '0px');
+//     $(this).siblings('.ttn-first-3').css({ 'opacity': '1', 'width': '33px' });
+//     $(this).siblings('.tri-tochki').css({ 'opacity': '1', 'width': '9px', 'margin-right': '4.5px' });
+//     $(this).siblings('.tri-tochki-2').css({ 'opacity': '1', 'width': '9px', 'margin-left': '4.5px' });
+//     // $('.colum-ttn-2').css('padding-left', '3px');
+// });
+// $('.ttn-first-3').mouseenter(function() {
+//     // console.log($(this).siblings('.icon-Vector-81'))
+//     $(this).css('width', '94px');
+//     // $('.ttn-first-2').animate({ width: 94 }, 200);
+//     // $('.ttn-second').css('width', '0px');
+//     $(this).siblings('.ttn-second-3').css({ 'opacity': '0', 'width': '0px' });
+//     $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn2');
+//     $(this).siblings('.tri-tochki').css({ 'opacity': '0', 'width': '0px' });
+//     $(this).siblings('.tri-tochki-2').css({ 'opacity': '0', 'width': '0px' });
+
+// });
+// $('.ttn-first-3').mouseleave(function() {
+//     $(this).css('width', '33px');
+//     // $('.ttn-first-2').animate({ width: 42 }, 200);
+//     // $('.ttn-second').css('width', '42px');
+//     $(this).siblings('.ttn-second-3').css({ 'opacity': '1', 'width': '33px' });
+//     $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn2');
+//     // $('.ttn-second').css('width', '0px')
+//     $(this).siblings('.tri-tochki').css({ 'opacity': '1', 'width': '9px' });
+//     $(this).siblings('.tri-tochki-2').css({ 'opacity': '1', 'width': '9px' });
+// });
+//4
+
+$('.ttn-first').mouseenter(function() {
+    $(this).siblings('.trigger-mouse-2').css('width', '20px');
+    $(this).css('width', '94px');
+    $(this).siblings('.ttn-second').css({ 'opacity': '0', 'width': '0px', 'padding-left': '0px' });
+    $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn2').css('left', '-1px');
+});
+$('.ttn-first').mouseleave(function() {
+    $(this).siblings('.trigger-mouse-2').css('width', '0px');
+    $(this).css('width', '42px');
+    $(this).siblings('.ttn-second').css({ 'opacity': '1', 'width': '42px', 'padding-left': '4.5px' });
+    $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn2').css('left', '0px');
+});
+$('.ttn-second').mouseenter(function() {
+    $(this).siblings('.trigger-mouse').css('width', '20px');
+    $(this).css({ 'width': '94px', 'padding-left': '0px', 'left': '-1px' });
+    $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn1').css('left', '-5px');
+    $(this).siblings('.ttn-first').css({ 'opacity': '0', 'width': '0px', 'padding-right': '0px' });
+});
+$('.ttn-second').mouseleave(function() {
+    $(this).siblings('.trigger-mouse').css('width', '0px');
+    $(this).css({ 'width': '42px', 'padding-left': '4.5px', 'left': '0px' });
+    $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn1').css('left', '0px');
+    $(this).siblings('.ttn-first').css({ 'opacity': '1', 'width': '42px', 'padding-right': '4.5px' });
+});
+$('.trigger-mouse-2').hover(function() {
+    $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn1').css('left', '-5px');
+    $(this).siblings('.ttn-second').css({ 'width': '94px', 'padding-left': '0px', 'left': '-1px' });
+    $(this).siblings('.ttn-first').css({ 'opacity': '0', 'width': '0px', 'padding-right': '0px' });
+});
+$('.trigger-mouse').hover(function() {
+    $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn2').css('left', '-1px');
+    $(this).siblings('.ttn-first').css('width', '94px');
+    $(this).siblings('.ttn-second').css({ 'opacity': '0', 'width': '0px', 'padding-left': '0px', 'left': '0px' });
+});
+$(".ttn-tooltip").each(function(e, item) {
+    let ttnFirst = 'Первая ТТН';
+    let ttnSecond = 'Вторая ТТН';
+
+    $(this).hover(function(xy) {
+        if ($(this).hasClass('ttn-first')) {
+            $('#tooltipBtn').text(ttnFirst);
+        }
+        if ($(this).hasClass('ttn-second')) {
+            $('#tooltipBtn').text(ttnSecond);
+        }
+
+        let posElement = this.getBoundingClientRect();
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+
+        $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 20 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+        if (screenWidth < posElement.x + widthTooltip) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+        }
+        if (posElement.x < 110) {
+            $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+        }
+        if (screenHeight < posElement.y + heightTooltip + 25) {
+            $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+        }
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' });
+    });
+});
+// var gr = $('.gr').width();
+// var grt = $('.count').width();
+// if ((grt / 1.5) >= gr) {
+//     $('.gr').css({ 'height': gr + 'px' });
+// } else {
+//     $('.count').css({ 'width': gr * 1.5 + 'px' });
+//     $('.count').css({ 'height': gr * 1.5 + 'px' });
+// }
+$('.count').text(function(_, text) {
+    // $('.count').lenght
+    if (text.length >= 2) {
+        $(this).css('border-radius', '5px');
+    }
+    // console.log(text.length)
+});
+let scale = 1;
+
+// let scaleFix = scale;
+$('.zoomMinus').on('click', function(e) {
+    scale -= .05;
+    // if (scale <= .8) {
+    //     scale = .9;
+    // }
+    // if (scale >= 1.15) {
+    //     $('#noZoom').css({
+    //         "zoom": "" + (scale -= 0.05) + ""
+    //     });
+    //     scale = 1.1;
+    // }
+    // if (scale == 1) {
+    //     $('#noZoom').css({
+    //         "zoom": "" + scale + ""
+    //     });
+    //     $('.nav-crm').css({
+    //         "top": "10vh",
+    //         "height": "75vh"
+    //     });
+    //     $('.nav-list-crm').css({
+    //         "margin-bottom": "2vh"
+    //     });
+    //     $('.scroll-wrap .simplebar-track.simplebar-horizontal').css({
+    //         "bottom": "0px"
+    //     });
+    // } else {
+    $('#noZoom').css({
+        "zoom": "" + scale + ""
+    });
+    // }
+    console.log(scale)
+});
+$('.zoomPlus').on('click', function(e) {
+    scale += .05;
+    // if (scale >= 1.25) {
+    //     scale = 1.25;
+    // }
+    // if (scale == 1.2000000000000002) {
+    //     $('#noZoom').css({
+    //         "zoom": "" + (scale += 0.05) + ""
+    //     });
+    //     scale = 1.25;
+    // }
+    // if (scale == 1) {
+    //     $('#noZoom').css({
+    //         "zoom": "" + scale + ""
+    //     });
+    //     $('.nav-crm').css({
+    //         "top": "10vh",
+    //         "height": "75vh"
+    //     });
+    //     $('.nav-list-crm').css({
+    //         "margin-bottom": "2vh"
+    //     });
+    //     $('.scroll-wrap .simplebar-track.simplebar-horizontal').css({
+    //         "bottom": "0px"
+    //     });
+    // } 
+    // else {
+    $('#noZoom').css({
+        "zoom": "" + scale + ""
+    });
+    // $('.nav-crm').css({
+    //     "top": "7vh",
+    //     "height": "63vh"
+    // });
+    // $('.nav-list-crm').css({
+    //     "margin-bottom": "1vh"
+    // });
+    // $('.scroll-wrap .simplebar-track.simplebar-horizontal').css({
+    //     "bottom": "20px"
+    // });
+    // }
+    console.log(scale)
+});
+// document.getElementById('noZoom').addEventListener('wheel', event => {
+//     if (event.ctrlKey) {
+//         event.preventDefault()
+//     }
+// }, true);
+// $(document).on('keydown', function(event) {
+//     if ((event.keyCode == 107 && event.ctrlKey == true) || (event.keyCode == 109 && event.ctrlKey == true)) {
+//         event.preventDefault();
+//     }
+
+// });
+//noZoom
+$(document).keydown(function(event) {
+    if ((event.ctrlKey || event.metaKey) == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+        event.preventDefault();
+    }
+    // 107 Num Key  +
+    // 109 Num Key  -
+    // 173 Min Key  hyphen/underscor Hey
+    // 61 Plus key  +/= key
+});
+
+// $("#noZoom").bind('mousewheel DOMMouseScroll', function(event) {
+//     if (event.ctrlKey == true) {
+//         event.preventDefault();
+//     }
+//     if (event.metaKey == true) {
+//         event.preventDefault();
+//     }
+// });
+//noZoom
+// document.addEventListener("mousewheel", function(e) {
+//     if (e.ctrlKey) {
+//         e.preventDefault();
+//         return false;
+//     }
+// });
+// document.onwheel = function(event) {
+//     if (event.ctrlKey) {
+//         event.preventDefault();
+//         return false;
+//     }
+// };
+// .scroll-wrap {
+//     zoom: 110%;
+//     // margin-top: 20px;
+//     // transform: scale(1.3);
+//     // transform: translate(0px 20px);
+//     .simplebar-content-wrapper {
+//         padding-left: 22px;
+//     }
+// }
+// });
+// $('.zoomPlus')
+//ZOOM
+// .crm-table {
+//     zoom: 130%;
+//     margin-top: 20px;
+//     // transform: scale(1.3);
+//     // transform: translate(0px 20px);
+// }
+// .crm-header {
+//     zoom: 130%;
+// }
+// @media (min-width: 1680px) {
+//     .crm-table {
+//         zoom: 120%;
+//     }
+//     @-moz-document url-prefix() {
+//         .crm-table {
+//             transform: scale(1.2);
+//             transform-origin: left top;
+//             width: calc(100% / 1.2);
+//             height: calc(100% / 1.2);
+//         }
+//     }
+// }
+//ZOOm

@@ -40,22 +40,46 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SN';
+    src: url('../fonts/SF-Pro-Display-Light.otf');
+    src: local('../fonts/SF-Pro-Display-Light'), url('../fonts/SF-Pro-Display-Light.otf') format('otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
 body {
     // font-family: 'Raleway';
     // font-feature-settings: 'pnum' on, 'lnum' on;
-    position: fixed;
-    // font-family: 'Fira Code', monospace;
-    // font-family: 'HelveticaNeueCyr';
-    top: 0;
-    left: 0;
-    font-weight: 300;
-    width: 100%;
-    height: 100%;
+    // position: fixed;
+    // // font-family: 'Fira Code', monospace;
+    // // font-family: 'HelveticaNeueCyr';
+    // top: 0;
+    // left: 0;
+    // font-weight: 300;
+    // width: 100%;
+    // height: 100%;
     // font-family: 'Fira Code', monospace;
     // font-family: 'JetBrains Mono', monospace;
     font-family: 'Roboto', sans-serif;
     // font-family: 'Nunito Sans', sans-serif;
     // font-family: 'Open Sans', sans-serif;
+    top: 0;
+    position: fixed;
+    left: 0;
+    font-weight: 300;
+    width: 100%;
+    height: 100%;
+}
+
+#noZoom {
+    // top: 0;
+    // position: fixed;
+    // left: 0;
+    // font-weight: 300;
+    width: 100%;
+    height: 100%;
+    // zoom: 1;
 }
 
 html {
@@ -84,6 +108,10 @@ html {
     z-index: 1;
     .block-btn {
         cursor: pointer;
+        img {
+            width: 15px;
+            height: 15px;
+        }
         .btn-header {
             &:last-child {
                 margin-left: 100px;
@@ -303,7 +331,7 @@ html {
 .nav-crm {
     position: absolute;
     width: 49px;
-    height: 75vh;
+    max-height: 75vh;
     background: rgba(81, 81, 81, 0.7);
     box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
     padding-left: 0;
@@ -378,34 +406,34 @@ html {
     // .simplebar-content {
     //     margin-right: -10px;
     // }
-    @include breakpoint (lgh) {
-        height: 66vh;
-        top: 13vh;
-    }
-    @include breakpoint (lghs) {
-        height: 63vh;
-    }
-    @include breakpoint (mdh) {
-        height: 400px;
-    }
-    @include breakpoint (fullhdheight) {
-        height: 703px;
-    }
+    // @include breakpoint (lgh) {
+    //     height: 66vh;
+    //     top: 13vh;
+    // }
+    // @include breakpoint (lghs) {
+    //     height: 63vh;
+    // }
+    // @include breakpoint (mdh) {
+    //     height: 400px;
+    // }
+    // @include breakpoint (fullhdheight) {
+    //     height: 703px;
+    // }
     .nav-list-crm {
         text-align: center;
         margin-bottom: 2vh;
-        @include breakpoint (lgh) {
-            margin-bottom: 1vh;
-        }
-        @include breakpoint (lghs) {
-            margin-bottom: 0.5vh;
-        }
-        @include breakpoint (mdh) {
-            margin-bottom: 0;
-        }
-        @include breakpoint (fullhdheight) {
-            margin-bottom: 20px;
-        }
+        // @include breakpoint (lgh) {
+        //     margin-bottom: 1vh;
+        // }
+        // @include breakpoint (lghs) {
+        //     margin-bottom: 0.5vh;
+        // }
+        // @include breakpoint (mdh) {
+        //     margin-bottom: 0;
+        // }
+        // @include breakpoint (fullhdheight) {
+        //     margin-bottom: 20px;
+        // }
         &:first-child {
             margin-top: 4vh;
             @include breakpoint (mdh) {
