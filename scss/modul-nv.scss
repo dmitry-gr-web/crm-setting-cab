@@ -1,18 +1,19 @@
 .bg-blur {
     background: rgba(0, 0, 0, 0.5);
-    // -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    // filter: blur(4px);
+    // backdrop-filter: blur(4px);
+    background-image: url('../img/background.png');
+    background-repeat: repeat;
     height: 100vh;
     width: 100vw;
     position: absolute;
     left: 50px;
-    // display: block;
+    // // display: block;
     display: none;
+    // filter: blur(4px);
 }
 
 .on-off {
-    display: none;
+    display: block;
 }
 
 .modul-np {

@@ -1,6 +1,7 @@
 .bg-blur {
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background-image: url("../img/background.png");
+  background-repeat: repeat;
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -9,7 +10,7 @@
 }
 
 .on-off {
-  display: none;
+  display: block;
 }
 
 .modul-np {

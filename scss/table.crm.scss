@@ -519,26 +519,10 @@
     td {
         line-height: 12px;
         // text-align: center;
-        .input-style {
-            background: rgb(212, 212, 212);
-            outline: none;
-            border: none;
-            width: 100%;
-            font-weight: 300;
-            box-sizing: border-box;
-            padding: 0 3px;
-            // opacity: 0;
-            color: rgba(0, 0, 0, 0.5);
-            font-size: 10px;
-            line-height: 16px;
-            &::placeholder {
-                font-size: 10px;
-            }
-        }
-        .border-sort {
-            background-color: rgba(81, 81, 81, 0.7);
-            // border: 1px dashed pink;
-        }
+        // .background-sort {
+        //     background-color: rgba(81, 81, 81, 0.7);
+        //     // border: 1px dashed pink;
+        // }
         .tel-style {
             padding-left: 27px;
         }
@@ -563,6 +547,23 @@
                 padding: 0;
             }
         }
+    }
+}
+
+.input-style {
+    background: rgb(212, 212, 212);
+    outline: none;
+    border: none;
+    width: 100%;
+    font-weight: 300;
+    box-sizing: border-box;
+    padding: 0 3px;
+    // opacity: 0;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 10px;
+    line-height: 16px;
+    &::placeholder {
+        font-size: 10px;
     }
 }
 
@@ -1289,7 +1290,7 @@
 // }
 //hover lock
 .crm-main-table.select-toggle:hover {
-    position: relative;
+    // position: relative;
     color: white;
     td {
         background-color: rgba(81, 81, 81, 0.7);
@@ -1297,7 +1298,7 @@
 }
 
 .crm-main-table.selected-lock:hover {
-    position: relative;
+    // position: relative;
     td {
         background: rgba(198, 193, 190, 0.5);
         color: rgba(0, 0, 0, 0.2);
@@ -1315,7 +1316,7 @@
 }
 
 .select-toggle {
-    position: relative;
+    // position: relative;
     td:nth-child(odd) {
         background-color: rgba(81, 81, 81, 0.7);
     }
@@ -1390,7 +1391,7 @@
 
 // для firefox
 .crm-main-table:hover {
-    position: relative;
+    // position: relative;
     td {
         background: rgba(81, 81, 81, 0.3);
     }
@@ -1541,6 +1542,9 @@
     background: rgb(212, 212, 212);
     color: rgba(0, 0, 0, 0.5);
     // width: 100%;
+    .sort-btn {
+        top: -1px;
+    }
     .input-btn-large {
         background: transparent;
         outline: none;
@@ -1689,6 +1693,10 @@
             opacity: 0.8;
         }
     }
+    // .background-sort {
+    //     background-color: rgba(81, 81, 81, 0.7);
+    //     // border: 1px dashed pink;
+    // }
     .hide-arrow:after {
         opacity: 0;
     }
@@ -1833,6 +1841,10 @@
     }
 }
 
+.tel-sortBtn-position .sort-btn {
+    right: 27px;
+}
+
 .small-buttons.tel-box:first-child {
     width: max-content;
     left: 0;
@@ -1872,12 +1884,15 @@
     // float: right;
     // border: 1px solid white;
     // text-align: center;
+    .sort-btn {
+        right: 3px;
+    }
     .btn-small {
         text-align: left;
         display: inline-block;
         cursor: pointer;
         line-height: 16px;
-        height: 15px;
+        height: 16px;
         box-sizing: border-box;
         // text-align: center;
         position: relative;
@@ -2194,6 +2209,14 @@
     width: max-content;
     max-width: 300px;
     backdrop-filter: blur(4px);
+    .icon-2:before {
+        color: white;
+    }
+    .icon-Vector-81:before {
+        transform: rotate(-90deg);
+        position: absolute;
+        font-size: 10px;
+    }
 }
 
 @keyframes delay-status {
@@ -2351,6 +2374,7 @@
     position: absolute;
     top: 1px;
     right: 3px;
+    z-index: 22;
     transition: 0.2s;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.8);
@@ -2368,9 +2392,22 @@
     opacity: 1;
 }
 
-// .border-sort {
-//     background-color: pink;
-// }
+.input-style.background-sort {
+    background-color: rgba(81, 81, 81, 0.7);
+}
+
+.btn-medium.background-sort {
+    background-color: rgba(81, 81, 81, 0.7);
+}
+
+.btn-small.background-sort {
+    background-color: rgba(81, 81, 81, 0.7);
+}
+
+.input-btn-large.background-sort {
+    background-color: rgba(81, 81, 81, 0.7);
+}
+
 .table-header th {
     position: relative;
     cursor: grab;
@@ -2517,3 +2554,36 @@
 //     color: #9C9B9E;
 // }
 //ICONS FONTS
+// .table_sort table {
+//     border-collapse: collapse;
+// }
+// .table_sort th {
+//     color: #ffebcd;
+//     background: #008b8b;
+//     cursor: pointer;
+// }
+// .table_sort td,
+// .table_sort th {
+//     width: 150px;
+//     height: 40px;
+//     text-align: center;
+//     border: 2px solid #846868;
+// }
+// .table_sort tbody tr:nth-child(even) {
+//     background: #e3e3e3;
+// }
+// th.sorted[data-order="1"],
+// th.sorted[data-order="-1"] {
+//     position: relative;
+// }
+// th.sorted[data-order="1"]::after,
+// th.sorted[data-order="-1"]::after {
+//     right: 8px;
+//     position: absolute;
+// }
+// th.sorted[data-order="-1"]::after {
+//     content: "▼"
+// }
+// th.sorted[data-order="1"]::after {
+//     content: "▲"
+// }

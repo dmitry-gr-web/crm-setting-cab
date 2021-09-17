@@ -410,24 +410,6 @@
 .crm-table td {
   line-height: 12px;
 }
-.crm-table td .input-style {
-  background: #d4d4d4;
-  outline: none;
-  border: none;
-  width: 100%;
-  font-weight: 300;
-  box-sizing: border-box;
-  padding: 0 3px;
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 10px;
-  line-height: 16px;
-}
-.crm-table td .input-style::placeholder {
-  font-size: 10px;
-}
-.crm-table td .border-sort {
-  background-color: rgba(81, 81, 81, 0.7);
-}
 .crm-table td .tel-style {
   padding-left: 27px;
 }
@@ -450,6 +432,22 @@
   background-color: transparent;
   color: rgba(0, 0, 0, 0.5);
   padding: 0;
+}
+
+.input-style {
+  background: #d4d4d4;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-weight: 300;
+  box-sizing: border-box;
+  padding: 0 3px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 10px;
+  line-height: 16px;
+}
+.input-style::placeholder {
+  font-size: 10px;
 }
 
 .date-block {
@@ -670,16 +668,12 @@
 }
 
 .crm-main-table.select-toggle:hover {
-  position: relative;
   color: white;
 }
 .crm-main-table.select-toggle:hover td {
   background-color: rgba(81, 81, 81, 0.7);
 }
 
-.crm-main-table.selected-lock:hover {
-  position: relative;
-}
 .crm-main-table.selected-lock:hover td {
   background: rgba(198, 193, 190, 0.5);
   color: rgba(0, 0, 0, 0.2);
@@ -695,9 +689,6 @@
   left: -15px;
 }
 
-.select-toggle {
-  position: relative;
-}
 .select-toggle td:nth-child(odd) {
   background-color: rgba(81, 81, 81, 0.7);
 }
@@ -763,9 +754,6 @@
   position: relative;
 }
 
-.crm-main-table:hover {
-  position: relative;
-}
 .crm-main-table:hover td {
   background: rgba(81, 81, 81, 0.3);
 }
@@ -878,6 +866,9 @@
   width: 100%;
   background: #d4d4d4;
   color: rgba(0, 0, 0, 0.5);
+}
+.btn-wrap-large .sort-btn {
+  top: -1px;
 }
 .btn-wrap-large .input-btn-large {
   background: transparent;
@@ -1128,6 +1119,10 @@
   border-right: none;
 }
 
+.tel-sortBtn-position .sort-btn {
+  right: 27px;
+}
+
 .small-buttons.tel-box:first-child {
   width: max-content;
   left: 0;
@@ -1162,12 +1157,15 @@
   transition: 0.2s;
   -webkit-transition: 0.2s;
 }
+.btn-wrap .sort-btn {
+  right: 3px;
+}
 .btn-wrap .btn-small {
   text-align: left;
   display: inline-block;
   cursor: pointer;
   line-height: 16px;
-  height: 15px;
+  height: 16px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
@@ -1404,6 +1402,14 @@
   max-width: 300px;
   backdrop-filter: blur(4px);
 }
+#tooltipBtn .icon-2:before {
+  color: white;
+}
+#tooltipBtn .icon-Vector-81:before {
+  transform: rotate(-90deg);
+  position: absolute;
+  font-size: 10px;
+}
 
 @keyframes delay-status {
   0% {
@@ -1505,6 +1511,7 @@
   position: absolute;
   top: 1px;
   right: 3px;
+  z-index: 22;
   transition: 0.2s;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.8);
@@ -1520,6 +1527,22 @@
 .sort-toggle {
   visibility: visible;
   opacity: 1;
+}
+
+.input-style.background-sort {
+  background-color: rgba(81, 81, 81, 0.7);
+}
+
+.btn-medium.background-sort {
+  background-color: rgba(81, 81, 81, 0.7);
+}
+
+.btn-small.background-sort {
+  background-color: rgba(81, 81, 81, 0.7);
+}
+
+.input-btn-large.background-sort {
+  background-color: rgba(81, 81, 81, 0.7);
 }
 
 .table-header th {
