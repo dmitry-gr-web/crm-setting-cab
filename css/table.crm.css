@@ -414,7 +414,6 @@
   padding-left: 27px;
 }
 .crm-table td .date-block {
-  background: rgba(156, 155, 158, 0.4);
   padding: 0 3px;
   min-width: 113px;
   justify-content: space-between;
@@ -861,14 +860,12 @@
   text-align: left;
   display: block;
   cursor: pointer;
-  line-height: 16px;
+  z-index: 999;
   height: 16px;
   width: 100%;
+  position: absolute;
   background: #d4d4d4;
   color: rgba(0, 0, 0, 0.5);
-}
-.btn-wrap-large .sort-btn {
-  top: -1px;
 }
 .btn-wrap-large .input-btn-large {
   background: transparent;
@@ -968,6 +965,11 @@
   opacity: 0;
 }
 
+.btn-wrap-medium {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+}
 .btn-wrap-medium .btn-medium {
   text-align: left;
   display: block;
@@ -1092,8 +1094,6 @@
 }
 .small-buttons .btn-wrap.width23 {
   width: 23px;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
 }
 .small-buttons .btn-wrap.width17 {
   width: 17px;
@@ -1104,19 +1104,10 @@
 }
 .small-buttons .btn-wrap.width16 {
   width: 16px;
-  border-right: 1px solid white;
 }
 
 .small-buttons.product-box {
   right: 0;
-}
-.small-buttons.product-box .width23:first-child {
-  border-left: 1px solid white;
-  border-right: none;
-}
-.small-buttons.product-box .width23:last-child {
-  border-left: 1px solid white;
-  border-right: none;
 }
 
 .tel-sortBtn-position .sort-btn {
@@ -1127,26 +1118,11 @@
   width: max-content;
   left: 0;
 }
-.small-buttons.tel-box:first-child .width23 {
-  border-right: 1px solid white;
-  border-left: none;
-}
-
-.small-buttons.prro .width23 {
-  border-right: none;
-}
-
-.small-buttons.ttn-box .width23 {
-  border-right: none;
-}
 
 .small-buttons.tel-box:last-child {
   right: 0;
   width: max-content;
-}
-.small-buttons.tel-box:last-child .width23 {
-  border-left: 1px solid white;
-  border-right: none;
+  z-index: 33;
 }
 
 .btn-wrap {
@@ -1156,6 +1132,7 @@
   width: 16px;
   transition: 0.2s;
   -webkit-transition: 0.2s;
+  z-index: 999;
 }
 .btn-wrap .sort-btn {
   right: 3px;
@@ -1332,6 +1309,8 @@
 }
 
 .wrap-hide {
+  height: 16px;
+  background: #d4d4d4;
   opacity: 0;
   visibility: hidden;
   transition: 0.2s;
@@ -1404,6 +1383,7 @@
 }
 #tooltipBtn .icon-2:before {
   color: white;
+  font-size: 10px;
 }
 #tooltipBtn .icon-Vector-81:before {
   transform: rotate(-90deg);
@@ -1509,8 +1489,10 @@
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 1px;
+  top: 3px;
   right: 3px;
+  height: 10px;
+  width: 10px;
   z-index: 22;
   transition: 0.2s;
   cursor: pointer;
@@ -1530,19 +1512,19 @@
 }
 
 .input-style.background-sort {
-  background-color: rgba(81, 81, 81, 0.7);
+  background: linear-gradient(to top, rgba(81, 81, 81, 0.7) 12%, #d4d4d4 10%);
 }
 
 .btn-medium.background-sort {
-  background-color: rgba(81, 81, 81, 0.7);
+  background: linear-gradient(to top, rgba(81, 81, 81, 0.7) 12%, #d4d4d4 10%);
 }
 
 .btn-small.background-sort {
-  background-color: rgba(81, 81, 81, 0.7);
+  background: linear-gradient(to top, rgba(81, 81, 81, 0.7) 12%, #d4d4d4 10%);
 }
 
 .input-btn-large.background-sort {
-  background-color: rgba(81, 81, 81, 0.7);
+  background: linear-gradient(to top, rgba(81, 81, 81, 0.7) 12%, #d4d4d4 10%);
 }
 
 .table-header th {

@@ -93,9 +93,9 @@
             </div>
 
             <div class="block-btn">
-                <button class="btn-header zoomMinus">-
+                <button class="zoomBtn zoomMinus">-
             </button>
-                <button class="btn-header zoomPlus">+
+                <button class="zoomBtn zoomPlus">+
             </button>
                 <button class="btn-header btn-refresh">
                 <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -488,6 +488,7 @@
                 <div class="arrow-bg"><span class="arrow-prev" id="prev"></span><span id="next" class="arrow-next"></span></div>
                 <div class="scroll-wrap">
                     <table class="crm-table" id="crm-table">
+                        <div class="podlozhka" style="height:2000%;width:4537px;position:absolute;top: -100px;left: -100px;"></div>
                         <thead>
                             <tr class="table-header">
                                 <th class="header-id">ID
@@ -622,17 +623,17 @@
                             </tr>
                             <tr class="crm-input">
                                 <td class="header-search id-table" data-type="number">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                         <div class="sort-btn">
-                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
                                         </svg>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-large">
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -661,7 +662,7 @@
                                                 </div>
                                             </div>
                                             <div class="sort-btn">
-                                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
                                             </svg>
                                             </div>
@@ -669,17 +670,17 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                         <div class="sort-btn">
-                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
                                         </svg>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-medium">
                                             <div class="btn-medium"></div>
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -693,7 +694,7 @@
                                                 </div>
                                             </div>
                                             <div class="sort-btn">
-                                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
                                             </svg>
                                             </div>
@@ -702,91 +703,97 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide tel-sortBtn-position">
-                                        <div class="small-buttons tel-box">
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                        <div class="small-buttons sort-menu tel-box">
+                                            <div class="border-white" style="border-right:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small vodafone"><span class="list-item"><span data-img class="icon-Vector-1 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small kyivstar"><span class="list-item"><span data-img class="icon-Union-1 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small lifecell"><span class="list-item"><span data-img class="icon-Vector-3 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small incorrectNumber"><span class="list-item"><span data-img class="icon-Union-18 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small unknownNumber"><span class="list-item"><span data-img class="icon-Union icons"></span></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small vodafone"><span class="list-item"><span data-img class="icon-Vector-1 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small kyivstar"><span class="list-item"><span data-img class="icon-Union-1 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small lifecell"><span class="list-item"><span data-img class="icon-Vector-3 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small incorrectNumber"><span class="list-item"><span data-img class="icon-Union-18 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small unknownNumber"><span class="list-item"><span data-img class="icon-Union icons"></span></span>
-                                                    </div>
-                                                </div>
-                                                <div class="sort-btn">
-                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
                                                 </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="text" class="input-style tel-style">
-                                        <!-- <div class="sort-btn">
-                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
-                                        </svg>
-                                        </div> -->
-                                        <div class="small-buttons tel-box">
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                        <div class="sort-menu">
+                                            <input type="text" class="input-style tel-style">
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
+                                            </svg>
+                                            </div>
+                                        </div>
+                                        <div class="small-buttons sort-menu tel-box">
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
-                                                    </div>
-                                                </div>
-                                                <div class="sort-btn">
-                                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
                                                 </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -831,22 +838,22 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                     </div>
                                 </td>
                                 <td class="header-search" data-type="number">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                         <div class="sort-btn">
-                                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"/>
                                         </svg>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <!-- <div class="message-box product-box">
                                     <div class="message-btn">
 
@@ -888,101 +895,105 @@
                                     </div>
                                 </div> -->
                                         <div class="small-buttons product-box">
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
-                                                    </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
-                                                    </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -991,7 +1002,7 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-medium">
                                             <div class="btn-medium"></div>
                                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
@@ -1012,40 +1023,21 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
-                                        <!-- <div class="message-box prro-box">
-                                    <div class="message-btn">
-                                       
-                                        <div class="count-message"></div>
-                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
-                                            </div>
-                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
-                                            <div class="message-list"><span data-img class="message-link">1</span></div>
-                                            <div class="message-list"><span data-img class="message-link">2</span></div>
-                                            <div class="message-list"><span data-img class="message-link">3</span></div>
-                                            <div class="message-list"><span data-img class="message-link">4</span></div>
-                                            <div class="message-list"><span data-img class="message-link">5</span></div>
-                                            <div class="message-list"><span data-img class="message-link">6</span></div>
-                                            <div class="message-list"><span data-img class="message-link">7</span></div>
-                                            <div class="message-list"><span data-img class="message-link">8</span></div>
-                                            <div class="message-list"><span data-img class="message-link">9</span></div>
-                                            <div class="message-list"><span data-img class="message-link">10</span></div>
-                                        </div>
-                                    </div>
-                                </div> -->
                                         <div class="small-buttons prro">
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
-                                                    </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small prroSms"><span class="list-item"><span data-img class="icon-1 colorWhite icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small prroMail"><span class="list-item"><span data-img class="icon-Vector-21 colorWhite icons"></span></span>
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small prroSms"><span class="list-item"><span data-img class="icon-1 colorWhite icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small prroMail"><span class="list-item"><span data-img class="icon-Vector-21 colorWhite icons"></span></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1053,7 +1045,7 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-medium">
                                             <div class="btn-medium"></div>
                                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
@@ -1073,103 +1065,65 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="btn-wrap-medium">
-                                    <div class="btn-medium"></div>
-                                    <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
-                                        <div class="list-medium all select-btn"><span class="list-item"><span>Все</span></span>
-                                        </div>
-                                        <div class="list-medium ua"><span class="list-item"><img data-img src="img/ukraine2.svg" alt=""></span>
-                                        </div>
-                                        <div class="list-medium ru"><span class="list-item"><img data-img src="img/rus.svg" alt=""></span>
-                                        </div>
-                                        <div class="list-medium kz"><span class="list-item"><img data-img src="img/kz.svg" alt=""></span>
-                                        </div>
-                                        <div class="list-medium al"><span class="list-item"><img data-img src="img/alban.svg" alt=""></span>
-                                        </div>
-                                        <div class="list-medium al"><span class="list-item"><img data-img src="img/alban.svg" alt=""></span>
-                                        </div>
-                                    </div>
-                                </div> -->
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-
-                                        <!-- <input type="text" class="ttn-style">
-                                    <input type="text" class="ttn-style"> -->
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
-                                        <!-- <div class="message-box ttn-box">
-                                    <div class="message-btn">
-                                        <div class="count-message"></div>
-                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
-                                            </div>
-                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
-                                            <div class="message-list"><span data-img class="message-link">1</span></div>
-                                            <div class="message-list"><span data-img class="message-link">2</span></div>
-                                            <div class="message-list"><span data-img class="message-link">3</span></div>
-                                            <div class="message-list"><span data-img class="message-link">4</span></div>
-                                            <div class="message-list"><span data-img class="message-link">5</span></div>
-                                            <div class="message-list"><span data-img class="message-link">6</span></div>
-                                            <div class="message-list"><span data-img class="message-link">7</span></div>
-                                            <div class="message-list"><span data-img class="message-link">8</span></div>
-                                            <div class="message-list"><span data-img class="message-link">9</span></div>
-                                            <div class="message-list"><span data-img class="message-link">10</span></div>
-                                        </div>
-                                    </div>
-                                </div> -->
                                         <div class="small-buttons ttn-box">
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
-                                                    </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
-                                                    </div>
-                                                    <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">1</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">2</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">3</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">4</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">5</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">6</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">7</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">8</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">9</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">10</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">11</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">12</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">13</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">14</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">15</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">16</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">17</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">18</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">19</span></span>
+                                                        </div>
+                                                        <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1177,31 +1131,12 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <!-- <div class="depart-btn"><input type="text" class="input-btn input-depart" value=""></div>
-                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                    <div class="list-depart"><span class="list-item all select-btn-static"><span class="text-lenght-2">Все</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Розничный магазин</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Розничный магази номер 2</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Розничный магазин номер 2123123</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Отдел АОЕ</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Test</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Black slave</span></span>
-                                    </div>
-                                    <div class="list-depart"><span class="list-item"><span class="text-lenght-2">Оптовый магазин</span></span>
-                                    </div>
-                                </div> -->
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-large">
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -1233,26 +1168,7 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <!-- <div class="employe-btn"><input type="text" class="input-btn input-employe" value=""></div>
-                                <div class="block1" data-simplebar data-simplebar-auto-hide="false">
-                                    <div class="list-employe"><span class="list-item all select-btn-static"><span class="text-lenght-3">Все</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Лебедев Евгений Александрович</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Лебедев Евгений Александрович</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Лебедев Евгений Александрович</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Лебедев Евгений</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Евгений Александрович</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Лебедев Евгений Александрович</span></span>
-                                    </div>
-                                    <div class="list-employe"><span class="list-item"><span class="text-lenght-3">Евгений Александрович</span></span>
-                                    </div>
-                                </div> -->
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-large">
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -1284,23 +1200,23 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <div class="date-block"><span>с</span><input id="add-s" type="text" class="input-style date-style" readonly><span>по</span><input id="add-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <div class="date-block block-calendary"><span>с</span><input id="add-s" type="text" class="input-style date-style" readonly><span>по</span><input id="add-po" type="text" class="input-style date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style" readonly></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style" readonly></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <div class="date-block"><span>с</span><input id="accept-s" type="text" class="input-style date-style" readonly><span>по</span><input id="accept-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <div class="date-block block-calendary"><span>с</span><input id="accept-s" type="text" class="input-style date-style" readonly><span>по</span><input id="accept-po" type="text" class="input-style date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style" readonly></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style" readonly></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-large">
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -1332,20 +1248,20 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style" readonly></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style" readonly></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <div class="date-block"><span>с</span><input type="text" id="send-s" class="input-style date-style" readonly><span>по</span><input id="send-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <div class="date-block block-calendary"><span>с</span><input type="text" id="send-s" class="input-style date-style" readonly><span>по</span><input id="send-po" type="text" class="input-style date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <div class="date-block"><span>с</span><input id="fixed-s" type="text" class="input-style date-style" readonly><span>по</span><input id="fixed-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <div class="date-block block-calendary"><span>с</span><input id="fixed-s" type="text" class="input-style date-style" readonly><span>по</span><input id="fixed-po" type="text" class="input-style date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <div class="btn-wrap-large">
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
@@ -1377,139 +1293,71 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
-                                        <div class="date-block"><span>с</span><input id="finish-s" type="text" class="input-style date-style" readonly><span>по</span><input id="finish-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <div class="date-block block-calendary"><span>с</span><input id="finish-s" type="text" class="input-style date-style" readonly><span>по</span><input id="finish-po" type="text" class="input-style date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
-                                        <!-- <div class="ip-buttons">
-                                    <div class="ip-wrap">
-                                        <div class="ip-btn"></div>
-                                        <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
-                                            </div>
-                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="flags">&#x1F1FA;&#x1F1E6;</span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="flags">&#x1F1F7;&#x1F1FA;</span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="flags">&#x1F1E6;&#x1F1F1;</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ip-wrap">
-                                        <div class="ip-btn"></div>
-                                        <div class="block1 1" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
-                                            </div>
-                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-13 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-10 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-uniE941 icons"></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ip-wrap">
-                                        <div class="ip-btn"></div>
-                                        <div class="block1 2" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
-                                            </div>
-                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-12 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Windows-1 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-9 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-uniE941 icons"></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ip-wrap">
-                                        <div class="ip-btn"></div>
-                                        <div class="block1 3" data-simplebar="" data-simplebar-auto-hide="false">
-                                            <div class="list-ip select-btn"><span class="list-item"><span>Все</span></span>
-                                            </div>
-                                            <div class="list-ip p-p"><span class="list-item padding-left">П/п</span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-14 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-15 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-11 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-16 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-12 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Union-17 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-Vector-13 icons"></span></span>
-                                            </div>
-                                            <div class="list-ip"><span class="list-item"><span class="icon-uniE941 icons"></span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide">
+                                    <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
                                         <div class="small-buttons">
-                                            <div class="btn-wrap width23">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
-                                                    </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small unknown"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small ua"><span class="list-item"><span data-img class="flags">&#x1F1FA;&#x1F1E6;</span></span>
-                                                    </div>
-                                                    <div class="list-small ru"><span class="list-item"><span data-img class="flags">&#x1F1F7;&#x1F1FA;</span></span>
-                                                    </div>
-                                                    <div class="list-small alb"><span class="list-item"><span data-img class="flags">&#x1F1E6;&#x1F1F1;</span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="btn-wrap width16">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 1" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
-                                                    </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small unknown"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small mobile"><span class="list-item"><span data-img class="icon-Union-13 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small desktop"><span class="list-item"><span data-img class="icon-Vector-10 icons"></span></span>
+                                            <div class="border-white" style="border-left:1px solid white;border-right:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width23">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small unknown"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small ua"><span class="list-item"><span data-img class="flags">&#x1F1FA;&#x1F1E6;</span></span>
+                                                        </div>
+                                                        <div class="list-small ru"><span class="list-item"><span data-img class="flags">&#x1F1F7;&#x1F1FA;</span></span>
+                                                        </div>
+                                                        <div class="list-small alb"><span class="list-item"><span data-img class="flags">&#x1F1E6;&#x1F1F1;</span></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="btn-wrap width16">
-                                                <div class="btn-small"></div>
-                                                <div class="block1 2" data-simplebar="" data-simplebar-auto-hide="false">
-                                                    <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                            <div class="border-white" style="border-right:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width16">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 1" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small unknown"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small mobile"><span class="list-item"><span data-img class="icon-Union-13 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small desktop"><span class="list-item"><span data-img class="icon-Vector-10 icons"></span></span>
+                                                        </div>
                                                     </div>
-                                                    <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
-                                                    </div>
-                                                    <div class="list-small unknown"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small android"><span class="list-item"><span data-img class="icon-Union-12 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small windows"><span class="list-item"><span data-img class="icon-Windows-1 icons"></span></span>
-                                                    </div>
-                                                    <div class="list-small apple"><span class="list-item"><span data-img class="icon-Vector-9 icons"></span></span>
+                                                </div>
+                                            </div>
+                                            <div class="border-white" style="border-right:1px solid white;height: 16px;">
+                                                <div class="btn-wrap width16">
+                                                    <div class="btn-small"></div>
+                                                    <div class="block1 2" data-simplebar="" data-simplebar-auto-hide="false">
+                                                        <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
+                                                        </div>
+                                                        <div class="list-small p-p"><span class="list-item padding-left">П/п</span>
+                                                        </div>
+                                                        <div class="list-small unknown"><span class="list-item"><span data-img class="icon-uniE941 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small android"><span class="list-item"><span data-img class="icon-Union-12 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small windows"><span class="list-item"><span data-img class="icon-Windows-1 icons"></span></span>
+                                                        </div>
+                                                        <div class="list-small apple"><span class="list-item"><span data-img class="icon-Vector-9 icons"></span></span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1542,53 +1390,54 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- <div class="loh"></div> -->
                             <tr class="crm-main-table">
                                 <td class="id-table new-orders">123451</td>
                                 <td class="status-table">

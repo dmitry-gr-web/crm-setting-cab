@@ -440,6 +440,12 @@ html {
   border-radius: 3px;
   color: black;
 }
+.header-crm .block-btn .zoomBtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 .header-crm .block-btn .zoomPlus {
   color: white;
   position: absolute;

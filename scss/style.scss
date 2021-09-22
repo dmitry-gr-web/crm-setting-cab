@@ -125,6 +125,12 @@ html {
                 color: black;
             }
         }
+        .zoomBtn {
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
         .zoomPlus {
             color: white;
             position: absolute;

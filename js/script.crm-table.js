@@ -358,51 +358,34 @@ $(document).ready(function() {
         let submit = 'Импорт экспорт данных';
         let addOrder = 'Создать заказ';
         let notification = 'Уведомления';
-        let zoomPlus = 'Увеличить масштаб';
-        let zoomMinus = 'Уменьшить масштаб';
-        let posElement = this.getBoundingClientRect();
-        let widthElement = $("#tooltipBtn").width();
+
         $(this).click(function() {
             if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
                 $("#tooltipBtn").css({ 'animation': '' });
             }
         });
-        if ($(this).hasClass('zoomMinus')) {
-            $('#tooltipBtn').text(zoomMinus);
-            $("#tooltipBtn").css("left", posElement.x + 20 - widthElement + "px").css("top", posElement.y + 25 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
-        }
-        if ($(this).hasClass('zoomPlus')) {
-            $('#tooltipBtn').text(zoomPlus);
-            $("#tooltipBtn").css("left", posElement.x + 25 - widthElement + "px").css("top", posElement.y + 45 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
-        }
+
         if ($(this).hasClass('btn-refresh')) {
             $('#tooltipBtn').text(refresh);
-            $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
         }
         if ($(this).hasClass('btn-settings')) {
             $('#tooltipBtn').text(settings);
-            $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
         }
         if ($(this).hasClass('btn-accept')) {
             $('#tooltipBtn').text(submit);
-            $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
         }
         if ($(this).hasClass('btn-order')) {
             $('#tooltipBtn').text(addOrder);
-            $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
         }
         if ($(this).hasClass('notification-btn')) {
             $('#tooltipBtn').text(notification);
-            $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
         }
+        let posElement = this.getBoundingClientRect();
+        let widthElement = $("#tooltipBtn").width();
         // $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
+
+        $("#tooltipBtn").css("left", posElement.x - widthElement * 0.38 + "px").css("top", posElement.y + 35 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
 
         if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
             $("#tooltipBtn").css({ 'animation': '' });
@@ -415,6 +398,31 @@ $(document).ready(function() {
         $('#tooltipBtn').html('Заказ не открывался');
         $("#tooltipBtn").css("left", posElement.x - 10 + "px").css("top", posElement.y + 22 + "px");
         $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' });
+    });
+    $(".zoomBtn").hover(function(xy) {
+
+        let zoomPlus = 'Увеличить масштаб';
+        let zoomMinus = 'Уменьшить масштаб';
+        // $(this).click(function() {
+        //     if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
+        //         $("#tooltipBtn").css({ 'animation': '' });
+        //     }
+        // });
+        if ($(this).hasClass('zoomMinus')) {
+            $('#tooltipBtn').text(zoomMinus);
+        }
+        if ($(this).hasClass('zoomPlus')) {
+            $('#tooltipBtn').text(zoomPlus);
+        }
+        let posElement = this.getBoundingClientRect();
+        let widthElement = $("#tooltipBtn").width();
+        $("#tooltipBtn").css("left", posElement.x - widthElement + 20 + "px").css("top", posElement.y + 25 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+        if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
+            $("#tooltipBtn").css({ 'animation': '' });
+        }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
@@ -1463,19 +1471,47 @@ $(".input-btn-large").on('click', focusInputLarge);
 // console.log($(".input-btn-large").on)
 // console.log(window.getEventListeners($(".btn-wrap-large")))
 $(".list-large").click(function(e) {
+    // $(".btn-wrap-large").off('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").off('mouseenter', openLargeMenu);
+    // $(".input-btn-large").off('click', focusInputLarge);
+    // $('.btn-wrap').off('mouseenter', openMenu);
+    // $('.btn-wrap').off('mouseleave', closeMenu);
+    // $('.btn-wrap-medium').off('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
+    // $(".sort-menu").off('mouseenter', sortMenu);
+    // $(".sort-btn").off('click', sortBtnClick);
+    // $(".sort-btn").off('click', sortColumn(index));
+
+
+
+    //сброс других кнопок
+    // $('.sort-btn').removeClass('sort-toggle');
+    // $(this).parents('.btn-wrap-large').children('.input-btn-large').removeClass('background-sort');
+    // $('.btn-medium').removeClass('background-sort');
+    // $('.btn-small').removeClass('background-sort');
+    // $('.sort-btn').css({
+    //     "transform": "rotate(180deg)"
+    // });
+    // $('.input-style').removeClass('background-sort');
+    // $('.input-style, .btn-small , .btn-medium, .input-btn-large').css({
+    //     "background": "#d4d4d4"
+    // });
     $(".btn-wrap-large").off('mouseleave', closeLargeMenu);
-    $(".btn-wrap-large").off('mouseenter', openLargeMenu);
-    $(".input-btn-large").off('click', focusInputLarge);
-
-    $('.sort-btn').removeClass('sort-toggle');
-    $(this).parents('.btn-wrap-large').children('.input-btn-large').removeClass('background-sort');
-    $('.btn-medium').removeClass('background-sort');
-    $('.btn-small').removeClass('background-sort');
-    $('.sort-btn').css({
-        "transform": "rotate(180deg)"
-    });
-    $('.input-style').removeClass('background-sort');
-
+    $('.btn-wrap').css('visibility', 'hidden');
+    $('.btn-wrap-large').css('visibility', 'hidden');
+    $('.btn-wrap-medium').css('visibility', 'hidden');
+    $('.block-calendary').css('visibility', 'hidden');
+    $('.sort-btn').css('visibility', 'hidden');
+    // $('tbody').css('z-index', '-1');
+    $('.podlozhka').css('z-index', '998');
+    // $('.block1').css('z-index', '99999');
+    $(this).parents('.btn-wrap-large').css('visibility', 'visible');
+    $(this).parents('.btn-wrap-large').find('.sort-btn').css('visibility', 'visible');
+    //сброс других кнопок
+    // $(this).parents('.btn-wrap-large').removeClass('hide-arrow');
+    // $(this).parents('.sort-menu').children('.sort-btn').on('click', sortBtnClick);
+    // $(this).parents('.sort-menu').children('.sort-btn').on('click', sortColumn(index));
+    // $(this).parents('.sort-menu').on('mouseenter', sortMenu);
     $(this).toggleClass('select-btn');
     $(this).parent().find('.list-large:first-child').removeClass('select-btn');
     if ($(this).parents('.btn-wrap-large').find('.select-btn').length == 1) {
@@ -1495,18 +1531,42 @@ $(".list-large:first-child").click(function() {
     $(this).parents('.block1').siblings('.input-btn-large').val('');
     $(this).siblings().removeClass('select-btn');
     $(this).parents('.block1').removeClass("toggle");
+    $('.btn-wrap').css('visibility', 'visible');
+    $('.btn-wrap-large').css('visibility', 'visible');
+    $('.btn-wrap-medium').css('visibility', 'visible');
+    $('.sort-btn').css('visibility', 'visible');
+    $('.block-calendary').css('visibility', 'visible');
     $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
-    $(".btn-wrap-large").on('mouseenter', openLargeMenu);
-    $(".input-btn-large").on('click', focusInputLarge);
+    $('.podlozhka').css('z-index', '0');
+    // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").on('mouseenter', openLargeMenu);
+    // $(".input-btn-large").on('click', focusInputLarge);
+    // $('.btn-wrap').on('mouseenter', openMenu);
+    // $('.btn-wrap').on('mouseleave', closeMenu);
+    // $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+    // $(".sort-menu").on('mouseenter', sortMenu);
+    // $(".sort-btn").on('click', sortBtnClick);
+    // $(".sort-btn").on('click', sortColumn(index));
 });
-$(document).bind("click", function(e) {
+$('.podlozhka').on("click", function(e) {
     let $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("btn-wrap-large")) {
+    if (!$clicked.parents().hasClass("btn-wrap-large") && !$clicked.parents().hasClass("btn-wrap") && !$clicked.parents().hasClass("btn-wrap-medium")) {
         $(".btn-wrap-large .block1").removeClass("toggle");
+        $(".btn-wrap-medium .block1").removeClass("toggle");
+        $(".btn-wrap .block1").removeClass("toggle");
         changesInput();
+
+        $('.btn-wrap').on('mouseleave', closeMenu);
         $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
-        $(".btn-wrap-large").on('mouseenter', openLargeMenu);
-        $(".input-btn-large").on('click', focusInputLarge);
+        $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+        $('.podlozhka').css('z-index', '0');
+        $('.btn-wrap').css('visibility', 'visible');
+        $('.btn-wrap-large').css('visibility', 'visible');
+        $('.btn-wrap-medium').css('visibility', 'visible');
+        $('.sort-btn').css('visibility', 'visible');
+        $('.block-calendary').css('visibility', 'visible');
+        $('.podlozhka').css('z-index', '0');
         $('.btn-wrap-large').each(function() {
             if ($(this).find('.select-btn').length == 1) {
                 let appendStatus = $(this).find('.select-btn').text();
@@ -1523,6 +1583,28 @@ $(document).bind("click", function(e) {
                 $(this).find('.list-large:first-child').addClass('select-btn');
             }
         });
+        $('.btn-small').each(function() {
+            if ($(this).html() == '') {
+                if ($(this).hasClass('background-sort')) {
+                    $(this).addClass('hide-arrow');
+                    $(this).siblings('.sort-btn').addClass("sort-toggle");
+                } else {
+                    $(this).removeClass('hide-arrow');
+
+                }
+            } else {
+                $(this).addClass('hide-arrow');
+                $(this).siblings('.sort-btn').removeClass("sort-toggle");
+            }
+
+            // $(this).siblings('.sort-btn').removeClass('sort-toggle');
+        });
+        $('.btn-wrap').css('width', '16px');
+        // $('.btn-wrap.width21').css('width', '21px');
+        $(".btn-wrap.width23").css('width', '23px');
+        // $(".btn-wrap.width23").css('width', '23px');
+        $(".btn-wrap.width17").css('width', '17px');
+        $(".btn-wrap.width16").css('width', '16px');
     }
 });
 
@@ -1539,29 +1621,72 @@ function closeMediumMenu() {
     $(this).children('.block1').removeClass("toggle");
 };
 
-function btnMediumMenu() {
-    $(".list-medium").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
-    $(this).siblings('.block1').addClass("toggle");
-};
+// function btnMediumMenu() {
+//     $(".list-medium").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
+//     $(this).siblings('.block1').addClass("toggle");
+// };
 $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
 $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
-$(".btn-medium").on('click', btnMediumMenu);
+// $(".btn-medium").on('click', btnMediumMenu);
 
 $(".list-medium").click(function(e) {
     $(this).toggleClass('select-btn');
+    //сброс других кнопок
+    // $('.sort-btn').removeClass('sort-toggle');
+    // $(this).parents('.btn-wrap-medium').children('.sort-btn').addClass('sort-toggle');
+    // $(this).parents('.btn-wrap-medium').children('.btn-medium').removeClass('background-sort');
+    // $('.sort-btn').css({
+    //     "transform": "rotate(180deg)"
+    // });
+    // $('.input-style').removeClass('background-sort');
+    // $('.btn-small').removeClass('background-sort');
+    // $('.input-style, .btn-medium, .input-btn-large').css({
+    //     "background": "#d4d4d4"
+    // });
+    //сброс других кнопок
 
-    $('.sort-btn').removeClass('sort-toggle');
-    $(this).parents('.btn-wrap-medium').children('.btn-medium').removeClass('background-sort');
-    $('.sort-btn').css({
-        "transform": "rotate(180deg)"
-    });
-    $('.input-style').removeClass('background-sort');
-    $('.btn-small').removeClass('background-sort');
+    // $(this).parents('.btn-wrap-medium').children('.btn-medium').removeClass('hide-arrow');
 
-    $('.btn-wrap-medium').off('mouseenter', openMediumMenu);
-    $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
-    $(".btn-medium").off('click', btnMediumMenu);
+
+    // $('.btn-wrap-medium').off('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
+    // $('.btn-wrap').off('mouseenter', openMenu);
+    // $('.btn-wrap').off('mouseleave', closeMenu);
+    // $(".btn-wrap-large").off('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").off('mouseenter', openLargeMenu);
+    // $(".input-btn-large").off('click', focusInputLarge);
+    // $(".sort-menu").off('mouseenter', sortMenu);
+    // $(".sort-btn").off('click', sortBtnClick);
+    // $(".sort-btn").off('click', sortColumn(index));
+    // $(".btn-medium").off('click', btnMediumMenu);
     // $(this).parents('.btn-wrap-medium').children('.btn-medium').on('click', btnMediumMenu);
+    // $(this).parents('.sort-menu').on('mouseenter', sortMenu);
+    // $(this).parents('.sort-menu').children('.sort-btn').on('click', sortBtnClick);
+    // $(this).parents('.sort-menu').children('.sort-btn').on('click', sortColumn(index));
+
+
+    // if ($('.toggle').length = 2) {
+    //     $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
+    //     // $(this).parents('.block1').addClass('toggle');
+    //     $('.block1.toggle').css('display', 'none');
+    //     $(this).parents('.toggle').css('display', 'block');
+    //     // console.log($('.toggle').length)
+    // }
+    $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
+    $('.btn-wrap').css('visibility', 'hidden');
+    $('.btn-wrap-large').css('visibility', 'hidden');
+    $('.btn-wrap-medium').css('visibility', 'hidden');
+    $('.sort-btn').css('visibility', 'hidden');
+    $('.block-calendary').css('visibility', 'hidden');
+    // $('tbody').css('z-index', '-1');
+    $('.podlozhka').css('z-index', '998');
+    // $('.btn-wrap-medium').css('z-index', '99999');
+    // $('.block1').css('z-index', '99999');
+
+    $(this).parents('.btn-wrap-medium').css('visibility', 'visible');
+    $(this).parents('.btn-wrap-medium').find('.sort-btn').css('visibility', 'visible');
+    // $(this).parents('.block1').addClass('toggle');
+
     $(this).parent().find('.list-medium:first-child').removeClass('select-btn');
 
     if ($(this).parents('.btn-wrap-medium').find('.select-btn').length == 1) {
@@ -1581,22 +1706,28 @@ $(".list-medium:first-child").click(function() {
     $(this).parents('.block1').siblings('.btn-medium').html('');
     $(this).siblings().removeClass('select-btn');
     $(this).parents('.block1').removeClass("toggle");
-    $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
+    $('.btn-wrap').css('visibility', 'visible');
+    $('.btn-wrap-large').css('visibility', 'visible');
+    $('.btn-wrap-medium').css('visibility', 'visible');
+    $('.sort-btn').css('visibility', 'visible');
+    $('.block-calendary').css('visibility', 'visible');
     $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
-    $(".btn-medium").on('click', btnMediumMenu);
+    $('.podlozhka').css('z-index', '0');
+    // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
+    // $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+    // $('.btn-wrap').on('mouseenter', openMenu);
+    // $('.btn-wrap').on('mouseleave', closeMenu);
+    // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").on('mouseenter', openLargeMenu);
+    // $(".input-btn-large").on('click', focusInputLarge);
+    // $(".sort-menu").on('mouseenter', sortMenu);
+    // $(".sort-btn").on('click', sortBtnClick);
+    // $(".sort-btn").on('click', sortColumn(index));
+    // $(".btn-medium").on('click', btnMediumMenu);
 });
 
-$(document).bind("click", function(e) {
-    let $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("btn-wrap-medium")) {
-        $(".btn-wrap-medium .block1").removeClass("toggle");
-        changesInput();
-        $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
-        $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
-        $(".btn-medium").on('click', btnMediumMenu);
 
-    }
-});
 
 //menu country btn
 //menu ip
@@ -1614,50 +1745,105 @@ function openMenu(e) {
 
 function closeMenu(e) {
     $(this).children('.block1').removeClass("toggle");
+    $(this).children('.sort-btn').removeClass("sort-toggle");
     $('.btn-wrap').css('width', '16px');
     $('.btn-wrap.width23').css('width', '23px');
-    $(this).children('.sort-btn').removeClass("sort-toggle");
-    // $('.btn-wrap.width23').css('width', '23px');
-    // $('.btn-wrap.width21').css('width', '21px');
     $('.btn-wrap.width17').css('width', '17px');
     $('.btn-wrap.width16').css('width', '16px');
-    $(this).children('.sort-btn').removeClass("sort-toggle");
+    // $('.btn-wrap.width23').css('width', '23px');
+    // $('.btn-wrap.width21').css('width', '21px');
+
+    // if ($(this).children('.btn-small').hasClass('background-sort')) {
+    //     $(this).children('.sort-btn').addClass('sort-toggle');
+    // } else {
+    //     $(this).children('.sort-btn').removeClass("sort-toggle");
+    // }
+    // $(this).children('.sort-btn').removeClass("sort-toggle");
+    $(this).children('.btn-small').addClass('hide-arrow');
     if ($(this).children('.btn-small').html() == '') {
-        $(this).children('.btn-small').removeClass('hide-arrow');
+        // $(this).children('.btn-small').addClass('hide-arrow');
+        if ($(this).children('.btn-small').hasClass('background-sort')) {
+            $(this).children('.btn-small').addClass('hide-arrow');
+            $(this).children('.sort-btn').addClass("sort-toggle");
+        } else {
+            $(this).children('.btn-small').removeClass('hide-arrow');
+            // $(this).children('.sort-btn').addClass("sort-toggle");
+        }
+        // if ($(this).children('.block1').hasClass('toggle')) {
+        //     $(this).children('.btn-small').addClass('hide-arrow');
+
+        //     // $(this).children('.sort-btn').addClass('sort-toggle');
+        // }
+        // $(this).children('.sort-btn').addClass('sort-toggle');
     } else {
         $(this).children('.btn-small').addClass('hide-arrow');
+
     }
+
+    // if ($(this).children('.btn-small').html() == '' && $(this).children('.btn-small').hasClass('background-sort')) {
+    //     $(this).children('.btn-small').addClass('hide-arrow');
+    //     $(this).find('.sort-btn').addClass("sort-toggle");
+    // }
     // e.stopPropagation();
 };
-$(".btn-small").on('click', btnMenu);
+// $(".btn-small").on('click', btnMenu);
 $('.btn-wrap').on('mouseenter', openMenu);
 $('.btn-wrap').on('mouseleave', closeMenu);
 
-function btnMenu() {
-    // $('.btn-wrap').on('mouseenter', openMenu);
-    // $('.btn-wrap').on('mouseleave', closeMenu);
-    $(this).siblings('.block1').addClass("toggle");
+// function btnMenu() {
+//     // $('.btn-wrap').on('mouseenter', openMenu);
+//     // $('.btn-wrap').on('mouseleave', closeMenu);
+//     $(this).siblings('.block1').addClass("toggle");
 
-    $(".list-small").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
-};
+//     $(".list-small").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
+// };
 
 
 $(".list-small").click(function(e) {
     $(this).toggleClass('select-btn');
-
-    $('.sort-btn').removeClass('sort-toggle');
-    $(this).parents('.btn-wrap').children('.btn-small').removeClass('background-sort');
-    $('.btn-medium').removeClass('background-sort');
-    $('.input-btn-large').removeClass('background-sort');
-    $('.sort-btn').css({
-        "transform": "rotate(180deg)"
-    });
-    $('.input-style').removeClass('background-sort');
-
-    $(".btn-small").off('click', btnMenu);
+    //Сброс других кнопок
+    // $('.sort-btn').removeClass('sort-toggle');
+    // $(this).parents('.btn-wrap').children('.btn-small').removeClass('background-sort');
+    // $('.btn-medium').removeClass('background-sort');
+    // $('.input-btn-large').removeClass('background-sort');
+    // $('.sort-btn').css({
+    //     "transform": "rotate(180deg)"
+    // });
+    // $('.input-style').removeClass('background-sort');
+    // $('.input-style, .btn-small , .btn-medium, .input-btn-large').css({
+    //     "background": "#d4d4d4"
+    // });
+    //Сброс других кнопок
+    // $(this).parents('.btn-wrap').children('.btn-small').removeClass('hide-arrow');
+    // $(".btn-small").off('click', btnMenu);
     // $(this).parents('.btn-wrap').children('.btn-small').on('click', btnMenu);
-    $('.btn-wrap').off('mouseenter', openMenu);
+
+    // $('.btn-wrap').off('mouseenter', openMenu);
+    // $('.btn-wrap').off('mouseleave', closeMenu);
+    // $('.btn-wrap-medium').off('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
+    // $(".btn-wrap-large").off('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").off('mouseenter', openLargeMenu);
+    // $(".input-btn-large").off('click', focusInputLarge);
+    // $(".sort-menu").off('mouseenter', sortMenu);
+    // $(".sort-btn").off('click', sortBtnClick);
+    // $(".sort-btn").off('click', sortColumn(index));
+    // $(this).parents('.sort-menu').on('mouseenter', sortMenu);
+    // $(this).parents('.sort-menu').children('.sort-btn').on('click', sortBtnClick);
+    // $(this).parents('.sort-menu').children('.sort-btn').on('click', sortColumn(index));
     $('.btn-wrap').off('mouseleave', closeMenu);
+    $('.btn-wrap').css('visibility', 'hidden');
+    $('.btn-wrap-large').css('visibility', 'hidden');
+    $('.btn-wrap-medium').css('visibility', 'hidden');
+    $('.sort-btn').css('visibility', 'hidden');
+    $('.block-calendary').css('visibility', 'hidden');
+    $('.podlozhka').css('z-index', '998');
+    // $('.block1').css('z-index', '99999');
+    // $('tbody').css('z-index', '-1');
+
+    $(this).parents('.btn-wrap').css('visibility', 'visible');
+    $(this).parents('.btn-wrap').find('.sort-btn').css('visibility', 'visible');
+
     $(this).parent().find('.list-small:first-child').removeClass('select-btn');
 
     if ($(this).parents('.btn-wrap').find('.select-btn').length == 1) {
@@ -1670,7 +1856,7 @@ $(".list-small").click(function(e) {
     if ($(this).parents('.btn-wrap').find('.select-btn').length == 0) {
         $(this).parents('.block1').siblings('.btn-small').html('');
         $(this).parent().find('.list-small:first-child').addClass('select-btn');
-        $(this).parents('.btn-wrap').children('.btn-small').removeClass('hide-arrow');
+        // $(this).parents('.btn-wrap').children('.btn-small').removeClass('hide-arrow');
     }
 });
 $(".list-small:first-child").click(function() {
@@ -1679,33 +1865,28 @@ $(".list-small:first-child").click(function() {
     $(this).parents('.block1').siblings('.btn-small').html('');
     $(this).siblings().removeClass('select-btn');
     $(this).parents('.block1').removeClass("toggle");
-    $('.btn-wrap').on('mouseenter', openMenu);
+
     $('.btn-wrap').on('mouseleave', closeMenu);
-    $(".btn-small").on('click', btnMenu);
+    $('.btn-wrap').css('visibility', 'visible');
+    $('.btn-wrap-large').css('visibility', 'visible');
+    $('.btn-wrap-medium').css('visibility', 'visible');
+    $('.sort-btn').css('visibility', 'visible');
+    $('.block-calendary').css('visibility', 'visible');
+    $('.podlozhka').css('z-index', '0');
+    // $('.btn-wrap').on('mouseenter', openMenu);
+    // $('.btn-wrap').on('mouseleave', closeMenu);
+    // $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+    // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").on('mouseenter', openLargeMenu);
+    // $(".input-btn-large").on('click', focusInputLarge);
+    // $(".sort-menu").on('mouseenter', sortMenu);
+    // $(".sort-btn").on('click', sortBtnClick);
+    // $(".sort-btn").on('click', sortColumn(index));
+    // $(".btn-small").on('click', btnMenu);
 });
 
-$(document).bind("click", function(e) {
-    let $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("btn-wrap")) {
-        $(".btn-wrap .block1").removeClass("toggle");
-        changesInput();
-        $('.btn-small').each(function() {
-            if ($(this).html() == '') {
-                $(this).removeClass('hide-arrow');
-            } else { $(this).addClass('hide-arrow'); }
-        });
-        // $('.btn-small').addClass('hide-arrow');
-        $('.btn-wrap').on('mouseenter', openMenu);
-        $('.btn-wrap').on('mouseleave', closeMenu);
-        $(".btn-small").on('click', btnMenu);
-        $('.btn-wrap').css('width', '16px');
-        // $('.btn-wrap.width21').css('width', '21px');
-        $(".btn-wrap.width23").css('width', '23px');
-        // $(".btn-wrap.width23").css('width', '23px');
-        $(".btn-wrap.width17").css('width', '17px');
-        $(".btn-wrap.width16").css('width', '16px');
-    }
-});
+
 
 //menu ip
 
@@ -1965,25 +2146,56 @@ $(document).bind("click", function(e) {
         }
     }
 });
-$(".wrap-hide").mouseenter(function(e) {
-    $(this).children('.sort-btn').addClass('sort-toggle');
-    $(this).children().children('.sort-btn').addClass('sort-toggle');
+
+function sortMenu() {
+    // $(this).children('.sort-btn').addClass('sort-toggle');
+    // $(this).children().children('.sort-btn').addClass('sort-toggle');
+    $(this).find('.sort-btn').addClass('sort-toggle');
     $(this).find('.btn-medium').addClass('hide-arrow');
     $(this).find('.btn-wrap-large').addClass('hide-arrow');
+    // if ($('.toggle').length = 2) {
+    //     // $('.btn-wrap-medium').off('mouseleave', closeMediumMenu);
+    //     // $(this).parents('.block1').addClass('toggle');
+    //     $('.block1.toggle').css('visibility', 'hidden');
+    //     // $(this).find('.toggle').css('visibility', 'visible');
+    //     console.log($('.toggle').length)
+    // }
     // $(this).find('.btn-small').addClass('hide-arrow');
     // $(this).find('.btn-wrap-large').addClass('hide-arrow');
     // e.stopPropagation();
-});
-$(".wrap-hide").mouseleave(function(e) {
-    $(this).children('.sort-btn').removeClass('sort-toggle');
-    $(this).children().children('.sort-btn').removeClass('sort-toggle');
+
+
+};
+$(".sort-menu").on('mouseenter', sortMenu);
+$(".sort-menu").mouseleave(function(e) {
+    $(this).find('.sort-btn').removeClass('sort-toggle');
     $(this).find('.btn-medium').removeClass('hide-arrow');
-    $(this).find('.btn-small').removeClass('hide-arrow');
+    // $(this).find('.btn-small').removeClass('hide-arrow');
     $(this).find('.btn-wrap-large').removeClass('hide-arrow');
+    $(this).find('.btn-small').removeClass('hide-arrow');
+    if ($(this).find('.btn-small').html() == '') {
+        if ($(this).find('.btn-small').hasClass('background-sort')) {
+            $(this).find('.btn-small').addClass('hide-arrow');
+            $(this).find('.sort-btn').addClass("sort-toggle");
+        } else {
+            $(this).find('.btn-small').removeClass('hide-arrow');
+            $(this).find('.sort-btn').removeClass("sort-toggle");
+        }
+    } else {
+        $(this).find('.btn-small').addClass('hide-arrow');
+    }
+
     if ($(this).find('.background-sort').hasClass('background-sort')) {
         //Показать стрелочку сортировки
-        $(this).children('.sort-btn').addClass('sort-toggle');
-        $(this).children().children('.sort-btn').addClass('sort-toggle');
+        if (!$(this).find('.btn-small').html() == '') {
+            $(this).find('.sort-btn').removeClass('sort-toggle');
+            // $(this).find('.btn-small').removeClass('hide-arrow');
+        } else {
+            $(this).find('.sort-btn').addClass('sort-toggle');
+            // $(this).find('.btn-small').addClass('hide-arrow');
+        }
+        // $(this).find('.sort-btn').addClass('sort-toggle');
+        // $(this).children().children().children('.sort-btn').addClass('sort-toggle');
         //Спрятать стрелочку кнопки
         $(this).find('.btn-medium').addClass('hide-arrow');
         $(this).find('.btn-wrap-large').addClass('hide-arrow');
@@ -1991,77 +2203,125 @@ $(".wrap-hide").mouseleave(function(e) {
     // e.stopPropagation();
 });
 // let sortRotate = 180;
-$(".sort-btn").on('click', function(e) {
+
+function sortBtnClick() {
     $(this).siblings('.block1').removeClass('toggle');
-    $(".btn-medium").html('');
-    $('.list-medium').removeClass('select-btn');
-    $('.list-medium:first-child').addClass('select-btn');
+    $('.btn-wrap').css('visibility', 'visible');
+    $('.btn-wrap-large').css('visibility', 'visible');
+    $('.btn-wrap-medium').css('visibility', 'visible');
+    $('.sort-btn').css('visibility', 'visible');
+    $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+    $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
+    $(".btn-wrap").on('mouseleave', closeMenu);
+    $('.podlozhka').css('z-index', '0');
+    // changesInput();
+    // $('.btn-wrap').css('width', '16px');
+    // $('.btn-wrap.width23').css('width', '23px');
+    // $('.btn-wrap.width17').css('width', '17px');
+    // $('.btn-wrap.width16').css('width', '16px');
+    // $(".btn-medium").html('');
+    // $('.list-medium').removeClass('select-btn');
+    // $('.list-medium:first-child').addClass('select-btn');
 
-    $(".btn-small").html('');
-    $('.list-small').removeClass('select-btn');
-    $('.list-small:first-child').addClass('select-btn');
+    // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
+    // $(".btn-wrap-large").on('mouseenter', openLargeMenu);
+    // $(".input-btn-large").on('click', focusInputLarge);
+    // $('.btn-wrap').on('mouseenter', openMenu);
+    // $('.btn-wrap').on('mouseleave', closeMenu);
+    // $('.btn-wrap-medium').on('mouseenter', openMediumMenu);
+    // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
+    // $(".sort-menu").on('mouseenter', sortMenu);
+    // $(".sort-menu").on('mouseenter', sortColumn(index));
 
-    $(".input-btn-large").val('');
-    $('.list-large').removeClass('select-btn');
-    $('.list-large:first-child').addClass('select-btn');
-    $(".input-style").val('');
+    // $(".btn-small").html('');
+    // $('.list-small').removeClass('select-btn');
+    // $('.list-small:first-child').addClass('select-btn');
+
+    // $(".input-btn-large").val('');
+    // $('.list-large').removeClass('select-btn');
+    // $('.list-large:first-child').addClass('select-btn');
+    // $(".input-style").val('');
     // елси больше 2 блоков сделать только 1
     if ($('.background-sort').length = 2) {
         $('.wrap-hide').find('.background-sort').removeClass('background-sort');
+        $('.input-style, .btn-small , .btn-medium, .input-btn-large').css({
+            "background": "#d4d4d4"
+        });
         $('.sort-btn').css({
             "transform": "rotate(180deg)"
         });
+        $('.sort-menu').find('.sort-toggle').removeClass('sort-toggle');
+        $('.sort-menu').find('.hide-arrow').removeClass('hide-arrow');
+
+        // if ($(this).siblings('.btn-small').html() == '') {
+        //     $(this).siblings('.btn-small').removeClass('hide-arrow');
+        //     // $(this).find('.btn-small').removeClass('hide-arrow');
+        // } else {
+        //     $('.sort-menu').find('.hide-arrow').addClass('hide-arrow');
+        // }
         // $('.sort-btn').removeClass('trigger-rotate');
     }
-    if ($('.sort-toggle').length = 2) {
-        $('.wrap-hide').find('.sort-toggle').removeClass('sort-toggle');
-        $('.wrap-hide').find('.hide-arrow').removeClass('hide-arrow');
-    }
     // инпут сортировка
-    if ($(this).parent('.wrap-hide').find('.input-style').hasClass('background-sort')) {
-        $(this).parent('.wrap-hide').find('.input-style').removeClass('background-sort');
-        $(this).removeClass('sort-toggle');
-    } else {
-        $(this).parent('.wrap-hide').find('.input-style').addClass('background-sort');
+    if (!$(this).parent('.sort-menu').find('.input-style').hasClass('background-sort')) {
+        // $(this).parent('.sort-menu').find('.input-style').removeClass('background-sort');
+        // $(this).removeClass('sort-toggle');
+        $(this).parent('.sort-menu').find('.input-style').addClass('background-sort');
         $(this).addClass('sort-toggle');
         $(this).css({
-            "transform": "rotate(0deg)"
+            "transform": "scaleX(-1)"
         });
     }
     // кнопки медиум сортировка
-    if ($(this).siblings('.btn-medium').hasClass('background-sort')) {
-        $(this).siblings('.btn-medium').removeClass('background-sort');
-        $(this).removeClass('sort-toggle');
-    } else {
+    if (!$(this).siblings('.btn-medium').hasClass('background-sort')) {
+        // $(this).siblings('.btn-medium').removeClass('background-sort');
+        // $(this).removeClass('sort-toggle');
         $(this).siblings('.btn-medium').addClass('background-sort');
         $(this).siblings('.btn-medium').addClass('hide-arrow');
         $(this).addClass('sort-toggle');
         $(this).css({
-            "transform": "rotate(0deg)"
+            "transform": "scaleX(-1)"
         });
     }
     // кнопки смалл сортировка
-    if ($(this).siblings('.btn-small').hasClass('background-sort')) {
-        $(this).siblings('.btn-small').removeClass('background-sort');
-        $(this).removeClass('sort-toggle');
-    } else {
-        $(this).siblings('.btn-small').addClass('background-sort');
+    if (!$(this).siblings('.btn-small').hasClass('background-sort')) {
+        // $(this).siblings('.btn-small').removeClass('background-sort');
+        // $(this).removeClass('sort-toggle');
         $(this).siblings('.btn-small').addClass('hide-arrow');
+        // if (!$(this).siblings('.btn-small').html() == '') {
+        //     $(this).siblings('.btn-small').addClass('hide-arrow');
+        // } else {
+        //     $(this).siblings('.btn-small').removeClass('hide-arrow');
+        // }
+        $(this).siblings('.btn-small').addClass('background-sort');
+
         $(this).addClass('sort-toggle');
         $(this).css({
-            "transform": "rotate(0deg)"
+            "transform": "scaleX(-1)"
+        });
+        $('.btn-small').each(function() {
+            if ($(this).html() == '') {
+                if ($(this).hasClass('background-sort')) {
+                    $(this).addClass('hide-arrow');
+                    $(this).siblings('.sort-btn').addClass("sort-toggle");
+                } else {
+                    $(this).removeClass('hide-arrow');
+
+                }
+            } else {
+                $(this).addClass('hide-arrow');
+                $(this).siblings('.sort-btn').removeClass("sort-toggle");
+            }
         });
     }
     //кнопки лардж сортировка
-    if ($(this).siblings('.input-btn-large').hasClass('background-sort')) {
-        $(this).siblings('.input-btn-large').removeClass('background-sort');
-        $(this).removeClass('sort-toggle');
-    } else {
+    if (!$(this).siblings('.input-btn-large').hasClass('background-sort')) {
+        // $(this).siblings('.input-btn-large').removeClass('background-sort');
+        // $(this).removeClass('sort-toggle');
         $(this).siblings('.input-btn-large').addClass('background-sort');
         $(this).parent('.btn-wrap-large').addClass('hide-arrow');
         $(this).addClass('sort-toggle');
         $(this).css({
-            "transform": "rotate(0deg)"
+            "transform": "scaleX(-1)"
         });
     }
     // флаг для сортировки анимации стрелочки
@@ -2070,18 +2330,23 @@ $(".sort-btn").on('click', function(e) {
         $('.sort-btn').css({
             "transform": "rotate(180deg)"
         });
+        $(this).siblings('.background-sort').css({
+            "background": "linear-gradient(to top, rgba(81, 81, 81, 0.7) 12%, #d4d4d4 10%)"
+        });
     } else if (!$(this).hasClass('trigger-rotate')) {
         $(this).addClass('trigger-rotate');
         $(this).css({
-            "transform": "rotate(0deg)"
+            "transform": "scaleX(-1)"
+        });
+        $(this).siblings('.background-sort').css({
+            "background": "linear-gradient(to bottom, rgba(81, 81, 81, 0.7) 12%, #d4d4d4 10%)"
         });
     }
-    e.preventDefault();
-});
+    // e.preventDefault();
+};
+$(".sort-btn").on('click', sortBtnClick);
 $(".sort-btn").hover(function(e, item) {
-    let ttnFirst = 'Первая ТТН';
-    let ttnSecond = 'Вторая ТТН';
-    $('#tooltipBtn').text('Сортировка колонки');
+    $('#tooltipBtn').text('Сортировать данные ↑↓');
     let posElement = this.getBoundingClientRect();
     let blockWidth = $(this).width();
     let blockHeight = $(this).height();
@@ -2120,6 +2385,9 @@ $(".btn-header.btn-refresh").click(function() {
     $('.sort-btn').css({
         "transform": "rotate(180deg)"
     });
+    $('.input-style, .btn-medium,.btn-small,.input-btn-large').css({
+        "background": "#d4d4d4"
+    });
     $(".input-style").val('').removeClass('background-sort');
     $('.sort-btn').removeClass('sort-toggle');
     // $('.list').removeClass('select-btn');
@@ -2133,7 +2401,7 @@ $(".btn-header.btn-refresh").click(function() {
     $('.list-small').removeClass('select-btn');
     $('.list-small:first-child').addClass('select-btn');
 
-    $(".input-btn-large").val('');
+    $(".input-btn-large").val('').removeClass('background-sort').removeClass('hide-arrow');
     $('.list-large').removeClass('select-btn');
     $('.list-large:first-child').addClass('select-btn');
 
@@ -2143,15 +2411,15 @@ $(".btn-header.btn-refresh").click(function() {
 
 $(".crm-input .input-style , .crm-input .input-btn-large").change(function() {
     changesInput();
-    $(this).removeClass('background-sort');
-    $(this).siblings('.sort-btn').removeClass('sort-toggle');
+    // $(this).removeClass('background-sort');
+    // $(this).siblings('.sort-btn').removeClass('sort-toggle');
 });
 
 
 function changesInput() {
     let flag = false;
     $(".input-style , .input-btn-large, .btn-medium , .btn-small").each(function(_, item) {
-        if (($(item).val() !== '' && $(item).val().toString().trim() !== "∞" && $(item).val() !== 'Все') || $(item).children().children().attr('data-img') === "" || $(item).children().attr('data-img') === "" || $(item)[0].innerText === "Фильтр" || $(item)[0].innerText === "П/п" || $(item).hasClass('background-sort')) {
+        if (($(item).val() !== '') || $(item).children().children().attr('data-img') === "" || $(item).children().attr('data-img') === "" || $(item)[0].innerText === "Фильтр" || $(item)[0].innerText === "П/п" || $(item).hasClass('background-sort')) {
             flag = true;
         }
         if (flag == true) {
