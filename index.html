@@ -30,6 +30,10 @@
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
+
+
+
+
     <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/iconFonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -44,13 +48,15 @@
     <link rel="stylesheet" href="css/import.css">
     <link rel="stylesheet" href="css/modul.css">
     <link rel="stylesheet" href="css/task.block.css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" href="css/calendary.style.css">
+    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/calendary.style.css"> -->
     <link rel="stylesheet" href="css/modul-nv.css">
+    <!-- Compiled and minified CSS -->
+
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" /> -->
-
+    <!-- <link rel="stylesheet" href="css/materialize.css"> -->
     <title>Document</title>
 </head>
 
@@ -197,7 +203,7 @@
                     <button class="btn-header"><img src="img/No-userpic.svg" alt="user"></button>
                 </div>
             </aside>
-            <nav>
+            <div>
                 <ul class="nav-crm">
                     <li class="nav-list-crm">
                         <div class="hover btn-crm">
@@ -458,7 +464,7 @@
                         <div class="str2">&#10136;</div>
                     </div>
                 </ul>
-            </nav>
+            </div>
             <div class="container-info-settings">
                 <div class="scroll-wrap2">
                     <div class="crm-header" id="crmHeader">
@@ -487,8 +493,8 @@
                 </div>
                 <div class="arrow-bg"><span class="arrow-prev" id="prev"></span><span id="next" class="arrow-next"></span></div>
                 <div class="scroll-wrap">
+                    <div class="podlozhka" style="height:200%;width:4658px;position:absolute;top: -100px;left: -100px;display:none;"></div>
                     <table class="crm-table" id="crm-table">
-                        <div class="podlozhka" style="height:2000%;width:4537px;position:absolute;top: -100px;left: -100px;"></div>
                         <thead>
                             <tr class="table-header">
                                 <th class="header-id">ID
@@ -704,7 +710,7 @@
                                 <td class="header-search">
                                     <div class="wrap-hide tel-sortBtn-position">
                                         <div class="small-buttons sort-menu tel-box">
-                                            <div class="border-white" style="border-right:1px solid white;height: 16px;">
+                                            <div class="border-white" style="border-right:1px solid white;height: 16px;background: #d4d4d4;">
                                                 <div class="btn-wrap width23">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
@@ -740,7 +746,7 @@
                                             </div>
                                         </div>
                                         <div class="small-buttons sort-menu tel-box">
-                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;background: #d4d4d4;">
                                                 <div class="btn-wrap width23">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
@@ -797,49 +803,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="message-box tel-box">
-                                    <div class="message-btn">
-                                        <div class="count-message"></div>
-                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
-                                            </div>
-                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
-                                            <div class="message-list"><span data-img class="message-link">1</span></div>
-                                            <div class="message-list"><span data-img class="message-link">2</span></div>
-                                            <div class="message-list"><span data-img class="message-link">3</span></div>
-                                            <div class="message-list"><span data-img class="message-link">4</span></div>
-                                            <div class="message-list"><span data-img class="message-link">5</span></div>
-                                            <div class="message-list"><span data-img class="message-link">6</span></div>
-                                            <div class="message-list"><span data-img class="message-link">7</span></div>
-                                            <div class="message-list"><span data-img class="message-link">8</span></div>
-                                            <div class="message-list"><span data-img class="message-link">9</span></div>
-                                            <div class="message-list"><span data-img class="message-link">10</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="message-btn">
-                                        <div class="count-message"></div>
-                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
-                                            </div>
-                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
-                                            <div class="message-list"><span data-img class="message-link">1</span></div>
-                                            <div class="message-list"><span data-img class="message-link">2</span></div>
-                                            <div class="message-list"><span data-img class="message-link">3</span></div>
-                                            <div class="message-list"><span data-img class="message-link">4</span></div>
-                                            <div class="message-list"><span data-img class="message-link">5</span></div>
-                                            <div class="message-list"><span data-img class="message-link">6</span></div>
-                                            <div class="message-list"><span data-img class="message-link">7</span></div>
-                                            <div class="message-list"><span data-img class="message-link">8</span></div>
-                                            <div class="message-list"><span data-img class="message-link">9</span></div>
-                                            <div class="message-list"><span data-img class="message-link">10</span></div>
-                                        </div>
-                                    </div>
-                                </div> -->
                                     </div>
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="header-search" data-type="number">
@@ -853,50 +826,10 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <!-- <div class="message-box product-box">
-                                    <div class="message-btn">
-
-                                        <div class="count-message"></div>
-                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
-                                            </div>
-                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
-                                            <div class="message-list"><span data-img class="message-link">1</span></div>
-                                            <div class="message-list"><span data-img class="message-link">2</span></div>
-                                            <div class="message-list"><span data-img class="message-link">3</span></div>
-                                            <div class="message-list"><span data-img class="message-link">4</span></div>
-                                            <div class="message-list"><span data-img class="message-link">5</span></div>
-                                            <div class="message-list"><span data-img class="message-link">6</span></div>
-                                            <div class="message-list"><span data-img class="message-link">7</span></div>
-                                            <div class="message-list"><span data-img class="message-link">8</span></div>
-                                            <div class="message-list"><span data-img class="message-link">9</span></div>
-                                            <div class="message-list"><span data-img class="message-link">10</span></div>
-                                        </div>
-                                    </div>
-                                    <div class="message-btn">
-   
-                                        <div class="count-message"></div>
-                                        <div class="message-menu" data-simplebar data-simplebar-auto-hide="false">
-                                            <div class="message-list"><span class="message-link all select-btn-static"><span>Все</span></span>
-                                            </div>
-                                            <div class="message-list p-p"><span data-img class="message-link">П/п</span></div>
-                                            <div class="message-list"><span data-img class="message-link">1</span></div>
-                                            <div class="message-list"><span data-img class="message-link">2</span></div>
-                                            <div class="message-list"><span data-img class="message-link">3</span></div>
-                                            <div class="message-list"><span data-img class="message-link">4</span></div>
-                                            <div class="message-list"><span data-img class="message-link">5</span></div>
-                                            <div class="message-list"><span data-img class="message-link">6</span></div>
-                                            <div class="message-list"><span data-img class="message-link">7</span></div>
-                                            <div class="message-list"><span data-img class="message-link">8</span></div>
-                                            <div class="message-list"><span data-img class="message-link">9</span></div>
-                                            <div class="message-list"><span data-img class="message-link">10</span></div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                    <div class="wrap-hide product-sortBtn-position">
                                         <div class="small-buttons product-box">
-                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
-                                                <div class="btn-wrap width23">
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;background: #d4d4d4;">
+                                                <div class="btn-wrap width23 sort-menu">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
                                                         <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
@@ -944,10 +877,15 @@
                                                         <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
                                                         </div>
                                                     </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
-                                                <div class="btn-wrap width23">
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;background: #d4d4d4;">
+                                                <div class="btn-wrap width23 sort-menu">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
                                                         <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
@@ -994,11 +932,23 @@
                                                         </div>
                                                         <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
                                                         </div>
+                                                    </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="text" class="input-style">
+                                        <div class="sort-menu">
+                                            <input type="text" class="input-style">
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
@@ -1019,14 +969,26 @@
                                                 <div class="list-medium trade"><span class="list-item"><span data-img class="icons icon-Vector-16 colorWhite"></span></span>
                                                 </div>
                                             </div>
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <input type="text" class="input-style">
+                                    <div class="wrap-hide prro-sortBtn-position">
+                                        <div class="sort-menu">
+                                            <input type="text" class="input-style">
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
+                                        </div>
                                         <div class="small-buttons prro">
-                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;background: #d4d4d4;">
                                                 <div class="btn-wrap width23">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
@@ -1038,6 +1000,11 @@
                                                         </div>
                                                         <div class="list-small prroMail"><span class="list-item"><span data-img class="icon-Vector-21 colorWhite icons"></span></span>
                                                         </div>
+                                                    </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1064,19 +1031,36 @@
                                                 <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
                                                 </div>
                                             </div>
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <input type="text" class="input-style">
+                                    <div class="wrap-hide ttn-sortBtn-position">
+                                        <div class="sort-menu">
+                                            <input type="text" class="input-style">
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
+                                        </div>
                                         <div class="small-buttons ttn-box">
-                                            <div class="border-white" style="border-left:1px solid white;height: 16px;">
+                                            <div class="border-white" style="border-left:1px solid white;height: 16px;background: #d4d4d4;">
                                                 <div class="btn-wrap width23">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
@@ -1125,6 +1109,11 @@
                                                         <div class="list-small noMessage"><span class="list-item"><span data-img class="numCurrent">20+</span></span>
                                                         </div>
                                                     </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1133,6 +1122,11 @@
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
@@ -1164,6 +1158,11 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
@@ -1196,20 +1195,30 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <div class="date-block block-calendary"><span>с</span><input id="add-s" type="text" class="input-style date-style" readonly><span>по</span><input id="add-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu block-calendary">
+                                        <input type="text" class="datepicker">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu"><input type="text" class="input-style" readonly></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <div class="date-block block-calendary"><span>с</span><input id="accept-s" type="text" class="input-style date-style" readonly><span>по</span><input id="accept-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu block-calendary">
+                                        <div class="date-block-header"><span>с</span><input id="accept-s" type="text" class="date-style" readonly><span>по</span><input id="accept-po" type="text" class="date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
@@ -1244,6 +1253,11 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
@@ -1251,13 +1265,13 @@
                                     <div class="wrap-hide sort-menu"><input type="text" class="input-style" readonly></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <div class="date-block block-calendary"><span>с</span><input type="text" id="send-s" class="input-style date-style" readonly><span>по</span><input id="send-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu block-calendary">
+                                        <div class="date-block-header"><span>с</span><input type="text" id="send-s" class="date-style" readonly><span>по</span><input id="send-po" type="text" class="date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <div class="date-block block-calendary"><span>с</span><input id="fixed-s" type="text" class="input-style date-style" readonly><span>по</span><input id="fixed-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu block-calendary">
+                                        <div class="date-block-header"><span>с</span><input id="fixed-s" type="text" class="date-style" readonly><span>по</span><input id="fixed-po" type="text" class="date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
@@ -1289,25 +1303,42 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <div class="date-block block-calendary"><span>с</span><input id="finish-s" type="text" class="input-style date-style" readonly><span>по</span><input id="finish-po" type="text" class="input-style date-style" readonly></div>
+                                    <div class="wrap-hide sort-menu block-calendary">
+                                        <div class="date-block-header"><span>с</span><input id="finish-s" type="text" class="date-style" readonly><span>по</span><input id="finish-po" type="text" class="date-style" readonly></div>
                                     </div>
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu">
                                         <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu">
-                                        <input type="text" class="input-style">
+                                    <div class="wrap-hide ipblock-sortBtn-position">
+                                        <div class="sort-menu">
+                                            <input type="text" class="input-style">
+                                            <div class="sort-btn">
+                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                            </div>
+                                        </div>
                                         <div class="small-buttons">
-                                            <div class="border-white" style="border-left:1px solid white;border-right:1px solid white;height: 16px;">
-                                                <div class="btn-wrap width23">
+                                            <div class="border-white" style="border-left:1px solid white;border-right:1px solid white;height: 16px;background: #d4d4d4;">
+                                                <div class="btn-wrap width22 sort-menu">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 4" data-simplebar="" data-simplebar-auto-hide="false">
                                                         <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
@@ -1323,10 +1354,15 @@
                                                         <div class="list-small alb"><span class="list-item"><span data-img class="flags">&#x1F1E6;&#x1F1F1;</span></span>
                                                         </div>
                                                     </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="border-white" style="border-right:1px solid white;height: 16px;">
-                                                <div class="btn-wrap width16">
+                                                <div class="btn-wrap width15 sort-menu">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 1" data-simplebar="" data-simplebar-auto-hide="false">
                                                         <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
@@ -1340,10 +1376,15 @@
                                                         <div class="list-small desktop"><span class="list-item"><span data-img class="icon-Vector-10 icons"></span></span>
                                                         </div>
                                                     </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="border-white" style="border-right:1px solid white;height: 16px;">
-                                                <div class="btn-wrap width16">
+                                            <div class="border-white" style="border-right:1px solid white;height: 16px;background: #d4d4d4;">
+                                                <div class="btn-wrap width15 sort-menu">
                                                     <div class="btn-small"></div>
                                                     <div class="block1 2" data-simplebar="" data-simplebar-auto-hide="false">
                                                         <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
@@ -1359,9 +1400,14 @@
                                                         <div class="list-small apple"><span class="list-item"><span data-img class="icon-Vector-9 icons"></span></span>
                                                         </div>
                                                     </div>
+                                                    <div class="sort-btn">
+                                                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="btn-wrap width17">
+                                            <div class="btn-wrap width17 sort-menu">
                                                 <div class="btn-small"></div>
                                                 <div class="block1 3" data-simplebar="" data-simplebar-auto-hide="false">
                                                     <div class="list-small select-btn all"><span class="list-item"><span>Все</span></span>
@@ -1385,54 +1431,163 @@
                                                     <div class="list-small mail"><span class="list-item"><span data-img class="icon-Vector-13 icons"></span></span>
                                                     </div>
                                                 </div>
+                                                <div class="sort-btn">
+                                                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                </svg>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu"><input type="text" class="input-style"></div>
+                                    <div class="wrap-hide sort-menu">
+                                        <input type="text" class="input-style">
+                                        <div class="sort-btn">
+                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                        </svg>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </thead>
@@ -3199,21 +3354,16 @@
     <script src="js/simplebar.js"></script>
     <script src="js/script.js"></script>
     <!-- <script src="js/jquery.mask.js"></script> -->
+    <script src="js/materialize.min.js"></script>
     <script src="js/script.crm-table.js"></script>
     <!-- <script src="js/btn-ip-wrap.js"></script> -->
     <script src="js/modul-nv.js"></script>
     <script src="js/select.js"></script>
     <!-- <script src="js/hammer.js"></script> -->
     <!-- <script src="js/drag-colum.js"></script> -->
-    <script src="js/jquery-ui.min.js"></script>
+    <!-- <script src="js/jquery-ui.min.js"></script> -->
 
     <script>
-        // new SimpleBar(document.querySelector('.container-info-settings'), {
-        //     autoHide: true,
-        //     forceVisible: true | 'x' | 'y',
-        //     clickOnTrack: false
-        // });
-
         new SimpleBar(document.querySelector('.scroll-wrap'), {
             autoHide: true,
             forceVisible: true | 'x' | 'y',
@@ -3267,36 +3417,39 @@
         // });
     </script>
     <script>
-        $(function() {
-            $("#datepicker").datepicker();
-            $("#datepicker").datepicker("option", "showButtonPanel", true);
-            $("#add-s").datepicker();
-            $("#add-s").datepicker("option", "showButtonPanel", true);
-            $("#add-po").datepicker();
-            $("#add-po").datepicker("option", "showButtonPanel", true);
-            $("#finish-s").datepicker();
-            $("#finish-s").datepicker("option", "showButtonPanel", true);
-            $("#finish-po").datepicker();
-            $("#finish-po").datepicker("option", "showButtonPanel", true);
-            $("#send-s").datepicker();
-            $("#send-s").datepicker("option", "showButtonPanel", true);
-            $("#send-po").datepicker();
-            $("#send-po").datepicker("option", "showButtonPanel", true);
-            $("#update-s").datepicker();
-            $("#update-s").datepicker("option", "showButtonPanel", true);
-            $("#update-po").datepicker();
-            $("#update-po").datepicker("option", "showButtonPanel", true);
-            $("#fixed-po").datepicker();
-            $("#fixed-po").datepicker("option", "showButtonPanel", true);
-            $("#fixed-s").datepicker();
-            $("#fixed-s").datepicker("option", "showButtonPanel", true);
-            $("#accept-po").datepicker();
-            $("#accept-po").datepicker("option", "showButtonPanel", true);
-            $("#accept-s").datepicker();
-            $("#accept-s").datepicker("option", "showButtonPanel", true);
+        $(document).ready(function() {
+            $('.datepicker').datepicker();
         });
+        // $(function() {
+        //     $("#datepicker").datepicker();
+        //     $("#datepicker").datepicker("option", "showButtonPanel", true);
+        //     $("#add-s").datepicker();
+        //     $("#add-s").datepicker("option", "showButtonPanel", true);
+        //     $("#add-po").datepicker();
+        //     $("#add-po").datepicker("option", "showButtonPanel", true);
+        //     $("#finish-s").datepicker();
+        //     $("#finish-s").datepicker("option", "showButtonPanel", true);
+        //     $("#finish-po").datepicker();
+        //     $("#finish-po").datepicker("option", "showButtonPanel", true);
+        //     $("#send-s").datepicker();
+        //     $("#send-s").datepicker("option", "showButtonPanel", true);
+        //     $("#send-po").datepicker();
+        //     $("#send-po").datepicker("option", "showButtonPanel", true);
+        //     $("#update-s").datepicker();
+        //     $("#update-s").datepicker("option", "showButtonPanel", true);
+        //     $("#update-po").datepicker();
+        //     $("#update-po").datepicker("option", "showButtonPanel", true);
+        //     $("#fixed-po").datepicker();
+        //     $("#fixed-po").datepicker("option", "showButtonPanel", true);
+        //     $("#fixed-s").datepicker();
+        //     $("#fixed-s").datepicker("option", "showButtonPanel", true);
+        //     $("#accept-po").datepicker();
+        //     $("#accept-po").datepicker("option", "showButtonPanel", true);
+        //     $("#accept-s").datepicker();
+        //     $("#accept-s").datepicker("option", "showButtonPanel", true);
+        // });
     </script>
-    <script>
+    <!-- <script>
         /* Локализация datepicker */
         $.datepicker.regional['ru'] = {
             closeText: 'Закрыть',
@@ -3316,7 +3469,7 @@
             yearSuffix: ''
         };
         $.datepicker.setDefaults($.datepicker.regional['ru']);
-    </script>
+    </script> -->
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
     <script>
