@@ -6,9 +6,10 @@ slider.forEach((el) => {
     // let wrapHide = document.querySelector('.wrap-hide');
 
     el.addEventListener('mousedown', (e) => {
+        // console.log();
         $("#tooltipBtn").css({ 'animation': '' });
         $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
-        if (el.closest('.wrap-hide') == null && el.closest('.modul-np') == null) {
+        if (!e.target.classList.contains('podlozhka') && el.closest('.wrap-hide') == null && el.closest('.modul-np') == null && [...e.path].map(x => x.localName).filter(x => x == 'thead' || x == 'td').length != 2 && e.path[0].localName != 'th') {
             isDown = true;
             // slider.classList.add('active');
             startX = e.pageX - el.offsetLeft;

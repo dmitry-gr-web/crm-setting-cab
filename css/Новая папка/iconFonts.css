@@ -22,14 +22,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Tablet:before {
-    content: "\71";
-    color: #9c9b9e;
-}
-
 .icon-2:before {
     content: "\77";
     color: #9c9b9e;
+    /* font-size: 11px; */
 }
 
 .icon-1:before {
@@ -40,6 +36,7 @@
 .icon-Exclude:before {
     content: "\47";
     color: #9c9b9e;
+    /* font-size: 12px; */
 }
 
 .icon-Exclude-2:before {
@@ -73,6 +70,8 @@
 
 .icon-Union-4:before {
     content: "\30";
+    color: #474747;
+    /* color: #9c9b9e; */
 }
 
 .icon-Union-12:before {
@@ -107,7 +106,7 @@
 
 .icon-Union-18:before {
     content: "\66";
-    color: #9c9b9e;
+    color: #E60000;
 }
 
 .icon-Vector-81:before {

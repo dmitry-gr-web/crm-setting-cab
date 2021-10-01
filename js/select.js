@@ -12,9 +12,10 @@
                 sel = [],
                 last;
             $(document).on("keydown", function(e) {
+                let input = e.target;
                 let isCtrl = e.ctrlKey || e.metaKey,
                     keyA = e.which == 65;
-                if (isCtrl && keyA) {
+                if (isCtrl && keyA && input.localName != 'input') {
                     $(".crm-main-table").each((_, x) => {
                         if (!x.classList.contains("selected-lock")) {
                             x.classList.add("select-toggle");

@@ -373,13 +373,6 @@ template {
   font-weight: 700;
   font-style: normal;
 }
-@font-face {
-  font-family: "SN";
-  src: url("../fonts/SF-Pro-Display-Light.otf");
-  src: local("../fonts/SF-Pro-Display-Light"), url("../fonts/SF-Pro-Display-Light.otf") format("otf");
-  font-weight: 700;
-  font-style: normal;
-}
 body {
   font-family: "Roboto", sans-serif;
   top: 0;
