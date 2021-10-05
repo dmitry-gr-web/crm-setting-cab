@@ -1464,6 +1464,14 @@ $(".text-lenght").text(function(i, text) {
         $(this).text(text);
         $(this).parents('.list-large').hover(function(xy) {
             $('#tooltipBtn').text(boxMemory);
+            if ($('.inputStatus')[0].value !== "") {
+                let re = new RegExp($('.inputStatus')[0].value, "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
+                console.log(text_pr)
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerText = boxMemory;
+            }
             $("#tooltipBtn").css("font-size", "11px");
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
@@ -1494,9 +1502,27 @@ $(".text-lenght").text(function(i, text) {
 // };
 
 function focusInputLarge() {
-    $(this).focus().val('');
+    $(this).focus();
 };
-
+$(".input-btn-large").on('keyup', function() {
+    $('.btn-wrap').css('visibility', 'hidden');
+    $('.btn-wrap-large').css('visibility', 'hidden');
+    $('.btn-wrap-medium').css('visibility', 'hidden');
+    $('.block-calendary').css('visibility', 'hidden');
+    $('.border-sort').css('opacity', '0');
+    $('.input-style').css('visibility', 'hidden');
+    $('.sort-btn').css('visibility', 'hidden');
+    $('.podlozhka').css('z-index', '998').css('display', 'block');
+    $(".sort-menu").off('mouseenter', sortMenu);
+    $(".sort-menu").off('mouseleave', sortMenuOff);
+    // $(this).parents('.sort-menu').on('mouseenter', sortMenu);
+    $(this).parents('.btn-wrap-large').css('visibility', 'visible').css('z-index', '999');
+    $(this).parents('.btn-wrap-large').find('.sort-btn').css('visibility', 'visible');
+    $(this).parents('.btn-wrap-large').find('.border-sort').css('opacity', '1');
+});
+$(".input-btn-large").on('mouseenter', function() {
+    $(this).focus();
+});
 // $(".btn-wrap-large").on('mouseenter', openLargeMenu);
 // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
 $(".input-btn-large").on('click', focusInputLarge);
@@ -1513,24 +1539,25 @@ $(".list-large").click(function(e) {
     $('.podlozhka').css('z-index', '998').css('display', 'block');
     $(".sort-menu").off('mouseenter', sortMenu);
     $(".sort-menu").off('mouseleave', sortMenuOff);
-
+    // $(this).parents('.btn-wrap-large').children('.input-btn-large').focus();
+    // $(this).parents('.sort-menu').on('mouseenter', sortMenu);
     $(this).parents('.btn-wrap-large').css('visibility', 'visible');
     $(this).parents('.btn-wrap-large').find('.sort-btn').css('visibility', 'visible');
     $(this).parents('.btn-wrap-large').find('.border-sort').css('opacity', '1');
 
     $(this).toggleClass('select-btn');
     $(this).parent().find('.list-large:first-child').removeClass('select-btn');
-    if ($(this).parents('.btn-wrap-large').find('.select-btn').length == 1) {
-        let appendStatus = $(this).parents('.btn-wrap-large').find('.select-btn').text();
-        $(this).parents('.btn-wrap-large').children('.input-btn-large').val(appendStatus);
-    }
-    if ($(this).parents('.btn-wrap-large').find('.select-btn').length >= 2) {
-        $(this).parents('.block1').siblings('.input-btn-large').val('Фильтр');
-    }
-    if ($(this).parents('.btn-wrap-large').find('.select-btn').length == 0) {
-        $(this).parents('.block1').siblings('.input-btn-large').val('');
-        $(this).parent().find('.list-large:first-child').addClass('select-btn');
-    }
+    // if ($(this).parents('.btn-wrap-large').find('.select-btn').length == 1) {
+    //     let appendStatus = $(this).parents('.btn-wrap-large').find('.select-btn').text();
+    //     $(this).parents('.btn-wrap-large').children('.input-btn-large').val(appendStatus);
+    // }
+    // if ($(this).parents('.btn-wrap-large').find('.select-btn').length >= 2) {
+    //     $(this).parents('.block1').siblings('.input-btn-large').val('Фильтр');
+    // }
+    // if ($(this).parents('.btn-wrap-large').find('.select-btn').length == 0) {
+    //     $(this).parents('.block1').siblings('.input-btn-large').val('');
+    //     $(this).parent().find('.list-large:first-child').addClass('select-btn');
+    // }
 });
 $(".list-large:first-child").click(function() {
     $(this).addClass('select-btn');
@@ -1607,7 +1634,7 @@ $('.podlozhka').on("click", function(e) {
         //выключить стрелку сортировки
         $('.btn-wrap-large').each(function() {
             if ($(this).find('.select-btn').length == 1) {
-                let appendStatus = $(this).find('.select-btn').text();
+                let appendStatus = $(this).find('.select-btn .product-item').text();
                 $(this).children('.input-btn-large').val(appendStatus);
                 if ($(this).children('.input-btn-large').val().trim() == 'Все') {
                     $(this).children('.input-btn-large').val('');
@@ -2104,14 +2131,49 @@ $(".text-lenght-2").text(function(i, text) {
 //     });
 //     // }
 // });
-$(".nomer1").text(function(i, text) {
+// $(".nomer1").text(function(i, text) {
+//     let boxMemory = text;
+//     // if (text.length >= 20) {
+//     //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
+//     //     text = text.substring(0, 15) + "...";
+//     //     $(this).text(text);
+//     $(this).parents('.list-large').hover(function(xy) {
+//         $('#tooltipBtn').html('<span class="idProduct">ID - 243534</span><br> ' + ' <span class="cenaProduct">Цена: 349.00</span><br>' + boxMemory);
+//         $("#tooltipBtn").css("font-size", "11px");
+//         let posElement = this.getBoundingClientRect();
+//         let blockHeight = $(this).height();
+//         let screenWidth = document.body.clientWidth;
+//         let screenHeight = document.body.clientHeight;
+//         let widthTooltip = $('#tooltipBtn').width();
+//         let heightTooltip = $('#tooltipBtn').height();
+//         let blockWidth = $(this).width();
+//         $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+//         $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+//         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+//             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+//         }
+//     }).mouseleave(function(e) {
+//         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+//     });
+//     // }
+// });
+$(".product-item").text(function(i, text) {
     let boxMemory = text;
     // if (text.length >= 20) {
     //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
     //     text = text.substring(0, 15) + "...";
     //     $(this).text(text);
     $(this).parents('.list-large').hover(function(xy) {
-        $('#tooltipBtn').html('<span class="idProduct">ID - 243534</span><br> ' + ' <span class="cenaProduct">Цена: 349.00</span><br>' + boxMemory);
+        // $('#tooltipBtn').html(boxMemory + );
+        console.log($('.product-input')[0]);
+        if ($('.product-input')[0].value !== "") {
+            let re = new RegExp($('.product-input')[0].value, "gui");
+            let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
+            console.log(textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> '))
+            document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ');
+        } else {
+            // document.getElementById('tooltipBtn').innerHTML = boxMemory + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ';
+        }
         $("#tooltipBtn").css("font-size", "11px");
         let posElement = this.getBoundingClientRect();
         let blockHeight = $(this).height();
@@ -2130,58 +2192,32 @@ $(".nomer1").text(function(i, text) {
     });
     // }
 });
-$(".nomer2").text(function(i, text) {
-    let boxMemory = text;
-    // if (text.length >= 20) {
-    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
-    //     text = text.substring(0, 15) + "...";
-    //     $(this).text(text);
-    $(this).parents('.list-large').hover(function(xy) {
-        $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ');
-        $("#tooltipBtn").css("font-size", "11px");
-        let posElement = this.getBoundingClientRect();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        let blockWidth = $(this).width();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-        }
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-    });
-    // }
-});
-$(".nomer3").text(function(i, text) {
-    let boxMemory = text;
-    // if (text.length >= 20) {
-    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
-    //     text = text.substring(0, 15) + "...";
-    //     $(this).text(text);
-    $(this).parents('.list-large').hover(function(xy) {
-        $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct2">Цена: 349.00</span>' + '<br> <span class="idProduct2">ID - 243534</span>');
-        $("#tooltipBtn").css("font-size", "11px");
-        let posElement = this.getBoundingClientRect();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        let blockWidth = $(this).width();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-        }
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-    });
-    // }
-});
+// $(".nomer3").text(function(i, text) {
+//     let boxMemory = text;
+//     // if (text.length >= 20) {
+//     //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
+//     //     text = text.substring(0, 15) + "...";
+//     //     $(this).text(text);
+//     $(this).parents('.list-large').hover(function(xy) {
+//         $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct2">Цена: 349.00</span>' + '<br> <span class="idProduct2">ID - 243534</span>');
+//         $("#tooltipBtn").css("font-size", "11px");
+//         let posElement = this.getBoundingClientRect();
+//         let blockHeight = $(this).height();
+//         let screenWidth = document.body.clientWidth;
+//         let screenHeight = document.body.clientHeight;
+//         let widthTooltip = $('#tooltipBtn').width();
+//         let heightTooltip = $('#tooltipBtn').height();
+//         let blockWidth = $(this).width();
+//         $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+//         $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+//         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+//             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+//         }
+//     }).mouseleave(function(e) {
+//         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+//     });
+//     // }
+// });
 
 // header hide
 // $(".crm-input").hover(function() {
@@ -2201,6 +2237,15 @@ function sortMenu() {
     $(this).find('.sort-btn').addClass('sort-toggle');
     $(this).find('.btn-medium').addClass('hide-arrow');
     $(this).find('.btn-wrap-large').addClass('hide-arrow');
+    if ($(this).find('.input-btn-large').length > 0) {
+        $(this).find('.input-btn-large')[0].focus();
+        $(this).find('.input-btn-large')[0].select();
+    }
+
+    // let fieldInput = $(this).find('.input-btn-large');
+    // let fldLength = fieldInput.val().length;
+    // fieldInput.focus();
+    // fieldInput.val().setSelectionRange(fldLength, fldLength);
     $(this).find('.btn-wrap').css('width', '53px');
     $(this).find('.block1').addClass("toggle");
     $(this).find('.btn-small').addClass('hide-arrow');
@@ -2212,6 +2257,7 @@ $(".sort-menu").on('mouseleave', sortMenuOff);
 
 function sortMenuOff(e) {
     //small btn
+    $(this).find('.input-btn-large').blur();
     $(this).find('.block1').removeClass("toggle");
     $('.btn-wrap.width23').css('width', '23px');
     $('.btn-wrap.width22').css('width', '22px');
@@ -3094,10 +3140,12 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
 //сортировка в кнопках поиск
 let el = null;
 let text = [];
-$('.find').on('keyup', e => {
-    if (el === null) {
+let lastIndex = 0;
+$('.find').on('keyup', function(e) {
+    let idx = $('.find').index(this);
+    if (el === null || lastIndex !== idx) {
         el = [...$(e.currentTarget.parentElement).find('.list-large')];
-        text = [...el.map(x => $(x).find('.product-item')[0].innerText)]
+        text = [...el.map(x => $(x).find('.findFunction')[0].innerText)]
     }
 
     for (let index = 0; index < el.length; index++) {
@@ -3106,22 +3154,23 @@ $('.find').on('keyup', e => {
         if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
             $(element).css('display', 'none');
         } else {
-            if ($('.product-input')[0].value !== "") {
-                let re = new RegExp($('.product-input')[0].value, "gui");
-                let text_pr = text[index].replace(re, x => '<span style="background: #FFE600;color: black;">' + x + '</span>');
+            if ($('.find')[idx].value !== "") {
+                let re = new RegExp($('.find')[idx].value, "gui");
+                let text_pr = text[index].replace(re, x => '<span class="findUnderline" style="background: #FFE600;color: black;">' + x + '</span>');
+                // let text_pr = text[index].replace(re, x => '<span class="findUnderline" style="background: #FFE600;color: black;">' + x + '</span>');
 
                 $(element).css('display', 'block')
-                $($(element).find('.product-item')[0]).html(textToHTML(text_pr));
+                $($(element).find('.findFunction')[0]).html(textToHTML(text_pr));
 
             } else {
-                $($(element).find('.product-item')[0]).text(text[index]);
+                $($(element).find('.findFunction')[0]).text(text[index]);
                 $(element).css('display', 'block')
             }
             //    console.log(text_pr)
             // document.querySelector('.product-list.list-item').innerHTML = textToHTML(text_pr);
-
         }
     }
+    lastIndex = idx;
     // ).find('.list-large'));
     // e.currentTarget.value
-})
+});
