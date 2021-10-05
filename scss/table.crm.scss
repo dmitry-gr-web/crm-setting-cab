@@ -1649,16 +1649,18 @@ input[type='number'] {
         padding-left: 3px;
         padding-right: 15px;
         line-height: 16px;
+        text-overflow: ellipsis;
+        overflow: hidden;
         // overflow: hidden;
         // text-overflow: ellipsis;
         &::placeholder {
             font-size: 10px;
         }
     }
-    .product-input {
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+    // .product-input {
+    //     text-overflow: ellipsis;
+    //     overflow: hidden;
+    // }
     &:after {
         content: '';
         position: absolute;
@@ -1670,9 +1672,8 @@ input[type='number'] {
         right: 4px;
         opacity: 0.8;
     }
-    .list-large:hover .text-lenght,
-    .list-large:hover .text-lenght-2,
-    .list-large:hover .product-item {
+    .list-large:hover .status-tooltip,
+    .list-large:hover .product-item-tooltip {
         color: rgba(0, 0, 0, 0.5);
     }
     // .list-large:hover .text-lenght {
@@ -1696,14 +1697,21 @@ input[type='number'] {
             left: 6px;
             top: 6px;
         }
-        .color-form {
-            bottom: -4px;
-        }
+        // .color-form {
+        //     height: 2px;
+        //     width: 100%;
+        //     position: absolute;
+        //     // bottom: 2px;
+        //     border-radius: 2px;
+        //     left: 0;
+        //     opacity: 0.75;
+        //     bottom: -4px;
+        // }
         .list-large span:nth-child(2) {
             display: inline-block;
             height: 14px;
         }
-        .product-item {
+        .product-item-tooltip {
             // word-break: break-word;
             // white-space: normal;
             display: inline-block;
@@ -1714,6 +1722,45 @@ input[type='number'] {
             // &:hover .as {
             //     width: 45px;
             // }
+        }
+        .status-tooltip {
+            max-width: 80px;
+            display: inline-block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            position: relative;
+            &:before {
+                content: '';
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                // bottom: 2px;
+                border-radius: 2px;
+                left: 0;
+                opacity: 0.75;
+                bottom: 2px;
+            }
+        }
+        .color-515151-before.status-tooltip:before {
+            background-color: #515151;
+        }
+        .color-91d100-before.status-tooltip:before {
+            background-color: #91d100;
+        }
+        .color-fd7777-before.status-tooltip:before {
+            background-color: #fd7777;
+        }
+        .color-e2d317-before.status-tooltip:before {
+            background-color: #e2d317;
+        }
+        .color-00CC00-before.status-tooltip:before {
+            background-color: #00CC00;
+        }
+        .color-9C02A7-before.status-tooltip:before {
+            background-color: #9C02A7;
+        }
+        .color-C94F62-before.status-tooltip:before {
+            background-color: #C94F62;
         }
         // .nomer2 {
         //     width: 100%;

@@ -931,13 +931,11 @@ input[type=number] {
   padding-left: 3px;
   padding-right: 15px;
   line-height: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .btn-wrap-large .input-btn-large::placeholder {
   font-size: 10px;
-}
-.btn-wrap-large .product-input {
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 .btn-wrap-large:after {
   content: "";
@@ -950,9 +948,8 @@ input[type=number] {
   right: 4px;
   opacity: 0.8;
 }
-.btn-wrap-large .list-large:hover .text-lenght,
-.btn-wrap-large .list-large:hover .text-lenght-2,
-.btn-wrap-large .list-large:hover .product-item {
+.btn-wrap-large .list-large:hover .status-tooltip,
+.btn-wrap-large .list-large:hover .product-item-tooltip {
   color: rgba(0, 0, 0, 0.5);
 }
 .btn-wrap-large .block1 {
@@ -974,19 +971,54 @@ input[type=number] {
   left: 6px;
   top: 6px;
 }
-.btn-wrap-large .block1 .color-form {
-  bottom: -4px;
-}
 .btn-wrap-large .block1 .list-large span:nth-child(2) {
   display: inline-block;
   height: 14px;
 }
-.btn-wrap-large .block1 .product-item {
+.btn-wrap-large .block1 .product-item-tooltip {
   display: inline-block;
   width: 180px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.btn-wrap-large .block1 .status-tooltip {
+  max-width: 80px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+}
+.btn-wrap-large .block1 .status-tooltip:before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  border-radius: 2px;
+  left: 0;
+  opacity: 0.75;
+  bottom: 2px;
+}
+.btn-wrap-large .block1 .color-515151-before.status-tooltip:before {
+  background-color: #515151;
+}
+.btn-wrap-large .block1 .color-91d100-before.status-tooltip:before {
+  background-color: #91d100;
+}
+.btn-wrap-large .block1 .color-fd7777-before.status-tooltip:before {
+  background-color: #fd7777;
+}
+.btn-wrap-large .block1 .color-e2d317-before.status-tooltip:before {
+  background-color: #e2d317;
+}
+.btn-wrap-large .block1 .color-00CC00-before.status-tooltip:before {
+  background-color: #00CC00;
+}
+.btn-wrap-large .block1 .color-9C02A7-before.status-tooltip:before {
+  background-color: #9C02A7;
+}
+.btn-wrap-large .block1 .color-C94F62-before.status-tooltip:before {
+  background-color: #C94F62;
 }
 .btn-wrap-large .block1 .list-item {
   position: relative;

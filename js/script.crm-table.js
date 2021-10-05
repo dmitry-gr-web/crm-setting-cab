@@ -1457,40 +1457,40 @@ $("#prev").click(function() {
 
 
 //menu btn large
-$(".text-lenght").text(function(i, text) {
-    let boxMemory = text;
-    if (text.length >= 14) {
-        text = text.substring(0, 13) + "...";
-        $(this).text(text);
-        $(this).parents('.list-large').hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
-            if ($('.inputStatus')[0].value !== "") {
-                let re = new RegExp($('.inputStatus')[0].value, "gui");
-                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
-                console.log(text_pr)
-                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
-            } else {
-                document.getElementById('tooltipBtn').innerText = boxMemory;
-            }
-            $("#tooltipBtn").css("font-size", "11px");
-            let posElement = this.getBoundingClientRect();
-            let blockWidth = $(this).width();
-            let blockHeight = $(this).height();
-            let screenWidth = document.body.clientWidth;
-            let screenHeight = document.body.clientHeight;
-            let widthTooltip = $('#tooltipBtn').width();
-            let heightTooltip = $('#tooltipBtn').height();
+// $(".text-lenght").text(function(i, text) {
+//     let boxMemory = text;
+//     if (text.length >= 14) {
+//         text = text.substring(0, 13) + "...";
+//         $(this).text(text);
+//         $(this).parents('.list-large').hover(function(xy) {
+//             $('#tooltipBtn').text(boxMemory);
+//             if ($('.inputStatus')[0].value !== "") {
+//                 let re = new RegExp($('.inputStatus')[0].value, "gui");
+//                 let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
+//                 // console.log(text_pr)
+//                 document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+//             } else {
+//                 document.getElementById('tooltipBtn').innerText = boxMemory;
+//             }
+//             $("#tooltipBtn").css("font-size", "11px");
+//             let posElement = this.getBoundingClientRect();
+//             let blockWidth = $(this).width();
+//             let blockHeight = $(this).height();
+//             let screenWidth = document.body.clientWidth;
+//             let screenHeight = document.body.clientHeight;
+//             let widthTooltip = $('#tooltipBtn').width();
+//             let heightTooltip = $('#tooltipBtn').height();
 
-            $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-            if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-            }
-        }).mouseleave(function(e) {
-            $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-        });
-    }
-});
+//             $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+//             $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+//             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+//                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+//             }
+//         }).mouseleave(function(e) {
+//             $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+//         });
+//     }
+// });
 //menu large btn
 // function openLargeMenu() {
 //     $(this).children('.block1').addClass("toggle");
@@ -1521,7 +1521,10 @@ $(".input-btn-large").on('keyup', function() {
     $(this).parents('.btn-wrap-large').find('.border-sort').css('opacity', '1');
 });
 $(".input-btn-large").on('mouseenter', function() {
-    $(this).focus();
+    console.log(this)
+    this.focus();
+    this.select();
+    // $(this).select();
 });
 // $(".btn-wrap-large").on('mouseenter', openLargeMenu);
 // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
@@ -1594,6 +1597,8 @@ $('.podlozhka').on("click", function(e) {
         // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
         // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
         $('.input-style').on('mouseleave', inputFocus);
+        $('.list-large').css('display', 'block');
+        $('.findFunction').find('.findUnderline').removeClass('findUnderline');
         $('.podlozhka').css('z-index', '0').css('display', 'none');
         $('.btn-wrap').css('visibility', 'visible').css('z-index', '2');
         $('.border-sort').css('opacity', '1');
@@ -1634,7 +1639,7 @@ $('.podlozhka').on("click", function(e) {
         //выключить стрелку сортировки
         $('.btn-wrap-large').each(function() {
             if ($(this).find('.select-btn').length == 1) {
-                let appendStatus = $(this).find('.select-btn .product-item').text();
+                let appendStatus = $(this).find('.select-btn').find('.findFunction').text();
                 $(this).children('.input-btn-large').val(appendStatus);
                 if ($(this).children('.input-btn-large').val().trim() == 'Все') {
                     $(this).children('.input-btn-large').val('');
@@ -2157,7 +2162,7 @@ $(".text-lenght-2").text(function(i, text) {
 //     });
 //     // }
 // });
-$(".product-item").text(function(i, text) {
+$(".product-item-tooltip").text(function(i, text) {
     let boxMemory = text;
     // if (text.length >= 20) {
     //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
@@ -2165,27 +2170,70 @@ $(".product-item").text(function(i, text) {
     //     $(this).text(text);
     $(this).parents('.list-large').hover(function(xy) {
         // $('#tooltipBtn').html(boxMemory + );
-        console.log($('.product-input')[0]);
-        if ($('.product-input')[0].value !== "") {
-            let re = new RegExp($('.product-input')[0].value, "gui");
-            let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
-            console.log(textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> '))
-            document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ');
-        } else {
-            // document.getElementById('tooltipBtn').innerHTML = boxMemory + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ';
+        // // console.log($('.product-input')[0]);
+        // console.log($(this).find('.findFunction'), $(this).find('.findFunction'))
+        if ($(this).find('.findFunction')[0].scrollWidth > $(this).find('.findFunction')[0].offsetWidth) {
+            if ($('.product-input')[0].value !== "") {
+                let re = new RegExp($('.product-input')[0].value, "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
+                // console.log(textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> '))
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ');
+            } else {
+                document.getElementById('tooltipBtn').innerHTML = boxMemory + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ';
+            }
+
+            $("#tooltipBtn").css("font-size", "11px");
+            let posElement = this.getBoundingClientRect();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            let blockWidth = $(this).width();
+            $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+            if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+            }
         }
-        $("#tooltipBtn").css("font-size", "11px");
-        let posElement = this.getBoundingClientRect();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        let blockWidth = $(this).width();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+    });
+    // }
+});
+$(".status-tooltip").text(function(i, text) {
+    let boxMemory = text;
+    // if (text.length >= 20) {
+    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
+    //     text = text.substring(0, 15) + "...";
+    //     $(this).text(text);
+    $(this).parents('.list-large').hover(function(xy) {
+        // $('#tooltipBtn').html(boxMemory + );
+        // // console.log($('.product-input')[0]);
+        // console.log($(this).find('.findFunction'), $(this).find('.findFunction'))
+        if ($(this).find('.findFunction')[0].scrollWidth > $(this).find('.findFunction')[0].offsetWidth) {
+            if ($('.inputStatus')[0].value !== "") {
+                let re = new RegExp($('.inputStatus')[0].value, "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
+                // console.log(textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> '))
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerHTML = boxMemory;
+            }
+
+            $("#tooltipBtn").css("font-size", "11px");
+            let posElement = this.getBoundingClientRect();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            let blockWidth = $(this).width();
+            $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+            if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+            }
         }
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
@@ -2238,8 +2286,8 @@ function sortMenu() {
     $(this).find('.btn-medium').addClass('hide-arrow');
     $(this).find('.btn-wrap-large').addClass('hide-arrow');
     if ($(this).find('.input-btn-large').length > 0) {
-        $(this).find('.input-btn-large')[0].focus();
-        $(this).find('.input-btn-large')[0].select();
+        $($(this).find('.input-btn-large')[0]).focus().val('');
+        // $(this).find('.input-btn-large')[0].select();
     }
 
     // let fieldInput = $(this).find('.input-btn-large');
@@ -2257,6 +2305,14 @@ $(".sort-menu").on('mouseleave', sortMenuOff);
 
 function sortMenuOff(e) {
     //small btn
+    let memory = $(this).find('.select-btn').find('.findFunction').text();
+    $(this).find('.input-btn-large').val(memory);
+    if ($(this).find('.select-btn').length >= 2) {
+        $(this).find('.input-btn-large').val('Фильтр');
+    }
+    if (memory == 'Все') {
+        $(this).find('.input-btn-large').val('');
+    }
     $(this).find('.input-btn-large').blur();
     $(this).find('.block1').removeClass("toggle");
     $('.btn-wrap.width23').css('width', '23px');
@@ -2306,7 +2362,17 @@ function sortMenuOff(e) {
 };
 
 function sortBtnClick() {
+    let memory = $(this).siblings('.block1').find('.select-btn').find('.findFunction').text();
+    $(this).siblings('.input-btn-large').val(memory);
+    if ($(this).siblings('.block1').find('.select-btn').length >= 2) {
+        $(this).siblings('.input-btn-large').val('Фильтр');
+    }
+    if (memory == 'Все') {
+        $(this).siblings('.input-btn-large').val('');
+    }
     $(this).siblings('.block1').removeClass('toggle');
+    $('.list-large').css('display', 'block');
+    $('.findFunction').find('.findUnderline').removeClass('findUnderline');
     $('.btn-wrap').css('visibility', 'visible').css('z-index', '2');
     $('.btn-wrap-large').css('visibility', 'visible').css('z-index', '2');
     $('.btn-wrap-medium').css('visibility', 'visible').css('z-index', '2');
@@ -3077,7 +3143,7 @@ $(".site-tooltip").hover(function(xy) {
     if ($('.site')[0].value !== "") {
         let re = new RegExp($('.site')[0].value, "gui");
         let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600;color: black;">' + x + '</span>');
-        console.log(text_pr)
+        // console.log(text_pr)
         document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
     } else {
         document.getElementById('tooltipBtn').innerText = textttttttt;
@@ -3108,7 +3174,7 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
             if ($('.comment-input')[0].value !== "") {
                 let re = new RegExp($('.comment-input')[0].value, "gui");
                 let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
-                console.log(text_pr)
+                // console.log(text_pr)
                 document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
             } else {
                 document.getElementById('tooltipBtn').innerText = boxMemory;
@@ -3147,16 +3213,15 @@ $('.find').on('keyup', function(e) {
         el = [...$(e.currentTarget.parentElement).find('.list-large')];
         text = [...el.map(x => $(x).find('.findFunction')[0].innerText)]
     }
-
     for (let index = 0; index < el.length; index++) {
         const element = el[index];
         // console.log($(element).find('.product-item'), e.currentTarget.value);
         if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
             $(element).css('display', 'none');
         } else {
-            if ($('.find')[idx].value !== "") {
+            if ($('.find')[idx].value !== "" && idx !== 0) {
                 let re = new RegExp($('.find')[idx].value, "gui");
-                let text_pr = text[index].replace(re, x => '<span class="findUnderline" style="background: #FFE600;color: black;">' + x + '</span>');
+                let text_pr = text[index].replace(re, x => '<span class="findUnderline">' + x + '</span>');
                 // let text_pr = text[index].replace(re, x => '<span class="findUnderline" style="background: #FFE600;color: black;">' + x + '</span>');
 
                 $(element).css('display', 'block')
