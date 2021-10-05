@@ -22,8 +22,7 @@
 
     <!-- <link rel="stylesheet" href="css/materialize.css"> -->
 
-    <link rel="stylesheet" href="css/daterangepicker.css" />
-    <link rel="stylesheet" href="css/new-calendary.css">
+
     <link rel="stylesheet" href="css/simplebar.css">
     <link rel="stylesheet" href="css/iconFonts.css">
     <link rel="stylesheet" href="css/style.css">
@@ -34,6 +33,8 @@
     <!-- <link rel="stylesheet" href="css/slick-theme.css"> -->
     <!-- <link rel="stylesheet" href="css/crm-order.css"> -->
     <link rel="stylesheet" href="css/table.crm.css">
+    <link rel="stylesheet" href="css/daterangepicker.css" />
+    <link rel="stylesheet" href="css/new-calendary.css">
     <link rel="stylesheet" href="css/notification.css">
     <link rel="stylesheet" href="css/import.css">
     <link rel="stylesheet" href="css/modul.css">
@@ -805,7 +806,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style firstLetterUpper" autocomplete="off" maxlength="500">
+                                        <input type="text" class="input-style firstLetterUpper comment-input" autocomplete="off" maxlength="500">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -827,14 +828,74 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide">
-                                        <div class="sort-menu addaptiveInputArrow">
-                                            <input type="text" class="input-style">
-                                            <div class="sort-btn">
-                                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
-                                            </svg>
+                                        <div class="sort-menu product-box">
+                                            <div class="btn-wrap-large">
+                                                <input type="text" class="input-btn-large product-input find" value="">
+                                                <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
+                                                    <div class="list-large product-list select-btn"><span class="list-item"><span class="product-item">Все</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list p-p"><span class="list-item"><span class="product-item">П/п</span></span>
+                                                    </div>
+                                                    <!-- <div class="list-large product-list"><span class="list-item"><span class="product-item">Чай Монастырский (1шт. x 100.00 = 10012321 ыв234 ывв324243 2324  34в 45453455 xnjnj чтото что</span></span>
+                                                    </div> -->
+                                                    <!-- <div class="list-large product-list"><span class="list-item"><span class="product-item nomer1">123456 - Товар Чай зеленый с мятой и пампухами 400грн</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer1">234443 - Компьютер Настольный игровой для игры 250грн</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer1">254767 - Мягкие игрушки для детей набор 3000грн</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer1">787888 - Набор новогодних елок, наруби сам в лесу 20.00грн</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer1">787563 - Закажи пиццу на дом с доставкой 1285.00$</span>
+                                                        </span>
+                                                    </div> -->
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer1">Елитная одежда для оленей одежда для оленей</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer2">Тарелки набор из 8 приборов тес тес тест олени олени олени</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item nomer3">Пироги с разными фруктами и ололооло</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">Товар для людей и еще когото и медведь </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">Елитная одежда для оленей и чтото для когото </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">Товар для людей и еще когото одежда для оленей</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">Елитная одежда для оленей одежда для оленей</span>
+                                                        </span>
+                                                    </div>
+                                                    <!-- <div class="list-large product-list"><span class="list-item"><span class="product-item"><span class="as">454577</span> <span class="nomer2">Тарелки набор из 8 приборов 1285.00грн</span></span>
+                                                        </span>
+                                                    </div> -->
+                                                    <!-- <div class="list-large product-list"><span class="list-item"><span class="product-item"><span class="as">855645</span> <span class="nomer2">Пироги с разными фруктами 13385.00грн</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item"><span class="as">678334</span> <span class="nomer2">Товар для людей и еще когото 85.00грн</span></span>
+                                                        </span>
+                                                    </div> -->
+
+                                                    <!-- <div class="list-large product-list"><span class="list-item"><span class="product-item nomer2">873545 - Комплект замков на двери (цена:115.00)</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">10012321 ыв234 ывв324243 2324  34в 45453455 xnjnj чтото что</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">10012321 ыв234 ывв324243 2324  34в 45453455 xnjnj чтото что</span></span>
+                                                    </div>
+                                                    <div class="list-large product-list"><span class="list-item"><span class="product-item">Чай Монастырский (1шт. x 100.00 = 10012321 ыв2345 xnjnj чтото что</span></span>
+                                                    </div> -->
+                                                </div>
+                                                <div class="sort-btn">
+                                                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                </svg>
+                                                </div>
+                                                <div class="border-sort"></div>
                                             </div>
-                                            <div class="border-sort"></div>
                                         </div>
                                         <div class="small-buttons">
                                             <div class="border-white sort-menu" style="border-left:1px solid white;height: 16px;background: #d4d4d4;">
@@ -961,15 +1022,17 @@
                                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                                 <div class="list-medium all select-btn"><span class="list-item"><span>Все</span></span>
                                                 </div>
+                                                <div class="list-medium p-p"><span class="list-item">П/п</span>
+                                                </div>
+                                                <div class="list-medium nalozhplatezh"><span class="list-item"><span data-img class="icons icon-Vector-17 colorWhite"></span></span>
+                                                </div>
                                                 <div class="list-medium predoplata"><span class="list-item"><span data-img class="icons icon-Vector-15 colorWhite"></span></span>
                                                 </div>
                                                 <div class="list-medium acceptPay"><span class="list-item"><span data-img class="icons icon-Vector-19 colorWhite"></span></span>
                                                 </div>
-                                                <div class="list-medium nalozhplatezh"><span class="list-item"><span data-img class="icons icon-Vector-17 colorWhite"></span></span>
+                                                <div class="list-medium trade"><span class="list-item"><span data-img class="icons icon-Vector-16 colorWhite"></span></span>
                                                 </div>
                                                 <div class="list-medium decline"><span class="list-item"><span data-img class="icons icon-Vector-18 colorWhite"></span></span>
-                                                </div>
-                                                <div class="list-medium trade"><span class="list-item"><span data-img class="icons icon-Vector-16 colorWhite"></span></span>
                                                 </div>
                                             </div>
                                             <div class="sort-btn">
@@ -1024,17 +1087,19 @@
                                             <div class="block1" data-simplebar data-simplebar-auto-hide="false">
                                                 <div class="list-medium all select-btn"><span class="list-item"><span>Все</span></span>
                                                 </div>
+                                                <div class="list-medium p-p"><span class="list-item">П/п</span>
+                                                </div>
                                                 <div class="list-medium nv"><span class="list-item"><span data-img class="icon-Union-3 icons"></span></span>
                                                 </div>
                                                 <div class="list-medium justin"><span class="list-item"><span data-img class="icon-Vector-2 icons"></span></span>
                                                 </div>
+                                                <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
+                                                </div>
+                                                <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
+                                                </div>
+                                                <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
+                                                </div>
                                                 <div class="list-medium samovivoz"><span class="list-item"><span data-img class="icon-Union-4 icons"></span></span>
-                                                </div>
-                                                <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
-                                                </div>
-                                                <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
-                                                </div>
-                                                <div class="list-medium ukrp"><span class="list-item"><span data-img class="icon-ukrposhta icons"></span></span>
                                                 </div>
                                             </div>
                                             <div class="sort-btn">
@@ -1048,7 +1113,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="200">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1131,7 +1196,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="200">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1146,6 +1211,8 @@
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                                 <div class="list-large select-btn"><span class="list-item"><span class="text-lenght-2">Все</span></span>
+                                                </div>
+                                                <div class="list-large p-p"><span class="list-item"><span class="text-lenght-2">П/п</span></span>
                                                 </div>
                                                 <div class="list-large"><span class="list-item"><span class="text-lenght-2">Розничный магазин</span>
                                                     </span>
@@ -1185,6 +1252,8 @@
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                                 <div class="list-large select-btn"><span class="list-item"><span class="text-lenght-2">Все</span></span>
                                                 </div>
+                                                <div class="list-large p-p"><span class="list-item"><span class="text-lenght-2">П/п</span></span>
+                                                </div>
                                                 <div class="list-large"><span class="list-item"><span class="text-lenght-2">Лебедев Евгений Александрович</span>
                                                     </span>
                                                 </div>
@@ -1217,29 +1286,43 @@
                                     </div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu block-calendary1">
+                                    <div class="wrap-hide sort-menu">
                                         <!-- <input type="text" class="datepicker"> -->
-                                        <input type="text" class="demo" readonly>
-                                        <div class="sort-btn">
-                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
-                                            </svg>
+                                        <div class="hover-calen" data-id="0">
+
+                                            <div class="block-calendary1">
+                                                <input type="text" class="demo" readonly>
+                                                <div class="sort-btn">
+                                                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="border-sort"></div>
+                                            </div>
+
                                         </div>
-                                        <div class="border-sort"></div>
+
                                     </div>
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu"><input type="text" class="" readonly></div>
                                 </td>
                                 <td class="header-search">
-                                    <div class="wrap-hide sort-menu block-calendary2">
-                                        <!-- <input type="text" class="demo2" style="font-size: 10px;letter-spacing: -0.5px;" readonly>
-                                        <div class="sort-btn">
-                                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
-                                            </svg>
+                                    <div class="wrap-hide sort-menu">
+                                        <!-- <input type="text" class="datepicker"> -->
+                                        <div class="hover-calen" data-id="1">
+
+                                            <div class="block-calendary1">
+                                                <input type="text" class="demo" readonly>
+                                                <div class="sort-btn">
+                                                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
+                                                            </svg>
+                                                </div>
+                                                <div class="border-sort"></div>
+                                            </div>
+
                                         </div>
-                                        <div class="border-sort"></div> -->
                                         <!-- <div class="date-block-header"><span>с</span><input id="accept-s" type="text" class="date-style" readonly><span>по</span><input id="accept-po" type="text" class="date-style" readonly></div> -->
                                     </div>
                                 </td>
@@ -1252,6 +1335,8 @@
                                             <input type="text" class="input-btn-large" value="">
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                                 <div class="list-large select-btn"><span class="list-item"><span class="text-lenght-2">Все</span></span>
+                                                </div>
+                                                <div class="list-large p-p"><span class="list-item"><span class="text-lenght-2">П/п</span></span>
                                                 </div>
                                                 <div class="list-large"><span class="list-item"><span class="text-lenght-2">Лебедев Евгений Александрович</span>
                                                     </span>
@@ -1304,6 +1389,8 @@
                                             <div class="block1" data-simplebar="" data-simplebar-auto-hide="false">
                                                 <div class="list-large select-btn"><span class="list-item"><span class="text-lenght-2">Все</span></span>
                                                 </div>
+                                                <div class="list-large p-p"><span class="list-item"><span class="text-lenght-2">П/п</span></span>
+                                                </div>
                                                 <div class="list-large"><span class="list-item"><span class="text-lenght-2">Лебедев Евгений Александрович</span>
                                                     </span>
                                                 </div>
@@ -1342,7 +1429,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style site">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1476,7 +1563,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1487,7 +1574,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1498,7 +1585,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1509,7 +1596,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1520,7 +1607,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1531,7 +1618,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1542,7 +1629,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1553,7 +1640,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1564,7 +1651,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1575,7 +1662,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1586,7 +1673,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1597,7 +1684,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1608,7 +1695,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1619,7 +1706,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1630,7 +1717,7 @@
                                 </td>
                                 <td class="header-search">
                                     <div class="wrap-hide sort-menu addaptiveInputArrow">
-                                        <input type="text" class="input-style">
+                                        <input type="text" class="input-style firstLetterUpper" data-count="100">
                                         <div class="sort-btn">
                                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3.37459 0.240197L0 3.06626L1.14931 4.49643L3.07879 2.83706L3.07655 12H4.90818L4.91062 2.83589L6.84264 4.49525L7.99196 3.06508L4.61609 0.240197C4.21951 -0.079919 3.77147 -0.080212 3.37459 0.240197ZM9.16119 8.15695C9.65816 8.15695 10.0603 7.74553 10.0603 7.23743C10.0603 6.72932 9.65816 6.3179 9.16119 6.3179H7.08288V8.15695H9.16119ZM10.6748 11.5357C11.1716 11.5357 11.5739 11.1243 11.5739 10.6162C11.5739 10.1081 11.1716 9.69679 10.6748 9.69679H7.08298V11.5357H10.6748Z" fill="black"></path>
@@ -1665,7 +1752,7 @@
                                 <td class="max-lenght-comment">asdas</td>
                                 <td class="colum-sum">9555.40</td>
                                 <td class="product-colum">
-                                    <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321</span>
+                                    <span class="max-lenght-product">Чай Монастырский (1шт. x 100.00 = 10012321 ыв234 ывв324243 2324  34в 45453455 xnjnj чтото что</span>
                                     <span class="ico-wrap">
                                 <span class="icon-Exclude colorWhite icons"></span>
                                     <span class="count">1</span>
@@ -1708,7 +1795,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александровичasdsd</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Rozetka.com.ua...</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.168</span>
@@ -1801,7 +1888,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Fb-leads...</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.168</span>
@@ -1890,7 +1977,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Gs.abrakadabra.com...</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.168</span>
@@ -1993,7 +2080,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.168</span>
@@ -2086,12 +2173,12 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abraka</td>
+                                <td class="site-tooltip">Google.com...</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.168</span>
                                         <span class="ip-icons-position">
-                                <span class="flags ua">&#x1F1FA;&#x1F1E6;</span>
+                                        <span class="flags ua">&#x1F1FA;&#x1F1E6;</span>
                                         <span class="icon-Vector-10 icons colorWhite"></span>
                                         <span class="icon-Windows-1 icons colorWhite"></span>
                                         <span class="icon-Union-17 icons colorWhite"></span>
@@ -2179,7 +2266,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Cpaalex.cpashka.biz</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.168</span>
@@ -2273,7 +2360,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">
                                     <div class="ip-block-position">
                                         <span class="ip-current">192.168.168.1</span>
@@ -2365,7 +2452,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2447,7 +2534,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2530,7 +2617,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2613,7 +2700,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2696,7 +2783,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2780,7 +2867,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2864,7 +2951,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -2947,7 +3034,7 @@
                                 <td class="date-block">2021-04-08 <span class="date-time">22:50:51</span></td>
                                 <td class="max-lenght">Лебедев Евгений Александрович</td>
                                 <td class="date-block">2021-01-01 <span class="date-time">11:51:51</span></td>
-                                <td class="max-lenght">www.abrakadabra.com</td>
+                                <td class="max-lenght">Prom.ua...</td>
                                 <td class="ip-block">192.168.168.168</td>
                                 <td class="max-lenght">source</td>
                                 <td class="max-lenght">source</td>
@@ -3429,7 +3516,7 @@
         today = dd + '/' + mm + '/' + yyyy;
         // document.write(today);
         $('.demo').daterangepicker({
-            "autoApply": true,
+            // "autoApply": true,
             "locale": {
                 "format": "DD.MM.YYYY",
                 "separator": " - ",
@@ -3460,52 +3547,62 @@
                 ],
                 "firstDay": 1
             },
-            "startDate": `${today}`,
-            "endDate": `${today}`,
-            "opens": "center",
-            "buttonClasses": "btn"
-        }, function(start, end, label) {
-            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-        $('.demo2').daterangepicker({
-            "autoApply": true,
-            "locale": {
-                "format": "DD.MM.YYYY",
-                "separator": " - ",
-                // "customRangeLabel": "Custom",
-                // "weekLabel": "W",
-                "daysOfWeek": [
-                    "Вс",
-                    "Пн",
-                    "Вт",
-                    "Ср",
-                    "Чт",
-                    "Пт",
-                    "Сб"
-                ],
-                "monthNames": [
-                    "Январь",
-                    "Февраль",
-                    "Март",
-                    "Апрель",
-                    "Май",
-                    "Июнь",
-                    "Июль",
-                    "Август",
-                    "Сентябрь",
-                    "Октябрь",
-                    "Ноябрь",
-                    "Декабрь"
-                ],
-                "firstDay": 1
+            ranges: {
+                'Сегодня': [moment(), moment()],
+                'Вчера': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Последние 7 дней': [moment().subtract(6, 'days'), moment()],
+                'Последние 30 дней': [moment().subtract(29, 'days'), moment()],
+                'Этот месяц': [moment().startOf('month'), moment().endOf('month')],
+                'Последний месяц': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             },
             "startDate": `${today}`,
             "endDate": `${today}`,
-            "opens": "center",
+            "opens": "left",
+            "alwaysShowCalendars": true,
             "buttonClasses": "btn"
         }, function(start, end, label) {
             console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
+        // $('.demo2').daterangepicker({
+        //     // "autoApply": true,
+        //     "locale": {
+        //         "format": "DD.MM.YYYY",
+        //         "separator": " - ",
+        //         // "customRangeLabel": "Custom",
+        //         // "weekLabel": "W",
+        //         "daysOfWeek": [
+        //             "Вс",
+        //             "Пн",
+        //             "Вт",
+        //             "Ср",
+        //             "Чт",
+        //             "Пт",
+        //             "Сб"
+        //         ],
+        //         "monthNames": [
+        //             "Январь",
+        //             "Февраль",
+        //             "Март",
+        //             "Апрель",
+        //             "Май",
+        //             "Июнь",
+        //             "Июль",
+        //             "Август",
+        //             "Сентябрь",
+        //             "Октябрь",
+        //             "Ноябрь",
+        //             "Декабрь"
+        //         ],
+        //         "firstDay": 1
+        //     },
+
+        //     "startDate": `${today}`,
+        //     "endDate": `${today}`,
+        //     "opens": "center",
+        //     "buttonClasses": "btn"
+        // }, function(start, end, label) {
+        //     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        // });
     </script>
 
     <script src="js/script.crm-table.js"></script>

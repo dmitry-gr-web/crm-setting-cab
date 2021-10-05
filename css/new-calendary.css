@@ -3,15 +3,29 @@
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
-    min-width: 27px;
-    width: 27px;
-    height: 20px;
-    line-height: 20px;
+    min-width: 20px;
+    width: 20px;
+    height: 16px;
+    line-height: 16px;
     font-size: 12px;
     /* border-radius: 0px; */
     border: 1px solid transparent;
     white-space: nowrap;
     cursor: pointer;
+}
+
+
+/* .daterangepicker {
+    display: flex;
+    flex-direction: column;
+} */
+
+.daterangepicker .calendar-table table td:nth-child(odd) {
+    background-color: none;
+}
+
+.daterangepicker .calendar-table table th:nth-child(odd) {
+    background-color: none;
 }
 
 .daterangepicker td.in-range {
@@ -22,3 +36,32 @@
 .daterangepicker td.active:hover {
     background-color: #515151;
 }
+
+.daterangepicker .ranges li.active {
+    background-color: #515151;
+}
+
+.daterangepicker .ranges ul {
+    width: 133px;
+}
+
+.daterangepicker .ranges li {
+    padding: 4px 10px;
+}
+
+.daterangepicker.show-calendar .drp-buttons {
+    display: none;
+}
+
+.daterangepicker .calendar-table table {
+    border-collapse: separate;
+}
+
+.daterangepicker .calendar-table table {
+    border-collapse: separate;
+}
+
+
+/* .daterangepicker {
+    height: 0px;
+} */

@@ -56,13 +56,16 @@ $(document).ready(function() {
         let nalozhplatezh = 'Наложенный платёж';
         let acceptPay = 'Оплачен';
         let decline = 'Отказ';
+        let pP = 'Пустое поле';
         let trade = 'Обмен';
         let ukrp = 'Укрпочта';
         let nv = 'Новая почта';
         let samovivoz = 'Самовывоз';
         let justin = 'Justin';
         $("#tooltipBtn").css("font-size", "11px");
-
+        if ($(this).hasClass('p-p')) {
+            $('#tooltipBtn').text(pP);
+        }
         if ($(this).hasClass('ua')) {
             $('#tooltipBtn').text(ukraine);
         }
@@ -114,6 +117,25 @@ $(document).ready(function() {
         if ($(this).hasClass('all')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
+        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+        }
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
+    });
+    $(".p-p").hover(function(xy) {
+        let pP = 'Пустое поле';
+        $("#tooltipBtn").css("font-size", "11px");
+        $('#tooltipBtn').text(pP);
+        let posElement = this.getBoundingClientRect();
+        let blockWidth = $(this).width();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
         }
@@ -1186,36 +1208,36 @@ $(".crm-main-table .country-block").each(function(e, item) {
 
 
 // comment ...
-$(".crm-main-table .max-lenght-comment").text(function(i, text) {
-    let boxMemory = text;
-    if (text.length >= 30) {
-        text = text.substring(0, 28) + "...";
-        $(this).text(text);
-        $(this).hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
-            let posElement = this.getBoundingClientRect();
-            let blockWidth = $(this).width();
-            let blockHeight = $(this).height();
-            let screenWidth = document.body.clientWidth;
-            let screenHeight = document.body.clientHeight;
-            let widthTooltip = $('#tooltipBtn').width();
-            let heightTooltip = $('#tooltipBtn').height();
-            $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
-            if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
-            }
-            if (posElement.x < 110) {
-                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
-            }
-            if (screenHeight < posElement.y + heightTooltip + 25) {
-                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
-            }
-        }).mouseleave(function(e) {
-            $("#tooltipBtn").css({ 'animation': '' });
-        });
-    }
-});
+// $(".crm-main-table .max-lenght-comment").text(function(i, text) {
+//     let boxMemory = text;
+//     if (text.length >= 30) {
+//         text = text.substring(0, 28) + "...";
+//         $(this).text(text);
+//         $(this).hover(function(xy) {
+//             $('#tooltipBtn').text(boxMemory);
+//             let posElement = this.getBoundingClientRect();
+//             let blockWidth = $(this).width();
+//             let blockHeight = $(this).height();
+//             let screenWidth = document.body.clientWidth;
+//             let screenHeight = document.body.clientHeight;
+//             let widthTooltip = $('#tooltipBtn').width();
+//             let heightTooltip = $('#tooltipBtn').height();
+//             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
+//             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+//             if (screenWidth < posElement.x + widthTooltip) {
+//                 $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
+//             }
+//             if (posElement.x < 110) {
+//                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+//             }
+//             if (screenHeight < posElement.y + heightTooltip + 25) {
+//                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+//             }
+//         }).mouseleave(function(e) {
+//             $("#tooltipBtn").css({ 'animation': '' });
+//         });
+//     }
+// });
 // comment ...
 
 //another standart ...
@@ -1253,12 +1275,14 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
 // product ...
 $(".crm-main-table .max-lenght-product").text(function(i, text) {
     let boxMemory = text;
-    let dopProdazhi = '<span style="text-alignt:center;display:block;margin-bottom:5px;">Доппродажа</span><span class="icon-2" style="font-size:12px;margin-right:5px;"></span>Чтото<br><span class="icon-2" style="font-size:12px;margin-right:5px;"></span>Еще чтото';
+    let dopItem1 = 'ВОу воуasdasd чтото чтото';
+    let dopItem2 = 'ВОу воу2222 фывыфв фывыфвыв';
+    let dopProdazhi = '<div style="text-align:center;display:block;margin-bottom:5px;">Доппродажа</div>' + '<div class="item-list-product"style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem1 + '</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem2 + '</div>';
     if (text.length >= 35) {
         text = text.substring(0, 33) + "...";
         $(this).text(text);
         $(this).hover(function(xy) {
-            $('#tooltipBtn').html('<span style="text-alignt:center;display:block;margin-bottom:5px;">Основной</span><span class="icon-Vector-81" style="margin-right:15px;"></span>' + boxMemory + '<br><br>' + dopProdazhi);
+            $('#tooltipBtn').html('<div style="text-align:center;display:block;margin-bottom:5px;">Основной</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div class="item-list-product" style="margin-left:15px;margin-bottom:5px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div style="text-align:center;display:block;margin-bottom:5px;">Доппродажа</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem1 + '</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem2 + '</div>');
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1281,7 +1305,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
         $(this).parent('.product-colum').find('.ico-wrap').hover(function(xy) {
-            $('#tooltipBtn').html('<span style="text-alignt:center;display:block;margin-bottom:5px;">Основной</span><span class="icon-Vector-81" style="margin-right:15px;"></span>' + boxMemory + '<br><br>' + dopProdazhi);
+            $('#tooltipBtn').html('<div style="text-align:center;display:block;margin-bottom:5px;">Основной</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div class="item-list-product" style="margin-left:15px;margin-bottom:5px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div style="text-align:center;display:block;margin-bottom:5px;">Доппродажа</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem1 + '</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem2 + '</div>');
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1899,7 +1923,9 @@ $('.input-style').on('mouseenter', function() {
     } else {
         delayFocus = setTimeout(() => {
             this.setSelectionRange(this.value.length, this.value.length);
-            $(this).focus();
+            // $(this).focus();
+            this.focus()
+            this.select();
         }, 200);
     }
     $(this).css('padding-right', '3px');
@@ -1942,8 +1968,49 @@ function inputFocus() {
     $(this).css('padding-right', '0px');
     clearTimeout(delayFocus);
 };
+// $($('.daterangepicker')[0]).css({
+//     'transition': '0.3s',
+//     'height': '0px',
+// });
 //input btn hover 
 // $(document).on('mousemove', calendary);
+// $('.demo').click();
+// $('.daterangepicker').css({
+//     'height': '0px',
+//     'visibility': 'hidden',
+//     'transition': '0.3s'
+// });
+// $('.ranges ul').css({
+//     'height': '0px',
+//     'visibility': 'hidden',
+//     'transition': '0.3s'
+// });
+// $('.drp-calendar .calendar-table').css({
+//     'height': '0px',
+//     'visibility': 'hidden',
+//     'transition': '0.3s'
+// });
+// $('.drp-calendar.right').css({
+//     'height': '0px'
+// });
+let index = 0;
+$('.hover-calen').on('mouseenter', (e) => {
+    $('.demo')[e.currentTarget.dataset.id].focus()
+    index = e.currentTarget.dataset.id;
+    $($('.daterangepicker')[e.currentTarget.dataset.id]).css('transition', '0.3s').css('visibility', 'visible').css('opacity', '1');
+});
+$('.hover-calen').on('mouseleave', (e) => {
+    $($('.daterangepicker')[e.currentTarget.dataset.id]).css('visibility', 'hidden').css('opacity', '0');
+});
+$('.daterangepicker').on('mouseenter', (e) => {
+    $(e.currentTarget).css('transition', '0.3s').css('visibility', 'visible').css('opacity', '1');
+});
+$('.daterangepicker').on('mouseleave', (e) => {
+    $(e.currentTarget).css('visibility', 'hidden').css('opacity', '0');
+
+    $('.demo')[index].blur()
+
+});
 
 // function calendary(e) {
 //     let $clicked = $(e.target);
@@ -2012,7 +2079,109 @@ $(".text-lenght-2").text(function(i, text) {
     }
 });
 
-
+// $(".nomer1").text(function(i, text) {
+//     let boxMemory = text;
+//     // if (text.length >= 34) {
+//     //     text = text.substring(0, 32) + "...";
+//     //     $(this).text(text);
+//     $(this).parents('.list-large').hover(function(xy) {
+//         $('#tooltipBtn').text(boxMemory);
+//         $("#tooltipBtn").css("font-size", "11px");
+//         let posElement = this.getBoundingClientRect();
+//         let blockHeight = $(this).height();
+//         let screenWidth = document.body.clientWidth;
+//         let screenHeight = document.body.clientHeight;
+//         let widthTooltip = $('#tooltipBtn').width();
+//         let heightTooltip = $('#tooltipBtn').height();
+//         let blockWidth = $(this).width();
+//         $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+//         $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+//         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+//             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+//         }
+//     }).mouseleave(function(e) {
+//         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+//     });
+//     // }
+// });
+$(".nomer1").text(function(i, text) {
+    let boxMemory = text;
+    // if (text.length >= 20) {
+    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
+    //     text = text.substring(0, 15) + "...";
+    //     $(this).text(text);
+    $(this).parents('.list-large').hover(function(xy) {
+        $('#tooltipBtn').html('<span class="idProduct">ID - 243534</span><br> ' + ' <span class="cenaProduct">Цена: 349.00</span><br>' + boxMemory);
+        $("#tooltipBtn").css("font-size", "11px");
+        let posElement = this.getBoundingClientRect();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        let blockWidth = $(this).width();
+        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+        }
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+    });
+    // }
+});
+$(".nomer2").text(function(i, text) {
+    let boxMemory = text;
+    // if (text.length >= 20) {
+    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
+    //     text = text.substring(0, 15) + "...";
+    //     $(this).text(text);
+    $(this).parents('.list-large').hover(function(xy) {
+        $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ');
+        $("#tooltipBtn").css("font-size", "11px");
+        let posElement = this.getBoundingClientRect();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        let blockWidth = $(this).width();
+        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+        }
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+    });
+    // }
+});
+$(".nomer3").text(function(i, text) {
+    let boxMemory = text;
+    // if (text.length >= 20) {
+    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
+    //     text = text.substring(0, 15) + "...";
+    //     $(this).text(text);
+    $(this).parents('.list-large').hover(function(xy) {
+        $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct2">Цена: 349.00</span>' + '<br> <span class="idProduct2">ID - 243534</span>');
+        $("#tooltipBtn").css("font-size", "11px");
+        let posElement = this.getBoundingClientRect();
+        let blockHeight = $(this).height();
+        let screenWidth = document.body.clientWidth;
+        let screenHeight = document.body.clientHeight;
+        let widthTooltip = $('#tooltipBtn').width();
+        let heightTooltip = $('#tooltipBtn').height();
+        let blockWidth = $(this).width();
+        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+        }
+    }).mouseleave(function(e) {
+        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
+    });
+    // }
+});
 
 // header hide
 // $(".crm-input").hover(function() {
@@ -2831,4 +3000,128 @@ $(".info-btn").click(function() {
 $(".video-btn").click(function() {
     $(".video-drop-block").toggleClass('block-visible');
 });
+var support = (function() {
+    if (!window.DOMParser) return false;
+    var parser = new DOMParser();
+    try {
+        parser.parseFromString('x', 'text/html');
+    } catch (err) {
+        return false;
+    }
+    return true;
+})();
+
+var textToHTML = function(str) {
+
+    if (support) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(str, 'text/html');
+        return doc.body.innerHTML;
+    }
+    var dom = document.createElement('div');
+    dom.innerHTML = str;
+    return dom;
+
+};
+
+$(".site-tooltip").hover(function(xy) {
+    let textttttttt = 'Google.com/search?q=%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C+%D1%82%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B7%D0%BE%D1%80&hl=ru&sxsrf=AOaemvLSwcqe4O0pliCouC1ZqD7cJYYI_Q1633082611209&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjBsrfn-qjzAhU8gf0HHfxGAQQQ_AUoAXoECAIQAw&biw=1440&bih=703&dpr=2';
+    $("#tooltipBtn").css("font-size", "11px");
+
+    if ($('.site')[0].value !== "") {
+        let re = new RegExp($('.site')[0].value, "gui");
+        let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600;color: black;">' + x + '</span>');
+        console.log(text_pr)
+        document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+    } else {
+        document.getElementById('tooltipBtn').innerText = textttttttt;
+    }
+    // $('#tooltipBtn').text(pP);
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    let blockHeight = $(this).height();
+    let screenWidth = document.body.clientWidth;
+    let screenHeight = document.body.clientHeight;
+    let widthTooltip = $('#tooltipBtn').width();
+    let heightTooltip = $('#tooltipBtn').height();
+    $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+    }
+}).mouseleave(function(e) {
+    $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
+});
+$(".crm-main-table .max-lenght-comment").text(function(i, text) {
+    let boxMemory = text;
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+        $(this).text(text);
+        $(this).hover(function(xy) {
+            $('#tooltipBtn').text(boxMemory);
+            if ($('.comment-input')[0].value !== "") {
+                let re = new RegExp($('.comment-input')[0].value, "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
+                console.log(text_pr)
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerText = boxMemory;
+            }
+            let posElement = this.getBoundingClientRect();
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
+        }).mouseleave(function(e) {
+            $("#tooltipBtn").css({ 'animation': '' });
+        });
+    }
+});
 //drop nav btn
+//сортировка в кнопках поиск
+let el = null;
+let text = [];
+$('.find').on('keyup', e => {
+    if (el === null) {
+        el = [...$(e.currentTarget.parentElement).find('.list-large')];
+        text = [...el.map(x => $(x).find('.product-item')[0].innerText)]
+    }
+
+    for (let index = 0; index < el.length; index++) {
+        const element = el[index];
+        // console.log($(element).find('.product-item'), e.currentTarget.value);
+        if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+            $(element).css('display', 'none');
+        } else {
+            if ($('.product-input')[0].value !== "") {
+                let re = new RegExp($('.product-input')[0].value, "gui");
+                let text_pr = text[index].replace(re, x => '<span style="background: #FFE600;color: black;">' + x + '</span>');
+
+                $(element).css('display', 'block')
+                $($(element).find('.product-item')[0]).html(textToHTML(text_pr));
+
+            } else {
+                $($(element).find('.product-item')[0]).text(text[index]);
+                $(element).css('display', 'block')
+            }
+            //    console.log(text_pr)
+            // document.querySelector('.product-list.list-item').innerHTML = textToHTML(text_pr);
+
+        }
+    }
+    // ).find('.list-large'));
+    // e.currentTarget.value
+})

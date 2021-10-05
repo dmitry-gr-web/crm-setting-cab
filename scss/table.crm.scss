@@ -1649,9 +1649,15 @@ input[type='number'] {
         padding-left: 3px;
         padding-right: 15px;
         line-height: 16px;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
         &::placeholder {
             font-size: 10px;
         }
+    }
+    .product-input {
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     &:after {
         content: '';
@@ -1665,7 +1671,8 @@ input[type='number'] {
         opacity: 0.8;
     }
     .list-large:hover .text-lenght,
-    .list-large:hover .text-lenght-2 {
+    .list-large:hover .text-lenght-2,
+    .list-large:hover .product-item {
         color: rgba(0, 0, 0, 0.5);
     }
     // .list-large:hover .text-lenght {
@@ -1696,6 +1703,42 @@ input[type='number'] {
             display: inline-block;
             height: 14px;
         }
+        .product-item {
+            // word-break: break-word;
+            // white-space: normal;
+            display: inline-block;
+            width: 180px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            // &:hover .as {
+            //     width: 45px;
+            // }
+        }
+        // .nomer2 {
+        //     width: 100%;
+        //     overflow: hidden;
+        //     text-overflow: ellipsis;
+        // }
+        // .as {
+        //     position: relative;
+        //     // text-decoration: underline;
+        //     margin-right: 5px;
+        //     overflow: hidden;
+        //     width: 12px;
+        //     transition: 0.2s;
+        //     // text-align: right;
+        //     &:before {
+        //         content: '';
+        //         height: 2px;
+        //         width: 100%;
+        //         position: absolute;
+        //         bottom: 2px;
+        //         // left: 0;
+        //         background-color: rgba(81, 81, 81, 0.7);
+        //         border-radius: 2px;
+        //     }
+        // }
         .list-item {
             position: relative;
             left: 15px;
@@ -1707,6 +1750,13 @@ input[type='number'] {
             line-height: 18px;
             position: relative;
             margin-right: 10px;
+        }
+        .product-list {
+            // height: min-content;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            // line-height: 12px;
+            // padding: 2.5px 0;
         }
         .simplebar-track.simplebar-vertical {
             background-color: rgba(0, 0, 0, 0.1);
@@ -1768,15 +1818,33 @@ input[type='number'] {
 //     bottom: -1px;
 //     z-index: 33333;
 // }
+.hover-calen {
+    background-color: #d4d4d4;
+    width: 100%;
+    height: 16px;
+}
+
+.block-calendary1 {
+    // display: none;
+    height: 18px;
+}
+
+// .ds {
+//     // background-color: red;
+//     border-radius: 4px;
+//     padding: 1px 2px;
+//     color: white;
+// }
 .demo {
     font-size: 10px;
-    font-size: 10px;
+    // font-size: 10px;
     letter-spacing: -0.5px;
     padding: 0;
     background-color: #d4d4d4;
     width: 100%;
     border: none;
     outline: none;
+    height: 16px;
     font-weight: 300;
     padding-left: 3px;
     color: rgba(0, 0, 0, 0.5);
@@ -1954,6 +2022,11 @@ input[type='number'] {
 // .ttn-box {
 //     width: 100%;
 // }
+.product-box {
+    width: 100%;
+    height: 18px;
+}
+
 .btn-wrap {
     position: relative;
     box-sizing: border-box;
@@ -2248,7 +2321,29 @@ input[type='number'] {
     .icon-Vector-81:before {
         transform: rotate(-90deg);
         position: absolute;
-        font-size: 10px;
+        font-size: 11px;
+    }
+    .idProduct {
+        font-weight: 400;
+    }
+    .cenaProduct {
+        font-weight: 400;
+    }
+    .idProduct2 {
+        font-weight: 400;
+        // color: green;
+    }
+    .cenaProduct2 {
+        font-weight: 400;
+        // color: cadetblue;
+    }
+    .idProduct3 {
+        font-weight: 400;
+        // text-shadow: 0 0 2px black;
+    }
+    .cenaProduct3 {
+        font-weight: 400;
+        // text-shadow: 0 0 2px black;
     }
 }
 
@@ -2632,3 +2727,12 @@ input[type='number'] {
 // th.sorted[data-order="1"]::after {
 //     content: "▲"
 // }
+::selection {
+    background-color: rgb(71, 74, 81, 0.2);
+    color: rgb(0, 0, 0);
+}
+
+.select-toggle ::selection {
+    background-color: rgb(71, 74, 81, 0.7);
+    color: rgb(255, 255, 255);
+}
