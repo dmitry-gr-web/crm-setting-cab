@@ -40,45 +40,22 @@
     font-style: normal;
 }
 
-// @font-face {
-//     font-family: 'SN';
-//     src: url('../fonts/SF-Pro-Display-Light.otf');
-//     src: local('../fonts/SF-Pro-Display-Light'), url('../fonts/SF-Pro-Display-Light.otf') format('otf');
-//     font-weight: 700;
-//     font-style: normal;
-// }
 body {
     // font-family: 'Raleway';
     // font-feature-settings: 'pnum' on, 'lnum' on;
-    // position: fixed;
-    // // font-family: 'Fira Code', monospace;
-    // // font-family: 'HelveticaNeueCyr';
-    // top: 0;
-    // left: 0;
-    // font-weight: 300;
-    // width: 100%;
-    // height: 100%;
+    position: fixed;
+    // font-family: 'Fira Code', monospace;
+    // font-family: 'HelveticaNeueCyr';
+    top: 0;
+    left: 0;
+    font-weight: 300;
+    width: 100%;
+    height: 100%;
     // font-family: 'Fira Code', monospace;
     // font-family: 'JetBrains Mono', monospace;
     font-family: 'Roboto', sans-serif;
     // font-family: 'Nunito Sans', sans-serif;
     // font-family: 'Open Sans', sans-serif;
-    top: 0;
-    position: fixed;
-    left: 0;
-    font-weight: 300;
-    width: 100%;
-    height: 100%;
-}
-
-#noZoom {
-    // top: 0;
-    // position: fixed;
-    // left: 0;
-    // font-weight: 300;
-    width: 100%;
-    height: 100%;
-    // zoom: 1;
 }
 
 html {
@@ -107,42 +84,6 @@ html {
     z-index: 1;
     .block-btn {
         cursor: pointer;
-        img {
-            width: 15px;
-            height: 15px;
-        }
-        .zoomMinus {
-            color: white;
-            position: absolute;
-            right: 10px;
-            top: 25px;
-            width: 20px;
-            height: 20px;
-            &:hover {
-                background-color: white;
-                border-radius: 3px;
-                color: black;
-            }
-        }
-        .zoomBtn {
-            background-color: transparent;
-            outline: none;
-            border: none;
-            cursor: pointer;
-        }
-        .zoomPlus {
-            color: white;
-            position: absolute;
-            right: 10px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            &:hover {
-                background-color: white;
-                border-radius: 3px;
-                color: black;
-            }
-        }
         .btn-header {
             &:last-child {
                 margin-left: 100px;
@@ -362,13 +303,13 @@ html {
 .nav-crm {
     position: absolute;
     width: 49px;
-    max-height: 800px;
+    height: 75vh;
     background: rgba(81, 81, 81, 0.7);
     box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
     padding-left: 0;
     margin: 0;
     list-style: none;
-    top: 100px;
+    top: 10vh;
     left: 40px;
     z-index: 333;
     cursor: pointer;
@@ -437,42 +378,42 @@ html {
     // .simplebar-content {
     //     margin-right: -10px;
     // }
-    // @include breakpoint (lgh) {
-    //     height: 66vh;
-    //     top: 13vh;
-    // }
-    // @include breakpoint (lghs) {
-    //     height: 63vh;
-    // }
-    // @include breakpoint (mdh) {
-    //     height: 400px;
-    // }
-    // @include breakpoint (fullhdheight) {
-    //     height: 703px;
-    // }
+    @include breakpoint (lgh) {
+        height: 66vh;
+        top: 13vh;
+    }
+    @include breakpoint (lghs) {
+        height: 63vh;
+    }
+    @include breakpoint (mdh) {
+        height: 400px;
+    }
+    @include breakpoint (fullhdheight) {
+        height: 703px;
+    }
     .nav-list-crm {
         text-align: center;
         margin-bottom: 2vh;
-        // @include breakpoint (lgh) {
-        //     margin-bottom: 1vh;
-        // }
-        // @include breakpoint (lghs) {
-        //     margin-bottom: 0.5vh;
-        // }
-        // @include breakpoint (mdh) {
-        //     margin-bottom: 0;
-        // }
-        // @include breakpoint (fullhdheight) {
-        //     margin-bottom: 20px;
-        // }
+        @include breakpoint (lgh) {
+            margin-bottom: 1vh;
+        }
+        @include breakpoint (lghs) {
+            margin-bottom: 0.5vh;
+        }
+        @include breakpoint (mdh) {
+            margin-bottom: 0;
+        }
+        @include breakpoint (fullhdheight) {
+            margin-bottom: 20px;
+        }
         &:first-child {
-            margin-top: 12px;
-            // @include breakpoint (mdh) {
-            //     margin-top: 10px;
-            // }
+            margin-top: 4vh;
+            @include breakpoint (mdh) {
+                margin-top: 10px;
+            }
         }
         &:last-child {
-            margin-bottom: 15px;
+            margin-bottom: 3vh;
         }
         .hover {
             transition: 0.3s;
@@ -905,7 +846,7 @@ html {
         width: 0px;
         height: 0px;
         /* ширина scrollbar'a */
-        // background: transparent;
+        background: transparent;
         /* опционально */
     }
 }

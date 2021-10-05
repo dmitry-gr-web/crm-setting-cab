@@ -5,6 +5,49 @@ let idTovara = document.querySelectorAll('.idTovara');
 let cenaTovara = document.querySelectorAll('.cenaTovara');
 let firstLetterUpper = document.querySelectorAll('.firstLetterUpper');
 let site = document.querySelectorAll('.site');
+let find = document.querySelectorAll('.find');
+
+let ppo = document.querySelectorAll('.ppo');
+
+find.forEach((e) => {
+
+    e.addEventListener('input', event => {
+        if (event.inputType === 'insertFromPaste') { 
+            let temp = parserText(e.value, 'find');
+            e.value = temp[0];
+        }
+    })
+    e.addEventListener('keyup', function (event) {
+        let caretStart = e.selectionStart;
+        let caretEnd = e.selectionEnd;
+        let temp = parserText(e.value, 'find');
+        e.value = temp[0];
+        e.setSelectionRange(caretStart - temp[1], caretEnd - temp[1]);
+    });
+
+
+
+});
+
+ppo.forEach((e) => {
+
+    e.addEventListener('input', event => {
+        if (event.inputType === 'insertFromPaste') { 
+            let temp = parserText(e.value, 'find');
+            e.value = temp[0];
+        }
+    })
+    e.addEventListener('keyup', function (event) {
+        let caretStart = e.selectionStart;
+        let caretEnd = e.selectionEnd;
+        let temp = parserText(e.value, 'find');
+        e.value = temp[0];
+        e.setSelectionRange(caretStart - temp[1], caretEnd - temp[1]);
+    });
+
+
+
+});
 
 firstLetterUpper.forEach((e) => {
 
@@ -182,6 +225,16 @@ function parserText(text, type, count) {
             temp = temp;
         // temp = temp[0].toUpperCase() + temp.slice(1);
         return [temp.slice(0, 500), start - temp.length]
+    } else if (type === 'find') {
+
+        let temp;
+        if (text.match(/(^)[а-яёa-z]/g))
+            temp = text[0].toUpperCase() + text.slice(1);
+        else
+            temp = text;
+       
+        let len = temp.length;
+        return [temp, start - temp.length - (len - temp.length)]
     }
 
 }

@@ -9,7 +9,7 @@
 });
 //header-link
 //tooltip select
-$(document).ready(function() {
+$(document).ready(function () {
     $(".crm-main-table").on("click", (e) => {
         $(".crm-main-table").unbind("mouseleave mousemove");
         if ($(".crm-main-table").hasClass("select-toggle")) {
@@ -20,7 +20,7 @@ $(document).ready(function() {
             $('.btn-accept').removeClass('active-btn-header');
         }
         $(".select-toggle")
-            .mousemove(function(pos) {
+            .mousemove(function (pos) {
                 if ($(".crm-main-table").hasClass("select-toggle")) {
                     $("#hoverSelect").show();
                     $("#hoverSelect")
@@ -28,13 +28,13 @@ $(document).ready(function() {
                         .css("top", pos.pageY + -40 + "px");
                 }
             })
-            .mouseleave(function(e) {
+            .mouseleave(function (e) {
                 $("#hoverSelect").hide();
             });
     });
     $(".selected-lock").on("mouseenter", (e) => {
         $(".selected-lock").unbind("click");
-        $(".selected-lock").mousemove(function(posXY) {
+        $(".selected-lock").mousemove(function (posXY) {
             $("#hoverSelected-lock").css({ 'visibility': 'visible', 'opacity': '1' });
             $("#hoverSelected-lock")
                 .css("left", posXY.pageX + 20 + "px")
@@ -42,11 +42,11 @@ $(document).ready(function() {
             // отключил подсказки на заблокированом заказе    
             $("#tooltipBtn").css({ 'animation': '' });
         })
-        $(".selected-lock").mouseleave(function(e) {
+        $(".selected-lock").mouseleave(function (e) {
             $("#hoverSelected-lock").css({ 'visibility': 'hidden', 'opacity': '0' });
         });
     });
-    $(".list-medium").hover(function(xy) {
+    $(".list-medium").hover(function (xy) {
         let ukraine = 'Украина';
         let russia = 'Россия';
         let kazahstan = 'Казахстан';
@@ -120,29 +120,10 @@ $(document).ready(function() {
         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
     });
-    $(".p-p").hover(function(xy) {
-        let pP = 'Пустое поле';
-        $("#tooltipBtn").css("font-size", "11px");
-        $('#tooltipBtn').text(pP);
-        let posElement = this.getBoundingClientRect();
-        let blockWidth = $(this).width();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-        }
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
-    });
-    $(".list-small").hover(function(xy) {
+    $(".list-small").hover(function (xy) {
         let pP = 'Пустое поле';
         let ua = 'Украина';
         let ru = 'Россия';
@@ -274,10 +255,10 @@ $(document).ready(function() {
         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
     });
-    $(".import-list").hover(function(xy) {
+    $(".import-list").hover(function (xy) {
         let pechat = '';
         let exportExcel = '';
         let exportDrop = 'Используется для массовой выгрузки и передачи заказов дропшипперу';
@@ -310,10 +291,10 @@ $(document).ready(function() {
         if ($(this).hasClass('pechat')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
-    $(".modul-list").hover(function(xy) {
+    $(".modul-list").hover(function (xy) {
         let createTtn = 'Массовое создание ттн нп с разными местами и объемом при отправке, менеджеры только город указывают';
         let avtoobzvon = 'Автоматический обзвон выделенных заказов';
         let changeComm = 'Позволяет массово редактировать коментарий в выделеных заказах';
@@ -358,10 +339,10 @@ $(document).ready(function() {
         if ($(this).hasClass('none')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
-    $(".resize").hover(function(e) {
+    $(".resize").hover(function (e) {
         $('#tooltipBtn').html('Задать размер столбца<br>Зажать и потянуть для изменения размера<br>Двойной клик возвращает размер по умолчанию');
         let posElement = this.getBoundingClientRect();
         let blockWidth = $(this).width();
@@ -375,17 +356,17 @@ $(document).ready(function() {
         if (screenWidth < posElement.x + widthTooltip) {
             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
-    $(".block-btn .btn-header").hover(function(xy) {
+    $(".block-btn .btn-header").hover(function (xy) {
         let refresh = 'Сбросить все фильтры';
         let settings = 'Дополнения и расширения';
         let submit = 'Импорт экспорт данных';
         let addOrder = 'Создать заказ';
         let notification = 'Уведомления';
 
-        $(this).click(function() {
+        $(this).click(function () {
             if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
                 $("#tooltipBtn").css({ 'animation': '' });
             }
@@ -416,18 +397,18 @@ $(document).ready(function() {
         if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' }); // $("#tooltipBtn").css({ 'background': 'rgba(81, 81, 81, 0.6)', 'color': 'white' })
     });
-    $(".new-orders").hover(function(xy) {
+    $(".new-orders").hover(function (xy) {
         let posElement = this.getBoundingClientRect();
         $('#tooltipBtn').html('Заказ не открывался');
         $("#tooltipBtn").css("left", posElement.x - 10 + "px").css("top", posElement.y + 22 + "px");
         $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
-    $(".zoomBtn").hover(function(xy) {
+    $(".zoomBtn").hover(function (xy) {
 
         let zoomPlus = 'Увеличить масштаб';
         let zoomMinus = 'Уменьшить масштаб';
@@ -449,10 +430,10 @@ $(document).ready(function() {
         if ($(".import-block").hasClass('import-toggle') || $(".notifications").hasClass('notification-toggle') || $(".modul-block").hasClass('modul-toggle')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
-    $(".crm-header-link").each(function(e, item) {
+    $(".crm-header-link").each(function (e, item) {
         let allOrder = 'Все заказы в CRM';
         let backOrderPoluchen = 'Возвращенный заказ получил отправитель<br><span class="text-tooltip">Ожидает завершения<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
         let backOrderPribil = 'Возвращенный заказ прибыл на почту<br><span class="text-tooltip">Ожидает получения отправителем<br><br>Статус присваивается автоматически согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span>';
@@ -474,7 +455,7 @@ $(document).ready(function() {
         let dropFinish = 'Заказ завершён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил:<br>- получение выплаты от дропшиппера;<br>- выполнение заказа.<br>Присвоил заказу статус «(Drop) Завершён», заблокировал заказ кнопкой «Завершить».<br>Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
         let dropBack = 'Покупатель отказался от получения заказа<br><span class="text-tooltip">Ожидает вычитания стоимости за возврат заказа из выплат дропшиппера<br><br>Статус присваивается автоматически, согласно настроек модуля:<br>- Новая почта<br>- Укрпочта<br>- Justin</span></span>';
         let dropBackFinish = 'Возврат учтён<br><span class="text-tooltip">Пользователь с правом использования кнопки «Завершить», подтвердил вычитание стоимости за возврат заказ, из выплат дропшиппера. Присвоил заказу статус «(Drop) Возврат (завершён)», заблокировал заказ кнопкой «Завершить». Дальнейшее редактирование заказа сотрудниками без снятия блокировки, невозможно</span>';
-        $(this).hover(function() {
+        $(this).hover(function () {
             $("#tooltipBtn").css('font-size', '14px');
 
             if ($(this).hasClass('backOrderPribil')) {
@@ -555,20 +536,20 @@ $(document).ready(function() {
             if (posElement.x < 110) {
                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 20 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
         });
     });
 });
 
 
-$(".tel").each(function(e, item) {
+$(".tel").each(function (e, item) {
     let vodofone = 'Vodafone';
     let kyivstar = 'Киевстар';
     let lifecell = 'Lifecell';
     let incorrectNumber = 'Неверный номер';
     let unknownNumber = 'Неизвестный номер';
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).children().hasClass('icon-Vector-1')) {
             $('#tooltipBtn').text(vodofone);
         }
@@ -603,11 +584,11 @@ $(".tel").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
-$(".ip-icons-position").children().each(function(e, item) {
+$(".ip-icons-position").children().each(function (e, item) {
     let desktop = 'Компьютер';
     let windows = 'Windows';
     let chrome = 'Chrome';
@@ -625,7 +606,7 @@ $(".ip-icons-position").children().each(function(e, item) {
     let edge = 'Edge';
     let yandex = 'Yandex Браузер';
     let mail = 'Mail Браузер';
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).hasClass('icon-Vector-10')) {
             $('#tooltipBtn').text(desktop);
         }
@@ -699,18 +680,18 @@ $(".ip-icons-position").children().each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
-$(".icons-tooltip").each(function(e, item) {
+$(".icons-tooltip").each(function (e, item) {
     let sms = 'Электронный чек отправлен по SMS';
     let mail = 'Электронный чек отправлен на почту';
     let currentCount = $(this).children('.count').html();
     let smsCurrent = 'Отправлено ' + currentCount + ' сообщения';
     let lastDay = 'Остался 1 день до платного хранения';
 
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).hasClass('icon-1')) {
             $('#tooltipBtn').text(sms);
         }
@@ -743,18 +724,18 @@ $(".icons-tooltip").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
-$(".colum-pay").each(function(e, item) {
+$(".colum-pay").each(function (e, item) {
     let predoplata = 'Предоплата';
     let nalozhplatezh = 'Наложенный платёж';
     let acceptPay = 'Оплачен';
     let decline = 'Отказ';
     let trade = 'Обмен';
 
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).children().hasClass('icon-Vector-15')) {
             $('#tooltipBtn').text(predoplata);
         }
@@ -789,17 +770,17 @@ $(".colum-pay").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
-$(".colum-delivery").each(function(e, item) {
+$(".colum-delivery").each(function (e, item) {
     let ukrPochta = 'Укрпочта';
     let nv = 'Новая почта';
     let samovivoz = 'Самовывоз';
     let justin = 'Justin';
 
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).children().hasClass('icon-ukrposhta')) {
             $('#tooltipBtn').text(ukrPochta);
         }
@@ -831,19 +812,19 @@ $(".colum-delivery").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
 
-$(".crm-main-table .time").each(function(e, item) {
+$(".crm-main-table .time").each(function (e, item) {
     let otkrit = 'Открыт через 10 дней 3 минуты 25 секунд';
     let otkritHours = 'Открыт через 3 дня 1 час 3 минуты 25 секунд';
     let acceptZa = 'Принят за 3 минуты 23 секунды';
     let acceptZahours = 'Принят за 1 час 3 минуты 23 секунды';
     let otpravka = 'Отправлен через 3 дня 3 минуты 23 секунды';
 
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(item).hasClass('otkrit')) {
             $('#tooltipBtn').text(otkrit);
         }
@@ -877,12 +858,12 @@ $(".crm-main-table .time").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -7 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
 
-$(".table-header th").each(function(e, item) {
+$(".table-header th").each(function (e, item) {
     let id = 'Идентификатор/номер заказа<br><span class="text-tooltip">Используется для поиска и передачи заказа между пользователями CRM</span>';
     let status = 'Текущий статус заказа<br><span class="text-tooltip">Используется для контроля, анализа и отслеживания заказа в CRM</span>';
     let pokupatel = 'Фамилия имя отчество покупателя<br><span class="text-tooltip">Используется для автоматического заполнения товарно-транспортной накладной почтовой службы</span>';
@@ -913,7 +894,7 @@ $(".table-header th").each(function(e, item) {
     let ip = 'IP адрес, страна, браузер, ОС и тип устройства с которого поступил заказ<br><span class="text-tooltip">Используется для:<br>-Анализа маркетологами<br>-Блокировки IP в случае спама</span>';
     let utm = 'UTM-метка<br><span class="text-tooltip">Используется для передачи переменных рекламного источника с которого поступил заказ</span>';
     let field = 'Дополнительное поле заказа<br><span class="text-tooltip">Используется для передачи и хранения дополнительных параметров заказа</span>';
-    $(this).hover(function() {
+    $(this).hover(function () {
         $("#tooltipBtn").css('font-size', '14px');
         if ($(this).hasClass('header-id')) {
             $('#tooltipBtn').html(id)
@@ -1022,7 +1003,7 @@ $(".table-header th").each(function(e, item) {
         if ($(this).hasClass('header-comm')) {
             $("#tooltipBtn").css({ 'animation': '' });
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
     })
 });
@@ -1161,13 +1142,13 @@ $(".table-header th").each(function(e, item) {
 //     }
 
 
-$(".crm-main-table .country-block").each(function(e, item) {
+$(".crm-main-table .country-block").each(function (e, item) {
     let ukraine = 'Украина';
     let russia = 'Россия';
     let kazahstan = 'Казахстан';
     let alb = 'Албания';
     let world = 'Мир';
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).children().hasClass('ua')) {
             $('#tooltipBtn').text(ukraine);
         }
@@ -1201,53 +1182,71 @@ $(".crm-main-table .country-block").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
 
 
 // comment ...
-// $(".crm-main-table .max-lenght-comment").text(function(i, text) {
-//     let boxMemory = text;
-//     if (text.length >= 30) {
-//         text = text.substring(0, 28) + "...";
-//         $(this).text(text);
-//         $(this).hover(function(xy) {
-//             $('#tooltipBtn').text(boxMemory);
-//             let posElement = this.getBoundingClientRect();
-//             let blockWidth = $(this).width();
-//             let blockHeight = $(this).height();
-//             let screenWidth = document.body.clientWidth;
-//             let screenHeight = document.body.clientHeight;
-//             let widthTooltip = $('#tooltipBtn').width();
-//             let heightTooltip = $('#tooltipBtn').height();
-//             $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
-//             $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
-//             if (screenWidth < posElement.x + widthTooltip) {
-//                 $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
-//             }
-//             if (posElement.x < 110) {
-//                 $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
-//             }
-//             if (screenHeight < posElement.y + heightTooltip + 25) {
-//                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
-//             }
-//         }).mouseleave(function(e) {
-//             $("#tooltipBtn").css({ 'animation': '' });
-//         });
-//     }
-// });
+$(".crm-main-table .max-lenght-comment").text(function (i, text) {
+    let boxMemory = text;
+    if (text.length >= 30) {
+        text = text.substring(0, 28) + "...";
+        $(this).text(text);
+        $(this).hover(function (xy) {
+
+            if ($('.comment')[0].value !== "") {
+                let re = new RegExp($('.comment')[0].value.replace(/\./g, x => '\\.'), "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerText = boxMemory;
+            }
+
+            // $('#tooltipBtn').text(boxMemory);
+            let posElement = this.getBoundingClientRect();
+            let blockWidth = $(this).width();
+            let blockHeight = $(this).height();
+            let screenWidth = document.body.clientWidth;
+            let screenHeight = document.body.clientHeight;
+            let widthTooltip = $('#tooltipBtn').width();
+            let heightTooltip = $('#tooltipBtn').height();
+            $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+            if (screenWidth < posElement.x + widthTooltip) {
+                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
+            }
+            if (posElement.x < 110) {
+                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+            }
+            if (screenHeight < posElement.y + heightTooltip + 25) {
+                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
+            }
+        }).mouseleave(function (e) {
+            $("#tooltipBtn").css({ 'animation': '' });
+        });
+    }
+});
 // comment ...
 
 //another standart ...
-$(".crm-main-table .max-lenght").text(function(i, text) {
+$(".crm-main-table .max-lenght").text(function (i, text) {
     let boxMemory = text;
     if (text.length >= 20) {
         text = text.substring(0, 18) + "...";
         $(this).text(text);
-        $(this).hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
+        $(this).hover(function (xy) {
+            if ($('.ttnStatus')[0].value !== "") {
+                let re = new RegExp($('.ttnStatus')[0].value.replace(/\./g, x => '\\.'), "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerText = boxMemory;
+            }
+
+            
+            // $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1266,23 +1265,178 @@ $(".crm-main-table .max-lenght").text(function(i, text) {
             if (screenHeight < posElement.y + heightTooltip + 25) {
                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
     }
 });
 //another standart ...
 // product ...
-$(".crm-main-table .max-lenght-product").text(function(i, text) {
+
+
+// site
+
+
+var support = (function () {
+    if (!window.DOMParser) return false;
+    var parser = new DOMParser();
+    try {
+        parser.parseFromString('x', 'text/html');
+    } catch (err) {
+        return false;
+    }
+    return true;
+})();
+
+var textToHTML = function (str) {
+
+    if (support) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(str, 'text/html');
+        return doc.body.innerHTML;
+    }
+    var dom = document.createElement('div');
+    dom.innerHTML = str;
+    return dom;
+
+};
+
+$(".site-tooltip").hover(function (xy) {
+
+
+    let textttttttt = 'Google.com/search?q=%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C+%D1%82%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B7%D0%BE%D1%80&hl=ru&sxsrf=AOaemvLSwcqe4O0pliCouC1ZqD7cJYYI_Q1633082611209&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjBsrfn-qjzAhU8gf0HHfxGAQQQ_AUoAXoECAIQAw&biw=1440&bih=703&dpr=2';
+    $("#tooltipBtn").css("font-size", "11px");
+
+    if ($('.site')[0].value !== "") {
+        let re = new RegExp($('.site')[0].value.replace(/\./g, x => '\\.'), "gui");
+        let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+        // console.log(text_pr)
+        document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+    } else {
+        document.getElementById('tooltipBtn').innerText = textttttttt;
+    }
+
+
+    // $('#tooltipBtn').text(pP);
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    let blockHeight = $(this).height();
+    let screenWidth = document.body.clientWidth;
+    let screenHeight = document.body.clientHeight;
+    let widthTooltip = $('#tooltipBtn').width();
+    let heightTooltip = $('#tooltipBtn').height();
+    $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+    }
+}).mouseleave(function (e) {
+    $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
+});
+
+
+$(".utm, .fields").hover(function (xy) {
+    let index = $(".utm, .fields").index(this);
+
+    let idx = Math.floor((((index / 15) % 1) / 0.6) * 10);
+    let textttttttt = 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.';
+    $("#tooltipBtn").css("font-size", "11px");
+    if ($('.firstLetterUpper').slice(3)[idx].value !== "") {
+        let re = new RegExp($('.firstLetterUpper').slice(3)[idx].replace(/\./g, x => '\\.'), "gui");
+        let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+        document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+    } else {
+        document.getElementById('tooltipBtn').innerText = textttttttt;
+}
+
+
+    // $('#tooltipBtn').text(pP);
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    let blockHeight = $(this).height();
+    let screenWidth = document.body.clientWidth;
+    let screenHeight = document.body.clientHeight;
+    let widthTooltip = $('#tooltipBtn').width();
+    let heightTooltip = $('#tooltipBtn').height();
+    $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+    }
+}).mouseleave(function (e) {
+    $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
+});
+
+
+$(".userTip").hover(function (xy) {
+    
+    let textttttttt = 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.';
+    $("#tooltipBtn").css("font-size", "11px");
+    if ($('.pokupatel-validation')[0].value !== "") {
+        let re = new RegExp($('.pokupatel-validation')[0].value.replace(/\./g, x => '\\.'), "gui");
+        let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+        document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+    } else {
+        document.getElementById('tooltipBtn').innerText = textttttttt;
+}
+
+
+    // $('#tooltipBtn').text(pP);
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    let blockHeight = $(this).height();
+    let screenWidth = document.body.clientWidth;
+    let screenHeight = document.body.clientHeight;
+    let widthTooltip = $('#tooltipBtn').width();
+    let heightTooltip = $('#tooltipBtn').height();
+    $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+    }
+}).mouseleave(function (e) {
+    $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
+});
+
+
+$(".ppoTip").hover(function (xy) {
+    
+    let textttttttt = 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.';
+    $("#tooltipBtn").css("font-size", "11px");
+    if ($('.ppo')[0].value !== "") {
+        let re = new RegExp($('.ppo')[0].value.replace(/\./g, x => '\\.'), "gui");
+        let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+        document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+    } else {
+        document.getElementById('tooltipBtn').innerText = textttttttt;
+}
+
+
+    // $('#tooltipBtn').text(pP);
+    let posElement = this.getBoundingClientRect();
+    let blockWidth = $(this).width();
+    let blockHeight = $(this).height();
+    let screenWidth = document.body.clientWidth;
+    let screenHeight = document.body.clientHeight;
+    let widthTooltip = $('#tooltipBtn').width();
+    let heightTooltip = $('#tooltipBtn').height();
+    $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    if (screenWidth < posElement.x + widthTooltip + blockWidth) {
+        $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
+    }
+}).mouseleave(function (e) {
+    $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
+});
+
+$(".crm-main-table .max-lenght-product").text(function (i, text) {
     let boxMemory = text;
-    let dopItem1 = 'ВОу воуasdasd чтото чтото';
-    let dopItem2 = 'ВОу воу2222 фывыфв фывыфвыв';
-    let dopProdazhi = '<div style="text-align:center;display:block;margin-bottom:5px;">Доппродажа</div>' + '<div class="item-list-product"style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem1 + '</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem2 + '</div>';
+    let dopProdazhi = '<span style="text-alignt:center;display:block;margin-bottom:5px;">Доппродажа</span><span class="icon-2" style="font-size:12px;margin-right:5px;"></span>Чтото<br><span class="icon-2" style="font-size:12px;margin-right:5px;"></span>Еще чтото';
     if (text.length >= 35) {
         text = text.substring(0, 33) + "...";
         $(this).text(text);
-        $(this).hover(function(xy) {
-            $('#tooltipBtn').html('<div style="text-align:center;display:block;margin-bottom:5px;">Основной</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div class="item-list-product" style="margin-left:15px;margin-bottom:5px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div style="text-align:center;display:block;margin-bottom:5px;">Доппродажа</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem1 + '</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem2 + '</div>');
+        $(this).hover(function (xy) {
+            $('#tooltipBtn').html('<span style="text-alignt:center;display:block;margin-bottom:5px;">Основной</span><span class="icon-Vector-81" style="margin-right:15px;"></span>' + boxMemory + '<br><br>' + dopProdazhi);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1301,11 +1455,11 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             if (screenHeight < posElement.y + heightTooltip + 25) {
                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
-        $(this).parent('.product-colum').find('.ico-wrap').hover(function(xy) {
-            $('#tooltipBtn').html('<div style="text-align:center;display:block;margin-bottom:5px;">Основной</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div class="item-list-product" style="margin-left:15px;margin-bottom:5px;"><span class="icon-Vector-81" style="position:absolute;left:6px;"></span>' + boxMemory + '</div>' + '<div style="text-align:center;display:block;margin-bottom:5px;">Доппродажа</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem1 + '</div>' + '<div class="item-list-product" style="margin-left:15px;"><span class="icon-2" style="font-size:12px;position:absolute;left:6px;"></span>' + dopItem2 + '</div>');
+        $(this).parent('.product-colum').find('.ico-wrap').hover(function (xy) {
+            $('#tooltipBtn').html('<span style="text-alignt:center;display:block;margin-bottom:5px;">Основной</span><span class="icon-Vector-81" style="margin-right:15px;"></span>' + boxMemory + '<br><br>' + dopProdazhi);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1324,10 +1478,10 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             if (screenHeight < posElement.y + heightTooltip + 25) {
                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
-        $(this).parent('.product-colum').find('.ico-wrap:last-child').hover(function(xy) {
+        $(this).parent('.product-colum').find('.ico-wrap:last-child').hover(function (xy) {
             $('#tooltipBtn').html(dopProdazhi);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
@@ -1347,7 +1501,7 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
             if (screenHeight < posElement.y + heightTooltip + 25) {
                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
     }
@@ -1376,13 +1530,23 @@ $(".crm-main-table .max-lenght-product").text(function(i, text) {
 // });
 
 //addres ...
-$(".crm-main-table .addres-block").text(function(i, text) {
+$(".crm-main-table .addres-block").text(function (i, text) {
     let boxMemory = text;
     if (text.length >= 30) {
         text = text.substring(0, 28) + "...";
         $(this).text(text);
-        $(this).hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
+        $(this).hover(function (xy) {
+
+            if ($('.address')[0].value !== "") {
+                let re = new RegExp($('.address')[0].value.replace(/\./g, x => '\\.'), "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerText = boxMemory;
+            }
+
+            
+            // $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
             let blockHeight = $(this).height();
@@ -1401,19 +1565,19 @@ $(".crm-main-table .addres-block").text(function(i, text) {
             if (screenHeight < posElement.y + heightTooltip + 25) {
                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
     }
 });
 //addres ...
 //status ...
-$(".status-table .color-form2").text(function(i, text) {
+$(".status-table .color-form2").text(function (i, text) {
     let boxMemory = text;
     if (text.length >= 12) {
         text = text.substring(0, 11) + "...";
         $(this).text(text);
-        $(this).hover(function(xy) {
+        $(this).hover(function (xy) {
             $('#tooltipBtn').text(boxMemory);
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
@@ -1433,7 +1597,7 @@ $(".status-table .color-form2").text(function(i, text) {
             if (screenHeight < posElement.y + heightTooltip + 25) {
                 $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' });
         });
     }
@@ -1444,12 +1608,12 @@ $(".status-table .color-form2").text(function(i, text) {
 
 
 //scroll slider header
-$("#next").click(function() {
+$("#next").click(function () {
     $(".scroll-wrap2 .simplebar-content-wrapper").animate({
         scrollLeft: "+=250px",
     }, { duration: 300, queue: false });
 });
-$("#prev").click(function() {
+$("#prev").click(function () {
     $(".scroll-wrap2 .simplebar-content-wrapper").animate({
         scrollLeft: "0px",
     }, { duration: 300, queue: false });
@@ -1457,13 +1621,22 @@ $("#prev").click(function() {
 
 
 //menu btn large
-$(".text-lenght").text(function(i, text) {
+$(".text-lenght").text(function (i, text) {
     let boxMemory = text;
     if (text.length >= 14) {
         text = text.substring(0, 13) + "...";
+        
         $(this).text(text);
-        $(this).parents('.list-large').hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
+        $(this).parents('.list-large').hover(function (xy) {
+            // $('#tooltipBtn').text(boxMemory);
+
+            if ($('.find')[0].value !== "") {
+                let re = new RegExp($('.find')[0].value.replace(/\./g, x => '\\.'), "gui");
+                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: #000;">' + x + '</span>');
+                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
+            } else {
+                document.getElementById('tooltipBtn').innerText = boxMemory;
+            }
             $("#tooltipBtn").css("font-size", "11px");
             let posElement = this.getBoundingClientRect();
             let blockWidth = $(this).width();
@@ -1478,7 +1651,7 @@ $(".text-lenght").text(function(i, text) {
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
         });
     }
@@ -1501,7 +1674,7 @@ function focusInputLarge() {
 // $(".btn-wrap-large").on('mouseleave', closeLargeMenu);
 $(".input-btn-large").on('click', focusInputLarge);
 
-$(".list-large").click(function(e) {
+$(".list-large").click(function (e) {
     // $(".btn-wrap-large").off('mouseleave', closeLargeMenu);
     $('.btn-wrap').css('visibility', 'hidden');
     $('.btn-wrap-large').css('visibility', 'hidden').css('z-index', '999');
@@ -1532,7 +1705,7 @@ $(".list-large").click(function(e) {
         $(this).parent().find('.list-large:first-child').addClass('select-btn');
     }
 });
-$(".list-large:first-child").click(function() {
+$(".list-large:first-child").click(function () {
     $(this).addClass('select-btn');
     $(this).parents('.block1').siblings('.input-btn-large').val('');
     $(this).siblings().removeClass('select-btn');
@@ -1552,7 +1725,7 @@ $(".list-large:first-child").click(function() {
 
 });
 // close all btn
-$('.podlozhka').on("click", function(e) {
+$('.podlozhka').on("click", function (e) {
 
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("btn-wrap-large") && !$clicked.parents().hasClass("btn-wrap") && !$clicked.parents().hasClass("btn-wrap-medium")) {
@@ -1586,7 +1759,7 @@ $('.podlozhka').on("click", function(e) {
         $('.btn-wrap-large').removeClass('hide-arrow');
         $('.btn-small').removeClass('hide-arrow');
 
-        $('.input-style').each(function() {
+        $('.input-style').each(function () {
             if ($(this).siblings('.border-sort').hasClass('border-sort-visible')) {
                 $(this).siblings('.sort-btn').addClass('sort-toggle');
                 // $(this).css('padding-right', '15px');
@@ -1595,7 +1768,7 @@ $('.podlozhka').on("click", function(e) {
                 // $(this).css('padding-right', '3px');
             }
         });
-        $('.btn-medium').each(function() {
+        $('.btn-medium').each(function () {
             if ($(this).siblings('.border-sort').hasClass('border-sort-visible')) {
                 $(this).siblings('.sort-btn').addClass('sort-toggle');
                 $(this).addClass('hide-arrow');
@@ -1605,7 +1778,7 @@ $('.podlozhka').on("click", function(e) {
             }
         });
         //выключить стрелку сортировки
-        $('.btn-wrap-large').each(function() {
+        $('.btn-wrap-large').each(function () {
             if ($(this).find('.select-btn').length == 1) {
                 let appendStatus = $(this).find('.select-btn').text();
                 $(this).children('.input-btn-large').val(appendStatus);
@@ -1628,7 +1801,7 @@ $('.podlozhka').on("click", function(e) {
 
             }
         });
-        $('.btn-small').each(function() {
+        $('.btn-small').each(function () {
             if ($(this).html() == '') {
                 if ($(this).siblings('.border-sort').hasClass('border-sort-visible')) {
                     $(this).addClass('hide-arrow');
@@ -1660,7 +1833,7 @@ $('.podlozhka').on("click", function(e) {
 // $('.btn-wrap-medium').on('mouseleave', closeMediumMenu);
 
 
-$(".list-medium").click(function(e) {
+$(".list-medium").click(function (e) {
     $(this).toggleClass('select-btn');
     $(".sort-menu").off('mouseleave', sortMenuOff);
     $(".sort-menu").off('mouseenter', sortMenu);
@@ -1693,7 +1866,7 @@ $(".list-medium").click(function(e) {
         $(this).parent().find('.list-medium:first-child').addClass('select-btn');
     }
 });
-$(".list-medium:first-child").click(function() {
+$(".list-medium:first-child").click(function () {
     $(this).addClass('select-btn');
     $(this).parents('.block1').siblings('.btn-medium').html('');
     $(this).siblings().removeClass('select-btn');
@@ -1737,7 +1910,7 @@ $(".list-medium:first-child").click(function() {
 
 
 
-$(".list-small").click(function(e) {
+$(".list-small").click(function (e) {
     $(this).toggleClass('select-btn');
     // $('.btn-wrap').off('mouseleave', closeMenu);
     $(".sort-menu").off('mouseleave', sortMenuOff);
@@ -1771,7 +1944,7 @@ $(".list-small").click(function(e) {
 
     }
 });
-$(".list-small:first-child").click(function() {
+$(".list-small:first-child").click(function () {
     $(this).addClass('select-btn');
     // $(this).parents('.btn-wrap').children('.btn-small').removeClass('hide-arrow');
     $(this).parents('.block1').siblings('.btn-small').html('');
@@ -1917,19 +2090,19 @@ $(".list-small:first-child").click(function() {
 
 
 let delayFocus = null;
-$('.input-style').on('mouseenter', function() {
+$('.input-style').on('mouseenter', function () {
     if ($(this).hasClass('flagForSort')) {
         clearTimeout(delayFocus);
     } else {
         delayFocus = setTimeout(() => {
             this.setSelectionRange(this.value.length, this.value.length);
-            // $(this).focus();
+            // this.select()
             this.focus()
             this.select();
         }, 200);
     }
     $(this).css('padding-right', '3px');
-    $(this).click(function() {
+    $(this).click(function () {
         $('.podlozhka').one().css('z-index', '998').css('display', 'block');
         $('.border-sort').css('visibility', 'hidden');
         $(this).addClass('flagForSort');
@@ -1940,7 +2113,7 @@ $('.input-style').on('mouseenter', function() {
         $('.input-style').off('mouseleave', inputFocus);
         $(".sort-menu").off('mouseenter', sortMenu);
     });
-    $(this).keyup(function(e) {
+    $(this).keyup(function (e) {
         $('.podlozhka').one().css('z-index', '998').css('display', 'block');
         $('.border-sort').css('visibility', 'hidden');
         $(this).addClass('flagForSort');
@@ -1968,49 +2141,8 @@ function inputFocus() {
     $(this).css('padding-right', '0px');
     clearTimeout(delayFocus);
 };
-// $($('.daterangepicker')[0]).css({
-//     'transition': '0.3s',
-//     'height': '0px',
-// });
 //input btn hover 
 // $(document).on('mousemove', calendary);
-// $('.demo').click();
-// $('.daterangepicker').css({
-//     'height': '0px',
-//     'visibility': 'hidden',
-//     'transition': '0.3s'
-// });
-// $('.ranges ul').css({
-//     'height': '0px',
-//     'visibility': 'hidden',
-//     'transition': '0.3s'
-// });
-// $('.drp-calendar .calendar-table').css({
-//     'height': '0px',
-//     'visibility': 'hidden',
-//     'transition': '0.3s'
-// });
-// $('.drp-calendar.right').css({
-//     'height': '0px'
-// });
-let index = 0;
-$('.hover-calen').on('mouseenter', (e) => {
-    $('.demo')[e.currentTarget.dataset.id].focus()
-    index = e.currentTarget.dataset.id;
-    $($('.daterangepicker')[e.currentTarget.dataset.id]).css('transition', '0.3s').css('visibility', 'visible').css('opacity', '1');
-});
-$('.hover-calen').on('mouseleave', (e) => {
-    $($('.daterangepicker')[e.currentTarget.dataset.id]).css('visibility', 'hidden').css('opacity', '0');
-});
-$('.daterangepicker').on('mouseenter', (e) => {
-    $(e.currentTarget).css('transition', '0.3s').css('visibility', 'visible').css('opacity', '1');
-});
-$('.daterangepicker').on('mouseleave', (e) => {
-    $(e.currentTarget).css('visibility', 'hidden').css('opacity', '0');
-
-    $('.demo')[index].blur()
-
-});
 
 // function calendary(e) {
 //     let $clicked = $(e.target);
@@ -2053,12 +2185,12 @@ $('.daterangepicker').on('mouseleave', (e) => {
 //     $(this).blur();
 // });
 
-$(".text-lenght-2").text(function(i, text) {
+$(".text-lenght-2").text(function (i, text) {
     let boxMemory = text;
     if (text.length >= 20) {
         text = text.substring(0, 18) + "...";
         $(this).text(text);
-        $(this).parents('.list-large').hover(function(xy) {
+        $(this).parents('.list-large').hover(function (xy) {
             $('#tooltipBtn').text(boxMemory);
             $("#tooltipBtn").css("font-size", "11px");
             let posElement = this.getBoundingClientRect();
@@ -2073,115 +2205,13 @@ $(".text-lenght-2").text(function(i, text) {
             if (screenWidth < posElement.x + widthTooltip + blockWidth) {
                 $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
             }
-        }).mouseleave(function(e) {
+        }).mouseleave(function (e) {
             $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
         });
     }
 });
 
-// $(".nomer1").text(function(i, text) {
-//     let boxMemory = text;
-//     // if (text.length >= 34) {
-//     //     text = text.substring(0, 32) + "...";
-//     //     $(this).text(text);
-//     $(this).parents('.list-large').hover(function(xy) {
-//         $('#tooltipBtn').text(boxMemory);
-//         $("#tooltipBtn").css("font-size", "11px");
-//         let posElement = this.getBoundingClientRect();
-//         let blockHeight = $(this).height();
-//         let screenWidth = document.body.clientWidth;
-//         let screenHeight = document.body.clientHeight;
-//         let widthTooltip = $('#tooltipBtn').width();
-//         let heightTooltip = $('#tooltipBtn').height();
-//         let blockWidth = $(this).width();
-//         $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-//         $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-//         if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-//             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-//         }
-//     }).mouseleave(function(e) {
-//         $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-//     });
-//     // }
-// });
-$(".nomer1").text(function(i, text) {
-    let boxMemory = text;
-    // if (text.length >= 20) {
-    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
-    //     text = text.substring(0, 15) + "...";
-    //     $(this).text(text);
-    $(this).parents('.list-large').hover(function(xy) {
-        $('#tooltipBtn').html('<span class="idProduct">ID - 243534</span><br> ' + ' <span class="cenaProduct">Цена: 349.00</span><br>' + boxMemory);
-        $("#tooltipBtn").css("font-size", "11px");
-        let posElement = this.getBoundingClientRect();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        let blockWidth = $(this).width();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-        }
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-    });
-    // }
-});
-$(".nomer2").text(function(i, text) {
-    let boxMemory = text;
-    // if (text.length >= 20) {
-    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
-    //     text = text.substring(0, 15) + "...";
-    //     $(this).text(text);
-    $(this).parents('.list-large').hover(function(xy) {
-        $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> ');
-        $("#tooltipBtn").css("font-size", "11px");
-        let posElement = this.getBoundingClientRect();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        let blockWidth = $(this).width();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-        }
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-    });
-    // }
-});
-$(".nomer3").text(function(i, text) {
-    let boxMemory = text;
-    // if (text.length >= 20) {
-    //     // text = text.substring(0, 15) + " ... " + text.substring(text.length - 8);
-    //     text = text.substring(0, 15) + "...";
-    //     $(this).text(text);
-    $(this).parents('.list-large').hover(function(xy) {
-        $('#tooltipBtn').html(boxMemory + '<br> <span class="cenaProduct2">Цена: 349.00</span>' + '<br> <span class="idProduct2">ID - 243534</span>');
-        $("#tooltipBtn").css("font-size", "11px");
-        let posElement = this.getBoundingClientRect();
-        let blockHeight = $(this).height();
-        let screenWidth = document.body.clientWidth;
-        let screenHeight = document.body.clientHeight;
-        let widthTooltip = $('#tooltipBtn').width();
-        let heightTooltip = $('#tooltipBtn').height();
-        let blockWidth = $(this).width();
-        $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-        if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-            $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-        }
-    }).mouseleave(function(e) {
-        $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");;
-    });
-    // }
-});
+
 
 // header hide
 // $(".crm-input").hover(function() {
@@ -2304,7 +2334,7 @@ function sortBtnClick() {
         });
     }
     // кнопки смалл сортировка
-    $('.btn-small').each(function() {
+    $('.btn-small').each(function () {
         if (!$(this).html() == '') {
             $(this).addClass('hide-arrow');
         }
@@ -2348,7 +2378,7 @@ function sortBtnClick() {
     changesInput();
 };
 $(".sort-btn").on('click', sortBtnClick);
-$(".sort-btn").hover(function(e, item) {
+$(".sort-btn").hover(function (e, item) {
     $('#tooltipBtn').text('Сортировать данные ↑↓');
     let posElement = this.getBoundingClientRect();
     let blockWidth = $(this).width();
@@ -2369,7 +2399,7 @@ $(".sort-btn").hover(function(e, item) {
     if (screenHeight < posElement.y + heightTooltip + 25) {
         $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
     }
-}).mouseleave(function(e) {
+}).mouseleave(function (e) {
     $("#tooltipBtn").css({ 'animation': '' });
 });
 
@@ -2378,7 +2408,7 @@ $(".sort-btn").hover(function(e, item) {
 
 //reset filter rotate
 let rotate = 0;
-$(".btn-header.btn-refresh").click(function() {
+$(".btn-header.btn-refresh").click(function () {
     rotate = rotate + 360;
     $(".btn-refresh").css({
         "transform": "rotate(" + rotate + "deg)",
@@ -2429,14 +2459,14 @@ $(".btn-header.btn-refresh").click(function() {
 });
 
 
-$(".crm-input .input-style , .crm-input .input-btn-large, .crm-input .date-style").change(function() {
+$(".crm-input .input-style , .crm-input .input-btn-large, .crm-input .date-style").change(function () {
     changesInput();
 });
 
 
 function changesInput() {
     let flag = false;
-    $(".input-style , .input-btn-large, .btn-medium , .btn-small,.date-style, .border-sort").each(function(_, item) {
+    $(".input-style , .input-btn-large, .btn-medium , .btn-small,.date-style, .border-sort").each(function (_, item) {
         if (($(item).val() !== '') || $(item).children().children().attr('data-img') === "" || $(item).children().attr('data-img') === "" || $(item)[0].innerText === "Фильтр" || $(item)[0].innerText === "П/п" || $(item).hasClass('border-sort-visible')) {
             flag = true;
         }
@@ -2452,45 +2482,45 @@ function changesInput() {
 //reset filter rotate
 
 
-$('.ttn-first').mouseenter(function() {
+$('.ttn-first').mouseenter(function () {
     $(this).siblings('.trigger-mouse-2').css('width', '20px');
     $(this).css('width', '94px');
     $(this).siblings('.ttn-second').css({ 'opacity': '0', 'width': '0px', 'padding-left': '0px' });
     $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn2').css('left', '-1px');
 });
-$('.ttn-first').mouseleave(function() {
+$('.ttn-first').mouseleave(function () {
     $(this).siblings('.trigger-mouse-2').css('width', '0px');
     $(this).css('width', '42px');
     $(this).siblings('.ttn-second').css({ 'opacity': '1', 'width': '42px', 'padding-left': '4.5px' });
     $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn2').css('left', '0px');
 });
-$('.ttn-second').mouseenter(function() {
+$('.ttn-second').mouseenter(function () {
     $(this).siblings('.trigger-mouse').css('width', '20px');
     $(this).css({ 'width': '94px', 'padding-left': '0px', 'left': '-1px' });
     $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn1').css('left', '-5px');
     $(this).siblings('.ttn-first').css({ 'opacity': '0', 'width': '0px', 'padding-right': '0px' });
 });
-$('.ttn-second').mouseleave(function() {
+$('.ttn-second').mouseleave(function () {
     $(this).siblings('.trigger-mouse').css('width', '0px');
     $(this).css({ 'width': '42px', 'padding-left': '4.5px', 'left': '0px' });
     $(this).siblings('.icon-Vector-81').removeClass('hide-arrow-ttn1').css('left', '0px');
     $(this).siblings('.ttn-first').css({ 'opacity': '1', 'width': '42px', 'padding-right': '4.5px' });
 });
-$('.trigger-mouse-2').hover(function() {
+$('.trigger-mouse-2').hover(function () {
     $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn1').css('left', '-5px');
     $(this).siblings('.ttn-second').css({ 'width': '94px', 'padding-left': '0px', 'left': '-1px' });
     $(this).siblings('.ttn-first').css({ 'opacity': '0', 'width': '0px', 'padding-right': '0px' });
 });
-$('.trigger-mouse').hover(function() {
+$('.trigger-mouse').hover(function () {
     $(this).siblings('.icon-Vector-81').addClass('hide-arrow-ttn2').css('left', '-1px');
     $(this).siblings('.ttn-first').css('width', '94px');
     $(this).siblings('.ttn-second').css({ 'opacity': '0', 'width': '0px', 'padding-left': '0px', 'left': '0px' });
 });
-$(".ttn-tooltip").each(function(e, item) {
+$(".ttn-tooltip").each(function (e, item) {
     let ttnFirst = 'Первая ТТН';
     let ttnSecond = 'Вторая ТТН';
 
-    $(this).hover(function(xy) {
+    $(this).hover(function (xy) {
         if ($(this).hasClass('ttn-first')) {
             $('#tooltipBtn').text(ttnFirst);
         }
@@ -2517,7 +2547,7 @@ $(".ttn-tooltip").each(function(e, item) {
         if (screenHeight < posElement.y + heightTooltip + 25) {
             $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
         }
-    }).mouseleave(function(e) {
+    }).mouseleave(function (e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
 });
@@ -2529,7 +2559,7 @@ $(".ttn-tooltip").each(function(e, item) {
 //     $('.count').css({ 'width': gr * 1.5 + 'px' });
 //     $('.count').css({ 'height': gr * 1.5 + 'px' });
 // }
-$('.count').text(function(_, text) {
+$('.count').text(function (_, text) {
     // $('.count').lenght
     if (text.length >= 2) {
         $(this).css('border-radius', '5px');
@@ -2539,7 +2569,7 @@ $('.count').text(function(_, text) {
 let scale = 1;
 
 
-$('.zoomMinus').on('click', function(e) {
+$('.zoomMinus').on('click', function (e) {
     scale -= .05;
     scaleFormat = scale.toFixed(2);
     console.log(scaleFormat)
@@ -2551,7 +2581,7 @@ $('.zoomMinus').on('click', function(e) {
         });
     }
 });
-$('.zoomPlus').on('click', function(e) {
+$('.zoomPlus').on('click', function (e) {
     scale += .05;
     scaleFormat = scale.toFixed(2);
     console.log(scaleFormat)
@@ -2591,7 +2621,7 @@ $('.zoomPlus').on('click', function(e) {
 // });
 //SCALE
 //noZoom
-$(document).keydown(function(event) {
+$(document).keydown(function (event) {
     if ((event.ctrlKey || event.metaKey) == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
         event.preventDefault();
     }
@@ -2611,19 +2641,19 @@ $(document).keydown(function(event) {
 // });
 //noZoom
 //СОРТИРОВКА
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const table = document.getElementById('crm-table');
     const headers = table.querySelectorAll('thead td');
     const tableBody = table.querySelector('tbody');
     const rows = tableBody.querySelectorAll('tr');
 
     // Направление сортировки
-    const directions = Array.from(headers).map(function(header) {
+    const directions = Array.from(headers).map(function (header) {
         return '';
     });
 
     // Преобразовать содержимое данной ячейки в заданном столбце
-    const transform = function(index, content) {
+    const transform = function (index, content) {
         // Получить тип данных столбца
         const type = headers[index].getAttribute('data-type');
         switch (type) {
@@ -2635,7 +2665,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    const sortColumn = function(index) {
+    const sortColumn = function (index) {
         // Получить текущее направление
         const direction = directions[index] || 'asc';
 
@@ -2644,7 +2674,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const newRows = Array.from(rows);
 
-        newRows.sort(function(rowA, rowB) {
+        newRows.sort(function (rowA, rowB) {
             const cellA = rowA.querySelectorAll('td')[index].innerHTML;
             const cellB = rowB.querySelectorAll('td')[index].innerHTML;
 
@@ -2662,7 +2692,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Удалить старые строки
-        [].forEach.call(rows, function(row) {
+        [].forEach.call(rows, function (row) {
             tableBody.removeChild(row);
         });
 
@@ -2670,13 +2700,13 @@ document.addEventListener('DOMContentLoaded', function() {
         directions[index] = direction === 'asc' ? 'desc' : 'asc';
 
         // Добавить новую строку
-        newRows.forEach(function(newRow) {
+        newRows.forEach(function (newRow) {
             tableBody.appendChild(newRow);
         });
     };
 
-    [].forEach.call(headers, function(header, index) {
-        $(header).find('.sort-btn').on('click', function() {
+    [].forEach.call(headers, function (header, index) {
+        $(header).find('.sort-btn').on('click', function () {
             // console.log(index);
             sortColumn(index);
         });
@@ -2712,7 +2742,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $('.colum-sum').text((i, text) => {
     const price = text.split(' ');
-    return `${(+price).toLocaleString('ru-RU',{ minimumFractionDigits: 2 }).replace(',','.')}`;
+    return `${(+price).toLocaleString('ru-RU', { minimumFractionDigits: 2 }).replace(',', '.')}`;
 });
 
 // $('.phone').mask('999 999 999 99 99');
@@ -2776,7 +2806,7 @@ function orderTelValidation(value, delimeter = ' ', symbol_block_group = [2, 2, 
     return validate_value;
 };
 // Валидация телефона
-window.onload = function() {
+window.onload = function () {
     let telNumber = document.querySelectorAll('.tel-number');
     // console.log(title);
     for (let i = 0; i < telNumber.length; i++) {
@@ -2812,7 +2842,7 @@ btnOpenTask.addEventListener("click", () => {
     btnOpenTask.classList.toggle("selected-nav");
 });
 
-document.addEventListener("mousedown", function(e) {
+document.addEventListener("mousedown", function (e) {
     if (e.target.closest(".task-block") === null && !e.target.closest("ui-datepicker-buttonpane") === null && !e.target.closest("ui-datepicker-header") === null && !e.target.closest("ui-datepicker-calendar") === null && !e.target.closest("ui-datepicker") === null) {
         taskBlock.classList.remove("task-block-toggle");
         btnOpenTask.classList.remove("selected-nav");
@@ -2845,17 +2875,17 @@ btnTaskAccept.addEventListener("click", () => {
     blockTaskList.style.display = "block";
 });
 
-$(".recall-clients .dropdown2 .btn .btn-span").click(function() {
+$(".recall-clients .dropdown2 .btn .btn-span").click(function () {
     let arrbtn = $(".dropdown2 .ul-block");
     arrbtn.map((x) => $(".dropdown2 .ul-block").removeClass("toggle"));
     $(".recall-clients .dropdown2 .ul-block").toggle();
 });
-$(".recall-clients .dropdown2 .ul-block .list").click(function() {
+$(".recall-clients .dropdown2 .ul-block .list").click(function () {
     let text = $(this).html();
     $(".recall-clients .dropdown2 .btn .btn-span").html(text);
     $(".recall-clients .dropdown2 .ul-block").hide();
 });
-$(document).bind("click", function(e) {
+$(document).bind("click", function (e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("dropdown2"))
         $(".recall-clients .dropdown2 .ul-block").hide();
@@ -2890,7 +2920,7 @@ notificationBtn.addEventListener("click", () => {
     importBlock.classList.remove("import-toggle");
     modulBlock.classList.remove("modul-toggle");
 });
-document.addEventListener("mousedown", function(e) {
+document.addEventListener("mousedown", function (e) {
     if (e.target.closest(".btn-header") === null && e.target.closest(".notifications") === null && e.target.closest(".import-block") === null && e.target.closest(".modul-block") === null) {
         notificationBlock.classList.remove("notification-toggle");
     }
@@ -2906,7 +2936,7 @@ importBtn.addEventListener("click", () => {
     modulBlock.classList.remove("modul-toggle");
 });
 
-document.addEventListener("mousedown", function(e) {
+document.addEventListener("mousedown", function (e) {
     if (e.target.closest(".btn-header") === null && e.target.closest(".notifications") === null && e.target.closest(".import-block") === null && e.target.closest(".modul-block") === null) {
         importBlock.classList.remove("import-toggle");
     }
@@ -2922,7 +2952,7 @@ modulBtn.addEventListener("click", () => {
     importBlock.classList.remove("import-toggle");
 });
 
-document.addEventListener("mousedown", function(e) {
+document.addEventListener("mousedown", function (e) {
     if (e.target.closest(".btn-header") === null && e.target.closest(".notifications") === null && e.target.closest(".import-block") === null && e.target.closest(".modul-block") === null) {
         modulBlock.classList.remove("modul-toggle");
     }
@@ -2941,7 +2971,7 @@ btnCrmNav.addEventListener("click", () => {
     btnCrmNav.classList.toggle("selected-nav");
 });
 
-document.addEventListener("mousedown", function(e) {
+document.addEventListener("mousedown", function (e) {
     if (e.target.closest(".nav-crm") === null) {
         navWrap.classList.remove("nav-crm-plus");
         // navWrap.classList.remove('nav-crm-overflow');
@@ -2954,7 +2984,7 @@ document.addEventListener("mousedown", function(e) {
 
 //drop nav btn
 
-$(".zakaz-btn").click(function() {
+$(".zakaz-btn").click(function () {
     // let dropBlock = $(".drop-nav .zakaz-block");
     // dropBlock.map((x) => $(".drop-nav .zakaz-block").removeClass('block-visible'));
     $(".zakaz-drop-block").toggleClass('block-visible');
@@ -2964,164 +2994,67 @@ $(".zakaz-btn").click(function() {
     $(".animation-arrow").css({ 'display': 'block' });
 
 });
-$(".catalog-btn").click(function() {
+$(".catalog-btn").click(function () {
     $(".catalog-drop-block").toggleClass('block-visible');
 });
-$(".contact-btn").click(function() {
+$(".contact-btn").click(function () {
     $(".contact-drop-block").toggleClass('block-visible');
 });
-$(".send-product-btn").click(function() {
+$(".send-product-btn").click(function () {
     $(".send-drop-block").toggleClass('block-visible');
 });
-$(".warehouse-btn").click(function() {
+$(".warehouse-btn").click(function () {
     $(".warehouse-drop-block").toggleClass('block-visible');
 });
-$(".templates-btn").click(function() {
+$(".templates-btn").click(function () {
     $(".templates-drop-block").toggleClass('block-visible');
 });
-$(".modul-btn").click(function() {
+$(".modul-btn").click(function () {
     $(".modul-drop-block").toggleClass('block-visible');
 });
-$(".statistic-btn").click(function() {
+$(".statistic-btn").click(function () {
     $(".statistic-drop-block").toggleClass('block-visible');
 });
-$(".mailing-btn").click(function() {
+$(".mailing-btn").click(function () {
     $(".mailing-drop-block").toggleClass('block-visible');
 });
-$(".setting-btn").click(function() {
+$(".setting-btn").click(function () {
     $(".setting-drop-block").toggleClass('block-visible');
 });
-$(".trash-btn").click(function() {
+$(".trash-btn").click(function () {
     $(".trash-drop-block").toggleClass('block-visible');
 });
-$(".info-btn").click(function() {
+$(".info-btn").click(function () {
     $(".info-drop-block").toggleClass('block-visible');
 });
-$(".video-btn").click(function() {
+$(".video-btn").click(function () {
     $(".video-drop-block").toggleClass('block-visible');
 });
-var support = (function() {
-    if (!window.DOMParser) return false;
-    var parser = new DOMParser();
-    try {
-        parser.parseFromString('x', 'text/html');
-    } catch (err) {
-        return false;
-    }
-    return true;
-})();
-
-var textToHTML = function(str) {
-
-    if (support) {
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(str, 'text/html');
-        return doc.body.innerHTML;
-    }
-    var dom = document.createElement('div');
-    dom.innerHTML = str;
-    return dom;
-
-};
-
-$(".site-tooltip").hover(function(xy) {
-    let textttttttt = 'Google.com/search?q=%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C+%D1%82%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B7%D0%BE%D1%80&hl=ru&sxsrf=AOaemvLSwcqe4O0pliCouC1ZqD7cJYYI_Q1633082611209&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjBsrfn-qjzAhU8gf0HHfxGAQQQ_AUoAXoECAIQAw&biw=1440&bih=703&dpr=2';
-    $("#tooltipBtn").css("font-size", "11px");
-
-    if ($('.site')[0].value !== "") {
-        let re = new RegExp($('.site')[0].value, "gui");
-        let text_pr = textttttttt.replace(re, x => '<span style="background: #FFE600;color: black;">' + x + '</span>');
-        console.log(text_pr)
-        document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
-    } else {
-        document.getElementById('tooltipBtn').innerText = textttttttt;
-    }
-    // $('#tooltipBtn').text(pP);
-    let posElement = this.getBoundingClientRect();
-    let blockWidth = $(this).width();
-    let blockHeight = $(this).height();
-    let screenWidth = document.body.clientWidth;
-    let screenHeight = document.body.clientHeight;
-    let widthTooltip = $('#tooltipBtn').width();
-    let heightTooltip = $('#tooltipBtn').height();
-    $("#tooltipBtn").css("left", posElement.x + blockWidth + 10 + "px").css("top", posElement.y - 2 + "px");
-    $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
-    if (screenWidth < posElement.x + widthTooltip + blockWidth) {
-        $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
-    }
-}).mouseleave(function(e) {
-    $("#tooltipBtn").css({ 'animation': '' }).css("font-size", "12px");
-});
-$(".crm-main-table .max-lenght-comment").text(function(i, text) {
-    let boxMemory = text;
-    if (text.length >= 30) {
-        text = text.substring(0, 28) + "...";
-        $(this).text(text);
-        $(this).hover(function(xy) {
-            $('#tooltipBtn').text(boxMemory);
-            if ($('.comment-input')[0].value !== "") {
-                let re = new RegExp($('.comment-input')[0].value, "gui");
-                let text_pr = boxMemory.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
-                console.log(text_pr)
-                document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
-            } else {
-                document.getElementById('tooltipBtn').innerText = boxMemory;
-            }
-            let posElement = this.getBoundingClientRect();
-            let blockWidth = $(this).width();
-            let blockHeight = $(this).height();
-            let screenWidth = document.body.clientWidth;
-            let screenHeight = document.body.clientHeight;
-            let widthTooltip = $('#tooltipBtn').width();
-            let heightTooltip = $('#tooltipBtn').height();
-            $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
-            $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
-            if (screenWidth < posElement.x + widthTooltip) {
-                $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 0 + 'px');
-            }
-            if (posElement.x < 110) {
-                $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
-            }
-            if (screenHeight < posElement.y + heightTooltip + 25) {
-                $("#tooltipBtn").css('top', posElement.y - blockHeight + -12 + 'px');
-            }
-        }).mouseleave(function(e) {
-            $("#tooltipBtn").css({ 'animation': '' });
-        });
-    }
-});
 //drop nav btn
-//сортировка в кнопках поиск
-let el = null;
-let text = [];
-$('.find').on('keyup', e => {
-    if (el === null) {
-        el = [...$(e.currentTarget.parentElement).find('.list-large')];
-        text = [...el.map(x => $(x).find('.product-item')[0].innerText)]
-    }
 
+
+
+
+let el = null;
+$('.find').on('keyup', e => {
+    if (el === null)
+        el = [...$(e.currentTarget.parentElement).find('.list-large')];
     for (let index = 0; index < el.length; index++) {
         const element = el[index];
-        // console.log($(element).find('.product-item'), e.currentTarget.value);
-        if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
-            $(element).css('display', 'none');
+
+        // console.log($(element).find('.text-lenght')[0].innerText, e.currentTarget.value);
+        if (!$(element).find('.text-lenght')[0].innerText.toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+            $(element).css('display', 'none')
         } else {
-            if ($('.product-input')[0].value !== "") {
-                let re = new RegExp($('.product-input')[0].value, "gui");
-                let text_pr = text[index].replace(re, x => '<span style="background: #FFE600;color: black;">' + x + '</span>');
-
-                $(element).css('display', 'block')
-                $($(element).find('.product-item')[0]).html(textToHTML(text_pr));
-
-            } else {
-                $($(element).find('.product-item')[0]).text(text[index]);
-                $(element).css('display', 'block')
-            }
-            //    console.log(text_pr)
-            // document.querySelector('.product-list.list-item').innerHTML = textToHTML(text_pr);
-
+            $(element).css('display', 'block')
         }
     }
     // ).find('.list-large'));
     // e.currentTarget.value
 })
+
+
+
+
+
+

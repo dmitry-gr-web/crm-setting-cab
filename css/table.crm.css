@@ -935,10 +935,6 @@ input[type=number] {
 .btn-wrap-large .input-btn-large::placeholder {
   font-size: 10px;
 }
-.btn-wrap-large .product-input {
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
 .btn-wrap-large:after {
   content: "";
   position: absolute;
@@ -951,8 +947,7 @@ input[type=number] {
   opacity: 0.8;
 }
 .btn-wrap-large .list-large:hover .text-lenght,
-.btn-wrap-large .list-large:hover .text-lenght-2,
-.btn-wrap-large .list-large:hover .product-item {
+.btn-wrap-large .list-large:hover .text-lenght-2 {
   color: rgba(0, 0, 0, 0.5);
 }
 .btn-wrap-large .block1 {
@@ -981,13 +976,6 @@ input[type=number] {
   display: inline-block;
   height: 14px;
 }
-.btn-wrap-large .block1 .product-item {
-  display: inline-block;
-  width: 180px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
 .btn-wrap-large .block1 .list-item {
   position: relative;
   left: 15px;
@@ -999,10 +987,6 @@ input[type=number] {
   line-height: 18px;
   position: relative;
   margin-right: 10px;
-}
-.btn-wrap-large .block1 .product-list {
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 .btn-wrap-large .block1 .simplebar-track.simplebar-vertical {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1054,17 +1038,8 @@ input[type=number] {
   display: block;
 }
 
-.hover-calen {
-  background-color: #d4d4d4;
-  width: 100%;
-  height: 16px;
-}
-
-.block-calendary1 {
-  height: 18px;
-}
-
 .demo {
+  font-size: 10px;
   font-size: 10px;
   letter-spacing: -0.5px;
   padding: 0;
@@ -1072,7 +1047,6 @@ input[type=number] {
   width: 100%;
   border: none;
   outline: none;
-  height: 16px;
   font-weight: 300;
   padding-left: 3px;
   color: rgba(0, 0, 0, 0.5);
@@ -1217,11 +1191,6 @@ input[type=number] {
 }
 .small-buttons .btn-wrap.width15 {
   width: 15px;
-}
-
-.product-box {
-  width: 100%;
-  height: 18px;
 }
 
 .btn-wrap {
@@ -1483,25 +1452,7 @@ input[type=number] {
 #tooltipBtn .icon-Vector-81:before {
   transform: rotate(-90deg);
   position: absolute;
-  font-size: 11px;
-}
-#tooltipBtn .idProduct {
-  font-weight: 400;
-}
-#tooltipBtn .cenaProduct {
-  font-weight: 400;
-}
-#tooltipBtn .idProduct2 {
-  font-weight: 400;
-}
-#tooltipBtn .cenaProduct2 {
-  font-weight: 400;
-}
-#tooltipBtn .idProduct3 {
-  font-weight: 400;
-}
-#tooltipBtn .cenaProduct3 {
-  font-weight: 400;
+  font-size: 10px;
 }
 
 @keyframes delay-status {
@@ -1660,13 +1611,15 @@ input[type=number] {
   visibility: hidden;
   cursor: pointer;
 }
-
+/* selection add */
 ::selection {
-  background-color: rgba(71, 74, 81, 0.2);
-  color: black;
+  background-color: rgb(71,74,81, 0.2);
+  color: rgb(0, 0, 0);
+
 }
 
-.select-toggle ::selection {
-  background-color: rgba(71, 74, 81, 0.7);
-  color: white;
+.select-toggle ::selection{
+  background-color: rgb(71,74,81, 0.7);
+  color: rgb(255, 255, 255);
+
 }
