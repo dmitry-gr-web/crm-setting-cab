@@ -17,6 +17,7 @@
         margin-top: 10px;
         margin-left: 20px;
         margin-bottom: 25px;
+        font-size: 14px;
         position: relative;
         span:first-child {
             margin-right: 24px;
@@ -41,7 +42,7 @@
             margin-bottom: 20px;
             .call-header {
                 position: relative;
-                font-weight: 600;
+                font-weight: 400;
                 img {
                     position: absolute;
                     left: -24px;
@@ -53,7 +54,7 @@
             margin-bottom: 20px;
             margin-left: 20px;
             .reminder-not {
-                font-weight: 600;
+                font-weight: 400;
                 position: relative;
                 img {
                     position: absolute;
@@ -65,7 +66,7 @@
         .new-order {
             margin-left: 20px;
             .new {
-                font-weight: 600;
+                font-weight: 400;
                 position: relative;
                 img {
                     position: absolute;
@@ -122,7 +123,7 @@
         background-color: white;
         border-radius: 2px;
         left: 0;
-        top: 22px;
+        bottom: -3px;
     }
 }
 

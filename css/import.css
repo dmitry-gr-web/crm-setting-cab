@@ -27,6 +27,7 @@
 .import-header {
   position: relative;
   display: inline;
+  font-size: 14px;
 }
 
 .import-ul {
@@ -38,7 +39,17 @@
 .import-ul .import-list {
   cursor: pointer;
   padding: 2.5px 0;
-  font-weight: 600;
+  font-weight: 400;
+  padding-left: 25px;
+  margin-bottom: 22px;
+  position: relative;
+}
+.import-ul .import-list img {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  left: 0px;
+  top: 1px;
 }
 .import-ul .import-list:hover {
   opacity: 0.5;

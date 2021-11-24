@@ -1,0 +1,58 @@
+<div style="width:300px;">
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Атрибут</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="first t">3454-08</td>
+                <td class="ellipsis"><span>This Text Overflows and is too large for its cell.</span></td>
+                <td class="first">1235.00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .t {
+        max-width: 57px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .first {
+        width: max-content;
+        width: 0;
+        white-space: nowrap;
+    }
+    
+    .ellipsis {
+        position: relative;
+    }
+    
+    .ellipsis:before {
+        content: '&nbsp;';
+        visibility: hidden;
+    }
+    
+    .ellipsis span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

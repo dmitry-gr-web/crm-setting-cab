@@ -9,8 +9,10 @@
 }
 
 .container-info-settings {
-  margin-left: 51px;
-  margin-top: 5px;
+  padding-left: 51px;
+  padding-top: 5px;
+  margin-top: 0;
+  margin-left: 0;
   margin-right: 0;
   width: 100%;
   height: 100%;
@@ -332,7 +334,7 @@
 }
 
 .btn-toggle {
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
 }
 .btn-toggle .color-form {
@@ -489,6 +491,25 @@
   line-height: 16px;
 }
 .input-style::placeholder {
+  font-size: 10px;
+}
+
+.input-style-calendary {
+  background: #d4d4d4;
+  outline: none;
+  border: none;
+  width: 100%;
+  position: absolute;
+  z-index: 998;
+  font-weight: 300;
+  box-sizing: border-box;
+  padding: 0 3px;
+  letter-spacing: -0.5px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 10px;
+  line-height: 16px;
+}
+.input-style-calendary::placeholder {
   font-size: 10px;
 }
 
@@ -911,7 +932,7 @@ input[type=number] {
 .btn-wrap-large {
   text-align: left;
   display: block;
-  cursor: pointer;
+  display: flex;
   height: 16px;
   width: 100%;
   position: absolute;
@@ -949,8 +970,168 @@ input[type=number] {
   opacity: 0.8;
 }
 .btn-wrap-large .list-large:hover .status-tooltip,
-.btn-wrap-large .list-large:hover .product-item-tooltip {
+.btn-wrap-large .list-large:hover .user-tooltip {
   color: rgba(0, 0, 0, 0.5);
+}
+.btn-wrap-large .dropdownProduct {
+  position: absolute;
+  right: 0;
+  transition: 0.3s;
+  width: 100%;
+  z-index: 4;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9999;
+  user-select: none;
+}
+.btn-wrap-large .dropdownProduct .countProduct {
+  position: relative;
+  top: -1px;
+  font-size: 10px;
+  display: inline;
+  cursor: default;
+  white-space: pre;
+  color: rgba(0, 0, 0, 0.5);
+}
+.btn-wrap-large .dropdownProduct .countProduct span {
+  font-weight: 500;
+}
+.btn-wrap-large .dropdownProduct div .simplebar-track.simplebar-vertical {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 3px;
+  margin-top: 75px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  bottom: 0;
+  border-radius: 5px;
+}
+.btn-wrap-large .dropdownProduct div .simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.3);
+  width: 3px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.btn-wrap-large .dropdownProduct div .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+.btn-wrap-large .dropdownProduct div .simplebar-content-wrapper {
+  padding: 0;
+  padding-right: 16px;
+}
+.btn-wrap-large .dropdownProduct div .simplebar-track.simplebar-horizontal {
+  display: none;
+}
+.btn-wrap-large .dropdownProduct .productTooltipText {
+  font-size: 12px;
+  white-space: normal;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+.btn-wrap-large .dropdownProduct .dropdownProductHeader td {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+}
+.btn-wrap-large .dropdownProduct table {
+  width: 100%;
+  border-collapse: collapse;
+  color: black;
+}
+.btn-wrap-large .dropdownProduct table tr td {
+  background-color: white;
+}
+.btn-wrap-large .dropdownProduct table tr th {
+  background-color: white;
+}
+.btn-wrap-large .dropdownProduct table .select-btn-product:before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  top: 7px;
+  left: 6px;
+  border-radius: 100%;
+  position: absolute;
+  background-color: #787885;
+}
+.btn-wrap-large .dropdownProduct thead {
+  position: sticky;
+  top: 2px;
+  z-index: 1;
+}
+.btn-wrap-large .dropdownProduct thead tr th {
+  padding: 5px;
+}
+.btn-wrap-large .dropdownProduct thead tr th:first-child {
+  padding-left: 16px;
+  padding-right: 5px;
+  line-height: 16px;
+}
+.btn-wrap-large .dropdownProduct thead tr:last-child th {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.btn-wrap-large .dropdownProduct tbody {
+  cursor: pointer;
+}
+.btn-wrap-large .dropdownProduct tbody td {
+  padding: 0 5px;
+}
+.btn-wrap-large .dropdownProduct tbody td:first-child {
+  padding-left: 16px;
+}
+.btn-wrap-large .dropdownProduct tbody tr:last-child td {
+  padding-bottom: 10px;
+}
+.btn-wrap-large .dropdownProduct tbody tr td:last-child {
+  padding-right: 0;
+}
+.btn-wrap-large .dropdownProduct tbody .idProduct {
+  width: 1px;
+  position: relative;
+}
+.btn-wrap-large .dropdownProduct tbody .idProduct span {
+  white-space: nowrap;
+  max-width: 50px;
+  position: relative;
+  top: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  display: inline-block;
+}
+.btn-wrap-large .dropdownProduct tbody .attrProduct {
+  position: relative;
+}
+.btn-wrap-large .dropdownProduct tbody .attrProduct:before {
+  content: "&nbsp;";
+  visibility: hidden;
+}
+.btn-wrap-large .dropdownProduct tbody .attrProduct span {
+  position: absolute;
+  left: 5px;
+  right: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-wrap-large .dropdownProduct tbody .priceProduct {
+  width: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+.btn-wrap-large .dropdownProduct thead {
+  cursor: default;
+}
+.btn-wrap-large .dropdownProduct table tbody tr:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+.btn-wrap-large .dropdownProductToggle {
+  transition: 0.2s;
+  visibility: visible;
+  opacity: 1;
 }
 .btn-wrap-large .block1 {
   background: white;
@@ -964,16 +1145,32 @@ input[type=number] {
   overflow-x: hidden;
   height: 90px;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
   width: 100%;
 }
 .btn-wrap-large .block1 .select-btn:before {
   left: 6px;
   top: 6px;
 }
+.btn-wrap-large .block1 .select-btn-white:before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  left: 6px;
+  top: 6px;
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #787885;
+}
+.btn-wrap-large .block1 .halfOpacity {
+  color: rgba(0, 0, 0, 0.5);
+}
 .btn-wrap-large .block1 .list-large span:nth-child(2) {
   display: inline-block;
   height: 14px;
+}
+.btn-wrap-large .block1 .list-large:last-child {
+  padding-bottom: 5px;
 }
 .btn-wrap-large .block1 .product-item-tooltip {
   display: inline-block;
@@ -982,8 +1179,15 @@ input[type=number] {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.btn-wrap-large .block1 .user-tooltip {
+  display: inline-block;
+  width: 105px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .btn-wrap-large .block1 .status-tooltip {
-  max-width: 80px;
+  max-width: 100px;
   display: inline-block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1022,7 +1226,7 @@ input[type=number] {
 }
 .btn-wrap-large .block1 .list-item {
   position: relative;
-  left: 15px;
+  left: 16px;
   height: 12px;
   display: inline-block;
 }
@@ -1031,10 +1235,7 @@ input[type=number] {
   line-height: 18px;
   position: relative;
   margin-right: 10px;
-}
-.btn-wrap-large .block1 .product-list {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  cursor: pointer;
 }
 .btn-wrap-large .block1 .simplebar-track.simplebar-vertical {
   background-color: rgba(0, 0, 0, 0.1);
@@ -1118,7 +1319,6 @@ input[type=number] {
 .btn-wrap-medium .btn-medium {
   text-align: left;
   display: block;
-  cursor: pointer;
   line-height: 16px;
   height: 16px;
   background: #d4d4d4;
@@ -1178,7 +1378,6 @@ input[type=number] {
   text-align: left;
   height: 90px;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
   width: 100%;
   top: 0;
 }
@@ -1190,6 +1389,9 @@ input[type=number] {
   display: block;
   margin: auto;
 }
+.btn-wrap-medium .block1 .list-medium:last-child {
+  padding-bottom: 5px;
+}
 .btn-wrap-medium .block1 .list-item {
   width: 100%;
   height: 100%;
@@ -1198,6 +1400,7 @@ input[type=number] {
   height: 18px;
   line-height: 18px;
   text-align: center;
+  cursor: pointer;
   position: relative;
 }
 .btn-wrap-medium .block1 .list-medium .icons {
@@ -1271,7 +1474,6 @@ input[type=number] {
 .btn-wrap .btn-small {
   text-align: left;
   display: inline-block;
-  cursor: pointer;
   line-height: 16px;
   height: 16px;
   box-sizing: border-box;
@@ -1335,7 +1537,6 @@ input[type=number] {
   text-align: left;
   height: 90px;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
   width: 100%;
   top: 0;
   overflow-x: hidden;
@@ -1343,6 +1544,9 @@ input[type=number] {
 .btn-wrap .block1 .select-btn:before {
   left: 7px;
   top: 6px;
+}
+.btn-wrap .block1 .list-small:last-child {
+  padding-bottom: 5px;
 }
 .btn-wrap .block1 .numCurrent {
   margin-left: 16px;
@@ -1354,6 +1558,7 @@ input[type=number] {
   height: 18px;
   line-height: 18px;
   text-align: center;
+  cursor: pointer;
   position: relative;
 }
 .btn-wrap .block1 .list-small .icons {
@@ -1465,6 +1670,21 @@ input[type=number] {
   text-align: center;
 }
 
+.time {
+  position: relative;
+  font-size: 11px;
+  width: max-content;
+  margin: 0 auto;
+}
+.time .colorTime {
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+}
+
 .colum-sum {
   text-align: right;
   vertical-align: middle;
@@ -1492,7 +1712,6 @@ input[type=number] {
   visibility: hidden;
   opacity: 0;
   user-select: none;
-  max-height: 270px;
   background-color: rgba(81, 81, 81, 0.6);
   border-radius: 3px;
   top: 0;
@@ -1512,6 +1731,20 @@ input[type=number] {
   color: white;
   font-size: 10px;
 }
+#tooltipBtn .img-product {
+  width: 300px;
+  height: 300px;
+  left: 100px;
+  z-index: 99;
+  margin: 5px 0;
+  transition: 0.3s;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.15);
+}
+#tooltipBtn .img-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 #tooltipBtn .icon-Vector-81:before {
   transform: rotate(-90deg);
   position: absolute;
@@ -1521,18 +1754,6 @@ input[type=number] {
   font-weight: 400;
 }
 #tooltipBtn .cenaProduct {
-  font-weight: 400;
-}
-#tooltipBtn .idProduct2 {
-  font-weight: 400;
-}
-#tooltipBtn .cenaProduct2 {
-  font-weight: 400;
-}
-#tooltipBtn .idProduct3 {
-  font-weight: 400;
-}
-#tooltipBtn .cenaProduct3 {
   font-weight: 400;
 }
 
@@ -1547,6 +1768,10 @@ input[type=number] {
   position: absolute;
   bottom: -2px;
   background-color: grey;
+}
+
+.hideAllBtn {
+  visibility: hidden;
 }
 
 @keyframes delay-status {
@@ -1668,6 +1893,19 @@ input[type=number] {
   opacity: 0.5;
 }
 
+.countFindFunction {
+  position: relative;
+  right: 16px;
+  padding-top: 2px;
+  display: inline;
+  cursor: default;
+  white-space: pre;
+  color: rgba(0, 0, 0, 0.5);
+}
+.countFindFunction span {
+  font-weight: 500;
+}
+
 .sort-toggle {
   visibility: visible;
   width: 10px;
@@ -1677,6 +1915,10 @@ input[type=number] {
 .sort-toggle svg {
   width: 10px;
   transition: 0.2s;
+}
+
+.header-utm {
+  min-width: 71px;
 }
 
 .table-header th {
@@ -1707,7 +1949,7 @@ input[type=number] {
 }
 
 ::selection {
-  background-color: rgba(71, 74, 81, 0.2);
+  background-color: #afafb3;
   color: black;
 }
 

@@ -18,6 +18,7 @@
   margin-top: 10px;
   margin-left: 20px;
   margin-bottom: 25px;
+  font-size: 14px;
   position: relative;
 }
 .notifications .noti-header span:first-child {
@@ -44,7 +45,7 @@
 }
 .notifications .block-not .call .call-header {
   position: relative;
-  font-weight: 600;
+  font-weight: 400;
 }
 .notifications .block-not .call .call-header img {
   position: absolute;
@@ -56,7 +57,7 @@
   margin-left: 20px;
 }
 .notifications .block-not .reminder .reminder-not {
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
 }
 .notifications .block-not .reminder .reminder-not img {
@@ -68,7 +69,7 @@
   margin-left: 20px;
 }
 .notifications .block-not .new-order .new {
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
 }
 .notifications .block-not .new-order .new img {
@@ -123,7 +124,7 @@
   background-color: white;
   border-radius: 2px;
   left: 0;
-  top: 22px;
+  bottom: -3px;
 }
 
 .notification-toggle {

@@ -5,16 +5,33 @@ let idTovara = document.querySelectorAll('.idTovara');
 let cenaTovara = document.querySelectorAll('.cenaTovara');
 let firstLetterUpper = document.querySelectorAll('.firstLetterUpper');
 let site = document.querySelectorAll('.site');
+let findInput = document.querySelectorAll('.find');
+
+findInput.forEach((e) => {
+    e.addEventListener('input', event => {
+        if (event.inputType === 'insertFromPaste') {
+            let temp = parserText(e.value, 'find');
+            e.value = temp[0];
+        }
+    })
+    e.addEventListener('keyup', function(event) {
+        let caretStart = e.selectionStart;
+        let caretEnd = e.selectionEnd;
+        let temp = parserText(e.value, 'find');
+        e.value = temp[0];
+        e.setSelectionRange(caretStart - temp[1], caretEnd - temp[1]);
+    });
+});
 
 firstLetterUpper.forEach((e) => {
 
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'comment', e.dataset.count);
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'comment', e.dataset.count);
@@ -28,12 +45,12 @@ firstLetterUpper.forEach((e) => {
 
 site.forEach((e) => {
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'site');
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'site');
@@ -45,12 +62,12 @@ site.forEach((e) => {
 
 pokupatel.forEach((e) => {
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'purchaser');
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'purchaser');
@@ -61,12 +78,12 @@ pokupatel.forEach((e) => {
 
 cenaTovara.forEach((e) => {
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'price');
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'price');
@@ -76,12 +93,12 @@ cenaTovara.forEach((e) => {
 });
 idTovara.forEach((e) => {
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'id');
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'id');
@@ -91,13 +108,13 @@ idTovara.forEach((e) => {
 });
 ipValidation.forEach((e) => {
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'ip');
 
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'ip');
@@ -108,12 +125,12 @@ ipValidation.forEach((e) => {
 telLetter.forEach((e) => {
 
     e.addEventListener('input', event => {
-        if (event.inputType === 'insertFromPaste') { 
+        if (event.inputType === 'insertFromPaste') {
             let temp = parserText(e.value, 'phone', e.dataset.count);
             e.value = temp[0];
         }
     })
-    e.addEventListener('keyup', function (event) {
+    e.addEventListener('keyup', function(event) {
         let caretStart = e.selectionStart;
         let caretEnd = e.selectionEnd;
         let temp = parserText(e.value, 'phone', e.dataset.count);
@@ -152,8 +169,7 @@ function parserText(text, type, count) {
         let len = temp.length;
         temp = temp.slice(0, 15);
         return [temp, start - temp.length - (len - temp.length)]
-    }
-    else if (type === 'price') {
+    } else if (type === 'price') {
         // let temp = text.replace(/[^0-9.,]/g, x=> x="").replace(/,/g, x=> ".").replace(/(\.)(?=\1)/g,x=> "").replace(/(?<=.*\..*)\./g, x=> "")
         let temp = text.replace(/[^0-9.,]/g, x => x = "").replace(/,/g, x => ".").replace(/(\.)(?=\1)/g, x => "").replace(/\.(?=.*\..*)/g, x => "")
 
@@ -180,6 +196,16 @@ function parserText(text, type, count) {
             temp = temp[0].toUpperCase() + temp.slice(1);
         else
             temp = temp;
+        // temp = temp[0].toUpperCase() + temp.slice(1);
+        return [temp.slice(0, 500), start - temp.length]
+    } else if (type === 'find') {
+        // let temp = text.replace(/(^https?:\/\/|www.)/g, x => '');
+        // temp = temp.replace(/[^а-яёa-zA-ZЁА-Я0-9.\/%?=&+_-]/g, x => '')
+        let temp;
+        if (text.match(/(^)[а-яёa-z]/g))
+            temp = text[0].toUpperCase() + text.slice(1);
+        else
+            temp = text;
         // temp = temp[0].toUpperCase() + temp.slice(1);
         return [temp.slice(0, 500), start - temp.length]
     }
@@ -302,6 +328,3 @@ function parserText(text, type, count) {
 //         e.setSelectionRange(caretStart - count, caretEnd - count);
 //     }
 // };
-
-
-

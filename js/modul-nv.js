@@ -1,6 +1,6 @@
 //dropMenu
 $('body').on('click', ".btn-menu", function() {
-    $(".menu-list").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
+    // $(".menu-list").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
     let oneMenuOpen = $(".block-menu");
     $($(this).parent('.dropMenu').find('ul')).toggleClass('block-menu-toggle');
     oneMenuOpen.map((_, i) => {
@@ -58,7 +58,7 @@ $(document).bind("click", function(e) {
 // let full_weight = 0;
 // console.log(full_weight)
 $('body').on('click', ".btn-menu-filter", function() {
-    $(".menu-list-filter").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
+    // $(".menu-list-filter").parents('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
     let oneMenuOpen = $(".block-menu-filter");
     $($(this).parent('.dropFilter').find('ul')).toggleClass('block-menu-toggle');
     oneMenuOpen.map((_, i) => {

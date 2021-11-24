@@ -1,6 +1,6 @@
 .modul-block {
     width: 290px;
-    height: 330px;
+    height: 363px;
     z-index: 22;
     background: rgba(81, 81, 81, 0.7);
     box-shadow: -4px -4px 9px rgba(0, 0, 0, 0.15);
@@ -26,7 +26,7 @@
 
 .modul-header-1,
 .modul-header-2 {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 12px;
 }
 
@@ -37,29 +37,51 @@
 .modul-list {
     padding: 2.5px 0;
     cursor: pointer;
-    &:hover {
+    position: relative;
+    padding-left: 21px;
+    margin-bottom: 10px;
+    // position: relative;
+    img {
+        height: 13px;
+        width: 13px;
+        position: absolute;
+        left: 0px;
+        top: 2px;
+    }
+    &:hover:not(.none) {
         opacity: 0.5;
     }
 }
 
 .modul-ul {
     list-style: none;
-    padding-left: 10px;
+    padding-left: 0;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 11px;
+}
+
+.none {
+    font-weight: 400;
 }
 
 .createTtn {
-    padding-left: 10px;
+    padding-left: 44px;
+    img {
+        left: 25px;
+    }
 }
 
 .avtoobzvon {
-    padding-left: 10px;
+    padding-left: 44px;
+    img {
+        left: 25px;
+    }
 }
 
 .modul-header {
     position: relative;
     display: inline;
+    font-size: 14px;
 }
 
 // .modul-header.btn-style:after {
