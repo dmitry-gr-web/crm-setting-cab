@@ -172,7 +172,7 @@
     .contact-list {
         font-weight: 400;
         font-size: 14px;
-        opacity: 0.9;
+        opacity: 0.8;
         user-select: none;
         width: 80px;
         padding-right: 15px;
@@ -257,6 +257,7 @@
         display: flex;
         visibility: hidden;
         opacity: 0;
+        // color: rgba(0, 0, 0, 0.5);
         // border-bottom: 1px solid grey;
         height: 22px;
         background-color: white;
@@ -269,6 +270,7 @@
             cursor: default;
             padding-left: 3px;
             padding-right: 3px;
+            color: rgba(0, 0, 0, 0.5);
         }
         // img {
         //     display: inline-block;
@@ -279,6 +281,7 @@
             outline: none;
             position: relative;
             top: 1px;
+            opacity: 0.5;
             font-weight: 300;
             border: none;
         }
@@ -604,12 +607,8 @@
     font-weight: 300;
 }
 
-.input-address {
-    outline: none;
-    border: none;
-    font-size: 12px;
-    padding: 0;
-    font-weight: 300;
+.input-address::first-letter {
+    text-transform: capitalize;
 }
 
 #datepicker {
@@ -633,7 +632,7 @@
 .input-ttn:focus,
 .input-user-phone:focus,
 .input-user:focus {
-    font-weight: 400;
+    opacity: 0.7;
 }
 
 .input-user-phone::-webkit-outer-spin-button,
@@ -703,6 +702,8 @@
         transition: 0.2s;
         z-index: 2;
         left: 87px;
+        // opacity: 0.8;
+        color: rgba(0, 0, 0, 0.8);
         font-weight: 400;
         // margin: 0 auto;
     }
@@ -739,6 +740,8 @@
             margin-right: 0;
             padding-right: 5px;
             margin-top: 5px;
+            scrollbar-color: #797979 #ddd;
+            scrollbar-width: thin;
             border: none;
             // width: calc(100% - 20px);
             &::placeholder {
@@ -834,8 +837,9 @@
         font-weight: 400;
         user-select: none;
         font-size: 14px;
+        height: 17px;
         position: relative;
-        opacity: 0.9;
+        opacity: 0.8;
         padding-right: 39px;
         span {
             cursor: help;
@@ -845,9 +849,71 @@
         font-weight: 300;
         font-size: 12px;
         // padding-top: 3px;
+        height: 17px;
         max-width: 167px;
         width: 100%;
         position: relative;
+        top: 1px;
+        .count {
+            position: absolute;
+            border-radius: 100%;
+            font-size: 9px;
+            user-select: none;
+            font-weight: 300;
+            background-color: #9C9B9E;
+            color: white;
+            text-align: center;
+            // right: 9px;
+            right: 17px;
+            padding: 0px 2.5px;
+            line-height: 10px;
+            top: -3px;
+        }
+        .back-ttn {
+            display: none;
+            margin-left: 4px;
+            position: relative;
+            svg:last-child {
+                margin-left: 3px;
+            }
+        }
+        .underline-animation {
+            display: inline-block;
+            position: relative;
+            .underline {
+                // content: '';
+                // border-radius: 2px;
+                transition: 0.2s;
+                width: 0%;
+                background-color: #9C9B9E;
+                height: 1px;
+                // bottom: -1px;
+                bottom: 3px;
+                position: absolute;
+                // z-index: 2;
+            }
+            input {
+                position: relative;
+                top: -1px;
+                width: 95px;
+                height: 12px;
+                opacity: 1;
+                text-overflow: ellipsis;
+                background-color: transparent;
+                // z-index: 1;
+            }
+            .input-address {
+                outline: none;
+                border: none;
+                font-size: 12px;
+                padding: 0;
+                width: 150px;
+                font-weight: 300;
+            }
+            // .input-address .underline {
+            //     width: 100%;
+            // }
+        }
         .gps-metka {
             background-image: url('../img/gpsmetka.svg');
             // background-size: 100%;
@@ -872,6 +938,13 @@
     }
 }
 
+// .input-address:focus,
+// .field-input:focus,
+// .input-ttn:focus,
+// .input-user-phone:focus,
+// .input-user:focus {
+//     opacity: 0.5;
+// }
 .field-wrapper {
     height: 130px;
     position: absolute;
@@ -885,7 +958,7 @@
         }
     }
     .field-block {
-        height: 96px;
+        height: 98px;
         width: 300px;
         table {
             width: 100%;
@@ -897,7 +970,7 @@
         .field-number {
             font-weight: 400;
             font-size: 14px;
-            opacity: 0.9;
+            opacity: 0.8;
             width: 20px;
             user-select: none;
             padding-right: 16px;
@@ -957,7 +1030,7 @@
         }
     }
     .utm-block {
-        height: 96px;
+        height: 98px;
         width: 260px;
         td {
             padding-top: 5px;
@@ -970,7 +1043,7 @@
         .utm-list {
             font-weight: 400;
             font-size: 14px;
-            opacity: 0.9;
+            opacity: 0.8;
             user-select: none;
             padding-right: 15px;
             width: 91px;
@@ -1057,31 +1130,18 @@
 //     top: 8px;
 //     // margin-left: 3px;
 // }
-.lock-logo {
-    background-image: url('../img/lock.svg');
-    width: 10px;
-    height: 10px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    // right: 50px;
-    background-position: center;
-    display: none;
-    margin-left: 5px;
-}
-
-.unlock-logo {
-    background-image: url('../img/unlock.svg');
-    width: 10px;
-    height: 10px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    // right: 50px;
-    margin-right: 6px;
-    background-position: center;
-}
-
+// .lock-logo {
+//     background-image: url('../img/lock.svg');
+//     width: 10px;
+//     height: 10px;
+//     position: relative;
+//     cursor: pointer;
+//     display: inline-block;
+//     // right: 50px;
+//     background-position: center;
+//     display: none;
+//     margin-left: 5px;
+// }
 // .siteFirstLetter::first-letter {
 //     text-transform: uppercase;
 // }
@@ -1099,7 +1159,7 @@
         font-weight: 400;
         font-size: 14px;
         user-select: none;
-        opacity: 0.9;
+        opacity: 0.8;
         padding-right: 15px;
         span {
             cursor: help;
@@ -1111,7 +1171,10 @@
         padding-top: 5px;
         max-width: 167px;
         width: 100%;
+        // display: flex;
+        // align-items: center;
         position: relative;
+        top: 1px;
         .site-link::first-letter {
             text-transform: uppercase;
         }
@@ -1122,6 +1185,8 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             cursor: alias;
+            position: relative;
+            top: 1px;
         }
         .info-calendary {
             background-image: url('../img/Kalendar.svg');
@@ -1134,13 +1199,160 @@
             height: 13px;
             top: 6px;
         }
-        .info-ip {
-            margin-right: 6px;
+        .info-description-ip-block-all-network {
+            height: 0px;
+            overflow: hidden;
+            transition: 0.2s;
+            padding-top: 0px;
+            // margin-top: 4px;
+            display: flex;
+            .info-ip {
+                cursor: default;
+            }
+            .wifi-icon {
+                width: 13px;
+                height: 13px;
+            }
         }
+        .info-description-ip-block {
+            display: flex;
+            .info-ip span:hover {
+                color: black;
+                // transform: scale(1.1);
+                // font-weight: 400;
+            }
+        }
+        .info-ip {
+            margin-right: 7px;
+            cursor: pointer;
+            // max-width: 78px;
+            height: 16px;
+            position: relative;
+            display: inline-block;
+            span {
+                // transition: 0.2s;
+                // position: absolute;
+                // left: 0;
+                // right: 0;
+                transition: 0.2s;
+                max-width: 78px;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                position: relative;
+                top: 3px;
+                text-overflow: ellipsis;
+            }
+            // span:hover {
+            //     opacity: 0.4;
+            // }
+        }
+        // #primary-ip {
+        //     height: 14px;
+        //     b {
+        //         position: relative;
+        //         font-weight: 300;
+        //     }
+        //     b:before {
+        //         content: '';
+        //         position: absolute;
+        //         height: 1px;
+        //         width: 100%;
+        //         bottom: 0px;
+        //         // border-radius: 2px;
+        //         background-color: rgb(0, 0, 0);
+        //     }
+        // }
+        // .info-ip:before {
+        //     content: '&nbsp;';
+        //     visibility: hidden;
+        // }
         .ip-icons-position {
             position: relative;
-            top: 1px;
+            top: 2px;
+            height: 16px;
+            cursor: default;
+            display: inline-block;
+            .flags {
+                font-size: 13px;
+                position: relative;
+                top: -1px;
+                // color:rgba(0, 0, 0, 1)
+            }
         }
+        .unlock-logo {
+            // background-image: url('../img/razblokirovan.svg');
+            // width: 10px;
+            // height: 10px;
+            height: 12px;
+            width: 12px;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            background-color: transparent;
+            border: none;
+            // right: 50px;
+            padding: 0;
+            top: 3px;
+            left: 2px;
+            margin-right: 7px;
+            // transition: 0.5s;
+            // &:hover {
+            //     opacity: 0.5;
+            // }
+            &:hover svg path {
+                stroke: rgba(71, 70, 70, 1);
+            }
+            img {
+                // width: 12px;
+                position: relative;
+                width: 12px;
+                height: 11px;
+                // height: 11px;
+            }
+            svg path {
+                transition: 0.3s;
+            }
+            svg {
+                position: relative;
+                // top: 1px;
+            }
+            // svg {
+            //     // transition: 0.2s;
+            //     position: relative;
+            //     width: 12px;
+            //     height: 11px;
+            // }
+            // background-position: center;
+        }
+        // .lock-logo {
+        //     // background-image: url('../img/razblokirovan.svg');
+        //     // width: 10px;
+        //     // height: 10px;
+        //     height: 12px;
+        //     position: relative;
+        //     cursor: pointer;
+        //     display: inline-block;
+        //     background-color: transparent;
+        //     border: none;
+        //     // right: 50px;
+        //     display: none;
+        //     padding: 0;
+        //     top: 3px;
+        //     left: 2px;
+        //     margin-right: 7px;
+        //     transition: 0.2s;
+        //     &:hover {
+        //         opacity: 0.5;
+        //     }
+        //     img {
+        //         width: 12px;
+        //         height: 11px;
+        //         position: relative;
+        //         left: -1px;
+        //     }
+        //     // background-position: center;
+        // }
         // .info-user {
         //     // margin-left: 20px;
         //     position: relative;
@@ -1275,6 +1487,11 @@
     }
 }
 
+// .viravnivanie {
+//     display: flex;
+//     align-items: center;
+//     top: 1px;
+// }
 .site-link-img {
     width: 12px;
     height: 12px;
@@ -1765,6 +1982,29 @@ input:checked+.slider:before {
     }
 }
 
+.add-ttn {
+    padding: 0;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    top: 1px;
+    right: 0px;
+    margin-right: 8px;
+    svg {
+        position: relative;
+        top: -1px;
+    }
+    svg path {
+        transition: 0.2s;
+    }
+    &:hover {
+        opacity: 1;
+    }
+    &:hover svg path {
+        stroke: rgba(71, 70, 70, 1);
+    }
+}
+
 .btninfo {
     // background-image: url('../img/info-icon.svg');
     width: 25px;
@@ -1777,18 +2017,82 @@ input:checked+.slider:before {
     // background-repeat: no-repeat;
     // background-position: center;
     padding: 5px;
-    top: 157px;
+    top: -3px;
     z-index: 1;
-    right: -5px;
+    right: 105px;
     cursor: pointer;
     display: inline-block;
     transition: 0.2s;
-    &:hover {
-        opacity: 0.5;
-    }
+    // &:hover {
+    //     opacity: 0.5;
+    // }
     img {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
+    }
+    svg {
+        position: relative;
+        top: -1px;
+    }
+    svg path {
+        transition: 0.2s;
+    }
+    &:hover svg path {
+        fill: #b66565;
+    }
+}
+
+.podlozhka-order {
+    width: 1247px;
+    height: 586px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    display: none;
+}
+
+.gpsmetka {
+    // background-image: url('../img/info-icon.svg');
+    padding: 0;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    top: 2px;
+    right: 0px;
+    outline: none;
+    border: none;
+    // position: absolute;
+    background-color: transparent;
+    // background-size: 63%;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // padding: 5px;
+    // top: -3px;
+    z-index: 1;
+    // right: 105px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.2s;
+    margin-right: 8px;
+    // &:hover {
+    //     opacity: 0.5;
+    // }
+    img {
+        width: 12px;
+        height: 12px;
+    }
+    svg {
+        position: relative;
+        top: -1px;
+    }
+    svg path {
+        transition: 0.2s;
+    }
+    &:hover svg path {
+        // stroke: rgba(71, 70, 70, 1);
+        fill: rgba(71, 70, 70, 1);
     }
 }
 

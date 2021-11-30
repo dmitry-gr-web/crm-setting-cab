@@ -2,6 +2,9 @@ var btnOrderCount = 0;
 $('.order-dropdown .btn-order').on('click', function(e) {
     // e.preventDefault();
     // $(this).parents('.info-user-block').css('overflow', '');
+    $('.podlozhka-order').css({
+        'display': 'block'
+    })
     $('.btn-order-input').removeClass('toggle');
     $(this).siblings('.btn-menu').toggleClass('toggle');
     $(this).siblings('.btn-order-input').toggleClass('toggle')
@@ -135,6 +138,7 @@ $('.btn-menu-list').on('click', function() {
     let memoryList = $(this).text();
     let memoryList2 = $(this).html();
     let memoryListCountry = $(this).html();
+    $('.podlozhka-order').css('display', 'none');
     $(this).parents('.order-dropdown').find('.btn-order').text(memoryList);
     $('.findFunction').find('.findUnderline').removeClass('findUnderline');
     if ($(this).parents('.contact-description').hasClass('country-style')) {
@@ -176,17 +180,54 @@ $('.btn-menu-list').on('click', function() {
     $(this).addClass('select-btn');
     $(this).parents('.btn-menu').removeClass('toggle');
     $(this).parents('.btn-menu').siblings('.btn-order-input').removeClass('toggle');
+    $('.input-ttn').val('');
+    $('.back-ttn').css('display', 'none');
+    $(this).parents('.delivery-table').find('.back-ttn').siblings('.gpsmetka').css('display', 'none');
+    $(this).parents('.delivery-table').find('.back-ttn').siblings('.add-ttn').css('display', 'inline-block');
 });
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (!$clicked.parents().hasClass("order-dropdown")) {
-        $(".btn-menu").removeClass('toggle');
-        $(".btn-order-input").removeClass('toggle');
-        $('.findFunction').find('.findUnderline').removeClass('findUnderline');
+// $(document).bind('click', function(e) {
+//     var $clicked = $(e.target);
+//     if (!$clicked.parents().hasClass("order-dropdown")) {
+//         $(".btn-menu").removeClass('toggle');
+//         $(".btn-order-input").removeClass('toggle');
+//         $('.findFunction').find('.findUnderline').removeClass('findUnderline');
 
-        // $(".btn-order-search").val('');
-        // $(".btn-menu-list").css('display', 'block');
+//         // $(".btn-order-search").val('');
+//         // $(".btn-menu-list").css('display', 'block');
+//     }
+// });
+$('.podlozhka-order').on('click', function(e) {
+
+    $(".btn-menu").removeClass('toggle');
+    $(".btn-order-input").removeClass('toggle');
+    $('.findFunction').find('.findUnderline').removeClass('findUnderline');
+    $('.input-order').removeClass('inputOpenFlag');
+    // $('.podlozhka-order').css('display', 'none');
+    $('.input-order').on('mouseleave', inputFocus2);
+    $('.podlozhka-order').css('display', 'none');
+    $('.underline').css('width', '0%');
+    $('.input-order').css('z-index', '');
+
+    $('.input-order').css('opacity', '1');
+    if ($('.input-ttn')) {
+        if ($('.input-ttn').val().length == 0) {
+            $('.back-ttn').css('display', 'none');
+        } else {
+            $('.back-ttn').css('display', 'inline-block');
+        }
     }
+    // $(this).keyup(function(e) {
+    //     if (e.keyCode === 13) {
+
+    //         $('.underline').css('width', '0%');
+    //         // $('.podlozhka').css('z-index', '0').css('display', 'none');
+    //     }
+
+    // });
+
+    // $(".btn-order-search").val('');
+    // $(".btn-menu-list").css('display', 'block');
+
 });
 // $('.btn-order-search').focus();
 $('.comment-block').on('mouseenter', function() {
@@ -440,12 +481,17 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
     //     tooltipOrderButtonDelete(this);
     // }
     if ($(this).hasClass('add-ttn')) {
-        $('#tooltipBtn').html(`Добавить ТТН`).css('font-size', '14px');
-        tooltipOrderButtonDelete(this);
+        $('#tooltipBtn').html(`Создать ТТН`).css('font-size', '14px');
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 23 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
     }
     if ($(this).hasClass('btninfo')) {
         $('#tooltipBtn').html(`История заказа`).css('font-size', '14px');
-        tooltipOrderButtonDelete(this);
+        // tooltipOrderInfo(this);
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 28 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
     }
 
     if ($(this)[0].scrollWidth > $(this)[0].offsetWidth) {
@@ -489,18 +535,18 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
     }
     if ($(this).hasClass('info-btn-tooltip')) {
         // $(this).text()
-        // if ($(this)[0].scrollWidth > $(this)[0].offsetWidth) {
-        $('#tooltipBtn').html($(this).text()).css('font-size', '14px');
-        let posElement = this.getBoundingClientRect();
-        let screenHeight = document.body.clientHeight;
-        let blockHeight = $(this).height();
-        let heightTooltip = $('#tooltipBtn').height();
-        tooltipOrderHeader(this);
-        $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 28 + "px");
-        // if (screenHeight < posElement.y + heightTooltip + 35) {
-        //     $("#tooltipBtn").css('top', posElement.y - blockHeight - 17 + 'px');
-        // }
-        // }
+        if ($(this)[0].scrollWidth > $(this)[0].offsetWidth) {
+            $('#tooltipBtn').html($(this).text()).css('font-size', '14px');
+            let posElement = this.getBoundingClientRect();
+            let screenHeight = document.body.clientHeight;
+            let blockHeight = $(this).height();
+            let heightTooltip = $('#tooltipBtn').height();
+            tooltipOrderHeader(this);
+            $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 28 + "px");
+            // if (screenHeight < posElement.y + heightTooltip + 35) {
+            //     $("#tooltipBtn").css('top', posElement.y - blockHeight - 17 + 'px');
+            // }
+        }
     }
     if ($(this).hasClass('site-link')) {
         let text = $(this).text();
@@ -509,11 +555,106 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
         let screenHeight = document.body.clientHeight;
         let blockHeight = $(this).height();
         let heightTooltip = $('#tooltipBtn').height();
-        console.log(text)
+        // console.log(text)
         $('#tooltipBtn').html(`Перейти на сайт ${text}`);
         // tooltipOrderInfo(this);
         $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 25 + "px");
         $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+
+
+    }
+    if ($(this).hasClass('info-ip')) {
+        let text = $(this).text();
+        // text = text.charAt(0).toUpperCase() + text.slice(1);
+        let posElement = this.getBoundingClientRect();
+        let screenHeight = document.body.clientHeight;
+        let blockHeight = $(this).height();
+        let heightTooltip = $('#tooltipBtn').height();
+        // console.log(text)
+        $('#tooltipBtn').html(`Скопировать IP ${text}`);
+
+        // console.log($(this).find('span').is('#another-ip'))
+        // tooltipOrderInfo(this);
+        $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 23 + "px");
+        // $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+        if ($(this).find('span').is('#another-ip')) {
+            let textUnderline = $(this).text().replaceAll('X', '<b style="font-size:11px;font-weight:300;text-decoration:underline;">X</b>');
+            $('#tooltipBtn').html(`Подсеть ${textUnderline}`);
+            // $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 23 + "px");
+            // $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+            $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+        }
+
+
+    }
+    if ($(this).hasClass('tooltip-logo')) {
+        let text = $(this).siblings('.info-ip').text();
+        // text = text.charAt(0).toUpperCase() + text.slice(1);
+        // let posElement = this.getBoundingClientRect();
+        // let screenHeight = document.body.clientHeight;
+        // let blockHeight = $(this).height();
+        // let heightTooltip = $('#tooltipBtn').height();
+        // console.log(text)
+        // $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
+        // tooltipOrderInfo(this);
+
+        // tooltipOrderInfo(this)
+        let posElement = this.getBoundingClientRect();
+        let screenHeight = document.body.clientHeight;
+        let blockHeight = $(this).height();
+        let heightTooltip = $('#tooltipBtn').height();
+        // console.log(text)
+        // $('#tooltipBtn').html(`Скопировать IP ${text}`);
+
+        $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
+        // tooltipOrderInfo(this);
+        $("#tooltipBtn").css("left", posElement.x - 2 + "px").css("top", posElement.y - 30 + "px");
+        // $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        if (flagImgLockNet) {
+            $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        } else {
+            $('#tooltipBtn').html(`Разблокировать пользователя с IP ${text}`);
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        }
+        // if (flagImgLock == false) {
+        //     $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
+        // }
+    }
+    if ($(this).hasClass('tooltip-logo-network')) {
+        // let text = $(this).siblings('.info-ip').text();
+        // text = text.charAt(0).toUpperCase() + text.slice(1);
+        // let posElement = this.getBoundingClientRect();
+        // let screenHeight = document.body.clientHeight;
+        // let blockHeight = $(this).height();
+        // let heightTooltip = $('#tooltipBtn').height();
+        // console.log(text)
+        // $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
+        // tooltipOrderInfo(this);
+
+        // tooltipOrderInfo(this)
+        let posElement = this.getBoundingClientRect();
+        let screenHeight = document.body.clientHeight;
+        let blockHeight = $(this).height();
+        let heightTooltip = $('#tooltipBtn').height();
+        // console.log(text)
+        // $('#tooltipBtn').html(`Скопировать IP ${text}`);
+        let textUnderline = $(this).siblings('.info-ip').text().replaceAll('X', '<b style="font-size:11px;font-weight:300;text-decoration:underline;">X</b>');
+        // $('#tooltipBtn').html(`Подсеть ${textUnderline}`);
+        $('#tooltipBtn').html(`Блокировать пользователя и всю подсеть ${textUnderline}`);
+        // tooltipOrderInfo(this);
+        $("#tooltipBtn").css("left", posElement.x - 2 + "px").css("top", posElement.y + 20 + "px");
+        // $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        if (flagImgLockNetAll) {
+            $('#tooltipBtn').html(`Блокировать пользователя и всю подсеть ${textUnderline}`);
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        } else {
+            $('#tooltipBtn').html(`Разблокировать пользователя и всю подсеть ${textUnderline}`);
+            $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+        }
 
 
     }
@@ -540,15 +681,390 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
     }
 });
 $('.order-tooltip').on('mouseleave', function() {
+    clearTimeout(timeOutCopy);
+    $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
+});
+$('.info-description .ip-icons-position').children().on('mouseenter', function() {
+    let desktop = 'Компьютер';
+    let windows = 'Windows';
+    let chrome = 'Chrome';
+    let ua = 'Украина';
+    let mobile = 'Смартфон';
+    let tablet = 'Планшет';
+    let android = 'Android';
+    let ru = 'Россия';
+    let safari = 'Safari';
+    let unknown = 'Неопределено';
+    let iOS = 'iOS';
+    let firefox = 'Firefox';
+    let alb = 'Албания';
+    let opera = 'Opera';
+    let edge = 'Edge';
+    let yandex = 'Yandex Браузер';
+    let mail = 'Mail Браузер';
+    let wifiIcon = 'Wi-Fi сеть';
+    if ($(this).hasClass('wifi-icon')) {
+        $('#tooltipBtn').text(wifiIcon);
+    }
+    if ($(this).hasClass('icon-Vector-10')) {
+        $('#tooltipBtn').text(desktop);
+    }
+    if ($(this).hasClass('icon-Union-13')) {
+        $('#tooltipBtn').text(mobile);
+    }
+    if ($(this).hasClass('icon-Tablet')) {
+        $('#tooltipBtn').text(tablet);
+    }
+    if ($(this).hasClass('icon-Union-17')) {
+        $('#tooltipBtn').text(yandex);
+    }
+    if ($(this).hasClass('icon-Vector-13')) {
+        $('#tooltipBtn').text(mail);
+    }
+    if ($(this).hasClass('icon-Vector-12')) {
+        $('#tooltipBtn').text(edge);
+    }
+    if ($(this).hasClass('icon-Union-16')) {
+        $('#tooltipBtn').text(opera);
+    }
+    if ($(this).hasClass('alb')) {
+        $('#tooltipBtn').text(alb);
+    }
+    if ($(this).hasClass('ru')) {
+        $('#tooltipBtn').text(ru);
+    }
+    if ($(this).hasClass('icon-Windows-1')) {
+        $('#tooltipBtn').text(windows);
+    }
+    if ($(this).hasClass('icon-Vector-9')) {
+        $('#tooltipBtn').text(iOS);
+    }
+    if ($(this).hasClass('icon-Vector-11')) {
+        $('#tooltipBtn').text(firefox);
+    }
+    if ($(this).hasClass('icon-uniE941')) {
+        $('#tooltipBtn').text(unknown);
+    }
+    if ($(this).hasClass('icon-Union-12')) {
+        $('#tooltipBtn').text(android);
+    }
+    if ($(this).hasClass('icon-Union-15')) {
+        $('#tooltipBtn').text(safari);
+    }
+    if ($(this).hasClass('icon-Union-14')) {
+        $('#tooltipBtn').text(chrome);
+    }
+    if ($(this).hasClass('ua')) {
+        $('#tooltipBtn').text(ua);
+    }
+    if ($(this).hasClass('icon-Union-18')) {
+        $('#tooltipBtn').text(incorrectNumber);
+    }
+    let posElement = this.getBoundingClientRect();
+    // let blockWidth = $(this).width();
+    // let blockHeight = $(this).height();
+    // let screenWidth = document.body.clientWidth;
+    // let screenHeight = document.body.clientHeight;
+    // let widthTooltip = $('#tooltipBtn').width();
+    // let heightTooltip = $('#tooltipBtn').height();
+
+    $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+    $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    // if (screenWidth < posElement.x + widthTooltip) {
+    //     $("#tooltipBtn").css('left', posElement.x - widthTooltip + blockWidth - 5 + 'px');
+    // }
+    // if (posElement.x < 110) {
+    //     $("#tooltipBtn").css('left', posElement.x + blockWidth + 10 + 'px');
+    // }
+    // if (screenHeight < posElement.y + heightTooltip + 25) {
+    //     $("#tooltipBtn").css('top', posElement.y - blockHeight + -5 + 'px');
+    // }
+    // if ($(this).hasClass('button-tooltip')) {
+    //     // $('#tooltipBtn').text(incorrectNumber);
+    //     if ($(this).hasClass('ua')) {
+    //         $('#tooltipBtn').text(ua);
+    //         $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+    //         $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+    //     }
+    //     if ($(this).hasClass('wifi-icon')) {
+    //         $('#tooltipBtn').text(wifiIcon);
+    //         $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+    //         $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
+    //     }
+    // }
+});
+$('.info-description .ip-icons-position').on('mouseleave', function() {
     $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
 });
 // $(window).load(function() {
 //     let link = 'https://offer.lp-crm.biz/crm-dlya-prom-ua';
 //     $('site-link').attr('href', link);
 // });
+// $('.unlock-logo').on('click', function() {
+//     $(this).css('display', 'none');
+//     $(this).siblings('.lock-logo').css('display', 'inline-block');
+// });
+var flagImgLockNet = true;
+var flagImgLockNetAll = true;
+$('.tooltip-logo').on('click', function() {
+    // flagImgLock = true;
+    // clearTimeout(timeOutCopy);
+    // $("#tooltipBtn").css({ 'animation': '' });
+    // clearTimeout(timeOutCopy);
+    // $(this).children().remove();
+    if (flagImgLockNet == true) {
+        // $("#tooltipBtn").css({ 'animation': '' });
+        // clearTimeout(timeOutCopy);
+        // $(this).find('img').attr('src', 'img/zablokirovan.svg').css('left', '-1px');
+        // $(this).children().remove();
+        // $(this).append('<svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.85714 4.85718H1.85714C1.38376 4.85718 1 5.24093 1 5.71432V8.71432C1 9.18771 1.38376 9.57146 1.85714 9.57146H7.85714C8.33053 9.57146 8.71429 9.18771 8.71429 8.71432V5.71432C8.71429 5.24093 8.33053 4.85718 7.85714 4.85718Z" stroke="#9C9B9E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.70001 4.86V3.14444C2.70001 2.5757 2.92578 2.03025 3.32764 1.62809C3.7295 1.22593 4.27455 1 4.84287 1C5.41119 1 5.95623 1.22593 6.3581 1.62809C6.75996 2.03025 6.98573 2.5757 6.98573 3.14444V4.86" stroke="#9C9B9E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        // $(this).find('svg').css('left', '-1px')
+        $(this).find('.second').css('display', 'flex').css('left', '-1px');
+        $(this).find('.first').css('display', 'none');
+        // console.log('loh')
+        let text = $(this).siblings('.info-ip').text();
+        // $('#tooltipBtn').html(`Разблокировать пользователя с IP ${text}`);
+        $('#tooltipBtn').html(`Заблокирован`);
+        $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+        // timeOutCopy = setTimeout(function() {
+        //     $("#tooltipBtn").css({ 'animation': '' });
+        // }, 1500);
+
+        // $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
+
+        // clearTimeout(timeOutCopy);
+        flagImgLockNet = false;
+    } else {
+        clearTimeout(timeOutCopy);
+        $("#tooltipBtn").css({ 'animation': '' });
+        // $("#tooltipBtn").css({ 'animation': '' });
+        // $(this).find('img').attr('src', 'img/razblokirovan.svg').css('left', '0px');
+        // $(this).children().remove();
+        // $(this).append('<svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.85714 4.85718H1.85714C1.38376 4.85718 1 5.24093 1 5.71432V8.71432C1 9.18771 1.38376 9.57146 1.85714 9.57146H7.85714C8.33053 9.57146 8.71429 9.18771 8.71429 8.71432V5.71432C8.71429 5.24093 8.33053 4.85718 7.85714 4.85718Z" stroke="#9C9B9E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 4.85714V3.14286C7 2.57454 7.22576 2.02949 7.62763 1.62763C8.02949 1.22576 8.57454 1 9.14286 1C9.71118 1 10.2562 1.22576 10.6581 1.62763C11.0599 2.02949 11.2857 2.57454 11.2857 3.14286V4.85714" stroke="#9C9B9E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        // $(this).find('svg').css('left', '0px')
+        $(this).find('.second').css('display', 'none');
+        $(this).find('.first').css('display', 'flex');
+        let text = $(this).siblings('.info-ip').text();
+        // $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
+        $('#tooltipBtn').html(`Разблокирован`);
+        // $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+        // timeOutCopy = setTimeout(function() {
+        //     $("#tooltipBtn").css({ 'animation': '' });
+        // }, 1500);
+        $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+        // clearTimeout(timeOutCopy);
+        // timeOutCopy = setTimeout(function() {
+        //     $("#tooltipBtn").css({ 'animation': '' });
+        // }, 1500);
+        if (flagImgLockNetAll == false) {
+            $(this).parents('.info-description').find('.tooltip-logo-network').find('.second').css('display', 'none');
+            // $(this).siblings('.tooltip-logo').css('display', 'none');
+            $(this).parents('.info-description').find('.tooltip-logo-network').find('.first').css('display', 'flex');
+
+            flagImgLockNetAll = true;
+        }
+        flagImgLockNet = true;
+    }
+    timeOutCopy = setTimeout(function() {
+        $("#tooltipBtn").css({ 'animation': '' });
+    }, 1500);
+    // $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+    // clearTimeout(timeOutCopy);
+    // timeOutCopy = setTimeout(function() {
+    //     $("#tooltipBtn").css({ 'animation': '' });
+    // }, 1500);
+
+    // $(this).siblings('.unlock-logo').css('display', 'inline-block');
+});
+$('.tooltip-logo-network').on('click', function() {
+    // flagImgLock = true;
+    // clearTimeout(timeOutCopy);
+    if (flagImgLockNetAll == true) {
+        // $(this).find('img').attr('src', 'img/zablokirovan.svg').css('left', '-1px');
+        // console.log('loh')
+        // let text = $(this).siblings('.info-ip').text();
+        let textUnderline = $(this).siblings('.info-ip').text().replaceAll('X', '<b style="font-size:11px;font-weight:300;text-decoration:underline;">X</b>');
+        $(this).find('.second').css('display', 'flex').css('left', '-1px');
+        $(this).find('.first').css('display', 'none');
+        // $('#tooltipBtn').html(`Разблокировать пользователя и всю подсеть ${textUnderline}`);
+        $('#tooltipBtn').html(`Заблокировано`);
+        $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+        // timeOutCopy = setTimeout(function() {
+        //     $("#tooltipBtn").css({ 'animation': '' });
+        // }, 1500);
+        if (flagImgLockNet == true) {
+            $(this).parents('.info-description').find('.tooltip-logo').find('.second').css('display', 'flex').css('left', '-1px');
+            // $(this).siblings('.tooltip-logo').css('display', 'none');
+            $(this).parents('.info-description').find('.tooltip-logo').find('.first').css('display', 'none');
+
+            flagImgLockNet = false;
+        }
+        // $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
+        flagImgLockNetAll = false;
+    } else {
+        clearTimeout(timeOutCopy);
+        $("#tooltipBtn").css({ 'animation': '' });
+        // clearTimeout(timeOutCopy);
+        // $(this).find('img').attr('src', 'img/razblokirovan.svg').css('left', '0px');
+        // let text = $(this).siblings('.info-ip').text();
+        $(this).find('.second').css('display', 'none');
+        $(this).find('.first').css('display', 'flex');
+        let textUnderline = $(this).siblings('.info-ip').text().replaceAll('X', '<b style="font-size:11px;font-weight:300;text-decoration:underline;">X</b>');
+
+        // $('#tooltipBtn').html(`Блокировать пользователя и всю подсеть ${textUnderline}`);
+        $('#tooltipBtn').html(`Разблокировано`);
+        $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+        // timeOutCopy = setTimeout(function() {
+        //     $("#tooltipBtn").css({ 'animation': '' });
+        // }, 1500);
+        flagImgLockNetAll = true;
+    }
+    timeOutCopy = setTimeout(function() {
+        $("#tooltipBtn").css({ 'animation': '' });
+    }, 1500);
+    // $(this).siblings('.unlock-logo').css('display', 'inline-block');
+});
+$('.info-description-ip-block .unlock-logo').on('mouseenter', function() {
+    $(this).parents('.info-description').find('.info-description-ip-block-all-network').css('height', '17px').css('padding-top', '8px');
+    // let text = $(this).parents('.info-description').find('#another-ip').text();
+    let text1 = $(this).siblings('.info-ip').find('#primary-ip').html();
+    console.log(text1)
+        // text = text.slice(-3)
+    $(this).parents('.info-description').find('#another-ip').text(text1);
+    // console.log(text)
+    let ovbrezaemDoTochki = text1.split(".").pop();
+    console.log(ovbrezaemDoTochki.length)
+    text1 = text1.substring(0, text1.length - ovbrezaemDoTochki.length) + '<b style="font-size:11px;font-weight:300;text-decoration:underline;">X</b>'.repeat(ovbrezaemDoTochki.length);
+    console.log(text1)
+    $(this).parents('.info-description').find('#another-ip').html(text1);
+    // console.log(text)
+    // $(this).siblings('.lock-logo').css('display', 'inline-block');
+});
+
+$('.info-description').on('mouseleave', function() {
+    $(this).find('.info-description-ip-block-all-network').css('height', '0px').css('padding-top', '0px');
+    // $(this).siblings('.lock-logo').css('display', 'inline-block');
+});
+
+//COPY IP
+document.getElementById("primary-ip").addEventListener("click", copy_text);
+var timeOutCopy = null;
+
+function copy_text() {
+    var copyText = document.getElementById("primary-ip");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+    let text = $(this).text();
+    $('#tooltipBtn').html(`Скопирован`);
+    $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+    timeOutCopy = setTimeout(function() {
+        $("#tooltipBtn").css({ 'animation': '' });
+    }, 1500);
+
+}
+$('.input-order').on('mouseenter', function() {
+    $(this).siblings('.underline').css('width', '98%');
+    if ($(this).hasClass('input-address')) {
+        $(this).siblings('.underline').css('width', '100%');
+    }
+    $(this).css('z-index', '9999');
+    $(this).css('opacity', '0.5');
+    if ($(this).hasClass('inputOpenFlag')) {
+        clearTimeout(delayFocus);
+    } else {
+        delayFocus = setTimeout(() => {
+            this.setSelectionRange(this.value.length, this.value.length);
+            // $(this).focus();
+            this.focus()
+                // this.select();
+        }, 0);
+    }
+    if ($(this).parents('.delivery-table').find('.btn-order').find('.icons').hasClass('icon-Vector-2')) {
+        $('.input-ttn').css('width', '61px');
+        $('.input-ttn').attr('data-count', '9');
+    }
+    if ($(this).parents('.delivery-table').find('.btn-order').find('.icons').hasClass('icon-Union-3')) {
+        $('.input-ttn').css('width', '95px');
+        $('.input-ttn').attr('data-count', '14');
+    }
+    if ($(this).parents('.delivery-table').find('.btn-order').find('.icons').hasClass('icon-ukrposhta')) {
+        $('.input-ttn').css('width', '88px');
+        $('.input-ttn').attr('data-count', '13');
+    }
+    // console.log($(this).parents('.delivery-table').find('.btn-order').find('.icon-Vector-2'))
+    $(this).click(function() {
+        $(this).addClass('inputOpenFlag');
+        $('.podlozhka-order').css('display', 'block');
+        // $('.input-order').css('opacity', '0.5');
+        $(this).css('opacity', '0.5');
+        $(this).siblings('.underline').css('width', '98%');
+        if ($(this).hasClass('input-address')) {
+            $(this).siblings('.underline').css('width', '100%');
+        }
+        $('.input-order').off('mouseleave', inputFocus2);
+    });
+    $(this).keyup(function(e) {
+        $(this).addClass('inputOpenFlag');
+        $(this).css('opacity', '0.5');
+        $('.input-order').off('mouseleave', inputFocus2);
+        $('.podlozhka-order').css('display', 'block');
+        $(this).siblings('.underline').css('width', '98%');
+        if ($(this).hasClass('input-address')) {
+            $(this).siblings('.underline').css('width', '100%');
+        }
+        if (e.keyCode === 13) {
+            $('.input-order').on('mouseleave', inputFocus2);
+            // $('.podlozhka-order').css('display', 'none');
+            $('.podlozhka-order').css('display', 'none');
+            $('.underline').css('width', '0%');
+            $('.input-order').css('opacity', '1');
+            $(this).css('z-index', '');
+            $(this).blur();
+            $(this).removeClass('inputOpenFlag');
+            if ($(this).hasClass('input-ttn')) {
+                if ($(this).val().length == 0) {
+                    $('.back-ttn').css('display', 'none');
+                } else {
+                    $('.back-ttn').css('display', 'inline-block');
+
+                }
+            }
+        }
+        if ($(this).hasClass('input-ttn')) {
+            if ($(this).val().length >= 1) {
+                $(this).parents('.delivery-description').find('.btnplus').css('display', 'none');
+                $(this).parents('.delivery-description').find('.gpsmetka').css('display', 'inline-block');
+            } else {
+                $(this).parents('.delivery-description').find('.btnplus').css('display', 'inline-block');
+                $(this).parents('.delivery-description').find('.gpsmetka').css('display', 'none');
+            }
+
+        }
+    });
+});
+$('.input-order').on('mouseleave', inputFocus2);
+
+function inputFocus2() {
+    $(this).blur();
+    $(this).css('z-index', '');
+    $('.input-order').css('opacity', '1');
+    $(this).siblings('.underline').css('width', '0%');
+    clearTimeout(delayFocus);
+};
+// $('.info-ip #primary-ip').on('mouseup', function() {
+//     $(this).css('color', 'grey').css('transform', 'scale(1)');
+// });
+// $('.info-ip #primary-ip').on('mousedown', function() {
+//     $(this).css('color', 'black').css('transform', 'scale(0.9)');
+// });
+//COPY IP
 $(document).ready(function() {
     let link = 'https://offer.lp-crm.biz/crm-dlya-prom-ua/';
-    console.log(link)
+    // console.log(link)
     $('.site-link').attr('href', link);
     link = link.replaceAll('https://', '');
     $('.site-link').text(link);
@@ -580,6 +1096,7 @@ $(document).ready(function() {
 //         // }
 //     }
 // });
+// $("#tooltipBtn").css({ 'animation': 'delay-another 0.8s forwards' });
 function tooltipOrderHeader(e) {
     let posElement = e.getBoundingClientRect();
     let screenHeight = document.body.clientHeight;
