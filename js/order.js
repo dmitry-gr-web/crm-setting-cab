@@ -1,7 +1,6 @@
 var btnOrderCount = 0;
 $('.order-dropdown .btn-order').on('click', function(e) {
-    // e.preventDefault();
-    // $(this).parents('.info-user-block').css('overflow', '');
+
     $('.podlozhka-order').css({
         'display': 'block'
     })
@@ -12,128 +11,24 @@ $('.order-dropdown .btn-order').on('click', function(e) {
         $('.btn-menu').removeClass('toggle');
         $(this).siblings('.btn-menu').toggleClass('toggle');
     }
-    // if ($('.btn-order-input').length > 1) {
-    //     $(this).siblings
-    // }
-    console.log($('.btn-order-search').val())
+
     $(this).siblings().find('.simplebar-content-wrapper').animate({ scrollTop: 0 }, { duration: 0 });
-    // countFind = $(this).siblings('.btn-menu').find('.btn-menu-list').length;
     btnOrderCount = 0;
-    // $(this).siblings('.btn-order-input').find('.countFindFunction').html(`(${countFind})`);
     btnOrderCount = $(this).parents('.order-dropdown').find('.btn-menu-list').length;
-    // countList = $(this).find('.select-btn').length;
 
-    // try {
-    //     countList = [...$(this).find('.select-btn')].filter(x => $(x).find('.findFunction')[0].innerHTML !== 'Все').length;
-    // } catch (error) {
-
-    // }
 
     $(this).siblings('.btn-order-input').find('.btn-order-count').html(`(${btnOrderCount})`);
-    // dataFind = countFind;
-    // countFind = 0;
-    // $('#spider').focus();
+
     setTimeout(function() {
-        // $(this).parents('.order-dropdown').find('.btn-order-search').focus();
         $('.btn-order-input.toggle .btn-order-search').focus();
     }, 300);
 
 
-    // console.log($('#spider'))
     $(".btn-order-search").val('');
     $(this).parents('.order-dropdown').find(".btn-menu-list").css('display', 'flex');
-    // let memoryText = $(this).parents('.order-dropdown').find('.findFunction').text();
-    // if ($(this).parents('.order-dropdown').find('.btn-order-search')[0].value !== "" && $(this).parents('.order-dropdown').find('.btn-order-search')[0].value !== " ") {
-    //     let re = new RegExp($(this).parents('.order-dropdown').find('.btn-order-search')[0].value, "gui");
-    //     let text_pr = memoryText.replace(re, x => `<span class="findUnderline">${x}</span>&shy;`);
-    //     // console.log(text_pr)
-    //     document.querySelector('.findFunction').innerHTML = textToHTML(text_pr);
-    // } else {
-    //     document.querySelector('.findFunction').innerText = memoryText;
-    // }
-    // console.log($(this).parents('.order-dropdown').find(".btn-menu-list"))
-    // const memlist = [...$(this).parents('.order-dropdown').find(".btn-menu-list")];
-    // $(this).parents('.order-dropdown').find(".btn-menu-list").detach();
-    // $(this).parents('.order-dropdown').find('.simplebar-content').append(memlist);
-    // e.stopPropagation();
-    // console.log($('.btn-order-search').focus())
-    // btnOrderCount = 0;
-    // let idx = $('.btn-order-search').index($(this).parents('.order-dropdown').find('.btn-order-search'));
-    // if (el === null || lastIndex !== idx) {
-    //     el = [...$(this).parents('.order-dropdown').find('.btn-menu-list')];
-    //     text = [...el.map(x => $(x).find('.findFunction')[0].innerText)]
-    // }
-    // for (let index = 0; index < el.length; index++) {
-    //     const element = el[index];
-    //     // console.log($(element).find('.product-item'), e.currentTarget.value);
-    //     if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
-    //         $(element).css('display', 'none');
-    //     } else {
-    //         if ($('.btn-order-search')[idx].value !== "" && idx !== 1) {
-    //             let re = new RegExp($('.btn-order-search')[idx].value, "gui");
-    //             let text_pr = text[index].replace(re, x => '<span class="findUnderline">' + x + '</span>');
-    //             // let text_pr = text[index].replace(re, x => '<span class="findUnderline" style="background: #FFE600;color: black;">' + x + '</span>');
-    //             // countFind += 1;
-    //             // if (text[index] !== 'Все') {
-    //             // }
 
-    //             btnOrderCount += 1;
-    //             $(element).css('display', 'flex')
-    //             $($(element).find('.findFunction')[0]).html(textToHTML(text_pr));
-    //             console.log('1')
-
-
-    //         } else {
-    //             // if (text[index] !== 'Все') {
-    //             // }
-    //             // countFind += 1;
-    //             btnOrderCount += 1;
-
-    //             $($(element).find('.findFunction')[0]).text(text[index]);
-    //             // memoryLst = $($(element).find('.findFunction')[0]).text(text[index]);
-    //             $(element).css('display', 'flex')
-    //             console.log('2')
-
-
-    //         }
-
-    //         //    console.log(text_pr)
-    //         // document.querySelector('.product-list.list-item').innerHTML = textToHTML(text_pr);
-    //     }
-    // }
-    // // console.log($(this).parents('.btn-wrap-large').find('.countFindFunction'), countFind);
-    // $(this).parents('.order-dropdown').find('.btn-order-count').html('(' + btnOrderCount + ')');
-    // btnOrderCount = 0;
-    // // dataFind = countFind;
-    // // countFind = 0;
-    // lastIndex = idx;
-    // // ).find('.list-large'));
-    // // e.currentTarget.valu
-    // let memoryTooltip = 
-    // if ($(this).parents('.order-dropdown').find('.btn-order-search')[0].value !== "") {
-    //     let re = new RegExp($(this).parents('.order-dropdown').find('.btn-order-search')[0].value, "gui");
-    //     let text_pr = memoryTooltip.replace(re, x => '<span style="background: #FFE600; color: black;">' + x + '</span>');
-    //     // console.log(textToHTML(text_pr + '<br> <span class="cenaProduct3">Цена: 349.00</span>' + '<br><span class="idProduct3">ID: 243534</span> '))
-    //     document.getElementById('tooltipBtn').innerHTML = textToHTML(text_pr);
-    // } else {
-    //     document.getElementById('tooltipBtn').innerHTML = memoryTooltip;
-    // }
 });
-// $('.order-dropdown').on('mouseleave', function(e) {
-//     // e.preventDefault();
-//     // e.stopPropagation();
-//     $('.btn-order-search').blur();
 
-// });
-// $('.order-dropdown').on('mousemove', function(e) {
-//     // e.preventDefault();
-//     // e.stopPropagation();
-//     $('.btn-order-search').focus();
-
-// });
-// $('.order-dropdown').on('mouseenter', function() {
-//     $('.btn-order-search').focus();
-// });
 $('.btn-menu-list').on('click', function() {
     let memoryList = $(this).text();
     let memoryList2 = $(this).html();
@@ -180,11 +75,34 @@ $('.btn-menu-list').on('click', function() {
     $(this).addClass('select-btn');
     $(this).parents('.btn-menu').removeClass('toggle');
     $(this).parents('.btn-menu').siblings('.btn-order-input').removeClass('toggle');
-    $('.input-ttn').val('');
-    $('.back-ttn').css('display', 'none');
-    $(this).parents('.delivery-table').find('.back-ttn').siblings('.gpsmetka').css('display', 'none');
-    $(this).parents('.delivery-table').find('.back-ttn').siblings('.add-ttn').css('display', 'inline-block');
+    if ($(this).parents('.delivery-table').hasClass('delivery-table')) {
+        $('.input-ttn').val('');
+        $('.back-ttn').css('display', 'none');
+        $(this).parents('.delivery-table').find('.inputPlusBackTtn').siblings('.gpsmetka').css('display', 'none');
+        $(this).parents('.delivery-table').find('.inputPlusBackTtn').siblings('.add-ttn').css('display', 'inline-block');
+    }
+    //NV
+    // console.log($(this).parents('.delivery-mail').find('.btn-order .icons').hasClass('icon-Union-3'))
+    if ($(this).parents('.delivery-mail').find('.btn-order .icons').hasClass('icon-Union-3')) {
+        novaPochtaSelect = true;
+        ukrPochtaSelect = false
+    } else {
+        novaPochtaSelect = false;
+    }
+
+    //ukr
+    if ($(this).parents('.delivery-mail').find('.btn-order .icons').hasClass('icon-ukrposhta')) {
+        ukrPochtaSelect = true;
+        novaPochtaSelect = false
+    } else {
+        ukrPochtaSelect = false;
+    }
+    console.log(novaPochtaSelect)
+    console.log(ukrPochtaSelect)
+
 });
+var novaPochtaSelect = true;
+var ukrPochtaSelect = false;
 // $(document).bind('click', function(e) {
 //     var $clicked = $(e.target);
 //     if (!$clicked.parents().hasClass("order-dropdown")) {
@@ -204,18 +122,110 @@ $('.podlozhka-order').on('click', function(e) {
     $('.input-order').removeClass('inputOpenFlag');
     // $('.podlozhka-order').css('display', 'none');
     $('.input-order').on('mouseleave', inputFocus2);
-    $('.podlozhka-order').css('display', 'none');
+    // $('.comment-block').on('mouseleave', commentBlur);
     $('.underline').css('width', '0%');
     $('.input-order').css('z-index', '');
+    $('.podlozhka-order').css('display', 'none');
+
+    // commentBlur();
 
     $('.input-order').css('opacity', '1');
     if ($('.input-ttn')) {
         if ($('.input-ttn').val().length == 0) {
             $('.back-ttn').css('display', 'none');
         } else {
-            $('.back-ttn').css('display', 'inline-block');
+            $('.back-ttn').css('display', 'flex');
         }
     }
+    $('.comment-input-order').attr('placeholder', '');
+    $('.comment').css({
+        'width': '130px',
+        'transition': '0.2s',
+        'background-color': 'white',
+        'left': '87px'
+
+    });
+    $('.comment-wrapper').css({
+        'background-color': 'white',
+        'border': '1px solid black'
+
+    });
+    $('.comment-input-order').css({
+        'background-color': 'white'
+    });
+    $('.addres-delivery-block').css({
+        'top': '0px',
+        'visibility': 'hidden',
+        'opacity': '0'
+    });
+    $('.addres-menu-find').removeClass('menu-find-active');
+    $('.addres-result').children().remove();
+    if (novaPochtaTrigger == 'adres') {
+        let result = "г. " + $('.gorod').val() + " ул. " + $('.ulica').val() + " д." + $('.dom').val() + " кв." + $('.kvartira').val();
+        $('.addres-result').append(`<div>${result}</div>`);
+        if ($('.gorod').val() == '' && $('.ulica').val() == '' && $('.dom').val() == '' && $('.kvartira').val() == '') {
+            $('.addres-result').find('div').remove();
+            $('.addres-result').append(`<div></div>`);
+        }
+
+    } else if (novaPochtaTrigger == 'otdel') {
+        let result = "г. " + $('.gorod').val() + " отд. " + $('.otdelenie').val();
+        $('.addres-result').append(`<div>${result}</div>`);
+        // Array.prototype.forEach.call(document.querySelectorAll('.addres-delivery-input'), function(e) {
+
+        //     if (e.value == '') {
+        //         $('.addres-result').find('div').remove();
+        //         $('.addres-result').append(`<div></div>`);
+        //     }
+
+        // });
+        let inputCheck = document.querySelectorAll('.addres-delivery-input');
+        console.log(inputCheck)
+        let countErrors = 0;
+        inputCheck.forEach(e => {
+            if (e.value == '') {
+                countErrors++;
+                $('.addres-result').find('div').remove();
+                $('.addres-result').append(`<div></div>`);
+            }
+        });
+        if (countErrors === inputCheck.length) {
+            $('.addres-delivery-block').css({
+                'top': '0px',
+                'visibility': 'hidden',
+                'opacity': '0'
+            });
+        } else if (countErrors !== 0) {
+            // countErrors = 0;
+            $('#tooltipBtn').html(`Заполните все поля!`);
+            // document.querySelector('.otdelenie');
+            let posElement = document.querySelector('.otdelenie').getBoundingClientRect();
+            $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+            timeOutCopy = setTimeout(function() {
+                $("#tooltipBtn").css({ 'animation': '' });
+            }, 1500);
+            $('.addres-delivery-block').css({
+                'top': '25px',
+                'visibility': 'visible',
+                'opacity': '1'
+            });
+            $('.podlozhka-order').css('display', 'block');
+            // $('.addres-result').find('div').remove();
+            // $('.addres-result').append(`<div></div>`);
+
+        }
+        console.log(inputCheck.length)
+        console.log(countErrors)
+    }
+    if (ukrPochtaTrigger == 'adres') {
+        let result = "страна " + $('.strana').val() + " г. " + $('.gorod').val() + " ул. " + $('.ulica').val() + " д." + $('.dom').val() + " кв." + $('.kvartira').val() + " ин." + $('.index').val();
+        $('.addres-result').append(`<div>${result}</div>`);
+    } else if (ukrPochtaTrigger == 'otdel') {
+        let result = "г. " + $('.gorod').val() + " ул. " + $('.ulica').val() + " д." + $('.dom').val() + " кв." + $('.kvartira').val() + " ин." + $('.index').val();
+        $('.addres-result').append(`<div>${result}</div>`);
+    }
+
     // $(this).keyup(function(e) {
     //     if (e.keyCode === 13) {
 
@@ -229,13 +239,98 @@ $('.podlozhka-order').on('click', function(e) {
     // $(".btn-menu-list").css('display', 'block');
 
 });
+// $('.podlozhka-order').on('mouseenter', function(e) {
+
+//     if (e.keyCode === 13) {
+//         // if ($(this).hasClass('comment-input-order')) {
+//         //     e.preventDefault();
+//         //     return;
+//         // }
+//         $('.podlozhka-order').css('display', 'none');
+//         // e.preventDefault();
+//         $('.input-order').on('mouseleave', inputFocus2);
+//         // $('.comment-block').on('mouseleave', commentBlur);
+
+//         // $('.podlozhka-order').css('display', 'none');
+//         $('.underline').css('width', '0%');
+//         $('.input-order').css('opacity', '1');
+//         // $(this).css('z-index', '9999');
+//         $('.input-order').css('z-index', '');
+//         $('.input-order').blur();
+//         $('.input-order').removeClass('inputOpenFlag');
+
+//         // if ($(this).hasClass('input-ttn')) {
+//         //     if ($(this).val().length == 0) {
+//         //         $('.back-ttn').css('display', 'none');
+//         //     } else {
+//         //         $('.back-ttn').css('display', 'flex');
+
+//         //     }
+//         // }
+//         $('.comment-input-order').attr('placeholder', '');
+//         $('.comment').css({
+//             'width': '130px',
+//             'transition': '0.2s',
+//             'background-color': 'white',
+//             'left': '87px'
+
+//         });
+//         $('.comment-wrapper').css({
+//             'background-color': 'white',
+//             'border': '1px solid black'
+
+//         });
+//         $('.comment-input-order').css({
+//             'background-color': 'white'
+//         });
+//         // e.preventDefault();
+//         // e.stopPropagation(); // if ($(this).hasClass('comment-input-order')) {
+//         //     e.preventDefault();
+//         // }
+//     }
+
+// });
+
 // $('.btn-order-search').focus();
-$('.comment-block').on('mouseenter', function() {
-    $('.comment-input').focus().attr('placeholder', 'Ввод');
-});
-$('.comment-block').on('mouseleave', function() {
-    $('.comment-input').blur().attr('placeholder', '');
-})
+// $('.comment-block').on('mouseenter', function() {
+//     $('.comment-input-order').attr('placeholder', 'Ввод');
+//     $(this).find('.comment').css({
+//         'width': '100px',
+//         'transition': '0.2s',
+//         'background-color': 'transparent',
+//         'left': '-4px'
+
+//     });
+//     $(this).find('.comment-wrapper').css({
+//         'background-color': '#F1F1F1',
+//         'border': '1px solid transparent'
+
+//     });
+//     $(this).find('.comment-input-order').css({
+//         'background-color': '#F1F1F1'
+//     });
+// });
+// $('.comment-block').on('mouseleave', commentBlur);
+
+// function commentBlur() {
+//     // e = this;
+//     $('.comment-input-order').attr('placeholder', '');
+//     $(this).find('.comment').css({
+//         'width': '130px',
+//         'transition': '0.2s',
+//         'background-color': 'white',
+//         'left': '87px'
+
+//     });
+//     $(this).find('.comment-wrapper').css({
+//         'background-color': 'white',
+//         'border': '1px solid black'
+
+//     });
+//     $(this).find('.comment-input-order').css({
+//         'background-color': 'white'
+//     });
+// };
 $('.kartochka').click(function() {
     if ($('.order').hasClass('orderModeOn')) {
         $('.order').removeClass('orderModeOn');
@@ -365,8 +460,11 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
         let text = $(this).text();
         // text = text.slice(0) + text.slice(-1);
         let result = text.substring(1, text.length - 1)
+        let posElement = this.getBoundingClientRect();
         $('#tooltipBtn').html(`Элементов в фильтре:<br>- найдено ${result}`);
-        tooltipOrderHeader(this);
+        // tooltipOrderHeader(this);
+        $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 28 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
     }
     if ($(this).hasClass('generate-email')) {
         let generateEmail = 'Сгенерировать E-mail';
@@ -481,7 +579,7 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
     //     tooltipOrderButtonDelete(this);
     // }
     if ($(this).hasClass('add-ttn')) {
-        $('#tooltipBtn').html(`Создать ТТН`).css('font-size', '14px');
+        $('#tooltipBtn').html(`Создать ТТН`).css('font-size', '12px');
         let posElement = this.getBoundingClientRect();
         $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 23 + "px");
         $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
@@ -548,6 +646,7 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
             // }
         }
     }
+
     if ($(this).hasClass('site-link')) {
         let text = $(this).text();
         text = text.charAt(0).toUpperCase() + text.slice(1);
@@ -588,24 +687,121 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
 
 
     }
+    if ($(this).hasClass('status-ttn-info')) {
+        // $(this).text()
+        if ($(this)[0].scrollWidth > $(this)[0].offsetWidth) {
+            $('#tooltipBtn').html($(this).text()).css('font-size', '12px');
+            let posElement = this.getBoundingClientRect();
+            let screenHeight = document.body.clientHeight;
+            let blockHeight = $(this).height();
+            let heightTooltip = $('#tooltipBtn').height();
+            $("#tooltipBtn").css("left", posElement.x + 0 + "px").css("top", posElement.y + 22 + "px");
+            $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+        }
+    }
+    if ($(this).hasClass('backttntooltip')) {
+        let count = $(this).children('.count').text();
+        $('#tooltipBtn').html(`Остался ${count} день/я до платного хранения`);
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    }
+    if ($(this).hasClass('btnbackttn')) {
+        // let count = $('.back-ttn-tooltip').children('.count').text();
+        $('#tooltipBtn').html(`Вернуть посылку отправителю`).css('font-size', '12px');
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    }
+    if ($(this).is('#gpsmetka-ttn')) {
+        // let count = $('.back-ttn-tooltip').children('.count').text();
+        $('#tooltipBtn').html(`Отследить посылку`);
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 0 + "px").css("top", posElement.y + 22 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    }
+    if ($(this).is('#gpsmetka-ttn-2')) {
+        // let count = $('.back-ttn-tooltip').children('.count').text();
+        $('#tooltipBtn').html(`Отследить посылку`);
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 0 + "px").css("top", posElement.y + 22 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    }
+    if ($(this).is('.btn-find-otdel')) {
+        // let count = $('.back-ttn-tooltip').children('.count').text();
+        $('#tooltipBtn').html(`Указать отделение`).css('font-size', '12px');
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 0 + "px").css("top", posElement.y + 22 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    }
+    if ($(this).is('.btn-find-addres')) {
+        // let count = $('.back-ttn-tooltip').children('.count').text();
+        $('#tooltipBtn').html(`Указать адрес`).css('font-size', '12px');
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 0 + "px").css("top", posElement.y + 22 + "px");
+        // $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+        $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
+    }
+    if ($(this).is('.addres-result')) {
+        $('.addres-result div').text();
+        // let count = $('.back-ttn-tooltip').children('.count').text();
+        $('#tooltipBtn').html($('.addres-result div').text());
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x - 0 + "px").css("top", posElement.y + 22 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    }
+    if ($(this).hasClass('btn-order')) {
+        if ($(this).children().hasClass('icon-Vector-2')) {
+            $('#tooltipBtn').html(`Justin`);
+        }
+        if ($(this).children().hasClass('icon-Union-3')) {
+            $('#tooltipBtn').html(`Новая Почта`);
+        }
+        if ($(this).children().hasClass('icon-ukrposhta')) {
+            $('#tooltipBtn').html(`Укрпочта`);
+        }
+        if ($(this).children().hasClass('icon-Union-4')) {
+            $('#tooltipBtn').html(`Самовывоз`);
+        }
+        if ($(this).children().hasClass('icon-Vector-15')) {
+            $('#tooltipBtn').html(`Предоплата`);
+        }
+        if ($(this).children().hasClass('icon-Vector-17')) {
+            $('#tooltipBtn').html(`Наложенный платёж`);
+        }
+        if ($(this).children().hasClass('icon-Vector-19')) {
+            $('#tooltipBtn').html(`Оплачен`);
+        }
+        if ($(this).children().hasClass('icon-Vector-16')) {
+            $('#tooltipBtn').html(`Обмен`);
+        }
+        if ($(this).children().hasClass('icon-Vector-18')) {
+            $('#tooltipBtn').html(`Отказ`);
+        }
+        if ($(this).children().hasClass('al')) {
+            $('#tooltipBtn').html(`Албания`);
+        }
+        if ($(this).children().hasClass('ru')) {
+            $('#tooltipBtn').html(`Россия`);
+        }
+        if ($(this).children().hasClass('ua')) {
+            $('#tooltipBtn').html(`Украина`);
+        }
+        if ($(this).children().hasClass('ar')) {
+            $('#tooltipBtn').html(`Армения`);
+        }
+        let posElement = this.getBoundingClientRect();
+        $("#tooltipBtn").css("left", posElement.x + $(this).width() + 23 + "px").css("top", posElement.y - 3 + "px");
+        $("#tooltipBtn").css({ 'animation': 'delay-another 0.5s forwards' });
+    }
+
     if ($(this).hasClass('tooltip-logo')) {
         let text = $(this).siblings('.info-ip').text();
-        // text = text.charAt(0).toUpperCase() + text.slice(1);
-        // let posElement = this.getBoundingClientRect();
-        // let screenHeight = document.body.clientHeight;
-        // let blockHeight = $(this).height();
-        // let heightTooltip = $('#tooltipBtn').height();
-        // console.log(text)
-        // $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
-        // tooltipOrderInfo(this);
-
-        // tooltipOrderInfo(this)
         let posElement = this.getBoundingClientRect();
         let screenHeight = document.body.clientHeight;
         let blockHeight = $(this).height();
         let heightTooltip = $('#tooltipBtn').height();
-        // console.log(text)
-        // $('#tooltipBtn').html(`Скопировать IP ${text}`);
+
 
         $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
         // tooltipOrderInfo(this);
@@ -619,22 +815,10 @@ $('body').on('mouseenter', '.order-tooltip', function(e) {
             $('#tooltipBtn').html(`Разблокировать пользователя с IP ${text}`);
             $("#tooltipBtn").css({ 'animation': 'delay-btn 0.3s forwards' });
         }
-        // if (flagImgLock == false) {
-        //     $("#tooltipBtn").css({ 'animation': '' }).css('font-size', '12px');
-        // }
+
     }
     if ($(this).hasClass('tooltip-logo-network')) {
-        // let text = $(this).siblings('.info-ip').text();
-        // text = text.charAt(0).toUpperCase() + text.slice(1);
-        // let posElement = this.getBoundingClientRect();
-        // let screenHeight = document.body.clientHeight;
-        // let blockHeight = $(this).height();
-        // let heightTooltip = $('#tooltipBtn').height();
-        // console.log(text)
-        // $('#tooltipBtn').html(`Блокировать пользователя с IP ${text}`);
-        // tooltipOrderInfo(this);
 
-        // tooltipOrderInfo(this)
         let posElement = this.getBoundingClientRect();
         let screenHeight = document.body.clientHeight;
         let blockHeight = $(this).height();
@@ -925,28 +1109,105 @@ $('.tooltip-logo-network').on('click', function() {
     // $(this).siblings('.unlock-logo').css('display', 'inline-block');
 });
 $('.info-description-ip-block .unlock-logo').on('mouseenter', function() {
+    $(this).parents('td.another-opacity-ip').css('height', '40px');
     $(this).parents('.info-description').find('.info-description-ip-block-all-network').css('height', '17px').css('padding-top', '8px');
     // let text = $(this).parents('.info-description').find('#another-ip').text();
     let text1 = $(this).siblings('.info-ip').find('#primary-ip').html();
-    console.log(text1)
-        // text = text.slice(-3)
+    // console.log(text1)
+    // text = text.slice(-3)
     $(this).parents('.info-description').find('#another-ip').text(text1);
     // console.log(text)
     let ovbrezaemDoTochki = text1.split(".").pop();
-    console.log(ovbrezaemDoTochki.length)
+    // console.log(ovbrezaemDoTochki.length)
     text1 = text1.substring(0, text1.length - ovbrezaemDoTochki.length) + '<b style="font-size:11px;font-weight:300;text-decoration:underline;">X</b>'.repeat(ovbrezaemDoTochki.length);
-    console.log(text1)
+    // console.log(text1)
     $(this).parents('.info-description').find('#another-ip').html(text1);
     // console.log(text)
     // $(this).siblings('.lock-logo').css('display', 'inline-block');
 });
 
-$('.info-description').on('mouseleave', function() {
+$('.another-opacity-ip').on('mouseleave', function() {
+    $(this).css('height', '17px');
     $(this).find('.info-description-ip-block-all-network').css('height', '0px').css('padding-top', '0px');
     // $(this).siblings('.lock-logo').css('display', 'inline-block');
 });
-
+var widthInput = $('.input-ttn').width();
+$('#gpsmetka-ttn').on('mouseenter', function() {
+    $(this).siblings('.status-ttn-info').css({
+        'width': '155px',
+        'transition': '0.15s',
+        'visibility': 'visible',
+    });
+    $(this).siblings('.inputPlusBackTtn').css({
+        'visibility': 'hidden',
+        'opacity': '0'
+    });
+});
+$('.ttn-block-description').on('mouseleave', function() {
+    $(this).children('.status-ttn-info').css({
+        'width': '0px',
+        'visibility': 'hidden',
+        'transition': '0.15s'
+    });
+    $(this).children('.inputPlusBackTtn').css({
+        'visibility': 'visible',
+        'opacity': '1',
+        'transition': '0.15s'
+    });
+});
+$('#gpsmetka-ttn-2').on('mouseenter', function() {
+    $(this).siblings('.status-ttn-info').css({
+        'width': '155px',
+        'transition': '0.15s',
+        'visibility': 'visible',
+    });
+    $(this).siblings('.inputPlusBackTtn').css({
+        'visibility': 'hidden',
+        'opacity': '0'
+    });
+});
+$('.ttn-block-description').on('mouseleave', function() {
+    $(this).children('.status-ttn-info').css({
+        'width': '0px',
+        'visibility': 'hidden',
+        'transition': '0.15s'
+    });
+    $(this).children('.inputPlusBackTtn').css({
+        'visibility': 'visible',
+        'opacity': '1',
+        'transition': '0.15s'
+    });
+});
+// $('.info-calendary').on('mouseenter', function() {
+//     $(this).siblings('.info-calendary-block').css({
+//         'width': '155px',
+//         'transition': '0.2s',
+//         'visibility': 'visible'
+//     })
+//     $(this).siblings('.info-user-block').css({
+//         'visibility': 'hidden',
+//         'opacity': '0'
+//     })
+// });
+// $('.calen-block').on('mouseleave', function() {
+//     $(this).children('.info-calendary-block').css({
+//         'width': '0px',
+//         'visibility': 'hidden',
+//         'transition': '0.2s'
+//     })
+//     $(this).children('.info-user-block').css({
+//         'visibility': 'visible',
+//         'opacity': '1',
+//         'transition': '0.2s'
+//     });
+// });
 //COPY IP
+// $('.input-user-phone').on('input', function() {
+//     let text = $(this).val();
+//     text = text.match(/^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$/g)
+
+//     console.log(text)
+// });
 document.getElementById("primary-ip").addEventListener("click", copy_text);
 var timeOutCopy = null;
 
@@ -966,11 +1227,18 @@ function copy_text() {
     }, 1500);
 
 }
-$('.input-order').on('mouseenter', function() {
+// $(document).ready(function() {
+//     let undrelineWIdth = $('.underline').width();
+//     $('.ttn2-block').css('width', undrelineWIdth + 'px');
+// });
+$('.input-order').on('mouseenter', inputOrderFocus);
+
+function inputOrderFocus() {
     $(this).siblings('.underline').css('width', '98%');
-    if ($(this).hasClass('input-address')) {
+    if ($(this).hasClass('input-address') || $(this).hasClass('input-user')) {
         $(this).siblings('.underline').css('width', '100%');
     }
+
     $(this).css('z-index', '9999');
     $(this).css('opacity', '0.5');
     if ($(this).hasClass('inputOpenFlag')) {
@@ -995,64 +1263,180 @@ $('.input-order').on('mouseenter', function() {
         $('.input-ttn').css('width', '88px');
         $('.input-ttn').attr('data-count', '13');
     }
-    // console.log($(this).parents('.delivery-table').find('.btn-order').find('.icon-Vector-2'))
+    if ($(this).hasClass('comment-input-order')) {
+        $('.comment-input-order').attr('placeholder', 'Ввод');
+        $('.comment').css({
+            'width': '100px',
+            'transition': '0.2s',
+            'background-color': 'transparent',
+            'left': '-4px'
+
+        });
+        $('.comment-wrapper').css({
+            'background-color': '#F1F1F1',
+            'border': '1px solid transparent'
+
+        });
+        $('.comment-input-order').css({
+            'background-color': '#F1F1F1'
+        });
+    }
     $(this).click(function() {
-        $(this).addClass('inputOpenFlag');
         $('.podlozhka-order').css('display', 'block');
-        // $('.input-order').css('opacity', '0.5');
+        $(this).addClass('inputOpenFlag');
         $(this).css('opacity', '0.5');
         $(this).siblings('.underline').css('width', '98%');
-        if ($(this).hasClass('input-address')) {
+        if ($(this).hasClass('input-address') || $(this).hasClass('input-user')) {
             $(this).siblings('.underline').css('width', '100%');
         }
         $('.input-order').off('mouseleave', inputFocus2);
     });
-    $(this).keyup(function(e) {
+    // $(this).keyup(function(e) {
+    //     console.log('lodsfldsolfo')
+    //     if (e.keyCode === 13) {
+    //         e.preventDefault();
+    //         // if (e.keyCode === 13) {
+    //         //     alert('submit');
+    //         //     return false;
+    //         // }
+    //         // return;
+    //     }
+
+
+    // });
+    // $(this).keypress(function(e) {
+    //     if (e.shiftKey && e.keyCode === 13) {
+    //         // let enter = e.keyCode === 13;
+    //         // let shiftEnter = e.shiftKey + enter;
+    //         // // let enter = 
+    //         // shiftEnter = enter;
+    //         // shiftEnter;
+
+    //         // if (e.keyCode === 13) {
+    //         // $(this).val($(this).val()+ '&#13;&#10;');
+    //         $(this).val($(this).val() + '\n');
+
+    //         // e.keyCode === 13;'
+    //         // let text = $(this).val().replace(/\n/g, '</br>');
+    //         // $(this).val(text);
+    //         //     alert('submit');
+    //         //     return false;
+    //         // }
+    //         return;
+    //     }
+    // })
+
+
+    $(this).keypress(function(e) {
         $(this).addClass('inputOpenFlag');
         $(this).css('opacity', '0.5');
         $('.input-order').off('mouseleave', inputFocus2);
-        $('.podlozhka-order').css('display', 'block');
         $(this).siblings('.underline').css('width', '98%');
-        if ($(this).hasClass('input-address')) {
+        if ($(this).hasClass('input-address') || $(this).hasClass('input-user')) {
             $(this).siblings('.underline').css('width', '100%');
         }
-        if (e.keyCode === 13) {
-            $('.input-order').on('mouseleave', inputFocus2);
-            // $('.podlozhka-order').css('display', 'none');
+        $('.podlozhka-order').css('display', 'block');
+
+        // if (e.shiftKey && e.keyCode === 13) {
+        //     // e.preventDefault();
+        //     // console.log('sdasds')
+        //     // let enter = e.keyCode === 13;
+        //     // let shiftEnter = e.shiftKey + enter;
+        //     // // let enter = 
+        //     // shiftEnter = enter;
+        //     // shiftEnter;
+
+        //     // if (e.keyCode === 13) {
+        //     // $(this).val($(this).val()+ '&#13;&#10;');
+        //     $(this).val($(this).val() + '\n');
+
+        //     // e.keyCode === 13;'
+        //     // let text = $(this).val().replace(/\n/g, '</br>');
+        //     // $(this).val(text);
+        //     //     alert('submit');
+        //     //     return false;
+        //     // }
+        //     // return;
+        // }
+        if (e.keyCode === 13 && !e.shiftKey) {
+            // if ($(this).hasClass('comment-input-order')) {
+            //     return;
+            // }
+            // e.preventDefault()
             $('.podlozhka-order').css('display', 'none');
+            $('.input-order').off('mouseenter', inputOrderFocus);
+            $('.input-order').on('mouseleave', inputFocus2);
             $('.underline').css('width', '0%');
             $('.input-order').css('opacity', '1');
             $(this).css('z-index', '');
             $(this).blur();
             $(this).removeClass('inputOpenFlag');
+
             if ($(this).hasClass('input-ttn')) {
                 if ($(this).val().length == 0) {
                     $('.back-ttn').css('display', 'none');
                 } else {
-                    $('.back-ttn').css('display', 'inline-block');
+                    $('.back-ttn').css('display', 'flex');
 
                 }
             }
+            $('.comment-input-order-order').attr('placeholder', '');
+            $('.comment').css({
+                'width': '130px',
+                'transition': '0.2s',
+                'background-color': 'white',
+                'left': '87px'
+
+            });
+            $('.comment-wrapper').css({
+                'background-color': 'white',
+                'border': '1px solid black'
+
+            });
+            $('.comment-input-order').css({
+                'background-color': 'white'
+            });
+            return false;
         }
+
         if ($(this).hasClass('input-ttn')) {
             if ($(this).val().length >= 1) {
-                $(this).parents('.delivery-description').find('.btnplus').css('display', 'none');
+                $(this).parents('.delivery-description').find('.add-ttn').css('display', 'none');
                 $(this).parents('.delivery-description').find('.gpsmetka').css('display', 'inline-block');
             } else {
-                $(this).parents('.delivery-description').find('.btnplus').css('display', 'inline-block');
+                $(this).parents('.delivery-description').find('.add-ttn').css('display', 'inline-block');
                 $(this).parents('.delivery-description').find('.gpsmetka').css('display', 'none');
             }
 
         }
+
     });
-});
+
+}
 $('.input-order').on('mouseleave', inputFocus2);
 
 function inputFocus2() {
+    $('.input-order').on('mouseenter', inputOrderFocus);
     $(this).blur();
     $(this).css('z-index', '');
     $('.input-order').css('opacity', '1');
     $(this).siblings('.underline').css('width', '0%');
+    $('.comment-input-order').attr('placeholder', '');
+    $('.comment').css({
+        'width': '130px',
+        'transition': '0.2s',
+        'background-color': 'white',
+        'left': '87px'
+
+    });
+    $('.comment-wrapper').css({
+        'background-color': 'white',
+        'border': '1px solid black'
+
+    });
+    $('.comment-input-order').css({
+        'background-color': 'white'
+    });
     clearTimeout(delayFocus);
 };
 // $('.info-ip #primary-ip').on('mouseup', function() {
@@ -1533,7 +1917,7 @@ $('.order').bind("click", function(e) {
     let $clicked = $(e.target);
     if (!$clicked.parents().hasClass("price-for-one") && !$clicked.parents().hasClass("currency-block")) {
         $('.price-for-one input').each(function() {
-            console.log(FlagFocus);
+            // console.log(FlagFocus);
             if (FlagFocus) {
                 let numberProduct = $(this).parents('tbody').find('.number-product').val();
                 $(this).parents('tbody').find('.all-price').text(cena * numberProduct);
@@ -1640,102 +2024,6 @@ $('.product-number-format').text((i, text) => {
 });
 
 
-// $('.info-calendary').on('mouseenter', function() {
-//     $(this).siblings('.info-calendary-block').css({
-//         'width': '100%',
-//         'visibility': 'visible'
-//     })
-// });
-// $('.calen-block').on('mouseleave', function() {
-//     $(this).children('.info-calendary-block').css({
-//         'width': '0',
-//         'visibility': 'hidden'
-//     })
-// });
-// $('.info-calendary').on('mouseenter', function() {
-//     $(this).siblings('.info-calendary-block').css({
-//         'transition': '0.3s',
-//         'left': '0px',
-//         'visibility': 'visible',
-//         'opacity': '1'
-//     })
-//     $(this).siblings('.info-user-block').css({
-//         'transition': '0s',
-//         'visibility': 'hidden',
-//         'left': '-10px',
-//         'opacity': '0'
-//     })
-// });
-// $('.calen-block').on('mouseleave', function() {
-//     $(this).children('.info-calendary-block').css({
-//         'transition': '0s',
-//         'visibility': 'hidden',
-//         'left': '-10px',
-//         'opacity': '0'
-
-//     })
-//     $(this).children('.info-user-block').css({
-//         'transition': '0.3s',
-//         'left': '0px',
-//         'visibility': 'visible',
-//         'opacity': '1'
-//     })
-// });
-// $('.info-calendary').on('mouseenter', function() {
-//     $(this).siblings('.info-calendary-block').css({
-//         'width': '100%',
-//         'transition': '0.3s',
-//         'visibility': 'visible'
-
-//     })
-//     $(this).siblings('.info-user-block').css({
-//         'width': '0px',
-//         'transition': '0s',
-//         'visibility': 'hidden'
-
-//     })
-// });
-// $('.calen-block').on('mouseleave', function() {
-//     $(this).children('.info-calendary-block').css({
-//         'width': '0px',
-//         'transition': '0s',
-//         'visibility': 'hidden'
-
-
-//     })
-//     $(this).children('.info-user-block').css({
-//         'width': '100%',
-//         'transition': '0.3s',
-//         'visibility': 'visible'
-
-//     })
-// });
-// $('.info-calendary').on('mouseenter', function() {
-//     $(this).siblings('.info-calendary-block').addClass('info-block-toggle');
-//     $(this).siblings('.info-user-block').addClass('info-block-toggle-2');
-// });
-// $('.calen-block').on('mouseleave', function() {
-//     $(this).children('.info-calendary-block').removeClass('info-block-toggle');
-//     $(this).children('.info-user-block').removeClass('info-block-toggle-2');
-//     // $(this).children('.info-calendary-block').addClass('info-block-toggle-2');
-//     // $(this).children('.info-user-block').addClass('info-block-toggle');
-// });
-// $('.info-calendary').on('mouseenter', function() {
-//     $(this).siblings('.info-calendary-block').css({
-//         'transform': 'rotateX(0deg)'
-//     })
-//     $(this).siblings('.info-user-block').css({
-//         'transform': 'rotateX(90deg)'
-//     })
-// });
-// $('.calen-block').on('mouseleave', function() {
-//     $(this).children('.info-calendary-block').css({
-//         'transform': 'rotateX(90deg)'
-//     })
-//     $(this).children('.info-user-block').css({
-//         'transform': 'rotateX(0deg)'
-//     })
-// });
 
 $('.info-calendary').on('mouseenter', function() {
     $(this).siblings('.info-calendary-block').css({
@@ -1744,9 +2032,6 @@ $('.info-calendary').on('mouseenter', function() {
         'visibility': 'visible'
     })
     $(this).siblings('.info-user-block').css({
-        // 'transition': '0',
-        // // 'overflow': 'hidden',
-        // 'width': '0px',
         'visibility': 'hidden',
         'opacity': '0'
     })
@@ -1758,34 +2043,12 @@ $('.calen-block').on('mouseleave', function() {
         'transition': '0.2s'
     })
     $(this).children('.info-user-block').css({
-        // 'width': '155px',
-        // 'overflow': 'hidden',
-        // 'width': '155px',
         'visibility': 'visible',
         'opacity': '1',
         'transition': '0.2s'
-            // 'transition-delay': '0.1s'
-
     });
-    // if ($('.btn-menu').hasClass('toggle')) {
-    //     $(this).children('.info-user-block').css({
-    //         // 'width': '155px',
-    //         'overflow': '',
-    //         'width': '155px',
-    //         'visibility': 'visible',
-    //         // 'opacity': '1',
-    //         'transition': '0.3s'
-
-    //     })
-    // }
 });
-// var textarea = document.querySelector('textarea');
 
-// textarea.addEventListener('keyup', function() {
-//     if (this.scrollTop > 0) {
-//         this.style.height = this.scrollHeight + "px";
-//     }
-// });
 let rotateEmail = 0;
 $(".generate-email").click(function() {
     rotateEmail = rotateEmail - 360;
@@ -1817,7 +2080,6 @@ $(document).on('mousemove', function() {
 // var btnOrderCount = 0;
 // var memoryLst;
 $('.btn-order-search').on('keyup', function(e) {
-    // console.log('s')
     btnOrderCount = 0;
     let idx = $('.btn-order-search').index(this);
     if (el === null || lastIndex !== idx) {
@@ -1826,48 +2088,975 @@ $('.btn-order-search').on('keyup', function(e) {
     }
     for (let index = 0; index < el.length; index++) {
         const element = el[index];
-        // console.log($(element).find('.product-item'), e.currentTarget.value);
         if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
             $(element).css('display', 'none');
         } else {
             if ($('.btn-order-search')[idx].value !== "" && idx !== 1) {
                 let re = new RegExp($('.btn-order-search')[idx].value, "gui");
                 let text_pr = text[index].replace(re, x => '<span class="findUnderline">' + x + '</span>');
-                // let text_pr = text[index].replace(re, x => '<span class="findUnderline" style="background: #FFE600;color: black;">' + x + '</span>');
-                // countFind += 1;
-                // if (text[index] !== 'Все') {
-                // }
-
                 btnOrderCount += 1;
                 $(element).css('display', 'flex')
                 $($(element).find('.findFunction')[0]).html(textToHTML(text_pr));
                 console.log('1')
-
-
             } else {
-                // if (text[index] !== 'Все') {
-                // }
-                // countFind += 1;
                 btnOrderCount += 1;
-
                 $($(element).find('.findFunction')[0]).text(text[index]);
-                // memoryLst = $($(element).find('.findFunction')[0]).text(text[index]);
                 $(element).css('display', 'flex')
                 console.log('2')
-
-
             }
 
-            //    console.log(text_pr)
-            // document.querySelector('.product-list.list-item').innerHTML = textToHTML(text_pr);
         }
     }
-    // console.log($(this).parents('.btn-wrap-large').find('.countFindFunction'), countFind);
     $(this).parents('.order-dropdown').find('.btn-order-count').html('(' + btnOrderCount + ')');
     btnOrderCount = 0;
-    // dataFind = countFind;
-    // countFind = 0;
     lastIndex = idx;
-    // ).find('.list-large'));
-    // e.currentTarget.value
 });
+
+// $('.addres-delivery-input').on('input', function() {
+//     if ($(this).hasClass('gorod')) {
+//         let goroda = '<div class="goroda"><div>Кривой Рог</div><div>Одесса</div><div>Киев</div><div>Львов</div><div>Ужгород</div></div>';
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(goroda);
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '0px');
+//     }
+//     if ($(this).hasClass('ulica')) {
+//         let ulica = '<div class="ulici"><div>Заречный</div><div>Волгоградская</div><div>Тополя</div><div>95 квартал</div><div>Василевского</div></div>';
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '28px');
+//     }
+//     if ($(this).hasClass('dom')) {
+//         let dom = '<div class="doma"><div>22</div><div>14</div><div>43</div><div>23</div><div>98</div></div>';
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(dom);
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '56px');
+//     }
+//     if ($(this).hasClass('kvartira')) {
+//         let kvartira = '<div class="kvartiri"><div>3</div><div>2</div><div>7</div><div>8</div><div>22</div></div>';
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(kvartira);
+//         $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '84px');
+//     }
+// });
+// $('.btn-find-otdel').on('click', function() {
+//     $('.addres-delivery-block').css({
+//         'top': '25px',
+//         'visibility': 'visible',
+//         'opacity': '1'
+//     });
+//     $('.podlozhka-order').css({
+//         'display': 'block'
+//     });
+//     // $('.btn-find-addres').css({
+//     //     'display': 'none'
+//     // });
+//     $('.btn-find-addres').removeClass('active-btn');
+//     $(this).addClass('active-btn');
+// });
+$('body').on('click', '.btn-find-otdel', function() {
+    $('.addres-delivery-block').css({
+        'top': '25px',
+        'visibility': 'visible',
+        'opacity': '1'
+    });
+    $('.podlozhka-order').css({
+        'display': 'block'
+    });
+    // $('.btn-find-addres').css({
+    //     'display': 'none'
+    // });
+    // novaPochtaOtdel = false;
+    $('.btn-find-addres').removeClass('active-btn');
+    $(this).addClass('active-btn');
+    $(this).parents('.delivery-description').find('.addres-delivery-block').find('.addres-delivery-list').remove()
+    if (novaPochtaSelect == true) {
+        novaPochtaTrigger = 'otdel';
+        ukrPochtaSelect = false;
+        ukrPochtaTrigger = '';
+        // console.log(novaPochtaOtdel)
+        // console.log(novaPochtaAdress)
+        const deliveryListGorod = `<div class="addres-delivery-list"><div>Город:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="gorod addres-delivery-input" type="text"></div></div>`;
+        const deliveryListOtdelenie = `<div class="addres-delivery-list"><div>Отд-ние:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="otdelenie addres-delivery-input" type="text"></div></div>`;
+        $(this).parents('.delivery-description').find('.addres-delivery-block').find('.addres-delivery-list').remove()
+        $(this).parents('.delivery-description').find('.addres-delivery-wrapper').find('.simplebar-content').append(deliveryListGorod + deliveryListOtdelenie);
+        let data = json.areas;
+        let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+        data.forEach(x => {
+            // goroda += '<div>' + x.name + '</div>'
+            x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                goroda += '<div>' + y.name + '</div>'
+            });
+        });
+        goroda += '</div>';
+
+        // $('.gorod').focus();
+        $('.addres-menu-find').find('.simplebar-content').children().remove();
+        $('.addres-menu-find').find('.simplebar-content').append(goroda);
+        countAdress = $('.findAddres div').length;
+        $('.count-addres').html(countAdress);
+        $('.addres-menu-find').addClass('menu-find-active');
+        // $('.gorod').focus();
+        setTimeout(() => {
+            $('.gorod').focus();
+        }, 200);
+    }
+    if (ukrPochtaSelect == true) {
+        ukrPochtaTrigger = 'otdel';
+        novaPochtaSelect = false;
+        novaPochtaTrigger = '';
+        const deliveryListGorod = `<div class="addres-delivery-list"><div>Город:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="gorod addres-delivery-input" type="text"></div></div>`;
+        const deliveryListUlica = `<div class="addres-delivery-list"><div>Улица:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="ulica addres-delivery-input" type="text"></div></div>`;
+        const deliveryListDom = `<div class="addres-delivery-list"><div>Дом:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="dom addres-delivery-input" type="text"></div></div>`;
+        const deliveryListIndex = `<div class="addres-delivery-list"><div>Индекс:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="index addres-delivery-input" type="text"></div></div>`;
+        const deliveryListKvartira = `<div class="addres-delivery-list"><div>Кв-ра:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="kvartira addres-delivery-input" type="text"></div></div>`;
+        $(this).parents('.delivery-description').find('.addres-delivery-block').find('.addres-delivery-list').remove()
+        $(this).parents('.delivery-description').find('.addres-delivery-wrapper').find('.simplebar-content').append(deliveryListGorod + deliveryListUlica + deliveryListDom + deliveryListKvartira + deliveryListIndex);
+    }
+    // $('.underline').css('width', '0%');
+    $(this).parents('.delivery-description').find('.addres-delivery-block .addres-delivery-list:first-child').find('input').siblings('.underline').css('width', '100%');
+
+});
+$('body').on('click', '.btn-find-addres', function() {
+    // $('#gpsmetka-addres').css({
+    //     'display': 'none'
+    // });
+    $('.addres-delivery-block').css({
+        'top': '25px',
+        'visibility': 'visible',
+        'opacity': '1'
+    });
+    $('.podlozhka-order').css({
+        'display': 'block'
+    });
+    $('.btn-find-otdel').removeClass('active-btn');
+    $('.btn-find-otdel').addClass('decl-btn');
+    $(this).addClass('active-btn');
+    // novaPochtaAdress = false;
+    if (novaPochtaSelect == true) {
+        // novaPochtaAdress = true;
+        ukrPochtaSelect = false;
+        novaPochtaTrigger = 'adres';
+        ukrPochtaTrigger = '';
+        // ukrPochtaTrigger = false;
+        // console.log(novaPochtaOtdel)
+        // console.log(novaPochtaAdress)
+        const deliveryListGorod = `<div class="addres-delivery-list"><div>Город:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="gorod addres-delivery-input" type="text"></div></div>`;
+        const deliveryListUlica = `<div class="addres-delivery-list"><div>Улица:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="ulica addres-delivery-input" type="text"></div></div>`;
+        const deliveryListDom = `<div class="addres-delivery-list"><div>Дом:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="dom addres-delivery-input" type="text"></div></div>`;
+        const deliveryListKvartira = `<div class="addres-delivery-list"><div>Кв-ра:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="kvartira addres-delivery-input" type="text"></div></div>`;
+        $(this).parents('.delivery-description').find('.addres-delivery-block').find('.addres-delivery-list').remove()
+        $(this).parents('.delivery-description').find('.addres-delivery-wrapper').find('.simplebar-content').append(deliveryListGorod + deliveryListUlica + deliveryListDom + deliveryListKvartira);
+    }
+    if (ukrPochtaSelect == true) {
+        novaPochtaSelect = false;
+        ukrPochtaTrigger = 'adres';
+        novaPochtaTrigger = '';
+        // novaPochtaTrigger = false;
+        const deliveryListStrana = `<div class="addres-delivery-list"><div>Страна:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="strana addres-delivery-input" type="text"></div></div>`;
+
+        const deliveryListGorod = `<div class="addres-delivery-list"><div>Город:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="gorod addres-delivery-input" type="text"></div></div>`;
+        const deliveryListUlica = `<div class="addres-delivery-list"><div>Улица:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="ulica addres-delivery-input" type="text"></div></div>`;
+        const deliveryListDom = `<div class="addres-delivery-list"><div>Дом:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="dom addres-delivery-input" type="text"></div></div>`;
+        const deliveryListKvartira = `<div class="addres-delivery-list"><div>Квартира:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="kvartira addres-delivery-input" type="text"></div></div>`;
+        const deliveryListIndex = `<div class="addres-delivery-list"><div>Индекс:</div> <div class="underline-animation"><span class="underline"></span><input autocomplete="new-password" class="index addres-delivery-input" type="text"></div></div>`;
+        $(this).parents('.delivery-description').find('.addres-delivery-block').find('.addres-delivery-list').remove()
+        $(this).parents('.delivery-description').find('.addres-delivery-wrapper').find('.simplebar-content').append(deliveryListStrana + deliveryListGorod + deliveryListUlica + deliveryListDom + deliveryListIndex + deliveryListKvartira);
+    }
+});
+var novaPochtaTrigger;
+var ukrPochtaTrigger;
+// var novaPochtaOtdel = false;
+// $('.delivery-chose-btn').on('mouseenter', function() {
+//     $(this).children('.btn-find-addres').find('svg').css('width', '14px');
+// });
+// $('.delivery-chose-btn').on('mouseleave', function() {
+//     $(this).children('.btn-find-addres').find('svg').css('width', '0px');
+// });
+$('.delivery-chose-btn').on('mouseenter', function() {
+    $('.btn-find-otdel').removeClass('decl-btn');
+    $(this).children('.btn-find-addres').addClass('active-btn');
+    $(this).children('.btn-find-otdel').addClass('active-btn');
+
+
+});
+// $('.delivery-chose-btn').on('mouseleave', function() {
+//     $(this).children('.btn-find-addres').removeClass('active-btn');
+//     $(this).children('.gpsmetka').removeClass('active-btn');
+// });
+var countAdress = 0;
+// $('body').on('mouseleave', '.addres-delivery-list', function(e) {
+
+// });
+$('body').on('mouseenter', '.addres-delivery-list', function(e) {
+    clearTimeout(timeOutCopy);
+    $("#tooltipBtn").css({ 'animation': '' });
+    let posElement = this.getBoundingClientRect();
+    let block = document.querySelector('.addres-delivery-block');
+    let blockPos = block.getBoundingClientRect();
+    let resultBlocks = posElement.y - blockPos.y;
+
+    if (novaPochtaTrigger == 'adres') {
+        console.log('novapochta adres')
+        let data = json.areas;
+        let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+        data.forEach(x => {
+            // goroda += '<div>' + x.name + '</div>'
+            x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                goroda += '<div>' + y.name + '</div>'
+            });
+        });
+        goroda += '</div>';
+
+        let ulica = '<b class="count-addres"></b><div class="ulici findAddres">';
+        data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).forEach(x => {
+            ulica += '<div>' + x.name + '</div>'
+        });
+        ulica += '</div>';
+
+        let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+        data.forEach(x => {
+            x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).map(y => {
+                dom += '<div>' + y.key + '</div>'
+            });
+        });
+        dom += '</div>';
+        // let countAdress = $('.findAddres div').length;
+        $(this).find('.underline').css('width', '100%');
+
+        if ($(this).find('.addres-delivery-input').hasClass('gorod')) {
+            $(this).find('.addres-delivery-input').focus();
+            // let posElemnt = this.getBoundingClientRect();
+            // posElemnt.y - posElemnt.y + 0 + 
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '0px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('ulica')) {
+            $(this).find('.addres-delivery-input').focus();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '28px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('dom')) {
+            $(this).find('.addres-delivery-input').focus();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(dom);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(dom);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '56px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('kvartira')) {
+            $(this).find('.addres-delivery-input').focus();
+            $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+            // let kvartira = '<div class="kvartiri"><div>3</div><div>2</div><div>7</div><div>8</div><div>22</div></div>';
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(kvartira);
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '84px');
+        }
+    } else if (novaPochtaTrigger == 'otdel') {
+        // console.log('ebob')
+        // $('.gorod').focus();
+        // $('.addres-menu-find').addClass('menu-find-active');
+        if (!$('.addres-menu-find').hasClass('menu-find-active')) {
+            $(this).find('.addres-delivery-input').focus();
+            this.children[1].children[1].select()
+
+            $('.underline').css('width', '0%');
+            $(this).find('.underline').css('width', '100%');
+            // $('.addres-menu-find div').remove()
+            // if ($(this).find('.addres-delivery-input').hasClass('gorod')) {
+            //     $('.addres-menu-find').css({
+            //         'opacity': '1',
+            //         'visibility': 'visible',
+            //         'top': '0px'
+            //     });
+            // }
+            // if ($(this).find('.addres-delivery-input').hasClass('otdelenie')) {
+            //     $('.addres-menu-find').css({
+            //         'opacity': '1',
+            //         'visibility': 'visible',
+            //         'top': '28px'
+            //     });
+            // }
+
+        }
+        console.log(this.children[1].children[1])
+        console.log('novapochta otdelenie')
+            // let data = json.areas;
+            // let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+            // data.forEach(x => {
+            //     // goroda += '<div>' + x.name + '</div>'
+            //     x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+            //         goroda += '<div>' + y.name + '</div>'
+            //     });
+            // });
+            // goroda += '</div>';
+
+
+
+        // let otdelenie = '<b class="count-addres"></b><div class="otdelenie findAddres">';
+        // data.forEach(x => {
+        //     x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).map(y => {
+        //         otdelenie += '<div>' + y.key + '</div>'
+        //     });
+        // });
+        // otdelenie += '</div>';
+        // let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+        // data.forEach(x => {
+        //     x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).map(y => {
+        //         dom += '<div>' + y.key + '</div>'
+        //     });
+        // });
+        // dom += '</div>';
+        // let countAdress = $('.findAddres div').length;
+        // $('.underline').css('width', '0%');
+        // $(this).find('.underline').css('width', '100%');
+        // $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '0px').css('visibility', 'visible')
+        // if ($(this).find('.addres-delivery-input').hasClass('gorod')) {
+        //     $(this).find('.addres-delivery-input').focus();
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+        //     countAdress = $('.findAddres div').length;
+        //     $('.count-addres').html(countAdress);
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '0px').css('visibility', 'visible');
+        // }
+        // if ($(this).find('.addres-delivery-input').hasClass('otdelenie')) {
+        //     $(this).find('.addres-delivery-input').focus();
+        //     // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+        //     // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(otdelenie);
+        //     countAdress = $('.findAddres div').length;
+        //     $('.count-addres').html(countAdress);
+        //     // if ($(this).parents('.addres-delivery-block').find('.gorod').val() !== '') {
+        //     //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '28px').css('visibility', 'visible');
+        //     // } else {
+        //     //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '0').css('top', '28px').css('visibility', 'hidden');
+        //     // }
+        // }
+    }
+    //UKRPOCHTA
+    if (ukrPochtaTrigger == 'otdel') {
+        console.log('ukrpochta otdelenie')
+        let data = json.areas;
+
+        let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+        data.forEach(x => {
+            // goroda += '<div>' + x.name + '</div>'
+            x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                goroda += '<div>' + y.name + '</div>'
+            });
+        });
+        goroda += '</div>';
+
+        let ulica = '<b class="count-addres"></b><div class="ulici findAddres">';
+        data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).forEach(x => {
+            ulica += '<div>' + x.name + '</div>'
+        });
+        ulica += '</div>';
+
+        let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+        data.forEach(x => {
+            x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).map(y => {
+                dom += '<div>' + y.key + '</div>'
+            });
+        });
+        dom += '</div>';
+        // console.log(e)
+        // let positionList = e.target.offsetTop;
+
+        // let countAdress = $('.findAddres div').length;
+        $(this).find('.underline').css('width', '100%');
+
+        if ($(this).find('.addres-delivery-input').hasClass('gorod')) {
+            $(this).find('.addres-delivery-input').focus();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+
+
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('ulica')) {
+            $(this).find('.addres-delivery-input').focus();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+            if ($(this).find('.ulica').val() !== '') {
+                $(this).parents('.addres-delivery-block').find('.index').val(getRandomIntInclusive(11111, 44444));
+            } else {
+                $(this).parents('.addres-delivery-block').find('.index').val('');
+            }
+
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('dom')) {
+            $(this).find('.addres-delivery-input').focus();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(dom);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(dom);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('kvartira')) {
+            $(this).find('.addres-delivery-input').focus();
+            $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('index')) {
+            $(this).find('.addres-delivery-input').focus();
+            $(this).find('.underline').css('width', '0%');
+            $('.index').attr('readonly', '');
+            $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+
+        }
+    } else if (ukrPochtaTrigger == 'adres') {
+        console.log('ukrpochta adres')
+
+        let data = json.areas;
+        let strana = '<b class="count-addres"></b><div class="strana findAddres">';
+        data.forEach(x => {
+            // goroda += '<div>' + x.name + '</div>'
+            x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                strana += '<div>' + y.name + '</div>'
+            });
+        });
+        strana += '</div>';
+        let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+        data.forEach(x => {
+            // goroda += '<div>' + x.name + '</div>'
+            x.areas.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).map(y => {
+                goroda += '<div>' + y.name + '</div>'
+            });
+        });
+        goroda += '</div>';
+
+        let ulica = '<b class="count-addres"></b><div class="ulici findAddres">';
+        data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).forEach(x => {
+            ulica += '<div>' + x.name + '</div>'
+        });
+        ulica += '</div>';
+
+        let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+        data.forEach(x => {
+            x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[3]).val().toLowerCase())).map(y => {
+                dom += '<div>' + y.key + '</div>'
+            });
+        });
+        dom += '</div>';
+        // let countAdress = $('.findAddres div').length;
+        $(this).find('.underline').css('width', '100%');
+        if ($(this).find('.addres-delivery-input').hasClass('strana')) {
+            $(this).find('.addres-delivery-input').focus();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(strana);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('gorod')) {
+            $(this).find('.addres-delivery-input').focus();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('ulica')) {
+            $(this).find('.addres-delivery-input').focus();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+            if ($(this).find('.ulica').val() !== '') {
+                $(this).parents('.addres-delivery-block').find('.index').val(getRandomIntInclusive(11111, 44444));
+            } else {
+                $(this).parents('.addres-delivery-block').find('.index').val('');
+            }
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('dom')) {
+            $(this).find('.addres-delivery-input').focus();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(dom);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(dom);
+            countAdress = $('.findAddres div').length;
+            $('.count-addres').html(countAdress);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('kvartira')) {
+            $(this).find('.addres-delivery-input').focus();
+            $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+            // let kvartira = '<div class="kvartiri"><div>3</div><div>2</div><div>7</div><div>8</div><div>22</div></div>';
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(kvartira);
+            // $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '84px');
+        }
+        if ($(this).find('.addres-delivery-input').hasClass('index')) {
+            $(this).find('.addres-delivery-input').focus();
+            $(this).find('.underline').css('width', '0%');
+            $('.index').attr('readonly', '');
+            $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+
+        }
+    }
+
+
+});
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+}
+$('body').on('mouseleave', '.addres-delivery-list', function() {
+    // $(this).find('.underline').css('width', '0%');
+    // $(this).find('.addres-delivery-input').blur();
+    if (!$('.addres-menu-find').hasClass('menu-find-active')) {
+        this.children[1].children[1].blur();
+        $('.underline').css('width', '0%');
+    }
+
+
+    // $('.underline').css('width', '0%');
+    // $(this).find('.underline').css('width', '100%');
+});
+$('.addres-delivery-block').on('click', function() {
+    $('.addres-menu-find').removeClass('menu-find-active');
+});
+$('body').on('click', '.goroda div', function() {
+    // $(this).text();
+    $('.gorod').val($(this).text());
+    $('.addres-menu-find').removeClass('menu-find-active');
+    $(this).parents('.addres-delivery-block').find('.otdelenie').val('');
+    if ($(this).parents('.addres-delivery-block').find('.addres-delivery-list').find('.otdelenie.addres-delivery-input')) {
+        let data = json.areas;
+        let otdelenie = '<b class="count-addres"></b><div class="otdelenie findAddres">';
+        data.forEach(x => {
+            x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).map(y => {
+                otdelenie += '<div>' + y.key + '</div>'
+            });
+        });
+        otdelenie += '</div>';
+        $('.otdelenie.addres-delivery-input').focus();
+        $('.underline').css('width', '0%');
+        $('.otdelenie.addres-delivery-input').siblings('.underline').css('width', '100%');
+        // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+        // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+        $('.addres-menu-find').find('.simplebar-content').children().remove();
+        $('.addres-menu-find').find('.simplebar-content').append(otdelenie);
+        $('.addres-menu-find').addClass('menu-find-active');
+        $('.menu-find-active').css('top', '28px');
+        countAdress = $('.findAddres div').length;
+        $('.count-addres').html(countAdress);
+
+        // if ($(this).parents('.addres-delivery-block').find('.gorod').val() !== '') {
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', '28px').css('visibility', 'visible');
+        // } else {
+        //     $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '0').css('top', '28px').css('visibility', 'hidden');
+        // }
+    }
+
+});
+$('body').on('click', '.strana div', function() {
+    // $(this).text();
+    $('.strana').val($(this).text());
+    $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+});
+$('body').on('click', '.ulici div', function() {
+    // $(this).text();
+    $('.ulica').val($(this).text());
+    $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+});
+$('body').on('click', '.doma div', function() {
+    // $(this).text();
+    $('.dom').val($(this).text());
+    $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+});
+$('body').on('click', '.kvartiri div', function() {
+    // $(this).text();
+    $('.kvartira').val($(this).text());
+    $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+});
+$('body').on('click', '.otdelenie div', function() {
+    // $(this).text();
+    $('.otdelenie').val($(this).text());
+    $('.addres-menu-find').removeClass('menu-find-active');
+    $('.underline').css('width', '0%');
+    // $('.otdelenie.addres-delivery-input').siblings('.underline').css('width', '100%');
+
+    // if ($(this).parents('.addres-delivery-block').find('.gorod').val() == '') {
+    //     $('.otdelenie').val('');
+    //     $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+    //     $('#tooltipBtn').html(`Выберите город!`);
+    //     // document.querySelector('.otdelenie');
+    //     let posElement = document.querySelector('.otdelenie').getBoundingClientRect();
+    //     $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+    //     $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+    //     timeOutCopy = setTimeout(function() {
+    //         $("#tooltipBtn").css({ 'animation': '' });
+    //     }, 1500);
+
+    // }
+});
+$('body').on('keyup', '.addres-delivery-input', function(e) {
+    // countAdress = 0;
+    if ($(this).hasClass('ulica')) {
+        // $(this).find('.addres-delivery-input').focus();
+        // // $(this).parents('.addres-delivery-block').find('.addres-menu-find').children().remove();
+        // // $(this).parents('.addres-delivery-block').find('.addres-menu-find').append(ulica);
+        // $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').children().remove();
+        // $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+        // countAdress = $('.findAddres div').length;
+        // $('.count-addres').html(countAdress);
+        // $(this).parents('.addres-delivery-block').find('.addres-menu-find').css('opacity', '1').css('top', resultBlocks + 'px').css('visibility', 'visible');
+        if ($(this).find('.ulica').val() !== '') {
+            $(this).parents('.addres-delivery-block').find('.index').val(getRandomIntInclusive(11111, 44444));
+        } else {
+            $(this).parents('.addres-delivery-block').find('.index').val('');
+        }
+
+    }
+    if (novaPochtaTrigger == 'adres') {
+        console.log('nvadres')
+        let idx = $('.addres-delivery-input').index(this);
+        // if (el === null || lastIndex !== idx) {
+        //     el = [...$(this).parents('.addres-delivery-block').find('.findAddres').find('div')];
+        //     text = [...el.map(x => x.innerText)]
+        // }
+        // for (let index = 0; index < el.length; index++) {
+        //     const element = el[index];
+        //     if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+        //         $(element).css('display', 'none');
+        //     } else {
+        //         if ($('.addres-delivery-input')[idx].value !== "") {
+        //             $(element).css('display', 'flex')
+        //             countAdress += 1;
+        //         } else {
+        //             $(element).text(text[index]);
+        //             $(element).css('display', 'flex')
+        //             countAdress += 1;
+        //         }
+        //     }
+        // }
+        let data = json.areas;
+        if (idx === 0) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+
+            let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[0]).val(), "gui");
+
+            data.forEach(x => {
+                count += x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).length
+                x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                    let text_pr = y.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    goroda += '<div>' + text_pr + '</div>'
+                });
+            });
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+            goroda += '</div>';
+        } else if (idx === 1) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[1]).val(), "gui");
+            let ulica = '<b class="count-addres"></b><div class="ulici findAddres">';
+            data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).forEach(x => {
+                let text_pr = x.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                ulica += '<div>' + text_pr + '</div>'
+            });
+            count = data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).length
+
+            ulica += '</div>';
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+
+        } else if (idx === 2) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[2]).val(), "gui");
+            let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+            data.forEach(x => {
+                count += x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).length
+
+                x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).map(y => {
+                    let text_pr = x.key.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    dom += '<div>' + text_pr + '</div>'
+                });
+            });
+            dom += '</div>';
+
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(dom);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+        }
+
+    } else if (novaPochtaTrigger == 'otdel') {
+        console.log('nvotdel')
+        let idx = $('.addres-delivery-input').index(this);
+        let data = json.areas;
+        if (idx === 0) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+
+            let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[0]).val(), "gui");
+
+            data.forEach(x => {
+                count += x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).length
+                x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                    let text_pr = y.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    goroda += '<div>' + text_pr + '</div>'
+                });
+            });
+
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+            goroda += '</div>';
+            // $(this).val($(this).val());
+            let text = $(this).val();
+            if ($(this).val() !== '') {
+                text = text[0].toUpperCase() + text.slice(1);;
+                $(this).val(text.replace(/[0-9]/g, x => ""));
+            }
+            $('.addres-menu-find').addClass('menu-find-active');
+            $('.menu-find-active').css('top', '0px');
+            $(this).parents('.addres-delivery-block').find('.otdelenie').val('');
+        } else if (idx === 1) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[1]).val(), "gui");
+            let otdelenie = '<b class="count-addres"></b><div class="otdelenie findAddres">';
+            data.forEach(x => {
+                count += x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).length
+
+                x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).map(y => {
+                    let text_pr = y.key.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    otdelenie += '<div>' + text_pr + '</div>'
+                });
+            });
+            otdelenie += '</div>';
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(otdelenie);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+            $('.addres-menu-find').addClass('menu-find-active');
+            $('.menu-find-active').css('top', '28px');
+            if ($(this).parents('.addres-delivery-block').find('.gorod').val() == '') {
+                $(this).val('');
+                $('.addres-menu-find').css('opacity', '0').css('visibility', 'hidden');
+                $('#tooltipBtn').html(`Выберите город!`);
+                let posElement = this.getBoundingClientRect();
+                $("#tooltipBtn").css("left", posElement.x - 4 + "px").css("top", posElement.y + 22 + "px");
+                $("#tooltipBtn").css({ 'animation': 'delay-btn-copy 1.5s forwards' });
+                timeOutCopy = setTimeout(function() {
+                    $("#tooltipBtn").css({ 'animation': '' });
+                }, 1500);
+
+            }
+        }
+    }
+    if (ukrPochtaTrigger == 'otdel') {
+        console.log('ukrotdel')
+        let idx = $('.addres-delivery-input').index(this);
+
+        let data = json.areas;
+        if (idx === 0) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+
+            let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[0]).val(), "gui");
+
+            data.forEach(x => {
+                count += x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).length
+                x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                    let text_pr = y.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    goroda += '<div>' + text_pr + '</div>'
+                });
+            });
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+            goroda += '</div>';
+        } else if (idx === 1) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[1]).val(), "gui");
+            let ulica = '<b class="count-addres"></b><div class="ulici findAddres">';
+            data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).forEach(x => {
+                let text_pr = x.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                ulica += '<div>' + text_pr + '</div>'
+            });
+            count = data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).length
+
+            ulica += '</div>';
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+
+        } else if (idx === 2) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[2]).val(), "gui");
+            let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+            data.forEach(x => {
+                count += x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).length
+
+                x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).map(y => {
+                    let text_pr = x.key.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    dom += '<div>' + text_pr + '</div>'
+                });
+            });
+            dom += '</div>';
+
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(dom);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+        }
+    } else if (ukrPochtaTrigger == 'adres') {
+        let idx = $('.addres-delivery-input').index(this);
+
+        let data = json.areas;
+        if (idx === 0) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+
+            let strana = '<b class="count-addres"></b><div class="strana findAddres">';
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[0]).val(), "gui");
+
+            data.forEach(x => {
+                count += x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).length
+                x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[0]).val().toLowerCase())).map(y => {
+                    let text_pr = y.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    strana += '<div>' + text_pr + '</div>'
+                });
+            });
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(strana);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+            strana += '</div>';
+        } else if (idx === 1) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+
+            let goroda = '<b class="count-addres"></b><div class="goroda findAddres">';
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[1]).val(), "gui");
+
+            data.forEach(x => {
+                count += x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).length
+                x.areas.filter(y => (y.name.split('(').length > 0 ? y.name.split('(')[0] : y.name).toLowerCase().includes($($('.addres-delivery-input')[1]).val().toLowerCase())).map(y => {
+                    let text_pr = y.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    goroda += '<div>' + text_pr + '</div>'
+                });
+            });
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(goroda);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+            goroda += '</div>';
+        } else if (idx === 2) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[2]).val(), "gui");
+            let ulica = '<b class="count-addres"></b><div class="ulici findAddres">';
+            data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).forEach(x => {
+                let text_pr = x.name.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                ulica += '<div>' + text_pr + '</div>'
+            });
+            count = data.filter(y => y.name.toLowerCase().includes($($('.addres-delivery-input')[2]).val().toLowerCase())).length
+
+            ulica += '</div>';
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(ulica);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+
+        } else if (idx === 3) {
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('div').remove()
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').find('b').remove()
+            let count = 0;
+            let re = new RegExp($($('.addres-delivery-input')[3]).val(), "gui");
+            let dom = '<b class="count-addres"></b><div class="doma findAddres">';
+            data.forEach(x => {
+                count += x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[3]).val().toLowerCase())).length
+
+                x.areas.filter(y => y.key.toLowerCase().includes($($('.addres-delivery-input')[3]).val().toLowerCase())).map(y => {
+                    let text_pr = y.key.replace(re, x => '<span class="findUnderline">' + x + '</span>');
+                    dom += '<div>' + text_pr + '</div>'
+                });
+            });
+            dom += '</div>';
+
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.simplebar-content').append(dom);
+            $(this).parents('.addres-delivery-block').find('.addres-menu-find').find('.count-addres').html(count);
+            count = 0;
+        }
+    }
+
+
+
+
+
+});
+// $('.btn-order-search').on('keyup', function(e) {
+//     btnOrderCount = 0;
+//     let idx = $('.btn-order-search').index(this);
+//     if (el === null || lastIndex !== idx) {
+//         el = [...$(this).parents('.order-dropdown').find('.btn-menu-list')];
+//         text = [...el.map(x => $(x).find('.findFunction')[0].innerText)]
+//     }
+//     for (let index = 0; index < el.length; index++) {
+//         const element = el[index];
+//         if (!text[index].toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+//             $(element).css('display', 'none');
+//         } else {
+//             if ($('.btn-order-search')[idx].value !== "" && idx !== 1) {
+//                 let re = new RegExp($('.btn-order-search')[idx].value, "gui");
+//                 let text_pr = text[index].replace(re, x => '<span class="findUnderline">' + x + '</span>');
+//                 btnOrderCount += 1;
+//                 $(element).css('display', 'flex')
+//                 $($(element).find('.findFunction')[0]).html(textToHTML(text_pr));
+//                 console.log('1')
+//             } else {
+//                 btnOrderCount += 1;
+//                 $($(element).find('.findFunction')[0]).text(text[index]);
+//                 $(element).css('display', 'flex')
+//                 console.log('2')
+//             }
+
+//         }
+//     }
+//     $(this).parents('.order-dropdown').find('.btn-order-count').html('(' + btnOrderCount + ')');
+//     btnOrderCount = 0;
+//     lastIndex = idx;
+// });

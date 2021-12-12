@@ -362,6 +362,7 @@ $(document).ready(function() {
         $("#tooltipBtn").css({ 'animation': '' });
     });
     $(".resize").hover(function(e) {
+
         $('#tooltipBtn').html('Задать размер столбца<br>Зажать и потянуть для изменения размера<br>Двойной клик возвращает размер по умолчанию');
         let posElement = this.getBoundingClientRect();
         let blockWidth = $(this).width();
@@ -375,6 +376,8 @@ $(document).ready(function() {
         if (screenWidth < posElement.x + widthTooltip) {
             $("#tooltipBtn").css('left', posElement.x - widthTooltip - 10 + 'px');
         }
+        // e.stopPropagation();
+        // e.preventDefault();
     }).mouseleave(function(e) {
         $("#tooltipBtn").css({ 'animation': '' });
     });
@@ -3529,8 +3532,13 @@ $(".crm-main-table .max-lenght-comment").text(function(i, text) {
 
 $('.countFindFunction').hover(function(xy) {
 
-    $('#tooltipBtn').html(`Групп товаров в фильтре:<br>- найдено ${dataFind}<br>- выбрано ${countList}`);
-
+    $('#tooltipBtn').html(`Элементов в фтльтре:<br>- найдено ${dataFind}<br>- выбрано ${countList}`);
+    if ($(this).parents('.btn-wrap-large').find('input').hasClass('inputStatus')) {
+        $('#tooltipBtn').html(`Статусов в фильтре:<br>- найдено ${dataFind}<br>- выбрано ${countList}`);
+    }
+    if ($(this).parents('.btn-wrap-large').find('input').hasClass('product-input')) {
+        $('#tooltipBtn').html(`Групп товаров в фильтре:<br>- найдено ${dataFind}<br>- выбрано ${countList}`);
+    }
     let posElement = this.getBoundingClientRect();
     let blockWidth = $(this).width();
     let blockHeight = $(this).height();

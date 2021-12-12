@@ -375,6 +375,7 @@ template {
 }
 body {
   font-family: "Roboto", sans-serif;
+  transform: translateZ(0);
   top: 0;
   position: fixed;
   left: 0;

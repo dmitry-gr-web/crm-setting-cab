@@ -1,52 +1,109 @@
-<div class="field-wrapper">
-    <table class="field-table">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            width: 400px;
+            margin: auto auto;
+            margin-top: 100px;
+        }
+        
+        .field-number {
+            height: 17px;
+            padding: 5px 0;
+            display: flex;
+            width: 33%;
+            font-size: 14px;
+            align-items: flex-end;
+        }
+        
+        .field-description {
+            height: 17px;
+            padding: 5px 0;
+            display: flex;
+            width: 50%;
+            font-size: 12px;
+            align-items: flex-end;
+        }
+        
+        tr {
+            display: flex;
+        }
+        
+        table {
+            width: 300px;
+        }
+        
+        input {
+            font-size: 12px;
+            width: 100%;
+            border: none;
+            padding: 0;
+            outline: none;
+            background-color: pink;
+        }
+    </style>
+    <table>
         <tr>
-            <td class="contact-header order-tooltip">Дополнительные поля<span class="pen-logo"></span></td>
+            <td class="field-number">
+                <div style="height: 14px;">ТТн</div>
+            </td>
+            <td class="field-description"><input style="height: 12px;" class="field-input" type="text" size="23">
+            </td>
         </tr>
+        <tr>
+            <td class="field-number">
+                <div style="height: 14px;">Адрес</div>
+            </td>
+            <td class="field-description"><input style="height: 12px;position: relative;top:0.5px" class="field-input" type="text" size="23"></td>
+        </tr>
+        <tr>
+            <td class="field-number">
+                <div style="height: 14px;">Телефон</div>
+            </td>
+            <td class="field-description">
+                <div style="height: 12px;">0687760887</div>
+                <div style="height: 12px;">
+                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.66995 9.55H2.96995C1.92495 9.55 1.06995 8.695 1.06995 7.65V2.9C1.06995 1.855 1.92495 1 2.96995 1H8.66995C9.71495 1 10.5699 1.855 10.5699 2.9V7.65C10.5699 8.695 9.71495 9.55 8.66995 9.55Z" stroke="#9C9B9E" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2.97009 3.37524L5.15509 5.56024C5.53509 5.94024 6.10509 5.94024 6.48509 5.56024L8.67009 3.37524" stroke="#9C9B9E" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.77786 9.97141C9.77786 10.4432 9.18817 10.9543 8.71641 10.9543H2.6229C2.15114 10.9543 1.52214 10.3252 1.52214 9.85346V4.58533C1.52214 4.19218 2.15114 3.56315 2.6229 3.56315H8.6771C9.14886 3.56315 9.77786 4.19218 9.77786 4.66396V9.97141ZM5.61069 1.20428C6.5542 1.20428 7.02595 1.67606 7.18321 2.54097H4.03817C4.19542 1.67606 4.66718 1.20428 5.61069 1.20428ZM8.83435 2.54097H8.20534C8.04809 1.20428 6.94733 0.300049 5.61069 0.300049C4.27405 0.300049 3.17328 1.20428 3.01603 2.54097H2.38702C1.44351 2.54097 0.5 3.48452 0.5 4.42807V10.168C0.5 11.0329 1.44351 11.9764 2.38702 11.9764H8.91298C9.77786 11.9764 10.8 11.0329 10.8 10.0894V4.34944C10.7214 3.48452 9.77786 2.54097 8.83435 2.54097Z" fill="#9C9B9E"/>
+                </svg>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field-number">
+                <div style="height: 14px;">Доставка</div>
+            </td>
+            <td class="field-description">
+                <div style="height: 12px;">Юля дизайнер</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="field-number">
+                <div style="height: 14px;">Адрес</div>
+            </td>
+            <td class="field-description">
+                <div style="height: 12px;">Юля дизайнер</div>
+            </td>
+        </tr>
+
     </table>
-    <div class="field-block" data-simplebar="" data-simplebar-auto-hide="false">
-        <table>
-            <tr>
-                <td class="field-number">1</td>
-                <td class="field-description"><input class="field-input" type="text" size="23">
-                </td>
-            </tr>
-            <tr>
-                <td class="field-number">2</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">3</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">4</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">5</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">6</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">7</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">8</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">9</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-            <tr>
-                <td class="field-number">10</td>
-                <td class="field-description"><input class="field-input" type="text" size="23"></td>
-            </tr>
-        </table>
-    </div>
-</div>
+</body>
+
+</html>

@@ -408,7 +408,7 @@ $('.inc, .dec').on('DOMMouseScroll', function(e) {
     // $(this).parents('.btn-wrap-medium').css('visibility', 'visible');
     // $(this).parents('.btn-wrap-medium').find('.sort-btn').css('visibility', 'visible');
     // $(this).parents('.btn-wrap-medium').find('.border-sort').css('opacity', '1');
-     console.log('asdasdasasds')
+    console.log('asdasdasasds')
 
     wDelta = e.originalEvent.detail > 0 ? 'down' : 'up';
     // let origin = $(this).context.className;
