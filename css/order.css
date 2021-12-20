@@ -245,6 +245,9 @@
   text-overflow: ellipsis;
   background-color: transparent;
 }
+.contact-table .contact-description .underline-animation input::selection {
+  background-color: #C7C7CA;
+}
 .contact-table .contact-description .underline-animation .input-user {
   width: 200px;
 }
@@ -802,7 +805,7 @@
 }
 .delivery-table .delivery-description .status-ttn-info {
   position: absolute;
-  left: 20px;
+  left: 21px;
   visibility: hidden;
   overflow: hidden;
   width: 0px;
@@ -868,6 +871,9 @@
   text-overflow: ellipsis;
   background-color: transparent;
 }
+.delivery-table .delivery-description .underline-animation input::selection {
+  background-color: #C7C7CA;
+}
 .delivery-table .delivery-description .underline-animation .input-address {
   outline: none;
   border: none;
@@ -882,17 +888,41 @@
 }
 .delivery-table .delivery-description .delivery-chose-btn .btn-find-addres {
   top: -1px;
+  transition: 0.2s;
+  width: 13px;
   display: none;
-  margin-right: 8px;
+  left: 0;
+  margin-right: 0;
 }
 .delivery-table .delivery-description .delivery-chose-btn .btn-find-otdel {
   top: -1px;
+  transition: 0.2s;
+  opacity: 1;
+  left: 0;
+  margin-right: 7px;
 }
-.delivery-table .delivery-description .delivery-chose-btn .active-btn {
+.delivery-table .delivery-description .delivery-chose-btn .active-btn-addres {
   display: block;
+  margin-right: 7px;
 }
-.delivery-table .delivery-description .delivery-chose-btn .decl-btn {
+.delivery-table .delivery-description .delivery-chose-btn .active-btn-otdelenie {
   display: none;
+  margin-right: 0;
+}
+.delivery-table .delivery-description .samovivoz-block {
+  height: 12px;
+  display: none;
+}
+.delivery-table .delivery-description .samovivoz-block input {
+  width: 170px;
+  outline: none;
+  border: none;
+  font-size: 12px;
+  padding: 0;
+  font-weight: 300;
+}
+.delivery-table .delivery-description .samovivoz-block input::selection {
+  background-color: #C7C7CA;
 }
 .delivery-table .delivery-description .addres-delivery-block {
   position: absolute;
@@ -903,7 +933,7 @@
   z-index: 3;
   visibility: hidden;
   opacity: 0;
-  height: 112px;
+  height: 116px;
   width: 221px;
   transition: 0.2s;
 }
@@ -923,20 +953,31 @@
 }
 .delivery-table .delivery-description .addres-delivery-block .addres-delivery-list .underline-animation {
   width: 125px;
-  margin-left: 3px;
+  margin-left: 5px;
 }
 .delivery-table .delivery-description .addres-delivery-block .addres-delivery-list .underline-animation .underline {
   bottom: 4px;
+}
+.delivery-table .delivery-description .addres-delivery-block .addres-delivery-list .underline-animation .count-addres {
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
 }
 .delivery-table .delivery-description .addres-delivery-block .addres-delivery-list input {
   height: 12px;
   outline: none;
   border: none;
   width: 125px;
+  padding: 0;
   border: none;
   text-overflow: ellipsis;
   color: black;
   font-weight: 300;
+}
+.delivery-table .delivery-description .addres-delivery-block .addres-delivery-list .index::selection {
+  background-color: transparent;
 }
 .delivery-table .delivery-description .addres-delivery-block .addres-delivery-list input:focus {
   color: black;
@@ -973,7 +1014,7 @@
   position: absolute;
   right: -195px;
   top: 0;
-  height: 150px;
+  height: 142px;
   width: 200px;
   overflow-x: hidden;
   transition: 0.2s;
@@ -986,10 +1027,9 @@
 .delivery-table .delivery-description .addres-delivery-block .addres-menu-find .kvartiri div,
 .delivery-table .delivery-description .addres-delivery-block .addres-menu-find .otdelenie div,
 .delivery-table .delivery-description .addres-delivery-block .addres-menu-find .strana div {
-  height: 18px;
+  height: 22px;
   cursor: pointer;
   padding-left: 15px;
-  padding-top: 10px;
   white-space: nowrap;
   overflow: hidden;
   width: 170px;
@@ -1002,6 +1042,14 @@
 .delivery-table .delivery-description .addres-delivery-block .addres-menu-find .otdelenie div:hover,
 .delivery-table .delivery-description .addres-delivery-block .addres-menu-find .strana div:hover {
   opacity: 0.5;
+}
+.delivery-table .delivery-description .addres-delivery-block .addres-menu-find .goroda div:first-child,
+.delivery-table .delivery-description .addres-delivery-block .addres-menu-find .ulici div:first-child,
+.delivery-table .delivery-description .addres-delivery-block .addres-menu-find .doma div:first-child,
+.delivery-table .delivery-description .addres-delivery-block .addres-menu-find .kvartiri div:first-child,
+.delivery-table .delivery-description .addres-delivery-block .addres-menu-find .otdelenie div:first-child,
+.delivery-table .delivery-description .addres-delivery-block .addres-menu-find .strana div:first-child {
+  padding-top: 12px;
 }
 .delivery-table .delivery-description .addres-delivery-block .addres-menu-find .findUnderline::before {
   bottom: -1px;
@@ -1035,12 +1083,19 @@
 .delivery-table .delivery-description .addres-result {
   height: 12px;
   white-space: nowrap;
+  cursor: default;
 }
 .delivery-table .delivery-description .addres-result div {
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 160px;
+  width: 155px;
   overflow: hidden;
+}
+.delivery-table .delivery-description .addres-result div span {
+  font-weight: 300;
+}
+.delivery-table .delivery-description .addres-result div span b {
+  font-weight: 300;
 }
 .delivery-table .delivery-mail .btn-menu .btn-menu-list:hover span {
   opacity: 0.5;
@@ -1070,10 +1125,6 @@
 .field-wrapper .field-block table {
   width: 100%;
 }
-.field-wrapper .field-block td {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
 .field-wrapper .field-block .field-number {
   font-weight: 400;
   font-size: 14px;
@@ -1087,29 +1138,33 @@
 .field-wrapper .field-block .field-description {
   font-size: 12px;
   width: 100%;
-  height: 18px;
+  height: 26px;
+  padding: 0;
 }
 .field-wrapper .field-block .field-description .underline-animation {
   display: inline-block;
   position: relative;
-  height: 12px;
-  width: 96%;
+  height: 26px;
+  width: 93%;
 }
 .field-wrapper .field-block .field-description .underline-animation .underline {
   transition: 0.2s;
   width: 0%;
   background-color: #9C9B9E;
   height: 1px;
-  bottom: -1px;
+  bottom: 5px;
   position: absolute;
 }
 .field-wrapper .field-block .field-description .underline-animation input {
   position: relative;
-  width: 98%;
-  height: 12px;
+  width: 100%;
+  height: 26px;
   opacity: 1;
   text-overflow: ellipsis;
   background-color: transparent;
+}
+.field-wrapper .field-block .field-description .underline-animation input::selection {
+  background-color: #C7C7CA;
 }
 .field-wrapper .field-block .field-description .underline-animation .input-address {
   outline: none;
@@ -1126,8 +1181,6 @@
   padding: 0;
   text-overflow: ellipsis;
   font-weight: 300;
-  position: relative;
-  top: 1px;
 }
 .field-wrapper .field-block .simplebar-track.simplebar-vertical {
   transition: 0.2s;
@@ -1189,7 +1242,7 @@
   opacity: 0.8;
   user-select: none;
   padding-right: 15px;
-  width: 91px;
+  min-width: 67px;
   height: 18px;
 }
 .utm-wrapper .utm-block .utm-list span {
@@ -1204,7 +1257,7 @@
   text-overflow: ellipsis;
   cursor: default;
   height: 18px;
-  max-width: 176px;
+  max-width: 167px;
   text-transform: capitalize;
 }
 .utm-wrapper .utm-block .simplebar-track.simplebar-vertical {
@@ -1216,7 +1269,7 @@
   width: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-right: -3px;
+  margin-right: 0px;
   bottom: 0;
   border-radius: 5px;
 }
@@ -1277,7 +1330,7 @@
   font-weight: 300;
   font-size: 12px;
   padding-top: 5px;
-  max-width: 167px;
+  max-width: 176px;
   height: 17px;
   display: flex;
   align-items: flex-end;
@@ -2023,7 +2076,7 @@ input:checked + .slider:before {
 .btn-find-otdel {
   padding: 0;
   position: relative;
-  width: 12px;
+  width: 13px;
   height: 12px;
   top: 0px;
   right: 0px;
